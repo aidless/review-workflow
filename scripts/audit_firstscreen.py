@@ -1,3 +1,4 @@
+import os
 """首屏审计：每篇的关键证据数字是否落在 PRISM 视野（前 REVIEW_LLM_MAX_CHARS=6000 字符）内。
 输出每篇 ledger verified 数字在首屏的命中率 + 缺失清单（指导摘要/前置改写）。"""
 import json, os, re
@@ -5,7 +6,7 @@ from pathlib import Path
 
 PAPERS = ["just-agent-60", "mem0", "agent-comparison", "codeact-vs-fc", "scievalsuite",
           "kg-retrieval", "selfevolve-agent", "10paradigm-os", "calibration-self-improvement"]
-BASE = Path("papers")
+BASE = Path(os.environ.get("QONE_PAPERS_DIR", "./papers"))
 MAXC = int(os.environ.get("REVIEW_LLM_MAX_CHARS", "6000"))
 
 for p in PAPERS:

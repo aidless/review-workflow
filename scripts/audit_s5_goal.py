@@ -1,10 +1,11 @@
+import os
 """S5 五轮制达标审计：整轮>=5 + 末轮>=8 + 0 Critical（9 篇）。供目标完成判据用。"""
 import json
 from pathlib import Path
 
 PAPERS = ["just-agent-60", "mem0", "agent-comparison", "codeact-vs-fc", "scievalsuite",
           "kg-retrieval", "selfevolve-agent", "10paradigm-os", "calibration-self-improvement"]
-BASE = Path("papers")
+BASE = Path(os.environ.get("QONE_PAPERS_DIR", "./papers"))
 
 print(f"{'paper':28} {'rounds':>6} {'last':>4} {'crit_last':>9} {'PASS5':>6} {'PASS8':>6}")
 allok = True

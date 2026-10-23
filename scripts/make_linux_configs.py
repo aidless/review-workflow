@@ -1,3 +1,4 @@
+import os
 """Convert Windows-path S5 configs to Linux paths for the round-2 rerun.
 
 Chain 1: selfevolve-agent -> scievalsuite -> 10paradigm-os -> codeact-vs-fc
@@ -6,7 +7,7 @@ Chain 2: mem0 (fresh config) -> just-agent-60 -> kg-retrieval
 import json
 from pathlib import Path
 
-ROOT = Path("/data3/deepseek")
+ROOT = Path(os.environ.get("QONE_PAPERS_DIR", "."))
 OUT = ROOT / "research-kit/review-workflow/configs_linux"
 OUT.mkdir(parents=True, exist_ok=True)
 

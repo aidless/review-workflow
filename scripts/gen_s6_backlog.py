@@ -1,9 +1,10 @@
+import os
 """为单篇论文生成 S6_BACKLOG.md:汇总 R6 stable issues + PRISM 最弱维 + R2d/R5/R1c/R2 残留."""
 import json, sys
 from pathlib import Path
 
 p = sys.argv[1]
-base = Path(f"papers/{p}/reviews/pipeline_S5")
+base = Path(os.environ.get("QONE_PAPERS_DIR", "./papers")) / p / "reviews" / "pipeline_S5"
 out = base / "S6_BACKLOG.md"
 L = [f"# S6 返修 backlog — {p}", "", f"生成时间: 见文件 mtime；数据源: {base}", ""]
 
