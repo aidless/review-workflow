@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_Nm7dTogzfa\\extracted_text.txt",
+    "evidence_dirs": [],
+    "json_scanned": 0,
+    "timestamp": "2026-08-26T06:48:55+00:00"
+  },
+  "checks": [],
+  "summary": {
+    "records": 0,
+    "match": 0,
+    "mismatch": 0,
+    "not_in_paper": 0,
+    "verdict": "PASS",
+    "note": "MISMATCH=Critical（产物统计值与复算不符）；NOT_IN_PAPER=Major（重算值未出现在论文）；R4 其余清单项仍需人工"
+  }
+}

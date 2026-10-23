@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "timestamp": "2026-08-26T04:39:41+00:00",
+    "stage": "R0",
+    "source_mode": "tex 源码模式"
+  },
+  "inputs": {
+    "name": "kg_retrieval",
+    "tex": {
+      "path": "F:\\deepseek\\papers\\kg-retrieval\\paper\\main.tex",
+      "size": 4871,
+      "sha256": "8b9145bf30491deb6c7a6a10f86076e660ea21375288245dcfd65931d920d09f"
+    },
+    "pdf": null,
+    "zip": {
+      "path": "F:\\deepseek\\papers\\kg-retrieval\\submission\\submission_kg-retrieval.zip",
+      "size": 394487,
+      "sha256": "846bf4ad3c25e7378a941801b9f51b9b5749dd64e3c20d7d0e5b59c8b8fdb79d"
+    },
+    "evidence_dirs": [
+      {
+        "path": "F:\\deepseek\\papers\\kg-retrieval\\results",
+        "exists": true
+      },
+      {
+        "path": "F:\\deepseek\\papers\\kg-retrieval\\evidence",
+        "exists": true
+      }
+    ]
+  },
+  "cross_source_risk": [],
+  "problems": [],
+  "summary": {
+    "problems": 0,
+    "cross_source_risk": 0,
+    "verdict": "PASS"
+  }
+}

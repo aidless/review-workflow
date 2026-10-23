@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "timestamp": "2026-08-28T09:49:04+00:00",
+    "stage": "R1",
+    "pdf_mode": false
+  },
+  "sections_found": [
+    "abstract",
+    "introduction",
+    "related",
+    "method",
+    "results",
+    "discussion"
+  ],
+  "missing_sections": [
+    "limitations",
+    "conclusion"
+  ],
+  "placeholders": [],
+  "abstract_words": 181,
+  "unbalanced_envs": [],
+  "summary": {
+    "verdict": "MAJOR",
+    "warns": [
+      "章节缺失 ['limitations', 'conclusion']"
+    ]
+  }
+}

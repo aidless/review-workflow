@@ -1,0 +1,26 @@
+{
+  "_readme": "示例：OpenReview 手动导出 JSON 的最小格式。API 403 时从 openreview.net 复制评审决策 JSON 存成这种形状，再运行 calibrate.py --fetch-tmlr --dump <本文件> --out <outdir>。本文件的决策值为演示占位，替换为你导出的真实决策（content.decision / recommendation / rating 任一字段均可被识别）。",
+  "notes": [
+    {
+      "id": "demo1",
+      "content": {
+        "title": "Example Paper One (placeholder)",
+        "decision": "Accept (Oral)"
+      }
+    },
+    {
+      "id": "demo2",
+      "content": {
+        "title": "Example Paper Two (placeholder)",
+        "decision": "Reject"
+      }
+    },
+    {
+      "id": "demo3",
+      "content": {
+        "title": "Example Paper Three (placeholder)",
+        "decision": "Accept (poster)"
+      }
+    }
+  ]
+}

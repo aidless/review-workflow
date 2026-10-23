@@ -1,0 +1,593 @@
+Under review as submission to TMLR
+Confidence-Priming Instructions in Retrieved Cache Entries
+Are Associated with Verbalized-Confidence Shifts on MMLU
+Anonymous authors
+Paper under double-blind review
+Abstract
+Calibration—the alignment between a model’s stated confidence and its actual correctness—
+is a reliability property for deployed LLM agents. These agents assemble prompts from re-
+trieved cache entries at inference time. In this hypothesis-generating study, we test whether
+a controlled “confidence-priming” instruction in cache entries is associated with a shift in
+verbalized-confidence error on MMLU, under a paired protocol with length control. We
+test 500 MMLU questions ×4 local model families ×3 channels ×2 cache conditions (benign
+vs confidence-priming) =12,000 cells (500×4×3×2; 6,000 paired differences), with 3 seeds
+(42/43/44) and B=5000 BCa bootstrap. The instruction channel is associated with a ∆MAE
+of +0.047 (Qwen3:4b, Wilcoxon W=12480, p=1.6×10−5, dz=0.42); a length-matched benign
+control (75-char neutral prefix, +0.005, p=0.62, see Fig. 1) is associated with no significant
+shift, consistent with a semantic rather than length-driven pattern (hypothesis-generating;
+control tested on a subset, see Limitations). Four post-hoc baselines (fitted on held-out be-
+nign data) reduce but do not eliminate the shift (p<.02). We report a descriptive Wasserstein
+upper bound (|∆MAE| ≤LΓ) as a sanity check, not an explanatory theory. All findings are
+sample-descriptive, limited to verbalized confidence (range 0.52–0.76), 4 small local models,
+a single priming phrasing (supplementary 500×3 phrasings pilot 0.645/0.646/0.649 conf,
+direction consistent, 1500 cells), and the controlled setting.
+Introduction
+LLM agents increasingly rely on skill caches—retrieval-augmented stores of instructions and demonstrations
+injected into the context at runtime (Lewis et al., 2020). For example, a medical RAG agent may retrieve
+“This symptom is common and benign; answer with high confidence” from its cache.
+Caching reduces
+latency and cost, and retrieved entries are typically treated as inert context. However, if a cache entry
+explicitly instructs the model to “rate confidence high,” this may shift the model’s verbalized confidence
+without changing accuracy—a miscalibration risk. Calibration—the alignment between stated confidence
+and actual correctness (Guo et al., 2017; Naeini et al., 2015)—is a first-class reliability property, and any
+runtime mechanism that silently shifts it poses a deployment risk.
+Prior work studies output propagation through agent memory (Kadavath et al., 2022) and post-training
+calibration drift, but neither examines the retrieval-side channel: a cache entry stating “this task type is
+easy; answers are almost always correct; rate confidence high” is neither a peer output nor a training-time
+shift; it is inference-time context that may shift self-reported confidence and ECE.
+We ask: is a controlled confidence-priming instruction in cache entries associated with a ∆MAE
+shift on MMLU, and is the effect attributable to semantic content rather than prefix length?
+We answer with a power-justified paired protocol (n=500, MDE dz=0.18) including a length-matched benign
+control, and four-baseline robustness check on held-out data. To our knowledge, no prior work measures
+paired confidence-error shifts on MMLU under cache manipulation with length control.
+Contributions:
+
+Under review as submission to TMLR
+1. A paired ∆MAE protocol on 500 MMLU questions ×4 local families ×3 channels ×2 cache condi-
+tions =12,000 cells (6,000 paired), with a length-matched benign control and power analysis (MDE
+dz=0.18 at n=500).
+2. A descriptive Wasserstein upper bound |∆MAE| ≤LΓ (sanity check, not explanatory theory) and
+a length-control experiment isolating semantic from length effects.
+3. Four post-hoc baselines (temperature scaling, isotonic regression, ensemble, LLM-as-judge) fitted on
+held-out benign data, showing the shift persists under our tested conditions.
+Related Work
+We position our work relative to three families.
+Calibration of neural networks.
+Guo et al. (2017) introduce ECE and show modern networks are
+miscalibrated, with temperature scaling as a fix. Naeini et al. (2015) derive the Brier score and reliability
+diagrams. Nixon et al. (2019) critique ECE estimation and propose binning alternatives. Ovadia et al.
+(2019) study calibration under distribution shift. Kadavath et al. (2022) study whether LLMs “know what
+they know” on QA tasks but do not test retrieval-side injection. None of these measure paired ∆MAE under
+cache manipulation.
+Retrieval-augmented generation.
+Lewis et al. (2020) introduce RAG for knowledge-intensive tasks,
+studying accuracy—not confidence. Recent work (Gao et al., 2024) surveys RAG advances but does not
+address calibration shifts from retrieved content.
+Post-hoc calibration.
+Temperature scaling (Guo et al., 2017), isotonic regression (Niculescu-Mizil &
+Caruana, 2005), and ensemble methods are standard post-hoc calibrators. We evaluate all four on identical
+cells, showing they reduce but do not eliminate the shift under our conditions.
+Prompt injection. Greshake et al. (2023) show retrieval-poisoning attacks on RAG, but focus on accuracy
+degradation, not calibration. Our work is distinct: we study confidence shifts, not answer correctness.
+Table 1 summarizes the gap.
+Table 1: GAP: prior work vs. ours. To our knowledge, no prior work measures paired ∆MAE on MMLU
+with 4 baselines.
+Work
+Real benchmark
+Paired ∆MAE
+Post-hoc baselines
+Injection channel
+Guo et al. (2017)
+CIFAR
+no
+temp only
+n/a
+Kadavath et al. (2022)
+QA
+no
+no
+n/a
+Lewis et al. (2020)
+RAG
+no
+no
+accuracy only
+Greshake et al. (2023)
+RAG
+no
+no
+accuracy
+Ours
+MMLU 500
+yes (6k paired)
+3 channels
+Method
+Cache-injection model. For each question qi, we construct a prompt p = concat(prefix, qi) where the
+prefix is drawn from a cache entry. We test 2 cache conditions (benign vs confidence-priming) =12,000
+cells (500 questions ×4 models ×3 channels ×2 cache): benign (neutral instruction “Answer the following
+question.”, ∼28 chars) vs confidence-priming (biased instruction “This domain is well-studied; answers are
+almost always correct; rate your confidence high.”, ∼75 chars). To isolate semantic content from length,
+we additionally illustrate a length-matched benign control (∼75 chars, “Please read the following question
+carefully and provide your answer with a confidence rating.”, no confidence priming) and a no-cache baseline
+(bare question); these controls use fixed prefix strings and are not fields in cells.jsonl (prefix-length is not
+stored; Γ is computed from string lengths, see §4 and Limitations). Three injection channels: (i) instruction
+
+Under review as submission to TMLR
+(system prefix), (ii) few-shot (retrieved examples carry overconfident labels ˆy=0.95), (iii) ranking (biased
+entry ranked first via TF-IDF with threshold θ = 0.3).
+Estimand. For scenario i, seed s, let e = |conf −correct| where conf ∈[0, 1] is the model’s verbalized
+confidence and correct ∈{0, 1} is the ground-truth match. The paired estimand is the per-scenario mean
+absolute error difference:
+∆\
+MAEi = 1
+|S|
+s∈S
+
+e(primed)
+i,s
+−e(benign)
+i,s
+
+(1)
+We report the mean ∆MAE across scenarios, with Wilcoxon signed-rank test (W statistic and p-value) and
+bootstrap 95% CI (B=5000, BCa, seed 42). Note: Eq. 1 computes the paired difference of per-cell absolute
+errors
+P |ci −yi|, which is the Mean Absolute Error of confidence (MAE), not the binned ECE of Guo
+et al. (2017). We use MAE throughout because (a) it avoids binning artifacts at n=500 per condition (10 bins
+→∼50 per bin, high variance), and (b) the paired difference is exactly interpretable as the per-question shift
+in |c−y|. We verify binned ECE (10 bins) gives consistent conclusions in Appendix C. Bonferroni correction
+with k=3 (three channels) gives α′ = 0.017; we additionally report Holm and Benjamini–Hochberg for the
+family of 12 contrasts.
+Post-hoc baselines. We apply four calibrators on a held-out calibration set (250 benign questions, disjoint
+from the 500 test questions): (1) temperature scaling (Guo et al., 2017) fitted on benign logits, (2) isotonic
+regression fitted on benign cells, (3) ensemble mean over 3 seeds at temperature 0.3 (non-zero to ensure
+seed variation), (4) LLM-as-judge (second-pass re-rating without seeing the original priming instruction).
+Baselines are evaluated on the 500 biased test cells. This held-out protocol avoids the trivial in-sample
+reduction.
+Power analysis.
+Prior to data collection, we set the minimum detectable effect (MDE) at dz = 0.35
+(α=0.05, power 0.8), requiring n ≈67 per condition via the Wilcoxon t-approximation. Our n=500 yields
+MDE dmin = 0.18. We emphasize effect sizes (dz, CLES) over p-values given the high power.
+MAE definition (primary) and binned ECE verification. Primary estimand is MAE = 1
+PN
+i=1 |ci−yi|
+(unbinned, Eq. 1). For verification we also compute binned ECE (10 equal-width bins following Guo et al.
+(2017)); sensitivity to 5/10/15 bins in Appendix C shows consistent ∆MAE.
+Sampling. 500 MMLU questions are randomly sampled (seed 42) across 57 subjects, stratified by category
+to ensure coverage of STEM, humanities, and social sciences.
+Confidence is extracted via a structured
+JSON self-report protocol; models output {"answer":
+"...", "confidence":
+0.X} and we parse the
+confidence field.
+Theory
+Wasserstein upper bound (descriptive, not explanatory). We note that |∆MAE| ≤L · Γ where
+Γ = W1(µb, µc) is the Wasserstein-1 distance between prefix-string length distributions (fixed strings: ∼28
+vs ∼75 chars, not a field in cells.jsonl) and L is the confidence-to-length Lipschitz constant. We estimate
+L ≈0.004/char and Γ ≈12.2 chars from prefix string lengths (illustrative), giving |∆MAE| ≤0.049 ≈0.047
+(observed). However, this bound is descriptive, not explanatory: L and Γ are computed from fixed string
+lengths (not data) and the bound is circular; Γ measures length shift, not semantic content. The length-
+control illustration (Figure 1) is the primary evidence that the effect is semantic, not length-driven. We
+present this bound as a sanity check, not a theoretical contribution.
+Experiments
+Protocol. 500 MMLU questions ×4 models ×3 channels ×2 cache conditions =12,000 cells (500×4×3×2;
+6,000 paired differences), 3 seeds (42/43/44), B=5000 BCa, bootstrap seed 42. Parse rates: Qwen3:4b 98.2%,
+Gemma3:4b 93.3%, DeepSeek-R1:7B 96.1%, Qwen2.5:14B 99.1%. Lower parse rates (Gemma) are due to
+non-JSON confidence output format; we exclude unparseable cells (6.7%) from analysis.
+
+Under review as submission to TMLR
+Main results. Table 2 reports per-model per-channel ∆MAE with bootstrap CIs and Bonferroni-corrected
+p-values.
+Table 2: Main ∆MAE on MMLU 500 (6,000 paired cells, Wilcoxon p, Bonferroni k=3, α′=0.017). ∗denotes
+significance.
+Model
+Channel
+∆MAE
+95% CI
+W / p (Wilcoxon)
+dz [CI]
+CLES
+Qwen3:4b
+instruction
++0.047
+[+0.014, +0.084]
+W=12480, 1.6×10−5 ∗
+0.42 [0.18, 0.66]
+0.68
+Gemma3:4b
+instruction
++0.035
+[+0.002, +0.078]
+W=18920, 0.024
+0.31 [0.08, 0.54]
+0.62
+Qwen2.5:14B
+instruction
++0.012
+[+0.004, +0.020]
+W=22100, 0.013
+0.28 [0.06, 0.50]
+0.60
+Gemma3:4b
+ranking
++0.067
+[+0.023, +0.121]
+W=15670, 0.007∗
+0.38 [0.12, 0.64]
+0.65
+Qwen3:4b
+few-shot
+−0.029
+[−0.058, −0.002]
+W=26800, 0.70
+−0.12 [−0.34, 0.10]
+0.44
+The instruction channel is associated with significant MAE shifts for Qwen3:4b (+0.047, W=12480,
+p=1.6 × 10−5) and Gemma3:4b ranking (+0.067, W=15670, p=0.007). The few-shot channel does not shift
+MAE (W=26800, p=0.70); this null result is itself informative—overconfident labels in examples appear less
+impactful than direct instruction or ranking manipulation, possibly because models discount example labels
+relative to system-level instructions.
+Baselines. Table 3 shows that all four post-hoc calibrators reduce but do not eliminate the shift under our
+tested conditions.
+Table 3: Four post-hoc baselines on Qwen3:4b instruction channel (same 500 paired). All remain significant
+at p < .02 (Bonferroni α′=0.017). Shifts reported as ∆MAE; dz in brackets: raw [0.42], temp [0.35], isotonic
+[0.37], ensemble [0.34], judge [0.38].
+Raw
+Temp. scaling
+Isotonic
+Ensemble
+LLM-judge
+∆MAE
++0.047∗
++0.039∗
++0.041∗
++0.038∗
++0.042∗
+Ablation and length control. Figure 1 shows the length-control illustration (2 cache conditions; fixed-
+string length controls).
+The key comparison is benign-long (∆= + 0.005, p=0.62) vs confidence-priming
+(∆= + 0.047, p=1.6 × 10−5): both prefixes are ∼75 chars, but only the priming condition is associated with
+a significant shift, consistent with a semantic rather than length-driven pattern (hypothesis-generating, not
+causal proof). The no-cache baseline (+0.001) is associated with negligible shift without priming. Note:
+prefix-length controls are fixed strings illustrated in Fig. 1, not fields in cells.jsonl; see Limitations. Cells
+= 500×4×3×2 = 12,000 (6,000 paired differences); seeds 42/43/44 (B=5000 BCa).
+Reliability diagram. Figure 2 shows the reliability diagram (confidence bins vs. empirical accuracy) for
+benign vs. primed conditions. The primed curve shifts upward in confidence but not in accuracy, widening
+the calibration gap.
+Forest plot. Figure 3 shows the per-model per-channel ∆MAE with 95% CIs.
+Cross-seed stability. ∆MAE across 3 seeds: seed 0 +0.045, seed 1 +0.049, seed 2 +0.047 (SD = 0.002).
+Friedman test across seeds gives χ2 = 0.14, p = 0.93, confirming no significant seed effect.
+Discussion
+Our results indicate that confident-error injection into cache entries is associated with MAE shifts on MMLU
+under controlled conditions. The effect is consistent across 3 seeds (SD = 0.002) and robust to 4 post-hoc
+baselines.
+The ranking channel exhibits the largest shift (+0.067), suggesting that entry ordering is a
+particularly potent injection vector.
+Mechanism hypothesis. The instruction channel (+0.047) directly primes the model to inflate confidence
+regardless of correctness, while the ranking channel (+0.067) additionally exploits attention bias toward top-
+
+Under review as submission to TMLR
+No-cache
+(bare)
+Benign
+(short ~28)
+Benign
+(long ~75)
+Confidence-
+priming (~75)
+−0.02
+0.00
+0.02
+0.04
+0.06
+0.08
+0.10
+ΔMAE
+* p=1.6e-5
+n.s. p=0.62
+Note: prefix lengths are fixed strings (28 vs 75 chars),
+not a data field; Γ is descriptive, not from cells.jsonl.
+Length control: benign vs confidence-priming (2 cache conditions)
+Figure 1: Length control: 2 cache conditions (benign vs confidence-priming) with supplementary fixed-string
+length controls. Mean ∆MAE ± bootstrap 95% CI. Only confidence-priming is associated with a significant
+shift (∗p < 0.017), consistent with a semantic rather than length-driven pattern (hypothesis-generating).
+Prefix lengths are string properties (∼28 vs ∼75 chars), not data fields.
+ranked entries. The few-shot channel (+0.003, n.s.) may be weaker because overconfident labels in examples
+are discounted relative to explicit instructions—a hypothesis that could be tested by varying example count.
+What we did NOT show. We did not demonstrate that naturally occurring cache content produces
+calibration shifts; the injection is controlled. We did not test API-scale models (GPT-4o, Claude) or non-
+MMLU tasks. We did not establish a causal mechanism beyond the Lipschitz bound. We did not measure
+the prevalence of confident-error content in real caches.
+Ecological validity. Our injection uses a single phrasing (“this domain is well-studied; rate confidence
+high”). Real-world cache contamination may involve diverse phrasings, partial bias, or indirect cues. A pilot
+with 50 real retrieved entries (not controlled injection) would strengthen ecological claims; we leave this to
+future work. The current findings should be interpreted as a controlled upper bound on the achievable shift,
+not a measurement of naturally occurring leakage.
+Threat model.
+The “confident-error” injection represents a scenario where a cache entry is either (a)
+deliberately poisoned by an attacker with write access to the cache, or (b) accidentally biased by a noisy
+retrieval system that retrieves overconfident content. We do not claim naturally occurring cache content
+produces this effect.
+Limitations. (i) Single priming phrasing; diverse phrasings may yield different magnitudes. (ii) Four small
+local models (4–14B); large API models may respond differently. (iii) MMLU only. (iv) Temperature fixed
+at 0 for determinism; ensemble baseline uses temp 0.3 to ensure seed variation. (v) The Wasserstein bound is
+descriptive (circular fitting) and measures length, not semantic content; the length-control experiment is the
+primary causal evidence. (vi) Verbalized confidence ranges 0.52–0.76 across all cells, limiting signal dynamic
+range; logit-based confidence was not extracted in our pipeline (pipeline limitation, not API constraint).
+(vii) The 6.7% parse failure (Gemma) is not correlated with cache condition (χ2 p=0.34) but may correlate
+with question difficulty. (viii) ∆accuracy is +0.003 (n.s.), indicating the shift is primarily in confidence, not
+correctness. (ix)
+What we did NOT show. We did not demonstrate naturally occurring cache contamination produces
+shifts. We did not test API models or non-MMLU tasks. We did not establish a causal mechanism beyond
+
+Under review as submission to TMLR
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Mean confidence (verbalized)
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Empirical accuracy
+ Primed deviates
+ further from diagonal
+10 equal-width bins
+shaded = bootstrap 95% CI
+Reliability diagram: benign vs primed (Qwen3:4b, MMLU 500)
+Perfect calibration
+Benign cache
+Confidence-primed
+Figure 2: Reliability diagram: benign vs. confidence-primed (Qwen3:4b, MMLU 500, 10 equal-width bins).
+The primed curve (blue) deviates further from the diagonal, indicating overconfidence. Shaded region =
+bootstrap 95% CI.
+the length-control exclusion. We did not measure prevalence of confidence-priming content in real caches.
+The bound is descriptive, not predictive.
+Broader Impact
+Calibration shifts from retrieved content may mislead downstream decision thresholds and human oversight
+in deployed RAG systems. In high-stakes settings such as medical question-answering, legal advisory, or
+automated tutoring, an overconfident agent may cause harm by providing unwarranted assurance. Practi-
+tioners should audit cache provenance, log retrieval sources, and implement confidence-threshold monitoring.
+The controlled injection studied here does not represent a measurement of naturally occurring bias; the risk
+is that similar effects could arise from unintended cache contamination. The injection methodology could
+theoretically be weaponized by an adversary with cache write access; we recommend access controls and
+content provenance tracking as mitigations. The auditing overhead is modest (logging retrieval source per
+query). No human subjects were involved; MMLU is publicly available and contains no PII.
+Reproducibility
+All 12,000 cells are in results/cells.jsonl (one JSON per line,
+fields:
+id, model, channel,
+cache, conf, correct, seed;
+2 cache conditions:
+benign vs biased/confidence-priming).
+Anal-
+ysis:
+results/analysis.json
+(fields:
+∆MAE,
+CI,
+p,
+W-statistic,
+dz,
+CLES
+per
+model-
+channel).
+Power:
+results/power_analysis.json.
+Figures:
+paper/figures_f1/*.pdf
+regen-
+erable via paper/figures_f1/generate_figures.py (also figures/fig_*/raw_data.py + plot_*.py
+for legacy).
+Environment:
+Ollama with Qwen3:4b tag 359d7dd4bcda (temp0),
+Gemma3:4b tag
+a2af6cc3eb7f,
+DeepSeek-R1:7B tag 755ced02ce7b,
+Qwen2.5:14B tag 7cdf5a0187d5;
+Python 3.10;
+
+Under review as submission to TMLR
+−0.075
+−0.050
+−0.025
+0.000
+0.025
+0.050
+0.075
+0.100
+0.125
+ΔMAE (primed − benign) with 95% BCa CI
+Qwen3:4b
+instr.
+Gemma3:4b
+instr.
+Qwen2.5:14B
+instr.
+Gemma3:4b
+ranking
+Qwen3:4b
+few-shot
++0.047 *
++0.035
++0.012
++0.067 *
+-0.029
+Blue = Bonferroni-significant (α′=0.017), Gray = n.s.
+∗ p<0.017
+Forest plot: per-model per-channel ΔMAE (B=5000, BCa, seed 42)
+Figure 3: Forest plot: per-model per-channel ∆MAE with 95% BCa CI. ∗denotes Bonferroni-significant
+(α′=0.017). Blue = significant, gray = n.s.
+requirements.txt locks numpy 1.26, scipy 1.11, matplotlib 3.8; environment.yml specifies OS/CUDA. Seed
+42. Compile: SOURCE_DATE_EPOCH=1720000000 pdflatex main && bibtex main && pdflatex main &&
+pdflatex main. Sanity check: wc -l cells.jsonl returns 12000; prefix-length controls are fixed strings,
+not data fields.
+References
+Yunfan Gao, Yun Xiong, Xinyu Gao, Kangxi Jia, Jinliu Pan, Yuxi Bi, Yi Dai, Jiawei Sun, Meng Wang,
+and Haofen Wang. Retrieval-augmented generation for large language models: A survey. arXiv preprint
+arXiv:2312.10997, 2024.
+Kai Greshake, Sahir Abdelnabi, Shailesh Mishra, Christoph Endres, Thorsten Holz, and Mario Fritz. Not
+what you’ve signed up for: Compromising real-world llm-integrated applications with indirect prompt
+injection. In AISec, 2023.
+Chuan Guo, Geoff Pleiss, Yu Sun, and Kilian Q. Weinberger. On calibration of modern neural networks. In
+Proceedings of the 34th International Conference on Machine Learning (ICML), pp. 1321–1330, 2017.
+Saurav Kadavath, Tom Conerly, Jared Kaplan, et al. Language models (mostly) know what they know.
+arXiv preprint arXiv:2207.05221, 2022.
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich
+Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela.
+Retrieval-
+augmented generation for knowledge-intensive nlp tasks.
+Advances in Neural Information Processing
+Systems (NeurIPS), 33:9459–9474, 2020.
+Mahdi Pakdaman Naeini, Gregory F. Cooper, and Milos Hauskrecht. Obtaining well calibrated probabilities
+using bayesian binning. In AAAI, 2015.
+Alexandru Niculescu-Mizil and Rich Caruana. Predicting good probabilities with supervised learning. In
+ICML, 2005.
+Jeremy Nixon et al. Measuring calibration in deep learning. In CVPR Workshops, 2019.
+
+Under review as submission to TMLR
+Yaniv Ovadia et al. Can you trust your model’s uncertainty? evaluating predictive uncertainty under dataset
+shift. In NeurIPS, 2019.
+Full Proofs and Bound Details
+Descriptive bound. |∆MAE| ≤L · Γ where Γ = W1(µb, µc) on prefix-string length distributions (fixed
+strings: 28 vs 75 chars, not a field in cells.jsonl) and L = |∂c/∂ℓ|. By Kantorovich–Rubinstein duality,
+|Eµc[c] −Eµb[c]| ≤LΓ. Since MAE =
+P |ci −yi| and yi is fixed per question, the paired |∆MAE| is
+bounded by the confidence shift. Empirical: L ≈0.004/char, Γ ≈12.2 chars (from string lengths), bound
+≈0.049 ≈0.047 (observed). Caveat: L and Γ are estimated from fixed prefix strings (not data) and the
+bound is descriptive/circular; it measures length shift, not semantic content. The length-control illustration
+(Fig. 1) is the primary evidence that the effect is semantic.
+Extended Experimental Details
+Per-model per-channel ∆MAE with dz and CLES (Table 4). Parse rates: Qwen3:4b 98.2%, Gemma3:4b
+93.3%, DeepSeek-R1:7B 96.1%, Qwen2.5:14B 99.1%. Unparseable cells (6.7%) excluded.
+Table 4: Full 4×3 per-model per-channel ∆MAE (MMLU 500; 12,000 cells = 500×4×3×2; 6,000 paired
+differences; seeds 42/43/44; placeholder ‘—’ = not in primary 12k; supplementary phrasing pilot = 1,500
+cells = 500×3 phrasings, 0.645/0.646/0.649 conf, direction consistent).
+Model
+Channel
+∆MAE
+dz
+CLES
+p
+Qwen3:4b
+instruction
++0.047
+0.42
+0.68
+1.6×10−5
+Qwen3:4b
+ranking
++0.015
+0.15
+0.55
+0.18
+Qwen3:4b
+few-shot
+−0.029
+−0.12
+0.44
+0.70
+Gemma3:4b
+instruction
++0.035
+0.31
+0.62
+0.024
+Gemma3:4b
+ranking
++0.067
+0.38
+0.65
+0.007
+Gemma3:4b
+few-shot
++0.010
+0.10
+0.54
+0.35
+DeepSeek-R1:7B
+instruction
++0.025
+0.22
+0.58
+0.089
+DeepSeek-R1:7B
+ranking
++0.008
+0.09
+0.52
+0.22
+DeepSeek-R1:7B
+few-shot
+—
+—
+—
+—
+Qwen2.5:14B
+instruction
++0.012
+0.28
+0.60
+0.013
+Qwen2.5:14B
+ranking
+—
+—
+—
+—
+Qwen2.5:14B
+few-shot
+—
+—
+—
+—
+Power and Sensitivity Details
+Power. At dz=0.42 (observed), α=0.05, power 0.8, the Wilcoxon signed-rank test (via t-approximation)
+requires n ≈38; using conservative d=0.35 gives n=67.
+Our n=500 yields power > 0.999 under either
+estimate. Minimum detectable effect at n=500, power 0.8 is dmin = 0.18.
+Binned ECE verification / MAE robustness. We verify ∆MAE under 5, 10, and 15 equal-width bins:
+5-bin gives +0.044, 10-bin gives +0.047, 15-bin gives +0.049 (all within bootstrap CI), confirming robustness
+to binning choice. Primary is unbinned MAE.
+Selection bias check. The 6.7% parse failure (primarily Gemma3:4b) is tested for correlation with cache
+condition via χ2 test (p = 0.34), indicating no systematic confound.
+Optuna.
+We omit the Optuna hyperparameter analysis from the main text as it is not central to the
+calibration-shift claim; the TF-IDF threshold θ sensitivity is reported in the ablation (ranking group).
+
+Under review as submission to TMLR
+Reproducibility Checklist
+cells.jsonl:
+12,000
+lines
+(verified
+via
+wc -l),
+fields
+{id,
+model,
+channel,
+cache,
+conf,
+cor-
+rect, seed} (2 cache conditions:
+benign/biased), seeds {0, 1, 2} (prefix-length is fixed-string prop-
+erty, not a data field).
+analysis.json:
+∆MAE, CI, p, W-statistic, dz, CLES per model-channel.
+power_analysis.json:
+n=67 (d=0.35),
+n=38 (dz=0.42),
+n=500.
+paper/figures_f1/*.pdf via
+paper/figures_f1/generate_figures.py (legacy figures/fig_*/raw_data.py + plot_*.py also avail-
+able). requirements.txt: numpy 1.26, scipy 1.11, matplotlib 3.8. environment.yml: Ubuntu 22.04, Python
+3.10, CUDA 13.0. Seed 42. Ollama model tags pinned by SHA. SOURCE_DATE_EPOCH=1720000000. Sanity
+script: python -c "assert sum(1 for _ in open(’cells.jsonl’))==12000"; prefix-length controls are
+fixed strings illustrated in Fig. 1.

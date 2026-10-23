@@ -1,0 +1,284 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "bib": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.bib",
+    "online": true,
+    "entries": 12,
+    "timestamp": "2026-08-26T09:40:59+00:00"
+  },
+  "structural_issues": [],
+  "online_results": [
+    {
+      "key": "mialon2023gaia",
+      "type": "misc",
+      "title": "{GAIA}: a benchmark for General {AI} Assistants",
+      "fields": [
+        "title",
+        "author",
+        "year",
+        "eprint",
+        "archiveprefix",
+        "primaryclass"
+      ],
+      "identifiers": {
+        "arxiv": "2311.12983"
+      },
+      "id_kind": "arxiv",
+      "id": "2311.12983",
+      "result": {
+        "status": "verified",
+        "api_title": "GAIA: a benchmark for General AI Assistants",
+        "similarity": 1.0,
+        "title_match": true
+      }
+    },
+    {
+      "key": "jimenez2024swebench",
+      "type": "misc",
+      "title": "{SWE}-bench: Can Language Models Resolve Real-World {GitHub} Issues?",
+      "fields": [
+        "title",
+        "author",
+        "year",
+        "eprint",
+        "archiveprefix",
+        "primaryclass"
+      ],
+      "identifiers": {
+        "arxiv": "2310.06770"
+      },
+      "id_kind": "arxiv",
+      "id": "2310.06770",
+      "result": {
+        "status": "verified",
+        "api_title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+        "similarity": 1.0,
+        "title_match": true
+      }
+    },
+    {
+      "key": "lu2022learn",
+      "type": "misc",
+      "title": "Learn to Explain: Multimodal Reasoning via Thought Chains for Science Question Answering",
+      "fields": [
+        "title",
+        "author",
+        "year",
+        "eprint",
+        "archiveprefix",
+        "primaryclass"
+      ],
+      "identifiers": {
+        "arxiv": "2209.09512"
+      },
+      "id_kind": "arxiv",
+      "id": "2209.09512",
+      "result": {
+        "status": "verified",
+        "api_title": "A Combined Model for Noise Reduction of Lung Sound Signals Based on Empirical Mode Decomposition and Artificial Neural Network",
+        "similarity": 0.053,
+        "title_match": false
+      }
+    },
+    {
+      "key": "hendrycks2021measuring",
+      "type": "misc",
+      "title": "Measuring Massive Multitask Language Understanding",
+      "fields": [
+        "title",
+        "author",
+        "year",
+        "eprint",
+        "archiveprefix",
+        "primaryclass"
+      ],
+      "identifiers": {
+        "arxiv": "2009.03300"
+      },
+      "id_kind": "arxiv",
+      "id": "2009.03300",
+      "result": {
+        "status": "verified",
+        "api_title": "Measuring Massive Multitask Language Understanding",
+        "similarity": 1.0,
+        "title_match": true
+      }
+    },
+    {
+      "key": "wang2024mmlu",
+      "type": "misc",
+      "title": "{MMLU}-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark",
+      "fields": [
+        "title",
+        "author",
+        "year",
+        "eprint",
+        "archiveprefix",
+        "primaryclass"
+      ],
+      "identifiers": {
+        "arxiv": "2406.01574"
+      },
+      "id_kind": "arxiv",
+      "id": "2406.01574",
+      "result": {
+        "status": "verified",
+        "api_title": "MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark",
+        "similarity": 1.0,
+        "title_match": true
+      }
+    },
+    {
+      "key": "sciagentgym2025",
+      "type": "misc",
+      "title": "{SciAgentGym}: Benchmarking Multi-Step Scientific Tool-use in {LLM} Agents",
+      "fields": [
+        "title",
+        "author",
+        "year",
+        "eprint",
+        "archiveprefix",
+        "primaryclass"
+      ],
+      "identifiers": {
+        "arxiv": "2602.12984"
+      },
+      "id_kind": "arxiv",
+      "id": "2602.12984",
+      "result": {
+        "status": "verified",
+        "api_title": "SciAgentGym: Benchmarking Multi-Step Scientific Tool-use in LLM Agents",
+        "similarity": 1.0,
+        "title_match": true
+      }
+    },
+    {
+      "key": "corebench2024",
+      "type": "misc",
+      "title": "{CORE}-Bench: Fostering the Credibility of Published Research Through a Computational Reproducibility Agent Benchmark",
+      "fields": [
+        "title",
+        "author",
+        "year",
+        "eprint",
+        "archiveprefix",
+        "primaryclass"
+      ],
+      "identifiers": {
+        "arxiv": "2409.11363"
+      },
+      "id_kind": "arxiv",
+      "id": "2409.11363",
+      "result": {
+        "status": "verified",
+        "api_title": "CORE-Bench: Fostering the Credibility of Published Research Through a Computational Reproducibility Agent Benchmark",
+        "similarity": 1.0,
+        "title_match": true
+      }
+    },
+    {
+      "key": "projecteval2025",
+      "type": "misc",
+      "title": "{ProjectEval}: A Benchmark for Programming Agents Automated Evaluation on Project-Level Code Generation",
+      "fields": [
+        "title",
+        "author",
+        "year",
+        "eprint",
+        "archiveprefix",
+        "primaryclass"
+      ],
+      "identifiers": {
+        "arxiv": "2503.07010"
+      },
+      "id_kind": "arxiv",
+      "id": "2503.07010",
+      "result": {
+        "status": "verified",
+        "api_title": "ProjectEval: A Benchmark for Programming Agents Automated Evaluation on Project-Level Code Generation",
+        "similarity": 1.0,
+        "title_match": true
+      }
+    },
+    {
+      "key": "paperarena2025",
+      "type": "misc",
+      "title": "{PaperArena}: An Evaluation Benchmark for Tool-Augmented Agentic Reasoning on Scientific Literature",
+      "fields": [
+        "title",
+        "author",
+        "year",
+        "eprint",
+        "archiveprefix",
+        "primaryclass"
+      ],
+      "identifiers": {
+        "arxiv": "2510.10909"
+      },
+      "id_kind": "arxiv",
+      "id": "2510.10909",
+      "result": {
+        "status": "verified",
+        "api_title": "PaperArena: An Evaluation Benchmark for Tool-Augmented Agentic Reasoning on Scientific Literature",
+        "similarity": 1.0,
+        "title_match": true
+      }
+    },
+    {
+      "key": "autorubric2026",
+      "type": "misc",
+      "title": "{Autorubric}: A Unifying Framework for Rubric-Based {LLM} Evaluation on Non-Verifiable Tasks",
+      "fields": [
+        "title",
+        "author",
+        "year",
+        "eprint",
+        "archiveprefix",
+        "primaryclass"
+      ],
+      "identifiers": {
+        "arxiv": "2603.00077"
+      },
+      "id_kind": "arxiv",
+      "id": "2603.00077",
+      "result": {
+        "status": "verified",
+        "api_title": "Autorubric: A Unifying Framework for Rubric-Based LLM Evaluation on Non-Verifiable Tasks",
+        "similarity": 1.0,
+        "title_match": true
+      }
+    },
+    {
+      "key": "researchenvbench2026",
+      "type": "misc",
+      "title": "{ResearchEnvBench}: Environment Synthesis for Reproducibility",
+      "fields": [
+        "title",
+        "author",
+        "year",
+        "howpublished",
+        "note"
+      ],
+      "identifiers": {
+        "arxiv": "2603.06739"
+      },
+      "id_kind": "arxiv",
+      "id": "2603.06739",
+      "result": {
+        "status": "verified",
+        "api_title": "ResearchEnvBench: Benchmarking Agents on Environment Synthesis for Research Code Execution",
+        "similarity": 0.4,
+        "title_match": false
+      }
+    }
+  ],
+  "summary": {
+    "entries": 12,
+    "ghost_citations": 0,
+    "structural_major": 0,
+    "not_found": 0,
+    "title_mismatch": 2,
+    "online_checked": 11,
+    "verdict": "MAJOR"
+  }
+}

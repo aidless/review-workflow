@@ -1,0 +1,460 @@
+{
+  "meta": {
+    "zip": "F:\\deepseek\\papers\\selfevolve-agent\\submission\\submission_selfevolve_agent.zip",
+    "tex": "F:\\deepseek\\papers\\selfevolve-agent\\paper\\main.tex",
+    "entries": 77,
+    "timestamp": "2026-08-26T04:39:42+00:00"
+  },
+  "referenced_paths": [
+    {
+      "raw": "deploy\\_full\\_probe.sh",
+      "path": "deploy_full_probe.sh",
+      "line": 566,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "evidence/decisions\\_R1-17.json",
+      "path": "evidence/decisions_R1-17.json",
+      "line": 622,
+      "status": "exact",
+      "matched": [
+        "evidence/decisions_R1-17.json"
+      ]
+    },
+    {
+      "raw": "evidence/raw\\_ledgers/state\\_round*/ledger.jsonl",
+      "path": "evidence/raw_ledgers/state_round*/ledger.jsonl",
+      "line": 623,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "evidence/harness/agent/",
+      "path": "evidence/harness/agent/",
+      "line": 625,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "evidence/raw\\_ledgers/state\\_round*/ledger.jsonl",
+      "path": "evidence/raw_ledgers/state_round*/ledger.jsonl",
+      "line": 733,
+      "status": "MISSING",
+      "matched": []
+    }
+  ],
+  "missing_refs": [
+    {
+      "raw": "deploy\\_full\\_probe.sh",
+      "path": "deploy_full_probe.sh",
+      "line": 566,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "evidence/raw\\_ledgers/state\\_round*/ledger.jsonl",
+      "path": "evidence/raw_ledgers/state_round*/ledger.jsonl",
+      "line": 623,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "evidence/harness/agent/",
+      "path": "evidence/harness/agent/",
+      "line": 625,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "evidence/raw\\_ledgers/state\\_round*/ledger.jsonl",
+      "path": "evidence/raw_ledgers/state_round*/ledger.jsonl",
+      "line": 733,
+      "status": "MISSING",
+      "matched": []
+    }
+  ],
+  "local_path_leaks": [
+    {
+      "file": "_r7_followup.py",
+      "line": 5,
+      "leak": "F:\\deepseek\\papers\\selfevolve-agent\\evidence",
+      "context": "BASE = r\"F:\\deepseek\\papers\\selfevolve-agent\\evidence\""
+    },
+    {
+      "file": "_r7_followup.py",
+      "line": 50,
+      "leak": "F:\\deepseek\\papers\\selfevolve-agent",
+      "context": "sys.path.insert(0, r\"F:\\deepseek\\papers\\selfevolve-agent\")"
+    },
+    {
+      "file": "_r7_recheck.py",
+      "line": 6,
+      "leak": "F:\\deepseek\\papers\\selfevolve-agent\\evidence",
+      "context": "BASE = r\"F:\\deepseek\\papers\\selfevolve-agent\\evidence\""
+    },
+    {
+      "file": "evidence/extprobe/extprobe_satisfiability_v2.json",
+      "line": null,
+      "leak": "F:\\Temp\\tmpx3l24qal\\check.py",
+      "context": "verify[38].hidden_err"
+    },
+    {
+      "file": "evidence/extprobe/extprobe_satisfiability_v2.json",
+      "line": null,
+      "leak": "F:\\Temp\\tmpxqlkf0am\\check.py",
+      "context": "verify[46].hidden_err"
+    },
+    {
+      "file": "evidence/extprobe/extprobe_satisfiability_v2.json",
+      "line": null,
+      "leak": "F:\\Temp\\tmpm6rvnmx2\\check.py",
+      "context": "verify[71].hidden_err"
+    },
+    {
+      "file": "evidence/extprobe/extprobe_satisfiability_v2.json",
+      "line": null,
+      "leak": "F:\\Temp\\tmpfx7qs4or\\check.py",
+      "context": "verify[280].hidden_err"
+    },
+    {
+      "file": "evidence/extprobe/extprobe_satisfiability_v2.json",
+      "line": null,
+      "leak": "F:\\Temp\\tmp4ihab9qt\\check.py",
+      "context": "verify[291].hidden_err"
+    },
+    {
+      "file": "evidence/extprobe/extprobe_satisfiability_v2.json",
+      "line": null,
+      "leak": "F:\\Temp\\tmp8d1r4t54",
+      "context": "verify[345].hidden_err"
+    },
+    {
+      "file": "evidence/extprobe/extprobe_satisfiability_v2.json",
+      "line": null,
+      "leak": "F:\\Temp\\tmpe__t1ccv",
+      "context": "verify[353].hidden_err"
+    },
+    {
+      "file": "evidence/extprobe/extprobe_satisfiability_v2.json",
+      "line": null,
+      "leak": "F:\\Temp\\tmpv5szhy9m\\check.py",
+      "context": "verify[378].hidden_err"
+    },
+    {
+      "file": "evidence/extprobe/extprobe_satisfiability_v2.json",
+      "line": null,
+      "leak": "F:\\Temp\\tmp_xwxghlr\\check.py",
+      "context": "verify[562].hidden_err"
+    },
+    {
+      "file": "evidence/extprobe/extprobe_satisfiability_v2.json",
+      "line": null,
+      "leak": "F:\\Temp\\tmpk44ps51k\\check.py",
+      "context": "verify[704].hidden_err"
+    },
+    {
+      "file": "evidence/REVIEW.md",
+      "line": 318,
+      "leak": "F:\\deepseek\\cloud_key.pem`（部署密钥，保留）；AK/SK",
+      "context": "- 本机密钥：`F:\\deepseek\\cloud_key.pem`（部署密钥，保留）；AK/SK 文件已删除。"
+    },
+    {
+      "file": "paper/fancyhdr.sty",
+      "line": 284,
+      "leak": "e:\\MessageBreak",
+      "context": "at least \\the\\ht0, for example:\\MessageBreak"
+    },
+    {
+      "file": "paper/fancyhdr.sty",
+      "line": 291,
+      "leak": "e:\\MessageBreak",
+      "context": "topmargin smaller to compensate:\\MessageBreak"
+    },
+    {
+      "file": "scripts/check_submission_package.py",
+      "line": 39,
+      "leak": "\\\\email\\s*\\{[^",
+      "context": "\"\\\\(?:author|and)\\s*\\{[^}]*\\}|\\\\email\\s*\\{[^}]*\\}|\\\\affiliation\\s*\\{[^}]*\\"
+    },
+    {
+      "file": "scripts/check_submission_package.py",
+      "line": 39,
+      "leak": "\\\\affiliation\\s*\\{[^",
+      "context": "\\{[^}]*\\}|\\\\email\\s*\\{[^}]*\\}|\\\\affiliation\\s*\\{[^}]*\\}\","
+    },
+    {
+      "file": "scripts/check_tmlr_compliance.py",
+      "line": 26,
+      "leak": "\\\\usepackage\\s*(?:\\[[^\\",
+      "context": "TMLR_PKG_RE = re.compile(r\"\\\\usepackage\\s*(?:\\[[^\\]]*\\])?\\s*\\{tmlr\\}\")"
+    },
+    {
+      "file": "scripts/check_tmlr_compliance.py",
+      "line": 27,
+      "leak": "\\\\documentclass\\s*(?:\\[[^\\",
+      "context": "JMLR_CLASS_RE = re.compile(r\"\\\\documentclass\\s*(?:\\[[^\\]]*\\])?\\s*\\{[^}]*jmlr[^}]*\\}\")"
+    },
+    {
+      "file": "scripts/check_tmlr_compliance.py",
+      "line": 34,
+      "leak": "\\\\bibliographystyle\\s*\\{[^",
+      "context": "BIBSTYLE_RE = re.compile(r\"\\\\bibliographystyle\\s*\\{[^}]*tmlr[^}]*\\}\")"
+    },
+    {
+      "file": "scripts/check_tmlr_compliance.py",
+      "line": 35,
+      "leak": "\\\\bibliography\\s*\\{",
+      "context": "BIB_RE = re.compile(r\"\\\\bibliography\\s*\\{\")"
+    },
+    {
+      "file": "scripts/compile_gate.py",
+      "line": 40,
+      "leak": "\\\\label\\{([^",
+      "context": "LABEL_CMD = re.compile(r\"\\\\label\\{([^}]*)\\}\")"
+    },
+    {
+      "file": "scripts/gate_citations.py",
+      "line": 58,
+      "leak": "F:\\deepseek\\research-kit\\citation-verifier\\verify_citations.py",
+      "context": "DEFAULT_VERIFIER = Path(r\"F:\\deepseek\\research-kit\\citation-verifier\\verify_citations.py\")"
+    },
+    {
+      "file": "scripts/make_camera_ready.py",
+      "line": 53,
+      "leak": "\\\\usepackage\\{tmlr\\",
+      "context": "new = re.sub(r\"\\\\usepackage\\{tmlr\\}\", r\"\\\\usepackage[accepted]{t"
+    },
+    {
+      "file": "scripts/make_camera_ready.py",
+      "line": 59,
+      "leak": "\\\\author\\s*\\{[^",
+      "context": "new = re.sub(r\"\\\\author\\s*\\{[^}]*\\}\", \"\", new, count=1, flag"
+    },
+    {
+      "file": "scripts/make_camera_ready.py",
+      "line": 75,
+      "leak": "\\\\begin\\{document\\",
+      "context": "new = re.sub(r\"(\\\\begin\\{document\\})\","
+    },
+    {
+      "file": "scripts/make_run_record.py",
+      "line": 55,
+      "leak": "F:\\deepseek\\.datasets\\cifar-10-batches-py",
+      "context": "data_dir = Path(r\"F:\\deepseek\\.datasets\\cifar-10-batches-py\")"
+    },
+    {
+      "file": "scripts/prepare_submission.py",
+      "line": 44,
+      "leak": "\\\\email\\s*\\{[^",
+      "context": "\"\\\\(?:author|and)\\s*\\{[^}]*\\}|\\\\email\\s*\\{[^}]*\\}|\\\\thanks\\s*\\{[^}]*\\}|\""
+    },
+    {
+      "file": "scripts/prepare_submission.py",
+      "line": 44,
+      "leak": "\\\\thanks\\s*\\{[^",
+      "context": "\\{[^}]*\\}|\\\\email\\s*\\{[^}]*\\}|\\\\thanks\\s*\\{[^}]*\\}|\""
+    },
+    {
+      "file": "scripts/prepare_submission.py",
+      "line": 45,
+      "leak": "\\\\affiliation\\s*\\{[^",
+      "context": "r\"\\\\affiliation\\s*\\{[^}]*\\}|Acknowledg(e)?ment\", re."
+    },
+    {
+      "file": "scripts/prepare_submission.py",
+      "line": 70,
+      "leak": "\\\\title\\s*\\{([^",
+      "context": "m = re.search(r\"\\\\title\\s*\\{([^}]+)\\}\", main_tex.read_text(en"
+    },
+    {
+      "file": "scripts/prepare_submission.py",
+      "line": 76,
+      "leak": "\\\\begin\\{abstract\\",
+      "context": "m = re.search(r\"\\\\begin\\{abstract\\}(.*?)\\\\end\\{abstract\\}\", text"
+    },
+    {
+      "file": "scripts/prepare_submission.py",
+      "line": 76,
+      "leak": "\\\\end\\{abstract\\",
+      "context": "rch(r\"\\\\begin\\{abstract\\}(.*?)\\\\end\\{abstract\\}\", text, re.DOTALL)"
+    },
+    {
+      "file": "scripts/prepare_submission.py",
+      "line": 86,
+      "leak": "\\\\keywords\\s*\\{([^",
+      "context": "m = re.search(r\"\\\\keywords\\s*\\{([^}]+)\\}\", text)"
+    },
+    {
+      "file": "scripts/scan_figure_claims.py",
+      "line": 64,
+      "leak": "\\\\label\\{(fig:[^",
+      "context": "LABEL_RE = re.compile(r\"\\\\label\\{(fig:[^}]*)\\}\")"
+    },
+    {
+      "file": "scripts/scan_number_consistency.py",
+      "line": 30,
+      "leak": "\\\\begin\\{(?:table|tabular|table\\*",
+      "context": "r\"\\\\begin\\{(?:table|tabular|table\\*)\\}.*?\\\\end\\{(?:table|tabular|"
+    },
+    {
+      "file": "scripts/scan_number_consistency.py",
+      "line": 30,
+      "leak": "\\\\end\\{(?:table|tabular|table\\*",
+      "context": "(?:table|tabular|table\\*)\\}.*?\\\\end\\{(?:table|tabular|table\\*)\\}|\""
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 55,
+      "leak": "s:\\s*(\\d+",
+      "context": "\"stale\": r\"## Stale markers:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 56,
+      "leak": "s:\\s*(\\d+",
+      "context": "# Inverted confidence intervals:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 57,
+      "leak": "t:\\s*(\\d+",
+      "context": "evidence JSON but never in text:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 58,
+      "leak": "s:\\s*(\\d+",
+      "context": "r\"## Table-vs-prose mismatches:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 101,
+      "leak": "s:\\s*(\\d+",
+      "context": "ssible or out-of-range p-values:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 102,
+      "leak": "s:\\s*(\\d+",
+      "context": "r\"## Out-of-range effect sizes:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 103,
+      "leak": "f:\\s*(\\d+",
+      "context": "Negative statistics or zero df:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 106,
+      "leak": "t:\\s*(\\d+",
+      "context": "t\": r\"## Same-line n/N conflict:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 109,
+      "leak": "k:\\s*(\\d+",
+      "context": ": r\"## Multiple-comparison risk:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 124,
+      "leak": "s:\\s*(\\d+",
+      "context": "refs\": r\"## Missing_figure_refs:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 125,
+      "leak": "s:\\s*(\\d+",
+      "context": "r\"## Undefined_includegraphics:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 126,
+      "leak": "d:\\s*(\\d+",
+      "context": "entioned\": r\"## Never_mentioned:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 149,
+      "leak": "s:\\s*(\\d+",
+      "context": "le_errors\": r\"## Compile errors:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 150,
+      "leak": "s:\\s*(\\d+",
+      "context": "efs\": r\"## Undefined references:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 151,
+      "leak": "s:\\s*(\\d+",
+      "context": "ions\": r\"## Undefined citations:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 152,
+      "leak": "s:\\s*(\\d+",
+      "context": "\": r\"## Multiply-defined labels:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 153,
+      "leak": "s:\\s*(\\d+",
+      "context": "overfull\": r\"## Overfull hboxes:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 154,
+      "leak": "s:\\s*(\\d+",
+      "context": "han_labels\": r\"## Orphan labels:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 155,
+      "leak": "s:\\s*(\\d+",
+      "context": "bibs\": r\"## Uncited bib entries:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 156,
+      "leak": "d:\\s*(\\d+",
+      "context": "_skipped\": r\"## Compile skipped:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/switch_project.py",
+      "line": 25,
+      "leak": "F:\\deepseek\\papers",
+      "context": "PROJECTS_ROOT = Path(r\"F:\\deepseek\\papers\") if Path(r\"F:\\deepseek\\paper"
+    },
+    {
+      "file": "scripts/switch_project.py",
+      "line": 25,
+      "leak": "F:\\deepseek\\papers",
+      "context": ":\\deepseek\\papers\") if Path(r\"F:\\deepseek\\papers\").exists() else Path(\"papers\""
+    },
+    {
+      "file": "scripts/test_pyramid.py",
+      "line": 78,
+      "leak": "F:\\deepseek\\.datasets",
+      "context": "d = tc.CifarData(Path(r\"F:\\deepseek\\.datasets\"), 1000, dev)"
+    }
+  ],
+  "count_claims": [],
+  "inpackage_tex": {
+    "entry": "paper/main.tex",
+    "desync_with_disk": true,
+    "count_claims": []
+  },
+  "summary": {
+    "refs_total": 5,
+    "refs_missing": 4,
+    "leaks": 61,
+    "count_claims": 0,
+    "count_claims_mismatched": 0,
+    "tex_desync": true,
+    "verdict": "CRITICAL"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "name": "selfevolve_agent",
+  "timestamp": "2026-08-26T04:39:45+00:00",
+  "overall": "FAIL",
+  "stages": {
+    "R0": {
+      "gate": "PASS",
+      "metric": "缺失输入 0，跨源风险目录 0"
+    },
+    "R1": {
+      "gate": "WARN",
+      "metric": "章节缺失 ['method', 'limitations']；摘要 364 词（>300）"
+    },
+    "R1b": {
+      "gate": "PASS",
+      "metric": "PASS：条目 17，幽灵引用 0，结构 Major 0（offline 结构检查）"
+    },
+    "R1c": {
+      "gate": "SKIP",
+      "metric": "未启用联网检索（config 设 novelty_online=true 开启 arXiv 先行工作对照）"
+    },
+    "R1d": {
+      "gate": "PASS",
+      "metric": "PASS：行内算术 0 处（不符 0，含括号百分数 0）；悬空公式引用 0；符号推导/量纲不在机械覆盖内"
+    },
+    "R2": {
+      "gate": "FAIL",
+      "metric": "CRITICAL：缺引用 4/5，路径泄漏 61，声明不符 0，tex desync True"
+    },
+    "R2b": {
+      "gate": "FAIL",
+      "metric": "CRITICAL：清单 81 条，OK 72，哈希不符 3，缺失 6"
+    },
+    "R2c": {
+      "gate": "PASS",
+      "metric": "PASS：图 3 幅（矢量文本 3，位图跳过 0，缺失 0）；图注小数 2 个，无支撑 0；figure_only 0"
+    },
+    "R2d": {
+      "gate": "PASS",
+      "metric": "PASS：表 5 个（numeric cell 1），无支撑 0，\\input 缺失 0，混精度列 0（INFO）"
+    },
+    "R3": {
+      "gate": "FAIL",
+      "metric": "CRITICAL：待复核 76，机械噪音 1，已裁决 0（critical 0）"
+    },
+    "R4": {
+      "gate": "PASS",
+      "metric": "PASS：统计记录 0 条（MATCH 0，MISMATCH 0，NOT_IN_PAPER 0）——McNemar/Friedman/Wilson 复算"
+    },
+    "R5": {
+      "gate": "WARN",
+      "metric": "MAJOR：hint 命中 27，可疑 0（一票否决），已披露 0"
+    },
+    "R6": {
+      "gate": "SKIP",
+      "metric": "LLM 审查未启用（--skip-llm 或 llm.enabled=false）"
+    },
+    "R6b": {
+      "gate": "SKIP",
+      "metric": "PRISM 未启用（--skip-llm 或 llm.enabled=false）"
+    },
+    "R6c": {
+      "gate": "SKIP",
+      "metric": "辩论未启用（--skip-llm 或 llm.enabled=false）"
+    }
+  },
+  "suggested_score": 4,
+  "score_dimensions": {
+    "structure": 6,
+    "evidence": 4,
+    "text": 6
+  },
+  "score_note": "structure 维度 WARN；evidence 维度 FAIL（R2, R2b, R3）→ cap 4；min 维度纪律（不平均）。人工阶段未完成（R3 裁决收敛 / R5 定性 / 终审）前为临时值"
+}

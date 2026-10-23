@@ -1,0 +1,102 @@
+# 对抗审查报告
+
+- 时间: 2026-08-28T04:22:22.840797+00:00
+- 源: F:\deepseek\papers\calibration-self-improvement\paper\main.tex
+- 角色: method, stat, experiment, novelty, repro, writing, ethics
+
+## 方法论（method）— ok
+### Critical（2）
+- - Critical: 将同一批样本逐行 adjudication 后把 matcher 扩到 100% 再计算 accuracy/ECE，等于用被评估样本本身构造标签，100% 与 ECE=0.0037 是 in-sample 过拟合产物，不能作为“matcher 决定测量校准”的核心证据。
+- - Critical: 1159/4999 pairs 中同一 item、同一 model 的重复观测被当作独立样本做 95% CI 和 Holm 校正，忽略 item/model 聚类相关性，显著性检验与不确定度估计在统计上不可信。
+### Major（6）
+- - Major: 从“仅极端 Holm-corrected pairs significant”推出“calibration is domain-specific”结论过强；多数两两比较不显著，4×/0.45 的差异可能来自抽样噪声或 matcher 在不同 domain 的测量偏差。
+- - Major: OOD-gating 分析 N=30 且为探索性相关，却使用“confidence harmful”“self-consistency removes overconfident OOD answers”等因果/干预语言；没有随机分配、替代 gating 基线、覆盖率控制或置信区间。
+- - Major: 跨 domain 与跨 protocol 的 ECE/MSI 比较存在混淆变量：题目难度、语义歧义、领域标签噪声、自由回答 vs MMLU 格式差异均未控制，不能把差异归因于模型校准或协议本身。
+- - Major: 在 27/30 个置信度为 1.0 的退化分布下，headline 仍用 binning-based ECE 和 mean confidence vs accuracy 作证据；这些指标对 bin 选择和退化分布高度敏感，与论文自己提出的 caution 相矛盾。
+- - Major: Proposition 1–3 的界隐含假设 matcher 的 FNR/FPR 相对 ground truth 稳定且误差独立于 confidence，但文中未证明这些假设成立；若 matcher 误差与 confidence 相关，界可能被严重低估。
+- - Major: OOD 的定义与采样过程不透明，40–50% 高置信度 OOD 错误可能是因为 OOD 样本被刻意选难或存在极端 shift，而不是 confidence 本身有害。
+### Minor（3）
+- - Minor: “退化分布下 confidence-threshold gate 无信息”基本是常数分布的必然结论，作为 Proposition 8′ 的一般性 gating 主张需要明确适用条件，否则有同义反复风险。
+- - Minor: 300/600 items 划分到 4–9 个模型和 6 个 domain 后每个子集很小，domain-level ECE 的估计不确定度除“仅极端显著”外未充分报告。
+- - Minor: 温度 scaling 的拟合/验证方式未说明，在退化分布下“不鲁棒”的结论可能只是 bin 选择或拟合噪声的产物。
+
+## 统计（stat）— ok
+### Critical（2）
+- - Critical: 核心 pilot 只有 N=30 且 27/30 的置信度恰为 1.0，实际提供信息的样本约 3 个，却给出 ECE 0.363/0.1297/0.0037 和 40–50% OOD 错误率等数字，样本量与有效变异严重不足，无法支持任何稳定结论。
+- - Critical: 用同一批 30 条样本逐行 adjudication 构造 matcher 后又用同一批数据计算 100% 准确率和 ECE 0.0037，属于标签/测量程序在评价集上过拟合；即使声明“in-sample, illustrative only”，也不能作为校准性证据，必须用留出数据或独立标注集验证。
+### Major（4）
+- - Major: 4999 pairs 来自 600 items × 9 models，并非独立样本；未说明是否按 item/model/domain 聚类，直接按 pair 计算 ECE、95% CI 和检验会严重高估有效样本量、低估不确定性。
+- - Major: “95% CIs; only extreme Holm-corrected pairs significant”缺少检验细节：比较了多少对、用什么统计量、CI 是 bootstrap 还是正态近似、CI 是否做了多重比较校正；p 值显著与否不能替代差异效应量及调整后 CI。
+- - Major: “ECE varies up to 4×”用比值作为效应量在基线 ECE 接近 0 或置信度退化时极不稳定，微小绝对差会被放大成 4 倍；应报告绝对差、标准误和 CI，并说明分母远离 0。
+- - Major: OOD gating 分析为 exploratory N=30，且 40–50% 很可能只基于“高置信 OOD 子集”的极少数样本；没有给出分子/分母、Clopper-Pearson 或 bootstrap CI，也没有检验 confidence 与 consistency 负相关的显著性，不能宣称 consistency “removes” 过置信错误。
+### Minor（2）
+- - Minor: 全文提到 95% CIs 但未报告任何 ECE/MSI 的方差、标准误或重复抽样方法；在退化分布下 binning ECE 的方差估计尤其不可靠，需报告 binning-free 指标的 bootstrap 分布。
+- - Minor: 置信度退化使基于 bin 计数的卡方类校准检验或 bin 内均值比较失效；任何基于 bin 的 p 值都应避免，改用连续/无 bin 指标并给出不确定性。
+
+## 实验（experiment）— ok
+### Critical（2）
+- - Critical: 缺少对照/验证组：没有用合成数据或已知真实校准/过度自信的生成器验证 smECE、MSI 与 binning-free 指标本身能否恢复真实校准，无法区分“测量工具偏差”和“模型真实校准差异”。
+- - Critical: 标签匹配器在逐行 adjudication 后得到 100% 准确率和 ECE=0.0037，本质是 in-sample 构造的标签，未做留出/交叉验证的语义标注，存在标签泄漏；“校准问题消失”的结论不能由该流程支持。
+### Major（5）
+- - Major: 消融不完整：OOD gating 仅对比 confidence 与 agreement=3 的 self-consistency，没有消融 resample 次数、温度、阈值、confidence+consistency 组合，也没有对 MSI 做协议内敏感性分析。
+- - Major: 基准不公平：MMLU 从 300/4/1159 扩展到 600/6/9/4999 未说明每模型每域样本量、模型版本、API/推理配置是否可比；free-form 与 MMLU 的 MSI 差异混杂了任务格式、prompt 和答案分布。
+- - Major: “校准是 domain-specific”的核心主张只靠少数 Holm 校正后显著的极端配对，多数比较不显著，却未给出预设检验、效应量和充分校正后的统计支持，属于过度概括。
+- - Major: 超参数缺失：未报告解码 temperature/top-p、max tokens、ECE bin 数与宽度、tolerant matcher 的容错规则、adjudication 标准、consistency 采样参数、MSI 阈值等，使结果不可复现。
+- - Major: seed 管理缺失：未见随机种子、模型采样 seed、item 子采样 seed、bootstrap/重采样 seed，也未对 API 非确定性做多次重复运行和方差报告。
+### Minor（2）
+- - Minor: 泛化证据薄弱：仅覆盖 MMLU 六域、单轮 verbalized confidence，OOD 分析 N=30 且为 exploratory，未在独立基准、新模型或外部标注集上验证。
+- - Minor: 缺少有效对照基线：没有与随机/均匀 confidence、原模型 raw confidence、recalibrated/temperature-scaled baseline 或固定阈值策略比较，无法说明所提 gating rule 的增量价值。
+
+## 新颖性（novelty）— ok
+### Critical（1）
+- - Critical: 核心贡献“matcher 决定校准测量”并非新发现；NLG 评估中 exact match、LLM-as-judge、semantic equivalence 以及 label noise 对精度/校准估计的影响都是已有常识，论文没有与这些基线方法对比或证明新理论增量，却将其作为 central finding，存在夸大。
+### Major（5）
+- - Major: “binning-based ECE 不可靠”是成熟结论（Guo et al., 2017; Nixon et al., 2019; Kumar et al., 2019; Blasiok et al., 2023 的 SmoothECE / adaptive binning 等），把一句 caution 作为贡献明显低估了现有文献。
+- - Major: 抽象的“正式刻画 matcher 依赖”（Propositions 1–3）本质上是分类错误率/翻转率的简单代数分解，未见与 label-noise 校准理论、noisy-label ECE 界等已有工作的差异；这种 bound 对实践的增量有限。
+- - Major: “semantic soft-label estimator + MSI”只是把多标注者 soft label、语义等价匹配、judge-based evaluation 等已有工具做了重新包装，缺少与 Brier score、soft-label ECE、LLM-as-judge、human adjudication 等简单基线的对比，无法证明其必要性和优势。
+- - Major: “confidence threshold gate 无信息、self-consistency 有判别力”在 27/30 confidence = 1.0 的分布下几乎是平凡结论；self-consistency 作为不确定性/校准信号已被广泛研究（Wang et al., 2022; Kadavath et al., 2022），Proposition 8′ 更像定义性推论而非新 gating 贡献。
+- - Major: 声称的“GAP：在 agent 自身任务分布上验证置信度校准”虽真实，但已有大量任务级 calibration 研究（MMLU、TruthfulQA 等）；本文主要是描述性测量，且 600/4999 pairs 中绝大多数跨域差异 Holm 校正后不显著，支撑不起“domain-specific calibration”作为新结论。
+### Minor（1）
+- - Minor: 关键证据规模有限（N=30、27 个样本集中在 1.0、in-sample illustrative only），使“overconfidence 信号消失”和 OOD gating 的探索性结论更接近 anecdotes，不宜作为主要贡献呈现。
+
+## 可复现（repro）— ok
+### Critical（2）
+- - Critical: 核心数字“per-row adjudication 后 100% / ECE=0.0037”存在标签循环风险：未提供原始标签、被修改行、逐行裁决规则、裁决者间一致性或裁决前后双版本数据，证据链断裂，且任何基于模型输出再改标签的流程都无法独立复现。
+- - Critical: 未提供数据集/输出的哈希对账：MMLU 300→600 条目、1159→4999 对、9 个模型等关键数字没有对应版本号、条目 ID、文件 SHA-256 或输出日志，无法核对数据来源与扩展过程。
+### Major（4）
+- - Major: 未见任何随机种子：bootstrap 95% CI、三样本 self-consistency 重采样、OOD N=30 的选择与抽样均未报告 seed；结合退化置信分布（27/30=1.0），数值极易不可复现。
+- - Major: 配置快照缺失：未列出确切模型 checkpoint/API 版本、temperature、top_p、max_tokens、system prompt/模板、matcher 代码版本与依赖环境，MSI 1.000/0.334 等协议相关结果无法重跑。
+- - Major: 数据许可与模型条款只在附录“声明”而无实物证据：未提供 MMLU 许可证文本、模型输出再分发条款、合规检查清单或可访问的附录/工件链接，无法核验是否允许公开复现材料。
+- - Major: 无一键复现工件：没有匿名仓库/DOI、Docker/conda 环境、Makefile/run 脚本、API key 配置说明与运行成本估算，“expanded to 600 items”声明不可端到端复现。
+### Minor（1）
+- - Minor: OOD-gating 的 N=30 探索性分析没有预注册、选择标准或 ground-truth 来源说明，结果仅以“suggests”呈现，证据链不足以支撑结论强度。
+
+## 写作（writing）— ok
+### Critical（1）
+- - Critical: 摘要先说“27 of 30 values exactly 1.0”又断言置信门控“carries no information”；非全退化的 3 个非 1 值本身就可能携带正确性信息，除非命题显式限定为“所有置信度完全相同”，否则摘要内部数字与结论矛盾。
+### Major（5）
+- - Major: 数字格式混用：`0.9963 vs. 86.7%` 把比例直接与百分数比较，应统一为 `0.9963 vs. 0.867` 或 `99.63% vs. 86.7%`。
+- - Major: “varies up to 4× across subjects and up to 0.45 absolute across six domains”表述不平行且“0.45 absolute”不规范，应改为“absolute ECE difference of up to 0.45”，并说明 4× 是否也是校正后仍显著的比较。
+- - Major: “MSI is protocol-dependent (1.000 free-form vs. 0.334 MMLU)”比较项不对等：free-form 是作答协议，MMLU 是基准，应写“MSI = 1.000 under free-form protocol vs. 0.334 under MMLU protocol”。
+- - Major: 摘要从 Propositions 1–3 直接跳到 Proposition 8′，未交代 4–7；若正文确有这些命题，摘要也应避免让编号显得断裂。
+- - Major: 摘要先说置信门控“no information”，又说 OOD 高置信答案 40–50% 错误，两个论断未说明 ID/OOD 与“反相关”的适用范围，读起来互相矛盾。
+### Minor（4）
+- - Minor: “Our central finding is…”作为孤立段落夹在关键词和 Introduction 之间，结构不当，应并入摘要/引言或做成明确的高亮框。
+- - Minor: 摘要使用 OOD、MMLU、FNR/FPR 等缩写却未展开，正文才出现“out-of-distribution”且未回指缩写，首次使用不一致。
+- - Minor: “We use single-turn verbalized confidence as probe, agentic multi-step left to §6 Discussion”语法残缺，应改为“as a probe; agentic multi-step is left to §6 Discussion”。
+- - Minor: 可见片段没有任何图表引用，但摘要密集报告 300/600 项、4999 pairs、ECE、MSI 等数字；若正文没有对应汇总表，可读性会明显受损。
+
+## 伦理（ethics）— ok
+### Critical（1）
+- - Critical: 数据与模型许可合规不足：论文基于 MMLU 子集、6 领域 9 个模型的 4999 对输出，但正文仅说“附录已声明”，未在可见内容中列出各 MMLU 变体许可证、模型服务条款及“是否允许再分发模型输出”；若作者发布这些 pairs/数据集，可能违反 OpenAI/Anthropic 或 MMLU 衍生数据许可。
+### Major（3）
+- - Major: 人工逐行仲裁（per-row adjudication）缺少合规说明：未交代标注者身份、知情同意、数据保护、报酬/劳动伦理，也未说明仲裁过程是否接触隐私或非公开数据；若仅用公开 MMLU 则隐私风险低，但需明确声明。
+- - Major: 利益冲突未披露：未列出与模型厂商、算力/API 资助、数据集作者或评估工具的财务/隶属关系，而校准结果高度依赖模型与 matcher 选择，读者无法判断是否存在选择性报告动机。
+- - Major: 误用风险警示不足：文中“宽容 matcher 使准确率从 63.3% 升至 100%、ECE 降至 0.0037”极易被实践者误读为“挑选宽松匹配即可宣称校准良好”，需要显式反“指标博弈”声明和评估协议锁定要求。
+### Minor（1）
+- - Minor: 双盲合规尚需自查：正文虽隐藏作者，但未展示对 PDF 元数据、代码仓库、数据链接、致谢、预印本指纹等匿名化检查；TMLR 双盲要求这些外部痕迹同样不能泄露身份。
+
+## 汇总
+
+- **Critical: 11 | Major: 32 | Minor: 14**
+- ⚠ 有 Critical：产出需修复后重审（收敛门：一轮无新 Critical/Major）

@@ -1,0 +1,188 @@
+[
+ {
+  "paper": "3i2ZRk8GDN",
+  "title": "Benchmarking Transfer Learning: From Simple Baselines to Combined Scorers for Transferability Estimation",
+  "pdf": "/pdf/aed035e391ee29c8b3fa01d55c9d273cda2c2527.pdf",
+  "decision": "Accept as is",
+  "yes_rate": 1.0,
+  "n_reviews": 3,
+  "human": 8,
+  "suggested": 6,
+  "gate": "WARN",
+  "prism_min": 6,
+  "source": "tmlr",
+  "date": "2026-08-26",
+  "notes": "OpenReview forum=3i2ZRk8GDN；3 位评审 claims 投票 Yes 率 1.0；工作流 suggested=6 (WARN)，PRISM min=6",
+  "score_dimensions": {
+   "structure": 6,
+   "evidence": 6,
+   "text": 6
+  },
+  "prism_dims": {
+   "P": 8,
+   "R": 6,
+   "I": 7,
+   "S": 7
+  },
+  "prism_mean": 7.0,
+  "stable_C": 14,
+  "stable_M": 21,
+  "sust_C": 14,
+  "sust_M": 6
+ },
+ {
+  "paper": "e0pSqIqwXO",
+  "title": "Auditing Closed-Loop Learning in Recurrent Neural Networks: Reproduction, Robustness, and Generalization",
+  "pdf": "/pdf/4459c40792f2013582875dba117ea5510526920e.pdf",
+  "decision": "Accept as is",
+  "yes_rate": 1.0,
+  "n_reviews": 3,
+  "human": 8,
+  "suggested": 6,
+  "gate": "WARN",
+  "prism_min": 6,
+  "source": "tmlr",
+  "date": "2026-08-26",
+  "notes": "OpenReview forum=e0pSqIqwXO；3 位评审 claims 投票 Yes 率 1.0；工作流 suggested=6 (WARN)，PRISM min=6",
+  "score_dimensions": {
+   "structure": 6,
+   "evidence": 6,
+   "text": 6
+  },
+  "prism_dims": {
+   "P": 8,
+   "R": 7,
+   "I": 6,
+   "S": 8
+  },
+  "prism_mean": 7.25,
+  "stable_C": 14,
+  "stable_M": 34,
+  "sust_C": 12,
+  "sust_M": 5
+ },
+ {
+  "paper": "cjU3YbcRr8",
+  "title": "Dynamic Agent Skills: A Lifecycle Survey and Taxonomy of Evolving Skill Libraries",
+  "pdf": "/pdf/d8acf52b447d3907e2bffc9d6a1edddfdb39554b.pdf",
+  "decision": "Accept with minor revision",
+  "yes_rate": 0.75,
+  "n_reviews": 4,
+  "human": 7,
+  "suggested": 6,
+  "gate": "WARN",
+  "prism_min": 6,
+  "source": "tmlr",
+  "date": "2026-08-26",
+  "notes": "OpenReview forum=cjU3YbcRr8；4 位评审 claims 投票 Yes 率 0.75；工作流 suggested=6 (WARN)，PRISM min=6",
+  "score_dimensions": {
+   "structure": 6,
+   "evidence": 6,
+   "text": 6
+  },
+  "prism_dims": {
+   "P": 8,
+   "R": 6,
+   "I": 6,
+   "S": 7
+  },
+  "prism_mean": 6.75,
+  "stable_C": 9,
+  "stable_M": 24,
+  "sust_C": 7,
+  "sust_M": 10
+ },
+ {
+  "paper": "Nm7dTogzfa",
+  "title": "Anderson Accelerated Asynchronous Method for Distributed Optimization",
+  "pdf": "/pdf/89385b7ba467c56e3386d4362cd97afdaece8597.pdf",
+  "decision": "Accept as is",
+  "yes_rate": 0.667,
+  "n_reviews": 3,
+  "human": 8,
+  "suggested": 6,
+  "gate": "WARN",
+  "prism_min": 6,
+  "source": "tmlr",
+  "date": "2026-08-26",
+  "notes": "OpenReview forum=Nm7dTogzfa；3 位评审 claims 投票 Yes 率 0.667；工作流 suggested=6 (WARN)，PRISM min=6",
+  "score_dimensions": {
+   "structure": 6,
+   "evidence": 6,
+   "text": 6
+  },
+  "prism_dims": {
+   "P": 7,
+   "R": 6,
+   "I": 7,
+   "S": 7
+  },
+  "prism_mean": 6.75,
+  "stable_C": 10,
+  "stable_M": 20,
+  "sust_C": 10,
+  "sust_M": 10
+ },
+ {
+  "paper": "TupiNRpgHw",
+  "title": "Cross-Domain Offline Policy Adaptation via Selective Transition Correction",
+  "pdf": "/pdf/229ab06254989396d3d424bd6d4f4a73b6851514.pdf",
+  "decision": "Accept as is",
+  "yes_rate": 0.333,
+  "n_reviews": 3,
+  "human": 8,
+  "suggested": 6,
+  "gate": "WARN",
+  "prism_min": 5,
+  "source": "tmlr",
+  "date": "2026-08-26",
+  "notes": "OpenReview forum=TupiNRpgHw；3 位评审 claims 投票 Yes 率 0.333；工作流 suggested=6 (WARN)，PRISM min=5",
+  "score_dimensions": {
+   "structure": 6,
+   "evidence": 6,
+   "text": 6
+  },
+  "prism_dims": {
+   "P": 8,
+   "R": 5,
+   "I": 6,
+   "S": 7
+  },
+  "prism_mean": 6.5,
+  "stable_C": 12,
+  "stable_M": 24,
+  "sust_C": 11,
+  "sust_M": 8
+ },
+ {
+  "paper": "JQA0EfQIfj",
+  "title": "KOALA: Koopman Operator Learning for WiFi-Based Anticipatory Human Motion Prediction",
+  "pdf": "/pdf/1abeca38bde26df9aad39efe8800db384cc80a8e.pdf",
+  "decision": "Accept with minor revision",
+  "yes_rate": 0.333,
+  "n_reviews": 3,
+  "human": 7,
+  "suggested": 6,
+  "gate": "WARN",
+  "prism_min": 5,
+  "source": "tmlr",
+  "date": "2026-08-26",
+  "notes": "OpenReview forum=JQA0EfQIfj；3 位评审 claims 投票 Yes 率 0.333；工作流 suggested=6 (WARN)，PRISM min=5",
+  "score_dimensions": {
+   "structure": 6,
+   "evidence": 6,
+   "text": 6
+  },
+  "prism_dims": {
+   "P": 9,
+   "R": 5,
+   "I": 7,
+   "S": 6
+  },
+  "prism_mean": 6.75,
+  "stable_C": 16,
+  "stable_M": 24,
+  "sust_C": 16,
+  "sust_M": 4
+ }
+]

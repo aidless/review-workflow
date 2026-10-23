@@ -1,0 +1,21 @@
+{
+ "adjudications": "papers/10paradigm-os/reviews/pipeline_S5/adjudications.json",
+ "evidence_dirs": [
+  "papers/10paradigm-os/results",
+  "papers/10paradigm-os/evidence"
+ ],
+ "llm": {
+  "enabled": true,
+  "rpc": "http://127.0.0.1:3081",
+  "roles": "method,stat,experiment,novelty,repro,devil",
+  "script": "research-kit/adversarial_review.py"
+ },
+ "manifest": null,
+ "name": "10paradigm-os",
+ "out": "papers/10paradigm-os/reviews/pipeline_S5",
+ "tex": "papers/10paradigm-os/paper/main.tex",
+ "zip": "papers/10paradigm-os/submission/submission_s5_20260906.zip",
+ "citation_online": true,
+ "novelty_online": true,
+ "converge": 3
+}

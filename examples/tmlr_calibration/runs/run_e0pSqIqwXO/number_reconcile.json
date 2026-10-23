@@ -1,0 +1,1362 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_e0pSqIqwXO\\extracted_text.txt",
+    "evidence_dirs": [],
+    "timestamp": "2026-08-26T07:20:29+00:00"
+  },
+  "direction_A_evidence_to_paper": {
+    "checked": 0,
+    "found_in_paper": 0,
+    "hit_rate": null,
+    "key_matches": []
+  },
+  "direction_B_paper_to_evidence": {
+    "paper_decimals": 147,
+    "supported": 0,
+    "unsupported": 147,
+    "support_rate": 0.0,
+    "noise_filtered": [
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 104,
+        "context": "4.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.2",
+        "value": 4.2,
+        "line": 116,
+        "context": "4.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.3",
+        "value": 4.3,
+        "line": 122,
+        "context": "4.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.4",
+        "value": 4.4,
+        "line": 129,
+        "context": "4.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.5",
+        "value": 4.5,
+        "line": 134,
+        "context": "4.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.6",
+        "value": 4.6,
+        "line": 142,
+        "context": "4.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.3",
+        "value": 4.3,
+        "line": 235,
+        "context": "The spectral detector reproduces C2 in all 50 core seeds, following the sequence defined in Section ",
+        "noise_kind": "section-ref"
+      },
+      {
+        "token": "8.2",
+        "value": 8.2,
+        "line": 264,
+        "context": "uses its own coupled matrix and supports C3 in 3/10 runs, while Section 8.2 gives the GRU and ring r",
+        "noise_kind": "section-ref"
+      },
+      {
+        "token": "8.1",
+        "value": 8.1,
+        "line": 266,
+        "context": "8.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "8.2",
+        "value": 8.2,
+        "line": 280,
+        "context": "8.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "8.3",
+        "value": 8.3,
+        "line": 292,
+        "context": "8.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "105.5",
+        "value": 105.5,
+        "line": 375,
+        "context": "105.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.3",
+        "value": 4.3,
+        "line": 623,
+        "context": "The spectral detector follows the stage sequence defined in Section 4.3. A negative effective positi",
+        "noise_kind": "section-ref"
+      },
+      {
+        "token": "0.005",
+        "value": 0.005,
+        "line": 837,
+        "context": "0.005",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "0.0025",
+        "value": 0.0025,
+        "line": 927,
+        "context": "0.0025",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "0.005",
+        "value": 0.005,
+        "line": 928,
+        "context": "0.005",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "0.01",
+        "value": 0.01,
+        "line": 929,
+        "context": "0.01",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "0.02",
+        "value": 0.02,
+        "line": 930,
+        "context": "0.02",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "192.5",
+        "value": 192.5,
+        "line": 963,
+        "context": "192.5",
+        "noise_kind": "section-heading"
+      }
+    ],
+    "adjudicated": [],
+    "manual_review_list": [
+      {
+        "token": "19.1",
+        "value": 19.1,
+        "line": 16,
+        "context": "ployed loss, with the mean peak reaching 19.1 times the initial loss. By the final epoch,"
+      },
+      {
+        "token": "0.022",
+        "value": 0.022,
+        "line": 86,
+        "context": "roughly 0.022 on the original-setting closed-loop scale; smaller gaps remain in the continuous resul"
+      },
+      {
+        "token": "249.1",
+        "value": 249.1,
+        "line": 174,
+        "context": "shown in Figure 1. The peak occurs at a mean epoch of 249.1 (bootstrap 95 percent CI [247.5, 250.5])"
+      },
+      {
+        "token": "247.5",
+        "value": 247.5,
+        "line": 174,
+        "context": "shown in Figure 1. The peak occurs at a mean epoch of 249.1 (bootstrap 95 percent CI [247.5, 250.5])"
+      },
+      {
+        "token": "250.5",
+        "value": 250.5,
+        "line": 174,
+        "context": "shown in Figure 1. The peak occurs at a mean epoch of 249.1 (bootstrap 95 percent CI [247.5, 250.5])"
+      },
+      {
+        "token": "249.5",
+        "value": 249.5,
+        "line": 175,
+        "context": "to the median of 249.5. On average, peak loss is 19.1 times the initial loss (CI [17.1, 21.4]) and 4"
+      },
+      {
+        "token": "19.1",
+        "value": 19.1,
+        "line": 175,
+        "context": "to the median of 249.5. On average, peak loss is 19.1 times the initial loss (CI [17.1, 21.4]) and 4"
+      },
+      {
+        "token": "17.1",
+        "value": 17.1,
+        "line": 175,
+        "context": "to the median of 249.5. On average, peak loss is 19.1 times the initial loss (CI [17.1, 21.4]) and 4"
+      },
+      {
+        "token": "21.4",
+        "value": 21.4,
+        "line": 175,
+        "context": "to the median of 249.5. On average, peak loss is 19.1 times the initial loss (CI [17.1, 21.4]) and 4"
+      },
+      {
+        "token": "4.88",
+        "value": 4.88,
+        "line": 175,
+        "context": "to the median of 249.5. On average, peak loss is 19.1 times the initial loss (CI [17.1, 21.4]) and 4"
+      },
+      {
+        "token": "0.4370",
+        "value": 0.437,
+        "line": 179,
+        "context": "finishes at 0.4370 (bootstrap 95 percent CI [0.4367, 0.4373]), while the open-loop learner finishes "
+      },
+      {
+        "token": "0.4367",
+        "value": 0.4367,
+        "line": 179,
+        "context": "finishes at 0.4370 (bootstrap 95 percent CI [0.4367, 0.4373]), while the open-loop learner finishes "
+      },
+      {
+        "token": "0.4373",
+        "value": 0.4373,
+        "line": 179,
+        "context": "finishes at 0.4370 (bootstrap 95 percent CI [0.4367, 0.4373]), while the open-loop learner finishes "
+      },
+      {
+        "token": "0.4387",
+        "value": 0.4387,
+        "line": 179,
+        "context": "finishes at 0.4370 (bootstrap 95 percent CI [0.4367, 0.4373]), while the open-loop learner finishes "
+      },
+      {
+        "token": "0.4383",
+        "value": 0.4383,
+        "line": 180,
+        "context": "(CI [0.4383, 0.4390])."
+      },
+      {
+        "token": "0.4390",
+        "value": 0.439,
+        "line": 180,
+        "context": "(CI [0.4383, 0.4390])."
+      },
+      {
+        "token": "0.00109",
+        "value": 0.00109,
+        "line": 181,
+        "context": "Seed-to-seed variation is small: the respective SDs are 0.00109 and 0.00126, with"
+      },
+      {
+        "token": "0.00126",
+        "value": 0.00126,
+        "line": 181,
+        "context": "Seed-to-seed variation is small: the respective SDs are 0.00109 and 0.00126, with"
+      },
+      {
+        "token": "0.4361",
+        "value": 0.4361,
+        "line": 182,
+        "context": "IQRs [0.4361, 0.4378] and [0.4379, 0.4393]."
+      },
+      {
+        "token": "0.4378",
+        "value": 0.4378,
+        "line": 182,
+        "context": "IQRs [0.4361, 0.4378] and [0.4379, 0.4393]."
+      },
+      {
+        "token": "0.4379",
+        "value": 0.4379,
+        "line": 182,
+        "context": "IQRs [0.4361, 0.4378] and [0.4379, 0.4393]."
+      },
+      {
+        "token": "0.4393",
+        "value": 0.4393,
+        "line": 182,
+        "context": "IQRs [0.4361, 0.4378] and [0.4379, 0.4393]."
+      },
+      {
+        "token": "0.00168",
+        "value": 0.00168,
+        "line": 183,
+        "context": "The paired final gap is positive but small, at 0.00168 (CI"
+      },
+      {
+        "token": "0.00147",
+        "value": 0.00147,
+        "line": 184,
+        "context": "[0.00147, 0.00190]), and none of the 50 runs reaches the prespecified 5 percent threshold."
+      },
+      {
+        "token": "0.00190",
+        "value": 0.0019,
+        "line": 184,
+        "context": "[0.00147, 0.00190]), and none of the 50 runs reaches the prespecified 5 percent threshold."
+      },
+      {
+        "token": "105.5",
+        "value": 105.5,
+        "line": 189,
+        "context": "a median epoch of 7, and Stage 2 ends with the stability crossing at a median epoch of 105.5. The fi"
+      },
+      {
+        "token": "0.6253",
+        "value": 0.6253,
+        "line": 190,
+        "context": "coupled spectral radius is 0.6253 (CI [0.6243, 0.6264])."
+      },
+      {
+        "token": "0.6243",
+        "value": 0.6243,
+        "line": 190,
+        "context": "coupled spectral radius is 0.6253 (CI [0.6243, 0.6264])."
+      },
+      {
+        "token": "0.6264",
+        "value": 0.6264,
+        "line": 190,
+        "context": "coupled spectral radius is 0.6253 (CI [0.6243, 0.6264])."
+      },
+      {
+        "token": "0.003",
+        "value": 0.003,
+        "line": 209,
+        "context": "rate to 0.003 rescues none (Appendix F)."
+      },
+      {
+        "token": "47.24",
+        "value": 47.24,
+        "line": 216,
+        "context": "across runs a mean 47.24 percent of intervals with short-horizon improvement also show a radius incr"
+      },
+      {
+        "token": "0.001",
+        "value": 0.001,
+        "line": 229,
+        "context": "radius criterion but not the loss-worsening criterion are 5, 5, and 6 at β = 0, 0.001, and 0.005; th"
+      },
+      {
+        "token": "0.005",
+        "value": 0.005,
+        "line": 229,
+        "context": "radius criterion but not the loss-worsening criterion are 5, 5, and 6 at β = 0, 0.001, and 0.005; th"
+      },
+      {
+        "token": "0.02",
+        "value": 0.02,
+        "line": 230,
+        "context": "13, 13, and 16 at β = 0.02, 0.05, and 0.1. Yet the median final coupled radii are nearly identical i"
+      },
+      {
+        "token": "0.05",
+        "value": 0.05,
+        "line": 230,
+        "context": "13, 13, and 16 at β = 0.02, 0.05, and 0.1. Yet the median final coupled radii are nearly identical i"
+      },
+      {
+        "token": "0.1",
+        "value": 0.1,
+        "line": 230,
+        "context": "13, 13, and 16 at β = 0.02, 0.05, and 0.1. Yet the median final coupled radii are nearly identical i"
+      },
+      {
+        "token": "0.0117",
+        "value": 0.0117,
+        "line": 237,
+        "context": "and 193, with segment slopes −0.0117, −0.0432, and −0.00065. Because none of the detector variants y"
+      },
+      {
+        "token": "0.0432",
+        "value": 0.0432,
+        "line": 237,
+        "context": "and 193, with segment slopes −0.0117, −0.0432, and −0.00065. Because none of the detector variants y"
+      },
+      {
+        "token": "0.00065",
+        "value": 0.00065,
+        "line": 237,
+        "context": "and 193, with segment slopes −0.0117, −0.0432, and −0.00065. Because none of the detector variants y"
+      },
+      {
+        "token": "105.5",
+        "value": 105.5,
+        "line": 241,
+        "context": "radius is finite and below one, and the median crossing occurs at epoch 105.5. A derivative-style pl"
+      },
+      {
+        "token": "105.5",
+        "value": 105.5,
+        "line": 260,
+        "context": "the unrounded median used in the text is 105.5. (b) Distribution of stability-crossing epochs: the c"
+      },
+      {
+        "token": "3.6",
+        "value": 3.6,
+        "line": 263,
+        "context": "a median of only 3.6 × 10−7; the median per-seed Pearson correlation rounds to 1.00 (Appendix I). Tr"
+      },
+      {
+        "token": "1.00",
+        "value": 1.0,
+        "line": 263,
+        "context": "a median of only 3.6 × 10−7; the median per-seed Pearson correlation rounds to 1.00 (Appendix I). Tr"
+      },
+      {
+        "token": "0.044",
+        "value": 0.044,
+        "line": 277,
+        "context": "remain small in the harder moving-target variants, at 0.044 for GRU and 0.051 for tanh. Taken togeth"
+      },
+      {
+        "token": "0.051",
+        "value": 0.051,
+        "line": 277,
+        "context": "remain small in the harder moving-target variants, at 0.044 for GRU and 0.051 for tanh. Taken togeth"
+      },
+      {
+        "token": "0.58",
+        "value": 0.58,
+        "line": 289,
+        "context": "median epochs 10 and 5 and finish at median radii 0.58 and 0.83, whereas the partial-observation var"
+      },
+      {
+        "token": "0.83",
+        "value": 0.83,
+        "line": 289,
+        "context": "median epochs 10 and 5 and finish at median radii 0.58 and 0.83, whereas the partial-observation var"
+      },
+      {
+        "token": "0.986",
+        "value": 0.986,
+        "line": 290,
+        "context": "cross later, at epochs 40 and 270, and finish near one with median radii 0.986 and 0.978. Individual"
+      },
+      {
+        "token": "0.978",
+        "value": 0.978,
+        "line": 290,
+        "context": "cross later, at epochs 40 and 270, and finish near one with median radii 0.986 and 0.978. Individual"
+      },
+      {
+        "token": "1.19",
+        "value": 1.19,
+        "line": 291,
+        "context": "reach radii of 1.19; these variants also show weak behavioral transfer (Appendix I)."
+      },
+      {
+        "token": "10.8",
+        "value": 10.8,
+        "line": 301,
+        "context": "peak/initial ratio rises steadily from 10.8 at hidden size 50 to 17.7 at size 100, 25.9 at size 200,"
+      },
+      {
+        "token": "17.7",
+        "value": 17.7,
+        "line": 301,
+        "context": "peak/initial ratio rises steadily from 10.8 at hidden size 50 to 17.7 at size 100, 25.9 at size 200,"
+      },
+      {
+        "token": "25.9",
+        "value": 25.9,
+        "line": 301,
+        "context": "peak/initial ratio rises steadily from 10.8 at hidden size 50 to 17.7 at size 100, 25.9 at size 200,"
+      },
+      {
+        "token": "50.4",
+        "value": 50.4,
+        "line": 301,
+        "context": "peak/initial ratio rises steadily from 10.8 at hidden size 50 to 17.7 at size 100, 25.9 at size 200,"
+      },
+      {
+        "token": "105.5",
+        "value": 105.5,
+        "line": 302,
+        "context": "size 400, while median crossing epochs remain between 104 and 105.5. The hidden-256 GRU likewise ret"
+      },
+      {
+        "token": "92.5",
+        "value": 92.5,
+        "line": 305,
+        "context": "crossing epoch 92.5); its open-loop student also develops a persistent final gap in all 10 seeds (me"
+      },
+      {
+        "token": "8.2",
+        "value": 8.2,
+        "line": 419,
+        "context": "Sec. 8.2. Scale:"
+      },
+      {
+        "token": "10.52202",
+        "value": 10.52202,
+        "line": 480,
+        "context": "https://doi.org/10.52202/"
+      },
+      {
+        "token": "1.5",
+        "value": 1.5,
+        "line": 618,
+        "context": "deploy,e > 1.5LOL"
+      },
+      {
+        "token": "0.02",
+        "value": 0.02,
+        "line": 628,
+        "context": "mented variant fits three piecewise-linear segments: the first must have a slope below −0.02, the se"
+      },
+      {
+        "token": "0.35",
+        "value": 0.35,
+        "line": 629,
+        "context": "slope magnitude below max(0.35|slope1|, 0.004), and the third a slope below slope2 −0.002."
+      },
+      {
+        "token": "0.004",
+        "value": 0.004,
+        "line": 629,
+        "context": "slope magnitude below max(0.35|slope1|, 0.004), and the third a slope below slope2 −0.002."
+      },
+      {
+        "token": "0.002",
+        "value": 0.002,
+        "line": 629,
+        "context": "slope magnitude below max(0.35|slope1|, 0.004), and the third a slope below slope2 −0.002."
+      },
+      {
+        "token": "0.005",
+        "value": 0.005,
+        "line": 645,
+        "context": "and δshort = δlong = 0.005."
+      },
+      {
+        "token": "105.5",
+        "value": 105.5,
+        "line": 698,
+        "context": "crossing 105.5"
+      },
+      {
+        "token": "0.003",
+        "value": 0.003,
+        "line": 719,
+        "context": "learning rate 0.003"
+      },
+      {
+        "token": "0.03",
+        "value": 0.03,
+        "line": 721,
+        "context": "learning rate 0.03"
+      },
+      {
+        "token": "0.03",
+        "value": 0.03,
+        "line": 723,
+        "context": "recurrent initialization scale 0.03"
+      },
+      {
+        "token": "0.3",
+        "value": 0.3,
+        "line": 725,
+        "context": "recurrent initialization scale 0.3"
+      },
+      {
+        "token": "0.5",
+        "value": 0.5,
+        "line": 727,
+        "context": "environment feedback strength 0.5"
+      },
+      {
+        "token": "1.5",
+        "value": 1.5,
+        "line": 729,
+        "context": "environment feedback strength 1.5"
+      },
+      {
+        "token": "0.05",
+        "value": 0.05,
+        "line": 735,
+        "context": "observation noise standard deviation 0.05"
+      },
+      {
+        "token": "0.001",
+        "value": 0.001,
+        "line": 737,
+        "context": "optimizer Adam with learning rate 0.001"
+      },
+      {
+        "token": "0.05",
+        "value": 0.05,
+        "line": 739,
+        "context": "control penalty 0.05"
+      },
+      {
+        "token": "0.1",
+        "value": 0.1,
+        "line": 821,
+        "context": "zero. We retain its tanh RNN, using 100 hidden units with initialization scale 0.1 and leak 1. Train"
+      },
+      {
+        "token": "0.01",
+        "value": 0.01,
+        "line": 822,
+        "context": "SGD at learning rate 0.01 for 1001 epochs, with batches of 100 and 50-step rollouts; gradients are c"
+      },
+      {
+        "token": "1.0",
+        "value": 1.0,
+        "line": 823,
+        "context": "at 1.0. Loss is evaluated before the environment step and the control cost is summed, while the open"
+      },
+      {
+        "token": "1.5",
+        "value": 1.5,
+        "line": 851,
+        "context": "peak > 1.5× initial, epoch > 0"
+      },
+      {
+        "token": "2.0",
+        "value": 2.0,
+        "line": 854,
+        "context": "peak > 2.0 × max(initial, final)"
+      },
+      {
+        "token": "0.01",
+        "value": 0.01,
+        "line": 857,
+        "context": "gain < −0.01, persistence 5, largest-real-eigenvalue"
+      },
+      {
+        "token": "0.01",
+        "value": 0.01,
+        "line": 858,
+        "context": "growth > 0.01"
+      },
+      {
+        "token": "0.02",
+        "value": 0.02,
+        "line": 861,
+        "context": "slopes −0.02 / 0.35× / −0.002; min segment 20,"
+      },
+      {
+        "token": "0.35",
+        "value": 0.35,
+        "line": 861,
+        "context": "slopes −0.02 / 0.35× / −0.002; min segment 20,"
+      },
+      {
+        "token": "0.002",
+        "value": 0.002,
+        "line": 861,
+        "context": "slopes −0.02 / 0.35× / −0.002; min segment 20,"
+      },
+      {
+        "token": "0.005",
+        "value": 0.005,
+        "line": 865,
+        "context": "[10, 50, 200]; δ = 0.005"
+      },
+      {
+        "token": "0.0025",
+        "value": 0.0025,
+        "line": 911,
+        "context": "For A1, we recompute the component criteria over δ ∈{0.0025, 0.005, 0.01, 0.02} and horizon pairs"
+      },
+      {
+        "token": "0.005",
+        "value": 0.005,
+        "line": 911,
+        "context": "For A1, we recompute the component criteria over δ ∈{0.0025, 0.005, 0.01, 0.02} and horizon pairs"
+      },
+      {
+        "token": "0.01",
+        "value": 0.01,
+        "line": 911,
+        "context": "For A1, we recompute the component criteria over δ ∈{0.0025, 0.005, 0.01, 0.02} and horizon pairs"
+      },
+      {
+        "token": "0.02",
+        "value": 0.02,
+        "line": 911,
+        "context": "For A1, we recompute the component criteria over δ ∈{0.0025, 0.005, 0.01, 0.02} and horizon pairs"
+      },
+      {
+        "token": "0.005",
+        "value": 0.005,
+        "line": 922,
+        "context": "prespecified before the full reported sweeps is δ = 0.005 with horizons (10, 200)."
+      },
+      {
+        "token": "0.0117",
+        "value": 0.0117,
+        "line": 933,
+        "context": "consistent with the medians in Section 7. At the main threshold, the first-segment slope of −0.0117 "
+      },
+      {
+        "token": "0.02",
+        "value": 0.02,
+        "line": 934,
+        "context": "the −0.02 fast-descent cutoff, although looser slope thresholds yield Stage-1 support in 47–50/50 se"
+      },
+      {
+        "token": "0.02",
+        "value": 0.02,
+        "line": 972,
+        "context": "white dots marking τ1 and τ2. The detector uses minimum segment length 20, Stage-1 slope < −0.02, St"
+      },
+      {
+        "token": "0.35",
+        "value": 0.35,
+        "line": 973,
+        "context": "2 slope magnitude below max(0.35|slope1|, 0.004), and Stage-3 slope < slope2 −0.002. Strict three-st"
+      },
+      {
+        "token": "0.004",
+        "value": 0.004,
+        "line": 973,
+        "context": "2 slope magnitude below max(0.35|slope1|, 0.004), and Stage-3 slope < slope2 −0.002. Strict three-st"
+      },
+      {
+        "token": "0.002",
+        "value": 0.002,
+        "line": 973,
+        "context": "2 slope magnitude below max(0.35|slope1|, 0.004), and Stage-3 slope < slope2 −0.002. Strict three-st"
+      },
+      {
+        "token": "1.000",
+        "value": 1.0,
+        "line": 979,
+        "context": "become non-finite by epochs 5–7 and 4–6 as the coupled radius grows from 1.000–1.045 until it become"
+      },
+      {
+        "token": "1.045",
+        "value": 1.045,
+        "line": 979,
+        "context": "become non-finite by epochs 5–7 and 4–6 as the coupled radius grows from 1.000–1.045 until it become"
+      },
+      {
+        "token": "0.003",
+        "value": 0.003,
+        "line": 985,
+        "context": "6, whereas fully unclipped SGD at learning rate 0.003 remains finite in 0/15. In these tested condit"
+      },
+      {
+        "token": "0.0005",
+        "value": 0.0005,
+        "line": 995,
+        "context": "quantity in the table, and the notebook shows a large transient open-loop peak with a final gap of 0"
+      },
+      {
+        "token": "0.061",
+        "value": 0.061,
+        "line": 1004,
+        "context": "0.061 [0.047, 0.073]"
+      },
+      {
+        "token": "0.047",
+        "value": 0.047,
+        "line": 1004,
+        "context": "0.061 [0.047, 0.073]"
+      },
+      {
+        "token": "0.073",
+        "value": 0.073,
+        "line": 1004,
+        "context": "0.061 [0.047, 0.073]"
+      },
+      {
+        "token": "0.059",
+        "value": 0.059,
+        "line": 1005,
+        "context": "0.059 [0.058, 0.060]"
+      },
+      {
+        "token": "0.058",
+        "value": 0.058,
+        "line": 1005,
+        "context": "0.059 [0.058, 0.060]"
+      },
+      {
+        "token": "0.060",
+        "value": 0.06,
+        "line": 1005,
+        "context": "0.059 [0.058, 0.060]"
+      },
+      {
+        "token": "0.062",
+        "value": 0.062,
+        "line": 1007,
+        "context": "0.062 [0.047, 0.075]"
+      },
+      {
+        "token": "0.047",
+        "value": 0.047,
+        "line": 1007,
+        "context": "0.062 [0.047, 0.075]"
+      },
+      {
+        "token": "0.075",
+        "value": 0.075,
+        "line": 1007,
+        "context": "0.062 [0.047, 0.075]"
+      },
+      {
+        "token": "0.060",
+        "value": 0.06,
+        "line": 1008,
+        "context": "0.060 [0.059, 0.061]"
+      },
+      {
+        "token": "0.059",
+        "value": 0.059,
+        "line": 1008,
+        "context": "0.060 [0.059, 0.061]"
+      },
+      {
+        "token": "0.061",
+        "value": 0.061,
+        "line": 1008,
+        "context": "0.060 [0.059, 0.061]"
+      },
+      {
+        "token": "213.2",
+        "value": 213.2,
+        "line": 1010,
+        "context": "213.2 [212, 214]"
+      },
+      {
+        "token": "212.2",
+        "value": 212.2,
+        "line": 1011,
+        "context": "212.2 [202, 218]"
+      },
+      {
+        "token": "47.9",
+        "value": 47.9,
+        "line": 1013,
+        "context": "47.9 [27.3, 80.0]"
+      },
+      {
+        "token": "27.3",
+        "value": 27.3,
+        "line": 1013,
+        "context": "47.9 [27.3, 80.0]"
+      },
+      {
+        "token": "80.0",
+        "value": 80.0,
+        "line": 1013,
+        "context": "47.9 [27.3, 80.0]"
+      },
+      {
+        "token": "39.8",
+        "value": 39.8,
+        "line": 1014,
+        "context": "39.8 [15.5, 68.9]"
+      },
+      {
+        "token": "15.5",
+        "value": 15.5,
+        "line": 1014,
+        "context": "39.8 [15.5, 68.9]"
+      },
+      {
+        "token": "68.9",
+        "value": 68.9,
+        "line": 1014,
+        "context": "39.8 [15.5, 68.9]"
+      },
+      {
+        "token": "103.1",
+        "value": 103.1,
+        "line": 1017,
+        "context": "103.1 [98, 112]"
+      },
+      {
+        "token": "3.6",
+        "value": 3.6,
+        "line": 1024,
+        "context": "evaluated with both methods, the median absolute difference along the trajectory is 3.6 × 10−7 and t"
+      },
+      {
+        "token": "1.00",
+        "value": 1.0,
+        "line": 1025,
+        "context": "maximum is 5 × 10−3; the median per-seed Pearson correlation rounds to 1.00 (Figure 8e)."
+      },
+      {
+        "token": "0.58",
+        "value": 0.58,
+        "line": 1028,
+        "context": "ring, whose final radii are 0.58 and 0.83. For the partial-observation variants, the corresponding c"
+      },
+      {
+        "token": "0.83",
+        "value": 0.83,
+        "line": 1028,
+        "context": "ring, whose final radii are 0.58 and 0.83. For the partial-observation variants, the corresponding c"
+      },
+      {
+        "token": "0.986",
+        "value": 0.986,
+        "line": 1029,
+        "context": "occur at epochs 40 and 270 and the final radii are 0.986 and 0.978; individual seeds reach 1.19, con"
+      },
+      {
+        "token": "0.978",
+        "value": 0.978,
+        "line": 1029,
+        "context": "occur at epochs 40 and 270 and the final radii are 0.986 and 0.978; individual seeds reach 1.19, con"
+      },
+      {
+        "token": "1.19",
+        "value": 1.19,
+        "line": 1029,
+        "context": "occur at epochs 40 and 270 and the final radii are 0.986 and 0.978; individual seeds reach 1.19, con"
+      }
+    ]
+  },
+  "adjudications_state": {
+    "19.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "ployed loss, with the mean peak reaching 19.1 times the initial loss. By the final epoch,"
+    },
+    "0.022": {
+      "verdict": "pending",
+      "note": "",
+      "context": "roughly 0.022 on the original-setting closed-loop scale; smaller gaps remain in the continuous results but do"
+    },
+    "249.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "shown in Figure 1. The peak occurs at a mean epoch of 249.1 (bootstrap 95 percent CI [247.5, 250.5]), close"
+    },
+    "247.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "shown in Figure 1. The peak occurs at a mean epoch of 249.1 (bootstrap 95 percent CI [247.5, 250.5]), close"
+    },
+    "250.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "shown in Figure 1. The peak occurs at a mean epoch of 249.1 (bootstrap 95 percent CI [247.5, 250.5]), close"
+    },
+    "249.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "to the median of 249.5. On average, peak loss is 19.1 times the initial loss (CI [17.1, 21.4]) and 4.88 × 104"
+    },
+    "17.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "to the median of 249.5. On average, peak loss is 19.1 times the initial loss (CI [17.1, 21.4]) and 4.88 × 104"
+    },
+    "21.4": {
+      "verdict": "pending",
+      "note": "",
+      "context": "to the median of 249.5. On average, peak loss is 19.1 times the initial loss (CI [17.1, 21.4]) and 4.88 × 104"
+    },
+    "4.88": {
+      "verdict": "pending",
+      "note": "",
+      "context": "to the median of 249.5. On average, peak loss is 19.1 times the initial loss (CI [17.1, 21.4]) and 4.88 × 104"
+    },
+    "0.4370": {
+      "verdict": "pending",
+      "note": "",
+      "context": "finishes at 0.4370 (bootstrap 95 percent CI [0.4367, 0.4373]), while the open-loop learner finishes at 0.4387"
+    },
+    "0.4367": {
+      "verdict": "pending",
+      "note": "",
+      "context": "finishes at 0.4370 (bootstrap 95 percent CI [0.4367, 0.4373]), while the open-loop learner finishes at 0.4387"
+    },
+    "0.4373": {
+      "verdict": "pending",
+      "note": "",
+      "context": "finishes at 0.4370 (bootstrap 95 percent CI [0.4367, 0.4373]), while the open-loop learner finishes at 0.4387"
+    },
+    "0.4387": {
+      "verdict": "pending",
+      "note": "",
+      "context": "finishes at 0.4370 (bootstrap 95 percent CI [0.4367, 0.4373]), while the open-loop learner finishes at 0.4387"
+    },
+    "0.4383": {
+      "verdict": "pending",
+      "note": "",
+      "context": "(CI [0.4383, 0.4390])."
+    },
+    "0.4390": {
+      "verdict": "pending",
+      "note": "",
+      "context": "(CI [0.4383, 0.4390])."
+    },
+    "0.00109": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Seed-to-seed variation is small: the respective SDs are 0.00109 and 0.00126, with"
+    },
+    "0.00126": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Seed-to-seed variation is small: the respective SDs are 0.00109 and 0.00126, with"
+    },
+    "0.4361": {
+      "verdict": "pending",
+      "note": "",
+      "context": "IQRs [0.4361, 0.4378] and [0.4379, 0.4393]."
+    },
+    "0.4378": {
+      "verdict": "pending",
+      "note": "",
+      "context": "IQRs [0.4361, 0.4378] and [0.4379, 0.4393]."
+    },
+    "0.4379": {
+      "verdict": "pending",
+      "note": "",
+      "context": "IQRs [0.4361, 0.4378] and [0.4379, 0.4393]."
+    },
+    "0.4393": {
+      "verdict": "pending",
+      "note": "",
+      "context": "IQRs [0.4361, 0.4378] and [0.4379, 0.4393]."
+    },
+    "0.00168": {
+      "verdict": "pending",
+      "note": "",
+      "context": "The paired final gap is positive but small, at 0.00168 (CI"
+    },
+    "0.00147": {
+      "verdict": "pending",
+      "note": "",
+      "context": "[0.00147, 0.00190]), and none of the 50 runs reaches the prespecified 5 percent threshold."
+    },
+    "0.00190": {
+      "verdict": "pending",
+      "note": "",
+      "context": "[0.00147, 0.00190]), and none of the 50 runs reaches the prespecified 5 percent threshold."
+    },
+    "105.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "a median epoch of 7, and Stage 2 ends with the stability crossing at a median epoch of 105.5. The final"
+    },
+    "0.6253": {
+      "verdict": "pending",
+      "note": "",
+      "context": "coupled spectral radius is 0.6253 (CI [0.6243, 0.6264])."
+    },
+    "0.6243": {
+      "verdict": "pending",
+      "note": "",
+      "context": "coupled spectral radius is 0.6253 (CI [0.6243, 0.6264])."
+    },
+    "0.6264": {
+      "verdict": "pending",
+      "note": "",
+      "context": "coupled spectral radius is 0.6253 (CI [0.6243, 0.6264])."
+    },
+    "0.003": {
+      "verdict": "pending",
+      "note": "",
+      "context": "rate to 0.003 rescues none (Appendix F)."
+    },
+    "47.24": {
+      "verdict": "pending",
+      "note": "",
+      "context": "across runs a mean 47.24 percent of intervals with short-horizon improvement also show a radius increase."
+    },
+    "0.001": {
+      "verdict": "pending",
+      "note": "",
+      "context": "radius criterion but not the loss-worsening criterion are 5, 5, and 6 at β = 0, 0.001, and 0.005; they rise to"
+    },
+    "0.005": {
+      "verdict": "pending",
+      "note": "",
+      "context": "radius criterion but not the loss-worsening criterion are 5, 5, and 6 at β = 0, 0.001, and 0.005; they rise to"
+    },
+    "0.02": {
+      "verdict": "pending",
+      "note": "",
+      "context": "13, 13, and 16 at β = 0.02, 0.05, and 0.1. Yet the median final coupled radii are nearly identical in the two"
+    },
+    "0.05": {
+      "verdict": "pending",
+      "note": "",
+      "context": "13, 13, and 16 at β = 0.02, 0.05, and 0.1. Yet the median final coupled radii are nearly identical in the two"
+    },
+    "0.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "13, 13, and 16 at β = 0.02, 0.05, and 0.1. Yet the median final coupled radii are nearly identical in the two"
+    },
+    "0.0117": {
+      "verdict": "pending",
+      "note": "",
+      "context": "and 193, with segment slopes −0.0117, −0.0432, and −0.00065. Because none of the detector variants yields"
+    },
+    "0.0432": {
+      "verdict": "pending",
+      "note": "",
+      "context": "and 193, with segment slopes −0.0117, −0.0432, and −0.00065. Because none of the detector variants yields"
+    },
+    "0.00065": {
+      "verdict": "pending",
+      "note": "",
+      "context": "and 193, with segment slopes −0.0117, −0.0432, and −0.00065. Because none of the detector variants yields"
+    },
+    "3.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "a median of only 3.6 × 10−7; the median per-seed Pearson correlation rounds to 1.00 (Appendix I). Tracking"
+    },
+    "1.00": {
+      "verdict": "pending",
+      "note": "",
+      "context": "a median of only 3.6 × 10−7; the median per-seed Pearson correlation rounds to 1.00 (Appendix I). Tracking"
+    },
+    "0.044": {
+      "verdict": "pending",
+      "note": "",
+      "context": "remain small in the harder moving-target variants, at 0.044 for GRU and 0.051 for tanh. Taken together,"
+    },
+    "0.051": {
+      "verdict": "pending",
+      "note": "",
+      "context": "remain small in the harder moving-target variants, at 0.044 for GRU and 0.051 for tanh. Taken together,"
+    },
+    "0.58": {
+      "verdict": "pending",
+      "note": "",
+      "context": "median epochs 10 and 5 and finish at median radii 0.58 and 0.83, whereas the partial-observation variants"
+    },
+    "0.83": {
+      "verdict": "pending",
+      "note": "",
+      "context": "median epochs 10 and 5 and finish at median radii 0.58 and 0.83, whereas the partial-observation variants"
+    },
+    "0.986": {
+      "verdict": "pending",
+      "note": "",
+      "context": "cross later, at epochs 40 and 270, and finish near one with median radii 0.986 and 0.978. Individual seeds"
+    },
+    "0.978": {
+      "verdict": "pending",
+      "note": "",
+      "context": "cross later, at epochs 40 and 270, and finish near one with median radii 0.986 and 0.978. Individual seeds"
+    },
+    "1.19": {
+      "verdict": "pending",
+      "note": "",
+      "context": "reach radii of 1.19; these variants also show weak behavioral transfer (Appendix I)."
+    },
+    "10.8": {
+      "verdict": "pending",
+      "note": "",
+      "context": "peak/initial ratio rises steadily from 10.8 at hidden size 50 to 17.7 at size 100, 25.9 at size 200, and 50.4 at"
+    },
+    "17.7": {
+      "verdict": "pending",
+      "note": "",
+      "context": "peak/initial ratio rises steadily from 10.8 at hidden size 50 to 17.7 at size 100, 25.9 at size 200, and 50.4 at"
+    },
+    "25.9": {
+      "verdict": "pending",
+      "note": "",
+      "context": "peak/initial ratio rises steadily from 10.8 at hidden size 50 to 17.7 at size 100, 25.9 at size 200, and 50.4 at"
+    },
+    "50.4": {
+      "verdict": "pending",
+      "note": "",
+      "context": "peak/initial ratio rises steadily from 10.8 at hidden size 50 to 17.7 at size 100, 25.9 at size 200, and 50.4 at"
+    },
+    "92.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "crossing epoch 92.5); its open-loop student also develops a persistent final gap in all 10 seeds (median 35"
+    },
+    "8.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Sec. 8.2. Scale:"
+    },
+    "10.52202": {
+      "verdict": "pending",
+      "note": "",
+      "context": "https://doi.org/10.52202/"
+    },
+    "1.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "deploy,e > 1.5LOL"
+    },
+    "0.35": {
+      "verdict": "pending",
+      "note": "",
+      "context": "slope magnitude below max(0.35|slope1|, 0.004), and the third a slope below slope2 −0.002."
+    },
+    "0.004": {
+      "verdict": "pending",
+      "note": "",
+      "context": "slope magnitude below max(0.35|slope1|, 0.004), and the third a slope below slope2 −0.002."
+    },
+    "0.002": {
+      "verdict": "pending",
+      "note": "",
+      "context": "slope magnitude below max(0.35|slope1|, 0.004), and the third a slope below slope2 −0.002."
+    },
+    "0.03": {
+      "verdict": "pending",
+      "note": "",
+      "context": "learning rate 0.03"
+    },
+    "0.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "recurrent initialization scale 0.3"
+    },
+    "0.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "environment feedback strength 0.5"
+    },
+    "0.01": {
+      "verdict": "pending",
+      "note": "",
+      "context": "SGD at learning rate 0.01 for 1001 epochs, with batches of 100 and 50-step rollouts; gradients are clipped"
+    },
+    "1.0": {
+      "verdict": "pending",
+      "note": "",
+      "context": "at 1.0. Loss is evaluated before the environment step and the control cost is summed, while the open-loop"
+    },
+    "2.0": {
+      "verdict": "pending",
+      "note": "",
+      "context": "peak > 2.0 × max(initial, final)"
+    },
+    "0.0025": {
+      "verdict": "pending",
+      "note": "",
+      "context": "For A1, we recompute the component criteria over δ ∈{0.0025, 0.005, 0.01, 0.02} and horizon pairs"
+    },
+    "1.000": {
+      "verdict": "pending",
+      "note": "",
+      "context": "become non-finite by epochs 5–7 and 4–6 as the coupled radius grows from 1.000–1.045 until it becomes"
+    },
+    "1.045": {
+      "verdict": "pending",
+      "note": "",
+      "context": "become non-finite by epochs 5–7 and 4–6 as the coupled radius grows from 1.000–1.045 until it becomes"
+    },
+    "0.0005": {
+      "verdict": "pending",
+      "note": "",
+      "context": "quantity in the table, and the notebook shows a large transient open-loop peak with a final gap of 0.0005,"
+    },
+    "0.061": {
+      "verdict": "pending",
+      "note": "",
+      "context": "0.061 [0.047, 0.073]"
+    },
+    "0.047": {
+      "verdict": "pending",
+      "note": "",
+      "context": "0.061 [0.047, 0.073]"
+    },
+    "0.073": {
+      "verdict": "pending",
+      "note": "",
+      "context": "0.061 [0.047, 0.073]"
+    },
+    "0.059": {
+      "verdict": "pending",
+      "note": "",
+      "context": "0.059 [0.058, 0.060]"
+    },
+    "0.058": {
+      "verdict": "pending",
+      "note": "",
+      "context": "0.059 [0.058, 0.060]"
+    },
+    "0.060": {
+      "verdict": "pending",
+      "note": "",
+      "context": "0.059 [0.058, 0.060]"
+    },
+    "0.062": {
+      "verdict": "pending",
+      "note": "",
+      "context": "0.062 [0.047, 0.075]"
+    },
+    "0.075": {
+      "verdict": "pending",
+      "note": "",
+      "context": "0.062 [0.047, 0.075]"
+    },
+    "213.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "213.2 [212, 214]"
+    },
+    "212.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "212.2 [202, 218]"
+    },
+    "47.9": {
+      "verdict": "pending",
+      "note": "",
+      "context": "47.9 [27.3, 80.0]"
+    },
+    "27.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "47.9 [27.3, 80.0]"
+    },
+    "80.0": {
+      "verdict": "pending",
+      "note": "",
+      "context": "47.9 [27.3, 80.0]"
+    },
+    "39.8": {
+      "verdict": "pending",
+      "note": "",
+      "context": "39.8 [15.5, 68.9]"
+    },
+    "15.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "39.8 [15.5, 68.9]"
+    },
+    "68.9": {
+      "verdict": "pending",
+      "note": "",
+      "context": "39.8 [15.5, 68.9]"
+    },
+    "103.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "103.1 [98, 112]"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "critical_adjudicated": 0,
+    "pending_review": 128,
+    "noise_filtered": 19,
+    "adjudicated": 0,
+    "paper_decimals": 147,
+    "evidence_absent": true,
+    "note": "manual_review_list = 未裁决且非机械噪音；裁决文件填 verdict(noise|supported|critical) 后重跑即收敛"
+  }
+}

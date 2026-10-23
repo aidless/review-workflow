@@ -1,0 +1,18 @@
+# 审稿工作流依赖（run_review.py 一键 R0-R7）
+#
+# 核心机械阶段（R0-R3/R5 + R1b/R1c/R1d/R2d）零第三方依赖：Python ≥3.10 标准库即可。
+# 以下均为可选加速/增强件，缺失时对应阶段自动降级 SKIP，不阻塞流程。
+#
+# 安装：pip install -r requirements.txt
+# 自检：python run_review.py --doctor
+
+# R4 统计复算（McNemar/Friedman/Wilson 精确重算）——缺失 → R4 SKIP
+scipy>=1.10
+
+# PDF 输入模式（伪 tex 提取）+ R2c 矢量图内文本提取——缺失 → pdf 模式/R2c 文本层降级
+PyMuPDF>=1.24
+
+# R6/R6b/R6c LLM 文本层：不需要 pip 包，但需要
+#   1) 本地 LLM RPC 服务（默认 http://127.0.0.1:3080）
+#   2) adversarial_review.py——按 REVIEW_LLM_SCRIPT 环境变量或 review-workflow 上级目录自动发现
+# 不可达时 R6/R6b/R6c 自动 SKIP，证据层结论不受影响。

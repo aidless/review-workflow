@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "stage": "R6",
+    "timestamp": "2026-08-25T17:43:23+00:00",
+    "rpc": "http://127.0.0.1:3080"
+  },
+  "rpc_health": {
+    "ok": true,
+    "detail": "HTTP 200"
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "exit_code": 1,
+    "counts": {
+      "Critical": 18,
+      "Major": 42,
+      "Minor": 19
+    },
+    "stdout_tail": "l': 3, 'Major': 5, 'Minor': 2}\n  [experiment] 实验 审查中...\n  -> {'Critical': 3, 'Major': 6, 'Minor': 2}\n  [novelty] 新颖性 审查中...\n  -> {'Critical': 2, 'Major': 5, 'Minor': 1}\n  [repro] 可复现 审查中...\n  -> {'Critical': 2, 'Major': 7, 'Minor': 4}\n  [writing] 写作 审查中...\n  -> {'Critical': 1, 'Major': 9, 'Minor': 6}\n  [ethics] 伦理 审查中...\n  -> {'Critical': 3, 'Major': 4, 'Minor': 2}\n\n[汇总] Critical=18 Major=42 Minor=19\n报告: F:\\deepseek\\research-kit\\review-workflow\\examples\\scievalsuite_v6\\llm\\adversarial_review.md\n",
+    "stderr_tail": ""
+  }
+}

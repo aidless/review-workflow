@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_cjU3YbcRr8\\extracted_text.txt",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-26T06:25:36+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "dimensions": {
+    "P": {
+      "status": "ok",
+      "score": 8,
+      "justification": "TMLR明确欢迎survey类投稿,本文对LLM agent技能库动态演化这一新兴方向做了系统的生命周期分类与124篇文献审计,研究问题真实且及时。与Voyager、LATM等已发表工作的关系通过Table 1等明确梳理,venue契合度高。问题本身偏文献组织而非突破性发现,故未达9-10。",
+      "top_weakness": "作为快速演进领域（2023-2026）的snapshot型survey,时效性脆弱,分类框架可能很快被新范式超越。",
+      "evidence": "This taxonomy-driven survey asks how such skill libraries change over time. Across a 124-paper 2023–2026 audit set, we synthesize dynamic skill systems as lifecycle-managed, verified, evolving artifac",
+      "parse": "json"
+    },
+    "R": {
+      "status": "ok",
+      "score": 6,
+      "justification": "{\"score\": 6, \"justification\": \"作为综述论文，其结构化框架（六维分类法、八阶段生命周期）显示了系统性努力，且提及证据分级与显式警示。但可见部分未描述124篇文献的系统检索策略、纳入/排除标准或可复现的审计协议，对于以\"audit set\"为核心方法的综述，这是明显的方法学缺口，需进一步解释。\", \"top_weakness\": \"未说明124篇文献集合的系统性检索方法",
+      "top_weakness": "",
+      "evidence": "",
+      "parse": "regex"
+    },
+    "I": {
+      "status": "ok",
+      "score": 6,
+      "justification": "这是一篇taxonomy驱动综述,组织了一个快速增长的领域,提供了六义分类法、八阶段生命周期架构和报告标准,对社区有参考价值。但贡献本质是对已有工作的重新组织而非新能力/新基准/新洞察；作者明确将schema定位为非方法贡献,且提炼的patterns是已知结论的确认而非新发现。",
+      "top_weakness": "所有insights均为已有工作的再确认（如admission/repair重要、flat retrieval退化）,缺乏改变社区认知的新发现或实证反直觉结论。",
+      "evidence": "a lightweight skill-record schema and ten-operator vocabulary provide common terms for comparing library updates without elevating them into a separate method contribution",
+      "parse": "json"
+    },
+    "S": {
+      "status": "ok",
+      "score": 7,
+      "justification": "语言整体克制,明确声明schema和词汇'不作为单独方法贡献',并给出'evidence-graded patterns with explicit caveats'。但片段中未见对124篇audit set或分类编码的可复现承诺（数据/代码/脚本发布）,且所述局限均针对领域而非调研自身方法论局限,属于轻微不足。",
+      "top_weakness": "未见124篇audit set或编码方案的可复现承诺,且局限聚焦领域而非调研自身方法局限。",
+      "evidence": "without elevating them into a separate method contribution; …evidence-graded patterns with explicit caveats: …current benchmarks still under-report library trajectories, usage–utility gaps, and safety",
+      "parse": "json"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "scores": {
+      "P": 8,
+      "R": 6,
+      "I": 6,
+      "S": 7
+    },
+    "overall": 6,
+    "weakest": "R(严谨性)",
+    "detail": "最弱维度 R(严谨性) = 6 分（<= 6）→ 文本层 WARN；证据层门禁不受影响"
+  }
+}

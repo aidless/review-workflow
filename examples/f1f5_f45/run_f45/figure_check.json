@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "tex": "F:\\Research\\MERGED_FLAGSHIPS\\F45_Merged\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\Research\\_inbox\\F1-F5_F45_2026-08-26\\supplementary"
+    ],
+    "timestamp": "2026-08-28T09:49:06+00:00"
+  },
+  "figures": [
+    {
+      "path": "figures/voting_comparison.pdf",
+      "line": 205,
+      "resolved": true,
+      "abs": "F:\\Research\\MERGED_FLAGSHIPS\\F45_Merged\\paper\\figures\\voting_comparison.pdf",
+      "kind": "pdf",
+      "text_chars": 217,
+      "fig_decimals": 16,
+      "fig_numbers_sample": [
+        "0.0",
+        "0.2",
+        "0.4",
+        "0.6",
+        "0.8",
+        "1.0",
+        "0.55",
+        "0.43",
+        "0.43",
+        "0.69",
+        "0.83",
+        "0.73",
+        "0.73",
+        "0.76",
+        "0.65",
+        "0.5"
+      ],
+      "caption_decimals": [
+        {
+          "token": "0.65",
+          "support": "figtext"
+        },
+        {
+          "token": "0.5",
+          "support": "figtext"
+        }
+      ],
+      "caption": "Voting accuracy under capture: correctness by aggregation rule and strategy ($N{=}7$, $f{=}2$, $p_H{=}0.65$, $M{=}16{,}000$ per cell). Trust\\_mean (blue) outperforms majority and median in both inject"
+    },
+    {
+      "path": "figures/sign_flip.pdf",
+      "line": 214,
+      "resolved": true,
+      "abs": "F:\\Research\\MERGED_FLAGSHIPS\\F45_Merged\\paper\\figures\\sign_flip.pdf",
+      "kind": "pdf",
+      "text_chars": 172,
+      "fig_decimals": 8,
+      "fig_numbers_sample": [
+        "0.05",
+        "0.00",
+        "0.05",
+        "0.10",
+        "0.15",
+        "0.20",
+        "0.114",
+        "0.098"
+      ],
+      "caption_decimals": [
+        {
+          "token": "0.114",
+          "support": "figtext"
+        },
+        {
+          "token": "0.098",
+          "support": "figtext"
+        },
+        {
+          "token": "0.185",
+          "support": "body"
+        },
+        {
+          "token": "0.058",
+          "support": "evidence"
+        }
+      ],
+      "caption": "$\\Delta$accuracy (Trust\\_mean $-$ Majority, and Hybrid $-$ Majority) across attack types. All deltas are positive: trust $+0.114$ injection / $+0.098$ mimicry; hybrid $+0.185$ injection / $+0.058$ mim"
+    },
+    {
+      "path": "figures/reliability_voting.pdf",
+      "line": 223,
+      "resolved": true,
+      "abs": "F:\\Research\\MERGED_FLAGSHIPS\\F45_Merged\\paper\\figures\\reliability_voting.pdf",
+      "kind": "pdf",
+      "text_chars": 191,
+      "fig_decimals": 18,
+      "fig_numbers_sample": [
+        "0.0",
+        "0.1",
+        "0.2",
+        "0.3",
+        "0.4",
+        "0.5",
+        "0.6",
+        "0.7",
+        "0.8",
+        "0.9",
+        "1.0",
+        "0.0",
+        "0.2",
+        "0.4",
+        "0.6",
+        "0.8",
+        "1.0",
+        "0.65"
+      ],
+      "caption_decimals": [
+        {
+          "token": "0.65",
+          "support": "figtext"
+        }
+      ],
+      "caption": "Reliability diagram: confidence-score bins vs.\\ observed per-voter accuracy ($N{=}7$, $f{=}2$, $p_H{=}0.65$, 4{,}000 trials). Under injection (blue), accuracy rises with confidence, confirming confide"
+    }
+  ],
+  "missing_files": [],
+  "caption_pending_review": [],
+  "figure_only_numbers": [],
+  "summary": {
+    "verdict": "PASS",
+    "figures_referenced": 3,
+    "text_extracted": 3,
+    "raster_skipped": 0,
+    "missing": 0,
+    "caption_decimals": 7,
+    "unsupported": 0,
+    "figure_only": 0,
+    "note": "caption_pending_review = 图注小数在图文本/证据/正文中均无支撑；figure_only = 仅出现在图内的高精度数（数据标签属正常，人工扫一眼即可）"
+  }
+}

@@ -1,0 +1,103 @@
+# 对抗审查报告
+
+- 时间: 2026-08-26T06:45:27.533322+00:00
+- 源: F:\deepseek\research-kit\review-workflow\examples\tmlr_calibration\runs\run_JQA0EfQIfj\extracted_text.txt
+- 角色: method, stat, experiment, novelty, repro, writing, ethics
+
+## 方法论（method）— ok
+### Critical（2）
+- - Critical: Koopman 理论仅在无穷维观测函数空间下严格保证非线性动力学线性化，论文用有限维学习到的潜在空间即声称"nonlinear dynamics become linear"，属于把渐近性理论结果当作有限实现的前提，方法论前提不成立。
+- - Critical: 摘要断言 KOALA 在 MM-Fi 与 WiPose 上"outperforming all baselines by a substantial margin"并把性能归因于 Koopman 潜在空间、残差算子、anchor-delta 头、KAL 损失等设计，但未在可见文本中提供逐组件消融以隔离各因素的因果贡献，存在严重的内部效度威胁：性能差异可能由模型容量、训练预算、超参搜索深度等混淆变量驱动，而非所述机制。
+### Major（6）
+- - Major: "autoregressive rollouts amplify errors at every step"被当作普适前提，但误差放大取决于误差结构（是否零均值、是否时间相关）与训练-推理匹配；将其作为 KOALA 优越性的因果根基本身即循环论证，且未给出 CSI 噪声误差传播的定量建模来支撑该假设。
+- - Major: "identity attractor problem inherent from Koopman formulations"被描述为 Koopman 方法固有问题，但该命名与现象并未对应文献中公认且可复现的定义，将其作为既定前提来论证残差算子的必要性，存在假设虚构风险。
+- - Major: 对照基线的输入是否与 KOALA 同样消费 CSI 派生噪声姿态未见说明；若基线在干净 mocap 上而 KOALA 在 CSI 噪声姿态上，或反之，则模态/噪声水平成为未被控制的混淆变量，跨方法比较的因果推断无效。
+- - Major: "anchor-delta prediction head eliminates the degenerate shortcut"假设该捷径由架构产生且可被 head 消除，但未验证消除后是否将捷径转移到 anchor 通道（如 anchor 过强、delta 趋零的退化），属于假设成立性未经验证。
+- - Major: KAL 损失被宣称"无需 contrastive、spectral、auxiliary losses"，但该损失在时间编码特征空间强制动力学一致性，其机制可能与谱/对比目标功能等价；以"不需要"为前提否定其他范式缺乏等价性证明，因果归因不当。
+- - Major: WiFi CSI 被前提化为"inherently privacy-preserving"与"infrastructure-free"，前者未经隐私攻击验证（CSI 可反向泄漏姿态/身份），后者与"利用现有 WiFi 基础设施"自相矛盾，影响任务动机的前提稳健性。
+### Minor（2）
+- - Minor: 将"CSI 派生姿态不稳定、时序难建模"作为选择 Koopman 的因果依据，但未实证该不稳定性的来源（乘性 vs 加性噪声）是否满足 Koopman 线性化所隐含的动力系统可观测性假设，假设链条不完整。
+- - Minor: 多水平预测的"consistent performance across both short- and long-term"未说明长短期的统计独立性、是否同一测试序列的不同截断（数据泄漏性自相关），内部效度受序列非独立性影响。
+
+## 统计（stat）— ok
+### Critical（2）
+- - Critical: 摘要声称"outperforming all baselines by a substantial margin"，属对比性统计断言，但可见文本未报告任何显著性检验（paired t-test / Wilcoxon / bootstrap CI）；"substantial"隐含效应量判断，却无效应量（Cohen's d / 相对改进%附95%CI）支撑，属 p 值/效应量双重缺失。
+- - Critical: 声称"robust, consistent performance across both short- and long-term prediction horizons"，"consistent"本质是方差/分布性质的统计断言，但无方差、标准差、置信区间或跨 horizon 离散度报告；单点点估计无法支撑"robust"与"consistent"。
+### Major（3）
+- - Major: 实验涉及多 horizon Ã 多 baseline Ã 2 datasets 的复合对比，构成多重比较；截断文本中未见任何多重比较校正（Bonferroni / Holm / FDR）的提及，存在 family-wise error 失控风险。
+- - Major: WiFi CSI 人体姿态数据集通常主体数极少（WiPose 仅~5 名被试）；在小样本下泛化声明需 leave-one-subject-out 严格设计与适当检验，但截断文本无法核验样本量、交叉验证划分与检验选择是否与小 n 适配。
+- - Major: 截断导致实验章节（样本量、指标方差、检验方法、效应量、多重比较处理）完全不可见，无法完整核验统计正确性；就可见部分而言，摘要的统计性用语（substantial、robust、consistent、all baselines）均缺乏相应统计实体支撑。
+### Minor（1）
+- - Minor: 简介多次使用非量化强化词（"substantial""robust""consistent"）而无阈值定义，易误导读耠将主观描述等同于统计显著。
+
+## 实验（experiment）— ok
+### Critical（2）
+- - Critical: åºåå ¬å¹³æ§å­çââæè¦ç§°âoutperforming all baselines by a substantial margin”，但引言明确指出现有 CSI 方法均为“instantaneous regressors”，而引用的视觉预测 baseline（Martinez et al. 2017、Mao et al. 2019/2020、Xu et al. 2023、Guo et al. 2023）是为干净 mocap 数据设计的；将它们直接套用到含噪 CSI-derived pose 上会系统性地惩罚 baseli
+- - Critical: seed 管理与统计显著性缺失——在可见文本中无任何多 seed 运行、标准差、置信区间或显著性检验的描述；对于含噪 CSI 这种方差较大的模态，单次运行的“substantial margin”声明没有统计支撑。
+### Major（4）
+- - Major: 对照组设计不自与——文中提出“identity attractor problem”与“degenerate shortcut of copying current pose”，作为核心动机，但未在可见部分证明存在明确的退化基线（如 copy-last-pose、linear-extrapolation、identity-operator）作为硬性下界对照；缺少这些 trivial baseline，无法确认 KOALA çæåæ¯å¦çæ­£è¶�è¿âä»ä¹é½ä¸åâã
+- - Major: 消融完整性不明——摘要列出三大组件（residual CSI-conditioned operator、anchor-delta head、KAL loss），但可见文本未展示各组件的单独/组合消融矩阵；尤其 KAL loss 与 anchor-delta head 同时防止退化，二者交互效应必须拆分验证，否则无法归因增益来源。
+- - Major: 泛化验证不足——仅在 MM-Fi 和 WiPose 两个数据集上评测，而引言自身强调“cross-environment generalization”是该领域前沿方向；缺少 cross-room/cross-subject/cross-hardware 的泛化分割实验，无法支撑“robust, consistent performance”的声明。
+- - Major: 超参敏与 Koopman latent 维度敏感性未讨论——Koopman 方法的核心超参数（latent dimension、operator rank、residual conditioning strength、KAL loss 权重）直接影响线性化质量与预测稳定性；可见文本无敏感性分析，无法排除“精心调参造就结果”的可能。
+### Minor（1）
+- - Minor: 预测 horizon 设置的合理性与 CSI 采样率的关系未公开——“short- and long-term”的具体 horizon 步数、与 CSI 帧率的换算、与视觉预测文献常用 horizon（80ms、400ms、1000ms 等）的对齐方式均不明，影响跨文献可比性。
+
+## 新颖性（novelty）— ok
+### Critical（2）
+- - Critical: 核心 GAP（"CSI 时序预测几乎未被探索"）可能成立，但填充该 GAP 的主力方法 Deep Koopman 线性化在动力学学习与人体运动预测文献中已成熟（Lusch et al. 2018、Otto & Rowley 等），本文实质是"模态迁移+组件拼装"，却被摘要表述为 "new modeling paradigms / fundamentally different sensing modality"，范式级新颖性被明显夸大。
+- - Critical: 三项"创新组件"中 anchor-delta 预测头即残差/零速度预测（Martinez et al. 2017 起在人体运动预测中已广泛使用），KAL loss 等价于 Deep Koopman 的标准多步预测+线性一致性损失；二者均非方法层创新却被并列列为贡献，增量被包装为突破。
+### Major（3）
+- - Major: "identity attractor problem" 这一术语疑为本文自造/重命名，Koopman 算子坍缩为恒等/近恒等在 Deep Koopman 文献中已有既有表述，论文未界定该"问题"与已知现象的本质差异，存在借新命名制造新颖性之嫌。
+- - Major: 摘要 "outperforming all baselines by a substantial margin" 为强断言；若基线主要是"naively applying vision-based methods"的稻草人对照，而非 WiFi-CSI 专用的时序预测基线，则该优势无法支撑贡献规模，须披露是否存在可复现的 WiFi 时序同期基线。
+- - Major: 引言把"误差累积、曝光偏差"列为 CSI 任务"fundamentally more challenging"的独有挑战，但二者是通用自回归序列预测问题、与视觉运动预测无异，用以论证 WiFi 任务"fundamentally different"属过度渲染。
+### Minor（2）
+- - Minor: "无需 contrastive/spectral/auxiliary losses" 是以否定方式表述新颖性（不做什么），且隐含先前 Koopman 运动工作需依赖此类损失的对照，却未指证具体工作，对比依据缺失，新颖性论据薄弱。
+- - Minor: 残差 CSI 条件化算子是本文相对 Deep Koopman 的真正改动点，但被淹没在"identity attractor"叙事中，未与既有 input-conditioned Koopman / 辅助输入注入方法做差异比对，真实增量被叙事遮蔽而非被论证。
+
+## 可复现（repro）— ok
+### Critical（3）
+- - Critical: 可见文本（Abstract、作者信息块、Introduction）中未出现任何代码仓库 URL、commit hash 或 artifact 链接，论文声称的实验结果无法追溯到可执行的证据链，OpenReview 链接本身不构成代码/数据披露。
+- - Critical: 未披露随机种子（random seed / numpy seed / torch manual_seed / CUDA determinism），Koopman lifting、残差 operator、KAL loss 均涉及随机初始化与采样，缺就 seed 则所有数值结果不可复现。
+- - Critical: OpenReview 链接书写为 `https: // openreview. net/ forum? id= JQA0EfQIfj`，URL 中插入空格，直接点击/复制无法访问，证据链的入口本身已断裂。
+### Major（4）
+- - Major: 未提供配置快点（configuration snapshot），可见部分无框架版本、CUDA/cuDNN 版本、Python 版本、硬件型号；Koopman 方法对数值精度/后端敏感，缺快炧则跨机器复现失败。
+- - Major: MM-Fi 与 WiPose 两个数据集均未声明数据许可（license）、版本号、划分方式（train/val/test split）与原始源；WiPose 尤其缺乏权威引用，存在后续被撤稿/许可变更导致不可复现的风险。
+- - Major: 无哈希对账（hash reconciliation），既无预处理后数据的 SHA256/MD5，也无模型权重 checkpoint 的哈希；若 MM-Fi/WiPose 上游更新，无法判定复现失败源于代码还是数据漂移。
+- - Major: 朠承诺一键复现（一条命令/容器/Docker/Singularity）；KAL loss、anchor-delta head、残差 operator 等自定义组件复杂，手工复现极易引入隐性 bug，缺少可运行脚本则不满足 TMLR 复现标准。
+### Minor（2）
+- - Minor: 作者机构名拼写为 "Middesex University"（应为 Middlesex），出现两次；元数据错误会影响与机构官方 artifact 页面的对账与检索。
+- - Minor: Abstract 称 "outperforming all baselines by a substantial margin"，但可见文本中未给出 baseline 的可复现指向（是否使用原作者代码、是否重训），证据链在对比实验环节断头。
+
+## 写作（writing）— ok
+### Critical（2）
+- - Critical: 作者所屬機構「Middesex University」拼寫錯誤，應為「Middlesex University」，並出現兩次（Huan X. Nguyen 與 Quang-Anh N. D. 各一），直接損害論文可信度。
+- - Minor: 簡介段出現逗號斷句（comma splice）：「share a critical architectural assumption, they operate as instantaneous regressors」，应改為分號或冒號。
+### Major（4）
+- - Major: 縮寫 KOALA 與標題展開「Koopman Operator Learning for WiFi-Based Anticipatory Human Motion Prediction」無泖對應。標題順序為 K-O-L-A（Koopman-Operator-Learning-Anticipatory），只能拼出 KOLA，而非 KOALA；缺少對應第二個「A」的詞，縮寫與標題自相矛盾。
+- - Major: 摘要宣稱「outperforming all baselines by a substantial margin」，但正文於截斷處尚未出現任何數字、基線對比或實驗結果，無法驗證「substantial margin」的定量主張是否成立。
+- - Major: 摘要提及「MM-Fi 和 WiPose」兩個數據集，但正文（截斷部分）完全未出現該二數據集的介紹、引用或定義，結構上摘要與正文衔接斷裂。
+- - Major: 文中未呈現任佖圖表（figure/table），但摘要反復強調「robust, consistent performance」、「substantial margin」等量化結論，欠缺視覺化證據嚴重削弱說服力。
+### Minor（5）
+- - Minor: 摘要寫法「We propose KOALA, the framework for human motion prediction」，「the framework」應為「a framework」，冠詞誤用造成語義暖昧（似乎暗示唯一性）。
+- - Minor: 「identity attractor problem inherent from Koopman formulations」，「inherent from」為非標準搭配，應為「inherent in」或「inherent to」。
+- - Minor: 簡介段出現逗號斷句（comma splice）：「share a critical architectural assumption, they operate as instantaneous regressors」，应改為分號或冒號。
+- - Minor: OpenReview URL 「https: // openreview. net/ forum? id= JQA0EfQIfj」含多餘空格，為格式化瑕疵，影響連結可點擊性。
+- - Minor: 簡介段「To addres」於文尾被截斷，句子不完整，顯示排版/截斷處理未經校察。
+
+## 伦理（ethics）— ok
+### Critical（3）
+- - Critical: 全文使用 MM-Fi 与 WiPose 两个含人体动作/姿态数据的数据集进行训练与评测,但未出现任何 IRB/伦理审查批准号、受试者知情同意(informed consent)声明或人体研究合规说明;TMLR 投稿虽不强制,但涉及人体姿态序列属人体受试数据,缺失合规依据属严重疏漏。
+- - Critical: 论文反复声称 WiFi CSI 是"inherently privacy-preserving""privacy-preserving alternative to cameras",但 CSI 感知可穿透墙壁/无可见传感器/难以被察觉地推断在场、身份、步态、手势乃至呼吸,实际上比摄像头更难被监测对象察觉;将一项本质具备监控能力的技术定性为"天然隐私保护"会误导部署者与被监管方,诱发以"安全"名义的无感采集滥用。
+- - Critical: 缺少任何 dual-use/误用风险讨论。穿墙式人体运动预测天然可用于非知情监控(如非法跟踪住户/病患、家庭暴力场景下的隐蔽监视),论文只列举"智能家居/避障/医疗"正面用途,未给出威胁模型或缓解措施,违反负责任研究披露惯例。
+### Major（3）
+- - Major: 未提供 MM-Fi 与 WiPose 的数据许可类型、使用条款与再分发权限说明;WiPose 等数据集对学术/商业使用有具体许可限制,论文未声明其使用是否符合原始许可。
+- - Major: 未提供利益冲突(COI)声明。作者同时来自学术机构(University of Arkansas、Middlesex University)与"Agora Intelligence Lab"(疑似私营/商业实验室),跨机构+商业实体参与却无 COI 披露,存在资助/商业利益影响研究结论表述的隐患。
+- - Major: 将"医疗健康监测/早期干预"列为应用场景,但未提供任何临床有效性验证、监管合规(如医疗器械/CE/FDA 路径)或误报/漏报对患者安全影响的讨论,存在被不当用于临床决策的风险。
+### Minor（2）
+- - Minor: 作者以个人 Gmail 邮箱(quotala1113、pmduc2808、pptnvt2004、manhmanhh9)作为通讯邮箱并以明文公开,既暴露个人隐私又模糊了机构归属(商业实验室作者未用机构域),不利于责任追溯与机构合规边界界定。
+- - Minor: "Middesex University" 疑为 "Middlesex University" 拼写错误;机构名称错误影响作者归属与机构声誉的准确性。
+
+## 汇总
+
+- **Critical: 16 | Major: 27 | Minor: 15**
+- ⚠ 有 Critical：产出需修复后重审（收敛门：一轮无新 Critical/Major）

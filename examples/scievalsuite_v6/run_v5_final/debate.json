@@ -1,0 +1,359 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\examples\\scievalsuite_v6\\run_v5_final\\r6_llm.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-27T05:34:58+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Critical",
+      "text": "- **Critical**: ITT 均值 0.355 无法对账 â gemma 三次试验分数述为 1/6â2/6、一次失败记 0；(1/6+2/6+0)/3 â 0.167，与 0.355 差距显著，算术不闭合。"
+    },
+    {
+      "id": 2,
+      "sev": "Critical",
+      "text": "- **Critical**: `deepseek-v4-flash` 不是已知公开模型（DeepSeek 现有 v2/v3/R1，无 \"v4\"；\"flash\" 是 Google Gemini 命名惯例），无法定位、无法复现。"
+    },
+    {
+      "id": 3,
+      "sev": "Critical",
+      "text": "- Critical: \"curated L1a（6 题，探索性）$p=0.0026$，Holm 校正后 $p=0.0261$\"——先做事后任务挑选（curate）再在同一挑选集内做 Holm 校正，无法消除选择偏倚，该校正 $p$ 值不成立，属 p-hacking 风险。"
+    },
+    {
+      "id": 4,
+      "sev": "Critical",
+      "text": "- Critical: 16 任务 Friedman 非显著（p=0.3679）后，再\"curated\"出 6 任务子集得到 p=0.0026 并用 Holm 校正——这是先看结果再选子集的 garden-of-forking-paths 选择偏倚，Holm 校正无法修复子集挑选本身引入的混淆。"
+    },
+    {
+      "id": 5,
+      "sev": "Critical",
+      "text": "- Critical: L1b 三个模型全部得 0/10，存在严重地板效应；在此基础上对 16 个配对任务（含 10 个全零的 L1b）做 Friedman 检验，非显著结果是注定的，不提供信息，混淆了\"无差异\"与\"无区分度\"。"
+    },
+    {
+      "id": 6,
+      "sev": "Critical",
+      "text": "- Critical: L2 主对比设计（A=ReAct vs F=completion-guided）仅 N=4，McNemar 功效 0.0000、n_d=0，统计上零信息量，论文却以\"无显著差异\"断言两臂等效，属于无法证伪的零结果被当作结论。"
+    },
+    {
+      "id": 7,
+      "sev": "Critical",
+      "text": "- Critical: L2 用 exact McNemar 但 $n_d=0<6$、$N=4$、且自报 McNemar 功效 $0.0000$，却以 $p=1.0000$ 得出\"两臂无统计可检测差异\"——零功效下这是\"无证据\"被误述为\"无差异\"的证据，检验退化、结论无效。"
+    },
+    {
+      "id": 8,
+      "sev": "Critical",
+      "text": "- Critical: L2 的核心结论\"arms 之间无统计学可检测差异\"是在 N=4、McNemar 统计功效明确报告为 0.0000 的条件下得出的——功效为零时\"未检测到差异\"æ¯ç»ææ§å¿ 然而非证据，犯了\"absence of evidence â  evidence of absence\"的根本性推理错误。"
+    },
+    {
+      "id": 9,
+      "sev": "Critical",
+      "text": "- Critical: L2 结论 \"no statistically detectable difference\" 建立在 McNemar n_d=0、N=4、power=0.0000 之上，这是典型的\"无证据≠无效应\"谬误；一个无信息量的检验不能支撑\"两臂等效/无因果效应\"的结论，d_min=2.1279 意味着只能检出巨型效应。"
+    },
+    {
+      "id": 10,
+      "sev": "Critical",
+      "text": "- Critical: LLM-as-judge 的校准（21/39 gold 上 FNR=FPR=0）被明确称为\"methodological warrant\"，因为实际 L1b 轮次零调用（全 SKIP）；产出 \"0/10 for all\" 的打分路径从未被该校准过的裁判验证过，L1b 分数的内部效度未建立。"
+    },
+    {
+      "id": 11,
+      "sev": "Critical",
+      "text": "- Critical: gemma 的 intention-to-treat 均值 0.355 与所报离散得分无法对账：三个 6 任务试验（1/6、2/6、失败计 0）的 ITT 均值应为 (1+2+0)/18≈0.167，0.355×18=6.39 非整数，任何整数计分口径下都不可能得到 0.355，疑似计算错误。"
+    },
+    {
+      "id": 12,
+      "sev": "Critical",
+      "text": "- Critical: 全篇样本量极小（L2 $N=4$、L1a 6 题、L1b 10 题），且 L1b 三模型均为 $0/10$（方差为零、地板效应），在此之上仍报告精确到 4 位小数的 $p$（1.0000、0.3679、0.0026、0.0261），制造虚假精度。"
+    },
+    {
+      "id": 13,
+      "sev": "Critical",
+      "text": "- Critical: 实验臂标签\"F\"（completion-guided harness）与\"Model-F\"（frontier参考模型）共用字母 F，指代完全不同的两个实体，造成术语碰撞，读者极易混淆。"
+    },
+    {
+      "id": 14,
+      "sev": "Critical",
+      "text": "- Critical: 所谓\"统一基准\"的核心组成 AIRS-Bench、ResearchClawBench、GAIA2 似乎均为已有基准的拼装（GAIA 昬身是已知 benchmark），文中未论证三者的\"新增部分\"（如 GAIA2 p3dev 的改造、ResearchClawBench的新增）相对原始版本的实质性新增，\"unified\"实为\"bundled existing benchmark"
+    },
+    {
+      "id": 15,
+      "sev": "Critical",
+      "text": "- Critical: 摘要声称 LLM-as-judge \"passed at FNR=0.0000, FPR=0.0000\"，紧接着说\"the round made zero judge calls (all SKIP)\"——零调用不可能产出 FNR/FPR，二者自相矛盾，\"methodological warrant\"的辩解无法消除数值造假观感。"
+    },
+    {
+      "id": 16,
+      "sev": "Critical",
+      "text": "- Critical: 摘要称\"frontier Model-F scored 6/6\"，但引言称\"API-model reference (deepseek-v4-flash, 5/6 L1a)\"，同一参考模型在摘要与正文中分数矛盾（6/6 vs 5/6），且名称不一致（Model-F vs deepseek-v4-flash），无任何说明。"
+    },
+    {
+      "id": 17,
+      "sev": "Major",
+      "text": "- **Major**: 全部评测对象为 7b–14b 小模型且大面积失败，前沿模型仅以\"exploratory\"出现（L1a 5/6 或 6/6），suite 在有能力的模型上是否具有区分度完全未验证，评测工具的有效性被回避。"
+    },
+    {
+      "id": 18,
+      "sev": "Major",
+      "text": "- Major: \"18/18 independent recomputation checks\"语义不明——重算的是分数、哈希还是统计量？若基于缓存 LLM 输出重算则非真正独立，未说明输入来源与是否触发新调用。"
+    },
+    {
+      "id": 19,
+      "sev": "Major",
+      "text": "- Major: \"L047 answer-fitting audit\"中的\"L047\"未在任何处定义或解释，突兀出现，属未定义术语。"
+    },
+    {
+      "id": 20,
+      "sev": "Major",
+      "text": "- Major: \"McNemar power 0.0000\"——将统计功效报告为精确零在方法上不合理且易误导；功效极少为正值，应报告实际计算值并说明条件。"
+    },
+    {
+      "id": 21,
+      "sev": "Minor",
+      "synthetic": true,
+      "text": "（另有 17 条问题超出 20 条上限被截断，未参与辩论）"
+    }
+  ],
+  "rebuttals": [
+    {
+      "id": 1,
+      "action": "concede",
+      "fix": "将重新核算gemma ITT均值,0.355修正为(1/6+2/6+0)/3â0.167,并更新摘要与正文所有引用处。"
+    },
+    {
+      "id": 2,
+      "action": "concede",
+      "fix": "将核实并更正为实际使用的DeepSeek公开版本（如v3/R1）,统一全文命名,移除'v4-flash'。"
+    },
+    {
+      "id": 3,
+      "action": "concede",
+      "fix": "将改为在全部16任务上做Holm校正,或事先预注册6任务集并标注为探索性,消除事后挑选偏倚。"
+    },
+    {
+      "id": 4,
+      "action": "concede",
+      "fix": "将移除先看全量结果再选子集的流程；若报告curated子集,会标注为事后探索性,不作为主结论。"
+    },
+    {
+      "id": 5,
+      "action": "concede",
+      "fix": "将含全零L1b的Friedman降格为探索性,补充仅对有变异任务的分析,明确说明地板效应限制。"
+    },
+    {
+      "id": 6,
+      "action": "rebut",
+      "rebuttal": "论文用'no statistically detectable difference'非'等效',并披露power=0.0000、N=4、n_d=0、d_min=2.1279,未æ­è¨ä¸¤èç­æã"
+    },
+    {
+      "id": 7,
+      "action": "rebut",
+      "rebuttal": "论文æ«é²McNemar power=0.0000、n_d=0、N=4、d_min=2.1279,用'not detectable'非'无差异',未将零功效结果述为等效。"
+    },
+    {
+      "id": 8,
+      "action": "rebut",
+      "rebuttal": "论文ç¨'not detectable'（未检测到）非'no difference'（不存在）,并披露power=0.0000,已区分无证据与无效应。"
+    },
+    {
+      "id": 9,
+      "action": "rebut",
+      "rebuttal": "论文å·²æ«é²d_min=2.1279、power=0.0000、N=4、n_d=0,用'not detectable'表述,未声称无因果效应或等效。"
+    },
+    {
+      "id": 10,
+      "action": "rebut",
+      "rebuttal": "论文æè¨'zero judge calls (all SKIP), calibration is a methodological warrant'；0/10为执行失败非judge评分。"
+    },
+    {
+      "id": 11,
+      "action": "concede",
+      "fix": "与问题1同一错误,将修正ITT均值为(1+2+0)/18â0.167,核对所有整数计分口径并更新全文。"
+    },
+    {
+      "id": 12,
+      "action": "concede",
+      "fix": "将降低p俛制的报告精度至2位小数,并添加小样本与地板效应caveat,避免虚假精度。"
+    },
+    {
+      "id": 13,
+      "action": "concede",
+      "fix": "将重命名L2实验臂标签（如FâCG）,避免与frontier Model-F术语碰撞。"
+    },
+    {
+      "id": 14,
+      "action": "concede",
+      "fix": "将明确区分各基准新增部分与原始版本,论证GAIA2 p3dev等改造的实质性贡献。"
+    },
+    {
+      "id": 15,
+      "action": "rebut",
+      "rebuttal": "FNR/FPR=0来自21/39 gold校准阶段；论文明言'the round made zero judge calls (all SKIP)',二者非同一阶段无矛盾。"
+    },
+    {
+      "id": 16,
+      "action": "concede",
+      "fix": "将核对frontier模型L1a实际分数,统一摘要6/6与正文5/6及模型名称Model-F vs deepseek-v4-flash。"
+    },
+    {
+      "id": 17,
+      "action": "concede",
+      "fix": "将在Limitations中明确说明suite在有能力模型上区分度未验证,并补充前沿模型探索性结果。"
+    },
+    {
+      "id": 18,
+      "action": "concede",
+      "fix": "将说明recomputation检查对象（分数/哈希/统计量）、输入来源及是否触发新LLM调用。"
+    },
+    {
+      "id": 19,
+      "action": "concede",
+      "fix": "将在首次出现处定义L047（审计规则编号或方法标识符）,消除未定义术语。"
+    },
+    {
+      "id": 20,
+      "action": "concede",
+      "fix": "将报告McNemar功效实际计算值及条件（N=4, n_d=0）,说明退化原因而非直接报0.0000。"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "sustained",
+      "reason": "concede；ITT 0.355算术不闭合,(1/6+2/6+0)/3â0.167,当前版本真问题"
+    },
+    {
+      "id": 2,
+      "disposition": "sustained",
+      "reason": "concede；deepseek-v4-flash非已知公开模型,当前版本存在"
+    },
+    {
+      "id": 3,
+      "disposition": "sustained",
+      "reason": "concede；事后curate再Holm校正无法消除选择偏倚"
+    },
+    {
+      "id": 4,
+      "disposition": "sustained",
+      "reason": "concede；先看全量结果再选子集的forking-paths偏倚确实存在"
+    },
+    {
+      "id": 5,
+      "disposition": "sustained",
+      "reason": "concede；全零L1b地板效应使Friedman注定非显著、无信息量"
+    },
+    {
+      "id": 6,
+      "disposition": "partial",
+      "reason": "rebut部分成立:论文未称等效；但零功效下'not detectable'作发现仍误导"
+    },
+    {
+      "id": 7,
+      "disposition": "partial",
+      "reason": "rebut部分成立:用not detectable非无差异；但零功效结果作结论仍无信息量"
+    },
+    {
+      "id": 8,
+      "disposition": "partial",
+      "reason": "rebut部分成立:已披露power；但零功效trivially true作发现仍为真问题"
+    },
+    {
+      "id": 9,
+      "disposition": "partial",
+      "reason": "同8；披露d_min/power不消除零功效检验作发现呈现的根本问题"
+    },
+    {
+      "id": 10,
+      "disposition": "partial",
+      "reason": "rebut部分成立:0/10为执行失败；但未使用校准作方法贡献仍误导"
+    },
+    {
+      "id": 11,
+      "disposition": "sustained",
+      "reason": "concede；与#1同一错误,0.355Ã18=6.39非整数,不可能成立"
+    },
+    {
+      "id": 12,
+      "disposition": "sustained",
+      "reason": "concede；小样本地板效应下4位小数p值制造虚假精度"
+    },
+    {
+      "id": 13,
+      "disposition": "sustained",
+      "reason": "concede；臂标签F与Model-F指代不同实体,术语碰撞"
+    },
+    {
+      "id": 14,
+      "disposition": "sustained",
+      "reason": "concede；基准拼装未论证相对原始版本的实质新增"
+    },
+    {
+      "id": 15,
+      "disposition": "withdrawn",
+      "reason": "rebut成立:FNR/FPR来自校准阶段,零调用来自评测轮次,论文已用though区分,非矛盾"
+    },
+    {
+      "id": 16,
+      "disposition": "sustained",
+      "reason": "concede；摘要6/6与正文5/6矛盾且名称不一致"
+    },
+    {
+      "id": 17,
+      "disposition": "sustained",
+      "reason": "concede；suite在有能力模型上区分度未验证"
+    },
+    {
+      "id": 18,
+      "disposition": "sustained",
+      "reason": "concede；recomputation检查对象与独立性未说明"
+    },
+    {
+      "id": 19,
+      "disposition": "sustained",
+      "reason": "concede；L047未定义即使用"
+    },
+    {
+      "id": 20,
+      "disposition": "sustained",
+      "reason": "concede；power报为精确零不合理且易误导"
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 10,
+      "Major": 4,
+      "Minor": 0
+    },
+    "n_issues": 20,
+    "n_sustained": 14,
+    "n_withdrawn": 1,
+    "n_partial": 5,
+    "truncation": {
+      "n_total": 37,
+      "n_debated": 20,
+      "n_truncated": 17,
+      "max_issues": 20
+    },
+    "detail": "辩论后维持 Critical 10 / Major 4 （撤回 1，部分成立 5）；注：原始 37 条中仅严重度前 20 条进入辩论（MAX_ISSUES=20，截断 17 条未辩论）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "withdrawn_ids": [
+      15
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "scievalsuite_v6_online",
+  "timestamp": "2026-08-26T09:41:09+00:00",
+  "overall": "WARN",
+  "stages": {
+    "R1b": {
+      "gate": "WARN",
+      "metric": "MAJOR：条目 12，幽灵引用 0，结构 Major 0，ID 不存在 0，标题不符 2（联网核验 11 条）"
+    },
+    "R1c": {
+      "gate": "PASS",
+      "metric": "PASS：断言 1 句（强 0）；检索 15 条，近重复 0（未引用 0）"
+    }
+  },
+  "suggested_score": 6,
+  "score_dimensions": {
+    "structure": 6
+  },
+  "score_note": "structure 维度 WARN；min 维度纪律（不平均）。人工阶段未完成（R3 裁决收敛 / R5 定性 / 终审）前为临时值"
+}

@@ -1,0 +1,21 @@
+{
+ "adjudications": "papers/selfevolve-agent/reviews/pipeline_S5/adjudications.json",
+ "evidence_dirs": [
+  "papers/selfevolve-agent/results",
+  "papers/selfevolve-agent/evidence"
+ ],
+ "llm": {
+  "enabled": true,
+  "rpc": "http://127.0.0.1:3081",
+  "roles": "method,stat,experiment,novelty,repro,devil",
+  "script": "research-kit/adversarial_review.py"
+ },
+ "manifest": null,
+ "name": "selfevolve-agent",
+ "out": "papers/selfevolve-agent/reviews/pipeline_S5",
+ "tex": "papers/selfevolve-agent/paper/main.tex",
+ "zip": "papers/selfevolve-agent/submission/submission_selfevolve-agent.zip",
+ "citation_online": true,
+ "novelty_online": true,
+ "converge": 3
+}

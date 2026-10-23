@@ -1,0 +1,1039 @@
+Published in Transactions on Machine Learning Research (08/2026)
+Auditing Closed-Loop Learning in
+Recurrent Neural Networks: Reproduction,
+Robustness, and Generalization
+Aarav Sinha
+aarav@eon.systems
+Eon Systems PBC
+Reviewed on OpenReview: https: // openreview. net/ forum? id= e0pSqIqwXO
+Abstract
+Recurrent neural networks often serve as mechanistic models of learning and control, but
+closed-loop training is difficult to reproduce because each action changes the inputs the
+model sees next. We independently implement the central protocol from Ger and Barak,
+first testing it with new seeds and protocol changes before extending the study to other
+architectures and tasks. In a double-integrator setup aligned with the original paper’s main
+text, every one of 50 paired seeds exhibits a transient peak in the open-loop learner’s de-
+ployed loss, with the mean peak reaching 19.1 times the initial loss. By the final epoch,
+losses are similar and no run reaches our 5 percent meaningful-gap threshold, so the trajec-
+tory through training is more informative than the endpoint. The reported spectral stages
+and coupled-stability transition also reproduce in all 50 seeds. In a targeted comparison of
+short and long horizons, all 120 runs meet the criterion combining short-horizon improve-
+ment with an increase in the spectral radius of the coupled agent-environment system; 62
+also show long-horizon loss worsening, never without the radius increase. GRU controllers
+and tracking tasks retain final-loss divergence, and low-rank controllers meet the same crite-
+rion because their open-loop rollouts often produce extremely large losses. Tanh controllers
+retain only the transient peak, while final-loss transfer to path-integration tasks is weak.
+Increasing tanh hidden size from 50 to 400 preserves the peak and stability crossing, but
+a two-layer controller develops a persistent final gap. All 60 gated-controller and ring-task
+runs register a local-Jacobian crossing; the partial-observation variants finish close to the
+stability boundary and show weak behavioral transfer. These results motivate following de-
+ployed behavior throughout training with paired seeds, and also show that stability claims
+need coupled-system diagnostics and explicit reporting of horizons and failed runs.
+Introduction
+Closed-loop RNNs bring action-dependent feedback into sequence models and also serve as mechanistic
+models in computational neuroscience. During interaction, their outputs become part of later observations,
+creating a feedback path that is absent from open-loop imitation or teacher-forced learning. Ger and Barak
+(Ger and Barak, 2025) argued that this feedback changes how otherwise identical RNNs learn and attributed
+the important transitions to the joint dynamics of the controller and its environment.
+We use their framework to retest individual claims about recurrent control with an independent implementa-
+tion and new random seeds. We then vary the protocol and ask whether the coupled-system analysis extends
+to nonlinear controllers and path-integration tasks.
+Explicit configuration files control our independent reproduction of the central open/closed-loop comparison,
+where criteria fixed before the reported sweeps turn qualitative claims about learning stages and stability
+into quantitative tests while retaining seed-level uncertainty. Later experiments identify protocol-sensitive
+results and motivate the reporting recommendations in Section 10.
+
+Published in Transactions on Machine Learning Research (08/2026)
+Related Work
+Task-trained RNNs in computational neuroscience. By solving cognitive or motor tasks, task-trained
+RNNs expose internal dynamics that can reveal low-dimensional mechanisms (Sussillo and Barak, 2013) and
+model context-dependent computation in prefrontal cortex (Mante et al., 2013).
+Barak describes these
+networks as hypothesis-generating tools in systems neuroscience (Barak, 2017); the fact that networks with
+similar performance can nevertheless have different representational geometry (Maheswaranathan et al.,
+2019) underscores why architecture and training choices matter, motivating our tests across protocols and
+model classes.
+Dynamical-systems analysis of RNNs. The original paper belongs to a tradition of reverse-engineering
+trained RNNs through fixed points and local linearizations (Sussillo and Barak, 2013; Maheswaranathan
+et al., 2019). We study the RNN together with its environment because the environment turns actions into
+future observations, so the coupled dynamics may differ from those of the RNN alone.
+Open-loop training, closed-loop deployment, and distribution shift. Teacher-forced training ex-
+poses a model to different states from those it reaches during deployment, a mismatch addressed by scheduled
+sampling in sequence prediction (Bengio et al., 2015) and by DAgger when the learner’s own actions shift
+the visited states (Ross et al., 2011). Because open-loop RNN imitation can likewise minimize teacher-forced
+error and still fail after deployment, we evaluate every learner under closed-loop rollout.
+Reproducibility and robustness in machine learning. The NeurIPS reproducibility program empha-
+sized the value of artifacts and reporting checklists (Pineau et al., 2021), while work in deep reinforcement
+learning has shown how strongly random seeds and implementation or evaluation choices can affect empirical
+conclusions (Henderson et al., 2018). Closed-loop RNN experiments inherit these problems, with additional
+sensitivity to the rollout and to how the model is coupled to its environment.
+We use reproduction for tests that preserve the original task family and claim. A robustness test changes the
+training or evaluation protocol, whereas a generalization test changes the architecture or task family; failure
+in either broader test narrows the claim’s scope but does not by itself invalidate the original result.
+Original Claims and Audit Questions
+We distinguish the original paper’s claims from the broader questions introduced by our audit. The three
+reproduction targets are the divergence between open- and closed-loop learning trajectories (C1), spectrally
+defined learning stages (C2), and stability of the coupled agent-environment system (C3).
+Our two audit questions broaden the inquiry without attributing new claims to Ger and Barak: A1 examines
+robustness and the proposed tradeoff between short- and long-horizon performance, whereas A2 examines
+transfer across architectures and tasks.
+We classify an effect as reproduced when its prespecified diagnostic holds for most paired seeds, requiring
+uncertainty intervals that exclude zero for continuous effects and using the per-seed threshold below for final-
+loss divergence. An effect is partially reproduced when seed-level support is unstable, a plausible perturbation
+changes the result, or diagnostic evidence is weak; not reproduced is reserved for effects that are absent or
+reversed, or that depend on hand-selected visual criteria.
+For the C1 final-loss diagnostic, the smallest meaningful effect is a 5 percent relative deployed-loss gap,
+roughly 0.022 on the original-setting closed-loop scale; smaller gaps remain in the continuous results but do
+not count as final-loss divergence. Varying this threshold from 1 to 20 percent leaves every classification
+unchanged except for the partial-observation tanh ring, where 19/20 seeds exceed 1 percent and 2/20 exceed
+5 percent (Appendix E). Because the original figure prominently shows a transient open-loop peak, we treat
+that peak as a separate C1 signature. Appendix C connects both C1 tests, along with the other decisions,
+to the original evidence.
+
+Published in Transactions on Machine Learning Research (08/2026)
+Closed-Loop RNN Reproducibility Audit Protocol
+We use this protocol as a reusable audit recipe for recurrent-control settings in which actions alter later obser-
+vations. Each open-loop learner is paired with a closed-loop learner cloned from the same initialization, and
+criteria fixed before the reported sweeps evaluate the claimed stages and stability transition while retaining
+seed-level uncertainty. After the direct reproduction, we vary optimization and environment coupling before
+moving to held-out architectures and tasks. Coupled agent-environment spectra are computed whenever the
+joint dynamics are linear or locally linearizable; Appendix C gives the full protocol.
+Each run, including failures, is classified on its own before the evidence is aggregated across seeds. This
+grounds claims about stages and mechanisms in seed-level measurements, so a few persuasive-looking curves
+cannot carry the conclusion.
+4.1
+Metrics and run accounting
+Deployed closed-loop loss is the primary behavioral measure, with the remaining measures defined in Ap-
+pendix B. The audit contains 675 completed paired runs: 50 in the core reproduction and 195 in the
+robustness sweep. The targeted A1 and A2 studies contribute 120 and 90, respectively, while another 220
+runs support additional analyses. We also performed two one-seed protocol checks and five seeded execu-
+tions of the original nonlinear notebook; all tables and figures are generated from saved outputs, and every
+non-finite outcome is recorded as a failure (F).
+Detector thresholds were fixed during smoke-test development and remained unchanged throughout the
+reported sweeps. Across the sensitivity ranges in Appendix E, the claim decisions stay fixed at or above
+their prespecified values; in every A1 grid cell, all 120 runs meet both the combined short-horizon/radius
+criterion and the radius criterion itself, with no long-horizon loss worsening in the absence of a radius increase.
+4.2
+Paired open-loop and closed-loop training
+For each seed, one initialization is cloned into an open-loop learner and a closed-loop learner. As in the
+public artifact, the closed-loop controller is trained by differentiating through the unrolled agent-environment
+dynamics, without a stochastic REINFORCE estimator. The open-loop model imitates teacher trajectories,
+and both models are evaluated under deployed closed-loop rollout.
+4.3
+Stage detection
+The original paper defines its stages spectrally. During Stage 1, the effective position gain is negative and a
+complex-conjugate eigenvalue pair lies outside the unit circle; Stage 2 ends when the dominant eigenvalues
+of the coupled matrix enter the unit disk. Policy refinement follows in Stage 3 as the largest-magnitude real
+eigenvalue—the third mode in the original setting—grows. Our C2 detector follows this sequence, while loss
+derivatives and segmented changepoints are retained only as downstream observations.
+4.4
+Coupled-system stability diagnostics
+For linearized settings, we compute the spectral radius, or largest eigenvalue magnitude, of both the recurrent
+matrix and the coupled agent-environment transition matrix. C3 predicts that the coupled radius will identify
+the stability transition more clearly than the recurrent-matrix radius.
+4.5
+Robustness and generalization
+The A1 sweep changes optimization and environment coupling according to Table 4, with its Adam condition
+testing Ger and Barak’s prediction that adaptive optimization mitigates the structured conflict between short
+and long horizons. A2 moves beyond the original setting by changing the controller class and then the task,
+including tracking and ring environments.
+
+Published in Transactions on Machine Learning Research (08/2026)
+4.6
+Original artifact, independent implementation, and deviations
+We preserved the public artifact under external/original_artifact/, including its notebooks and data
+files. The reproduction log explains how to run each component and notes any data dependencies or execution
+constraints.
+The reported experiments use a separate, configuration-controlled implementation of the full workflow. C1–
+C3 retain the original architecture and training profile, whereas A1 and A2 introduce new audit conditions.
+Every protocol choice comes from public materials and is documented in the configuration files; we did not
+contact the original authors. Notebook executions check the artifact itself, while all quantitative evidence
+comes from the independent implementation, whose commands for regenerating the tables and figures appear
+in Appendix A.
+A code-level comparison confirms that the core reproduction follows the original double-integrator dynamics
+and training profile; Appendix D provides the item-by-item provenance. Where the public notebook differs
+from the main text, our aligned configuration sets β = 0 and samples x0 ∼[−2, 2]2, with squared Euclidean
+state cost averaged over the rollout. We treat this configuration as a claim-level reproduction of the protocol
+described in the main text.
+Appendix D separates 22 exact artifact matches from five main-text-aligned deviations and ten new audit
+choices. Under the notebook protocol, the observed ranges from seeded executions of the original nonlinear
+notebook overlap those of the package runs for the final losses and peak statistics (Appendix H).
+The open-loop input convention changes the interpretation of C1. White-noise teacher inputs cover the
+observation space more broadly and may therefore help imitation recover the teacher’s full input-to-action
+map; under this convention, the transient peak is consistent with a partially learned policy passing through
+destabilizing parameter regions before its deployed loss approaches that of the closed-loop learner. Teacher-
+rollout inputs instead concentrate supervision on the teacher’s own state distribution and leave deployment
+states uncorrected, matching the usual covariate-shift account in imitation learning (Ross et al., 2011; Bengio
+et al., 2015). In a controlled ablation, this convention produces a persistent final gap in all 15 seeds and
+no post-initial peak, with a median relative-gap ratio, (LOL −LCL)/LCL, of approximately 147. All 65
+comparable white-noise runs instead show the peak before finishing below the 5 percent final-gap threshold
+(Appendix G). Accordingly, C1 is evaluated using both the trajectory-level peak and the final deployed-loss
+gap.
+Result 1: Direct Reproduction of the Core Divergence
+Across 50 paired double-integrator runs, every open-loop student develops the post-initial deployed-loss peak
+shown in Figure 1. The peak occurs at a mean epoch of 249.1 (bootstrap 95 percent CI [247.5, 250.5]), close
+to the median of 249.5. On average, peak loss is 19.1 times the initial loss (CI [17.1, 21.4]) and 4.88 × 104
+times the final loss. A learner can therefore look successful under teacher forcing even while its deployed
+closed-loop behavior deteriorates sharply during training.
+After the peak, the open-loop learner recovers and the final losses become similar. The closed-loop learner
+finishes at 0.4370 (bootstrap 95 percent CI [0.4367, 0.4373]), while the open-loop learner finishes at 0.4387
+(CI [0.4383, 0.4390]).
+Seed-to-seed variation is small: the respective SDs are 0.00109 and 0.00126, with
+IQRs [0.4361, 0.4378] and [0.4379, 0.4393].
+The paired final gap is positive but small, at 0.00168 (CI
+[0.00147, 0.00190]), and none of the 50 runs reaches the prespecified 5 percent threshold.
+C1 therefore
+reproduces through the learning trajectory and transient peak, with no meaningful separation at the end-
+point.
+All 50 core seeds also reproduce the spectral C2 sequence and the C3 stability transition: Stage 1 ends at
+a median epoch of 7, and Stage 2 ends with the stability crossing at a median epoch of 105.5. The final
+coupled spectral radius is 0.6253 (CI [0.6243, 0.6264]).
+
+Published in Transactions on Machine Learning Research (08/2026)
+Figure 1: Core C1 reproduction under the original double-integrator setting. (a) Median deployed closed-
+loop test loss across paired seeds, with interquartile bands; the open-loop student shows the post-initial
+peak in 50/50 seeds. (b) Paired final deployed losses for the same initializations, showing that the open-loop
+students recover from the peak and finish with similar deployed losses.
+Seeded executions of the original nonlinear notebook provide an independent artifact check: their observed
+ranges overlap the package runs for every behavioral metric, and both implementations show a transient
+peak followed by a final gap below 1 percent (Appendix H).
+Result 2: Robustness and Tradeoff Audit
+The robustness sweep contains 195 paired runs, with 15 seeds in each of 13 perturbation settings (Appendix C;
+Figure 2). The C1 peak appears in 165/195 runs: every finite SGD setting supports it, whereas none of the
+15 Adam runs does. Final-gap support occurs in 60/195 runs, covering all 15 seeds at either altered learning
+rate, at the shorter horizon, and under Adam; in every other finite setting, the open-loop learner recovers
+by the end of training. Adam is thus the only condition with a persistent final gap and no transient peak.
+All 15 no_clip runs become non-finite after the closed-loop learner diverges and supplies a non-finite imi-
+tation target to the open-loop student. Follow-up runs isolate the failure to closed-loop SGD: clipping only
+that learner rescues all 15 runs, and fully unclipped Adam remains finite, whereas lowering the SGD learning
+rate to 0.003 rescues none (Appendix F).
+Spectral stages and coupled-stability crossings appear in all 180 finite robustness runs; the other 15 cannot
+be evaluated because unclipped training diverges. Loss-only stage detectors are more diagnostic-dependent:
+the derivative-style loss detector finds three-stage structure in many finite runs, but segmented changepoints
+on the original loss curves do not recover the same boundaries (Figure 7 in Appendix E).
+The targeted A1 sweep covers six control penalties, with 20 seeds at each penalty and evaluation horizons
+Ts = 10 and Tℓ= 200 (Figure 3; Appendix B). All 120 runs meet both the union and radius criteria, and
+across runs a mean 47.24 percent of intervals with short-horizon improvement also show a radius increase.
+Sixty-two runs additionally meet the long-horizon loss-worsening criterion, always together with the radius
+signal. The other 58 do not meet the loss-worsening criterion, demonstrating that a radius increase is not
+sufficient for measurable loss worsening at the evaluated horizon.
+At the interval level, the exclusive radius-only criterion is supported in 120/120 runs, compared with 0/120
+for the exclusive loss-only criterion. These counts are separate from the run-level split: a run can contain
+radius-only intervals and still meet the loss-worsening criterion elsewhere in training.
+
+Published in Transactions on Machine Learning Research (08/2026)
+Figure 2: Robustness heatmap over perturbation settings and claim diagnostics. C1 has separate columns
+for the transient peak and final deployed-loss criteria; C2 has separate spectral and downstream loss-stage
+columns. The targeted multi-horizon A1 test appears in Figure 3. Non-finite, unclipped runs are marked F.
+The balance between these run-level outcomes shifts with the control penalty. Counts for runs meeting the
+radius criterion but not the loss-worsening criterion are 5, 5, and 6 at β = 0, 0.001, and 0.005; they rise to
+13, 13, and 16 at β = 0.02, 0.05, and 0.1. Yet the median final coupled radii are nearly identical in the two
+groups. Higher penalties are therefore associated with more runs that show the radius signal without meeting
+the behavioral-loss criterion. Across the threshold and horizon sensitivity grid, the invariant results are union
+and radius support in 120/120 runs and no loss-worsening support without a radius increase (Appendix E).
+Result 3: Stage and Stability Diagnostics
+The spectral detector reproduces C2 in all 50 core seeds, following the sequence defined in Section 4.3.
+Segmented regression on deployed loss gives a different account: its median boundaries fall at epochs 120
+and 193, with segment slopes −0.0117, −0.0432, and −0.00065. Because none of the detector variants yields
+strict loss-based support for all three stages (Appendix E), C2 evidence comes from the spectral detector;
+the loss observer identifies different, downstream boundaries.
+The original-setting stability transition also appears in all 50 seeds (Figure 4): every final coupled spectral
+radius is finite and below one, and the median crossing occurs at epoch 105.5. A derivative-style plateau de-
+tector places the plateau exit a median of one epoch from this crossing, whereas segmented loss changepoints
+fall at different downstream boundaries. The coupled-system spectrum therefore supplies the C3 diagnostic.
+For linear tasks with linear, tanh, low-rank, or stacked controllers, the coupled transition matrix is available
+in closed form. Gated controllers and nonlinear tasks use local Jacobian spectra, obtained by differentiating
+the one-step map (st, ht) 7→(st+1, ht+1) along deployed rollouts. Where both constructions apply, their radii
+agree to within 10−5 at the origin of the linear and tanh double integrators. Across 10 core seeds evaluated
+with both methods, the along-trajectory Jacobian radius differs from the closed-form radius at the origin by
+
+Published in Transactions on Machine Learning Research (08/2026)
+Figure 3: Targeted A1 component analysis over 120 paired tradeoff runs. (a) Support counts for the union
+criterion, long-horizon loss-worsening criterion, radius criterion, and the intersection of loss and radius crite-
+ria. (b) Seed-level conditional fractions among short-horizon improvement intervals, with diamonds marking
+means. The union and radius criteria are supported in 120/120 runs; loss worsening appears in 62/120 and
+never without the radius signal.
+Figure 4: Coupled-system spectral analysis for the original setting.
+(a) Median coupled and RNN-only
+spectral radii across 50 seeds, with interquartile bands; the dashed line marks the ρ = 1 stability boundary
+and tick marks show per-seed crossing epochs. The plotted median marker is rounded to epoch 106, while
+the unrounded median used in the text is 105.5. (b) Distribution of stability-crossing epochs: the coupled
+radius crosses below one early in training, but the RNN-only radius shows no crossing aligned with that
+transition.
+a median of only 3.6 × 10−7; the median per-seed Pearson correlation rounds to 1.00 (Appendix I). Tracking
+uses its own coupled matrix and supports C3 in 3/10 runs, while Section 8.2 gives the GRU and ring results.
+Result 4: Generalization Across Models and Tasks
+8.1
+Behavioral transfer
+Among the 90 architecture and task extensions, 38 runs meet the final-loss criterion and 60 show the open-
+loop peak (Figure 6). The final-loss criterion is met in all 10 runs in each of the GRU, low-rank, and tracking
+settings, although the low-rank result arises from extremely large open-loop rollout losses. By contrast, all
+
+Published in Transactions on Machine Learning Research (08/2026)
+10 tanh RNN runs show only the transient peak and finish with similar losses. Final-gap support is weaker
+on the moving-target rings: 5/20 GRU seeds and 2/20 tanh seeds meet the criterion, while peak support is
+20/20 and 0/20, respectively.
+The nearly memoryless fixed-target ring meets the final-loss criterion in only 1/10 seeds; mean final gaps also
+remain small in the harder moving-target variants, at 0.044 for GRU and 0.051 for tanh. Taken together,
+these results give strong support for final-loss transfer in the controller and tracking settings but weak support
+in the path-integration tasks.
+8.2
+Diagnostic (C3) transfer
+Because behavioral and stability transfer need not coincide, we analyze them separately. Among variants
+with a closed-form diagnostic, C3 transitions appear in every tanh and low-rank run (10/10 each), whereas
+the task-specific coupled matrix supports the transition in 3/10 tracking runs. The GRU and ring variants
+instead use the local Jacobian described above, so we record their evidence separately from the closed-form
+C3 results: all 60 Jacobian runs register the prespecified persistent crossing, comprising 10 GRU double-
+integrator runs, 10 fixed-target ring runs, and 20 runs for each partial-observation controller.
+Post-crossing radii and timing vary substantially: the GRU double integrator and fixed-target ring cross at
+median epochs 10 and 5 and finish at median radii 0.58 and 0.83, whereas the partial-observation variants
+cross later, at epochs 40 and 270, and finish near one with median radii 0.986 and 0.978. Individual seeds
+reach radii of 1.19; these variants also show weak behavioral transfer (Appendix I).
+8.3
+Scale and depth
+Except for the size-64 GRU, the preceding experiments use single-layer controllers with hidden size 100.
+Using 10 paired seeds per condition, we first vary width with tanh controllers at sizes 50, 200, and 400 and
+a width-256 GRU. The depth test uses a two-layer tanh controller with 100 units per layer. A closed-form
+coupled matrix covers the tanh variants, including the stacked controller, whose linearization agrees with its
+automatic-differentiation Jacobian; the GRU-256 extension is evaluated behaviorally.
+Width preserves the core signatures (Figure 5a). Every seed at every tanh width shows them (10/10 for each
+new size and 50/50 in the hidden-100 core), and every final gap remains below the threshold. The median
+peak/initial ratio rises steadily from 10.8 at hidden size 50 to 17.7 at size 100, 25.9 at size 200, and 50.4 at
+size 400, while median crossing epochs remain between 104 and 105.5. The hidden-256 GRU likewise retains
+final-loss divergence in all 10 seeds.
+The two-layer controller trains stably and, in all 10 seeds, retains the spectral stages and crossing (median
+crossing epoch 92.5); its open-loop student also develops a persistent final gap in all 10 seeds (median 35
+percent). Deployed loss rises again during training but stays below its high initial value, so no seed meets
+the strict peak criterion (Figure 5b). We did not repeat the full A1 sweep at each width and depth, leaving
+open whether the short/long-horizon tradeoff is unchanged across scales.
+
+Published in Transactions on Machine Learning Research (08/2026)
+Figure 5: Scale and depth. (a) Peak/initial ratio, final relative gap, and stability-crossing epoch versus
+hidden size (10 paired seeds per size; hidden-100 is the 50-seed core; GRU at 64 and 256). (b) Median
+deployed loss for the two-layer stacked variant with interquartile bands. Loss rises again during training but
+remains below its initial value, then settles into a persistent final gap.
+Figure 6: Generalization across architecture and task variants. Standard variants use n = 10 paired seeds;
+the partial-observation ring variants use n = 20. (a) C1 final-loss support fractions with exact counts. Tanh
+RNN final-loss support is 0/10, with peak support in 10/10 seeds. (b) Seed-level deployed-loss gaps with
+mean diamonds on a symmetric-log scale, clipped at 103 for display; triangles mark the clipped, extremely
+large low-rank rollout losses. The fixed-target ring provides a nearly memoryless sanity check.
+Claim-Level Audit Matrix
+Table 1 summarizes the evidence for original claims C1–C3 and audit questions A1–A2.
+
+Published in Transactions on Machine Learning Research (08/2026)
+Table 1: Claim-level audit matrix for completed runs.
+C1–C3 are original claims under reproduction.
+A1–A2 are audit questions introduced here to test robustness, short/long horizon tradeoffs, and broader
+generalization.
+Item
+Evidence type
+Original
+protocol
+A1 audit
+A2 audit
+Lesson
+C1:
+open/closed
+divergence
+Final deployed loss
+and peak signature
+Peak 50/50;
+final gap 0/50
+Peak robust in finite
+SGD settings;
+final-gap diagnostic
+varies; no clipping
+fails
+GRU/low-rank/tracking
+final gaps; tanh peak
+only; ring weak
+Report deployed
+loss and peak
+signatures.
+C2: stage
+structure
+Spectral detector
+and loss-only
+observers
+Spectral 50/50;
+segmented loss
+stages 0/50
+Spectral C2 robust
+in finite linearizable
+settings
+Transfers where a (local)
+linearization exists
+Stage claims need
+diagnostics in the
+claim’s own space.
+C3: coupled
+stability
+Coupled spectral
+radius and timing
+Crossing 50/50;
+median epoch
+105.5
+Robust finite
+crossings
+Closed form:
+tanh/low-rank/stacked;
+Jacobian crossings 60/60
+for GRU/ring, with
+partial-observation rings
+ending near radius 1
+Report the coupled
+spectrum and its
+timing vs stage
+boundaries.
+A1: protocol
+robustness and
+tradeoff
+Perturbation grid
+and
+short/long-horizon
+interval test
+N/A
+Union/radius
+120/120; loss
+worsening 62/120;
+loss worsening
+without radius
+increase 0/120
+N/A
+Robustness claims
+need stress tests,
+explicit horizons,
+and component
+criteria.
+A2: broader
+generalization
+Architecture, task,
+scale, depth
+extensions
+N/A
+N/A
+Behavioral:
+diagnostic-dependent;
+tracking strong, ring
+weak. Diagnostic:
+Sec. 8.2. Scale:
+signatures persist at
+hidden 50–400; depth:
+persistent gap, no strict
+peak
+Effects depend on
+task structure,
+coupling,
+observability;
+report behavioral
+and diagnostic
+transfer separately.
+Reporting Recommendations for Closed-Loop RNN Studies
+The audit suggests four practical reporting choices.
+• Show the deployed trajectory and pair the comparison. Report peak behavior as well as final
+performance, since transient deployment failures may disappear by the last epoch. Use the same
+initialization for both learners, then hold the training budget and evaluation rollout fixed across the
+two models.
+• Use a diagnostic that matches the claim. Spectral stage claims need explicit eigenvalue criteria
+and boundary epochs, while loss changepoints should be identified as downstream observations.
+Stability claims should be tested on the coupled agent-environment system; when no closed-form
+transition matrix exists, local Jacobians provide a practical extension.
+• Document how the learner interacts with its environment. Report the feedback strength
+and rollout horizon together with the location of gradient clipping and the teacher-input convention
+used for open-loop training.
+• Report failed runs and include a stress test. Because average curves can hide unstable seeds
+or long plateaus, report failure counts beside aggregate performance.
+Discussion
+Together, the core experiments give a temporal account of C1–C3: the open- and closed-loop trajectories
+separate as the coupled system moves through the reported spectral stages, after which the open-loop learner
+recovers and finishes with a sub-threshold gap. Because the loss changepoints mark different boundaries, the
+stage evidence rests on the spectrum. The A1 study reveals a related asymmetry, with all 120 runs meeting
+
+Published in Transactions on Machine Learning Research (08/2026)
+the radius criterion but only 62 also meeting the long-horizon loss-worsening criterion. Behavioral transfer
+is strongest among the double-integrator architecture variants and on tracking; it is much weaker on the
+path-integration tasks.
+For mechanistic RNN models in computational neuroscience, behavioral loss and dynamical stability provide
+different forms of evidence, and analyzing the full feedback loop reveals a transition absent from the RNN-
+only spectrum. Keeping these measures separate makes the proposed mechanism and its limits easier to
+see.
+Scope: richer agent-environment interactions. Our evidence for this mechanism comes from low-
+dimensional environments that are locally linearizable around deployed trajectories, where training differen-
+tiates through rollouts and applies a dense cost at each step. In multi-step decision problems, the relevant
+coupled object may extend beyond the one-step map analyzed here to a long-horizon composition of transi-
+tions. Stochastic or non-differentiable reinforcement-learning loops fall outside the study, along with settings
+driven only by sparse rewards. The depth and partial-observation experiments probe parts of this boundary,
+while local Jacobians extend the diagnostic beyond systems with a closed-form transition matrix. A distinct
+use of spectral graph filtering over populations appears in evolutionary optimization (Ouyang et al., 2026).
+Limitations. The transfer study covers a finite set of architectures; its path-integration evidence is limited
+to fixed- and moving-target ring tasks. A1 compares changes between evaluation intervals and therefore does
+not characterize the entire trajectory. Although local Jacobians make the gated controllers accessible, the
+partial-observation variants finish close to the stability boundary and sometimes above it. These experiments
+do not establish universal transfer or determine behavior in stochastic environments.
+References
+Omri Barak. Recurrent neural networks as versatile tools of neuroscience research. Current Opinion in
+Neurobiology, 46:1–6, 2017.
+Samy Bengio, Oriol Vinyals, Navdeep Jaitly, and Noam Shazeer. Scheduled sampling for sequence prediction
+with recurrent neural networks. In Advances in Neural Information Processing Systems, 2015.
+Yoav Ger and Omri Barak. Learning dynamics of RNNs in closed-loop environments. In Advances in Neural
+Information Processing Systems, volume 38, pages 96353–96392, 2025.
+https://doi.org/10.52202/
+085713-3221.
+Peter Henderson, Riashat Islam, Philip Bachman, Joelle Pineau, Doina Precup, and David Meger. Deep
+reinforcement learning that matters. In Proceedings of the AAAI Conference on Artificial Intelligence,
+2018.
+Niru Maheswaranathan, Alex H. Williams, Matthew D. Golub, Surya Ganguli, and David Sussillo. Univer-
+sality and individuality in neural dynamics across large populations of recurrent networks. In Advances
+in Neural Information Processing Systems, 2019.
+Valerio Mante, David Sussillo, Krishna V. Shenoy, and William T. Newsome. Context-dependent computa-
+tion by recurrent dynamics in prefrontal cortex. Nature, 503:78–84, 2013.
+Kaichen Ouyang, Zong Ke, Shengwei Fu, Lingjie Liu, Puning Zhao, and Dayu Hu.
+Learn from global
+correlations: Enhancing evolutionary algorithm via spectral GNN. In Proceedings of the AAAI Conference
+on Artificial Intelligence, 2026.
+Joelle Pineau, Philippe Vincent-Lamarre, Koustuv Sinha, Vincent Lariviere, Alina Beygelzimer, Florence
+d’Alché-Buc, Emily Fox, and Hugo Larochelle. Improving reproducibility in machine learning research: a
+report from the NeurIPS 2019 reproducibility program. Journal of Machine Learning Research, 22(164):1–
+20, 2021.
+Stéphane Ross, Geoffrey Gordon, and Drew Bagnell.
+A reduction of imitation learning and structured
+prediction to no-regret online learning.
+In Proceedings of the Fourteenth International Conference on
+Artificial Intelligence and Statistics, pages 627–635, 2011.
+
+Published in Transactions on Machine Learning Research (08/2026)
+David Sussillo and Omri Barak. Opening the black box: low-dimensional dynamics in high-dimensional
+recurrent neural networks. Neural Computation, 25(3):626–649, 2013.
+Artifact Entry Points
+The public code repository contains the implementation, configurations, and saved outputs used for the
+tables and figures. Table 2 lists the main entry points and approximate runtimes.
+Table 2: Artifact entry points. Full runtimes are approximate for one NVIDIA L40 GPU.
+Component
+File/script
+Produces
+Runtime
+Expected output
+Smoke validation
+scripts/run_smoke.sh
+Tiny raw outputs, tables,
+figures
+< 10 min
+results/raw/smoke_*
+Full audit
+scripts/run_full_audit.sh
+Core, robustness,
+generalization, figures
+16–18 h
+sweep summaries,
+figures
+Targeted C2/A1/A2
+scripts/run_targeted_c2_a1_a2.sh
+Tradeoff, hard ring,
+changepoints
+8–10 h
+targeted summaries
+Extended analyses
+scripts/run_revision_
+experiments_fast.sh
+Scale/depth, Jacobian
+runs, gradient-clipping
+selectivity, convention
+ablation, artifact
+side-by-side
+2 h (2 GPUs);
+21–23 h
+sequential
+extended-analysis
+summaries
+Claim tables
+make_claim_tables module
+Claim matrix
+< 1 min
+claim_matrix.csv
+Supplemental tables
+supplemental_audit_tables module
+Run accounting, C2
+sensitivity, A1 split,
+peak/alignment checks
+< 1 min
+processed CSVs
+Figures
+make_all_figures module
+Paper figures
+< 1 min
+figure_*.png
+Metric Definitions
+Let st be the environment state, ot = Cst + ϵt the observation, ht the recurrent state, and ut = fθ(ot, ht)
+the action. Closed-loop deployment follows st+1 = F(st, ut) and ht+1 = Gθ(ot, ht). The deployed loss is
+Ldeploy(θ) = 1
+T −1
+t=0
+
+ℓs(st, s⋆
+t ) + λu∥ut∥2
+
+.
+(1)
+The teacher-forced imitation loss compares learner and teacher actions on teacher-generated observations:
+LTF(θ; θ⋆) = 1
+T −1
+t=0
+∥fθ(o⋆
+t , ht) −fθ⋆(o⋆
+t , h⋆
+t )∥2
+2.
+(2)
+For linearizable double-integrator settings, we estimate an effective feedback gain at each recorded training
+epoch e from the state and action samples Xe and Ue:
+bKe = (X⊤
+e Xe + αI)−1X⊤
+e Ue. If E is the set of
+recorded epochs, the closed/open gain distance is DK = (P
+e∈E ∥bKCL
+e
+−bKOL
+e
+∥2
+F )1/2.
+For linear RNN controllers and linear environments, with st+1 = Ast + But, ut = Whoht, and ht+1 =
+(1 −η)ht + η(Whhht + WihCst+1), the coupled transition matrix over zt = [s⊤
+t , h⊤
+t ]⊤is
+Pθ =
+
+BWho
+ηWihCA
+(1 −η)I + ηWhh + ηWihCBWho
+
+.
+(3)
+We report ρRNN = maxi |λi(Whh)| and ρcoup = maxi |λi(Pθ)|.
+For the closed-form series, the stability
+crossing is the first epoch that begins five consecutive epochs with ρcoup < 1; local-Jacobian crossings use
+three consecutive finite probes, with Jacobians evaluated every five training epochs.
+The open-loop peak signature is evaluated over the deployed-loss trajectory across training epochs. We count
+a post-initial peak when arg maxe LOL
+deploy,e > 0 and maxe LOL
+deploy,e > 1.5LOL
+deploy,0; we also report peak/initial
+and peak/final ratios.
+
+Published in Transactions on Machine Learning Research (08/2026)
+The spectral detector follows the stage sequence defined in Section 4.3. A negative effective position gain
+together with a persistent unstable complex mode marks Stage 1; persistent entry of the coupled radius
+into the unit disk marks the start of Stage 2. Stage 3 is identified by growth of the largest-magnitude real
+eigenvalue after that crossing, which is the third mode in the original setting.
+For comparison, the loss-only labels use smoothed log deployed loss yt = log(max(Ldeploy,t, ε)). The seg-
+mented variant fits three piecewise-linear segments: the first must have a slope below −0.02, the second a
+slope magnitude below max(0.35|slope1|, 0.004), and the third a slope below slope2 −0.002.
+For A1, let Is denote a short-horizon-improvement interval, ∆log L(Ts)
+e
+< −δshort. Long-horizon worsening
+is Iℓ= [∆log L(Tℓ)
+e
+> δlong], and a coupled-radius increase is Iρ = [∆ρcoup,e > 0]. The reported components
+are
+Iunion = Is ∧(Iℓ∨Iρ),
+Iloss = Is ∧Iℓ,
+Iradius = Is ∧Iρ,
+Iboth = Is ∧Iℓ∧Iρ,
+Iloss-only = Is ∧Iℓ∧¬Iρ,
+Iradius-only = Is ∧Iρ ∧¬Iℓ.
+A run meets a component criterion when at least three intervals satisfy it and those intervals account for at
+least 10 percent of the run’s short-horizon-improvement intervals. In the targeted sweep, Ts = 10, Tℓ= 200,
+and δshort = δlong = 0.005.
+For scalar paired metric M, the open/closed effect is ∆i(M) = M OL
+i
+−M CL
+i
+. We report the mean with a
+nonparametric bootstrap 95 percent CI and include seed-level SD or IQR where useful. Direction agreement
+is N −1 P
+i 1[∆i(M) > 0], and the binary claim-support rate is S(c) = N−1 P
+i qi(c).
+For controllers without a single linear recurrent transition matrix, such as GRUs, and for tasks without a
+linear state-space form, such as the ring variants, we replace the closed-form coupled matrix with a local
+Jacobian. At probe points (st, ht) collected along deployed rollouts, the one-step coupled map f : (st, ht) 7→
+(st+1, ht+1) is differentiated with parameters frozen and observation noise disabled.
+We summarize the
+resulting probe-level spectral radii by their median and retain the maximum as an additional diagnostic.
+Where both constructions apply, their radii agree at the origin to within 10−5 (Appendix I); local-Jacobian
+evidence is stored under the separate flag claim_C3_stability_transition_jacobian to distinguish it
+from closed-form C3 evidence.
+Audit Protocol Specification
+Table 3: Mapping from original evidence to reproduction tests, distinguishing figure-level replication from
+claim-level decisions.
+Original claim
+Original evidence
+Our test
+Result
+Decision
+Closed/open divergence
+Loss/gain figures and
+open-loop sharp peak
+50 paired seeds plus
+peak-signature check
+post-initial peak 50/50;
+final gap 0/50
+Reproduced
+trajectory
+signature
+Stage structure
+Spectral stages:
+negative-position policy,
+stability phase, refinement
+Spectral stage detector plus
+loss-only changepoints
+spectral stages 50/50;
+segmented loss stages 0/50
+Reproduced
+spectrally
+Coupled stability
+Coupled eigenvalue argument
+and Stage 2 alignment
+Coupled radius crossing and
+spectral stage timing
+50/50 crossings; median
+crossing 105.5
+Reproduced
+Motor-control
+applicability
+Tracking extension
+Tracking plus ring variants
+final-loss support: tracking
+10/10; ring family 8/50
+Partial
+boundary
+
+Published in Transactions on Machine Learning Research (08/2026)
+Table 4: Robustness perturbation grid. Its 15-seed baseline is separate from the 50-seed core reproduction,
+giving every grid row the same sample size.
+Perturbation
+Changed value
+Seeds
+original
+Baseline double-integrator protocol
+50 core; 15 grid
+lr_low
+learning rate 0.003
+lr_high
+learning rate 0.03
+init_weak
+recurrent initialization scale 0.03
+init_strong
+recurrent initialization scale 0.3
+feedback_low
+environment feedback strength 0.5
+feedback_high
+environment feedback strength 1.5
+episode_short
+rollout horizon 25 steps
+episode_long
+rollout horizon 100 steps
+obs_noise
+observation noise standard deviation 0.05
+adam
+optimizer Adam with learning rate 0.001
+high_control_penalty
+control penalty 0.05
+no_clip
+gradient clipping disabled
+Table 5: Closed-loop RNN reproducibility audit protocol.
+Each row gives an audit step, its minimum
+implementation, and the output used for claim-level conclusions.
+Audit step
+Minimum requirement
+Recorded output
+Paired training
+Clone the same initialization into
+open-loop and closed-loop learners;
+keep architecture and evaluation
+budget fixed.
+Per-seed train loss, deployed closed-loop
+test loss, peak-over-training deployed loss,
+final loss, and effective-gain trajectory for
+both learners.
+Seed-level
+uncertainty
+Run enough seeds to estimate direction
+agreement and confidence intervals;
+report seed count explicitly.
+Mean, 95 percent bootstrap CI, fraction of
+seeds supporting each claim, and seed-level
+failure/recovery rates.
+Stage detection
+Predefine detectors in the same
+diagnostic space as the claim; for this
+audit, separate loss-only stages from
+spectral stages.
+Stage labels, plateau duration, transition
+epochs, spectral-crossing gaps, and
+frequency of detected stages across
+seeds/settings.
+Coupled
+diagnostics
+Compute RNN-only and coupled
+agent-environment spectra whenever
+the system can be linearized or locally
+linearized.
+Spectral radius time series,
+stability-crossing epoch, plateau-exit gap,
+and association with recovery/failure.
+Robustness
+perturbations
+Change factors that alter optimization
+or environment coupling, such as
+optimizer, initialization scale, feedback
+strength, noise, horizon, control
+penalty, and clipping.
+Claim support under each perturbation,
+effect-size changes, and perturbation-level
+failure rates.
+Generalization
+check
+Test at least one architecture or task
+variant that preserves action-dependent
+inputs and one that changes the
+recurrent/control structure.
+Claim support by variant and a
+boundary-condition statement explaining
+when the phenomenon does or does not
+transfer.
+Claim/audit
+decision
+Classify each claim or audit question as
+reproduced, partially reproduced, or
+not reproduced using the same criteria
+across settings.
+Matrix linking evidence type, original
+setting, robustness, generalization, and
+actionable lesson.
+Protocol Provenance
+Table 6 divides settings into three provenance tiers. An exact setting has the same value and implementation
+as the public artifact; where the nonlinear notebook differs from the paper, main-text-aligned identifies the
+
+Published in Transactions on Machine Learning Research (08/2026)
+setting that follows the paper. Choices introduced here before the full sweeps are labeled audit choice, and
+the machine-generated setting-level map is results/processed/provenance_map.csv.
+The 22 exact settings cover the double-integrator dynamics and controller as well as the training schedule.
+The task time step and feedback strength match the artifact; observation noise and the initial action are both
+zero. We retain its tanh RNN, using 100 hidden units with initialization scale 0.1 and leak 1. Training uses
+SGD at learning rate 0.01 for 1001 epochs, with batches of 100 and 50-step rollouts; gradients are clipped
+at 1.0. Loss is evaluated before the environment step and the control cost is summed, while the open-loop
+inputs are white noise.
+Table 6: Main-text-aligned deviations and audit-specific choices. Setting-level notes, including the 22 exact
+matches, appear in provenance_map.csv.
+Setting
+Public notebook
+This audit
+Main-text-aligned (5)
+initial state, lower bound
+−1
+−2 (main text)
+initial state, upper bound
+2 (main text)
+control penalty β
+0.005
+0 (main text)
+state-cost reduction
+mean over elements
+squared Euclidean state cost, batch mean
+loss normalization
+summed over rollout
+averaged over rollout (1/T )
+Audit choices (10); original does not specify
+final-gap threshold
+—
+relative deployed-loss gap > 5 percent
+peak criterion
+—
+peak > 1.5× initial, epoch > 0
+spike criterion
+—
+peak > 2.0 × max(initial, final)
+spectral stage detector
+—
+gain < −0.01, persistence 5, largest-real-eigenvalue
+growth > 0.01
+changepoint criteria
+—
+slopes −0.02 / 0.35× / −0.002; min segment 20,
+stride 2
+A1 horizons and δ
+—
+[10, 50, 200]; δ = 0.005
+seed counts
+—
+50 core / 15 robustness / 20 tradeoff / 10
+generalization
+evaluation protocol
+—
+fixed 10-episode eval batch, eval seed 12345
+perturbation grid
+—
+Table 4 values
+ridge gain α
+—
+10−8 in effective-gain regression
+Detector Threshold Sensitivity
+Table 7 varies the final-gap threshold from 1 to 20 percent and preserves the setting-level counts. Every
+classification at the prespecified 5 percent threshold remains unchanged as the threshold increases, while
+lower thresholds add a few supporting seeds in three robustness conditions. The partial-observation tanh
+ring is the only clear boundary case: support falls from 19/20 seeds at 1 percent to 13/20 at 2 percent and
+2/20 at 5 percent.
+Table 7: C1 final-gap support counts as the relative deployed-loss threshold varies. The value prespecified
+before the full reported sweeps is 5 percent.
+Setting
+n
+1%
+2%
+5%
+10%
+20%
+original (core)
+original (robustness grid)
+adam / episode_short / lr_high / lr_low
+15 each
+feedback_low
+obs_noise
+init_strong
+init_weak / feedback_high / episode_long / high_control_penalty
+15 each
+no_clip (all runs non-finite)
+gru / low_rank
+10 each
+tracking_task
+tanh_rnn
+ring_path_integration
+ring_partial_obs_gru
+ring_partial_obs_tanh
+For A1, we recompute the component criteria over δ ∈{0.0025, 0.005, 0.01, 0.02} and horizon pairs
+{(10, 200), (10, 50), (50, 200)}. Every grid cell has union and radius support in 120/120 runs, with no loss-only
+support (Table 8). A smaller δ labels more intervals as short-horizon improvements and changes the fraction
+
+Published in Transactions on Machine Learning Research (08/2026)
+that also show long-horizon worsening; a larger δ leaves fewer qualifying intervals. The grid-invariant union
+and radius results determine the A1 conclusion, while the loss-worsening count is reported as threshold-
+dependent.
+Table 8: A1 sensitivity grid. Cell entries are runs (of 120) that meet the long-horizon loss-worsening criterion:
+at least three qualifying intervals comprising at least 10 percent of short-horizon-improvement intervals. In
+every cell the union and radius criteria are 120/120 and the exclusive loss-only criterion is 0/120. The setting
+prespecified before the full reported sweeps is δ = 0.005 with horizons (10, 200).
+δ
+(Ts, Tℓ) = (10, 200)
+(50, 200)
+(10, 50)
+0.0025
+0.005
+0.01
+0.02
+Across the eight loss-based detector variants in Table 9, changes to the segmentation settings or smoothing
+leave the fitted boundaries nearly invariant: τ1 lies between 110 and 120 and τ2 between 192 and 194,
+consistent with the medians in Section 7. At the main threshold, the first-segment slope of −0.0117 misses
+the −0.02 fast-descent cutoff, although looser slope thresholds yield Stage-1 support in 47–50/50 seeds. No
+variant detects the Stage-2 slow phase or Stage-3 reacceleration, leaving strict three-stage support at 0/50
+throughout.
+Table 9: C2 sensitivity of the segmented loss-only changepoint observer on 50 original-setting seeds, including
+segmentation variants and component-level support. Spectral C2 support is 50/50; strict loss-based three-
+stage support is 0/50 for every variant.
+Detector variant
+Stage-1 fast
+Strict three-stage
+Median τ1
+Median τ2
+Main segmented
+0/50
+0/50
+Loose segmented
+47/50
+0/50
+Strict segmented
+0/50
+0/50
+Short-segment binary style
+0/50
+0/50
+Very loose reacceleration
+50/50
+0/50
+Stride-1 segmentation
+0/50
+0/50
+192.5
+Min-segment-40 segmentation
+0/50
+0/50
+Smoothed log-loss (window 9)
+0/50
+0/50
+Figure 7: Stage analysis using downstream loss changepoints. Panels (a,b) show a representative seed with
+boundaries τ1 and τ2 and segmented fits; panel (c) shows the aggregate raster for 50 seeds, with black and
+white dots marking τ1 and τ2. The detector uses minimum segment length 20, Stage-1 slope < −0.02, Stage-
+2 slope magnitude below max(0.35|slope1|, 0.004), and Stage-3 slope < slope2 −0.002. Strict three-stage
+support is 0/50.
+
+Published in Transactions on Machine Learning Research (08/2026)
+Gradient-Clipping Failure Analysis
+Failure sequence. In all 15 unclipped runs, the closed-loop learner fails first: training and deployed losses
+become non-finite by epochs 5–7 and 4–6 as the coupled radius grows from 1.000–1.045 until it becomes
+non-finite. Its output then makes the open-loop student’s training signal non-finite from the first epoch;
+per-seed details are in no_clip_forensics.csv.
+Learner and optimizer dependence. Across 15 seeds per condition, 0/15 runs remain finite when only
+the closed-loop learner is unclipped; when only the open-loop learner is unclipped, all 15 remain finite and
+show the peak-and-recovery signature. Fully unclipped Adam remains finite in 15/15 cases, with peaks in
+6, whereas fully unclipped SGD at learning rate 0.003 remains finite in 0/15. In these tested conditions,
+clipping is required for the closed-loop SGD learner but not for the open-loop learner or Adam.
+Open-Loop Teacher-Input Convention Ablation
+In all 15 ablation seeds, teacher-rollout inputs produce a persistent final deployed-loss gap and no post-
+initial peak; the median relative-gap ratio, (LOL −LCL)/LCL, is approximately 147. Under the white-noise
+convention, all 65 comparable runs show a peak before finishing below the 5 percent final-gap threshold;
+per-seed values are in the robustness_open_loop_teacher_rollout summary.
+Original-Artifact Side-by-Side Comparison
+Table 10 compares ten package runs with five executions of the original train_non_linear notebook, for
+which we inject seeds because the notebook sets none. The observed ranges overlap for every behavioral
+quantity in the table, and the notebook shows a large transient open-loop peak with a final gap of 0.0005,
+below 1 percent. Coupled-radius metrics are available only for the package because the notebook does not
+compute them.
+Table 10: Original-artifact notebook versus package replication under the notebook protocol. Values are
+means with seedwise [min, max].
+Metric
+Notebook (5 seeds)
+Package (10 seeds)
+Closed final deployed loss
+0.061 [0.047, 0.073]
+0.059 [0.058, 0.060]
+Open final deployed loss
+0.062 [0.047, 0.075]
+0.060 [0.059, 0.061]
+Open-loop peak epoch
+213.2 [212, 214]
+212.2 [202, 218]
+Open peak/initial ratio
+47.9 [27.3, 80.0]
+39.8 [15.5, 68.9]
+First coupled-stable epoch
+—
+103.1 [98, 112]
+Validation of Local-Jacobian Spectra and Transfer Across Tasks
+Validation.
+On linear and tanh double-integrator systems, the Jacobian spectral radius at the origin
+matches the closed-form coupled radius to within 10−5; the test suite applies the same comparison to the
+two-layer stacked closed form and its automatic-differentiation Jacobian.
+Across 10 core-protocol seeds
+evaluated with both methods, the median absolute difference along the trajectory is 3.6 × 10−7 and the
+maximum is 5 × 10−3; the median per-seed Pearson correlation rounds to 1.00 (Figure 8e).
+Transfer trajectories. Figure 8 shows median local-Jacobian coupled-radius trajectories with per-seed
+crossing ticks. Median crossings occur at epochs 10 and 5 for the GRU double integrator and fixed-target
+ring, whose final radii are 0.58 and 0.83. For the partial-observation variants, the corresponding crossings
+occur at epochs 40 and 270 and the final radii are 0.986 and 0.978; individual seeds reach 1.19, consistent
+with their weak behavioral transfer.
+
+Published in Transactions on Machine Learning Research (08/2026)
+Figure 8: Local-Jacobian coupled spectral radius over training for the diagnostic-transfer runs.
+Curves
+show the median with an interquartile band over seeds; Jacobians are evaluated every five training epochs,
+the dashed line marks ρ = 1, and ticks mark per-seed crossing epochs. Panels show (a) the GRU double
+integrator, (b) ring path integration, (c,d) the partial-observation ring with GRU and tanh controllers, and
+(e) the tanh core protocol, where the along-trajectory Jacobian radius overlaps the closed-form radius at the
+origin.

@@ -1,0 +1,362 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_TupiNRpgHw\\extracted_text.txt",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_TupiNRpgHw\\r6_llm.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-26T07:09:49+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Critical",
+      "text": "- Critical: \"various environments with dynamics shifts\"对环境样本量描述模糊，既未明确测试环境数量，也未说明每个环境下的随机种子数，样本量不足时无法区分真实效应与随机噪声，尤其在 RL 中方差大、种子敏感场景下尤为严重。"
+    },
+    {
+      "id": 2,
+      "sev": "Critical",
+      "text": "- Critical: Figure 1 中箭头标注 `(s^tar, a^tar, r^tar, s'^tar) â¹ (s^src, Ã£_src, rÌ_src, s'^src)` 左侧为目标域元组、右侧为源域校正元组，方向与\"对源域数据做校正\"的语义相悖，让读者误以为是从目标域向源域转换。"
+    },
+    {
+      "id": 3,
+      "sev": "Critical",
+      "text": "- Critical: 全文（含摘要/引言/图1）未见代码仓库链接、commit hash 或匿名代码包，无法定位可复现工件来源，证据链起点缺失。"
+    },
+    {
+      "id": 4,
+      "sev": "Critical",
+      "text": "- Critical: 摘要与 Figure 1 caption 在\"哪些模型执行校正\"上矛盾—摘要称\"leverage an inverse policy model **and a reward model** to correct the actions and rewards\"，但 caption 写\"we correct the actions and rewards â¦ **by "
+    },
+    {
+      "id": 5,
+      "sev": "Critical",
+      "text": "- Critical: 摘要中称\"STC achieves superior performance against existing baselines\"，这是一个统计性声明，但未提供任何显著性检验（如 t检验、Wilcoxon秩和检验）或置信区间支撑，仅凭均值排序即宣称\"superior\"，存在 p 值/显著性误用风险。"
+    },
+    {
+      "id": 6,
+      "sev": "Critical",
+      "text": "- Critical: 摘要声称\"Instead, we propose to modify the source domain data into the target domain data\"以区别于\"reward modification\"类方法，但 STC 本身就用 reward model 去\"correct the rewards of source transitions\"——即 S"
+    },
+    {
+      "id": 7,
+      "sev": "Critical",
+      "text": "- Critical: 校正仅修改动作 $\\hat{a}_{src}=f_{inv}(s_{src}, s'_{src})$ 和奖励，但未处理 $s'_{src}$ 本身在目标域动力学下是否可达的问题。若源域与目标域动力学差异较大，$s'_{src}$ 可能根本不是目标域中的合法转移终点，此时无论动作如何校正，元组 $(s_{src}, \\hat{a}, \\hat{r}, s'_{src})$ 仍"
+    },
+    {
+      "id": 8,
+      "sev": "Critical",
+      "text": "- Critical: 核心校正机制依赖逆策略模型 $f_{inv}(s, s')$，但该模型仅在有限目标域数据上训练——而\"目标域数据有限\"正是本文引入源域数据的动机，构成循环依赖：数据不足→逆模型不准→校正不可靠→仍需源域数据，整个 pipeline 的有效性无法脱离\"目标域数据已足够训练准确逆模型\"这一与动机矛盾的隐含前提。"
+    },
+    {
+      "id": 9,
+      "sev": "Critical",
+      "text": "- Critical: 正文实验部分被截断，无法确认基线是否享有与 STC 同等的目标域监督（STC 额外训练前向动力学模型 + 逆向策略模型 + 奖励模型三个目标域拟合器），若基线未补齐等量模型容量/数据访问，则\"superior performance\"结论无法成立——这构成基准公平性的致命缺口。"
+    },
+    {
+      "id": 10,
+      "sev": "Critical",
+      "text": "- Critical: 消融完整性存疑：STC 同时包含\"动作修正 + 奖励修正 + 前向模型选择\"三组件，但摘要/介绍中未见对\"仅修正\"\"仅选择\"\"仅动作修正\"\"仅奖励修正\"的解耦消融，无法判定各模块的真实贡献，存在\"打包贩卖\"嫌疑。"
+    },
+    {
+      "id": 11,
+      "sev": "Critical",
+      "text": "- Critical: 类似地，文中将本法与\"transition filtering\"对立，但 STC 的\"Selection\"步骤用 forward dynamics model\"retain corrected samples that better match the target dynamics\"——这正是 filtering。因此 STC = filtering + reward m"
+    },
+    {
+      "id": 12,
+      "sev": "Critical",
+      "text": "- Critical: 论文有4名作者来自腾讯（Jiafei Lyu、Jingwen Yang、Zichuan Lin、Deheng Ye），属典型产学研合作且RL技术具有直接商业价值，但全文未见利益冲突声明、资金来源披露与腾讯角色说明，违反学术出版伦理规范（如TMLR/COPE要求）。"
+    },
+    {
+      "id": 13,
+      "sev": "Major",
+      "text": "- Major: Figure 1 中 reward model 标注为 `r(s,a)`，与 forward/inverse 模型的命名规范 `f_fwd`/`f_inv` 不统一，且图中 `r(s,a)` 置于 \"Offline RL\" 旁而非 \"Correction\" 旁，与摘要所述\"reward model to correct â¦ rewards\"的角色定位在图上看不出对应关系。"
+    },
+    {
+      "id": 14,
+      "sev": "Major",
+      "text": "- Major: Figure 1 中数据集符号不一致—图体内为粗正体 `ð·ð¡ðð`/`ð·ð ðð`，caption 中变为斜体 `Dtar`/`Dsrc`，同一对象两种排版方式。"
+    },
+    {
+      "id": 15,
+      "sev": "Major",
+      "text": "- Major: GAP 的真实性未被证明。\"may lead to insufficient exploitation of the valuable source domain data\"是软性断言（\"may\"），文中未给出现有 filtering/reward-modification 方法到底丢弃了多少源数据、STC 又多保留了多少的定量分析，GAP 属于\"asserted but not"
+    },
+    {
+      "id": 16,
+      "sev": "Major",
+      "text": "- Major: caption 称三个模型\"are trained to capture the bidirectional dynamics transition information\"，但 reward model r(s,a) 建模的是奖励而非动力学转移信息，将之归入\"dynamics transition information\"属术语误用。"
+    },
+    {
+      "id": 17,
+      "sev": "Major",
+      "text": "- Major: inverse dynamics model 用于 action relabeling、forward dynamics model 用于样本筛选，二者在表征学习与 model-based transfer RL 中均已成熟（如 ICM、model-based 数据筛选）；本文将二者组合的增量性未与这些已有文献明确区分。"
+    },
+    {
+      "id": 18,
+      "sev": "Major",
+      "text": "- Major: seed 管理缺失：可见部分未声明随机种子数量、均值±方差报告方式或显著性检验，仅称\"achieves superior performance\"而无统计可信区间，单 seed 结果风险高。"
+    },
+    {
+      "id": 19,
+      "sev": "Major",
+      "text": "- Major: 前向模型一致性选择准则会系统性偏好某些转移类型（如确定性高、模型置信度高的区域），引入选择偏差，改变合并后数据集的有效行为策略分布，可能违反离线 RL 对数据覆盖性的核心假设，构成内部效度威胁。"
+    },
+    {
+      "id": 20,
+      "sev": "Major",
+      "text": "- Major: 因果推断不充分——\"直接合并导致次优性能\"作为核心动机被陈述为前提而非经验验证；且若缺少将\"仅校正\"\"仅选择\"\"校正+选择\"分别消融的设计，无法将性能提升因果归因于所提机制而非单纯数据增量效应。"
+    },
+    {
+      "id": 21,
+      "sev": "Minor",
+      "synthetic": true,
+      "text": "（另有 30 条问题超出 20 条上限被截断，未参与辩论）"
+    }
+  ],
+  "rebuttals": [
+    {
+      "id": 1,
+      "action": "concede",
+      "fix": "将在实验部分补充测试环境数量、每环境随机种子数（≥5）及均值±标准差报告方式。"
+    },
+    {
+      "id": 2,
+      "action": "concede",
+      "fix": "将把Figure 1箭头改为从源域校正元组指向目标域对齐方向,并补充文字说明校正语义。"
+    },
+    {
+      "id": 3,
+      "action": "concede",
+      "fix": "将在摘要与图1补充匿名代码仓库链接及commit hash。"
+    },
+    {
+      "id": 4,
+      "action": "concede",
+      "fix": "将把caption中\"by using the inverse policy model\"改为包含reward model的表述,与摘要一致。"
+    },
+    {
+      "id": 5,
+      "action": "concede",
+      "fix": "将补充t检验或Wilcoxon秩和检验及95%置信区间以支撑\"superior\"声明。"
+    },
+    {
+      "id": 6,
+      "action": "concede",
+      "fix": "将修改摘要措辞,明确STC是\"校正reward至目标域\"而非\"惩罚式reward modification\"。"
+    },
+    {
+      "id": 7,
+      "action": "rebut",
+      "rebuttal": "论文摘要称\"employ a forward dynamics model to retain corrected samples that better match the target dynamics\",即用f_fwd预测s'与s'_src比对过滤不可达转移,已处理该问题。"
+    },
+    {
+      "id": 8,
+      "action": "concede",
+      "fix": "将在讨论部分补充逆/前向模型均依赖有限目标域数据这一循环依赖的局限性分析。"
+    },
+    {
+      "id": 9,
+      "action": "concede",
+      "fix": "将确保所有基线享有等量目标域模型容量与数据访问,并在实验部分明确说明公平性。"
+    },
+    {
+      "id": 10,
+      "action": "concede",
+      "fix": "将补充\"仅动作修正\"\"仅奖励修正\"\"仅选择\"\"修正+选择\"的解耦消融实验。"
+    },
+    {
+      "id": 11,
+      "action": "concede",
+      "fix": "将修改摘要定位,明确STC含校正+筛选,筛选作用于校正后数据,区别于纯筛选。"
+    },
+    {
+      "id": 12,
+      "action": "concede",
+      "fix": "将补充利益冲突声明、资金来源披露及腾讯角色说明。"
+    },
+    {
+      "id": 13,
+      "action": "concede",
+      "fix": "将统一图中r(s,a)命名为f_r并移至Correction模块旁,与f_fwd/f_inv规范一致。"
+    },
+    {
+      "id": 14,
+      "action": "concede",
+      "fix": "将统一图体与caption中数据集符号为同一排版格式。"
+    },
+    {
+      "id": 15,
+      "action": "concede",
+      "fix": "将补充定量分析:现有filtering方法丢弃的源数据比例 vs STC保留比例。"
+    },
+    {
+      "id": 16,
+      "action": "concede",
+      "fix": "将把caption中\"bidirectional dynamics transition information\"改为含reward信息的准确表述。"
+    },
+    {
+      "id": 17,
+      "action": "concede",
+      "fix": "将在相关工作中与ICM等文献明确区分,强调校正+选择组合在跨域离线RL中的新颖性。"
+    },
+    {
+      "id": 18,
+      "action": "concede",
+      "fix": "将在实验部分声明随机种子数（≥5）、均值±方差报告及显著性检验。"
+    },
+    {
+      "id": 19,
+      "action": "concede",
+      "fix": "将讨论前向模型选择偏差对数据覆盖性的影响,并补充选择准则敏感性分析。"
+    },
+    {
+      "id": 20,
+      "action": "concede",
+      "fix": "将补充\"直接合并\"实证对比及各组件消融,将性能提升因果归因于所提机制而非数据增量。"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "sustained",
+      "reason": "Concede; current version lacks env count and seed details, problem remains in submitted version."
+    },
+    {
+      "id": 2,
+      "disposition": "sustained",
+      "reason": "Concede; Figure 1 arrow direction currently misleading, uncorrected in current version."
+    },
+    {
+      "id": 3,
+      "disposition": "sustained",
+      "reason": "Concede; no code link/commit hash in current version, reproducibility gap persists."
+    },
+    {
+      "id": 4,
+      "disposition": "sustained",
+      "reason": "Concede; abstract-caption contradiction on reward model confirmed in current text."
+    },
+    {
+      "id": 5,
+      "disposition": "sustained",
+      "reason": "Concede; no significance tests or CIs in current version to support 'superior' claim."
+    },
+    {
+      "id": 6,
+      "disposition": "sustained",
+      "reason": "Concede; STC does modify rewards via reward model, tension with 'not reward modification' remains."
+    },
+    {
+      "id": 7,
+      "disposition": "partial",
+      "reason": "Rebut cites Selection step in paper, but paper doesn't explicitly describe s'_src reachability filtering; filtering≠correcting s'_src, concern partly unresolved."
+    },
+    {
+      "id": 8,
+      "disposition": "sustained",
+      "reason": "Concede; circular dependency of inverse model on limited target data acknowledged as limitation, unaddressed in current version."
+    },
+    {
+      "id": 9,
+      "disposition": "sustained",
+      "reason": "Concede; baseline fairness (equal model capacity/data access) unconfirmed in current truncated experiments."
+    },
+    {
+      "id": 10,
+      "disposition": "sustained",
+      "reason": "Concede; no decoupled ablation of action/reward/selection components in current version."
+    },
+    {
+      "id": 11,
+      "disposition": "sustained",
+      "reason": "Concede; Selection step is filtering by definition, contradicts 'not transition filtering' positioning in current text."
+    },
+    {
+      "id": 12,
+      "disposition": "sustained",
+      "reason": "Concede; 4 Tencent authors, no COI/funding disclosure in current version confirmed."
+    },
+    {
+      "id": 13,
+      "disposition": "sustained",
+      "reason": "Concede; r(s,a) naming and placement inconsistent with f_fwd/f_inv convention, confirmed in Figure 1."
+    },
+    {
+      "id": 14,
+      "disposition": "sustained",
+      "reason": "Concede; dataset symbol formatting inconsistency between figure body and caption confirmed."
+    },
+    {
+      "id": 15,
+      "disposition": "sustained",
+      "reason": "Concede; 'may lead to insufficient exploitation' is soft assertion, no quantitative discard/retention analysis in current version."
+    },
+    {
+      "id": 16,
+      "disposition": "sustained",
+      "reason": "Concede; reward model r(s,a) misclassified as 'dynamics transition information' in caption, confirmed."
+    },
+    {
+      "id": 17,
+      "disposition": "sustained",
+      "reason": "Concede; novelty over ICM and existing model-based filtering not distinguished in current version."
+    },
+    {
+      "id": 18,
+      "disposition": "sustained",
+      "reason": "Concede; no seed count, mean±std, or significance tests declared in current version."
+    },
+    {
+      "id": 19,
+      "disposition": "sustained",
+      "reason": "Concede; selection bias from forward model consistency criterion not discussed in current version."
+    },
+    {
+      "id": 20,
+      "disposition": "sustained",
+      "reason": "Concede; 'direct merging suboptimal' stated as premise without empirical verification or causal ablation in current version."
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 11,
+      "Major": 8,
+      "Minor": 0
+    },
+    "n_issues": 20,
+    "n_sustained": 19,
+    "n_withdrawn": 0,
+    "n_partial": 1,
+    "truncation": {
+      "n_total": 50,
+      "n_debated": 20,
+      "n_truncated": 30,
+      "max_issues": 20
+    },
+    "detail": "辩论后维持 Critical 11 / Major 8 （撤回 0，部分成立 1）；注：原始 50 条中仅严重度前 20 条进入辩论（MAX_ISSUES=20，截断 30 条未辩论）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "withdrawn_ids": []
+  }
+}

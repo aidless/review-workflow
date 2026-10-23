@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\selfevolve-agent\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\deepseek\\papers\\selfevolve-agent\\results",
+      "F:\\deepseek\\papers\\selfevolve-agent\\evidence"
+    ],
+    "timestamp": "2026-08-26T04:39:43+00:00"
+  },
+  "tables": [
+    {
+      "line": 291,
+      "has_tabular": true,
+      "caption": "Formal rounds 1--17: promotion decisions extracted from ledgers.\nPROMOTE = safety-pass at \\(\\delta_{\\min}=0.0\\) (\\(\\Delta=0\\)); no\ngate-confirmed posi",
+      "caption_decimals": [
+        {
+          "token": "0.0",
+          "support": "body"
+        }
+      ],
+      "cells": [
+        {
+          "row": "",
+          "col": "{cl}\n \nRounds / 1, 2, 4--6, 8--14, 16, 1",
+          "text": "15",
+          "value": 15.0,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 339,
+      "has_tabular": true,
+      "caption": "EXTPROBE core-100 (cloud, post-fix harness). Majority vote over $k=3$ repeats.",
+      "caption_decimals": [],
+      "cells": []
+    },
+    {
+      "line": 478,
+      "has_tabular": true,
+      "caption": "Naive vs.\\ controlled reporting of the same raw numbers. The\ncontrolled column applies the three gates: bug-discriminating evidence +\nregression veto,",
+      "caption_decimals": [],
+      "cells": []
+    },
+    {
+      "line": 634,
+      "has_tabular": true,
+      "caption": "Skill-candidate curation gates (implemented in the curator).",
+      "caption_decimals": [],
+      "cells": []
+    },
+    {
+      "line": 695,
+      "has_tabular": true,
+      "caption": "Protocol amendments, each registered with the round from which it took effect.",
+      "caption_decimals": [],
+      "cells": []
+    }
+  ],
+  "missing_inputs": [],
+  "pending_review": [],
+  "precision_anomalies": [],
+  "summary": {
+    "verdict": "PASS",
+    "tables": 5,
+    "numeric_cells": 1,
+    "unsupported": 0,
+    "missing_inputs": 0,
+    "precision_anomalies": 0,
+    "note": "pending_review = 表格 cell/图注数字在证据与表格外正文中均无支撑；precision_anomalies = 列内混精度（INFO，人工扫一眼）"
+  }
+}

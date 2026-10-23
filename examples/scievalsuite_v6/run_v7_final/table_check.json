@@ -1,0 +1,232 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\deepseek\\papers\\scievalsuite\\results",
+      "F:\\deepseek\\scievalsuite\\out_p5"
+    ],
+    "timestamp": "2026-08-27T07:16:04+00:00"
+  },
+  "tables": [
+    {
+      "line": 38,
+      "has_tabular": true,
+      "caption": "Method-family positioning. SciEvalSuite unifies three layers that prior families cover in isolation; 7 contemporary efforts (rows 6--9) are compared a",
+      "caption_decimals": [],
+      "cells": []
+    },
+    {
+      "line": 107,
+      "has_tabular": true,
+      "caption": "L2 GAIA2 p3dev: goal completion (primary, mean rate) and pass\\_01 (share with goal$\\ge$0.5) per model and arm. $n=4$ scenarios. All calls logged (480)",
+      "caption_decimals": [
+        {
+          "token": "0.5",
+          "support": "evidence"
+        },
+        {
+          "token": "0.0000",
+          "support": "evidence"
+        },
+        {
+          "token": "0.15",
+          "support": "evidence"
+        },
+        {
+          "token": "0.5",
+          "support": "evidence"
+        }
+      ],
+      "cells": [
+        {
+          "row": "qwen2.5:7b",
+          "col": "mean goal",
+          "text": "0.1418",
+          "value": 0.1418,
+          "support": "evidence"
+        },
+        {
+          "row": "qwen2.5:7b",
+          "col": "win _CG",
+          "text": "0",
+          "value": 0.0,
+          "support": "evidence"
+        },
+        {
+          "row": "qwen2.5:7b",
+          "col": "loss _CG",
+          "text": "0",
+          "value": 0.0,
+          "support": "evidence"
+        },
+        {
+          "row": "qwen2.5:7b",
+          "col": "mean goal",
+          "text": "0.1418",
+          "value": 0.1418,
+          "support": "evidence"
+        },
+        {
+          "row": "qwen2.5:7b",
+          "col": "win _CG",
+          "text": "0",
+          "value": 0.0,
+          "support": "evidence"
+        },
+        {
+          "row": "qwen2.5:7b",
+          "col": "loss _CG",
+          "text": "0",
+          "value": 0.0,
+          "support": "evidence"
+        },
+        {
+          "row": "qwen2.5:14b",
+          "col": "mean goal",
+          "text": "0.1918",
+          "value": 0.1918,
+          "support": "evidence"
+        },
+        {
+          "row": "qwen2.5:14b",
+          "col": "win _CG",
+          "text": "0",
+          "value": 0.0,
+          "support": "evidence"
+        },
+        {
+          "row": "qwen2.5:14b",
+          "col": "loss _CG",
+          "text": "0",
+          "value": 0.0,
+          "support": "evidence"
+        },
+        {
+          "row": "qwen2.5:14b",
+          "col": "mean goal",
+          "text": "0.1918",
+          "value": 0.1918,
+          "support": "evidence"
+        },
+        {
+          "row": "qwen2.5:14b",
+          "col": "win _CG",
+          "text": "0",
+          "value": 0.0,
+          "support": "evidence"
+        },
+        {
+          "row": "qwen2.5:14b",
+          "col": "loss _CG",
+          "text": "0",
+          "value": 0.0,
+          "support": "evidence"
+        },
+        {
+          "row": "gemma2:9b",
+          "col": "mean goal",
+          "text": "0.2750",
+          "value": 0.275,
+          "support": "evidence"
+        },
+        {
+          "row": "gemma2:9b",
+          "col": "win _CG",
+          "text": "0",
+          "value": 0.0,
+          "support": "evidence"
+        },
+        {
+          "row": "gemma2:9b",
+          "col": "loss _CG",
+          "text": "0",
+          "value": 0.0,
+          "support": "evidence"
+        },
+        {
+          "row": "gemma2:9b",
+          "col": "mean goal",
+          "text": "0.2750",
+          "value": 0.275,
+          "support": "evidence"
+        },
+        {
+          "row": "gemma2:9b",
+          "col": "win _CG",
+          "text": "0",
+          "value": 0.0,
+          "support": "evidence"
+        },
+        {
+          "row": "gemma2:9b",
+          "col": "loss _CG",
+          "text": "0",
+          "value": 0.0,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 131,
+      "has_tabular": true,
+      "caption": "L1a AIRS-Bench (official metric; Acc/Spearman higher better, MAE lower better). $\\dagger$0 = gen/exec-fail or NaN, scored 0 per denominator discipline",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "Sentiment (Acc)",
+          "col": "Model-F",
+          "text": "0.5607",
+          "value": 0.5607,
+          "support": "evidence"
+        },
+        {
+          "row": "TextSimilarity (Spearman)",
+          "col": "Model-F",
+          "text": "0.6552",
+          "value": 0.6552,
+          "support": "evidence"
+        },
+        {
+          "row": "TextClassification (Acc)",
+          "col": "Model-F",
+          "text": "0.7960",
+          "value": 0.796,
+          "support": "evidence"
+        },
+        {
+          "row": "GraphRegression (MAE   )",
+          "col": "Model-F",
+          "text": "0.5327",
+          "value": 0.5327,
+          "support": "evidence"
+        },
+        {
+          "row": "MathQA (Acc)",
+          "col": "Model-F",
+          "text": "0.3333",
+          "value": 0.3333,
+          "support": "evidence"
+        },
+        {
+          "row": "FinQA (Acc)",
+          "col": "Model-F",
+          "text": "0.0105",
+          "value": 0.0105,
+          "support": "evidence"
+        }
+      ]
+    }
+  ],
+  "missing_inputs": [],
+  "pending_review": [],
+  "precision_anomalies": [],
+  "summary": {
+    "verdict": "PASS",
+    "tables": 3,
+    "numeric_cells": 24,
+    "unsupported": 0,
+    "missing_inputs": 0,
+    "precision_anomalies": 0,
+    "note": "pending_review = 表格 cell/图注数字在证据与表格外正文中均无支撑；precision_anomalies = 列内混精度（INFO，人工扫一眼）"
+  }
+}

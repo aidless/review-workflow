@@ -1,0 +1,9 @@
+{
+  "meta": {
+    "zip": "F:\\Research\\_inbox\\F1-F5_F45_2026-08-26\\TMLR_4p5_Tier123_FINAL_20260827.zip"
+  },
+  "error": "manifest not found in zip (searched: evidence_manifest.json, ASSET_MANIFEST.json)",
+  "summary": {
+    "verdict": "ERROR"
+  }
+}

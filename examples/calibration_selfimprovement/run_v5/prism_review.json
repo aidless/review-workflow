@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\main.tex",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-28T05:22:19+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "dimensions": {
+    "P": {
+      "status": "ok",
+      "score": 8,
+      "justification": "研究问题真实且与 TMLR 读者高度相关:智能体自信度被当作概率用于门控,却很少在自身任务分布上验证校准；与已有过度自信文献关系清楚。但大量 illustrative/exploratory 限定使契合度未达满分。",
+      "top_weakness": "论文反复自称 illustrative/exploratory 且关键示例仅 N=30,作为 TMLR 完整研究其问题解决度受质疑。",
+      "evidence": "confidence from language-model agents is treated as usable probability",
+      "parse": "json"
+    },
+    "R": {
+      "status": "ok",
+      "score": 5,
+      "justification": "核心演示中匹配器经逐行人工裁定后扩展至100%,存在标签同源/循环评估风险；N=30且置信度退化,OOD分析亦为探索性小样本,虽多处声明illustrative,但方法严谨性仍有明显需解释之处。",
+      "top_weakness": "匹配器根据同一批人工裁定标签事后扩展至100%准确率,再用该标签评估ECE,存在循环与过拟合风险。",
+      "evidence": "a matcher extended after per-row adjudication 100% (ECE = 0.0037)",
+      "parse": "json"
+    },
+    "I": {
+      "status": "ok",
+      "score": 6,
+      "justification": "揭示了标签匹配器决定校准测量、退化分布使 ECE 不稳,并提供形式化与跨域数据,有方法警示价值；但核心是 N=30 illustrative/exploratory 证据,显著性弱,影响限于提醒而非确立新范式。",
+      "top_weakness": "核心发现依赖自认 illustrative/exploratory 的 N=30 小样本,作者明示非校准证据,削弱贡献强度。",
+      "evidence": "We show measured calibration is determined by the label matcher",
+      "parse": "json"
+    },
+    "S": {
+      "status": "ok",
+      "score": 9,
+      "justification": "多处明确标注 illustrative/exploratory/N=30/not evidence of calibration,并坦白仅极端Holm校正配对显著；复现承诺含adjudication record与canonical recomputation,可信度高,但核心pilot依赖单评判者裁决,故非满分。",
+      "top_weakness": "核心pilot仅N=30且依赖单评判者逐行标签裁决,可能限制其测量可复现性的外部效度。",
+      "evidence": "near-empty favorable reading; not evidence of calibration",
+      "parse": "json"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "scores": {
+      "P": 8,
+      "R": 5,
+      "I": 6,
+      "S": 9
+    },
+    "overall": 5,
+    "weakest": "R(严谨性)",
+    "detail": "最弱维度 R(严谨性) = 5 分（<= 6）→ 文本层 WARN；证据层门禁不受影响"
+  }
+}

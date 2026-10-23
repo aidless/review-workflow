@@ -1,0 +1,1904 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\deepseek\\papers\\calibration-self-improvement\\evidence"
+    ],
+    "timestamp": "2026-08-28T04:06:59+00:00"
+  },
+  "tables": [
+    {
+      "line": 471,
+      "has_tabular": true,
+      "caption": "Calibration of self-reported confidence under three label-judgment regimes (N=30 pilot; same answers and confidences).",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "Mean confidence",
+          "col": "Exact-string / 63.3   (19/30)",
+          "text": "0.9963",
+          "value": 0.9963,
+          "support": "evidence"
+        },
+        {
+          "row": "Mean confidence",
+          "col": "Tolerant (v1) / 86.7   (26/30)",
+          "text": "0.9963",
+          "value": 0.9963,
+          "support": "evidence"
+        },
+        {
+          "row": "Mean confidence",
+          "col": "Adjudicated (v2) / 100   (30/30)",
+          "text": "0.9963",
+          "value": 0.9963,
+          "support": "evidence"
+        },
+        {
+          "row": "ECE (10-bin)",
+          "col": "Exact-string / 63.3   (19/30)",
+          "text": "0.363",
+          "value": 0.363,
+          "support": "evidence"
+        },
+        {
+          "row": "ECE (10-bin)",
+          "col": "Tolerant (v1) / 86.7   (26/30)",
+          "text": "0.1297",
+          "value": 0.1297,
+          "support": "evidence"
+        },
+        {
+          "row": "ECE (10-bin)",
+          "col": "Adjudicated (v2) / 100   (30/30)",
+          "text": "0.0037",
+          "value": 0.0037,
+          "support": "evidence"
+        },
+        {
+          "row": "Brier",
+          "col": "Exact-string / 63.3   (19/30)",
+          "text": "0.3662",
+          "value": 0.3662,
+          "support": "evidence"
+        },
+        {
+          "row": "Brier",
+          "col": "Tolerant (v1) / 86.7   (26/30)",
+          "text": "0.1328",
+          "value": 0.1328,
+          "support": "evidence"
+        },
+        {
+          "row": "Brier",
+          "col": "Adjudicated (v2) / 100   (30/30)",
+          "text": "0.0002",
+          "value": 0.0002,
+          "support": "evidence"
+        },
+        {
+          "row": "High-conf (  0.8 ) error rate",
+          "col": "Exact-string / 63.3   (19/30)",
+          "text": "36.7",
+          "value": 36.7,
+          "support": "unsupported"
+        },
+        {
+          "row": "High-conf (  0.8 ) error rate",
+          "col": "Tolerant (v1) / 86.7   (26/30)",
+          "text": "13.3",
+          "value": 13.3,
+          "support": "unsupported"
+        },
+        {
+          "row": "High-conf (  0.8 ) error rate",
+          "col": "Adjudicated (v2) / 100   (30/30)",
+          "text": "0",
+          "value": 0.0,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 520,
+      "has_tabular": true,
+      "caption": "Accuracy vs.\\ mean self-reported confidence by task family (adjudicated labels).",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "Knowledge",
+          "col": "N",
+          "text": "10",
+          "value": 10.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Knowledge",
+          "col": "Accuracy",
+          "text": "100.0",
+          "value": 100.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Knowledge",
+          "col": "Mean confidence",
+          "text": "1.000",
+          "value": 1.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Reasoning",
+          "col": "N",
+          "text": "10",
+          "value": 10.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Reasoning",
+          "col": "Accuracy",
+          "text": "100.0",
+          "value": 100.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Reasoning",
+          "col": "Mean confidence",
+          "text": "1.000",
+          "value": 1.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Classification",
+          "col": "N",
+          "text": "10",
+          "value": 10.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Classification",
+          "col": "Accuracy",
+          "text": "100.0",
+          "value": 100.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Classification",
+          "col": "Mean confidence",
+          "text": "0.989",
+          "value": 0.989,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 630,
+      "has_tabular": true,
+      "caption": "Effect of temperature scaling on pilot confidence, first-tolerant reading (in-sample fit/eval; historical demonstration). This ECE rise is not robust ",
+      "caption_decimals": [
+        {
+          "token": "0.0297",
+          "support": "evidence"
+        },
+        {
+          "token": "0.0169",
+          "support": "evidence"
+        },
+        {
+          "token": "0.0328",
+          "support": "evidence"
+        },
+        {
+          "token": "0.028",
+          "support": "evidence"
+        }
+      ],
+      "cells": [
+        {
+          "row": "ECE (10-bin)",
+          "col": "Self-report",
+          "text": "0.1297",
+          "value": 0.1297,
+          "support": "evidence"
+        },
+        {
+          "row": "ECE (10-bin)",
+          "col": "Temperature scaling ( T=6.71 )",
+          "text": "0.1832",
+          "value": 0.1832,
+          "support": "evidence"
+        },
+        {
+          "row": "Brier",
+          "col": "Self-report",
+          "text": "0.1328",
+          "value": 0.1328,
+          "support": "evidence"
+        },
+        {
+          "row": "Brier",
+          "col": "Temperature scaling ( T=6.71 )",
+          "text": "0.1139",
+          "value": 0.1139,
+          "support": "evidence"
+        },
+        {
+          "row": "Mean confidence",
+          "col": "Self-report",
+          "text": "0.9963",
+          "value": 0.9963,
+          "support": "evidence"
+        },
+        {
+          "row": "Mean confidence",
+          "col": "Temperature scaling ( T=6.71 )",
+          "text": "0.8609",
+          "value": 0.8609,
+          "support": "evidence"
+        },
+        {
+          "row": "Accuracy",
+          "col": "Self-report",
+          "text": "86.7",
+          "value": 86.7,
+          "support": "evidence"
+        },
+        {
+          "row": "Accuracy",
+          "col": "Temperature scaling ( T=6.71 )",
+          "text": "86.7",
+          "value": 86.7,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 697,
+      "has_tabular": true,
+      "caption": "Theorem bounds vs.\\ pilot readings (N=30; same answers and confidences).",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "| {a}- {y}^*|",
+          "col": "Pilot value",
+          "text": "0.367",
+          "value": 0.367,
+          "support": "evidence"
+        },
+        {
+          "row": "| {B}-B^*|",
+          "col": "Pilot value",
+          "text": "0.366",
+          "value": 0.366,
+          "support": "evidence"
+        },
+        {
+          "row": "| {ECE}-ECE^*|",
+          "col": "Pilot value",
+          "text": "0.359",
+          "value": 0.359,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 820,
+      "has_tabular": true,
+      "caption": "Cross-model matcher dependence (N=90, local open-weight models; exact vs.\\ semantic-tolerant matcher).",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "Qwen2.5-7B (Qwen)",
+          "col": "MSI",
+          "text": "1.000",
+          "value": 1.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B (Qwen)",
+          "col": "#conf values",
+          "text": "3",
+          "value": 3.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B (Qwen)",
+          "col": "ceiling",
+          "text": "0.73",
+          "value": 0.73,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B (Qwen)",
+          "col": "MSI",
+          "text": "1.000",
+          "value": 1.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B (Qwen)",
+          "col": "#conf values",
+          "text": "5",
+          "value": 5.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B (Qwen)",
+          "col": "ceiling",
+          "text": "0.90",
+          "value": 0.9,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B (Qwen)",
+          "col": "MSI",
+          "text": "0.344",
+          "value": 0.344,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B (Qwen)",
+          "col": "#conf values",
+          "text": "6",
+          "value": 6.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B (Qwen)",
+          "col": "ceiling",
+          "text": "0.22",
+          "value": 0.22,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-R1-7B (DeepSeek)",
+          "col": "MSI",
+          "text": "1.000",
+          "value": 1.0,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-R1-7B (DeepSeek)",
+          "col": "#conf values",
+          "text": "8",
+          "value": 8.0,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-R1-7B (DeepSeek)",
+          "col": "ceiling",
+          "text": "0.72",
+          "value": 0.72,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B (Meta)",
+          "col": "MSI",
+          "text": "0.800",
+          "value": 0.8,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B (Meta)",
+          "col": "#conf values",
+          "text": "10",
+          "value": 10.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B (Meta)",
+          "col": "ceiling",
+          "text": "0.20",
+          "value": 0.2,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 899,
+      "has_tabular": true,
+      "caption": "Consensus labels vs.\\ semantic-tolerant matcher (all 450 answer--gold pairs).",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "Semantic-tolerant matcher (v3)",
+          "col": "Acc.",
+          "text": "0.618",
+          "value": 0.618,
+          "support": "evidence"
+        },
+        {
+          "row": "Semantic-tolerant matcher (v3)",
+          "col": "ECE",
+          "text": "0.279",
+          "value": 0.279,
+          "support": "evidence"
+        },
+        {
+          "row": "Semantic-tolerant matcher (v3)",
+          "col": "Brier",
+          "text": "0.287",
+          "value": 0.287,
+          "support": "evidence"
+        },
+        {
+          "row": "3-judge consensus",
+          "col": "Acc.",
+          "text": "0.782",
+          "value": 0.782,
+          "support": "evidence"
+        },
+        {
+          "row": "3-judge consensus",
+          "col": "ECE",
+          "text": "0.179",
+          "value": 0.179,
+          "support": "evidence"
+        },
+        {
+          "row": "3-judge consensus",
+          "col": "Brier",
+          "text": "0.199",
+          "value": 0.199,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 956,
+      "has_tabular": true,
+      "caption": "Semantic soft-label estimator vs.\\ matcher-labeled binning ECE on real cross-model data (N=90 per model, 450 pairs; ECE = 10-bin equal-frequency (quan",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "Qwen2.5-7B",
+          "col": "acc (tol)",
+          "text": "0.800",
+          "value": 0.8,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "ECE (10-bin)",
+          "text": "0.171",
+          "value": 0.171,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "smECE _{hard}",
+          "text": "0.149",
+          "value": 0.149,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "smECE _{sem}",
+          "text": "0.126",
+          "value": 0.126,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "judge--matcher agree",
+          "text": "0.856",
+          "value": 0.856,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "acc (tol)",
+          "text": "0.856",
+          "value": 0.856,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "ECE (10-bin)",
+          "text": "0.124",
+          "value": 0.124,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "smECE _{hard}",
+          "text": "0.140",
+          "value": 0.14,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "smECE _{sem}",
+          "text": "0.117",
+          "value": 0.117,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "judge--matcher agree",
+          "text": "0.967",
+          "value": 0.967,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "acc (tol)",
+          "text": "0.756",
+          "value": 0.756,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "ECE (10-bin)",
+          "text": "0.226",
+          "value": 0.226,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "smECE _{hard}",
+          "text": "0.233",
+          "value": 0.233,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "smECE _{sem}",
+          "text": "0.205",
+          "value": 0.205,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "judge--matcher agree",
+          "text": "0.956",
+          "value": 0.956,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-R1-7B",
+          "col": "acc (tol)",
+          "text": "0.611",
+          "value": 0.611,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-R1-7B",
+          "col": "ECE (10-bin)",
+          "text": "0.241",
+          "value": 0.241,
+          "support": "unsupported"
+        },
+        {
+          "row": "DeepSeek-R1-7B",
+          "col": "smECE _{hard}",
+          "text": "0.229",
+          "value": 0.229,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-R1-7B",
+          "col": "smECE _{sem}",
+          "text": "0.183",
+          "value": 0.183,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-R1-7B",
+          "col": "judge--matcher agree",
+          "text": "0.722",
+          "value": 0.722,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "acc (tol)",
+          "text": "0.389",
+          "value": 0.389,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "ECE (10-bin)",
+          "text": "0.395",
+          "value": 0.395,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "smECE _{hard}",
+          "text": "0.391",
+          "value": 0.391,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "smECE _{sem}",
+          "text": "0.339",
+          "value": 0.339,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "judge--matcher agree",
+          "text": "0.878",
+          "value": 0.878,
+          "support": "evidence"
+        },
+        {
+          "row": "ALL",
+          "col": "ECE (10-bin)",
+          "text": "0.235",
+          "value": 0.235,
+          "support": "evidence"
+        },
+        {
+          "row": "ALL",
+          "col": "smECE _{hard}",
+          "text": "0.226",
+          "value": 0.226,
+          "support": "evidence"
+        },
+        {
+          "row": "ALL",
+          "col": "smECE _{sem}",
+          "text": "0.181",
+          "value": 0.181,
+          "support": "evidence"
+        },
+        {
+          "row": "ALL",
+          "col": "judge--matcher agree",
+          "text": "0.876",
+          "value": 0.876,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 1059,
+      "has_tabular": true,
+      "caption": "Holdout validation: 30 unseen tasks, tolerant-matcher labels (matcher-scope ECE, same protocol as the main-set summary).",
+      "caption_decimals": [],
+      "cells": []
+    },
+    {
+      "line": 1082,
+      "has_tabular": true,
+      "caption": "Out-of-sample temperature scaling on the 450-pair set (3-fold, 60 fit / 30 eval per fold; eval sets pooled).",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "Qwen2.5-7B",
+          "col": "T  (fit)",
+          "text": "7.0",
+          "value": 7.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "ECE raw",
+          "text": "0.171",
+          "value": 0.171,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "ECE scaled",
+          "text": "0.077",
+          "value": 0.077,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "Brier raw",
+          "text": "0.177",
+          "value": 0.177,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "Brier scaled",
+          "text": "0.146",
+          "value": 0.146,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "mean conf scaled",
+          "text": "0.798",
+          "value": 0.798,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "T  (fit)",
+          "text": "7.4",
+          "value": 7.4,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "ECE raw",
+          "text": "0.124",
+          "value": 0.124,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "ECE scaled",
+          "text": "0.082",
+          "value": 0.082,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "Brier raw",
+          "text": "0.141",
+          "value": 0.141,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "Brier scaled",
+          "text": "0.130",
+          "value": 0.13,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "mean conf scaled",
+          "text": "0.835",
+          "value": 0.835,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "T  (fit)",
+          "text": "18.6",
+          "value": 18.6,
+          "support": "body"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "ECE raw",
+          "text": "0.226",
+          "value": 0.226,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "ECE scaled",
+          "text": "0.248",
+          "value": 0.248,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "Brier raw",
+          "text": "0.293",
+          "value": 0.293,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "Brier scaled",
+          "text": "0.258",
+          "value": 0.258,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "mean conf scaled",
+          "text": "0.516",
+          "value": 0.516,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-R1-7B",
+          "col": "T  (fit)",
+          "text": "9.8",
+          "value": 9.8,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-R1-7B",
+          "col": "ECE raw",
+          "text": "0.241",
+          "value": 0.241,
+          "support": "unsupported"
+        },
+        {
+          "row": "DeepSeek-R1-7B",
+          "col": "ECE scaled",
+          "text": "0.121",
+          "value": 0.121,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-R1-7B",
+          "col": "Brier raw",
+          "text": "0.275",
+          "value": 0.275,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-R1-7B",
+          "col": "Brier scaled",
+          "text": "0.228",
+          "value": 0.228,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-R1-7B",
+          "col": "mean conf scaled",
+          "text": "0.606",
+          "value": 0.606,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "ECE raw",
+          "text": "0.395",
+          "value": 0.395,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "ECE scaled",
+          "text": "0.161",
+          "value": 0.161,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "Brier raw",
+          "text": "0.406",
+          "value": 0.406,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "Brier scaled",
+          "text": "0.260",
+          "value": 0.26,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "mean conf scaled",
+          "text": "0.487",
+          "value": 0.487,
+          "support": "evidence"
+        },
+        {
+          "row": "ALL",
+          "col": "ECE raw",
+          "text": "0.235",
+          "value": 0.235,
+          "support": "evidence"
+        },
+        {
+          "row": "ALL",
+          "col": "ECE scaled",
+          "text": "0.126",
+          "value": 0.126,
+          "support": "evidence"
+        },
+        {
+          "row": "ALL",
+          "col": "Brier raw",
+          "text": "0.258",
+          "value": 0.258,
+          "support": "evidence"
+        },
+        {
+          "row": "ALL",
+          "col": "Brier scaled",
+          "text": "0.204",
+          "value": 0.204,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 1104,
+      "has_tabular": true,
+      "caption": "Sampling robustness and out-of-distribution confidence probes (3 models).",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "Qwen2.5-3B",
+          "col": "OOD mean conf",
+          "text": "0.70",
+          "value": 0.7,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "OOD pct    0.95",
+          "text": "0.53",
+          "value": 0.53,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "OOD mean conf",
+          "text": "0.12",
+          "value": 0.12,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "OOD pct    0.95",
+          "text": "0.00",
+          "value": 0.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "OOD mean conf",
+          "text": "0.40",
+          "value": 0.4,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "OOD pct    0.95",
+          "text": "0.10",
+          "value": 0.1,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 1191,
+      "has_tabular": true,
+      "caption": "Cross-domain calibration on 300 MMLU items (3 subjects; tolerant-matcher ECE; judge-soft ECE where adjudicated).",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "Qwen2.5-7B",
+          "col": "acc (tol)",
+          "text": "0.573",
+          "value": 0.573,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "ECE",
+          "text": "0.345",
+          "value": 0.345,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "ECE (judge)",
+          "text": "0.303",
+          "value": 0.303,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "ECE bio",
+          "text": "0.121",
+          "value": 0.121,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "ECE math",
+          "text": "0.479",
+          "value": 0.479,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "ECE law",
+          "text": "0.405",
+          "value": 0.405,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "acc (tol)",
+          "text": "0.507",
+          "value": 0.507,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "ECE",
+          "text": "0.403",
+          "value": 0.403,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "ECE (judge)",
+          "text": "0.409",
+          "value": 0.409,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "ECE bio",
+          "text": "0.296",
+          "value": 0.296,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "ECE math",
+          "text": "0.575",
+          "value": 0.575,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "ECE law",
+          "text": "0.355",
+          "value": 0.355,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "acc (tol)",
+          "text": "0.370",
+          "value": 0.37,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "ECE (judge)",
+          "text": "0.168",
+          "value": 0.168,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "ECE bio",
+          "text": "0.041",
+          "value": 0.041,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "ECE math",
+          "text": "0.410",
+          "value": 0.41,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "ECE law",
+          "text": "0.045",
+          "value": 0.045,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B ^",
+          "col": "acc (tol)",
+          "text": "0.417",
+          "value": 0.417,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B ^",
+          "col": "ECE",
+          "text": "0.298",
+          "value": 0.298,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B ^",
+          "col": "ECE (judge)",
+          "text": "0.362",
+          "value": 0.362,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 1244,
+      "has_tabular": true,
+      "caption": "Significance expansion: 600 MMLU items, six domains, nine models across five families (tolerant-matcher ECE; domain ECE spread = max/min across the si",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "Qwen3-8B",
+          "col": "n",
+          "text": "587",
+          "value": 587.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen3-8B",
+          "col": "acc (tol)",
+          "text": "0.830",
+          "value": 0.83,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen3-8B",
+          "col": "ECE",
+          "text": "0.122",
+          "value": 0.122,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen3-8B",
+          "col": "MSI",
+          "text": "0.635",
+          "value": 0.635,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen3-8B",
+          "col": "domain ECE spread",
+          "text": "16.5",
+          "value": 16.5,
+          "support": "body"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "n",
+          "text": "599",
+          "value": 599.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "acc (tol)",
+          "text": "0.701",
+          "value": 0.701,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "ECE",
+          "text": "0.201",
+          "value": 0.201,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "MSI",
+          "text": "0.330",
+          "value": 0.33,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "domain ECE spread",
+          "text": "17.1",
+          "value": 17.1,
+          "support": "evidence"
+        },
+        {
+          "row": "Gemma2-9B",
+          "col": "n",
+          "text": "600",
+          "value": 600.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Gemma2-9B",
+          "col": "acc (tol)",
+          "text": "0.695",
+          "value": 0.695,
+          "support": "evidence"
+        },
+        {
+          "row": "Gemma2-9B",
+          "col": "ECE",
+          "text": "0.276",
+          "value": 0.276,
+          "support": "evidence"
+        },
+        {
+          "row": "Gemma2-9B",
+          "col": "MSI",
+          "text": "0.539",
+          "value": 0.539,
+          "support": "evidence"
+        },
+        {
+          "row": "Gemma2-9B",
+          "col": "domain ECE spread",
+          "text": "13.5",
+          "value": 13.5,
+          "support": "body"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "n",
+          "text": "599",
+          "value": 599.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "acc (tol)",
+          "text": "0.636",
+          "value": 0.636,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "ECE",
+          "text": "0.299",
+          "value": 0.299,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "MSI",
+          "text": "0.428",
+          "value": 0.428,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "domain ECE spread",
+          "text": "3.1",
+          "value": 3.1,
+          "support": "unsupported"
+        },
+        {
+          "row": "Llama-3.1-8B",
+          "col": "n",
+          "text": "597",
+          "value": 597.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.1-8B",
+          "col": "acc (tol)",
+          "text": "0.628",
+          "value": 0.628,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.1-8B",
+          "col": "ECE",
+          "text": "0.304",
+          "value": 0.304,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.1-8B",
+          "col": "MSI",
+          "text": "0.703",
+          "value": 0.703,
+          "support": "evidence"
+        },
+        {
+          "row": "Mistral-7B",
+          "col": "n",
+          "text": "600",
+          "value": 600.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Mistral-7B",
+          "col": "acc (tol)",
+          "text": "0.530",
+          "value": 0.53,
+          "support": "evidence"
+        },
+        {
+          "row": "Mistral-7B",
+          "col": "ECE",
+          "text": "0.394",
+          "value": 0.394,
+          "support": "evidence"
+        },
+        {
+          "row": "Mistral-7B",
+          "col": "MSI",
+          "text": "0.445",
+          "value": 0.445,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "n",
+          "text": "558",
+          "value": 558.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "acc (tol)",
+          "text": "0.507",
+          "value": 0.507,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "ECE",
+          "text": "0.267",
+          "value": 0.267,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "MSI",
+          "text": "0.680",
+          "value": 0.68,
+          "support": "evidence"
+        },
+        {
+          "row": "Phi3.5 ^",
+          "col": "n",
+          "text": "260",
+          "value": 260.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Phi3.5 ^",
+          "col": "acc (tol)",
+          "text": "0.492",
+          "value": 0.492,
+          "support": "evidence"
+        },
+        {
+          "row": "Phi3.5 ^",
+          "col": "ECE",
+          "text": "0.379",
+          "value": 0.379,
+          "support": "evidence"
+        },
+        {
+          "row": "Phi3.5 ^",
+          "col": "MSI",
+          "text": "0.339",
+          "value": 0.339,
+          "support": "evidence"
+        },
+        {
+          "row": "Phi3.5 ^",
+          "col": "domain ECE spread",
+          "text": "2.6",
+          "value": 2.6,
+          "support": "unsupported"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "n",
+          "text": "599",
+          "value": 599.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "acc (tol)",
+          "text": "0.459",
+          "value": 0.459,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "ECE",
+          "text": "0.050",
+          "value": 0.05,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "MSI",
+          "text": "0.985",
+          "value": 0.985,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "domain ECE spread",
+          "text": "10.3",
+          "value": 10.3,
+          "support": "unsupported"
+        }
+      ]
+    },
+    {
+      "line": 1303,
+      "has_tabular": true,
+      "caption": "Frontier-model generalization (National Supercomputing Internet gateway, qualitative check on unspecified checkpoint, \\texttt{scnet.cn} 2026-08-18): 4",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "DeepSeek-V4-Flash (DeepSeek)",
+          "col": "acc (tol)",
+          "text": "0.792",
+          "value": 0.792,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-V4-Flash (DeepSeek)",
+          "col": "ECE",
+          "text": "0.162",
+          "value": 0.162,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-V4-Flash (DeepSeek)",
+          "col": "mean conf",
+          "text": "0.937",
+          "value": 0.937,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-V4-Flash (DeepSeek)",
+          "col": "domain ECE spread",
+          "text": "26.3",
+          "value": 26.3,
+          "support": "body"
+        },
+        {
+          "row": "DeepSeek-V4-Flash (DeepSeek)",
+          "col": "OOD high-conf rate",
+          "text": "0.67",
+          "value": 0.67,
+          "support": "body"
+        },
+        {
+          "row": "GLM-5.2 (Zhipu)",
+          "col": "acc (tol)",
+          "text": "0.750",
+          "value": 0.75,
+          "support": "evidence"
+        },
+        {
+          "row": "GLM-5.2 (Zhipu)",
+          "col": "ECE",
+          "text": "0.139",
+          "value": 0.139,
+          "support": "evidence"
+        },
+        {
+          "row": "GLM-5.2 (Zhipu)",
+          "col": "mean conf",
+          "text": "0.882",
+          "value": 0.882,
+          "support": "evidence"
+        },
+        {
+          "row": "GLM-5.2 (Zhipu)",
+          "col": "domain ECE spread",
+          "text": "9.6",
+          "value": 9.6,
+          "support": "unsupported"
+        },
+        {
+          "row": "GLM-5.2 (Zhipu)",
+          "col": "OOD high-conf rate",
+          "text": "0.67",
+          "value": 0.67,
+          "support": "body"
+        },
+        {
+          "row": "Kimi-K3 (Moonshot)",
+          "col": "acc (tol)",
+          "text": "0.854",
+          "value": 0.854,
+          "support": "evidence"
+        },
+        {
+          "row": "Kimi-K3 (Moonshot)",
+          "col": "ECE",
+          "text": "0.108",
+          "value": 0.108,
+          "support": "evidence"
+        },
+        {
+          "row": "Kimi-K3 (Moonshot)",
+          "col": "mean conf",
+          "text": "0.935",
+          "value": 0.935,
+          "support": "evidence"
+        },
+        {
+          "row": "Kimi-K3 (Moonshot)",
+          "col": "domain ECE spread",
+          "text": "3.9",
+          "value": 3.9,
+          "support": "evidence"
+        },
+        {
+          "row": "Kimi-K3 (Moonshot)",
+          "col": "OOD high-conf rate",
+          "text": "1.00",
+          "value": 1.0,
+          "support": "evidence"
+        },
+        {
+          "row": "MiniMax-M3 (MiniMax)",
+          "col": "acc (tol)",
+          "text": "0.792",
+          "value": 0.792,
+          "support": "evidence"
+        },
+        {
+          "row": "MiniMax-M3 (MiniMax)",
+          "col": "ECE",
+          "text": "0.144",
+          "value": 0.144,
+          "support": "evidence"
+        },
+        {
+          "row": "MiniMax-M3 (MiniMax)",
+          "col": "mean conf",
+          "text": "0.868",
+          "value": 0.868,
+          "support": "evidence"
+        },
+        {
+          "row": "MiniMax-M3 (MiniMax)",
+          "col": "domain ECE spread",
+          "text": "6.3",
+          "value": 6.3,
+          "support": "unsupported"
+        },
+        {
+          "row": "MiniMax-M3 (MiniMax)",
+          "col": "OOD high-conf rate",
+          "text": "0.67",
+          "value": 0.67,
+          "support": "body"
+        }
+      ]
+    },
+    {
+      "line": 1375,
+      "has_tabular": true,
+      "caption": "OOD gating: confidence vs.\\ consistency gates (30 items, 4 models).",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "Qwen2.5-7B",
+          "col": "mean conf",
+          "text": "0.78",
+          "value": 0.78,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "(conf, cons)",
+          "text": "-0.20",
+          "value": -0.2,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "conf-gate hi-conf",
+          "text": "0.88",
+          "value": 0.88,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-7B",
+          "col": "cons-gate hi-conf",
+          "text": "0.64",
+          "value": 0.64,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "mean conf",
+          "text": "0.81",
+          "value": 0.81,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "(conf, cons)",
+          "text": "-0.18",
+          "value": -0.18,
+          "support": "unsupported"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "conf-gate hi-conf",
+          "text": "0.92",
+          "value": 0.92,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-3B",
+          "col": "cons-gate hi-conf",
+          "text": "0.73",
+          "value": 0.73,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "mean conf",
+          "text": "0.64",
+          "value": 0.64,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "conf-gate hi-conf",
+          "text": "1.00",
+          "value": 1.0,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5-1.5B",
+          "col": "cons-gate hi-conf",
+          "text": "0.86",
+          "value": 0.86,
+          "support": "unsupported"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "mean conf",
+          "text": "0.19",
+          "value": 0.19,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "conf-gate hi-conf",
+          "text": "0.80",
+          "value": 0.8,
+          "support": "evidence"
+        },
+        {
+          "row": "Llama-3.2-1B",
+          "col": "cons-gate hi-conf",
+          "text": "0.17",
+          "value": 0.17,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 1508,
+      "has_tabular": true,
+      "caption": "Three-arm calibration schedules: expected (from \\citet{beyond2025}, first-hand finding) vs.\\ observed (this pilot; independent single-run arms).",
+      "caption_decimals": [],
+      "cells": []
+    },
+    {
+      "line": 1793,
+      "has_tabular": true,
+      "caption": "Three-arm calibration schedules: generation-0 pre-treatment and final (after-treatment) ECE (live model, M=3, N=30; independent single-run arms; Explo",
+      "caption_decimals": [
+        {
+          "token": "0.0668",
+          "support": "evidence"
+        },
+        {
+          "token": "0.0733",
+          "support": "evidence"
+        },
+        {
+          "token": "0.1267",
+          "support": "evidence"
+        },
+        {
+          "token": "0.1816",
+          "support": "evidence"
+        },
+        {
+          "token": "0.1928",
+          "support": "evidence"
+        }
+      ],
+      "cells": [
+        {
+          "row": "A: post-evolution cal.",
+          "col": "Acc",
+          "text": "93.3",
+          "value": 93.3,
+          "support": "body"
+        },
+        {
+          "row": "A: post-evolution cal.",
+          "col": "Pre-treatment ECE (gen-0)",
+          "text": "0.0703",
+          "value": 0.0703,
+          "support": "evidence"
+        },
+        {
+          "row": "A: post-evolution cal.",
+          "col": "Final ECE (after treatment)",
+          "text": "0.1458",
+          "value": 0.1458,
+          "support": "evidence"
+        },
+        {
+          "row": "B: per-generation cal.",
+          "col": "Acc",
+          "text": "83.3",
+          "value": 83.3,
+          "support": "unsupported"
+        },
+        {
+          "row": "B: per-generation cal.",
+          "col": "Pre-treatment ECE (gen-0)",
+          "text": "0.2433",
+          "value": 0.2433,
+          "support": "evidence"
+        },
+        {
+          "row": "C: calibrate-then-evolve",
+          "col": "Acc",
+          "text": "86.7",
+          "value": 86.7,
+          "support": "evidence"
+        },
+        {
+          "row": "C: calibrate-then-evolve",
+          "col": "Pre-treatment ECE (gen-0)",
+          "text": "0.1778",
+          "value": 0.1778,
+          "support": "evidence"
+        },
+        {
+          "row": "C: calibrate-then-evolve",
+          "col": "Final ECE (after treatment)",
+          "text": "0.3853",
+          "value": 0.3853,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 1809,
+      "has_tabular": true,
+      "caption": "Adjudication independence matrix (rows: data collection; cols: judge family vs source family; cells: same / cross / NA; same-family indicates potentia",
+      "caption_decimals": [],
+      "cells": []
+    }
+  ],
+  "missing_inputs": [],
+  "pending_review": [
+    {
+      "token": "36.7",
+      "value": 36.7,
+      "line": 471,
+      "context": "[High-conf (  0.8 ) error rate × Exact-string / 63.3   (19/30)] = 36.7",
+      "table_line": 471,
+      "where": "cell"
+    },
+    {
+      "token": "13.3",
+      "value": 13.3,
+      "line": 471,
+      "context": "[High-conf (  0.8 ) error rate × Tolerant (v1) / 86.7   (26/30)] = 13.3",
+      "table_line": 471,
+      "where": "cell"
+    },
+    {
+      "token": "0.241",
+      "value": 0.241,
+      "line": 956,
+      "context": "[DeepSeek-R1-7B × ECE (10-bin)] = 0.241",
+      "table_line": 956,
+      "where": "cell"
+    },
+    {
+      "token": "0.241",
+      "value": 0.241,
+      "line": 1082,
+      "context": "[DeepSeek-R1-7B × ECE raw] = 0.241",
+      "table_line": 1082,
+      "where": "cell"
+    },
+    {
+      "token": "3.1",
+      "value": 3.1,
+      "line": 1244,
+      "context": "[Qwen2.5-3B × domain ECE spread] = 3.1",
+      "table_line": 1244,
+      "where": "cell"
+    },
+    {
+      "token": "2.6",
+      "value": 2.6,
+      "line": 1244,
+      "context": "[Phi3.5 ^ × domain ECE spread] = 2.6",
+      "table_line": 1244,
+      "where": "cell"
+    },
+    {
+      "token": "10.3",
+      "value": 10.3,
+      "line": 1244,
+      "context": "[Qwen2.5-1.5B × domain ECE spread] = 10.3",
+      "table_line": 1244,
+      "where": "cell"
+    },
+    {
+      "token": "9.6",
+      "value": 9.6,
+      "line": 1303,
+      "context": "[GLM-5.2 (Zhipu) × domain ECE spread] = 9.6",
+      "table_line": 1303,
+      "where": "cell"
+    },
+    {
+      "token": "6.3",
+      "value": 6.3,
+      "line": 1303,
+      "context": "[MiniMax-M3 (MiniMax) × domain ECE spread] = 6.3",
+      "table_line": 1303,
+      "where": "cell"
+    },
+    {
+      "token": "-0.18",
+      "value": -0.18,
+      "line": 1375,
+      "context": "[Qwen2.5-3B × (conf, cons)] = -0.18",
+      "table_line": 1375,
+      "where": "cell"
+    },
+    {
+      "token": "0.86",
+      "value": 0.86,
+      "line": 1375,
+      "context": "[Qwen2.5-1.5B × cons-gate hi-conf] = 0.86",
+      "table_line": 1375,
+      "where": "cell"
+    },
+    {
+      "token": "83.3",
+      "value": 83.3,
+      "line": 1793,
+      "context": "[B: per-generation cal. × Acc] = 83.3",
+      "table_line": 1793,
+      "where": "cell"
+    }
+  ],
+  "precision_anomalies": [
+    {
+      "table_line": 471,
+      "col": "Exact-string / 63.3   (19/30)",
+      "decimals": [
+        1,
+        3,
+        4
+      ],
+      "issue": "同列小数位数差 ≥2（疑似百分数/小数混用或复制错误）"
+    },
+    {
+      "table_line": 471,
+      "col": "Tolerant (v1) / 86.7   (26/30)",
+      "decimals": [
+        1,
+        4
+      ],
+      "issue": "同列小数位数差 ≥2（疑似百分数/小数混用或复制错误）"
+    },
+    {
+      "table_line": 630,
+      "col": "Self-report",
+      "decimals": [
+        1,
+        4
+      ],
+      "issue": "同列小数位数差 ≥2（疑似百分数/小数混用或复制错误）"
+    },
+    {
+      "table_line": 630,
+      "col": "Temperature scaling ( T=6.71 )",
+      "decimals": [
+        1,
+        4
+      ],
+      "issue": "同列小数位数差 ≥2（疑似百分数/小数混用或复制错误）"
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "tables": 17,
+    "numeric_cells": 225,
+    "unsupported": 12,
+    "missing_inputs": 0,
+    "precision_anomalies": 4,
+    "note": "pending_review = 表格 cell/图注数字在证据与表格外正文中均无支撑；precision_anomalies = 列内混精度（INFO，人工扫一眼）"
+  }
+}

@@ -1,0 +1,385 @@
+{
+  "meta": {
+    "tex": "F:\\Research\\F3_Single_10page\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\Research\\_inbox\\F1-F5_F45_2026-08-26\\supplementary"
+    ],
+    "timestamp": "2026-08-28T09:49:05+00:00"
+  },
+  "tables": [
+    {
+      "line": 76,
+      "has_tabular": true,
+      "caption": "GAP: prior work vs.\\ ours. No prior work measures paired $\\Gamma$ and $\\Delta$MAE across memory architectures on a real benchmark with post-hoc baseli",
+      "caption_decimals": [],
+      "cells": []
+    },
+    {
+      "line": 162,
+      "has_tabular": true,
+      "caption": "Honest paired recomputation on MMLU 500 (24{,}000 cells; 18{,}000 paired). $\\Gamma$ is prefix-length Wasserstein-1 (cluster-robust, $C{=}500$ question",
+      "caption_decimals": [
+        {
+          "token": "0.008",
+          "support": "evidence"
+        },
+        {
+          "token": "0.42",
+          "support": "body"
+        }
+      ],
+      "cells": [
+        {
+          "row": "Append-only",
+          "col": "MAE",
+          "text": "-0.0336",
+          "value": -0.0336,
+          "support": "evidence"
+        },
+        {
+          "row": "Summarization",
+          "col": "MAE",
+          "text": "-0.0313",
+          "value": -0.0313,
+          "support": "evidence"
+        },
+        {
+          "row": "RAG TF-IDF   {=}0.1",
+          "col": "MAE",
+          "text": "-0.0247",
+          "value": -0.0247,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 182,
+      "has_tabular": true,
+      "caption": "Flip-free fixed-correctness proxy: pairs with identical correctness only (same question--model--seed). Post-hoc restriction of the legacy data; not a ",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "Append-only",
+          "col": "MAE",
+          "text": "-0.0064",
+          "value": -0.0064,
+          "support": "unsupported"
+        },
+        {
+          "row": "Summarization",
+          "col": "MAE",
+          "text": "-0.0010",
+          "value": -0.001,
+          "support": "evidence"
+        },
+        {
+          "row": "Summarization",
+          "col": "p  (exact)",
+          "text": "0.375",
+          "value": 0.375,
+          "support": "evidence"
+        },
+        {
+          "row": "Summarization",
+          "col": "Holm  k{=}3",
+          "text": "0.750",
+          "value": 0.75,
+          "support": "evidence"
+        },
+        {
+          "row": "RAG TF-IDF   {=}0.1",
+          "col": "MAE",
+          "text": "-0.0008",
+          "value": -0.0008,
+          "support": "evidence"
+        },
+        {
+          "row": "RAG TF-IDF   {=}0.1",
+          "col": "p  (exact)",
+          "text": "0.503",
+          "value": 0.503,
+          "support": "unsupported"
+        },
+        {
+          "row": "RAG TF-IDF   {=}0.1",
+          "col": "Holm  k{=}3",
+          "text": "0.750",
+          "value": 0.75,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 201,
+      "has_tabular": true,
+      "caption": "Cluster-robust ablation (question as cluster, $C{=}500$). $\\beta$s from \\texttt{results/F3\\_Tier2\\_results.json} (token-ablation and ANCOVA sections).",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "MAE        +   auth",
+          "col": "p  (cluster) / 7.1 10^{-4}",
+          "text": "0.0143",
+          "value": 0.0143,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 245,
+      "has_tabular": true,
+      "caption": "TF-IDF threshold sensitivity (descriptive; only $\\theta{=}0.1$ was run independently --- archived interpolation otherwise). $\\Delta$MAE at $\\theta{=}0",
+      "caption_decimals": [
+        {
+          "token": "0.1",
+          "support": "evidence"
+        },
+        {
+          "token": "0.1",
+          "support": "evidence"
+        }
+      ],
+      "cells": [
+        {
+          "row": "",
+          "col": "{lcccc}",
+          "text": "0.05",
+          "value": 0.05,
+          "support": "evidence"
+        },
+        {
+          "row": "",
+          "col": "Filtered",
+          "text": "45",
+          "value": 45.0,
+          "support": "unsupported"
+        },
+        {
+          "row": "",
+          "col": "",
+          "text": "1.5",
+          "value": 1.5,
+          "support": "unsupported"
+        },
+        {
+          "row": "",
+          "col": "Accuracy",
+          "text": "0.713",
+          "value": 0.713,
+          "support": "evidence"
+        },
+        {
+          "row": "",
+          "col": "{lcccc}",
+          "text": "0.10",
+          "value": 0.1,
+          "support": "evidence"
+        },
+        {
+          "row": "",
+          "col": "Filtered",
+          "text": "62",
+          "value": 62.0,
+          "support": "unsupported"
+        },
+        {
+          "row": "",
+          "col": "",
+          "text": "1.2",
+          "value": 1.2,
+          "support": "body"
+        },
+        {
+          "row": "",
+          "col": "MAE",
+          "text": "-0.0247",
+          "value": -0.0247,
+          "support": "evidence"
+        },
+        {
+          "row": "",
+          "col": "Accuracy",
+          "text": "0.715",
+          "value": 0.715,
+          "support": "evidence"
+        },
+        {
+          "row": "",
+          "col": "{lcccc}",
+          "text": "0.15",
+          "value": 0.15,
+          "support": "unsupported"
+        },
+        {
+          "row": "",
+          "col": "Filtered",
+          "text": "78",
+          "value": 78.0,
+          "support": "unsupported"
+        },
+        {
+          "row": "",
+          "col": "",
+          "text": "0.9",
+          "value": 0.9,
+          "support": "evidence"
+        },
+        {
+          "row": "",
+          "col": "Accuracy",
+          "text": "0.716",
+          "value": 0.716,
+          "support": "evidence"
+        },
+        {
+          "row": "",
+          "col": "{lcccc}",
+          "text": "0.20",
+          "value": 0.2,
+          "support": "unsupported"
+        },
+        {
+          "row": "",
+          "col": "Filtered",
+          "text": "85",
+          "value": 85.0,
+          "support": "unsupported"
+        },
+        {
+          "row": "",
+          "col": "",
+          "text": "0.7",
+          "value": 0.7,
+          "support": "evidence"
+        },
+        {
+          "row": "",
+          "col": "Accuracy",
+          "text": "0.718",
+          "value": 0.718,
+          "support": "evidence"
+        },
+        {
+          "row": "",
+          "col": "{lcccc}",
+          "text": "0.30",
+          "value": 0.3,
+          "support": "evidence"
+        },
+        {
+          "row": "",
+          "col": "Filtered",
+          "text": "91",
+          "value": 91.0,
+          "support": "unsupported"
+        },
+        {
+          "row": "",
+          "col": "",
+          "text": "0.4",
+          "value": 0.4,
+          "support": "evidence"
+        },
+        {
+          "row": "",
+          "col": "Accuracy",
+          "text": "0.720",
+          "value": 0.72,
+          "support": "evidence"
+        }
+      ]
+    }
+  ],
+  "missing_inputs": [],
+  "pending_review": [
+    {
+      "token": "-0.0064",
+      "value": -0.0064,
+      "line": 182,
+      "context": "[Append-only × MAE] = -0.0064",
+      "table_line": 182,
+      "where": "cell"
+    },
+    {
+      "token": "0.503",
+      "value": 0.503,
+      "line": 182,
+      "context": "[RAG TF-IDF   {=}0.1 × p  (exact)] = 0.503",
+      "table_line": 182,
+      "where": "cell"
+    },
+    {
+      "token": "45",
+      "value": 45.0,
+      "line": 245,
+      "context": "[ × Filtered] = 45",
+      "table_line": 245,
+      "where": "cell"
+    },
+    {
+      "token": "1.5",
+      "value": 1.5,
+      "line": 245,
+      "context": "[ × ] = 1.5",
+      "table_line": 245,
+      "where": "cell"
+    },
+    {
+      "token": "62",
+      "value": 62.0,
+      "line": 245,
+      "context": "[ × Filtered] = 62",
+      "table_line": 245,
+      "where": "cell"
+    },
+    {
+      "token": "0.15",
+      "value": 0.15,
+      "line": 245,
+      "context": "[ × {lcccc}] = 0.15",
+      "table_line": 245,
+      "where": "cell"
+    },
+    {
+      "token": "78",
+      "value": 78.0,
+      "line": 245,
+      "context": "[ × Filtered] = 78",
+      "table_line": 245,
+      "where": "cell"
+    },
+    {
+      "token": "0.20",
+      "value": 0.2,
+      "line": 245,
+      "context": "[ × {lcccc}] = 0.20",
+      "table_line": 245,
+      "where": "cell"
+    },
+    {
+      "token": "85",
+      "value": 85.0,
+      "line": 245,
+      "context": "[ × Filtered] = 85",
+      "table_line": 245,
+      "where": "cell"
+    },
+    {
+      "token": "91",
+      "value": 91.0,
+      "line": 245,
+      "context": "[ × Filtered] = 91",
+      "table_line": 245,
+      "where": "cell"
+    }
+  ],
+  "precision_anomalies": [],
+  "summary": {
+    "verdict": "MAJOR",
+    "tables": 5,
+    "numeric_cells": 32,
+    "unsupported": 10,
+    "missing_inputs": 0,
+    "precision_anomalies": 0,
+    "note": "pending_review = 表格 cell/图注数字在证据与表格外正文中均无支撑；precision_anomalies = 列内混精度（INFO，人工扫一眼）"
+  }
+}

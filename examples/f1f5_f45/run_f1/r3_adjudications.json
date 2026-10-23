@@ -1,0 +1,455 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\f1f5_f45\\run_f1\\extracted_text.txt",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-27T18:55:42+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "adjudications": [
+    {
+      "token": "1.6",
+      "contexts": [
+        "of +0.047 (Qwen3:4b, Wilcoxon W=12480, p=1.6×10−5, dz=0.42); a length-matched benign",
+        "W=12480, 1.6×10−5 ∗",
+        "p=1.6 × 10−5) and Gemma3:4b ranking (+0.067, W=15670, p=0.007). The few-shot channel does not shift",
+        "(∆= + 0.047, p=1.6 × 10−5): both prefixes are ∼75 chars, but only the priming condition is associate",
+        "* p=1.6e-5",
+        "1.6×10−5"
+      ],
+      "mechanical": null,
+      "verdict": "critical",
+      "confidence": "medium",
+      "justification": "1.6为p值指数系数,属统计显著性实质断言。论文中未声明具体数据来源或证据文件,机械匹配亦无命中,故一票Critical。",
+      "evidence": "p=1.6×10−5 (Qwen3:4b, Wilcoxon W=12480)",
+      "suggested_action": "要求论文补充该p值对应的原始数据来源或结果文件路径。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "0.42",
+      "contexts": [
+        "of +0.047 (Qwen3:4b, Wilcoxon W=12480, p=1.6×10−5, dz=0.42); a length-matched benign",
+        "0.42 [0.18, 0.66]",
+        "at p < .02 (Bonferroni α′=0.017). Shifts reported as ∆MAE; dz in brackets: raw [0.42], temp [0.35], ",
+        "Power. At dz=0.42 (observed), α=0.05, power 0.8, the Wilcoxon signed-rank test (via t-approximation)",
+        "n=38 (dz=0.42),"
+      ],
+      "mechanical": "证据 2 位舍入 0.4249=0.4249→0.42",
+      "layer": "mechanical",
+      "verdict": "supported",
+      "confidence": "high",
+      "justification": "证据 2 位舍入 0.4249=0.4249→0.42",
+      "evidence": "of +0.047 (Qwen3:4b, Wilcoxon W=12480, p=1.6×10−5, dz=0.42); a length-matched be",
+      "suggested_action": ""
+    },
+    {
+      "token": "0.62",
+      "contexts": [
+        "control (75-char neutral prefix, +0.005, p=0.62, see Fig. 1) is associated with no significant",
+        "The key comparison is benign-long (∆= + 0.005, p=0.62) vs confidence-priming",
+        "n.s. p=0.62"
+      ],
+      "mechanical": "证据 2 位舍入 0.6219=0.6219→0.62",
+      "layer": "mechanical",
+      "verdict": "supported",
+      "confidence": "high",
+      "justification": "证据 2 位舍入 0.6219=0.6219→0.62",
+      "evidence": "control (75-char neutral prefix, +0.005, p=0.62, see Fig. 1) is associated with ",
+      "suggested_action": ""
+    },
+    {
+      "token": "0.645",
+      "contexts": [
+        "a single priming phrasing (supplementary 500×3 phrasings pilot 0.645/0.646/0.649 conf,",
+        "cells = 500×3 phrasings, 0.645/0.646/0.649 conf, direction consistent)."
+      ],
+      "mechanical": null,
+      "verdict": "critical",
+      "confidence": "high",
+      "justification": "0.645是pilot置信度指标,属于实质统计量；论文仅提及supplementary pilot,未声明具体来源文件,机械匹配亦未命中,故判Critical。",
+      "evidence": "supplementary 500×3 phrasings pilot 0.645/0.646/0.649 conf",
+      "suggested_action": "补充该pilot置信度的来源文件或可核查证据,否则维持Critical。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "12.2",
+      "contexts": [
+        "L ≈0.004/char and Γ ≈12.2 chars from prefix string lengths (illustrative), giving |∆MAE| ≤0.049 ≈0.0",
+        "bounded by the confidence shift. Empirical: L ≈0.004/char, Γ ≈12.2 chars (from string lengths), boun"
+      ],
+      "mechanical": null,
+      "verdict": "noise",
+      "confidence": "high",
+      "justification": "Γ≈12.2是参数Γ的示例值,标注为illustrative,由前缀字符串长度派生,属于中间量而非最终结果。机械匹配无命中,且无来源引用,故为噪音。",
+      "evidence": "Γ ≈12.2 chars from prefix string lengths (illustrative)",
+      "suggested_action": "无需处理,忽略该数字。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "98.2",
+      "contexts": [
+        "6,000 paired differences), 3 seeds (42/43/44), B=5000 BCa, bootstrap seed 42. Parse rates: Qwen3:4b ",
+        "Per-model per-channel ∆MAE with dz and CLES (Table 4). Parse rates: Qwen3:4b 98.2%, Gemma3:4b"
+      ],
+      "mechanical": null,
+      "verdict": "critical",
+      "confidence": "high",
+      "justification": "98.2%是模型解析率,属于实质结果指标；机械匹配无命中,且原文未声明任何来源文件,按规则一票Critical。",
+      "evidence": "Parse rates: Qwen3:4b 98.2%, Gemma3:4b",
+      "suggested_action": "请补充该解析率对应的JSON来源或删除该断言。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "93.3",
+      "contexts": [
+        "Gemma3:4b 93.3%, DeepSeek-R1:7B 96.1%, Qwen2.5:14B 99.1%. Lower parse rates (Gemma) are due to",
+        "93.3%, DeepSeek-R1:7B 96.1%, Qwen2.5:14B 99.1%. Unparseable cells (6.7%) excluded."
+      ],
+      "mechanical": null,
+      "verdict": "critical",
+      "confidence": "high",
+      "justification": "93.3% 是 Gemma3:4b 的 parse rate 结果指标,属于实质断言。机械层按直接/比例/舍入容差均未匹配到支撑值,论文该句未声明任何来源文件,无法核实。",
+      "evidence": "Gemma3:4b 93.3%, DeepSeek-R1:7B 96.1%, Qwen2.5:14B 99.1%. Unparseable cells (6.7%) excluded.",
+      "suggested_action": "需补充该数值的产物 JSON 来源路径,或说明计算方式及对应原始文件。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "96.1",
+      "contexts": [
+        "Gemma3:4b 93.3%, DeepSeek-R1:7B 96.1%, Qwen2.5:14B 99.1%. Lower parse rates (Gemma) are due to",
+        "93.3%, DeepSeek-R1:7B 96.1%, Qwen2.5:14B 99.1%. Unparseable cells (6.7%) excluded."
+      ],
+      "mechanical": null,
+      "verdict": "critical",
+      "confidence": "medium",
+      "justification": "96.1%是DeepSeek-R1:7B的解析率结果,属实质断言；机械匹配无命中,且论文未声明该数值来自任何结果文件或可核验来源。",
+      "evidence": "Gemma3:4b 93.3%, DeepSeek-R1:7B 96.1%, Qwen2.5:14B 99.1%. Unparseable cells (6.7%) excluded.",
+      "suggested_action": "补充该数值对应的结果文件路径或明确数据来源,否则视为无来源关键断言。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "2.5",
+      "contexts": [
+        "Gemma3:4b 93.3%, DeepSeek-R1:7B 96.1%, Qwen2.5:14B 99.1%. Lower parse rates (Gemma) are due to",
+        "Qwen2.5:14B",
+        "Qwen2.5:14B tag 7cdf5a0187d5;",
+        "Qwen2.5:14B",
+        "93.3%, DeepSeek-R1:7B 96.1%, Qwen2.5:14B 99.1%. Unparseable cells (6.7%) excluded.",
+        "Qwen2.5:14B",
+        "Qwen2.5:14B",
+        "Qwen2.5:14B"
+      ],
+      "mechanical": null,
+      "verdict": "noise",
+      "confidence": "high",
+      "justification": "该数字出现在模型名“Qwen2.5:14B”中,是版本号而非结果/统计量/指标,机械匹配无命中属正常,不应视为实质断言。",
+      "evidence": "Qwen2.5:14B tag 7cdf5a0187d5; Qwen2.5:14B 93.3%",
+      "suggested_action": "忽略该数字,不计入对账；如需校验模型版本可另查元数据。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "99.1",
+      "contexts": [
+        "Gemma3:4b 93.3%, DeepSeek-R1:7B 96.1%, Qwen2.5:14B 99.1%. Lower parse rates (Gemma) are due to",
+        "93.3%, DeepSeek-R1:7B 96.1%, Qwen2.5:14B 99.1%. Unparseable cells (6.7%) excluded."
+      ],
+      "mechanical": null,
+      "verdict": "critical",
+      "confidence": "medium",
+      "justification": "99.1% 是模型性能指标,属实质断言；机械匹配无命中且原文未声明来源,无法验证支撑。",
+      "evidence": "Gemma3:4b 93.3%, DeepSeek-R1:7B 96.1%, Qwen2.5:14B 99.1%.",
+      "suggested_action": "补充该结果对应的输出文件或数据来源,否则触发一票 Critical。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "0.084",
+      "contexts": [
+        "[+0.014, +0.084]"
+      ],
+      "mechanical": null,
+      "verdict": "critical",
+      "confidence": "medium",
+      "justification": "该小数以置信区间形式出现（区间上限）,属于统计结果,非参数/噪声；机械匹配无命中,且未见声明JSON来源,构成无来源实质断言。",
+      "evidence": "[+0.014, +0.084]",
+      "suggested_action": "要求作者补充该数值的产物来源或证据文件。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "0.66",
+      "contexts": [
+        "0.42 [0.18, 0.66]"
+      ],
+      "mechanical": "证据 2 位舍入 0.6578=0.6578→0.66",
+      "layer": "mechanical",
+      "verdict": "supported",
+      "confidence": "high",
+      "justification": "证据 2 位舍入 0.6578=0.6578→0.66",
+      "evidence": "0.42 [0.18, 0.66]",
+      "suggested_action": ""
+    },
+    {
+      "token": "0.08",
+      "contexts": [
+        "0.31 [0.08, 0.54]"
+      ],
+      "mechanical": "证据 2 位舍入 0.0809=0.0809→0.08",
+      "layer": "mechanical",
+      "verdict": "supported",
+      "confidence": "high",
+      "justification": "证据 2 位舍入 0.0809=0.0809→0.08",
+      "evidence": "0.31 [0.08, 0.54]",
+      "suggested_action": ""
+    },
+    {
+      "token": "0.54",
+      "contexts": [
+        "0.31 [0.08, 0.54]"
+      ],
+      "mechanical": "证据 2 位舍入 0.5354=0.5354→0.54",
+      "layer": "mechanical",
+      "verdict": "supported",
+      "confidence": "high",
+      "justification": "证据 2 位舍入 0.5354=0.5354→0.54",
+      "evidence": "0.31 [0.08, 0.54]",
+      "suggested_action": ""
+    },
+    {
+      "token": "0.012",
+      "contexts": [
+        "+0.012",
+        "+0.012",
+        "+0.012"
+      ],
+      "mechanical": null,
+      "verdict": "critical",
+      "confidence": "medium",
+      "justification": "该数字为性能提升指标（实质断言）,但产物JSON无匹配值,论文未声明来源,故为Critical。",
+      "evidence": "论文原文行:+0.012（三处）",
+      "suggested_action": "请核实0.012出处,补充来源或删除。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "0.067",
+      "contexts": [
+        "+0.067",
+        "p=1.6 × 10−5) and Gemma3:4b ranking (+0.067, W=15670, p=0.007). The few-shot channel does not shift",
+        "The ranking channel exhibits the largest shift (+0.067), suggesting that entry ordering is a",
+        "regardless of correctness, while the ranking channel (+0.067) additionally exploits attention bias t",
+        "+0.067 *",
+        "+0.067"
+      ],
+      "mechanical": null,
+      "verdict": "critical",
+      "confidence": "high",
+      "justification": "0.067 是排名通道效应量/统计量,构成实质性结果断言；机械匹配无命中,且未声明任何 evidence JSON 来源,不能视为 noise。",
+      "evidence": "The ranking channel exhibits the largest shift (+0.067)",
+      "suggested_action": "需补充该 0.067 的来源 JSON 路径,或标记为无法溯源。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "0.023",
+      "contexts": [
+        "[+0.023, +0.121]"
+      ],
+      "mechanical": null,
+      "verdict": "critical",
+      "confidence": "low",
+      "justification": "0.023 为区间的一部分,属于统计量（如置信区间/效应量）,构成实质断言；机械层无匹配,且未提供任何来源引用,无法支撑。",
+      "evidence": "[+0.023, +0.121]",
+      "suggested_action": "请补充该数字对应的产物 JSON 路径或原始数据来源,或删除该未经支撑的统计量。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "0.121",
+      "contexts": [
+        "[+0.023, +0.121]"
+      ],
+      "mechanical": null,
+      "verdict": "critical",
+      "confidence": "high",
+      "justification": "该区间上界为结果型统计量,非成本/参数/中间量；机械匹配无命中且行内未声明数据来源,构成无来源实质断言。",
+      "evidence": "论文原文行: '[+0.023, +0.121]'",
+      "suggested_action": "要求补充该区间对应产物 JSON 路径或计算证据；否则维持 Critical。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "0.12",
+      "contexts": [
+        "0.38 [0.12, 0.64]",
+        "−0.12 [−0.34, 0.10]",
+        "−0.12"
+      ],
+      "mechanical": "证据 2 位舍入 0.11514918024534128=0.11514918024534128→0.12",
+      "layer": "mechanical",
+      "verdict": "supported",
+      "confidence": "high",
+      "justification": "证据 2 位舍入 0.11514918024534128=0.11514918024534128→0.12",
+      "evidence": "0.38 [0.12, 0.64]",
+      "suggested_action": ""
+    },
+    {
+      "token": "0.64",
+      "contexts": [
+        "0.38 [0.12, 0.64]"
+      ],
+      "mechanical": "证据 2 位舍入 0.6375=0.6375→0.64",
+      "layer": "mechanical",
+      "verdict": "supported",
+      "confidence": "high",
+      "justification": "证据 2 位舍入 0.6375=0.6375→0.64",
+      "evidence": "0.38 [0.12, 0.64]",
+      "suggested_action": ""
+    },
+    {
+      "token": "0.039",
+      "contexts": [
+        "+0.039∗"
+      ],
+      "mechanical": null,
+      "verdict": "critical",
+      "confidence": "high",
+      "justification": "该数字带显著性星号,属于统计结果/回归系数,为实质断言；原文未声明结果文件等来源,机械匹配也未命中,故按一票 Critical 处理。",
+      "evidence": "+0.039∗",
+      "suggested_action": "要求作者提供该系数的结果文件或可复现 JSON；无法溯源则删除该数字。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "0.038",
+      "contexts": [
+        "+0.038∗"
+      ],
+      "mechanical": null,
+      "verdict": "noise",
+      "confidence": "high",
+      "justification": "该数字以“+0.038∗”形式出现在公式/表达式项中,是模型方程系数（参数）,非独立结果或统计量；参数类数字无需在产物JSON中逐一匹配,机械层未命中属误报。",
+      "evidence": "+0.038∗",
+      "suggested_action": "跳过该数字,不要求JSON支撑；如需验证公式系数,应查回归结果源文件。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "0.045",
+      "contexts": [
+        "Cross-seed stability. ∆MAE across 3 seeds: seed 0 +0.045, seed 1 +0.049, seed 2 +0.047 (SD = 0.002)."
+      ],
+      "mechanical": null,
+      "verdict": "critical",
+      "confidence": "high",
+      "justification": "0.045是seed 0的∆MAE结果,属实质断言；机械层未在证据JSON中匹配,且原文未声明来源,因此按规则判critical。",
+      "evidence": "Cross-seed stability. ∆MAE across 3 seeds: seed 0 +0.045, seed 1 +0.049, seed 2 +0.047 (SD = 0.002).",
+      "suggested_action": "补充该∆MAE对应results/JSON来源,或标注为不可核验。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "0.075",
+      "contexts": [
+        "−0.075"
+      ],
+      "mechanical": null,
+      "verdict": "critical",
+      "confidence": "low",
+      "justification": "孤立数值疑似实质结果,无上下文且未声明来源,机械层无匹配,按对抗原则判为无来源实质断言。",
+      "evidence": "−0.075",
+      "suggested_action": "核实原始数据或论文来源,若无则标记Critical。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "1.26",
+      "contexts": [
+        "requirements.txt locks numpy 1.26, scipy 1.11, matplotlib 3.8; environment.yml specifies OS/CUDA. Se",
+        "able). requirements.txt: numpy 1.26, scipy 1.11, matplotlib 3.8. environment.yml: Ubuntu 22.04, Pyth"
+      ],
+      "mechanical": null,
+      "verdict": "noise",
+      "confidence": "high",
+      "justification": "1.26 是 numpy 版本号的一部分,属于环境配置信息,非结果/统计量/指标等实质断言,机械匹配无命中符合预期。",
+      "evidence": "requirements.txt locks numpy 1.26, scipy 1.11, matplotlib 3.8",
+      "suggested_action": "忽略该版本号,不要求产物JSON支撑。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "3.8",
+      "contexts": [
+        "requirements.txt locks numpy 1.26, scipy 1.11, matplotlib 3.8; environment.yml specifies OS/CUDA. Se",
+        "able). requirements.txt: numpy 1.26, scipy 1.11, matplotlib 3.8. environment.yml: Ubuntu 22.04, Pyth"
+      ],
+      "mechanical": null,
+      "verdict": "noise",
+      "confidence": "high",
+      "justification": "3.8 是 matplotlib 的版本号,属于依赖环境配置,而非结果/统计量/指标,不构成实质断言。",
+      "evidence": "requirements.txt locks numpy 1.26, scipy 1.11, matplotlib 3.8; environment.yml specifies OS/CUDA.",
+      "suggested_action": "忽略该数字,版本号不作为对账目标。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "0.999",
+      "contexts": [
+        "Our n=500 yields power > 0.999 under either"
+      ],
+      "mechanical": null,
+      "verdict": "critical",
+      "confidence": "high",
+      "justification": "统计功效是实质断言,非噪声；论文未指明任何生成该数值的来源文件或计算方法,机械匹配无命中。",
+      "evidence": "Our n=500 yields power > 0.999 under either",
+      "suggested_action": "请补充功效计算的来源文件或推导说明,或标注为模拟结果而非产物数值。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "22.04",
+      "contexts": [
+        "able). requirements.txt: numpy 1.26, scipy 1.11, matplotlib 3.8. environment.yml: Ubuntu 22.04, Pyth"
+      ],
+      "mechanical": null,
+      "verdict": "noise",
+      "confidence": "high",
+      "justification": "22.04 是 Ubuntu 操作系统版本号,非实质断言数值,属于环境配置噪音。",
+      "evidence": "environment.yml: Ubuntu 22.04, Pyth",
+      "suggested_action": "忽略该数字,不参与对账。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "13.0",
+      "contexts": [
+        "3.10, CUDA 13.0. Seed 42. Ollama model tags pinned by SHA. SOURCE_DATE_EPOCH=1720000000. Sanity"
+      ],
+      "mechanical": null,
+      "verdict": "noise",
+      "confidence": "high",
+      "justification": "13.0 是 CUDA 版本号,属于环境配置噪音,非实质结果或统计量,机械层无匹配合理。",
+      "evidence": "3.10, CUDA 13.0. Seed 42.",
+      "suggested_action": "忽略此数字,不纳入对账。",
+      "parse": "json",
+      "layer": "llm"
+    }
+  ],
+  "summary": {
+    "total": 29,
+    "mechanical": 7,
+    "llm": 22,
+    "llm_failed": 0,
+    "noise": 7,
+    "supported": 7,
+    "critical": 15,
+    "verdict": "CRITICAL",
+    "detail": "critical 15 个（实质断言无来源，一票 Critical）；noise 7 / supported 7"
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\f1f5_f45\\run_f45\\extracted_text.txt",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\examples\\f1f5_f45\\run_f45\\r6_llm.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-27T18:27:14+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Critical",
+      "text": "- Critical: hybrid 的 McNemar 数字与准确率差内部不一致：在摘要给出的 16,000 per strategy–rule cell 且 c=0 的口径下，b≈1600 对应 Δ≈0.100；但 injection 的 0.620−0.435=0.185、mimicry 的 0.790−0.732=0.058 都不可能同时对应 b≈1600，且 mimicry 若 b≈92"
+    },
+    {
+      "id": 2,
+      "sev": "Critical",
+      "text": "- Critical: 一键复现缺失：没有仓库链接、容器/依赖锁定、可执行脚本或端到端 pipeline，审稿人无法复现 trust_mean/majority/hybrid 的任何数字。"
+    },
+    {
+      "id": 3,
+      "sev": "Critical",
+      "text": "- Critical: 仅用单一参数点（N=7, f=2, pH=0.65）和两种 capture 策略就宣称“falsify sign flip”，因果自变量只有一个二值对比，无法排除中间策略、其他 f/pH 或置信度分布下出现 sign flip；“studied regime”是事后划定的边界。"
+    },
+    {
+      "id": 4,
+      "sev": "Critical",
+      "text": "- Critical: 从 16,000 个样本观察到 c=0 只能说明“该样本中未出现输给 majority 的 trial”，不能推出“在该 regime 内 never loses”；除非给出解析证明，否则这是有限样本结果被过度一般化。"
+    },
+    {
+      "id": 5,
+      "sev": "Critical",
+      "text": "- Critical: 全文没有给出代码/数据仓库地址、artifact DOI 或补充材料链接；`cells.jsonl` 和 `real_llm_400_v6` 只有名字，读者无法获取原始数据，证据链断裂，谈不上“data are shared honestly”。"
+    },
+    {
+      "id": 6,
+      "sev": "Critical",
+      "text": "- Critical: 摘要中真实 LLM 试点样本量自相矛盾：前面写 “400 trials”，后面却写 “3991/4000 honest parse 99.78%”；若分母应为 400，则 3991 与 99.78% 均不成立，若分母为 4000，则与 “400 trials” 直接冲突。"
+    },
+    {
+      "id": 7,
+      "sev": "Critical",
+      "text": "- Critical: 摘要只给出截断 SHA（`6c375b43`、`798bbc2d`），既无完整 SHA-256，也无规范化说明（JSON 键序、行序、浮点格式、哈希对象），无法执行“重跑→重算哈希→对账”这一可复现性核心步骤。"
+    },
+    {
+      "id": 8,
+      "sev": "Critical",
+      "text": "- Critical: 摘要自相矛盾：先报告 “Supplementary real-LLM pilot（gemma3:4b）”，随后又说 “All results are synthetic / no real LLM deployment is tested”；应明确限定为 “All main results are synthetic; the LLM pilot is explorator"
+    },
+    {
+      "id": 9,
+      "sev": "Critical",
+      "text": "- Critical: 混合规则是在同一 128K 数据上“derived/阈值选择”后又在同一批数据上报告 McNemar p 值的，属于 data-adaptive 后检验；hybrid 的 p 值存在乐观偏倚，不能作为确认性证据。"
+    },
+    {
+      "id": 10,
+      "sev": "Major",
+      "text": "- Major: F4/F5 是无定义标签，摘要既未说明它们是图、表还是 finding，也没有对应图表或正文解释，导致结构引用悬空。"
+    },
+    {
+      "id": 11,
+      "sev": "Major",
+      "text": "- Major: 基准公平性不清楚：未给出 4 个 model families 的逐族结果或 family×strategy×rule 交互，pooled 结果可能由某个有利 family 主导。"
+    },
+    {
+      "id": 12,
+      "sev": "Major",
+      "text": "- Major: 对照组缺失：没有“无捕获/无攻击”或“置信度无信息”的 synthetic 条件，无法分离 trust weighting 的真实收益，也无法在 synthetic 中检验 sign-flip 是否依赖 confidence informativeness。"
+    },
+    {
+      "id": 13,
+      "sev": "Major",
+      "text": "- Major: 所有主要结论只来自单一合成参数点（N=7, f=2, pH=0.65），未扫描 N、f、pH、置信度生成方式或捕获强度；即使标题限定“within the studied regime”，把该单点结果表述为“falsifies the hypothesis”仍夸大了增量贡献。"
+    },
+    {
+      "id": 14,
+      "sev": "Major",
+      "text": "- Major: 摘要中 F4/F5 未定义，若指图表应写 “Figure 4/5”，且正文截图中没有图表可核对；同时 “adaptive hybrid (Atv)” 缩写未解释，与后文 trust_mean、trimmed mean、hybrid 的术语不统一。"
+    },
+    {
+      "id": 15,
+      "sev": "Major",
+      "text": "- Major: 有效样本量可能被高估：若 4 个 model families 共享同一批 4,000 trials，则每策略-规则只有 4,000 个独立问题（而非 16,000 cells），McNemar 的独立配对假设和 p 值会被高估。"
+    },
+    {
+      "id": 16,
+      "sev": "Major",
+      "text": "- Major: 核心术语 “mimicry” 前后定义冲突：摘要称 captured verifiers “anti-correlate confidence with correctness”，引言却称 “mimic honest confidence behavior (making them indistinguishable)”，两种策略并不等价，导致 sign-flip 的论证对象不清"
+    },
+    {
+      "id": 17,
+      "sev": "Major",
+      "text": "- Major: 真实 LLM pilot 报告不一致（摘要写 400 trials，但出现 “3991/4000” 和 99.78%）；若 verbalized confidence 几乎恒定（0.985 vs 0.985），trust weighting 近似退化为 majority，c=0 是平凡结果，不能作为主结论的独立佐证。"
+    },
+    {
+      "id": 18,
+      "sev": "Major",
+      "text": "- Major: 隐私/IRB：虽然主体是合成数据，但真实-LLM pilot 未说明 prompt/输入语料来源是否包含个人或受版权保护内容，也未提供“不含 PII、无需 IRB”的明确声明。"
+    },
+    {
+      "id": 19,
+      "sev": "Minor",
+      "text": "- Minor: “verbalized conf 0.985 vs 0.985 uninformative” 未说明 0.985 是什么指标（正确/错误平均置信度？AUC？），也未解释两个相等值如何推出 “uninformative”。"
+    },
+    {
+      "id": 20,
+      "sev": "Minor",
+      "text": "- Minor: 报告 p<10^-100 / p<10^-400 不如报告精确 McNemar/binomial p 值、b/c 计数及效应量；极小的 p 值容易掩盖实际差异大小。"
+    }
+  ],
+  "rebuttals": [],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "sustained",
+      "reason": "作者未回应；hybrid的Δ与b/c在16,000/cell口径下确实不自洽,需统一。"
+    },
+    {
+      "id": 2,
+      "disposition": "sustained",
+      "reason": "作者未回应；无仓库/脚本/依赖锁定和端到端复现路径,问题成立。"
+    },
+    {
+      "id": 3,
+      "disposition": "sustained",
+      "reason": "作者未回应；仅单参数点加两种策略确不足以排除更广sign flip,成立。"
+    },
+    {
+      "id": 4,
+      "disposition": "sustained",
+      "reason": "作者未回应；有限样本c=0不能直接推出regime内永不输,成立。"
+    },
+    {
+      "id": 5,
+      "disposition": "sustained",
+      "reason": "作者未回应；无数据/代码链接,cells.jsonl等仅名称,证据链断裂。"
+    },
+    {
+      "id": 6,
+      "disposition": "sustained",
+      "reason": "作者未回应；400 trials与3991/4000、99.78%明显冲突,成立。"
+    },
+    {
+      "id": 7,
+      "disposition": "sustained",
+      "reason": "作者未回应；截断SHA无完整哈希与规范化说明,无法对账,成立。"
+    },
+    {
+      "id": 8,
+      "disposition": "sustained",
+      "reason": "作者未回应；real-LLM pilot与All results are synthetic表述矛盾,成立。"
+    },
+    {
+      "id": 9,
+      "disposition": "sustained",
+      "reason": "作者未回应；hybrid用同批128K数据选阈值又报p值,存在乐观偏倚。"
+    },
+    {
+      "id": 10,
+      "disposition": "partial",
+      "reason": "部分成立:F4/F5有简略说明但仍未明确图表/正文定位。"
+    },
+    {
+      "id": 11,
+      "disposition": "sustained",
+      "reason": "作者未回应；缺少逐family结果与交互,pooled可能被某family主导。"
+    },
+    {
+      "id": 12,
+      "disposition": "sustained",
+      "reason": "作者未回应；无no-capture/无信息置信度对照,因果归因不完整。"
+    },
+    {
+      "id": 13,
+      "disposition": "sustained",
+      "reason": "作者未回应；单一参数点结论表述为falsify确实过度泛化。"
+    },
+    {
+      "id": 14,
+      "disposition": "partial",
+      "reason": "部分成立:F4/F5定位不清成立；Atv在引言已有简介,该项不完全成立。"
+    },
+    {
+      "id": 15,
+      "disposition": "sustained",
+      "reason": "作者未回应；若模型族共享4000 trials,独立样本量确被高估。"
+    },
+    {
+      "id": 16,
+      "disposition": "sustained",
+      "reason": "作者未回应；mimicry定义摘要与引言矛盾,论证对象不清,成立。"
+    },
+    {
+      "id": 17,
+      "disposition": "sustained",
+      "reason": "作者未回应；pilot样本量矛盾且恒定置信度使c=0平凡,成立。"
+    },
+    {
+      "id": 18,
+      "disposition": "sustained",
+      "reason": "作者未回应；未声明数据来源无PII/无需IRB,合规说明缺失。"
+    },
+    {
+      "id": 19,
+      "disposition": "sustained",
+      "reason": "作者未回应；0.985指标含义及uninformative推导未说明,成立。"
+    },
+    {
+      "id": 20,
+      "disposition": "sustained",
+      "reason": "作者未回应；应报告精确p/b/c/效应量而非超小p值,成立。"
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 9,
+      "Major": 7,
+      "Minor": 2
+    },
+    "n_issues": 20,
+    "n_sustained": 18,
+    "n_withdrawn": 0,
+    "n_partial": 2,
+    "truncation": {
+      "n_total": 20,
+      "n_debated": 20,
+      "n_truncated": 0,
+      "max_issues": 20
+    },
+    "detail": "辩论后维持 Critical 9 / Major 7 （撤回 0，部分成立 2）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      12,
+      13,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "withdrawn_ids": []
+  }
+}

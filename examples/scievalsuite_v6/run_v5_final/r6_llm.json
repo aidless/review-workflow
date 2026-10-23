@@ -1,0 +1,984 @@
+{
+  "meta": {
+    "stage": "R6",
+    "timestamp": "2026-08-27T05:10:48+00:00",
+    "rpc": "http://127.0.0.1:3080",
+    "rounds": 3
+  },
+  "rpc_health": {
+    "ok": true,
+    "detail": "HTTP 200"
+  },
+  "rounds": [
+    {
+      "Critical": 20,
+      "Major": 39,
+      "Minor": 19
+    },
+    {
+      "Critical": 21,
+      "Major": 44,
+      "Minor": 23
+    },
+    {
+      "Critical": 21,
+      "Major": 41,
+      "Minor": 22
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts": {
+      "Critical": 16,
+      "Major": 17,
+      "Minor": 4
+    },
+    "unstable_counts": {
+      "Critical": 17,
+      "Major": 48
+    },
+    "stability_rule": "≥2 轮出现才计入门禁"
+  },
+  "stable_issues": [
+    {
+      "sev": "Critical",
+      "text": "- **Critical**: ITT 均值 0.355 无法对账 â gemma 三次试验分数述为 1/6â2/6、一次失败记 0；(1/6+2/6+0)/3 â 0.167，与 0.355 差距显著，算术不闭合。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- **Critical**: `deepseek-v4-flash` 不是已知公开模型（DeepSeek 现有 v2/v3/R1，无 \"v4\"；\"flash\" 是 Google Gemini 命名惯例），无法定位、无法复现。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- **Major**: 全部评测对象为 7b–14b 小模型且大面积失败，前沿模型仅以\"exploratory\"出现（L1a 5/6 或 6/6），suite 在有能力的模型上是否具有区分度完全未验证，评测工具的有效性被回避。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: \"curated L1a（6 题，探索性）$p=0.0026$，Holm 校正后 $p=0.0261$\"——先做事后任务挑选（curate）再在同一挑选集内做 Holm 校正，无法消除选择偏倚，该校正 $p$ 值不成立，属 p-hacking 风险。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 16 任务 Friedman 非显著（p=0.3679）后，再\"curated\"出 6 任务子集得到 p=0.0026 并用 Holm 校正——这是先看结果再选子集的 garden-of-forking-paths 选择偏倚，Holm 校正无法修复子集挑选本身引入的混淆。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: L1b 三个模型全部得 0/10，存在严重地板效应；在此基础上对 16 个配对任务（含 10 个全零的 L1b）做 Friedman 检验，非显著结果是注定的，不提供信息，混淆了\"无差异\"与\"无区分度\"。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: L2 主对比设计（A=ReAct vs F=completion-guided）仅 N=4，McNemar 功效 0.0000、n_d=0，统计上零信息量，论文却以\"无显著差异\"断言两臂等效，属于无法证伪的零结果被当作结论。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: L2 用 exact McNemar 但 $n_d=0<6$、$N=4$、且自报 McNemar 功效 $0.0000$，却以 $p=1.0000$ 得出\"两臂无统计可检测差异\"——零功效下这是\"无证据\"被误述为\"无差异\"的证据，检验退化、结论无效。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: L2 的核心结论\"arms 之间无统计学可检测差异\"是在 N=4、McNemar 统计功效明确报告为 0.0000 的条件下得出的——功效为零时\"未检测到差异\"æ¯ç»ææ§å¿ 然而非证据，犯了\"absence of evidence â  evidence of absence\"的根本性推理错误。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: L2 结论 \"no statistically detectable difference\" 建立在 McNemar n_d=0、N=4、power=0.0000 之上，这是典型的\"无证据≠无效应\"谬误；一个无信息量的检验不能支撑\"两臂等效/无因果效应\"的结论，d_min=2.1279 意味着只能检出巨型效应。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: LLM-as-judge 的校准（21/39 gold 上 FNR=FPR=0）被明确称为\"methodological warrant\"，因为实际 L1b 轮次零调用（全 SKIP）；产出 \"0/10 for all\" 的打分路径从未被该校准过的裁判验证过，L1b 分数的内部效度未建立。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: gemma 的 intention-to-treat 均值 0.355 与所报离散得分无法对账：三个 6 任务试验（1/6、2/6、失败计 0）的 ITT 均值应为 (1+2+0)/18≈0.167，0.355×18=6.39 非整数，任何整数计分口径下都不可能得到 0.355，疑似计算错误。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 全篇样本量极小（L2 $N=4$、L1a 6 题、L1b 10 题），且 L1b 三模型均为 $0/10$（方差为零、地板效应），在此之上仍报告精确到 4 位小数的 $p$（1.0000、0.3679、0.0026、0.0261），制造虚假精度。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 实验臂标签\"F\"（completion-guided harness）与\"Model-F\"（frontier参考模型）共用字母 F，指代完全不同的两个实体，造成术语碰撞，读者极易混淆。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 所谓\"统一基准\"的核心组成 AIRS-Bench、ResearchClawBench、GAIA2 似乎均为已有基准的拼装（GAIA 昬身是已知 benchmark），文中未论证三者的\"新增部分\"（如 GAIA2 p3dev 的改造、ResearchClawBench的新增）相对原始版本的实质性新增，\"unified\"实为\"bundled existing benchmark",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 摘要声称 LLM-as-judge \"passed at FNR=0.0000, FPR=0.0000\"，紧接着说\"the round made zero judge calls (all SKIP)\"——零调用不可能产出 FNR/FPR，二者自相矛盾，\"methodological warrant\"的辩解无法消除数值造假观感。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 摘要称\"frontier Model-F scored 6/6\"，但引言称\"API-model reference (deepseek-v4-flash, 5/6 L1a)\"，同一参考模型在摘要与正文中分数矛盾（6/6 vs 5/6），且名称不一致（Model-F vs deepseek-v4-flash），无任何说明。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: \"18/18 independent recomputation checks\"语义不明——重算的是分数、哈希还是统计量？若基于缓存 LLM 输出重算则非真正独立，未说明输入来源与是否触发新调用。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: \"L047 answer-fitting audit\"中的\"L047\"未在任何处定义或解释，突兀出现，属未定义术语。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: \"McNemar power 0.0000\"——将统计功效报告为精确零在方法上不合理且易误导；功效极少为正值，应报告实际计算值并说明条件。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: \"SHA-256 + 18/18 重算通过\"证明的是可复现性而非效度；可复现地得到错误/有偏的测量仍不构成有效基准，不能以复现封条替代构念效度与区分效度论证。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 21 gold 单标注者、FNR=FPR=0.0000，无标注者间一致性、无不确定度量化；在如此小集合上的完美率与\"校准集过易/过拟合\"相容，judge-validity 假设实际未被检验。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: Holm 校正 p=0.0026â0.0261 隐含校正族约10个检验，但摘要仅披露2个p值，校正族成员不透明，无法复核。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: L1a \"curated\" 子集 p=0.0026 标注为 exploratory，但 L1a 总共仅 6 个任务，\"curated\"措辞模糊，无法区分是否事后筛选；同时全量 16 paired tasks 的 Friedman p=0.3679 不显著，仅子集显著，有 cherry-picking 嫌疑。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: L1b 的 positive control 仅证明\"pipeline 可解/不崩溃\"，并未建立 10 个计分任务对被测 agent 类别可解；存在难度/可解性混淆，0/10 可能反映任务不可达而非模型无能力。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: LLM-as-judge 在实际运行中零调用（all SKIP），校准仅基于 gold 集，等于judge从未在真实输出上被验证；L1b 评分管线在实验条件下实质未被验证。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: SHA-256 seal 描述不足：125 文件清单未列、清单自身是否被纳入哈希（循环哈希风险）、实际 seal 值未给出、recomputation 输入边界未界定。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: `run.json` contract 反复引用但未展示字段结构或示例文件，核心配置快照缺失。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: seed 管理描述前后矛盾——称\"per-seed rows\"却同时承认\"bootstrap at step/seed level as future work\"，意味着 seed 级别的方差分析缺失；N=4 究竟是 4 个 scenarioÃ1 seed、1 scenarioÃ4 seed、还是 4 seedÃ1 scenario，不清楚，无法判断泛化性。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 三个模型跨两个家族、三种规模(7b/9b/14b)，跨模型排序同时混淆架构与规模，无法归因到单一因子；且缺少同家族同量级对照以隔离变量。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 同一 p=0.0026 在摘覌中出现两次（一次描述 Model-F 得分，一次描述 curated L1a Friedman），未说明是否同一检验，造成阅读困惑。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 所有均值（goal completion 0.1418/0.1918/0.2750、gemma 的 ITT 均值 0.355）均无 SD/SE/CI，bootstrap 被\"推迟为 future work\"，点估计无可信不确定性量化。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要称\"three cloud-hosted local models\"，引言称\"local models served via a local OpenAI-compatible endpoint\"，\"云端托管\"与\"本地端点\"直接矛盾。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: \"21 gold\"â\"39 gold in the expanded set\"，扩展缘由未说明，两个数字关系不清。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: \"N=8 supplement\"以括号一笔带过，未说明其内容、来源或与 N=4 主实验的关系。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: \"denominator discipline（失败记 0）\"将崩溃、超时、契约违反、错误答案等异质失败模式塌缩为同一 0 值，可能掩盖模型间失败结构差异，损害对能力维度的细粒度推断。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: \"intention-to-treat\"为临床试验术语，用于基准评测不常见且未做类比说明。",
+      "rounds": [
+        2,
+        3
+      ]
+    }
+  ],
+  "unstable_issues": [
+    {
+      "sev": "Critical",
+      "text": "- **Critical**: 三个核心组件 AIRS-Bench、ResearchClawBench、GAIA2 均为已有基准，本文的\"统一\"本质上是将三个现成 benchmark 用一个 `run.json` 契约拼接，未见任何新的任务设计或评测维度，未与 AgentBench（Liu et al. 2023, 8 环境）、SuperCLUE-Agent 等已有统一 agent 基准做逐项差异",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- **Critical**: 声称的 GAP——\"评测碎片化\"——是一个泛化、众所周知的观察，论文既未引用具体文献证明该缺口无人填补，也未论证将这三个特定基准组合后产生了独立运行无法获得的洞察。GAP 的\"真实性\"未被建立：论文未说明跨三层能力的联合评测能揭示什么单独评测不能揭示的结论（例如，三层的得分相关性、能力迁移证据等均未提供），使得\"统一\"本身缺乏科学必要性论证。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- **Critical**: 模型标识不可复现 â `qwen2.5:7b/14b`、`gemma2:9b` 仅给出 Ollama tag（可变），未销定 model digest/commit/量化方式，同一 tag 在不同时间点可对应不同权重。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- **Major**: \"Answer-fitting audit（L047）\"被呈现为新颖的防作弊机制，但论文未将其与文献中已有的数据污染检测 / 泄漏检测方法（如 training-data extraction probes、membership inference、canonical answer contamination checks）进行定位对比，其相对增量未被界定，新颖性被默认放",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- **Major**: \"SHA-256 seal over 125 files verifying byte-for-byte reproducibility\" 未区分是 harness 脚本/配置文件还是模型输出文件；若含后者，对随机 LLM 声称 byte-for-byte 可复现是极强断言，需明确前提条件。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- **Major**: \"三层统计协议\"（McNemar / Wilcoxon+CLES / Friedman+Nemenyi+CD）与 SHA-256 可复现封印均由标准统计检验和常规工程实践构成，无任何方法创新。将这些包装为核心贡献属于将统计卫生和软件工程惯例重新标价为研究贡献。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- **Major**: GAP 论证过于泛化——\"评测碎片化\"是对整个领域的通用陈述，未具体引用并驳斥任何已有的跨层统一基准；缺少\"现有统一基准为何不够\"的针对性差分表，GAP 的真实性存疑。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- **Major**: L2 的核心科学问题（A=ReAct vs F=completion-guided 两臂对比）得到 p=1.0000 的纯零结果且功效为零，这不是\"发现无差异\"而是\"无证据\"——以零功效下的 null 结果作为 suite 的 L2 贡献呈现，属于将无力检测包装为结论。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- **Major**: 声称 \"we release the suite\" 但正文未给出仓库 URL、DOI、Zenodo 档案号或持久化标识符，一键复现的入口缺失。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- **Major**: 未声明 temperature、top-p 等采样参数；未声明是否 greedy/temperature=0，LLM 输出的 seed 级可复现性无法验证。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- **Major**: 未指定推理引擎（Ollama / vLLM / llama.cpp / text-generation-inference）；不同后端的量化方案、KV cache、batch 策略会改变输出，配置快照缺失。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- **Major**: 未指定硬件（GPU 型号、VRAM、是否使用 GPU offloading）；14b 模型的量化与运行方式由此决定，直接影响输出。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- **Major**: 未提供环境锁定（requirements.txt / environment.yml / Dockerfile / Python 版本），\"canonical script\" 依赖的库版本未 pin，统计脚本跨版本可能产生不同 p 值。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- **Minor**: \"budget-controlled (1000 calls)\" 硬预算作为卖点缺乏与现有基准成本的可比性基线，未说明 1000 calls 相对 AIRS-Bench / GAIA 原始运行的增量约束是否真的有意义。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 16 任务 Friedman 非显著 (p=0.3679) 后，对 L1a 6 任务子集做\"curated\"再检验得 p=0.0026，属事后子集选择（post-hoc subset selection）；即便加 Holm 校正也未校正\"先全量非显著再挑子集\"这一选择过程，多重比较/确认偏倚未被控制，p 值不可作有效推断。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: LLM-as-judge 校准报告 FNR$=0.0000$、FPR$=0.0000$（21 gold，后扩 39 gold），却给到 4 位小数且无置信区间；按 rule-of-three，$n=21$ 与 $n=39$ 的 95% 上界分别约 14.2% 与 7.7%，\"0.0000\"具误导性；且为单一标注者，无标注间信度（κ/ICC）。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: gemma2:9b 在 L1a 上经历\"三次独立试验\"从 1/6â2/6，随后用 intention-to-treat 将失败 trial 记为 0 求得 mean 0.355，而 7b/14b 却未描述是否同样重跑，重跑策略在模型间不对称，构成选择性偏差，基准公平性破坏。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 全文未提供代码仓库链接/DOI/容器镜像，\"release the suite\"与\"fully recomputable harness\"无落地入口，一键复现的入口证据链断裂。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 全文未给出仓库 URL 或可一键执行的复现入口(README/Makefile/Docker)；\"independent recomputation script\" 仅口头提及，无链接、无调用示例，\"一键复现\"承诺无法验证。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 声称\"per-seed rows\"却未披露任何实际种子值；gemma L1a \"three independent trials\" 的种子号、失败 trial 的原因均未记录，无法重放。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 引言部分的相关工作仅引用 `goodfellow2016deep`（深度学习教科书），未与实际 benchmark 文献（AgentBench、SWE-bench、ScienceAgentBench 等）对比差异，无法确立\"碎片化 GAP\"是否真实——即没有证据表明先前工作曾尝试统一却失败，GAP 可能只是\"未被有人做过\"èé\"做了但有缺陷\"。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 无 IRB/双重用途与安全评估——L2 让 agent 在真实环境自主执行工具、L1a/L1b 涉及任意代码生成与执行，存在有害自动化、数据抓取、远程代码执行等误用风险，且明确\"release the suite as ... harness\"却无负责任发布或沙箱说明。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 未声明任何数据集/模型的许可合规信息。SciEvalSuite 复用了 AIRS-Bench、ResearchClawBench、GAIA2 三个外部基准以及 qwen2.5、gemma2、llama3.1、deepseek 等模型，但全文未给出许可证（GAIA 通常为 CC BY-NC，Qwen/Llama 各有各自的使用条款），存在未授权商用与再分发风险。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 模型仅以松散标签标识（qwen2.5:7b 等），未固定权重哈希、量化级别、serving 后端（Ollama/vLLM 版本）；本地模型采样本就非确定，所谓\"byte-for-byte reproducibility over 125 files\"实为缓存转录回放，混淆了 transcript 复现与 run 复现。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 模型标识严重不足——qwen2.5:7b/14b、gemma2:9b、llama3.1:8b 均朠给出量化精度(Q4_K_M?F16?)、服务端软件版本(Ollama/vLLM 版本号)、temperature/top-p/max_tokens ç­é�æ ·åæ°ï¼æ¬å°æ¨çå¤ç°å ä¹ä¸å¯è½ã",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 自报 80% power 下 d_min=2.1279（Cohen's d>2.0，属\"巨大\"效应），说明 L2 设计严重欠功效，所有阴性发现本质上不可 informative，却以\"showed no difference\"形式呈现为正面结果。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 该套件实质化\"自主代码生成+执行\"与交互式环境/工具控制能力，却完全缺失双用途/误用风险评估、沙箱与安全治理说明及负责任发布计划——一个把自主代码执行流程化的基准理应附伦理声明。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 采样/服务配置（temperature、top_p、system prompt 版本、GPU/CUDA/OS/硬件）完全缺失，本地模型跨机不可复现。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: \"byte-for-byte reproducibility + SHA-256 over 125 files + 18/18 independent recomputation\" 实为同一确定性管线的重跑，混淆了 re-execution 与独立 replication；且默认 LLM 在 temp/seed/硬件下完全确定的前提未被论证（GPU 非确定性、采样实现差异未排除）",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: \"frontier Model-F 6/6（$p=0.0026$ exploratory）\"作为事后引入的参照，比较对象与检验选择未说明，存在 cherry-picking 嫌疑。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: \"intention-to-treat mean 0.355 including the failed trial as 0\" 把执行/契约失败计为 0 能力分，与论文声称的\"separates completion failures from contract failures\"前提直接矛盾，把契约失败混入能力估计造成系统性向下偏倚。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 21 gold 仅为单一标注者，未报告标注者间一致性/信度（IAA/Krippendorff α），判官 ground truth 的可靠性未建立。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: L1b 三个模型全部 0/10，无区分度，\"positive control demonstrates pipeline solvability\"未说明正对秧究竟是 oracle/human 还是 frontier model、通过率多少，正对秧不明确则无法区分\"任务不可解\"与\"模型太弱\"。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: L2 mean goal completion 给出 4 位小数(0.1418/0.1918/0.2750)，但 McNemar N=4、\"24 L2 rows\" 之间的分母映射未说明，0.1418Ã4=0.5672 非整数，数值来源不明，对账失败。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: L2 的 A(ReAct) vs F(completion-guided harness) 两臂在脚手架实现上多处不同（提示、工具循环、完成信号注入等），\"completion guidance\"作为单一自变量未被隔离，存在严重混淆，即使有差异也无法归因到该因素。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: LLM-as-judge 校准以 n=21（单标注员、无 inter-rater reliability、无 CI）报告 FNR=0/FPR=0 作为\"passed gate\"，但实际运行中 judge 调用次数为零（all SKIP）——该校准未在真实数据上生效，FNR/FPR=0 在小样本上无置信区间支撑，不能作为有效统计保证。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: McNemar 检验 N=4，但摘要同时报告 24 行 L2 数据——检验单元与行数的映射关系缺失，读者无法确认 N=4 指 4 个场景还是其他。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 三个本地 served 模型与 API served 的 Model-F 比较，混淆了服务方式/延迟/上下文窗口/工具链差异与模型能力差异；观测到的差距不是模型能力的干净因果估计。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 两臂产出完全相同的均值至四位小数（0.1418 / 0.1918 / 0.2750 \"for both arms\"），即 n_d=0；两种不同方法产生逐位相同的结果是极强主张，仅以\"p=1.0000\"带过，缺乏解释。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 仅 3 个小规模本地模型(7b/9b/14b)支撑\"unified benchmark\"泛化主张，样本层与模型层都严重欠覆盖，外推到\"scientific agents\"总体的前提（代表性）不成立。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 关键超参数完全未披露：三个本地模型及 A/F 两臂的温度、top-p、max-tokens、shots、system prompt 均未给出，臂间差异可能被未说明的 harness 超参混淆。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 判官校准 FNR=0、FPR=0 在 n=21/n=39 上无置信区间（按 Rule of 3 上界约 14%/8%），\"完美\"系小样本过拟合；且实际实验判官调用为零（全 SKIP），校准未在真实运行中验证。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 利益冲突未声明——同时评测 Qwen(阿里)/Gemma(Google)/Llama(Meta)/DeepSeek 等商业产品却无 COI 声明；自设 answer-fitting 审计并自评\"3/3 拦截\"，评估者与被评机制同源。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 双盲/可复现冲突。\"Model-F\" 身份在投稿中对评审隐藏，但模型并非作者，匿名化反而使摘要中最显著的 6/6 前沿对比无法独立验证，违背 TMLR 的可复现性承诺；若 Model-F 实为作者自有或关联模型，则同时构成 COI 隐瞒。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 受试模型与 F 臂\"completion guidance\"的关键超参数（temperature、top-p、max_tokens、采样/解码配置、引导强度等）在可见文本中全部缺失，无法判断各臂/各模型是否处于公平可比条件。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 声称的 LLM-as-judge 校准组件在实际评估中\"made zero judge calls (all SKIP)\"，即该组件根本未在结果中起作用，却被列为 suite 的核心组成，贡献被显著夸大为\"validated component\"。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 声称采用 Wilcoxon+CLES 协议，但摘要从未报告任何观测效应量（CLES 值缺失），只给了可检测下限 d_min，效应量报告不达标。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 多重检验与选择性报告伦理——gemma 经三次独立试验取 2/6 并以 intention-to-treat 包装失败试验为 0；curated L1a 在观测后筛选 6 任务再做 Holm 校正，存在 data dredging 风险。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 多重比较家族未统一界定：3 模型 × 3 层 × 2 臂产生多组检验，仅对单一 curated 比较做 Holm，\"exploratory\"标签被用来规避校正，家族定义不一致。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 局部模型在 L1b 上 0/10 全失败、L1a 上 0/6、2/6、1/6，benchmark 未展示对这一能力区间的区分性，\"区分 genuine scientific reasoning from execution failure\"的核心 GAP 声明在局部模型上未被证明可行，GAP 的现实意义存疑。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 所有显著结果（Friedman、Model-F 对比）均未报告效应量；协议声称\"Wilcoxon+CLES\"但结果中既无 Wilcoxon 统计量、CLES 值，也无 Friedman 的 Kendall's W，违反效应量报告规范。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要\"curated L1a (6 tasks, exploratory)\"与引言\"AIRS-Bench rad: six tasks\"中 L1a 总任务数相同（6），\"curated\"一词语义空洞；若 curate 指子集则与正文任务数矛盾，若指全部任务则\"curated\"无意义。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要声称\"per-seed rows\"但未披露实际 seed 取值、生成过程与 trial↔seed 映射；\"gemma 三次独立试验\"的规程（是否同 seed、是否重置 agent 状态）未定义，而 seed 级 bootstrap 又被推迟为 future work，方差不可复现。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要结构严重超载——单段堆砌数十个数值（p值、比例、置信度、文件数、功效参数等），读作结果表而非概要，严重损害可读性。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 模型被描述为\"cloud-hosted local\"，意味着基准任务、生成代码与执行轨迹会经第三方云基础设施流转，却无数据治理、留存策略或隐私风险讨论；若任务含真实科研/个人数据，数据外泄路径未被评估。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 正文定义统计协议为\"Friedman+Nemenyi+CD\"，但摘要报告的后续校正为\"Holm correction (p=0.0261)\"——Nemenyi 与 Holm 是不同方法，摘要与正文未交叉对应，读者无法判断究竟用了哪种。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 泛化性严重不足——仅三个本地中小型模型（两个同系列 qwen + 一个 gemma），架构多样性属性极低；Model-F 仅在 L1a 上 exploratory 出现，未跨三层覆盖，无法支撑\"统一 benchmark\"的泛化声明。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 消融层面仅有 A vs F 一组对比，且因 N=4 无区分力；answer-fitting audit（3/3 模型被拦截）、judge 模块、denominator discipline 等组件均无独立消融，无法归因各组件贡献。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 用于校准 LLM-as-judge 的标注金标集（\"21 gold\"\"39 gold\"）未提供 IRB/人类受试者伦理审查说明；标注者知情同意、报酬，以及唯一标注者是否为作者本人（自标注 COI）均未交代。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 统计协议（McNemar、Wilcoxon+CLES、Friedman+Nemenyi）均为标准统计方法，将\"应用标准统计\"包装为方法论贡献属于增量；且 N=4、功率 0.0000、n_d=0<6 使得\"no statistically detectable difference\"这一经验发现无法提供有效的经验贡献，实验层面仅 frontier Model-F 的 6/6（p=0",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 缺少利益冲突（COI）披露，却直接对比多家商用模型（Qwen2.5/阿里、Gemma2/Google、DeepSeek）并引入匿名\"Model-F\"；若任一作者与某供方存在隶属或商业关系，框架偏向即未披露。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 缺少隐私/PII 评估。GAIA 任务基于真实网络内容，可能含个人邮箱、账号、文档等个人信息，benchmark 将其打包并以 SHA-256 固定发布，未做脱敏与隐私审查，存在数据再披露风险。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 缺消融：L1b 评判者固定为 llama3.1:8b（与受测 7–14b 同量级），无评判模型敏感性或双盲对照，评判者—被评者能力重叠威胁公平性。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 自报 $d_{\\min}=2.1279$（80% 功效）即\"巨大\"效应量门槛，但全文未给出任何观测效应量（Cohen's $d$、CLES 仅提名称无数值）、未给均值置信区间，无法判断非显著是否仅因功效不足。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 超参数（temperature、top-p、max-tokens、prompt template、few-shot 设置）在摘要中完全未披露；7b/14b/9b 参数量差异显著，若用相同超参，基准公平性存疑；深度归因不可能。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 跨模型 Friedman（16 配对任务，$k=3$）$p=0.3679$ 被判\"non-significant\"，但 $n=16$、$k=3$ 下功效低且 $\\chi^2$ 近似存疑，不能解读为\"模型间无差异\"的证据。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: \"Model-F 6/6 (p=0.0026 exploratory)\"未指明所用检验（Fisher exact / binomial / paired sign？），n=6 下的检验选择与对比对象（7b 的 0/6？14b 的 2/6？）均不明确。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: \"denominator discipline\"、\"SHA-256 seal\"、\"run.json contract\"等属工程实践，与现有可复现性工具链（ML reproducibility checklist、DVC、MLflow 等）的差异未对比，增量不明。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: \"n_d=0<6\"将赋值与比较连写，无空格、无解释，符号用法不规范。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: \"three-layer (L1a/L1b/L2)\"分层的科学依据未给出，为什么是这种划分（而非其他 taxonomy）缺乏论证，层级命名的\"scientific\"性的新颖性不足。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: $N=8$ 补充仍报 $p=1.0000$，若仍为 0 discordant 则合并并不增加信息，应说明 discordant 数而非仅给 $p$。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 1000-call 预算在 3 模型×3 层×两臂间的分配未披露（实际用 568），不均衡分配可能偏置跨层/跨模型比较。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: L1b answer-fitting 审计只报 positive control，缺 negative/random-only agent 对照，无法量化审计的检出力。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: L1b gold 仅单标注者（21 gold），未报告标注者间一致性，gold 标签可靠性不足。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: L1b gold 标注仅\"single annotator\"（21 gold），未报告标注者间一致性（inter-annotator agreement），也未见标注者身份/资质/报酬披露，涉及众包伦理与标注可靠性。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: SHA-256 重计算检查和字节级复现验证的是计算确定性，而非基准的构念效度或内部效度；\"可复现\"不等于\"方法正确\"，将二者隐含等同是概念偷换。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: answer-fitting 审计(3/3 命中)缺少该审计自身的灵敏度/特异度正对照（即对已知注入拟合的检出率），其作为防泄漏屏障的有效性只是假定而非已验证。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: bootstrap CI 明确推迟至\"future work\"，而这恰是小样本 N 下应优先采用的推断方法，当前推断框架与样本量不匹配。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 仅测试小到中等规模本地模型，L1b/L2 上无大模型或前沿模型参与，套件的判别力与泛化范围未被充分展示。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 单一标注者(21 gold)未交代同意、报酬与身份，既威胁众包伦理也削弱可重复性。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 四舍五入不一致：0.0026Ã10=0.0260≠报告值0.0261，说明原始r值实为0.00261但显示为0.0026，同一数值舍入位数不统一。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 在当前就给出方向性结论（\"no difference\"\"0/10 stable\"）的同时把 \"bootstrap at step/seed level\" 列为 future work，使报告的不确定度与所作声明的强度不匹配。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 层级标签 L1a/L1b/L2 未解释\"L1\"\"L2\"含义，读者无法理解分层逻辑。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 引言结尾句子断裂（\"calibrated before its judge\"后截断），句法不完整。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 摘约 300 词、数字密集堆砌，读如结果转储而非连贯概述，不符合 TMLR 对摘要简洁性的惯例。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 摘要为单段超长文本，嵌套约 30 个数值与多层括号，结构严重过载，应拆分为背景—方法—结果—局限四句群或引入结果表。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 注释行\"ECE, TS, GAIA, CLES, etc. defined\"以\"etc.\"收尾，未逐一展开所有缩写，定义不完整。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 源文件双盲卫生问题——.tex 源码内嵌投稿阶段元数据注释（\"camera-ready: corresponding@example.com\"\"TMLR G3\"），虽编译后不可见，但源码释出前应清除以免泄露评审阶段标识。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 论文提到 568 calls < 1000 预算，剩余 432 calls 未用于扩大 N 或增加模型，浪费了提升功效的机会。",
+      "rounds": [
+        1
+      ]
+    }
+  ]
+}

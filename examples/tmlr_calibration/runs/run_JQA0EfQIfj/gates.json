@@ -1,0 +1,80 @@
+{
+  "name": "tmlr_JQA0EfQIfj",
+  "timestamp": "2026-08-26T07:20:31+00:00",
+  "overall": "WARN",
+  "stages": {
+    "R3": {
+      "gate": "SKIP",
+      "metric": "SKIP 无证据目录：数字不可核验（论文小数 1081，机械噪音 843，待复核 238 清单备查）"
+    },
+    "R0": {
+      "gate": "PASS",
+      "metric": "缺失输入 0，跨源风险目录 0（上一轮，未重跑）（上一轮，未重跑）"
+    },
+    "R1": {
+      "gate": "WARN",
+      "metric": "章节缺失 ['discussion', 'limitations']；未找到 abstract（PDF 提取文本）（上一轮，未重跑）（上一轮，未重跑）"
+    },
+    "R1b": {
+      "gate": "SKIP",
+      "metric": "PDF 模式：无 bib 源，引用核验降级 SKIP（上一轮，未重跑）（上一轮，未重跑）"
+    },
+    "R1c": {
+      "gate": "SKIP",
+      "metric": "PDF 模式：无 \\title 源码，断言对照降级 SKIP（上一轮，未重跑）（上一轮，未重跑）"
+    },
+    "R1d": {
+      "gate": "SKIP",
+      "metric": "PDF 模式：无 tex 源码，行内算术/公式引用核验降级 SKIP（上一轮，未重跑）（上一轮，未重跑）"
+    },
+    "R2": {
+      "gate": "SKIP",
+      "metric": "未配置 zip（仅磁盘审查）（上一轮，未重跑）（上一轮，未重跑）"
+    },
+    "R2b": {
+      "gate": "SKIP",
+      "metric": "未配置 zip（上一轮，未重跑）（上一轮，未重跑）"
+    },
+    "R2c": {
+      "gate": "SKIP",
+      "metric": "PDF 模式：无 \\includegraphics 源码，图表核验降级 SKIP（上一轮，未重跑）（上一轮，未重跑）"
+    },
+    "R2d": {
+      "gate": "SKIP",
+      "metric": "PDF 模式：无 tabular 源码，表格核验降级 SKIP（上一轮，未重跑）（上一轮，未重跑）"
+    },
+    "R4": {
+      "gate": "PASS",
+      "metric": "PASS：统计记录 0 条（MATCH 0，MISMATCH 0，NOT_IN_PAPER 0）——McNemar/Friedman/Wilson 复算（上一轮，未重跑）（上一轮，未重跑）"
+    },
+    "R5": {
+      "gate": "PASS",
+      "metric": "PASS：hint 命中 0，可疑 0（一票否决），已披露 0（上一轮，未重跑）（上一轮，未重跑）"
+    },
+    "R6": {
+      "gate": "WARN",
+      "metric": "文本层：Critical 16 / Major 24 / Minor 6（1 轮，RPC HTTP 200）（上一轮，未重跑）（上一轮，未重跑）"
+    },
+    "R6b": {
+      "gate": "WARN",
+      "metric": "MAJOR：四维 {'P': 9, 'R': 5, 'I': 7, 'S': 6}（min=5，短板 R(严谨性)）——最弱维度 R(严谨性) = 5 分（<= 6）→ 文本层 WARN；证据层门禁不受影响（上一轮，未重跑）（上一轮，未重跑）"
+    },
+    "R6c": {
+      "gate": "WARN",
+      "metric": "MAJOR：辩论后维持 Critical 16 / Major 4（撤回 0，部分成立 0）；注：原始 46 条中仅严重度前 20 条进入辩论（MAX_ISSUES=20，截断 26 条未辩论）（上一轮，未重跑）（上一轮，未重跑）"
+    }
+  },
+  "suggested_score": 6,
+  "score_dimensions": {
+    "structure": 6,
+    "evidence": 6,
+    "text": 6
+  },
+  "score_note": "structure 维度 WARN；text 维度 WARN；min 维度纪律（不平均）。人工阶段未完成（R3 裁决收敛 / R5 定性 / 终审）前为临时值",
+  "prism_scores": {
+    "P": 9,
+    "R": 5,
+    "I": 7,
+    "S": 6
+  }
+}

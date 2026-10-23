@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\f1f5_f45\\run_f1\\extracted_text.txt",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-27T19:14:05+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "dimensions": {
+    "P": {
+      "status": "ok",
+      "score": 7,
+      "justification": "研究针对LLM智能体检索缓存中置信度提示引发的校准漂移,是真实且与TMLR读者相关的问题；使用MMLU、配对协议和多种基线,契合度良好。但问题定位较常规,且为假设生成式、规模有限,未达到高度重要或完美契合。",
+      "top_weakness": "仅用4个小模型、单一措辞和假设生成式设计,问题普适性与实际部署重要性论证不足,契合度偏常规。",
+      "evidence": "Calibration—the alignment between a model's stated confidence and its actual correctness—is a reliability property for deployed LLM agents.",
+      "parse": "json"
+    },
+    "R": {
+      "status": "ok",
+      "score": 6,
+      "justification": "{\"score\": 6, \"justification\": \"配对设计、功效分析和BCa bootstrap具备方法学意识，但关键长度对照仅在子集上检验，且多模型/多通道比较未提及多重比较校正，削弱了“语义而非长度”结论的严谨性。\", \"top_weakness\": \"长度匹配良性对照仅在子集上测试，未覆盖全部配对条件，语义归因证据不完整。\", \"evidence\": \"control teste",
+      "top_weakness": "",
+      "evidence": "",
+      "parse": "regex"
+    },
+    "I": {
+      "status": "ok",
+      "score": 5,
+      "justification": "提出检索缓存中置信度启动这一新角度,并含配对协议、长度对照与后验基线,有一定可用性；但效应小、范围窄、属假设生成性研究,仅构成有限但有价值的增量。",
+      "top_weakness": "范围过窄且证据强度不足:4个小模型、单一措辞、描述性小效应,难以确立社区级影响。",
+      "evidence": "All findings are sample-descriptive, limited to verbalized confidence",
+      "parse": "json"
+    },
+    "S": {
+      "status": "ok",
+      "score": 8,
+      "justification": "整体表述克制,明确标注 hypothesis-generating、sample-descriptive、sanity check 非解释性理论,并主动披露模型规模、置信度范围、单一措辞等局限；但以12,000完整细胞呈现核心规模,而关键长度控制仅在子集检验,且未见数据/代码可用性承诺,轻微夸大复现完整性。",
+      "top_weakness": "以12,000完整细胞为规模卖点,但关键长度控制仅在子集检验,且未见数据/代码可用性承诺。",
+      "evidence": "All findings are sample-descriptive, limited to verbalized confidence",
+      "parse": "json"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "scores": {
+      "P": 7,
+      "R": 6,
+      "I": 5,
+      "S": 8
+    },
+    "overall": 5,
+    "weakest": "I(贡献量)",
+    "detail": "最弱维度 I(贡献量) = 5 分（<= 6）→ 文本层 WARN；证据层门禁不受影响"
+  }
+}

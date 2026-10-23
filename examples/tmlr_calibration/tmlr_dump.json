@@ -1,0 +1,2705 @@
+{
+ "meta": {
+  "source": "OpenReview API v2 content.venueid=TMLR (100 most recent accepted)",
+  "fetched": "2026-08-26T05:54:28.568Z",
+  "stats": {
+   "total": 100,
+   "errors": 15,
+   "decisions": {
+    "Accept with minor revision": 36,
+    "Accept as is": 49
+   },
+   "yes_dist": {
+    "4/4": 3,
+    "3/4": 2,
+    "2/3": 30,
+    "1/3": 18,
+    "3/3": 21,
+    "0/3": 5,
+    "1/4": 2,
+    "2/4": 2,
+    "2/2": 1,
+    "0/4": 1
+   }
+  }
+ },
+ "papers": [
+  {
+   "id": "JlC5BJiikD",
+   "forum": "JlC5BJiikD",
+   "title": "Reinforcement Learning for Symbolic Equation Solving",
+   "pdf": "/pdf/a91a3756c6407b7caea0a265dcd8869fe19e666f.pdf",
+   "cdate": 1782108053031,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation",
+    "additional_comments"
+   ],
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 4773
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 365
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2084
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2931
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns"
+   ]
+  },
+  {
+   "id": "vcynsg6rMN",
+   "forum": "vcynsg6rMN",
+   "title": "ESLM: Risk-Averse Selective Language Modeling with Hierarchical Batch Selection",
+   "pdf": "/pdf/08db669fdf2aa798a19cfbd035082022f1a8fdc2.pdf",
+   "cdate": 1781880336608,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation"
+   ],
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 4020
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1953
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1029
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 981
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns"
+   ]
+  },
+  {
+   "id": "a43l19lyfC",
+   "forum": "a43l19lyfC",
+   "title": "Divisive Normalization Shapes Low-Rank Slow Manifolds for Continuous Working Memory",
+   "pdf": "/pdf/bb111270f538dd815937cdc71c9a7d36e33db2cb.pdf",
+   "cdate": 1781858933469,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation",
+    "additional_comments"
+   ],
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1029
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 110
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 296
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns"
+   ]
+  },
+  {
+   "id": "X4RoujAYnY",
+   "forum": "X4RoujAYnY",
+   "title": "Generalization Measures under Controlled Covariate Shift: A Regime-Aware Benchmark",
+   "pdf": "/pdf/ffbcdbd087146fc6f8591339fe3add9455a8ad8f.pdf",
+   "cdate": 1781767053132,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation"
+   ],
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1078
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1582
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 2393
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns"
+   ]
+  },
+  {
+   "id": "J2Yg9vJcYb",
+   "forum": "J2Yg9vJcYb",
+   "title": "Below the Reliability Floor: Recovering True Success from Judge-Gated Loops",
+   "pdf": "/pdf/a4288f07467fc5606f783d9ae2a387d8e2b3f48c.pdf",
+   "cdate": 1781604620068,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation"
+   ],
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 4792
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 357
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1536
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns",
+    "additional_comments"
+   ]
+  },
+  {
+   "id": "qRXVTe1yYp",
+   "forum": "qRXVTe1yYp",
+   "title": "Auditing GeoFM Evaluation for Field-Extent Segmentation: Label Proxies, Baselines, and When Frozen Features Match Fine-tuning",
+   "pdf": "/pdf/9609ac19b0395b5d29ee049f39235378a11e92f1.pdf",
+   "cdate": 1781244760924,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation"
+   ],
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1131
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 828
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1493
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns",
+    "additional_comments"
+   ]
+  },
+  {
+   "id": "gp1mAySr25",
+   "forum": "gp1mAySr25",
+   "title": "Offline Meta-Reinforcement Learning in Piecewise Stationary Environments",
+   "pdf": "/pdf/0565e9a0f98842418f506188221a2021af2918e4.pdf",
+   "cdate": 1780668968029,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation",
+    "additional_comments"
+   ],
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2145
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 818
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 962
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns",
+    "additional_comments"
+   ]
+  },
+  {
+   "id": "Ysr1zUeuxz",
+   "forum": "Ysr1zUeuxz",
+   "title": "Gradient-based Sample Selection for Faster Bayesian Optimization",
+   "pdf": "/pdf/c1cf9a25d3ab37e0ea25d2d7451ac6b3bee19a83.pdf",
+   "cdate": 1780497252816,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation",
+    "additional_comments"
+   ],
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1328
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2103
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 3944
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns",
+    "additional_comments"
+   ]
+  },
+  {
+   "id": "OelOS8cbBY",
+   "forum": "OelOS8cbBY",
+   "title": "TreeSMOTE: Structure-Aware Data Augmentation for Imbalanced Tabular Learning",
+   "pdf": "/pdf/7773ee8d7e6a68383d6eb4e257595d61718c3633.pdf",
+   "cdate": 1780478270460,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation",
+    "additional_comments"
+   ],
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 304
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1528
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1879
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns"
+   ]
+  },
+  {
+   "id": "7yUrnyFgEq",
+   "forum": "7yUrnyFgEq",
+   "title": "When Vision Needs a Second Look: Tool-Augmented Active Perception for Earth Observation",
+   "pdf": "/pdf/b74691a99766aa9c398015903d0040bee3194cc9.pdf",
+   "cdate": 1780403745568,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation",
+    "additional_comments"
+   ],
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 524
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1104
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 2580
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns",
+    "additional_comments"
+   ]
+  },
+  {
+   "id": "3rVrBGp0mr",
+   "forum": "3rVrBGp0mr",
+   "title": "Aletheia: What Makes RLVR For Code Verifiers Tick?",
+   "pdf": "/pdf/9d6b0edf4ff4843979d881236bfdb3c684afdb61.pdf",
+   "cdate": 1780346393410,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation"
+   ],
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 473
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 514
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 233
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns"
+   ]
+  },
+  {
+   "id": "zJuiG3PiNJ",
+   "forum": "zJuiG3PiNJ",
+   "title": "WorldPack: Dynamic Frame Compression for Long-context Video World Modeling",
+   "pdf": "/pdf/6c860188c745949d0ff6f818dc7493cd9f0a1a27.pdf",
+   "cdate": 1780326553282,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation"
+   ],
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 970
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 569
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 2625
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns"
+   ]
+  },
+  {
+   "id": "rLgrHnZtzh",
+   "forum": "rLgrHnZtzh",
+   "title": "Variational Set Operator Networks: Uncertainty-Aware Meta-Learning via Probabilistic Neural Operators",
+   "pdf": "/pdf/863440d89585d6a08ac7619a6d47bc3f5c37181c.pdf",
+   "cdate": 1780230612303,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation"
+   ],
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 100
+    },
+    {
+     "ce": "No",
+     "aud": "No",
+     "n_req": 1128
+    },
+    {
+     "ce": "Yes",
+     "aud": "No",
+     "n_req": 343
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns"
+   ]
+  },
+  {
+   "id": "8sBZSgAkAH",
+   "forum": "8sBZSgAkAH",
+   "title": "ACRL: Adaptive Control of Training-Inference Discrepancy for Stable Reinforcement Learning",
+   "pdf": "/pdf/e6562a3b7eecb6eb5bb3eb6885da29c25772ea19.pdf",
+   "cdate": 1780198505236,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation",
+    "additional_comments"
+   ],
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1402
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 453
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 974
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 2601
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns"
+   ]
+  },
+  {
+   "id": "Eq9k6Va3hY",
+   "forum": "Eq9k6Va3hY",
+   "title": "Efficient Image Restoration with State-Dependent Forward Diffusion",
+   "pdf": "/pdf/2ef4f45fc5c16663a8c3eeb2fcb74404b4734352.pdf",
+   "cdate": 1779957687167,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation"
+   ],
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 4399
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 2388
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 666
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns",
+    "additional_comments"
+   ]
+  },
+  {
+   "id": "D0XcH9Cso4",
+   "forum": "D0XcH9Cso4",
+   "title": "The Embodiment Gap in Robot Foundation Models",
+   "pdf": "/pdf/3042ad711e1db8fbb75f7f5717a0d621b73ddcb0.pdf",
+   "cdate": 1779946468221,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation"
+   ],
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "No",
+     "n_req": 383
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2145
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 457
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns"
+   ]
+  },
+  {
+   "id": "JQA0EfQIfj",
+   "forum": "JQA0EfQIfj",
+   "title": "KOALA: Koopman Operator Learning for WiFi-Based Anticipatory Human Motion Prediction",
+   "pdf": "/pdf/1abeca38bde26df9aad39efe8800db384cc80a8e.pdf",
+   "cdate": 1779854000948,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation",
+    "additional_comments"
+   ],
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 2842
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 29
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 57
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns",
+    "additional_comments"
+   ]
+  },
+  {
+   "id": "QtG3fC1v5t",
+   "forum": "QtG3fC1v5t",
+   "title": "Private and interpretable clinical prediction with quantum-inspired tensor train models",
+   "pdf": "/pdf/22df46f177877d4442791be1620c26dcce3d847f.pdf",
+   "cdate": 1779781626405,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation"
+   ],
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 593
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 801
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1383
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns"
+   ]
+  },
+  {
+   "id": "4kZxNlE5Ve",
+   "forum": "4kZxNlE5Ve",
+   "title": "A Closed-Form Persistence-Landmark Pipeline for Certified Point-Cloud and Graph Classification",
+   "pdf": "/pdf/c64d68f9d1db1222876865ba929bb5e9cd305490.pdf",
+   "cdate": 1779729783729,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation"
+   ],
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 5071
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 369
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1676
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 324
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns"
+   ]
+  },
+  {
+   "id": "NWWpKC9CZH",
+   "forum": "NWWpKC9CZH",
+   "title": "A Symmetry-Matching Approach to Blind-Spot Reduction in Sparse Autoencoders",
+   "pdf": "/pdf/cd01a18ac89468f588b59cca040f33dd19515496.pdf",
+   "cdate": 1779464000486,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation",
+    "additional_comments"
+   ],
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 6595
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 348
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 3574
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns",
+    "additional_comments"
+   ]
+  },
+  {
+   "id": "fj7sjOwtXc",
+   "forum": "fj7sjOwtXc",
+   "title": "FIMP: Foundation Model-Informed Message Passing for Graph Neural Networks",
+   "pdf": "/pdf/0c4b4e530604d4ee156e27b0928e509eaecd3cff.pdf",
+   "cdate": 1779398038155,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation",
+    "additional_comments"
+   ],
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 779
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 809
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 168
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns"
+   ]
+  },
+  {
+   "id": "wYayhflqqR",
+   "forum": "wYayhflqqR",
+   "title": "Don't Forget the Critic: Value-Based Data Rehearsal for Multi-Cyclic Continual Reinforcement Learning",
+   "pdf": "/pdf/8a2ec71946ce80e45f6cd490bca0cf895a3974af.pdf",
+   "cdate": 1779368142772,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation",
+    "additional_comments"
+   ],
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 749
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 801
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 242
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns",
+    "additional_comments"
+   ]
+  },
+  {
+   "id": "DvDOAtskXl",
+   "forum": "DvDOAtskXl",
+   "title": "Optimal or Greedy Decision Trees? Revisiting their Objectives, Tuning, and Performance",
+   "pdf": "/pdf/72ca04a07e45090255d54ec08a32b36102e17a2c.pdf",
+   "cdate": 1779358942644,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation"
+   ],
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 5998
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1052
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1566
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns"
+   ]
+  },
+  {
+   "id": "WW206A1Tru",
+   "forum": "WW206A1Tru",
+   "title": "OTIS: Learning High-Quality Time Series Features With Tiny Encoders",
+   "pdf": "/pdf/9ac7ec7d9391c0d23edb894d610ea1a44d0b2ca3.pdf",
+   "cdate": 1779358318728,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation"
+   ],
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 796
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 3058
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1103
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns",
+    "additional_comments"
+   ]
+  },
+  {
+   "id": "AoJUrVjufP",
+   "forum": "AoJUrVjufP",
+   "title": "From Centerlines to Hemodynamics: Anisotropic RBF Decoders for Coronary Arteries",
+   "pdf": "/pdf/d1cf5960243966e28e5fe486ef0a58301997d642.pdf",
+   "cdate": 1779326153131,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "dec_keys": [
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "recommendation",
+    "additional_comments"
+   ],
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 2368
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 721
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 698
+    }
+   ],
+   "rv_keys": [
+    "summary_of_contributions",
+    "claims_and_evidence",
+    "claims_explanation",
+    "audience",
+    "audience_explanation",
+    "requested_changes",
+    "broader_impact_concerns"
+   ]
+  },
+  {
+   "id": "yW4T2fsf0l",
+   "forum": "yW4T2fsf0l",
+   "title": "Large Scale Empirical Bayesian Causal Discovery Using Total Effect Estimates From Intervention Data",
+   "pdf": "/pdf/b258c6e9dca6b1311a843918c3e1ec33d96b25f1.pdf",
+   "cdate": 1779300860492,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1240
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2489
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 604
+    }
+   ]
+  },
+  {
+   "id": "XT6DC37m5I",
+   "forum": "XT6DC37m5I",
+   "title": "Causal Bayesian Optimization: Foundations, Methods, and Applications",
+   "pdf": "/pdf/8330c9bb0c3e3a635d6f7f82a020ac1c05b7b574.pdf",
+   "cdate": 1779257629349,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 2713
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 12120
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1678
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 6947
+    }
+   ]
+  },
+  {
+   "id": "g34kZZAbT8",
+   "forum": "g34kZZAbT8",
+   "title": "High precision PINNs in unbounded domains: application to singularity formulation in PDEs",
+   "pdf": "/pdf/0190ffa697ad1815c975631fae5bfed8f0ca8e1a.pdf",
+   "cdate": 1779188043082,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 731
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1866
+    }
+   ]
+  },
+  {
+   "id": "H9cBkEqVeY",
+   "forum": "H9cBkEqVeY",
+   "title": "Predicting Chain-of-Thought Correctness from Trajectory Geometry",
+   "pdf": "/pdf/77f76f9ea15a7313a0386f43abc8f7367e5c358c.pdf",
+   "cdate": 1779147920459,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 936
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 2054
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 971
+    }
+   ]
+  },
+  {
+   "id": "DSpKdN6whZ",
+   "forum": "DSpKdN6whZ",
+   "title": "Learning What to Fail On: Failure-Mode Contextual Bandits for Adversarial Data Curation",
+   "pdf": "/pdf/69ba3a11a1f2c45e1bcfc4830807a6e36de5aafb.pdf",
+   "cdate": 1779122240291,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 805
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1060
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 637
+    }
+   ]
+  },
+  {
+   "id": "we4FYGOE2y",
+   "forum": "we4FYGOE2y",
+   "title": "FieldFormer: Locality-Aware Transformers for Spatio-Temporal Modeling on Sparse Sensor Networks",
+   "pdf": "/pdf/0b5937a2f84ed31900f8e734854c781bf23555c9.pdf",
+   "cdate": 1779114934976,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 124
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 4516
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2954
+    }
+   ]
+  },
+  {
+   "id": "e0pSqIqwXO",
+   "forum": "e0pSqIqwXO",
+   "title": "Auditing Closed-Loop Learning in Recurrent Neural Networks: Reproduction, Robustness, and Generalization",
+   "pdf": "/pdf/4459c40792f2013582875dba117ea5510526920e.pdf",
+   "cdate": 1779077743084,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 994
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1187
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1863
+    }
+   ]
+  },
+  {
+   "id": "kX7iwF5s3v",
+   "forum": "kX7iwF5s3v",
+   "title": "HyperCLIP: Prompt-Conditioned Image Encoders for Contrastive Vision-Language Pre-training",
+   "pdf": "/pdf/c408476d9486d3d865edfa6b06341b72e68b23f6.pdf",
+   "cdate": 1779032976149,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1692
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1782
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 941
+    }
+   ]
+  },
+  {
+   "id": "jpUDUJfE1K",
+   "forum": "jpUDUJfE1K",
+   "title": "EFFEKT: Efficient Federated Knowledge Transfer to Foundation Models",
+   "pdf": "/pdf/dc80a19b63710396aef055ba0d042236963a91cf.pdf",
+   "cdate": 1778856769751,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1214
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 720
+    },
+    {
+     "ce": "No",
+     "aud": "No",
+     "n_req": 313
+    }
+   ]
+  },
+  {
+   "id": "NGuOZYQZBq",
+   "forum": "NGuOZYQZBq",
+   "title": "Understanding and Mitigating Overconfidence in Focus Group Surveys",
+   "pdf": "/pdf/7b201852c0d1d93a9cd115954c86757d9c1b8cab.pdf",
+   "cdate": 1778766707372,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1268
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 517
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1171
+    }
+   ]
+  },
+  {
+   "id": "JxVxBa3wO5",
+   "forum": "JxVxBa3wO5",
+   "title": "LaCy: What Small Language Models Can and Should Learn is Not Just a Question of Loss",
+   "pdf": "/pdf/2ada4c3b12764a56cc4face598d015a7becbf786.pdf",
+   "cdate": 1778685669280,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1154
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 246
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1654
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1016
+    }
+   ]
+  },
+  {
+   "id": "gdwg7ntmT5",
+   "forum": "gdwg7ntmT5",
+   "title": "An Empirical Study into Clustering of Unseen Datasets with Self-Supervised Encoders",
+   "pdf": "/pdf/61fff1bbebce79644c391b212c5e27c085840c2a.pdf",
+   "cdate": 1778570807206,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 583
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 244
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1215
+    }
+   ]
+  },
+  {
+   "id": "SwmzJgB9TA",
+   "forum": "SwmzJgB9TA",
+   "title": "Optimization as a Dynamical System: Generative Schedules from Latent ODEs",
+   "pdf": "/pdf/854c6606021ec2644c84baa0c858017dcd5a357f.pdf",
+   "cdate": 1778517181899,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 886
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1502
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1222
+    }
+   ]
+  },
+  {
+   "id": "wZJcQb5m1e",
+   "forum": "wZJcQb5m1e",
+   "title": "Gradient Heterogeneity Complements Hessian Heterogeneity in Transformer Optimization",
+   "pdf": "/pdf/86ac586c2efecd151ddb11e67036f12438e89e0c.pdf",
+   "cdate": 1778235264562,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 52
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1593
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 730
+    }
+   ]
+  },
+  {
+   "id": "2WI889Ulin",
+   "forum": "2WI889Ulin",
+   "title": "XFeat Revisited: Reproducibility and Evaluation of a Lightweight Image Matcher",
+   "pdf": "/pdf/09f7bb7a9915f963567b30721d86aed9a63ebca2.pdf",
+   "cdate": 1778227127347,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 430
+    },
+    {
+     "ce": "No",
+     "aud": "No",
+     "n_req": 171
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1235
+    }
+   ]
+  },
+  {
+   "id": "l1JaPqZ6K5",
+   "forum": "l1JaPqZ6K5",
+   "title": "QMoE+: Hybrid Quantum Mixture of Experts",
+   "pdf": "/pdf/8acc9265179ebad63d9cf875c75522f67d507e95.pdf",
+   "cdate": 1778144392907,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 378
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 981
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 6387
+    }
+   ]
+  },
+  {
+   "id": "FAkarhXCfI",
+   "forum": "FAkarhXCfI",
+   "title": "Complete Cyclic Subtask Graphs for Tool-Using LLM Agents: Flexibility, Cost, and Bottlenecks in Long-Horizon Workflows",
+   "pdf": "/pdf/6c68cbb33c6afd43e5d9468bb7de37b2942154a9.pdf",
+   "cdate": 1778106436123,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 153
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 857
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1294
+    }
+   ]
+  },
+  {
+   "id": "1z0CnFiJKg",
+   "forum": "1z0CnFiJKg",
+   "title": "AlphaZero in Sparsely Rewarded Games: Limits and Auxiliary Supervision",
+   "pdf": "/pdf/17ead88360b82cc05c3d5e0c3369a2d8008cb1cb.pdf",
+   "cdate": 1778028550967,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 849
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1446
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 86
+    }
+   ]
+  },
+  {
+   "id": "MRHXB6eooE",
+   "forum": "MRHXB6eooE",
+   "title": "Task-Relevant Language-conditioned Segmentation for Robust Generalization in Reinforcement Learning",
+   "pdf": "/pdf/0ca300e505bfdccefc134ebf581409f391caa932.pdf",
+   "cdate": 1777900765567,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 2073
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 575
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1513
+    }
+   ]
+  },
+  {
+   "id": "9wpm4fbBJI",
+   "forum": "9wpm4fbBJI",
+   "title": "Efficient Fine-Tuning of Large Language Models with Zeroth-Order Model Parallelism",
+   "pdf": "/pdf/b9e8d266659cfa23e8f1eb74293676ec4e9ec61f.pdf",
+   "cdate": 1777862775281,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1604
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1355
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1319
+    }
+   ]
+  },
+  {
+   "id": "Nm7dTogzfa",
+   "forum": "Nm7dTogzfa",
+   "title": "Anderson Accelerated Asynchronous Method for Distributed Optimization",
+   "pdf": "/pdf/89385b7ba467c56e3386d4362cd97afdaece8597.pdf",
+   "cdate": 1777790630817,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 879
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1300
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 655
+    }
+   ]
+  },
+  {
+   "id": "n8qQPnalVW",
+   "forum": "n8qQPnalVW",
+   "title": "Generative Modeling with Bayesian Sample Inference",
+   "pdf": "/pdf/8c97046a3169729c05012e1033d7925db5eb5839.pdf",
+   "cdate": 1777789959775,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1690
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 884
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1737
+    }
+   ]
+  },
+  {
+   "id": "cjU3YbcRr8",
+   "forum": "cjU3YbcRr8",
+   "title": "Dynamic Agent Skills: A Lifecycle Survey and Taxonomy of Evolving Skill Libraries",
+   "pdf": "/pdf/d8acf52b447d3907e2bffc9d6a1edddfdb39554b.pdf",
+   "cdate": 1777772513811,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 539
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 2706
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 305
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1826
+    }
+   ]
+  },
+  {
+   "id": "rzm6gZrYgl",
+   "forum": "rzm6gZrYgl",
+   "title": "FairNVT: Fair Classification via Noise Injection in Vision Transformers",
+   "pdf": "/pdf/b2e040988b3f94eb5887d11e8429049e5ab1e949.pdf",
+   "cdate": 1777661263937,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1821
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 971
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1696
+    }
+   ]
+  },
+  {
+   "id": "fziI7nE1vO",
+   "forum": "fziI7nE1vO",
+   "title": "CURE-OOD: Benchmarking Out-of-Distribution Detection for Survival Prediction",
+   "pdf": "/pdf/66857f1612715960f08c99cd17b91c5c656dc4f7.pdf",
+   "cdate": 1777649063152,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 256
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 7363
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1614
+    }
+   ]
+  },
+  {
+   "id": "3IbuT8uzYS",
+   "forum": "3IbuT8uzYS",
+   "title": "Enhance the Safety in Reinforcement Learning by ADRC Lagrangian Methods",
+   "pdf": "/pdf/98af233f80a532f4157f805b28c6048b94a8ce8e.pdf",
+   "cdate": 1777614186517,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 325
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2315
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 398
+    }
+   ]
+  },
+  {
+   "id": "mRHipMopOC",
+   "forum": "mRHipMopOC",
+   "title": "REPA-FPO: A Fisher Policy Optimization for Efficient Flow Matching Training",
+   "pdf": "/pdf/25f193b538ddee38e177951535f5c74f42e7cfee.pdf",
+   "cdate": 1777600450102,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 708
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1097
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 739
+    }
+   ]
+  },
+  {
+   "id": "GxmQsP5CcU",
+   "forum": "GxmQsP5CcU",
+   "title": "Better Models, Faster Training: Sigmoid Attention for single-cell Foundation Models",
+   "pdf": "/pdf/9901783e754c60a9f2ff325a2f82e4a2b577eaae.pdf",
+   "cdate": 1777481576013,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 508
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1492
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1589
+    }
+   ]
+  },
+  {
+   "id": "U10DFNcMrW",
+   "forum": "U10DFNcMrW",
+   "title": "A Hierarchical Geometric Observation Interface for Spatial Planning in Reinforcement Learning",
+   "pdf": "/pdf/00ccb49a480fdba45d6586f27722d2ffefda109c.pdf",
+   "cdate": 1777461117341,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2138
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 782
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 365
+    }
+   ]
+  },
+  {
+   "id": "sgvPGWZ1uv",
+   "forum": "sgvPGWZ1uv",
+   "title": "Learning as Homeostasis: Beyond the Optimization Paradigm in Machine Intelligence",
+   "pdf": "/pdf/454c6148dfb3c08539bf44c3e1a2aae0de49db94.pdf",
+   "cdate": 1777452818129,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 839
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 981
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1627
+    }
+   ]
+  },
+  {
+   "id": "yknkAksqr1",
+   "forum": "yknkAksqr1",
+   "title": "A Comparative Study of Label-free Representation Quality Metrics in Deep Learning",
+   "pdf": "/pdf/cdece7b1c1559805a2075626f3d2455c34868976.pdf",
+   "cdate": 1777448852569,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1204
+    },
+    {
+     "ce": "Yes",
+     "aud": "No",
+     "n_req": 453
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1346
+    }
+   ]
+  },
+  {
+   "id": "wPfw7GkMns",
+   "forum": "wPfw7GkMns",
+   "title": "SimpleDesign: A Joint Model for Protein Sequence and Structure Codesign",
+   "pdf": "/pdf/c8cd8ae361c013ddd5f2b2618309742f5d914418.pdf",
+   "cdate": 1777356004041,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1334
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1490
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2855
+    }
+   ]
+  },
+  {
+   "id": "sv35KiCipb",
+   "forum": "sv35KiCipb",
+   "title": "ReDiTT: Retrieval Augmented Conditional Diffusion Transformers for Asynchronous Time Series",
+   "pdf": "/pdf/7ca965b171a8e0e60a335594b2691b9bbdadd568.pdf",
+   "cdate": 1777355742459,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 247
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2887
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 982
+    }
+   ]
+  },
+  {
+   "id": "P0E4LsRvGY",
+   "forum": "P0E4LsRvGY",
+   "title": "Mutual Information Collapse Explains Disentanglement Failure in $\\beta$-VAEs",
+   "pdf": "/pdf/48182ad080d7ab96ec7a99e039199c30888642a2.pdf",
+   "cdate": 1777270528613,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1448
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 2648
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 938
+    }
+   ]
+  },
+  {
+   "id": "Ckvsu5xRmf",
+   "forum": "Ckvsu5xRmf",
+   "title": "Score-based Membership Inference on Diffusion Models",
+   "pdf": "/pdf/ac0741ee4625f83e33aa489c11729805c02182e0.pdf",
+   "cdate": 1776975280661,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1134
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1995
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2936
+    }
+   ]
+  },
+  {
+   "id": "mXE4OP55il",
+   "forum": "mXE4OP55il",
+   "title": "ANU-RL: A New Perspective on Weakly-Supervised Representation Learning for Visual Place Recognition",
+   "pdf": "/pdf/05a941bceac2c0f154cfe8f23ddf3f2624a17a27.pdf",
+   "cdate": 1776966816009,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 734
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 3318
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 721
+    }
+   ]
+  },
+  {
+   "id": "nv1jzr0FaZ",
+   "forum": "nv1jzr0FaZ",
+   "title": "Verify What Matters: Budgeted Verification for Tool-Using Agents under Counterfactual Downstream Harm",
+   "pdf": "/pdf/3c87e6147781aee95d03c231b9ab95571fe41db3.pdf",
+   "cdate": 1776951611767,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2000
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 804
+    },
+    {
+     "ce": "No",
+     "aud": "No",
+     "n_req": 492
+    }
+   ]
+  },
+  {
+   "id": "vRCGzuAhOM",
+   "forum": "vRCGzuAhOM",
+   "title": "Investigating the limits of free-form debate as a scalable oversight strategy",
+   "pdf": "/pdf/cb137b087aa2cad8304cdc6d26c1e2353cefcf19.pdf",
+   "cdate": 1776935185847,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 3263
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1219
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1433
+    }
+   ]
+  },
+  {
+   "id": "IyQEQBRR4M",
+   "forum": "IyQEQBRR4M",
+   "title": "Clarity: The Flexibility-Interpretability Trade-Off in Sparsity-aware Concept Bottleneck Models",
+   "pdf": "/pdf/0dd85ce6cfc741cbf0e7629b1e23aaa35965b742.pdf",
+   "cdate": 1776783895805,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1132
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1502
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1067
+    }
+   ]
+  },
+  {
+   "id": "x7qyXl8ecT",
+   "forum": "x7qyXl8ecT",
+   "title": "Transformer–SSM Hybrid Language Models: Systematic Analysis and Design Insights",
+   "pdf": "/pdf/6b0ebaf54c72cfc65ca2e7bfffd36946b2e629dc.pdf",
+   "cdate": 1776775655278,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 2260
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 3488
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1901
+    }
+   ]
+  },
+  {
+   "id": "CSjewjplO1",
+   "forum": "CSjewjplO1",
+   "title": "NeMoS: Nearest Neighbors Bandit meets Active Learning for Online Model Selection",
+   "pdf": "/pdf/f1180946e116f5c919a43aad864eff4a85aa87cd.pdf",
+   "cdate": 1776770382058,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1230
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 761
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 760
+    }
+   ]
+  },
+  {
+   "id": "PgouBhL7IR",
+   "forum": "PgouBhL7IR",
+   "title": "Rethinking Reward Models for Multi-Domain Test-Time Scaling",
+   "pdf": "/pdf/db5eb3ea7b37b32b602e1ff049ad0a5cf3698507.pdf",
+   "cdate": 1776760986383,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1494
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 436
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1445
+    }
+   ]
+  },
+  {
+   "id": "4Sq5Byd4yS",
+   "forum": "4Sq5Byd4yS",
+   "title": "A Moving-Horizon Approximate Branch-and-Reduce Method for Deep Classification Trees",
+   "pdf": "/pdf/8319c86ea4495665c5b19b74c7d4733a1dba44bb.pdf",
+   "cdate": 1776729663667,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 632
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1472
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2187
+    }
+   ]
+  },
+  {
+   "id": "2lIE1tgmRN",
+   "forum": "2lIE1tgmRN",
+   "title": "TOAM-YOLO: A Tiny Object-Aware Multi-Expert YOLO Framework for Diverse Domains",
+   "pdf": "/pdf/2adf990d26ad3cb9034e4cb8e314e0750ef9f687.pdf",
+   "cdate": 1776667586591,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 541
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1756
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 244
+    }
+   ]
+  },
+  {
+   "id": "RPzbeL0koP",
+   "forum": "RPzbeL0koP",
+   "title": "Efficient LLM Collaboration via Planning",
+   "pdf": "/pdf/bcb5651ccfc04f5d0cb7ac81404dcdee4de070e3.pdf",
+   "cdate": 1776666136217,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1430
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1327
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1755
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 631
+    }
+   ]
+  },
+  {
+   "id": "LnUP74YNze",
+   "forum": "LnUP74YNze",
+   "title": "A Cross-Model Study of Over-Compliance in Large Lan- guage Models",
+   "pdf": "/pdf/d4ede0d44d025fcbbdde8b523625719e1ce0b0ef.pdf",
+   "cdate": 1776610204930,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 2894
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 854
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1481
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 601
+    }
+   ]
+  },
+  {
+   "id": "XMUbOKWsem",
+   "forum": "XMUbOKWsem",
+   "title": "GLEN-Bench: A Graph-Language based Benchmark for Nutritional Health",
+   "pdf": "/pdf/cbce59e6684572c1cafb77ae94b8188984bdac55.pdf",
+   "cdate": 1776365511647,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 25
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1261
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 637
+    }
+   ]
+  },
+  {
+   "id": "tR5VsdQFhK",
+   "forum": "tR5VsdQFhK",
+   "title": "Adjoint Matching through the Lens of the Stochastic Maximum Principle in Optimal Control",
+   "pdf": "/pdf/62420f9b2be6a86d22d470f2cfdedef87ed5a0c5.pdf",
+   "cdate": 1776325784235,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "No",
+     "n_req": 36
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2853
+    },
+    {
+     "ce": "Yes",
+     "aud": "No",
+     "n_req": 1854
+    }
+   ]
+  },
+  {
+   "id": "NlSBeHZEz5",
+   "forum": "NlSBeHZEz5",
+   "title": "Analyzing the Effect of Noise in LLM Fine-Tuning",
+   "pdf": "/pdf/efa525fdacddc86db457182b339a7018e275a820.pdf",
+   "cdate": 1776294289250,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1292
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2001
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1004
+    }
+   ]
+  },
+  {
+   "id": "UUBijehMQO",
+   "forum": "UUBijehMQO",
+   "title": "Reliability Scaling Laws for Quantized Large Language Models",
+   "pdf": "/pdf/65a72560f4639f7c7f2c90644331af97bdea0091.pdf",
+   "cdate": 1776257912153,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 456
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 3
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 816
+    }
+   ]
+  },
+  {
+   "id": "LLFIcr7zWh",
+   "forum": "LLFIcr7zWh",
+   "title": "Monte Carlo Multi-Feature Baseline Shapley (MMBS): An axiomatic attribution method for fine-grained explanations of image classification networks",
+   "pdf": "/pdf/f791a51d83fcf6fd33bcdc99791bf89f8a33106a.pdf",
+   "cdate": 1776257091960,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 4823
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 947
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 568
+    }
+   ]
+  },
+  {
+   "id": "VjbBxj4aWb",
+   "forum": "VjbBxj4aWb",
+   "title": "The Impact of Enforcing Representational Consistency of Identical Transformations for Disentangled Representation",
+   "pdf": "/pdf/814069e003100937e93d0564906dc0c3ca982965.pdf",
+   "cdate": 1776256392516,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 659
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 269
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 672
+    }
+   ]
+  },
+  {
+   "id": "qF7vdPrpPk",
+   "forum": "qF7vdPrpPk",
+   "title": "Foundation Models in Robotics: A Comprehensive Review of Methods, Models, Datasets, Challenges and Future Research Directions",
+   "pdf": "/pdf/ba72607187ec81cc07f4a98d37cf3f6362401720.pdf",
+   "cdate": 1776246935917,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2004
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 289
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 61
+    }
+   ]
+  },
+  {
+   "id": "jdcXfoENf0",
+   "forum": "jdcXfoENf0",
+   "title": "Revealing Positive and Negative Role Models to Help People Make Good Decisions",
+   "pdf": "/pdf/55ed0da1c1fce7e66d8419e69c25193444bee089.pdf",
+   "cdate": 1776197775751,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1012
+    },
+    {
+     "ce": "No",
+     "aud": "No",
+     "n_req": 8230
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1106
+    }
+   ]
+  },
+  {
+   "id": "TupiNRpgHw",
+   "forum": "TupiNRpgHw",
+   "title": "Cross-Domain Offline Policy Adaptation via Selective Transition Correction",
+   "pdf": "/pdf/229ab06254989396d3d424bd6d4f4a73b6851514.pdf",
+   "cdate": 1776130716029,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 269
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 327
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 1419
+    }
+   ]
+  },
+  {
+   "id": "4Kd0VMsL76",
+   "forum": "4Kd0VMsL76",
+   "title": "ASAT: Adaptive Scoring and Thresholding with Human Feedback for Robust Out-of-Distribution Detection",
+   "pdf": "/pdf/f1213d524415fd580f11d1b47ec61ee5d4a54577.pdf",
+   "cdate": 1776098036863,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1051
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 642
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1149
+    }
+   ]
+  },
+  {
+   "id": "jbVVrks50D",
+   "forum": "jbVVrks50D",
+   "title": "Microcanonical Hamiltonian Monte Carlo and the Helmholtz Theorem",
+   "pdf": "/pdf/5825fd66f359b8074e1f089e89a00084b24147b9.pdf",
+   "cdate": 1776070971199,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1472
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 790
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1976
+    }
+   ]
+  },
+  {
+   "id": "uurX0xsr8G",
+   "forum": "uurX0xsr8G",
+   "title": "Environmental Footprint of GenAI Research: Insights from the Moshi Foundation Model",
+   "pdf": "/pdf/3c526d4a05596a22436df139c6a2faab589e06b4.pdf",
+   "cdate": 1776069324140,
+   "sub_len": "Long submission (more than 12 pages of main content)",
+   "decision": "Accept with minor revision",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 32
+    },
+    {
+     "ce": "No",
+     "aud": "Yes",
+     "n_req": 2170
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1847
+    }
+   ]
+  },
+  {
+   "id": "eve4jBYa8D",
+   "forum": "eve4jBYa8D",
+   "title": "Scaling Agents for Computer Use",
+   "pdf": "/pdf/74dab2da24acf6d1f1cc8464ae4e877100930613.pdf",
+   "cdate": 1776060143124,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 660
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 518
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 2280
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 433
+    }
+   ]
+  },
+  {
+   "id": "3i2ZRk8GDN",
+   "forum": "3i2ZRk8GDN",
+   "title": "Benchmarking Transfer Learning: From Simple Baselines to Combined Scorers for Transferability Estimation",
+   "pdf": "/pdf/aed035e391ee29c8b3fa01d55c9d273cda2c2527.pdf",
+   "cdate": 1776043248413,
+   "sub_len": "Regular submission (no more than 12 pages of main content)",
+   "decision": "Accept as is",
+   "reviews": [
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 1234
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 3954
+    },
+    {
+     "ce": "Yes",
+     "aud": "Yes",
+     "n_req": 808
+    }
+   ]
+  }
+ ]
+}

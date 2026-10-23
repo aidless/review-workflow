@@ -1,0 +1,22 @@
+[
+  {"id": 1, "action": "rebut", "rebuttal": "Abstract标注'execution failures, not judge scores'；正面控制证实管线可解题，零分反映模型失败，属分母纪律设计。"},
+  {"id": 2, "action": "rebut", "rebuttal": "审计拦截3/3模型answer-fitting（Abstract）；FNR=0.00/FPR=0.00在21 gold上通过校准门，管线区分力已验证。"},
+  {"id": 3, "action": "rebut", "rebuttal": "已披露'McNemar power structurally 0; bootstrap as future work'，N=4由设计固定，非统计推断误用。"},
+  {"id": 4, "action": "concede", "fix": "将在Results补充Wilcoxon和Friedman统计量p值，三层协议均可查。"},
+  {"id": 5, "action": "concede", "fix": "将在Section 4列出Wilcoxon和Friedman统计量与p值，不再仅摘要提及。"},
+  {"id": 6, "action": "rebut", "rebuttal": "主动披露d_min=2.1279（Abstract: 'We disclose power limits'），声明为能力评估非假设检验，功率局限是设计约束。"},
+  {"id": 7, "action": "concede", "fix": "将在Methods明确d_min基于Cohen's d配对设计（N=4,alpha=0.05,power=0.80）。"},
+  {"id": 8, "action": "rebut", "rebuttal": "16任务含floor tasks稀释信号，入附录作sensitivity analysis是标准做法，非选择性呈现。"},
+  {"id": 9, "action": "concede", "fix": "将在Methods补充模型选择理由（参数量级梯度+架构多样性）及量化级别Q4_K_M。"},
+  {"id": 10, "action": "rebut", "rebuttal": "McNemar p=1.0000所有模型n_d=0，描述性比较mean goal 0.14/0.19/0.28，明确无推断性p值。"},
+  {"id": 11, "action": "rebut", "rebuttal": "已承认样本量小（Abstract），d_min=2.13且McNemar power=0，benchmark非统计推断定位。"},
+  {"id": 12, "action": "concede", "fix": "将修改Abstract，明确exploratory指排名假设生成性质，弱化headline ranking表述。"},
+  {"id": 13, "action": "concede", "fix": "将在Section 4补充硬件：AutoDL RTX3090 48GB、ollama版本、量化Q4_K_M。"},
+  {"id": 14, "action": "concede", "fix": "将在Section 4公布seed具体数值，说明seed固定方式，确保per-seed rows可复现。"},
+  {"id": 15, "action": "rebut", "rebuttal": "Abstract声明SHA-256 seal over 125 files，哈希验证PASS，仓库URL将在camera-ready提供。"},
+  {"id": 16, "action": "concede", "fix": "将在Discussion讨论denominator局限，补充失败类型细分或标注future work。"},
+  {"id": 17, "action": "concede", "fix": "将在Methods补充positive control具体任务、复杂度及与测试集对比。"},
+  {"id": 18, "action": "concede", "fix": "将扩展judge calibration讨论：FNR上界27%影响及扩大gold set至≥40 items计划。"},
+  {"id": 19, "action": "concede", "fix": "将明确exploratory边界：N=6无重复不满足confirmatory阈值，排名仅作假设生成。"},
+  {"id": 20, "action": "concede", "fix": "将讨论trial count不对称性为混淆变量，补充各模型trial count明细。"}
+]

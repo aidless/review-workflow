@@ -1,0 +1,944 @@
+{
+  "meta": {
+    "stage": "R6",
+    "timestamp": "2026-08-27T19:17:53+00:00",
+    "rpc": "http://127.0.0.1:3080",
+    "rounds": 3
+  },
+  "rpc_health": {
+    "ok": true,
+    "detail": "HTTP 200"
+  },
+  "rounds": [
+    {
+      "Critical": 13,
+      "Major": 36,
+      "Minor": 14
+    },
+    {
+      "Critical": 19,
+      "Major": 36,
+      "Minor": 17
+    },
+    {
+      "Critical": 20,
+      "Major": 33,
+      "Minor": 12
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts": {
+      "Critical": 13,
+      "Major": 5,
+      "Minor": 3
+    },
+    "unstable_counts": {
+      "Critical": 22,
+      "Major": 56
+    },
+    "stability_rule": "≥2 轮出现才计入门禁"
+  },
+  "stable_issues": [
+    {
+      "sev": "Critical",
+      "text": "- Critical: c0=0.05 是在 K=3 pilot 上拟合的，却用“all cells”包括 K=3 来验证 B(P) 并报告 100% exceed，存在样本内泄漏；P/B 的 5–10× 与 median 10.88× 不能作为样本外下界紧度证据。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: seed 协议不可复现：正文称每 cell 用 10 seeds，却只明确写出 42 与 42–44，未给出 10 个 seed 的完整列表、各模型/任务/采样阶段的 seed 映射，也未解释 n=10 与 n=3 的矛盾。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 下界 B 的 c0 在 K=3 的 pilot 数据上拟合，却又在包含同一 K=3 数据的所有 cell 上验证“P>B”，属于样本内循环验证；即使 K=4/5 是扩展集，也没有说明是否在拟合后再冻结 c0，因此“B 在所有 cell 成立”不能支持任何样本外或泛化结论。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 将 270 episodes × 10 seeds 当作 2,700 个独立“cells”，忽略同一 episode 在多个 seeds/settings 间的相关性，有效样本量被严重高估。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 引理“Cmin(K) 在 exchangeability 且 ρ<1 下单调非降”并非由这些前提必然推出；若平均投票正确率低于阈值，或 γ 对应绝对票数而非相对多数，coverage 完全可能随 K 下降，文中没有给出充分条件或证明，形式化前提不成立。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 报告“0.68% improvement”的 95% Wilson CI [0.62,0.74] 并明确说“为避免与 0/15 矛盾”，属于为规避不利结果而选择统计方法；且 Wilson 区间用于比例而非组间改善差异，且未预先注册主结局与推断方法，结论的因果/统计推断不恰当。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 摘要与引言混入大量审稿回复/复现检查式内容（“P0 26-block F1 24K→12K”、“Panorama 6-figure set was weakened”、“Ledger 86 PASS entries”、“Gates 9/9 checklist”、“single-generator seed 42”），破坏论文科学结构，且这些术语均未定义。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 摘要中 “P/B 5–10× for γ∈{0.5,1.0}” 与 “median 10.88× across the 9 cells” 直接冲突；即使 γ=2 的细胞点更高，9 个点里至少 6 个落在 5–10，中位数不可能超过 10。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 摘要和贡献列表写 “inverse variance decreases (Fisher-like) I(K) ... (Fisher-like information increases)”，方差下降时逆方差/信息量应上升，同一句内术语自相矛盾。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 未提供任何可下载仓库、容器/依赖锁文件或一键复现命令；只声称“Gates 9/9 锚定到 L401–L409”，但附录内容并未随产出提供，行号无法独立验证。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 核心理论贡献只是“相关随机变量均值方差公式”和“多数/一致覆盖随 K 变化”的改写；把 `1/[σ²(ρ+(1−ρ)/K)]` 命名为 Fisher-like information 并不等于 Fisher information，且“纠正平均会丢失信息”的靶子是稻草人，增量理论贡献接近零。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 核心验证存在循环风险：B 的 c0 是在 K=3 pilot 上拟合的，随后又在包含 K=3 的主样本 2,700 cells 中宣称“P>B 在所有 cell 成立”；若 pilot/主样本未严格切分，该下界只是在拟合数据上自证，不能作为经验刻画的外部证据。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 正文残留 “P0 26-block F1 24K→12K”“Ledger 86 PASS”“Gamma string” 等疑似内部项目/审计痕迹，可能通过公开仓库或内部文档反查作者身份，直接破坏双盲审查承诺。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: P = Rsel·Cmin 把风险与覆盖率相乘，K 或 γ 改变时会通过覆盖率产生机械性变化；没有报告 risk-coverage 曲线或 coverage-conditional 风险，P 的缩放不能归因于选择性风险的改善。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 引言末尾突然插入 “P0 26-block F1 24K→12K”“Panorama 6-figure set”“Ledger 86 PASS”“Gates 9/9 L401–L409” 等未定义内容，与 K-verifier ensemble 和 selective prediction 完全脱节，疑似串稿并严重破坏结构。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要先说 P 随 K 从 K=1 到 K≥3 增大，又说 “K-Verifier ensemble improvement 0.68%”，但未定义 improvement 是哪个指标、P 是越低越好还是越高越好，导致结论方向矛盾。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 正文/摘要没有规范的图、表编号和正文引用；“Panorama 6-figure set”和 “Ledger table”以未编号描述出现，读者无法定位支撑 P/B 或 86 PASS 的图表证据。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 隐私与人类受试者合规缺失：文中出现 “survey 0/15 zero-success case”，若该 survey 涉及人类参与者，则缺少 IRB 审批、知情同意、数据去标识化与存储说明；若来自用户数据，也未说明隐私合规机制。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 0/15 的 Wilson 区间并非退化区间；若用“CI degenerate”作为不报告或调整结果的依据，统计理由错误。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “sample-descriptive”在摘要中反复出现并与“lower bound”连用，造成术语冗余和文体拖沓。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 「four local models」没有命名或注明版本/镜像，无法判断结果是否受特定权重文件影响。",
+      "rounds": [
+        1,
+        3
+      ]
+    }
+  ],
+  "unstable_issues": [
+    {
+      "sev": "Critical",
+      "text": "- Critical: K=1 对照不是有效的选择性预测对照：单个验证器不存在 disagreement/abstention 的可操作定义，且缺少“非选择性全覆盖率单模型”和“随机弃权”对照，无法把 K 的效应与选择机制本身分离。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: `c0` 在 K=3 pilot 拟合，而主实验又包含 K=3 并报告 P/B；未说明 pilot 与主样本是否 disjoint，存在 in-sample fitting 和评估泄漏风险。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: “K-Verifier ensemble improvement of 0.68%（95% Wilson CI [0.62,0.74]）”是因果性表述，但 K 并未随机分配，K=1/2、K=3..5、K=6 比较在样本规模、episode 构成、模型和轮次上不可比；且正文 P 随 K 从 0.08 增至 0.33，与“improvement”方向矛盾，因果推断不恰当。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: “用 95% Wilson CI [0.62,0.74] 来避免与 survey 0/15 zero-success 矛盾”不是统计理由；0/15 的 Wilson CI（约 [0,0.18]）并不退化，且依据外部结果选择估计量或区间属于结果依赖的分析决策，严重损害推断的客观性和内部效度。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 主要结果的 2,700 cells 只覆盖 K=3..5，K=1/2 基线没有进入同一采样/统计框架，K=6 仅为一个 observation，缺少真正可比的对照组来分离“投票数增加”和“选择性阈值”的效应。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 全文未披露任何数据来源、数据集许可证或使用条款；2,700 cells 的实证数据若来自受版权/服务条款保护的 benchmark 或未公开日志，发表与复现均存在数据许可合规风险。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 全文没有提供代码仓库、数据文件、模型版本或一键复现脚本，任何数字都无法独立重跑。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 四个 local model 未给出模型名、checkpoint/权重版本、量化方式、推理超参（温度、top-p、max_tokens、上下文长度等），实验结果无法在同等配置下重建。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 基准不公平：K 个验证器消耗约 K 倍推理/计算，未与同等算力的单模型多次采样、自洽性（self-consistency）、语义熵等非集成不确定性基线对比，P 随 K 增大可能只是算力/采样次数增加造成。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 声称的 GAP 不真实：self-consistency 文献（如 Wang et al., 2022）已经系统刻画性能随采样路径/验证器数量 K 增加而提升并趋于平台，selective prediction 已有成熟的 risk–coverage 理论；“换成 local models + K×γ 网格”只是场景微调，不足以构成开放问题。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 声称的 GAP 不真实：选择性集成与拒识的关系并非未被刻画，Black et al. (ICLR 2022, *Selective Ensembles for Consistent Predictions*) 已对 n、置信/α 阈值、拒识率和 accuracy-rejection 曲线做理论与实证分析，self-consistency/majority voting 的采",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 摘要把内部修订/防御性元评论写进 Abstract（“避免与 survey 0/15 零成功案例矛盾”“hedged with pooled SD”“Gates 9/9 锚定 L401–L409”等），完全不符合摘要文体。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 数据许可与来源不明：论文未披露四个本地模型、任务、数据集的具体名称及许可证，无法核实数据/模型使用权是否合规；若涉及受版权、服务条款或非商业许可保护的内容，评测本身即可能构成侵权。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 数据许可与来源缺失：未说明任务数据集及模型输出数据的 license、是否允许重新分发、数据获取时间、数据集版本，也没有 data availability 链接。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 无哈希对账：未提供数据、模型权重、代码、config、日志或输出表 any SHA-256/checksum；仅靠“颜色编码绿色”的 ledger 无法做自动化对账。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 未披露数据/模型来源与许可：270 episodes、四个 local models、survey/生成器产出均无许可证、ToS、数据集出处或模型输出使用条款说明，若 episodes 或生成数据来自受保护语料/受限模型，已构成许可违规风险。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 未提供 270 episodes 的任务/提示词/答案生成器清单、原始数据或下载地址，也没有数据许可声明；核心样本不可获取与合法复用。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 未给出任何 SHA-256/内容哈希对账方案；代码、数据、预测日志、逐 cell 结果和 “Ledger 86 PASS” 均无机器可校验的哈希锚点。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 没有任何代码仓库、依赖锁文件或一键复现脚本；文中引用的 L401–L409、L203–L212 行号和附录在匿名材料中无法访问，不能形成可执行证据链。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 经验下界 `B(K,γ)=c0 γ^{-1}K^{-1/2}exp(-γK/10)` 是用同一批 K=3 pilot 数据拟合 `c0` 与指数形式，再用同一数据报告“所有 cell 都超过 B”，属于事后拟合/循环验证；单点 K=6 观测不足以支撑外推为 scaling 规律。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 证据链不完整：2,700/300 个 cell 的逐 cell 原始结果、日志、中间 CSV、拟合 c0 的脚本均未提供，无法从 raw data 重算出 P 值范围和 0.68% CI。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 配置快照缺失：未报告四个本地模型的精确名称/版本/权重来源、prompt 模板、投票聚合方式、γ/阈值实现、temperature、top_p、max tokens、推理框架、GPU 与依赖版本等关键配置。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 0.68% 的 K-Verifier 改进量级极小，Wilson CI 只能处理统计不确定性，不能处理 practical significance、多重比较、seed/模型异质性；作为实证贡献容易被夸大。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: Abstract 引入未定义的“K-Verifier ensemble improvement of 0.68%”“95% Wilson CI [0.62,0.74]”“survey 0/15 zero-success case”“single-generator seed 42”“pooled SD 0.026”，读者无法在摘要中理解这些数字。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: B(K,γ)=c0 γ⁻¹K⁻¹/² exp(−γK/10) 中的 c0=0.05 和分母 10 缺乏理论依据或模型选择；一个处处低于观测点的下界是平凡成立的，tightness ratio 也不是覆盖率校准或预测效度指标，不能说明该 bound“描述”了真实缩放机制。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: Fisher-like I(K) 公式基于无条件投票平均的方差，但 selective prediction 是在 agreement 超过阈值时才输出；条件化会改变方差和相关结构，直接用无条件 ICC 刻画选择性风险混淆了条件分布与无条件分布。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: GAP 被窄化为“local models 下没有经验刻画”，但选择性集成、自一致性、置信阈值与 K 对风险-覆盖影响已有大量研究；未与具体 prior work 做定量对比或说明其机制无法覆盖本设置，GAP 真实性不足。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: K=1/2 基线不是 compute-matched：K=5 消耗更多 verifier 调用/token，0.68% 提升可能来自推理预算而非集成多样性。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: K=6 expanded pilot 仅 300 cells，且未说明是否与主样本 2,700 cells 使用相同 episodes/seeds/模型，无法作为 K 扩展趋势的可比证据；P/B 的 “5–10×”与“median 10.88×”口径也未交代。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: K=6 expanded pilot 仅给 300 cells 和 P=0.3326，未说明其 episode/seed/K/γ/model 拆分、是否重拟 c0、CI 与复现命令。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: K=6 只有单个 300-cell 观测，K=3..5 每格仅 30 episodes×10 seeds，且 ρ≈0.3 未给 CI；据此声称 scaling/monotonicity 的样本支持不足。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: seed 报告不完整：仅出现「10 seeds」「seed 42」「seeds 42–44」，没有完整种子列表、各 model/任务/setting 的种子映射，也没有 RNG 初始化方式。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: seed 管理不透明：未说明 10 个 seed 随机化的是 episode 采样、生成器还是验证器，主结果缺少 per-cell 的 seed 级误差条；seed 42 的单生成器结果只用 seed 42–44 三个值做 pooled SD hedging，样本过小且是事后选择。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: ρ≈0.3 的 ICC 估计未报告置信区间、方差成分或估计方法，而它直接进入 Fisher-like 公式和下界，不确定性未传播。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 两个引理依赖 verifier 可交换且 ρ<1，但未检验可交换性，也未说明 ρ 在不同 K、γ 和选择性保留子集下如何估计或是否恒定；实际使用多个本地模型时该假设很可能不成立，理论结论不能直接迁移到样本。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 利益冲突未披露：论文未声明作者、资助方与四款本地模型及其提供商/开发者是否存在雇佣、商业或研发合作关系；若为自家模型参与评测，未披露即构成实质性 COI。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 哈希对账完全缺失：没有对原始数据、模型权重、生成输出、ledger/table 或最终数值做 checksum/hash 核验。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 四个 local models 上比较 K 和 γ 时，模型能力、任务难度、解码温度、随机种子、阈值措辞、计算量等均可能混淆 K 的效应；设计未说明任何随机化或控制变量，因此“more verifiers yield better selective reliability”以及“0.68% improvement”不能做因果解读。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 四个模型和多任务数据被 pooled 分析，模型精度、任务难度、episode 分布、阈值措辞都是潜在混淆变量；未报告按模型/任务分层、固定效应或敏感性分析，K/γ 效应可能被 Simpson 悖论解释。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 图/表层面：正文只提及“Panorama 6-figure set”和“supplementary ledger table”，没有图表编号、标题、正文 callout 或可核验内容；“weakened to one paragraph”是修订说明而非图表描述。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 在 9 个 setting、2,700 cells、4 个 model 上筛选 “all cells exceeded B” 和 tightness 模式，属于探索性多重比较；若作任何推断性表述，需预注册或多重比较校正。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 基准公平与可复现性不足：任务、指标、难度、真值来源、verifier prompt、温度、解码参数均未报告；附录行号和 ledger 不能替代实际数据和代码。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 基准公平性不足：未报告具体 benchmark、任务分布、模型版本/大小，也未与 non-ensemble confidence thresholding、SelectiveNet 或 self-consistency 等选择性预测 baseline 对比，不能支撑集成 verifier 的相对优势。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 实验规模过薄：K 仅 3..5、γ 仅 3 个值、每 setting 仅 30 episodes、K=6 只有一个观察，四个本地模型不足以支持随 K/γ 的普适 scaling 结论。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 对 K×γ×model×多个 checkpoint/ledger/gates 做了大量比较，但没有说明任何多重比较校正或预注册；9/9、86 PASS、“all cells”等逐项结论都可能被多重性放大。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 对核心结论（K=1→2 的 P 上升、P 单调性、P>B、tightness 比值）没有给出任何检验、置信区间或效应量，无法判断是否为抽样噪声。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 将 K 增加称为“ensemble improvement”并隐含 K 导致更可靠，但 K、γ、模型、任务、阈值措辞和种子在同一网格中联合变化，未控制混淆变量；该设计只能支持条件关联，不能支持 K 的因果效应。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 所谓“empirically characterize”的紧度只有 P/B=5–10×、中位 10.88×，说明下界比观测低约一个数量级；如此宽松且几乎恒成立的下界对理解 scaling 的增量信息有限。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要中 “The K-Verifier ensemble improvement ... to avoid contradiction with the survey 0/15 zero-success case where CI is degenerate” 缺乏上下文，0/15、Wilson CI、survey 均未定义；报告 CI 不能“避免矛盾”，只会暴露不确定性。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要先说 P 范围 0.14–0.26，随后又说 K=6 “P=0.3326 gives P=0.33”，没有限定前者仅为 K=3..5 构造区间，读起来像直接矛盾。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 数据许可与来源不清：未说明四个 local model、任务数据集、生成 episodes 的 license、使用条款、再分发权限或数据版本。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 方差报告严重不足：ρ≈0.3、P、B、P/B 均无 SE/CI/区间传播；唯一 pooled SD 0.026 只覆盖 seeds 42–44，无法支撑“scaling with K”的统计结论。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 未声明与四个本地模型厂商、资助方、数据/工具提供方之间的利益冲突，评测结论可能受商业关系影响而无透明度。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 未说明 episodes 是否包含个人数据、用户生成内容或敏感信息，也未提供脱敏、数据使用协议或 IRB/伦理审批信息，存在隐私合规漏洞。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 样本量表述不一致且依赖结构不清：270 episodes × 10 seeds 与“30 episodes/setting × 3×3×10”的对应关系不明确；若只有 30 或 270 个唯一 episode 被重复使用，跨条件重复依赖会进一步削弱内部效度。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 核心改进只有 0.68%，作者又自曝 “0/15 zero-success” 和 pooled SD 等不稳定信号；窄 Wilson CI 与微小效应量不相称，容易夸大 K-verifier ensemble 的实际收益。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 核心量 “selective risk–coverage product P=Rsel·Cmin”未说明 P 越大越好还是越小越好；后文既说 P 随 K 增大，又说“more verifiers yield predictably better reliability”，方向不明确。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 泛化证据不足：仅 4 个未命名的 local models、每条件 30 episodes、K=6 单点，未做跨模型、跨任务、跨数据集的样本外验证，结论不能支持一般化 scaling 表述。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 泛化证据不足：只有 4 个本地模型且任务/数据集未明确，没有跨模型、跨任务、跨阈值措辞的 held-out 验证；K=6 只是单个 expanded pilot 点，不能证明 B(K,γ) 在 K≥6 或未见模型上成立。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 泛化证据薄弱：明确号称 sample-descriptive，但未在 held-out models/tasks/thresholds 上验证，也未按四个模型分层报告；K=6 单点外推不足以支持“一般性 empirical characterization”。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 消融不完整：未分别消融 K、γ、ρ、指数项和 K^{-1/2} 项，也未检验去掉 exp(-γK/10) 后下界是否仍成立，无法证明该函数形式的每一项都必要。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 消融不完整：未分别消融验证器数量、验证器多样性（同模型不同 seed vs 不同模型）、temperature、提示模板、投票/聚合方式及弃权阈值措辞；文中只把 threshold phrasing 列为限制，却没有对应消融实验。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 消融不完整：没有分别移除/替换 γ 阈值、投票数、相关结构 ρ、指数项 γK/10、c0 或聚合方式，无法判断 B 与 scaling 结论由哪个组件驱动。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 理论前提可交换性未经验证：四个本地模型的 verifier 在架构、训练噪声、seed、生成顺序上很可能异质且存在高阶依赖；仅用一个点估计 ρ≈0.3 不足以支撑“ρ<1 下 Cmin(K) 单调非降”的结论，且 ρ 无置信区间。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 用 Wilson CI 报告“0.68% improvement”不合适：Wilson 区间适用于单一比例，不适用于差值/改进量；且 [0.62,0.74] 与 0.68% 量纲不一致，在 2,700/300 规模下精度也不可信。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 统计量使用不当：Wilson CI 用于“0.68% improvement”而非比例本身，[0.62,0.74] 没有反映 4 模型/9 cell/10 seed 的分层随机效应；主表 P 的区间也未按 seed/模型报告。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 缺少利益冲突与资助声明：未披露模型厂商、计算资源、雇主或内部 “Gates/P0/Ledger” 相关产品利益；这些内部流程暗示存在机构/商业关联，却未提供 competing interests 声明。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 缺少真正可归因的对照组：仅提及 K=1,2 baseline，但未说明是否与 K≥3 使用相同任务、温度、解码参数、计算预算及 coverage-matched 设置，无法区分“更多 verifier”与“阈值/算力/投票机制”的效果。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 误用风险未加限制：选择性预测/弃权机制可被包装为“安全校准”并部署到高利害场景，但论文未说明弃权阈值不可等同于置信度、也不应作为医疗/法律/金融等高风险决策依据，存在误用与过度信任风险。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 误用风险警示不足：下界 B(K,γ) 仅由 K=3 试点数据拟合且是样本描述性构造，但摘要与正文的表述仍可能被读者误读为理论安全界限，存在被部署到医疗、金融等高风险选择性预测场景的误用风险。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 贡献 2 中的 Fisher-like 信息公式是标准统计结果：等相关变量均值方差为 σ²(ρ+(1−ρ)/K)，其倒数随 K 增加并趋于相关下界是教科书结论，称为“lemma”并声称“纠正常见直觉”明显夸大增量贡献。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 贡献与经验结果存在内部张力：P 从 K=1 的 0.08、K=2 的 0.11 升到 K=6 的 0.33，而 B 随 K 指数下降，若 P=Rsel·Cmin 增大代表可靠性下降，则“Cmin 单调非降/信息增加”并未桥接到“选择性可靠性随 K 改善”，结论被夸大或缺少关键理论连接。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 贡献列表结构不平行：第3条把 limitation（median、5–10×）写进贡献，第4条混入设计实现与 baselines，削弱 Contributions 的可读性。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 超参数管理不规范：γ 只取三个固定值，c0=0.05 是单点拟合且无置信区间，K=6 仅一个 observation；未做超参敏感性分析或校准曲线，结论对阈值选择的依赖未知。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 超参数网格过疏且构造有拟合嫌疑：K 只有 3–5（加单点 K=6），γ 只有 0.5/1.0/2.0，不足以支撑 B 中 exp(−γK/10) 的具体函数形式；c0 仅在 K=3 pilot 上拟合，却在同一批 2,700 cells 上宣称“全部超过 B”，没有留出或折外验证。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 选择性预测/verifier ensemble 的结论未讨论误用风险，尤其 P/B 仅 5–10× 且为样本描述性结果，若被当作高可靠安全保证部署于高风险决策场景，将造成过度信任和实际危害。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 配置快照缺失：未给出 temperature、top-p、量化、prompt 模板、γ 的具体措辞、verifier 投票聚合方式等关键超参数，`gamma=scale*(1+rho)` 不足以复现。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 配置快照缺失：没有 OS、GPU、框架、依赖版本、运行时长或随机库版本；仅有 “gamma=scale*(1+rho)” 公式不足以锁定环境。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: K=6 扩展 pilot 仅报告 P=0.3326 点估计，无 SE/CI，无法评估其与 B 的差异是否显著。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: K=6“observation”没有重复和 CI，不能作为 scaling 趋势证据；P/B 只给 aggregate median，未给 per-model/per-task 分布。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: P、B、ρ 均未报告标准误或聚类稳健区间，10 seeds 是否被当作独立样本不明确，可能高估精度。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: Related Work 未与 self-consistency 的规模实验、ensemble selective prediction 和 conformal/abstention 工作充分对比，因此没有真正论证与现有文献的差异。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: c0 只在 K=3 的少数 γ 水平上拟合，B 的指数函数形式缺乏理论约束，未做参数敏感性、模型选择或严格样本外验证。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: ρ≈0.3 via ICC 缺少计算公式、软件、数据范围和置信区间，ICC 估计不可复现。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: ρ≈0.3 仅是对四个本地模型样本的 ICC 估计，未证明跨模型族、任务、温度和投票规则稳定，却支撑“correlation floor”的缩放叙述，外推性不足。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “A K=6 expanded pilot (300 cells, P=0.3326) gives P=0.33” 先给精确值再冗余重复约值，且精度不一致。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “K-Verifier”在标题/摘要与正文“K-verifier ensembles”大小写不统一。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “Ledger 86 PASS entries are color-coded green”依赖视觉格式，应改为 CSV/JSON 加显式 PASS/FAIL 字段，才能被机器核对。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “P = Rsel · Cmin”中 Cmin 只标注 K，Rsel 标注 (K,γ)，但摘要说 P 随 K 和 γ 变化；若 Cmin 与 γ 无关需显式说明，否则公式依赖关系不完整。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “monotonically non-decreasing”和“increases”等单调性表述混用，应统一为“单调不减”或“递增”。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “形式化模型/定义”基本沿用 El-Yaniv & Wiener (2010) 和 Geifman & El-Yaniv (2019) 的标准 selective prediction 记号，只是重命名，未提供新的 formalism。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 只报告 P 的范围 0.14–0.26，没有分模型、分 γ、分 seed 的置信区间和方差，无法判断该范围的稳定性以及模型间差异是否来自混杂。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 实验仅覆盖 K=3–5（K=6 仅一次观测）、4 个 local models 和有限的阈值措辞，样本描述性结论外推受限；摘要中 P0/Panorama/Ledger 等不相关内容也损害论文可信度。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 小数精度不统一：P=0.3326 与 P=0.33、P=0.14–0.26、P=0.08/0.11 混用不同有效位数。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 摘要中的“local models”未给出模型名称或规模，导致结果范围无法独立解释。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 摘要公式中 Δp、σ²、Rsel、Cmin 等符号首次出现时未定义，公式无法独立理解。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 方差报告措辞不一致：“inverse variance decreases”与 I(K) 随 K 增加而增加矛盾，应统一为方差下降/逆方差上升。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 未提供依赖锁文件/容器/随机数生成器设定（如 Python、PyTorch、transformers 等版本），即使有脚本也难以稳定复现。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 正文使用“weakened”“fronted”等主观/非学术措辞，与论文语气不符。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 缺少数据/代码/补充材料的再分发许可以及 artifact 可用性声明，导致合规审查和复现核查无法确认数据是否可合法共享。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 缺少数据可用性与复现材料许可说明，附录 ledger 等若含非公开或可识别信息，在双盲期间无法安全共享。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 超参数缺少敏感性分析：γ={0.5,1.0,2.0}、ρ≈0.3、c0=0.05、指数项常数 10 均未做扰动、替代形式或置信区间检验。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 阈值机制 γ=scale*(1+ρ) 未定义清楚，且若 ρ 从同一批数据估计，γ 与 K/ρ 不独立，K×γ 网格可能内生性地影响 P/B 关系。",
+      "rounds": [
+        2
+      ]
+    }
+  ]
+}

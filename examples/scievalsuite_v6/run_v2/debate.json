@@ -1,0 +1,362 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\examples\\scievalsuite_v6\\run_v2\\r6_llm.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-25T19:13:14+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Critical",
+      "text": "- **Critical**: \"curated L1a (6 tasks, k=4) gives p=0.0026 **only under** fail-as-worst encoding\" 存在双重 post-hoc 选择偏差：(a) \"curated\" 暗示任务筛选，(b) 结果依赖特定 encoding 策略，且作者自标 \"exploratory\" 却将 p=0.0026 列为 abst"
+    },
+    {
+      "id": 2,
+      "sev": "Critical",
+      "text": "- **Critical**: \"simulated second annotator Î±=0.894\" 并非真实人间一致性，而是模拟值；将模拝 Î± 作为校准可靠性证据是循环论证，无法支撑 judge 信度效度。"
+    },
+    {
+      "id": 3,
+      "sev": "Critical",
+      "text": "- **Critical**: L1b 全部三个模型得分 0/10，零方差，无法区分\"模型无能力\"与\"基准不可解\"；positive control 仅 1/4（Chemistry_000），样本量极小且未覆盖其余 9 个任务，无法证明 pipeline 对多数任务可解。"
+    },
+    {
+      "id": 4,
+      "sev": "Critical",
+      "text": "- **Critical**: L1b 的 LLM-as-judge 在实际评分中\"made zero judge calls (all SKIP)\"，校准（21 gold、Wilson 0.28）从未在真实评分中被调用，整个 L1b 评分管线缺少有效验证；在 judge 缺席的情况下 0/10 的结果无法归因于模型能力还是评分管线故障。"
+    },
+    {
+      "id": 5,
+      "sev": "Critical",
+      "text": "- **Critical**: L2 \"no statistically detectable difference between arms\" 的断言在 N=4、n_d=0、McNemar power=0.0000 的条件下属于经典的 \"absence of evidence â  evidence of absence\" 谬误；论文将零功率下的不显著结果当作 \"两种 arm 等效\" 的实质发"
+    },
+    {
+      "id": 6,
+      "sev": "Critical",
+      "text": "- **Critical**: L2 结论\"无统计学差异\"在 N=4、n_d=0（零不一致对）、McNemar 功效=0.0000 的条件下完全无法支持\"无差异\"结论；零功效下的零结果只是\"未检测到\"，论文却将其表述为两个 arm 等效，属于经典的\"absence of evidence â  evidence of absence\"错误。"
+    },
+    {
+      "id": 7,
+      "sev": "Critical",
+      "text": "- **Critical**: LLM-as-judge 校准（21 gold, FNR=0/FPR=0）与实际评分完全脱节——实际 round \"made zero judge calls (all SKIP)\"，校准集的 FNR/FPR 为 0 不能外推到未经测试的评分场景；21 样本上 FNR=FPR=0 极可能是过拟合，没有留出 hold-out 验证集。"
+    },
+    {
+      "id": 8,
+      "sev": "Critical",
+      "text": "- **Critical**: âUnification”实质上是把三个已有 benchmark（AIRS-Bench、ResearchClawBench、GAIA2）包裹在同一个 `run.json` 契约下，核心数据/任务/环境均非自创，增量贡献接近 \"glue harness\"，与 AgentBench、ML-Bench、ScienceWorld 等已有统一 agent 评测线的差异未在"
+    },
+    {
+      "id": 9,
+      "sev": "Critical",
+      "text": "- **Critical**: 全文未报告任何 seed 管理策略；\"bootstrap at step/seed level as future work\"直言 seed 未在主实验中控制；568 calls 中的 36 次 extra trials 无 seed 可追溯，复现性声明（SHA-256 manifest）只能验证文件字节一致，无法验证采样随机性可复现。"
+    },
+    {
+      "id": 10,
+      "sev": "Critical",
+      "text": "- **Critical**: 多重检验（McNemar + Wilcoxon + Friedman + Nemenyi + curated L1a + P5 frontier + judge calibration 等）未报告家族性误差率校正（如 Bonferroni / BH-FDR），p=0.0026 在至少 6+ 次检验中的含义被严重膨胀。"
+    },
+    {
+      "id": 11,
+      "sev": "Critical",
+      "text": "- **Critical**: 引言声称科学 agent \"advancing rapidly\" 却引用 `\\citep{goodfellow2016deep}`（深度学习教科书），与科学 agent 无关；\"fragmentation\" GAP 无任何对应工作引用，GAP 的真实性未被证明，疑为堆积话术。"
+    },
+    {
+      "id": 12,
+      "sev": "Critical",
+      "text": "- Critical: \"P5 frontier muse-spark-1.2-contributor\" 命名后缀 \"-contributor\" 强烈暗示作者本人是该模型贡献者，却在双盲投稿中对其给出 6/6 的有利结果（其余模型 0/6~2/6），既涉嫌违反 TMLR 双盲匿名（身份自指暴露），又构成未披露的利益冲突，全文无 COI 声明。"
+    },
+    {
+      "id": 13,
+      "sev": "Critical",
+      "text": "- Critical: 95% CI [0,0] 因配对结果完全相同而退化为零宽度，这不是有效精度估计而是零方差的数学产物；报告它制造虚假的统计确定性。"
+    },
+    {
+      "id": 14,
+      "sev": "Critical",
+      "text": "- Critical: L2 主检验用 exact McNemar，但 discordant pairs n_d=0（零不一致对），p=1.0000 是退化解——该检验无任何区分力，将其表述为\"no statistically detectable difference\"属误导性等价声明；正确解读是\"检验无法提供信息\"，而非\"无差异\"。"
+    },
+    {
+      "id": 15,
+      "sev": "Critical",
+      "text": "- Critical: LLM-as-judge 校准在 21 gold 上 FNR=0/FPR=0，但该轮实际零 judge 调用（all SKIP）——完美指标基于零观测，宣称校准\"passed\"无效；校准仅为 methodological warrant 而非实证验证。"
+    },
+    {
+      "id": 16,
+      "sev": "Critical",
+      "text": "- Critical: LLM-as-judge 该轮\"zero judge calls (all SKIP)\"，校准仅为\"methodological warrant\"，无任何可执行证据链支撑其 FNR/FPR=0 的主张；复现者无法复跑校准。"
+    },
+    {
+      "id": 17,
+      "sev": "Critical",
+      "text": "- Critical: SHA-256 manifest 数量自相矛盾——正文称\"46-entry manifest\"，括号又写\"(165 entries with P5)\"，未说明哪个为权威快照、P5 指什么，哈希对账无法落地。"
+    },
+    {
+      "id": 18,
+      "sev": "Critical",
+      "text": "- Critical: gemma 的 intention-to-treat mean 0.355 無法由給定分量算出：無論 (0.2Ã3+0.533Ã2+0)/6=0.278、(0.2+0.533)/2=0.367、還是 (0.2Ã3+0.533Ã2)/5=0.333，均不等於 0.355；數字一致性破裂。"
+    },
+    {
+      "id": 19,
+      "sev": "Critical",
+      "text": "- Critical: p=0.0026 仅在\"fail-as-worst encoding\"下成立、其余编码不显著——在多种编码方案中选取唯一显著者为选择性报告（garden of forking paths），本质是 p-hacking；标注\"exploratory\"不消解多重分析的选择偏差。"
+    },
+    {
+      "id": 20,
+      "sev": "Critical",
+      "text": "- Critical: 三个基准 AIRS-Bench / ResearchClawBench / GAIA2 均未披露数据许可证与再分发条款，复现者无法合法获取与校验数据集。"
+    },
+    {
+      "id": 21,
+      "sev": "Minor",
+      "text": "（另有问题超出 20 条上限被截断，未参与辩论）"
+    }
+  ],
+  "rebuttals": [
+    {
+      "id": 1,
+      "action": "concede",
+      "fix": "移除摘要中p=0.0026的呈现,仅在sensitivity分析中并列报告全部encoding结果,明确标注双重post-hoc选择偏差。"
+    },
+    {
+      "id": 2,
+      "action": "concede",
+      "fix": "删除将模拟α=0.894作为校准可靠性证据的表述,明确标注为模拟值而非真实人间一致性,停止循环论证。"
+    },
+    {
+      "id": 3,
+      "action": "concede",
+      "fix": "扩展positive control至全部10个L1b任务并补充专家基线,以区分模型无能力与基准不可解。"
+    },
+    {
+      "id": 4,
+      "action": "concede",
+      "fix": "补充L1b非SKIP的judge评分实例,建立从校准到实际评分的有效证据链,明确0/10归因。"
+    },
+    {
+      "id": 5,
+      "action": "rebut",
+      "rebuttal": "论文摘要用'no statistically detectable difference'及'n_d=0<6 not-detectable'措辞,并全面披露N=4、power=0.0000、CI[0,0]degenerate,未声称'等效'。"
+    },
+    {
+      "id": 6,
+      "action": "rebut",
+      "rebuttal": "论文标注'not-detectable'并披露power=0.0000；n_d=0即配对结果完全相同为观察事实而非统计推断,论文未表述为'arm等效'结论。"
+    },
+    {
+      "id": 7,
+      "action": "concede",
+      "fix": "增设hold-out验证集,报告hold-out上FNR/FPR,避免21样本上FNR=FPR=0的过拟合。"
+    },
+    {
+      "id": 8,
+      "action": "concede",
+      "fix": "新增与AgentBench、ML-Bench、ScienceWorld的逐项对比表,明确run.json契约与统计协议的增量贡献。"
+    },
+    {
+      "id": 9,
+      "action": "concede",
+      "fix": "补充seed管理策略（固定seed列表）,将bootstrap从future work提升为主实验,记录36次extra trials的seed。"
+    },
+    {
+      "id": 10,
+      "action": "concede",
+      "fix": "对全部6+次检验应用BH-FDR校正,报告校正后p值,重新评估p=0.0026的显著性。"
+    },
+    {
+      "id": 11,
+      "action": "concede",
+      "fix": "替换goodfellow2016deep为科学agent综述引用；为fragmentation GAP补充2-3篇分段评测相关工作引用。"
+    },
+    {
+      "id": 12,
+      "action": "concede",
+      "fix": "将模型重命名为匿名标识如Model-P5,添加COI声明,披露作者与该模型的关系。"
+    },
+    {
+      "id": 13,
+      "action": "concede",
+      "fix": "移除摘要中95%CI[0,0]报告,或明确标注为零方差数学产物而非有效精度估计。"
+    },
+    {
+      "id": 14,
+      "action": "rebut",
+      "rebuttal": "论文摘要已标注'n_d=0<6 not-detectable',措辞与审稿人建议的'检验无法提供信息'一致,未声称'无差异'。"
+    },
+    {
+      "id": 15,
+      "action": "rebut",
+      "rebuttal": "论文明确'calibration is a methodological warrant'并披露'zero judge calls(all SKIP)'；校准在21 gold上有观测,非'基于零观测'。"
+    },
+    {
+      "id": 16,
+      "action": "concede",
+      "fix": "公开校准数据集与脚本,确保复现者可复跑21 gold校准并验证FNR/FPR。"
+    },
+    {
+      "id": 17,
+      "action": "concede",
+      "fix": "明确46为主实验manifest条目数、165为含P5扩展总数,定义P5含义并指定权威快照。"
+    },
+    {
+      "id": 18,
+      "action": "concede",
+      "fix": "重新核算gemma ITT mean,修正0.355为正确值(0.278),并公开逐trial分量供独立验证。"
+    },
+    {
+      "id": 19,
+      "action": "concede",
+      "fix": "在sensitivity分析中并列报告全部encoding方案的p值,停止选择性呈现唯一显著者。"
+    },
+    {
+      "id": 20,
+      "action": "concede",
+      "fix": "补充AIRS-Bench、ResearchClawBench、GAIA2各自的许可证与再分发条款。"
+    },
+    {
+      "id": 21,
+      "action": "concede",
+      "fix": "修订中纳入被截断问题,逐一回应。"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "sustained",
+      "reason": "作者concede承诺修改但论文摘要仍列p=0.0026,未落实"
+    },
+    {
+      "id": 2,
+      "disposition": "sustained",
+      "reason": "作者concede但论文仍以模拟α=0.894作校准证据,未落实"
+    },
+    {
+      "id": 3,
+      "disposition": "sustained",
+      "reason": "作者concede承诺扩展positive control但论文仍仅1/4,未落实"
+    },
+    {
+      "id": 4,
+      "disposition": "sustained",
+      "reason": "作者concede承诺补充judge实例但论文仍all SKIP,未落实"
+    },
+    {
+      "id": 5,
+      "disposition": "partial",
+      "reason": "措辞较审稿人所言更谨慎,但摘要仍将零功率结果作为发现呈现"
+    },
+    {
+      "id": 6,
+      "disposition": "partial",
+      "reason": "同#5,含not-detectable措辞部分回应,但仍作为发现呈现"
+    },
+    {
+      "id": 7,
+      "disposition": "sustained",
+      "reason": "作者concede承诺设hold-out但论文无hold-out验证集,未落实"
+    },
+    {
+      "id": 8,
+      "disposition": "sustained",
+      "reason": "作者concede承诺加对比表但论文未含,未落实"
+    },
+    {
+      "id": 9,
+      "disposition": "sustained",
+      "reason": "作者concede但论文明言bootstrap为future work,seed未控制"
+    },
+    {
+      "id": 10,
+      "disposition": "sustained",
+      "reason": "作者concede承诺BH-FDR但论文无多重校正,未落实"
+    },
+    {
+      "id": 11,
+      "disposition": "sustained",
+      "reason": "作者concede但论文仍引goodfellow2016deep,未落实"
+    },
+    {
+      "id": 12,
+      "disposition": "sustained",
+      "reason": "作者concede但论文仍显示-contributor命名及6/6结果,未落实"
+    },
+    {
+      "id": 13,
+      "disposition": "partial",
+      "reason": "论文已标注degenerate部分回应,作者承认需进一步处理"
+    },
+    {
+      "id": 14,
+      "disposition": "partial",
+      "reason": "论文含not-detectable措辞部分回应,但仍作为发现呈现"
+    },
+    {
+      "id": 15,
+      "disposition": "partial",
+      "reason": "校准确在21gold上有观测非零观测,但实际评分脱节仍在"
+    },
+    {
+      "id": 16,
+      "disposition": "sustained",
+      "reason": "作者concede承诺公开校准数据但论文未含,未落实"
+    },
+    {
+      "id": 17,
+      "disposition": "sustained",
+      "reason": "作者concede但论文仍同时列46和165未澄清,未落实"
+    },
+    {
+      "id": 18,
+      "disposition": "sustained",
+      "reason": "作者承认0.355错误应修正为0.278,论文仍显示错误值"
+    },
+    {
+      "id": 19,
+      "disposition": "sustained",
+      "reason": "作者concede但论文仍only under唯一显著编码,未落实"
+    },
+    {
+      "id": 20,
+      "disposition": "sustained",
+      "reason": "作者concede承诺补许可证但论文未含,未落实"
+    },
+    {
+      "id": 21,
+      "disposition": "sustained",
+      "reason": "仅承诺纳入被截断问题,无具体内容"
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 15,
+      "Major": 0,
+      "Minor": 1
+    },
+    "n_issues": 21,
+    "n_sustained": 16,
+    "n_withdrawn": 0,
+    "n_partial": 5,
+    "detail": "辩论后维持 Critical 15 / Major 0 （撤回 0，部分成立 5）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      1,
+      2,
+      3,
+      4,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "withdrawn_ids": []
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-27T03:21:37+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "adjudications": [
+    {
+      "kind": "friedman_p",
+      "json_path": "simulated_k4_N12",
+      "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_FINAL_FRONTIER_CURATED.json",
+      "status": "NOT_IN_PAPER",
+      "mechanical_hits": [
+        "阈值形式 p<0.05",
+        "粗精度舍入 0.04",
+        "显著性星号标记"
+      ],
+      "layer": "llm",
+      "verdict": "噪音",
+      "confidence": "high",
+      "justification": "JSON路径'simulated_k4_N12'含simulated前缀,系模拟/内部中间量。论文报告的Friedman统计量chi2=2.0/p=0.3679(16任务,df=2)及curated k=4的p=0.0026与p=0.0261(fail-as-0),均与本量chi2=8.2/df=3/p=0.042完全不符；N=12亦不匹配论文6或16任务数。机械层三个候选(阈值p<0.05/舍入0.04/星号)无法对应论文任何报告值——0.042不等于0.0026或0.0261或0.3679。该量为P5产物中模拟分支的内部中间量,无需在论文中报告。",
+      "evidence": "Cross-model Friedman on 16 paired tasks was non-significant (χ²=2.0000, p=0.3679, CD=0.8284); curated L1a (6 tasks, k=4, exploratory) gives p=0.0026",
+      "suggested_action": "无需补报；标注simulated_k4_N12为内部模拟中间量,排除出统计审计清单。",
+      "parse": "json"
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "resolved": 1,
+    "sustained": 0,
+    "llm_failed": 0,
+    "verdict": "PASS",
+    "detail": "NOT_IN_PAPER 1 条全部定性为口径换算/噪音 → 已解释"
+  }
+}

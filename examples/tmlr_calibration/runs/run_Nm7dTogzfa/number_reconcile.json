@@ -1,0 +1,458 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_Nm7dTogzfa\\extracted_text.txt",
+    "evidence_dirs": [],
+    "timestamp": "2026-08-26T07:20:33+00:00"
+  },
+  "direction_A_evidence_to_paper": {
+    "checked": 0,
+    "found_in_paper": 0,
+    "hit_rate": null,
+    "key_matches": []
+  },
+  "direction_B_paper_to_evidence": {
+    "paper_decimals": 61,
+    "supported": 0,
+    "unsupported": 61,
+    "support_rate": 0.0,
+    "noise_filtered": [
+      {
+        "token": "1.1",
+        "value": 1.1,
+        "line": 50,
+        "context": "1.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "1.1",
+        "value": 1.1,
+        "line": 55,
+        "context": "1.1.1",
+        "noise_kind": "version-fragment"
+      },
+      {
+        "token": "1.1",
+        "value": 1.1,
+        "line": 73,
+        "context": "1.1.2",
+        "noise_kind": "version-fragment"
+      },
+      {
+        "token": "1.2",
+        "value": 1.2,
+        "line": 105,
+        "context": "1.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "1.3",
+        "value": 1.3,
+        "line": 123,
+        "context": "1.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "1.4",
+        "value": 1.4,
+        "line": 130,
+        "context": "1.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.1",
+        "value": 2.1,
+        "line": 139,
+        "context": "2.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.2",
+        "value": 2.2,
+        "line": 208,
+        "context": "2.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.1",
+        "value": 3.1,
+        "line": 257,
+        "context": "3.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.2",
+        "value": 3.2,
+        "line": 340,
+        "context": "3.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.1",
+        "value": 5.1,
+        "line": 610,
+        "context": "5.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.2",
+        "value": 5.2,
+        "line": 630,
+        "context": "5.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "1610.05507",
+        "value": 1610.05507,
+        "line": 708,
+        "context": "asynchronous optimization algorithm for the parameter server. arXiv preprint arXiv:1610.05507, 2016.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "1611.08022",
+        "value": 1611.08022,
+        "line": 768,
+        "context": "incremental aggregated gradient method. arXiv preprint arXiv:1611.08022, 2016.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "69.69",
+        "value": 69.69,
+        "line": 1150,
+        "context": "69.69",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "71.75",
+        "value": 71.75,
+        "line": 1151,
+        "context": "71.75",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "73.00",
+        "value": 73.0,
+        "line": 1152,
+        "context": "73.00",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "94.98",
+        "value": 94.98,
+        "line": 1154,
+        "context": "94.98",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "94.98",
+        "value": 94.98,
+        "line": 1155,
+        "context": "94.98",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "95.15",
+        "value": 95.15,
+        "line": 1156,
+        "context": "95.15",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "76.53",
+        "value": 76.53,
+        "line": 1163,
+        "context": "76.53",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "79.14",
+        "value": 79.14,
+        "line": 1164,
+        "context": "79.14",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "79.61",
+        "value": 79.61,
+        "line": 1165,
+        "context": "79.61",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "97.49",
+        "value": 97.49,
+        "line": 1167,
+        "context": "97.49",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "97.54",
+        "value": 97.54,
+        "line": 1168,
+        "context": "97.54",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "97.58",
+        "value": 97.58,
+        "line": 1169,
+        "context": "97.58",
+        "noise_kind": "section-heading"
+      }
+    ],
+    "adjudicated": [],
+    "manual_review_list": [
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 488,
+        "context": "Assumption 4.1 (convexity and smoothness). Each function fi is convex and L-smooth, i.e., it is diff"
+      },
+      {
+        "token": "4.2",
+        "value": 4.2,
+        "line": 491,
+        "context": "Assumption 4.2 (optimal solution existence). Problem (1) has at least one optimal x⋆."
+      },
+      {
+        "token": "4.3",
+        "value": 4.3,
+        "line": 492,
+        "context": "Assumption 4.3 (bounded delay). It holds that D"
+      },
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 498,
+        "context": "Assumptions 4.1–4.3 are standard in asynchronous optimization (Aytekin et al., 2016; Wu et al., 2023"
+      },
+      {
+        "token": "4.3",
+        "value": 4.3,
+        "line": 498,
+        "context": "Assumptions 4.1–4.3 are standard in asynchronous optimization (Aytekin et al., 2016; Wu et al., 2023"
+      },
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 501,
+        "context": "((x⋆)⊤, . . . , (x⋆)⊤)⊤is a fixed point to T. Under Assumptions 4.1 – 4.2, we derive the following l"
+      },
+      {
+        "token": "4.2",
+        "value": 4.2,
+        "line": 501,
+        "context": "((x⋆)⊤, . . . , (x⋆)⊤)⊤is a fixed point to T. Under Assumptions 4.1 – 4.2, we derive the following l"
+      },
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 503,
+        "context": "Lemma 4.1. Suppose that Assumptions 4.1 – 4.2 hold. Let"
+      },
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 503,
+        "context": "Lemma 4.1. Suppose that Assumptions 4.1 – 4.2 hold. Let"
+      },
+      {
+        "token": "4.2",
+        "value": 4.2,
+        "line": 503,
+        "context": "Lemma 4.1. Suppose that Assumptions 4.1 – 4.2 hold. Let"
+      },
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 509,
+        "context": "With Lemma 4.1, we first show the boundedness of the sequence {xk}."
+      },
+      {
+        "token": "4.2",
+        "value": 4.2,
+        "line": 510,
+        "context": "Lemma 4.2. Suppose that Assumptions 4.1–4.3 hold. Let {xk} be generated by ADGM-AA with the safe-"
+      },
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 510,
+        "context": "Lemma 4.2. Suppose that Assumptions 4.1–4.3 hold. Let {xk} be generated by ADGM-AA with the safe-"
+      },
+      {
+        "token": "4.3",
+        "value": 4.3,
+        "line": 510,
+        "context": "Lemma 4.2. Suppose that Assumptions 4.1–4.3 hold. Let {xk} be generated by ADGM-AA with the safe-"
+      },
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 519,
+        "context": "Theorem 4.1. Suppose that Assumptions 4.1–4.3 hold."
+      },
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 519,
+        "context": "Theorem 4.1. Suppose that Assumptions 4.1–4.3 hold."
+      },
+      {
+        "token": "4.3",
+        "value": 4.3,
+        "line": 519,
+        "context": "Theorem 4.1. Suppose that Assumptions 4.1–4.3 hold."
+      },
+      {
+        "token": "4.4",
+        "value": 4.4,
+        "line": 530,
+        "context": "Assumption 4.4 (strong convexity). The function f is µ-strongly convex, i.e., for all x, y ∈Rd,"
+      },
+      {
+        "token": "4.4",
+        "value": 4.4,
+        "line": 533,
+        "context": "Note that Assumption 4.4 assumes the sum of the fi’s rather than all fi’s to be strongly convex."
+      },
+      {
+        "token": "4.2",
+        "value": 4.2,
+        "line": 536,
+        "context": "Theorem 4.2. Suppose that Assumption 4.4 and all the conditions in Theorem 4.1 hold."
+      },
+      {
+        "token": "4.4",
+        "value": 4.4,
+        "line": 536,
+        "context": "Theorem 4.2. Suppose that Assumption 4.4 and all the conditions in Theorem 4.1 hold."
+      },
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 536,
+        "context": "Theorem 4.2. Suppose that Assumption 4.4 and all the conditions in Theorem 4.1 hold."
+      },
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 553,
+        "context": "Corollary 4.1. Suppose that all the conditions in Theorem 4.2 hold. If ηk ≤c(k + 1)−b for some c > 0"
+      },
+      {
+        "token": "4.2",
+        "value": 4.2,
+        "line": 553,
+        "context": "Corollary 4.1. Suppose that all the conditions in Theorem 4.2 hold. If ηk ≤c(k + 1)−b for some c > 0"
+      },
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 788,
+        "context": "Proof of Lemma 4.1"
+      },
+      {
+        "token": "9.19",
+        "value": 9.19,
+        "line": 790,
+        "context": "method is a special case of the proximal gradient method. Then, applying Wright & Recht, 2022, (9.19"
+      },
+      {
+        "token": "4.2",
+        "value": 4.2,
+        "line": 793,
+        "context": "Proof of Lemma 4.2"
+      },
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 798,
+        "context": "in Lemma 4.1, we have by (24) that"
+      },
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 829,
+        "context": "Proof of Theorem 4.1"
+      },
+      {
+        "token": "4.2",
+        "value": 4.2,
+        "line": 841,
+        "context": "k+1 , then by (29), equation (31) naturally holds. Otherwise, by (29) and Lemma 4.2,"
+      },
+      {
+        "token": "4.2",
+        "value": 4.2,
+        "line": 873,
+        "context": "where the last step uses Lemma 4.2 and (19). Substituting (33) into (32) gives (31)."
+      },
+      {
+        "token": "4.3",
+        "value": 4.3,
+        "line": 882,
+        "context": "where bℓ= 2˜ηℓ(∥x0 −x⋆∥+ ηsum)(1 + αL) + (˜ηℓ)2. Fix k = t(D + 1). By Assumption 4.3, di"
+      },
+      {
+        "token": "4.2",
+        "value": 4.2,
+        "line": 1012,
+        "context": "Proof of Theorem 4.2"
+      },
+      {
+        "token": "2.2",
+        "value": 2.2,
+        "line": 1035,
+        "context": "Next, due to (26) and (41) and according to Polyak, 1987, Lemma 3, Sec 2.2, we have"
+      },
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 1041,
+        "context": "Proof of Corollary 4.1"
+      }
+    ]
+  },
+  "adjudications_state": {
+    "4.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Assumption 4.1 (convexity and smoothness). Each function fi is convex and L-smooth, i.e., it is differ-"
+    },
+    "4.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Assumption 4.2 (optimal solution existence). Problem (1) has at least one optimal x⋆."
+    },
+    "4.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Assumption 4.3 (bounded delay). It holds that D"
+    },
+    "4.4": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Assumption 4.4 (strong convexity). The function f is µ-strongly convex, i.e., for all x, y ∈Rd,"
+    },
+    "9.19": {
+      "verdict": "pending",
+      "note": "",
+      "context": "method is a special case of the proximal gradient method. Then, applying Wright & Recht, 2022, (9.19) on"
+    },
+    "2.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Next, due to (26) and (41) and according to Polyak, 1987, Lemma 3, Sec 2.2, we have"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "critical_adjudicated": 0,
+    "pending_review": 35,
+    "noise_filtered": 26,
+    "adjudicated": 0,
+    "paper_decimals": 61,
+    "evidence_absent": true,
+    "note": "manual_review_list = 未裁决且非机械噪音；裁决文件填 verdict(noise|supported|critical) 后重跑即收敛"
+  }
+}

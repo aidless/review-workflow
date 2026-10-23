@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "timestamp": "2026-08-26T04:39:42+00:00",
+    "stage": "R0",
+    "source_mode": "tex 源码模式"
+  },
+  "inputs": {
+    "name": "selfevolve_agent",
+    "tex": {
+      "path": "F:\\deepseek\\papers\\selfevolve-agent\\paper\\main.tex",
+      "size": 44525,
+      "sha256": "aa4de73caf669d7bde04b77a81f8e56b2c68b632691b6837102fbdcc28bd27f4"
+    },
+    "pdf": null,
+    "zip": {
+      "path": "F:\\deepseek\\papers\\selfevolve-agent\\submission\\submission_selfevolve_agent.zip",
+      "size": 798675,
+      "sha256": "a8f604ce0b81b80be49ce60f0317c997afdfff1063b7fa180439fe140f7954e5"
+    },
+    "evidence_dirs": [
+      {
+        "path": "F:\\deepseek\\papers\\selfevolve-agent\\results",
+        "exists": true
+      },
+      {
+        "path": "F:\\deepseek\\papers\\selfevolve-agent\\evidence",
+        "exists": true
+      }
+    ]
+  },
+  "cross_source_risk": [],
+  "problems": [],
+  "summary": {
+    "problems": 0,
+    "cross_source_risk": 0,
+    "verdict": "PASS"
+  }
+}

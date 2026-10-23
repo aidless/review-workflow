@@ -1,0 +1,558 @@
+{
+  "meta": {
+    "zip": "F:\\deepseek\\papers\\kg-retrieval\\submission\\submission_kg-retrieval.zip",
+    "tex": "F:\\deepseek\\papers\\kg-retrieval\\paper\\main.tex",
+    "timestamp": "2026-08-26T04:39:42+00:00"
+  },
+  "manifest": {
+    "source": "zip:evidence_manifest.json",
+    "declared_root": "F:\\deepseek\\papers\\kg-retrieval"
+  },
+  "entries_checked": [
+    {
+      "path": "CLAIM_LEDGER.md",
+      "status": "OK",
+      "expected_sha": "ba087442eb1370cb",
+      "actual_sha": "ba087442eb1370cb",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/G8_form_checklist.md",
+      "status": "OK",
+      "expected_sha": "14d34c368534d221",
+      "actual_sha": "14d34c368534d221",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/LITERATURE_REVIEW.md",
+      "status": "OK",
+      "expected_sha": "650e42c2c554c47b",
+      "actual_sha": "650e42c2c554c47b",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/protocol.md",
+      "status": "OK",
+      "expected_sha": "8ace077415814f90",
+      "actual_sha": "8ace077415814f90",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "gates_config.json",
+      "status": "OK",
+      "expected_sha": "429db57e95fd4542",
+      "actual_sha": "429db57e95fd4542",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "LITERATURE_REVIEW.md",
+      "status": "OK",
+      "expected_sha": "650e42c2c554c47b",
+      "actual_sha": "650e42c2c554c47b",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "main.log",
+      "status": "OK",
+      "expected_sha": "92e5e96c66e90e69",
+      "actual_sha": "92e5e96c66e90e69",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/fancyhdr.sty",
+      "status": "OK",
+      "expected_sha": "2bfd910b99e0b0d4",
+      "actual_sha": "2bfd910b99e0b0d4",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/fig_ece.png",
+      "status": "OK",
+      "expected_sha": "234e908c2f9af87c",
+      "actual_sha": "234e908c2f9af87c",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.aux",
+      "status": "OK",
+      "expected_sha": "fd4be9b306c89294",
+      "actual_sha": "fd4be9b306c89294",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.bbl",
+      "status": "OK",
+      "expected_sha": "8e5c0a8457847511",
+      "actual_sha": "8e5c0a8457847511",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.bib",
+      "status": "OK",
+      "expected_sha": "e0fa2c1bd3391e9f",
+      "actual_sha": "e0fa2c1bd3391e9f",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.blg",
+      "status": "OK",
+      "expected_sha": "69cd03299fc64a81",
+      "actual_sha": "69cd03299fc64a81",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.log",
+      "status": "OK",
+      "expected_sha": "37a8aee4cd76d506",
+      "actual_sha": "37a8aee4cd76d506",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.out",
+      "status": "OK",
+      "expected_sha": "6e43820a1454726a",
+      "actual_sha": "6e43820a1454726a",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.pdf",
+      "status": "OK",
+      "expected_sha": "4ac424a61a9b5294",
+      "actual_sha": "4ac424a61a9b5294",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.tex",
+      "status": "OK",
+      "expected_sha": "ae19f8f34520d46e",
+      "actual_sha": "ae19f8f34520d46e",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.tex.bak",
+      "status": "OK",
+      "expected_sha": "55388edc934c6106",
+      "actual_sha": "55388edc934c6106",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/math_commands.tex",
+      "status": "OK",
+      "expected_sha": "0983e802ae604694",
+      "actual_sha": "0983e802ae604694",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/tmlr.bst",
+      "status": "OK",
+      "expected_sha": "ded3dbf610d9db32",
+      "actual_sha": "ded3dbf610d9db32",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/tmlr.sty",
+      "status": "OK",
+      "expected_sha": "a067e8286a3cf8e3",
+      "actual_sha": "a067e8286a3cf8e3",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "requirements.txt",
+      "status": "OK",
+      "expected_sha": "3cb92a4a837af1a1",
+      "actual_sha": "3cb92a4a837af1a1",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/ablation_stats.json",
+      "status": "OK",
+      "expected_sha": "10d037dea17e5e38",
+      "actual_sha": "10d037dea17e5e38",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/ablation_v8.json",
+      "status": "OK",
+      "expected_sha": "5aa1637de2029212",
+      "actual_sha": "5aa1637de2029212",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/true_5seeds.json",
+      "status": "OK",
+      "expected_sha": "5efe2ca06c9d7db2",
+      "actual_sha": "5efe2ca06c9d7db2",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/true_ablation_v8.json",
+      "status": "OK",
+      "expected_sha": "8825cddee24b15d7",
+      "actual_sha": "8825cddee24b15d7",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "ROUND_R0.md",
+      "status": "MISSING",
+      "expected_sha": "8f4085ef3d1e17bf"
+    },
+    {
+      "path": "scripts/analysis.py",
+      "status": "OK",
+      "expected_sha": "3fb8e225ef48c34a",
+      "actual_sha": "3fb8e225ef48c34a",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/build_evidence_manifest.py",
+      "status": "OK",
+      "expected_sha": "4df531c6b8c76fbf",
+      "actual_sha": "4df531c6b8c76fbf",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_consistency.py",
+      "status": "OK",
+      "expected_sha": "84e44de793f3860c",
+      "actual_sha": "84e44de793f3860c",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_judge_calibration.py",
+      "status": "OK",
+      "expected_sha": "f801b991dcf66751",
+      "actual_sha": "f801b991dcf66751",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_literature_freshness.py",
+      "status": "OK",
+      "expected_sha": "53a2dd475bf4a128",
+      "actual_sha": "53a2dd475bf4a128",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_submission_package.py",
+      "status": "OK",
+      "expected_sha": "88804cfcb98258cb",
+      "actual_sha": "88804cfcb98258cb",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_submit_ready.py",
+      "status": "OK",
+      "expected_sha": "aebbea9faac17518",
+      "actual_sha": "aebbea9faac17518",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_tmlr_compliance.py",
+      "status": "OK",
+      "expected_sha": "1990b93aa18932d5",
+      "actual_sha": "1990b93aa18932d5",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_writing_style.py",
+      "status": "OK",
+      "expected_sha": "a5971967cd347db3",
+      "actual_sha": "a5971967cd347db3",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/compile_gate.py",
+      "status": "OK",
+      "expected_sha": "c2c438b824bda7d4",
+      "actual_sha": "c2c438b824bda7d4",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/draft_rebuttal.py",
+      "status": "OK",
+      "expected_sha": "01695879e866316c",
+      "actual_sha": "01695879e866316c",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/gate_citations.py",
+      "status": "OK",
+      "expected_sha": "eb28f658fada5722",
+      "actual_sha": "eb28f658fada5722",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/log_writing_session.py",
+      "status": "OK",
+      "expected_sha": "b7c5efa313f2f125",
+      "actual_sha": "b7c5efa313f2f125",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/make_camera_ready.py",
+      "status": "OK",
+      "expected_sha": "43abbd33bd71f0ce",
+      "actual_sha": "43abbd33bd71f0ce",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/make_ece_fig.py",
+      "status": "OK",
+      "expected_sha": "226d63435eed22d8",
+      "actual_sha": "226d63435eed22d8",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/make_run_record.py",
+      "status": "OK",
+      "expected_sha": "6661f41f82a011d6",
+      "actual_sha": "6661f41f82a011d6",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/power_analysis.py",
+      "status": "OK",
+      "expected_sha": "1ef9f2944d11728c",
+      "actual_sha": "1ef9f2944d11728c",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/prepare_submission.py",
+      "status": "OK",
+      "expected_sha": "2f13827a872d615f",
+      "actual_sha": "2f13827a872d615f",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/release.py",
+      "status": "OK",
+      "expected_sha": "e78666a27b2c3595",
+      "actual_sha": "e78666a27b2c3595",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/run_5seeds.py",
+      "status": "OK",
+      "expected_sha": "9d8869ae6b70d332",
+      "actual_sha": "9d8869ae6b70d332",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/run_ablation.py",
+      "status": "OK",
+      "expected_sha": "704473346374cb05",
+      "actual_sha": "704473346374cb05",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/run_acceptance_gates.py",
+      "status": "OK",
+      "expected_sha": "49db466cfbd26416",
+      "actual_sha": "49db466cfbd26416",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/run_experiment_plan.py",
+      "status": "OK",
+      "expected_sha": "ef750770273e058a",
+      "actual_sha": "ef750770273e058a",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/run_true_ablation.py",
+      "status": "OK",
+      "expected_sha": "c3116a8ac27999be",
+      "actual_sha": "c3116a8ac27999be",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/scan_figure_claims.py",
+      "status": "OK",
+      "expected_sha": "d082a0548d1bfad5",
+      "actual_sha": "d082a0548d1bfad5",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/scan_hallucination.py",
+      "status": "OK",
+      "expected_sha": "bef3790555f0f836",
+      "actual_sha": "bef3790555f0f836",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/scan_number_consistency.py",
+      "status": "OK",
+      "expected_sha": "59eae01a13cb1d95",
+      "actual_sha": "59eae01a13cb1d95",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/scan_stats_consistency.py",
+      "status": "OK",
+      "expected_sha": "a77acb97d6b7968a",
+      "actual_sha": "a77acb97d6b7968a",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/scanner_regression.py",
+      "status": "OK",
+      "expected_sha": "8a8b43cc423c60af",
+      "actual_sha": "8a8b43cc423c60af",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/seal_run.py",
+      "status": "OK",
+      "expected_sha": "8190882ec3e73e75",
+      "actual_sha": "8190882ec3e73e75",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/stats.py",
+      "status": "OK",
+      "expected_sha": "909f174aa46bdf6e",
+      "actual_sha": "909f174aa46bdf6e",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/suggest_experiments.py",
+      "status": "OK",
+      "expected_sha": "cc7c13cd760d0e80",
+      "actual_sha": "cc7c13cd760d0e80",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/switch_project.py",
+      "status": "OK",
+      "expected_sha": "5620a54363004cb2",
+      "actual_sha": "5620a54363004cb2",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/test_evidence_protection.py",
+      "status": "OK",
+      "expected_sha": "fe8a166406978cb0",
+      "actual_sha": "fe8a166406978cb0",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/test_pyramid.py",
+      "status": "OK",
+      "expected_sha": "0d779fa5724ced62",
+      "actual_sha": "0d779fa5724ced62",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/validate_judge_output.py",
+      "status": "OK",
+      "expected_sha": "10a40efe3f5bb4e1",
+      "actual_sha": "10a40efe3f5bb4e1",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/verify_claim_ledger.py",
+      "status": "MISSING",
+      "expected_sha": "94244862521b86c9"
+    },
+    {
+      "path": "scripts/verify_labels.py",
+      "status": "MISSING",
+      "expected_sha": "ea643cff3383121f"
+    },
+    {
+      "path": "scripts/verify_taint.py",
+      "status": "MISSING",
+      "expected_sha": "d6e063f72358299f"
+    },
+    {
+      "path": "scripts/verify_tree_diff.py",
+      "status": "MISSING",
+      "expected_sha": "ae8335e62951c054"
+    },
+    {
+      "path": "STATE_SNAPSHOT.md",
+      "status": "OK",
+      "expected_sha": "3d8ff294d2801edd",
+      "actual_sha": "3d8ff294d2801edd",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "WORKING_NOTES.md",
+      "status": "OK",
+      "expected_sha": "a380d864826a708f",
+      "actual_sha": "a380d864826a708f",
+      "ok_sha": true,
+      "ok_size": true
+    }
+  ],
+  "tex_claims": [],
+  "summary": {
+    "manifest_entries": 69,
+    "ok": 64,
+    "hash_mismatch": 0,
+    "missing": 5,
+    "verdict": "CRITICAL"
+  }
+}

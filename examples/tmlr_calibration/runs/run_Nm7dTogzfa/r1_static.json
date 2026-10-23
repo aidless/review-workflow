@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "timestamp": "2026-08-26T06:48:55+00:00",
+    "stage": "R1",
+    "pdf_mode": true
+  },
+  "sections_found": [
+    "abstract",
+    "introduction",
+    "related",
+    "method",
+    "results",
+    "discussion",
+    "conclusion"
+  ],
+  "missing_sections": [
+    "limitations"
+  ],
+  "placeholders": [],
+  "abstract_words": null,
+  "unbalanced_envs": [],
+  "summary": {
+    "verdict": "MAJOR",
+    "warns": [
+      "章节缺失 ['limitations']",
+      "未找到 abstract（PDF 提取文本）"
+    ]
+  }
+}

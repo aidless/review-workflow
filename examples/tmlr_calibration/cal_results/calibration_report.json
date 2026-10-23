@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "log": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\cal_results\\calibrations.json",
+    "entries": 6,
+    "timestamp": "2026-08-26T07:41:46+00:00"
+  },
+  "metrics": {
+    "pairs": 6,
+    "bias": 1.67,
+    "mae": 1.67,
+    "correlation": null,
+    "corr_kind": null,
+    "warning": "suggested 或 human 为常数（无区分度）——相关性不可计算；PDF-only 模式下 min 维度评分塌缩是已知边界",
+    "per_pair": [
+      {
+        "paper": "3i2ZRk8GDN",
+        "suggested": 6,
+        "human": 8,
+        "diff": 2
+      },
+      {
+        "paper": "e0pSqIqwXO",
+        "suggested": 6,
+        "human": 8,
+        "diff": 2
+      },
+      {
+        "paper": "cjU3YbcRr8",
+        "suggested": 6,
+        "human": 7,
+        "diff": 1
+      },
+      {
+        "paper": "Nm7dTogzfa",
+        "suggested": 6,
+        "human": 8,
+        "diff": 2
+      },
+      {
+        "paper": "TupiNRpgHw",
+        "suggested": 6,
+        "human": 8,
+        "diff": 2
+      },
+      {
+        "paper": "JQA0EfQIfj",
+        "suggested": 6,
+        "human": 7,
+        "diff": 1
+      }
+    ]
+  },
+  "gate_consistency": {
+    "matrix": {
+      "WARN": {
+        "accept": 4,
+        "weak_accept": 2
+      }
+    },
+    "consistent": 6,
+    "total": 6,
+    "rate": 1.0
+  },
+  "rank_consistency": {
+    "n": 6,
+    "suggested_vs_yesrate": {
+      "n": 6,
+      "spearman": null,
+      "p": null,
+      "warning": "suggested 为常数（无区分度）——min 维度评分在该模式下塌缩，排序校准不可用；请用 PRISM min 或带证据包的完整跑"
+    },
+    "prism_vs_yesrate": {
+      "n": 6,
+      "spearman": 0.853,
+      "p": 0.0309
+    },
+    "prism_mean_vs_yesrate": {
+      "n": 6,
+      "spearman": 0.875,
+      "p": 0.0223
+    },
+    "prism_dims_vs_yesrate": {
+      "P": {
+        "n": 6,
+        "spearman": -0.261,
+        "p": 0.6172
+      },
+      "R": {
+        "n": 6,
+        "spearman": 0.89,
+        "p": 0.0175
+      },
+      "I": {
+        "n": 6,
+        "spearman": -0.101,
+        "p": 0.8498
+      },
+      "S": {
+        "n": 6,
+        "spearman": 0.696,
+        "p": 0.1243
+      }
+    },
+    "issue_counts_vs_yesrate": {
+      "stable_C": {
+        "n": 6,
+        "spearman": -0.03,
+        "p": 0.9552
+      },
+      "stable_M": {
+        "n": 6,
+        "spearman": 0.094,
+        "p": 0.8597
+      },
+      "sust_C": {
+        "n": 6,
+        "spearman": -0.029,
+        "p": 0.9559
+      },
+      "sust_M": {
+        "n": 6,
+        "spearman": 0.0,
+        "p": 1.0
+      }
+    },
+    "warning": null
+  },
+  "tmlr_entries": 6
+}

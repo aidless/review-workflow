@@ -1,0 +1,1375 @@
+Published in Transactions on Machine Learning Research (07/2026)
+Anderson Accelerated Asynchronous Method for Distributed
+Optimization
+Cong Li
+licong@sustech.edu.cn
+Southern University of Science and Technology
+Xuyang Wu†
+wuxy6@sustech.edu.cn
+Southern University of Science and Technology
+Reviewed on OpenReview: https: // openreview. net/ forum? id= Nm7dTogzfa
+Abstract
+Anderson acceleration (AA) is an effective technique for accelerating fixed-point iterations,
+but it is rarely applied to distributed optimization. In this paper, we apply AA to accelerate
+an asynchronous distributed gradient method over the master-worker architecture, resulting
+in the Asynchronous Distributed Gradient Method with Anderson Acceleration (ADGM-
+AA). In particular, we first transform the asynchronous gradient method into a fixed-point
+iteration, and then incorporate it with AA. To ensure the global convergence of ADGM-AA,
+we equip it with a novel reference-path-based safe-guard scheme. We prove that under mild
+conditions, ADGM-AA converges with fixed step-sizes that are independent of the delays.
+Compared with the delay-dependent step-size in most existing works, our delay-free step-
+size is easier to determine and often leads to faster convergence. Numerical experiments on
+convex classification tasks show that ADGM-AA improves both iteration-count and wall-
+clock-time convergence over the baselines in most test examples, while achieving comparable
+performance in the remaining cases.
+Introduction
+This paper focuses on consensus optimization over the master-worker architecture, where one master and n
+workers collaborate to solve
+min
+x∈Rd f(x) = 1
+n
+n
+i=1
+fi(x).
+(1)
+In problem (1), each fi : Rd →R is a local objective function and is known only by worker i. Problem (1) is
+popular in distributed learning, where each fi represents a training loss, each worker is a set of GPUs, and
+multiple GPUs collaborate to train a model.
+To scalably solve problem (1), numerous distributed optimization methods are proposed, in which the work-
+ers are responsible for most computations, and the master aggregates the computation results from the
+workers to update the iterate. A critical design choice in distributed methods is the coordination mecha-
+nism, leading to two categories of algorithms: synchronous and asynchronous. In synchronous settings, the
+master and workers must coordinate at each iteration to ensure all workers compute based on a consistent
+global iterate, which, however, often leads to significant idle time as faster workers wait for stragglers. In
+contrast, asynchronous algorithms allow the master and workers to proceed independently and update pa-
+rameters using potentially stale information, which enhances scalability and resource efficiency but usually
+complicates convergence analysis.
+†Corresponding author.
+
+Published in Transactions on Machine Learning Research (07/2026)
+1.1
+Related work
+In this work, we adapt Anderson acceleration to accelerate an asynchronous distributed optimization method.
+Consequently, our literature survey focuses on works on Anderson acceleration and asynchronous distributed
+optimization methods.
+1.1.1
+Anderson acceleration
+Anderson acceleration (AA) is a technique for accelerating fixed-point iterations with historical information,
+and was first proposed by Donald G. Anderson to solve nonlinear integral equations in 1965 (Anderson,
+1965). Later, AA is shown to have a quasi-Newton explanation and reduces to the GMRES method (Saad
+& Schultz, 1986) for solving linear equations (Walker & Ni, 2011). Due to its effectiveness, AA is applied
+to many research areas such as computational physics (Eyert, 1996), material sciences (Pulay, 1980), and
+computational chemistry (Pulay, 1982). Although most optimization methods can be formulated into a
+fixed-point iteration, the application of AA to optimization has occurred only in recent years (Bertrand &
+Massias, 2021; Li & Li, 2020; Liu et al., 2024; Mai & Johansson, 2020; Ouyang et al., 2020; Scieur et al.,
+2016). Specifically, the work (Bertrand & Massias, 2021) adapts AA to the coordinate descent method,
+the works (Li & Li, 2020; Mai & Johansson, 2020; Liu et al., 2024) apply AA to the proximal gradient
+method, the work (Li & Li, 2020) first incorporates AA with Chebyshev polynomials and then applies the
+resulting technique to the gradient descent method, the work (Liu et al., 2024) uses AA to accelerate an
+energy-adaptive gradient method, and the work (Ouyang et al., 2020) applies AA to the alternating direction
+method of multipliers (ADMM).
+Despite the rich literature on AA, existing works only focus on centralized optimization, and the application
+of AA to distributed optimization remains unexplored.
+1.1.2
+Asynchronous distributed optimization
+Due to the excellent scalability and high resource usage efficiency, asynchronous distributed optimization
+methods have attracted considerable interest, especially in the machine learning community (Aytekin et al.,
+2016; Cederberg et al., 2025; Chraibi et al., 2024; Liu et al., 2014; Mishchenko et al., 2018; Wu et al., 2023;
+2022; Zhang & Kwok, 2014).
+These methods can be further categorized based on their communication
+topology: they either follow a master-worker architecture or operate over a decentralized network. Below,
+we survey works that consider problem (1) over the master-worker architecture, which is more closely related
+to this paper.
+For asynchronous optimization methods over the master-worker architecture, a large body of works con-
+sider deterministic-gradient algorithms such as the asynchronous (proximal) incremental aggregated gra-
+dient (Aytekin et al., 2016; Feyzmahdavian & Johansson, 2023; Sun et al., 2019; Vanli et al., 2016), the
+asynchronous coordinate descent method (Liu et al., 2014; Wu et al., 2023; 2022), the asynchronous bundle
+methods (Cederberg et al., 2025), and the asynchronous alternating direction method of multipliers (Zhang
+& Kwok, 2014). In parallel, substantial progress has been made in stochastic optimization, such as the asyn-
+chronous stochastic gradient descent method (Leblond et al., 2017; Ma et al., 2023; Recht et al., 2011; Zhao
+& Li, 2016). Due to the asynchronous implementation, information used in the updates is usually delayed.
+To guarantee the convergence, most existing asynchronous distributed optimization methods (Aytekin et al.,
+2016; Cederberg et al., 2025; Feyzmahdavian et al., 2014; Feyzmahdavian & Johansson, 2023; Liu et al., 2014;
+Vanli et al., 2016; Sun et al., 2019; Zhang & Kwok, 2014) assume that delays are bounded and require the
+algorithm step-size to rely on and decrease with the delay bound, which often leads to overly small step-sizes
+and slow convergence due to the usually large upper bound of delays. For example, the work (Mishchenko
+et al., 2018) implements an asynchronous distributed gradient method over a master-worker architecture
+with 40 nodes and reports the maximum delay of over 1200. Exceptions include some works (Chraibi et al.,
+2024; Mishchenko et al., 2018; Wu et al., 2023; Cederberg et al., 2025), which converge with fixed step-sizes
+independent of the delays. More precisely, the seminal work (Mishchenko et al., 2018) proposes an asyn-
+chronous proximal gradient algorithm called DAve-RPG, which inspires the remaining methods, including
+an asynchronous proximal bundle method (Cederberg et al., 2025), a Bregman variant of the DAve-RPG
+method (Chraibi et al., 2024), and an asynchronous coordinate update method (Wu et al., 2023).
+
+Published in Transactions on Machine Learning Research (07/2026)
+1.2
+Contribution
+We aim to apply the effective AA technique to distributed optimization. In particular, since DAve-RPG
+converges with fixed delay-independent step-sizes and inspires a series of subsequent works, we choose to
+accelerate its variant for smooth problems (DAve-G) with AA. The algorithm development faces two primary
+challenges: first, the straightforward application of AA to DAve-G cannot be implemented in a distributed
+way; second, to guarantee the global convergence, we need to design a safe-guard scheme, while it is partic-
+ularly challenging in the asynchronous and distributed setting.
+Despite the aforementioned challenges, we incorporate AA into DAve-G in a novel way, which gives an Asyn-
+chronous Distributed Gradient Method with Anderson Acceleration (ADGM-AA). Our main contributions
+include
+1) We rewrite DAve-G as a fixed-point iteration in a novel way and follow the idea of AA (rather than
+directly using it) to accelerate the fixed-point iteration, which allows the resulting algorithm to be
+implemented in an asynchronous and distributed way.
+2) We propose a novel reference-path-based safe-guard scheme that is distributively implementable.
+3) We theoretically prove the convergence of ADGM-AA with the safe-guard scheme and fixed step-sizes
+independent of delays.
+The effectiveness of ADGM-AA is demonstrated numerically via classification tasks with real-world datasets.
+1.3
+Outline
+The remaining part of this paper is organized as follows. Section 2 introduces Anderson acceleration and the
+asynchronous distributed method DAve-G. Section 3 develops ADGM-AA by integrating Anderson accelera-
+tion with DAve-G, and designs a reference-path-based safe-guard scheme to guarantee the global convergence
+of the proposed method. Section 4 analyses the convergence of ADGM-AA, and Section 5 presents our nu-
+merical experimental results. Finally, Section 6 concludes the paper.
+1.4
+Notation
+Throughout this paper, we use ∥· ∥to denote the Euclidean norm for vectors and the spectral norm for
+matrices. For any closed convex set C, PC(·) is the projection operator onto C. We use 1 to represent the
+all-one vector and 0 the all-zero vector. For any nonnegative integer m, we define
+[m] = {0, 1, . . . , m −1}.
+Preliminaries: Anderson acceleration and DAve-G
+In this section, we introduce Anderson acceleration (AA) and the asynchronous method DAve-G for solving
+problem (1), which inspires our algorithm development in Section 3.
+2.1
+Anderson acceleration
+AA is a technique for accelerating fixed-point iterations of the following form
+xk+1 = T(xk)
+(2)
+where T : Rd →Rd is an operator. The update (2) solves the fixed point of T and describes many algorithms
+in optimization, such as steepest descent (Li & Li, 2020), and ADMM (Ouyang et al., 2020).
+The vanilla AA consists of three steps. First, it considers an intermediate iterate of the following form
+xk+ 1
+2 =
+m−1
+t=0
+γt,kxk−t,
+
+Published in Transactions on Machine Learning Research (07/2026)
+where m ≥1 is a positive integer, and γt,k are real numbers satisfying
+m−1
+t=0
+γt,k = 1.
+Second, AA chooses the coefficient vector to minimize an approximation of the fixed-point residual norm
+∥T(xk+ 1
+2 ) −xk+ 1
+2 ∥, where T(xk+ 1
+2 ) −xk+ 1
+2 is the residual at the intermediate point xk+ 1
+2 . In particular, for
+any k ≥0, define rk = T(xk) −xk,
+Rk = (rk, rk−1, . . . , rk−m+1) ∈Rd×m.
+(3)
+For a candidate coefficient vector Γ = (γ0, γ1, . . . , γm−1)⊤, the residual can be approximated as
+ m−1
+t=0
+γtxk−t
+!
+−
+m−1
+t=0
+γtxk−t ≈
+m−1
+t=0
+γt(T(xk−t) −xk−t) = RkΓ,
+(4)
+and AA obtains the step-k coefficient vector Γk = (γ0,k, γ1,k, . . . , γm−1,k)⊤by solving
+Γk ∈arg minΓ∈Rm:Γ⊤1=1 ∥RkΓ∥.
+(5)
+Note that when T is affine, the approximation in (4) holds with equality. Finally, AA approximates T(xk+ 1
+2 )
+to improve the quality of xk+ 1
+2 :
+xk+1 =
+m−1
+t=0
+γt,k T(xk−t),
+(6)
+which uses the approximation
+T(xk+ 1
+2 ) = T(
+m−1
+t=0
+γt,kxk−t) ≈
+m−1
+t=0
+γt,k T(xk−t).
+(7)
+Similar to (4), the approximation in (7) holds with equality when T is affine.
+For affine T, AA could converge globally from an arbitrary initial point (Potra & Engler, 2013; Toth &
+Kelley, 2015; Walker & Ni, 2011). However, for non-affine T, due to the error arising in the approximations
+(4) and (7), AA could diverge unless the initial point is sufficiently close to the fixed point (Mai & Johansson,
+2020). To guarantee global convergence of AA, additional safe-guard schemes are often required.
+2.2
+DAve-G
+DAve-G is an asynchronous distributed gradient method for solving problem (1) over the master-worker
+architecture (Mishchenko et al., 2018). The corresponding synchronous gradient method takes the form
+xk+1 = xk −α
+n
+n
+i=1
+∇fi(xk),
+(8)
+which is mathematically equivalent to the centralized steepest descent method1. To perform (8), at each
+iteration k, each worker i computes the gradient ∇fi(xk) and submits it to the master, and the master
+aggregates the gradients from all workers to update xk. In this synchronous implementation, fast workers
+need to wait for slow workers, which causes low efficiency of computing resource usage.
+As an asynchronous variant of (8), DAve-G updates as
+xk+1 = 1
+n
+n
+i=1
+(ˆxi
+k −αgi
+k),
+(9)
+1DAve-G allows for multiple inner-loop iterations, and here we only consider its single-inner-loop version.
+
+Published in Transactions on Machine Learning Research (07/2026)
+where ˆxi
+k = xk−di
+k and gi
+k = ∇fi(ˆxi
+k) for a non-negative integer di
+k ∈[0, k] (referred to as delays).
+If
+worker i does not send new information before the kth update, the master uses the latest stored copy of
+ˆxi
+k −αgi
+k for that worker. In the implementation of DAve-G, the master keeps the current iterate x (we
+ignore the iteration index for simplicity). Each worker i repeatedly receives x from the master, computes
+yi = x −α∇fi(x), and sends it to the master. After the master receives yi from some (one or more) workers
+i, it performs x+ = 1
+n
+nP
+i=1
+yi, where, for each worker i, yi is the most recent yi the master received from it.
+This asynchronous update way causes higher computation resource usage than the synchronous method (8),
+but causes delays in the update.
+Algorithm development
+This section applies AA to accelerate DAve-G. To this end, we first adapt the vanilla AA to DAve-G, and
+then design a novel reference-path-based safe-guard scheme to guarantee its global convergence.
+3.1
+Asynchronous distributed gradient method with Anderson acceleration
+To apply AA to DAve-G, we need to rewrite (9) into a fixed-point iteration, which is not straightforward
+since the left-hand side is of d-dimension and the right-hand side involves n iterates of dimension d. To
+address this issue, we rewrite problem (1) as
+min F(x) =
+n
+i=1
+fi(xi)
+(10)
+s. t. x ∈C
+where each xi ∈Rd, x = ((x1)⊤, . . . , (xn)⊤)⊤∈Rnd and C = {x | x1 = x2 = ... = xn}. Then, (9) can be
+viewed as a projected steepest descent step for solving problem (10): letting xk+1 = ((xk+1)⊤, . . . , (xk+1)⊤)⊤
+where xk+1 is computed from (9), we have
+xk+1 = PC(ˆxk −α∇F(ˆxk)),
+(11)
+where ˆxk = ((ˆx1
+k)⊤, . . . , (ˆxn
+k)⊤)⊤, ˆxi
+k = xk−di
+k (i = 1, 2, . . . , n) and PC(·) represents the projection operation
+onto C.
+The update (11) is equivalent to the asynchronous fixed-point iteration
+xk+1 = T(ˆxk),
+(12)
+where T(x) = PC(x −α∇F(x)). It is easy to verify that the fixed-point set of T coincides with the solution
+set of problem (10); hence, when x⋆= ((x⋆)⊤, . . . , (x⋆)⊤)⊤satisfies x⋆= T(x⋆), the corresponding x⋆is
+an optimal solution of problem (1).
+Compared to the centralized update (2), (12) incorporates delayed
+information due to the asynchronous implementation.
+Given the asynchronous fixed-point update (12), we are ready to incorporate AA with DAve-G. Fix m > 0
+as an integer. For any k ≥0, define
+rk = T(ˆxk) −ˆxk, Rk = (rk, . . . , rk−m+1),
+(13)
+where each rk measures the optimality residual at ˆxk. Following (4) – (6), we consider a combination of
+{ˆxt}k
+t=k−m+1:
+xk+ 1
+2 =
+m−1
+t=0
+γt,kˆxk−t,
+(14)
+and minimize an approximate optimality residual at xk+ 1
+2 to determine γt,k: define Γk = (γ0,k, . . . , γm−1,k)⊤
+and solve
+Γk ∈arg minΓ∈Rm:Γ⊤1=1 ∥RkΓ∥.
+(15)
+
+Published in Transactions on Machine Learning Research (07/2026)
+Finally, we set
+xAA
+k+1 =
+m−1
+t=0
+γt,k T(ˆxk−t),
+(16)
+which approximates T(xk+ 1
+2 ). Although the resulting iterate xAA
+k+1 is of the dimension nd, we can reduce its
+dimension to d. To see this, note that xAA
+k+1 belongs to the set C so that all its elements are identical. Then,
+we set
+xAA
+k+1 = 1
+n
+m−1
+t=0
+γt,k
+n
+i=1
+(ˆxi
+k−t −αgi
+k−t),
+(17)
+which equals any element of xAA
+k+1. In addition, m is often replaced with mk = min{m, k} in AA.
+Setting xk+1 = xAA
+k+1 applies AA to DAve-G, and we refer to the resulting algorithm as the Asynchronous
+Distributed Gradient Method with Anderson Acceleration (ADGM-AA). Unlike centralized AA, in the asyn-
+chronous setting, the gradients ∇fi from different workers are evaluated at different delayed points. There-
+fore, the derivations (13)–(16) are based on the delayed stacked iterates {ˆxk−t}m−1
+t=0 , with k fixed.
+3.2
+A reference-path-based safe-guard scheme
+Even in the centralized setting, steepest descent with AA does not converge globally for non-linear operators,
+where a counterexample is provided in Mai & Johansson (2020). To guarantee global convergence of ADGM-
+AA for non-affine operators, we equip it with a safe-guard scheme. To do so, a straightforward idea is to
+check whether the AA step yields a decreasing objective value, i.e.,
+f(xk+1) −f(xk) ≤−Ck
+(18)
+for some Ck ≥0. If it holds, then perform the AA step xk+1 = xAA
+k+1, otherwise, execute the DAve-G step
+xk+1 = xDAve
+k+1 where xDAve
+k+1 is the left-hand side of (9). However, the condition (18) cannot be checked in a
+distributed way since the master in general does not have fi’s.
+Alternatively, we come up with the following idea: since DAve-G is guaranteed to converge without any
+safe-guard schemes, as long as the outcomes of the AA-step and the DAve-G step are sufficiently close, the
+convergence of ADGM-AA may be guaranteed. Inspired by this, we treat the sequence generated by DAve-G
+as a reference path, and restrict the iterate to be close enough to the reference path. Specifically, at each
+iteration, we check the following condition:
+∥xAA
+k+1 −xDAve
+k+1 ∥≤ηk
+(19)
+where ηk ≥0. If (19) holds, then xk+1 = xAA
+k+1. Otherwise, we set xk+1 = xDAve
+k+1 .
+Define
+˜ηk =
+(
+ηk,
+xk+1 = xAA
+k+1,
+0,
+otherwise.
+(20)
+It follows that
+∥xk+1 −xDAve
+k+1 ∥≤˜ηk,
+(21)
+and we require ˜ηk to be summable to restrict the distance between xk+1 and the reference path:
+∞
+k=0
+˜ηk < +∞.
+(22)
+The condition (22) can be easily satisfied by, e.g.,
+ηk = c(k + 1)−(1+ϵ),
+(23)
+where c > 0 and ϵ > 0.
+Compared to (18), the safe-guard condition(19) with ηk in (23) is much simpler and can be verified in
+a distributed way. A detailed implementation of ADGM-AA with the safe-guard scheme is presented in
+Algorithms 1–2. In the master process below, Sk denotes the set of workers from which the master receives
+new gradient messages at the kth update and is not fixed in advance.
+
+Published in Transactions on Machine Learning Research (07/2026)
+Algorithm 1 Master process in ADGM-AA
+Input: storage size m ≥1, initial iterate x0, safe-guard parameters c > 0, ϵ > 0.
+Output: xk.
+1: Send (x0, 0) to all workers.
+2: Receive (∇fi(x0), 0) from each worker i and set ˆxi
+0 = x0, gi
+0 = ∇fi(x0).
+3: Compute x1 by (9), and then send (x1, 1) to all workers.
+4: Set k = 1 and r0 = ((x1 −x0)⊤, . . . , (x1 −x0)⊤)⊤.
+5: while not converge do
+6:
+wait until receives {(∇fi(xti), ti)}i∈Sk from a set Sk of workers.
+7:
+for i = 1, . . . , n do
+8:
+if i ∈Sk then
+9:
+Set (ˆxi
+k, gi
+k) = (xti, ∇fi(xti)).
+10:
+else
+11:
+Set (ˆxi
+k, gi
+k) = (ˆxi
+k−1, gi
+k−1).
+12:
+end if
+13:
+end for
+14:
+Compute xDAve
+k+1 by (9).
+15:
+Set rk = ((xDAve
+k+1 −ˆx1
+k)⊤, . . . , (xDAve
+k+1 −ˆxn
+k)⊤)⊤and mk ←min{m, k}.
+16:
+Compute Γk by (15).
+17:
+Compute xAA
+k+1 by (17).
+18:
+if the safe-guard condition (19) holds then
+19:
+xk+1 ←xAA
+k+1.
+20:
+else
+21:
+xk+1 ←xDAve
+k+1 .
+22:
+end if
+23:
+k ←k + 1.
+24:
+Send (xk, k) to workers i ∈Sk.
+25: end while
+Algorithm 2 Worker i process in ADGM-AA
+1: repeat
+2:
+Receive (x, k) from the master.
+3:
+Compute gradient ∇fi(x).
+4:
+Send (∇fi(x), k) to the master.
+5: until terminated by the master.
+Computation, communication, and memory costs.
+ADGM-AA follows the same master-worker com-
+munication pattern as DAve-G. At the kth master update, each worker in Sk sends a d-dimensional gradient
+vector together with its iteration index to the master, and the master sends a d-dimensional iterate together
+with its iteration index back to these workers. Hence, the per-worker memory and communication cost
+remains O(d + 1). Since the AA step is performed entirely at the master, ADGM-AA incurs essentially
+no additional worker-side computation compared with DAve-G; the only extra worker-side requirement is
+storing and communicating a scalar iteration index.
+The additional overhead of ADGM-AA comes from the master-side AA step, whose dominant cost is solving
+problem (15). Let mk = min{m, k}. Following the QR-based AA implementation in (Mai & Johansson,
+2020), solving (15) costs at most O(m2
+k + ndmk) per iteration, while the corresponding memory cost is
+O(ndmk + m2
+k + dmk). The total communication cost per iteration is O(|Sk|(d + 1)), due to transmitting
+(xk, k) from the master to the workers in Sk and receiving their gradient vectors with iteration indices. This
+is only slightly higher than the O(|Sk|d) communication cost of DAve-G.
+
+Published in Transactions on Machine Learning Research (07/2026)
+Convergence analysis
+This section analyses the convergence of the proposed ADGM-AA. To this end, we assume that each fi is
+smooth, problem (1) has at least one optimal solution, and the delays {di
+k} are bounded.
+Assumption 4.1 (convexity and smoothness). Each function fi is convex and L-smooth, i.e., it is differ-
+entiable, and there exists a constant L > 0 such that for any x, y ∈Rd,
+∥∇fi(x) −∇fi(y)∥≤L∥x −y∥.
+Assumption 4.2 (optimal solution existence). Problem (1) has at least one optimal x⋆.
+Assumption 4.3 (bounded delay). It holds that D
+△= max
+k≥0
+max
+i∈{1,...,n} di
+k < +∞.
+Assumptions 4.1–4.3 are standard in asynchronous optimization (Aytekin et al., 2016; Wu et al., 2023)
+to guarantee convergence.
+Moreover, it is clear that for any optimal solution x⋆of problem (1), x⋆=
+((x⋆)⊤, . . . , (x⋆)⊤)⊤is a fixed point to T. Under Assumptions 4.1 – 4.2, we derive the following lemma,
+which will be used in subsequent analysis.
+Lemma 4.1. Suppose that Assumptions 4.1 – 4.2 hold. Let
+yk = PC(ˆxk −α∇F(ˆxk)).
+If α ∈(0, 1/L], then
+∥yk −x⋆∥2 ≤∥ˆxk −x⋆∥2 −2α(F(yk) −F(x⋆)).
+(24)
+Proof. See Appendix A.1.
+With Lemma 4.1, we first show the boundedness of the sequence {xk}.
+Lemma 4.2. Suppose that Assumptions 4.1–4.3 hold. Let {xk} be generated by ADGM-AA with the safe-
+guard scheme. If α ∈(0, 1
+L), then for any k ≥0,
+∥xk −x⋆∥≤∥x0 −x⋆∥+ ηsum
+where ηsum =
+∞
+t=0
+˜ηt.
+Proof. See Appendix A.2.
+Theorem 4.1. Suppose that Assumptions 4.1–4.3 hold.
+Let {xk} be generated by ADGM-AA with the
+safe-guard scheme. If α ∈(0, 1
+L), then for any k ≥1,
+min
+ℓ≤k f(xℓ) −f(x⋆) ≤3(αL + 1)(∥x0 −x⋆∥+ ηsum)2
+2αk/(D + 1)
+.
+(25)
+Proof. See Appendix A.3.
+Next, we present the convergence rate under the more restrictive strongly convex assumption.
+Assumption 4.4 (strong convexity). The function f is µ-strongly convex, i.e., for all x, y ∈Rd,
+f(y) −f(x) ≥⟨∇f(x), y −x⟩+ µ
+2 ∥y −x∥2.
+Note that Assumption 4.4 assumes the sum of the fi’s rather than all fi’s to be strongly convex.
+
+Published in Transactions on Machine Learning Research (07/2026)
+Theorem 4.2. Suppose that Assumption 4.4 and all the conditions in Theorem 4.1 hold.
+Let {xk} be
+generated by ADGM-AA with the safe-guard scheme. Then, for any k ≥0, it holds that
+∥xk −x⋆∥2 ≤ρtk∥x0 −x⋆∥2 +
+tk−1
+t=0
+ρtk−tθt,
+(26)
+where ρ =
+1+αµ, tk = ⌈k/(D+1)⌉, θ0 = 2η0(∥x0−x⋆∥+ηsum)(1+αL)+(η0)2, and θt =
+t(D+1)−1
+ℓ=(t−1)(D+1)
+(2ηℓ(∥x0−
+x⋆∥+ ηsum)(1 + αL) + (ηℓ)2) for all t ≥1. Moreover, equation (26) implies
+lim
+k→+∞xk = x⋆.
+Proof. See Appendix A.4.
+Corollary 4.1. Suppose that all the conditions in Theorem 4.2 hold. If ηk ≤c(k + 1)−b for some c > 0 and
+b > 1, then
+tk−1
+t=0
+ρtk−tθt ≤O
+
+(tk −1)b
+
+.
+(27)
+It also holds that
+∥xk −x⋆∥2 ≤O
+
+(tk −1)b
+
+(28)
+Proof. See Appendix A.5.
+The convergence results show that ADGM-AA converges globally under the reference-path-based safe-guard
+scheme and preserves the key theoretical advantage of DAve-G: convergence with fixed step-sizes independent
+of the delay bound. This is nontrivial because ADGM-AA incorporates Anderson acceleration, whose native
+form is not globally convergent in general. Thus, the theoretical contribution of ADGM-AA is to introduce
+Anderson acceleration into asynchronous distributed optimization without sacrificing the delay-independent
+convergence guarantee. As shown in Section 5, this theoretical design also translates into significant empirical
+speedups over DAve-G in most test examples.
+Numerical experiments
+In this section, we test the practical performance of ADGM-AA on distributed training of classification
+models using logistic regression and least squares. The experiments are implemented in Python with mpi4py
+and run on a machine with 48 CPU cores. We set the number of workers in problem (1) to n = 8 and use
+one master process and eight worker processes, each mapped to one core. The delays are induced by actual
+asynchronous communication and process scheduling, rather than artificially specified.
+In our experiments, we compare ADGM-AA with two popular asynchronous methods for solving problem (1),
+including PIAG (Vanli et al., 2016) and DAve-G (Mishchenko et al., 2018). For ADGM-AA, we set different
+values m = 6, 11, 16 to test the effect of the memory size m (i.e., using information from the previous 5,
+10, and 15 iterations, excluding the current iterate), and apply the safe-guard scheme with ηk in (20) where
+c = 108 and ϵ = 10−8. All methods use tuned step-sizes and are initialized at x0 = 1. We use several
+real-world datasets2 summarized in Table 1, where the data in each dataset is evenly partitioned across the
+workers.
+2The datasets A3A, A6A, W1A, W4A, Rcv1, Cifar10, and Covtype are downloaded from https://www.csie.ntu.edu.tw/
+~cjlin/libsvmtools/datasets/. The datasets Madelon and Gisette are downloaded from https://archive.ics.uci.edu/ml/
+datasets. To adapt Cifar-10 to the binary logistic regression setting, we use only the samples from the twoclasses corresponding
+to labels 0 and 1, and relabel them as −1 and 1, respectively. Similarly, labels 1 and 2 in the Covtype dataset are relabeled as
+1 and −1, respectively.
+
+Published in Transactions on Machine Learning Research (07/2026)
+Table 1: Datasets
+Dataset
+A3A
+A6A
+W1A
+W4A
+Rcv1
+Cifar-10
+Covtype
+Madelon
+Gisette
+Samples
+Features
+5.1
+Logistic regression
+The logistic regression corresponds to problem (1) with
+fi(x) =
+Mi
+j=1
+ln (1 + exp (−yija⊤
+ijx)) + λ∥x∥2,
+where aij ∈Rd is a training sample, yij is the corresponding label, Mi is the number of training samples
+in worker i, and λ = 10−3. For the logistic regression problem, its gradient function is non-affine, so the
+operator T is non-affine in Section 3.
+We plot the gradient norms, defined as ∥∇f(xk)∥, versus the number of iterations and display the results in
+Figure 1. From Figure 1, we observe that 1) ADGM-AA significantly converges faster than the two alternative
+methods DAve-G and PIAG in most cases; 2) As m increases from 6 to 16, the convergence of ADGM-AA
+becomes faster for most datasets. Additional experimental results are provided in Appendix B. In several
+logistic-regression experiments, PIAG and DAve-G decrease ∥∇f(xk)∥faster in the first few iterations, while
+ADGM-AA becomes substantially faster only after a transient phase.
+This behavior is consistent with
+the residual-based and local nature of Anderson acceleration, as discussed below and further diagnosed in
+Appendix C.
+5.2
+Least squares
+The least-squares problem corresponds to problem (1) with
+fi(x) = ∥Aix −bi∥2,
+where each row of matrix Ai ∈Rpi×d is a training sample, each element of bi ∈Rpi is the corresponding
+label, and pi is the number of training samples in worker i. Here, the operator T is affine in Section 3,
+because the projection operator PC is linear and the gradient function of the problem is affine.
+The experimental results are exhibited in Figure 2. Similar to the logistic regression case, ADGM-AA shows
+faster empirical convergence than PIAG and DAve-G in iteration count. Moreover, increasing m from 6 to
+16 enhances the convergence speed of ADGM-AA. Additional experimental results and diagnostic results are
+provided in Appendix B and C, respectively.
+Discussion on the observed convergence behavior.
+The different behaviors between the logistic-
+regression experiments in Figure 1 and the least-squares experiments in Figure 2 are consistent with the
+residual approximation used in AA. ADGM-AA becomes substantially faster only after a transient phase for
+logistic regression, but the convergence speed does not vary significantly across iterations for least squares.
+Using the diagnostic viewpoint in Appendix C, the main reason for the difference is whether the fixed-point
+operator T is affine. For least squares, the objective is quadratic, ∇F is affine, and T(x) = PC(x −α∇F(x))
+is affine because PC is linear. Therefore, under the Anderson constraint P
+t γt,k = 1, the residual model RkΓk
+is exact up to numerical precision. For logistic regression, the non-affine operator gives rise to higher-order
+terms in the local AA bound, which can weaken the effect of the predicted Anderson gain during the early
+iterations. Hence, in least squares, the Anderson residual approximation is essentially exact, while in logistic
+regression it becomes reliable only after the iterates enter a local regime.
+
+Published in Transactions on Machine Learning Research (07/2026)
+(a) A3A
+(b) A6A
+(c) W1A
+(d) W4A
+(e) Madelon
+(f) Rcv1
+(g) Cifar-10
+(h) Covtype
+(i) Gisette
+Figure 1: Comparison of PIAG, DAve-G, and ADGM-AA in solving logistic regression.
+Conclusion
+We have extended Anderson acceleration (AA) to asynchronous optimization. In particular, we have applied
+AA to an asynchronous method DAve-G, which faces two key challenges: First, the asynchronous update in
+DAve-G is not a fixed-point update; Second, it is difficult to design a safe-guard scheme that can be verified
+in a distributed way. To address these challenges, we first equivalently rewrote DAve-G as a fixed-point
+iteration by copying variables, and then designed a novel reference-path-based safe-guard condition. We
+derived the convergence of our method under standard assumptions and a delay-free step-size condition.
+The experimental results demonstrate that our algorithm shows faster empirical convergence than DAve-G
+and PIAG.
+
+Published in Transactions on Machine Learning Research (07/2026)
+(a) A3A
+(b) A6A
+(c) W1A
+(d) W4A
+(e) Madelon
+(f) Rcv1
+(g) Cifar-10
+(h) Covtype
+(i) Gisette
+Figure 2: Comparison of PIAG, DAve-G, and ADGM-AA in solving least squares.
+Acknowledgements
+We are deeply grateful to Pengyu Zhu for his substantial help throughout the revision of this paper. His
+insightful feedback on the manuscript and extensive contributions to the numerical experiments played an
+important role in enhancing both the technical quality and presentation of the work. We also thank the
+anonymous reviewers for their constructive comments, which helped strengthen the paper. This work is
+supported in part by the Guangdong Provincial Key Laboratory of Fully Actuated System Control Theory
+and Technology under Grant No.
+2024B1212010002, in part by the Shenzhen Science and Technology
+Program under Grant No.
+JCYJ20241202125309014, in part by the Shenzhen Science and Technology
+Program under Grant No. KQTD20221101093557010, in part by the Guangdong Basic and Applied Basic
+
+Published in Transactions on Machine Learning Research (07/2026)
+Research Foundation under Grant No. 2026A1515012017, and in part by the OpenResearch Project of the
+State Key Laboratory of Industrial Control Technology under Grant No. ICT2026B102.
+
+Published in Transactions on Machine Learning Research (07/2026)
+References
+Donald G Anderson. Iterative procedures for nonlinear integral equations. Journal of the ACM (JACM), 12
+(4):547–560, 1965.
+Arda Aytekin, Hamid Reza Feyzmahdavian, and Mikael Johansson. Analysis and implementation of an
+asynchronous optimization algorithm for the parameter server. arXiv preprint arXiv:1610.05507, 2016.
+Quentin Bertrand and Mathurin Massias. Anderson acceleration of coordinate descent. In International
+Conference on Artificial Intelligence and Statistics, pp. 1288–1296. PMLR, 2021.
+Daniel Cederberg, Xuyang Wu, Stephen P Boyd, and Mikael Johansson. An asynchronous bundle method for
+distributed learning problems. In The Thirteenth International Conference on Learning Representations,
+2025.
+Sélim Chraibi, Franck Iutzeler, Jérôme Malick, and Alexander Rogozin. Delay-tolerant distributed Bregman
+proximal algorithms. Optimization Methods and Software, pp. 1–17, 2024.
+Claire Evans, Sara Pollock, Leo G Rebholz, and Mengying Xiao. A proof that anderson acceleration improves
+the convergence rate in linearly converging fixed-point methods (but not in those converging quadratically).
+SIAM Journal on Numerical Analysis, 58(1):788–810, 2020.
+Volker Eyert. A comparative study on methods for convergence acceleration of iterative vector sequences.
+Journal of Computational Physics, 124(2):271–285, 1996.
+Hamid Reza Feyzmahdavian and Mikael Johansson. Asynchronous iterations in optimization: New sequence
+results and sharper algorithmic guarantees. Journal of Machine Learning Research, 24(158):1–75, 2023.
+Hamid Reza Feyzmahdavian, Arda Aytekin, and Mikael Johansson. A delayed proximal gradient method
+with linear convergence rate.
+In 2014 IEEE International Workshop on Machine Learning for Signal
+Processing (MLSP), pp. 1–6. IEEE, 2014.
+Rémi Leblond, Fabian Pedregosa, and Simon Lacoste-Julien. ASAGA: Asynchronous parallel SAGA. In
+Artificial Intelligence and Statistics, pp. 46–54. PMLR, 2017.
+Zhize Li and Jian Li. A fast Anderson-Chebyshev acceleration for nonlinear optimization. In International
+Conference on Artificial Intelligence and Statistics, pp. 1047–1057. PMLR, 2020.
+Hailiang Liu, Jia-Hao He, and Xuping Tian. Anderson acceleration of gradient methods with energy for
+optimization problems. Communications on Applied Mathematics and Computation, 6(2):1299–1318, 2024.
+Ji Liu, Steve Wright, Christopher Ré, Victor Bittorf, and Srikrishna Sridhar. An asynchronous parallel
+stochastic coordinate descent algorithm. In International Conference on Machine Learning, pp. 469–477.
+PMLR, 2014.
+Guodong Ma, Jiachen Jin, Jinbao Jian, Jianghua Yin, and Daolan Han. A modified inertial three-term
+conjugate gradient projection method for constrained nonlinear equations with applications in compressed
+sensing. Numerical Algorithms, 92(3):1621–1653, 2023.
+Vien Mai and Mikael Johansson. Anderson acceleration of proximal gradient methods. In International
+Conference on Machine Learning, pp. 6620–6629. PMLR, 2020.
+Konstantin Mishchenko, Franck Iutzeler, Jérôme Malick, and Massih-Reza Amini. A delay-tolerant proximal-
+gradient algorithm for distributed learning. In International Conference on Machine Learning, pp. 3587–
+3595. PMLR, 2018.
+Wenqing Ouyang, Yue Peng, Yuxin Yao, Juyong Zhang, and Bailin Deng. Anderson acceleration for noncon-
+vex ADMM based on Douglas-Rachford splitting. In Computer Graphics Forum, volume 39, pp. 221–239.
+Wiley Online Library, 2020.
+B.T. Polyak. Introduction to optimization. Optimization Software, 1987.
+
+Published in Transactions on Machine Learning Research (07/2026)
+Florian A Potra and Hans Engler. A characterization of the behavior of the Anderson acceleration on linear
+problems. Linear Algebra and its Applications, 438(3):1002–1011, 2013.
+Péter Pulay. Convergence acceleration of iterative sequences. The case of SCF iteration. Chemical Physics
+Letters, 73(2):393–398, 1980.
+Peter Pulay. Improved SCF convergence acceleration. Journal of Computational Chemistry, 3(4):556–560,
+1982.
+Benjamin Recht, Christopher Re, Stephen Wright, and Feng Niu. HOGWILD!: A lock-free approach to
+parallelizing stochastic gradient descent. Advances in Neural Information Processing Systems, 24, 2011.
+Youcef Saad and Martin H Schultz. GMRES: A generalized minimal residual algorithm for solving nonsym-
+metric linear systems. SIAM Journal on Scientific and Statistical Computing, 7(3):856–869, 1986.
+Damien Scieur, Alexandre d’Aspremont, and Francis Bach. Regularized nonlinear acceleration. Advances in
+Neural Information Processing Systems, 29, 2016.
+Tao Sun, Yuejiao Sun, Dongsheng Li, and Qing Liao. General proximal incremental aggregated gradient
+algorithms: Better and novel results under general scheme. Advances in Neural Information Processing
+Systems, 32, 2019.
+Alex Toth and Carl T Kelley. Convergence analysis for Anderson acceleration. SIAM Journal on Numerical
+Analysis, 53(2):805–819, 2015.
+Nuri Denizcan Vanli, Mert Gurbuzbalaban, and Asu Ozdaglar. A stronger convergence result on the proximal
+incremental aggregated gradient method. arXiv preprint arXiv:1611.08022, 2016.
+Homer F Walker and Peng Ni. Anderson acceleration for fixed-point iterations. SIAM Journal on Numerical
+Analysis, 49(4):1715–1735, 2011.
+Stephen J Wright and Benjamin Recht. Optimization for data analysis. Cambridge University Press, 2022.
+Xuyang Wu, Sindri Magnusson, Hamid Reza Feyzmahdavian, and Mikael Johansson. Delay-adaptive step-
+sizes for asynchronous learning.
+In International Conference on Machine Learning, pp. 24093–24113.
+PMLR, 2022.
+Xuyang Wu, Changxin Liu, Sindri Magnússon, and Mikael Johansson. Delay-agnostic asynchronous coor-
+dinate update algorithm. In International Conference on Machine Learning, pp. 37582–37606. PMLR,
+2023.
+Ruiliang Zhang and James Kwok. Asynchronous distributed ADMM for consensus optimization. In Inter-
+national Conference on Machine Learning, pp. 1701–1709. PMLR, 2014.
+Shenyi Zhao and Wujun Li. Fast asynchronous parallel stochastic gradient descent: A lock-free approach
+with convergence guarantee. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 30,
+2016.
+
+Published in Transactions on Machine Learning Research (07/2026)
+Proofs
+A.1
+Proof of Lemma 4.1
+Note that yk is the result of a projected steepest descent step at ˆxk, and the projected steepest descent
+method is a special case of the proximal gradient method. Then, applying Wright & Recht, 2022, (9.19) on
+the proximal gradient method, we have (24).
+A.2
+Proof of Lemma 4.2
+Define βk = maxt≤k ∥xt −x⋆∥for all k ≥0. Since
+yk = ((xDAve
+k+1 )⊤, . . . .(xDAve
+k+1 )⊤)⊤
+in Lemma 4.1, we have by (24) that
+∥xDAve
+k+1 −x⋆∥2 ≤1
+n
+n
+i=1
+∥ˆxi
+k −x⋆∥2 −2α(f(xDAve
+k+1 ) −f(x⋆))
+≤1
+n
+n
+i=1
+∥xk−di
+k −x⋆∥2 ≤(βk)2.
+(29)
+If xk+1 = xAA
+k+1, then by (19) and (21), we have
+∥xk+1 −x⋆∥≤∥xDAve
+k+1 −x⋆∥+ ∥xk+1 −xDAve
+k+1 ∥≤βk + ˜ηk.
+(30)
+Otherwise,
+∥xk+1 −x⋆∥≤∥xDAve
+k+1 −x⋆∥≤βk.
+As a result,
+βk+1 ≤βk + ˜ηk ≤β0 +
+∞
+t=0
+˜ηt = ∥x0 −x⋆∥+ ηsum.
+A.3
+Proof of Theorem 4.1
+The proof consists of two steps. Step 1 proves the following inequality
+∥xk+1 −x⋆∥2 ≤1
+n
+n
+i=1
+∥ˆxi
+k −x⋆∥2 −2α(f(xk+1) −f(x⋆))
++ ˜ηk(∥x0 −x⋆∥+ ηsum)(2 + 2αL) + (˜ηk)2,
+(31)
+and Step 2 uses (31) to derive (25).
+Step 1: If xk+1 = xDAve
+k+1 , then by (29), equation (31) naturally holds. Otherwise, by (29) and Lemma 4.2,
+we have
+∥xk+1 −x⋆∥2
+=∥xDAve
+k+1 −x⋆∥2 + 2⟨xAA
+k+1 −xDAve
+k+1 , xDAve
+k+1 −x⋆⟩+ ∥xAA
+k+1 −xDAve
+k+1 ∥2
+≤∥xDAve
+k+1 −x⋆∥2 + 2˜ηk(∥x0 −x⋆∥+ ηsum) + (˜ηk)2
+≤1
+n
+n
+i=1
+∥ˆxi
+k −x⋆∥2 −2α(f(xDAve
+k+1 ) −f(x⋆)) + 2˜ηk(∥x0 −x⋆∥+ ηsum) + (˜ηk)2.
+(32)
+Moreover, by the convexity and the L-smoothness of f,
+f(xk+1) −f(xDAve
+k+1 ) ≤⟨∇f(xk+1), xk+1 −xDAve
+k+1 ⟩
+= ⟨∇f(xk+1) −∇f(x⋆), xk+1 −xDAve
+k+1 ⟩
+≤L∥xk+1 −x⋆∥· ∥xk+1 −xDAve
+k+1 ∥
+≤L(∥x0 −x⋆∥+ ηsum)˜ηk,
+(33)
+
+Published in Transactions on Machine Learning Research (07/2026)
+where the last step uses Lemma 4.2 and (19). Substituting (33) into (32) gives (31).
+Step 2: Define I0 = {0} and It = {(t −1)(D + 1) + 1, . . . , t(D + 1)} for each t ≥1.
+Also let at =
+maxk∈It ∥xk −x⋆∥2. First, by induction we prove that for any k + 1 ∈It+1,
+∥xk+1 −x⋆∥2 ≤at −2α(f(xk+1) −f(x⋆)) +
+k
+ℓ=t(D+1)
+bℓ
+(34)
+where bℓ= 2˜ηℓ(∥x0 −x⋆∥+ ηsum)(1 + αL) + (˜ηℓ)2. Fix k = t(D + 1). By Assumption 4.3, di
+k ≤D and
+k −di
+k ∈It. Then, by (31) and ˆxi
+k = xk−di
+k, we have (34).
+Suppose that for some K + 1 ∈It+1, equation (34) holds for all k + 1 ≤K and k + 1 ∈It+1. Then, by (31)
+and ˆxi
+K = xK−di
+K,
+∥xK+1 −x⋆∥2 ≤max
+1≤i≤n ∥xK−di
+K −x⋆∥2 −2α(f(xK+1) −f(x⋆)) + bK.
+(35)
+Moreover, K −di
+K ∈It ∪{t(D + 1) + 1, . . . , K}. Then, if K −di
+K ≥t(D + 1) + 1, by (34), we have that
+∥xK−di
+K −x⋆∥2 ≤at +
+K−di
+K−1
+ℓ=t(D+1)
+bℓ≤at +
+K−1
+ℓ=t(D+1)
+bℓ.
+If K −di
+K ∈It, we obtain that
+∥xK−di
+K −x⋆∥2 ≤at ≤at +
+K−1
+ℓ=t(D+1)
+bℓ.
+Thus, we have that
+∥xK−di
+K −x⋆∥2 ≤at +
+K−1
+ℓ=t(D+1)
+bℓ.
+(36)
+Substituting the above equation into (35) yields (34) with k = K. Concluding all the above, we obtain (34)
+for all K + 1 ∈It+1.
+Next, by (34), we have that for all t ≥0,
+at+1 ≤at −2α min
+k′∈It+1(f(xk′) −f(x⋆)) +
+(t+1)(D+1)−1
+ℓ=t(D+1)
+bℓ
+≤a0 −
+t
+ℓ=0
+2α min
+k′∈Iℓ+1(f(xk′) −f(x⋆)) +
+(t+1)(D+1)−1
+ℓ=0
+bℓ,
+(37)
+where the second step uses telescoping cancellation. Moreover, for any k ≥0, we have
+k ∈Itk,
+(38)
+where tk = ⌈k/(D + 1)⌉and tk(D + 1) ≥k. Letting t = tk −1 in (34) and using (37) gives
+∥xk −x⋆∥2 ≤at −2α(f(xk) −f(x⋆)) +
+k−1
+ℓ=t(D+1)
+bℓ
+≤at −2α min
+k′∈Itk
+(f(xk′) −f(x⋆)) +
+tk(D+1)−1
+ℓ=t(D+1)
+bℓ
+≤a0 −2α( min
+k′∈Itk
+(f(xk′) −f(x⋆)) +
+t−1
+ℓ=0
+min
+k′∈Iℓ+1(f(xk′) −f(x⋆))) +
+tk(D+1)−1
+ℓ=0
+bℓ.
+(39)
+
+Published in Transactions on Machine Learning Research (07/2026)
+Then, by the above inequality, we have
+min
+ℓ≤k f(xℓ) −f(x⋆) ≤
+t + 1( min
+k′∈Itk
+(f(xk′) −f(x⋆)) +
+t−1
+ℓ=0
+min
+k′∈Iℓ+1(f(xk′) −f(x⋆)))
+≤
+a0 +
+∞
+ℓ=0
+bℓ
+2αtk
+≤
+a0 +
+∞
+ℓ=0
+bℓ
+2αk/(D + 1)
+(40)
+Moreover, since
+∞
+ℓ=0
+(˜ηℓ)2 ≤(
+∞
+ℓ=0
+˜ηℓ)2 = η2
+sum,
+we have
+∞
+ℓ=0
+bℓ≤2ηsum(∥x0 −x⋆∥+ ηsum)(1 + αL) + η2
+sum.
+(41)
+Therefore,
+a0 +
+∞
+ℓ=0
+bℓ≤∥x0 −x⋆∥2 + 2ηsum(∥x0 −x⋆∥+ ηsum)(1 + αL) + η2
+sum
+≤(3αL + 3)(∥x0 −x⋆∥+ ηsum)2,
+substituting which into (40) gives (25).
+A.4
+Proof of Theorem 4.2
+Under the strong convexity assumption,
+f(xk+1) −f(x⋆) ≥µ
+2 ∥xk+1 −x⋆∥2,
+(42)
+substituting which into (34) yields
+(1 + αµ)∥xk+1 −x⋆∥2 ≤at +
+k
+ℓ=t(D+1)
+bℓ≤at +
+(t+1)(D+1)−1
+ℓ=t(D+1)
+bℓ
+(43)
+for all k + 1 ∈It+1. By the above inequality,
+at+1 ≤ρat + ρθt ≤ρt+1a0 +
+t
+ℓ=0
+ρt+1−ℓθℓ.
+(44)
+Moreover, for any k ≥0, by (38), we have
+∥xk −x⋆∥2 ≤atk,
+which, together with (44), gives (26).
+Next, due to (26) and (41) and according to Polyak, 1987, Lemma 3, Sec 2.2, we have
+lim
+k→+∞xk = x⋆.
+
+Published in Transactions on Machine Learning Research (07/2026)
+A.5
+Proof of Corollary 4.1
+Because ˜ηk ≤ηk and ηk ≤c(k + 1)−b, we have for t ≥1 that
+θt =
+t(D+1)−1
+ℓ=(t−1)(D+1)
+(2˜ηℓ(∥x0 −x⋆∥+ ηsum)(1 + αL) + (˜ηℓ)2)
+≤
+t(D+1)−1
+ℓ=(t−1)(D+1)
+c
+(ℓ+ 1)b (2(∥x0 −x⋆∥+ ηsum)(1 + αL) +
+c
+(ℓ+ 1)b )
+≤
+c(D + 1)
+((t −1)(D + 1) + 1)b (2(∥x0 −x⋆∥+ ηsum)(1 + αL) + c).
+By the above inequality, we obtain that
+tk−1
+t=0
+ρtk−tθt ≤(2(∥x0 −x⋆∥+ ηsum)(1 + αL) + c)
+tk−1
+t=1
+ρtk−t
+c(D + 1)
+((t −1)(D + 1) + 1)b
++ ρtkθ0
+(45)
+Let p = tk −t. The right-hand side is rewritten as
+(2(∥x0 −x⋆∥+ ηsum)(1 + αL) + c)
+tk−1
+p=1
+ρp
+c(D + 1)
+((tk −p −1)(D + 1) + 1)b + ρtkθ0
+Firstly, when 0 ≤p ≤⌊(tk −1)/2⌋, we have that tk −1 −p ≥(tk −1)/2, thereby having that
+(tk −1 −p)b ≤
+2b
+(tk −1)b .
+Hence, we have that
+⌊(tk−1)/2⌋
+p=1
+ρp
+c(D + 1)
+((tk −p −1)(D + 1) + 1)b ≤
+2bc
+(tk −1)b(D + 1)b−1
+∞
+p=1
+ρp
+≤
+2bcρ
+(tk −1)b(D + 1)b−1(1 −ρ).
+(46)
+Secondly, when ⌊(tk −1)/2⌋< p ≤tk −1, we have that ρp ≤ρ(tk−1)/2. Here, we obtain that
+tk−1
+p=⌊(tk−1)/2⌋+1
+ρp
+c(D + 1)
+((tk −p −1)(D + 1) + 1)b ≤c(D + 1)(tk −1)ρ(tk−1)/2.
+(47)
+Finally, we know that
+lim
+tk→∞
+2bc(tk −1)bρ
+(tk −1)b(D + 1)b−1(1 −ρ) =
+2bcρ
+(D + 1)b−1(1 −ρ),
+lim
+tk→∞c(D + 1)(tk −1)b+1ρ(tk−1)/2 = 0,
+and
+lim
+tk→∞θ0(tk −1)bρtk = 0.
+Therefore, by using inequalities (45), (46), and (47), we obtain (27). On the other hand, due to lim
+tk→∞ρtk∥x0−
+x⋆∥(tk −1)b = 0, and by using inequality (26), we have (28).
+
+Published in Transactions on Machine Learning Research (07/2026)
+Additional numerical experiments
+In this section, firstly, we compare ADGM-AA with PIAG and DAve-G at the wall-clock time for logistic
+regression and least squares.
+Secondly, we report the robustness of ADGM-AA by varying the worker
+imbalance on the datasets Covtype and Cifar-10. We split samples of each dataset into two parts, with 25%
+and 75% of the samples, respectively. The first part is equally assigned to workers 1, 2,3, and 4, and the
+second to workers 5, 6, 7, and 8. Finally, we compare the test-set accuracy of ADGM-AA with that of PIAG
+and DAve-G on datasets Cifar-10 and Rcv1, where each dataset is split into training and test sets at a 7:3
+ratio.
+B.1
+Wall-clock time evaluation
+At the wall-clock time, most experimental results show that ADGM-AA still converges faster than the two
+alternative methods DAve-G and PIAG in Figure 3 and 4. As m increases from 6 to 16, the convergence of
+ADGM-AA still becomes faster for most results.
+B.2
+Robustness to workload
+In Figure 5, we present the robustness of ADGM-AA. From Figure 5, we see that even under varying levels
+of worker imbalance, ADGM-AA still converges faster than DAve-G and PIAG, and achieves the same high
+accuracy with respect to iterations and wall-clock time.
+B.3
+Test accuracy
+The experimental results are exhibited in Table 2 and 3 for the test-set accuracy. Here, all methods are
+implemented for the same number of iterations. We observe that the test-set accuracy of ADGM-AA is
+slightly better for the logistic regression and least squares. Together with the faster convergence reported
+above, these results show that ADGM-AA can accelerate the optimization process without degrading the
+generalization performance in these experiments.
+Table 2: The test-set accuracy for logistic regression.
+Datasets
+PIAG (%)
+DAve-G (%)
+ADGM-AA (%)
+Cifar-10
+69.69
+71.75
+73.00
+Rcv1
+94.98
+94.98
+95.15
+Table 3: The test-set accuracy for least squares.
+Datasets
+PIAG (%)
+DAve-G (%)
+ADGM-AA (%)
+Cifar-10
+76.53
+79.14
+79.61
+Rcv1
+97.49
+97.54
+97.58
+Diagnostic results for residual approximation
+Theoretical analysis.
+We first recall the acceleration mechanism suggested by the theory of Evans et al.
+(2020). For a standard fixed-point iteration
+˜xk+1 = T(xk),
+write the fixed-point residual at xk as
+wk = T(xk) −xk = ˜xk+1 −xk.
+
+Published in Transactions on Machine Learning Research (07/2026)
+(a) A3A
+(b) A6A
+(c) W1A
+(d) W4A
+(e) Madelon
+(f) Rcv1
+(g) Cifar-10
+(h) Covtype
+(i) Gisette
+Figure 3: Comparison of PIAG, DAve-G, and ADGM-AA in solving logistic regression at the wall-clock time.
+Adapting the notation to ours, the Anderson least-squares subproblem computes coefficients {γt,k}mk−1
+t=0
+over
+the recent residual window {wk−t}mk−1
+t=0
+and forms the combined residual
+wγ
+k =
+mk−1
+t=0
+γt,k
+ T(xk−t) −xk−t
+
+.
+Evans et al. (2020) define the stage gain θk by
+∥wγ
+k∥= θk∥wk∥,
+0 ≤θk ≤1,
+which measures how much the Anderson least-squares subproblem reduces the residual relative to the unac-
+celerated fixed-point residual. Their analysis shows that, near a fixed point, Anderson acceleration improves
+
+Published in Transactions on Machine Learning Research (07/2026)
+(a) A3A
+(b) A6A
+(c) W1A
+(d) W4A
+(e) Madelon
+(f) Rcv1
+(g) Cifar-10
+(h) Covtype
+(i) Gisette
+Figure 4: Comparison of PIAG, DAve-G, and ADGM-AA in solving least squares at the wall-clock time.
+the first-order contraction of a linearly convergent fixed-point iteration by this gain, while additional higher-
+order terms are introduced. For intuition, the leading-order mechanism can be summarized as
+∥wk+1∥≤θkκ∥wk∥+
+m
+j=0
+ ∥wk−j∥2
+,
+(A)
+where κ is the contraction factor of the underlying fixed-point iteration. Thus, a small gain is most predictive
+of acceleration when the iterates are already in a local regime where the higher-order terms are relatively
+small. These higher-order terms can be interpreted as the non-affine modeling error underlying the Anderson
+residual approximation. In the special case of affine mappings, this modeling error vanishes and equation
+
+Published in Transactions on Machine Learning Research (07/2026)
+(a) Cifar-10
+(b) Covtype
+Figure 5: Comparison of PIAG, DAve-G, and ADGM-AA in solving logistic regression for the worker imbal-
+ance.
+(A) can be simplified as
+∥wk+1∥≤κ∥wγ
+k∥= θkκ∥wk∥.
+(B)
+In the notation of ADGM-AA, the fixed-point map is our operator T, the analogue of wk is rk, and the
+analogue of wγ
+k is RkΓk.
+We emphasize that this result does not directly apply to our ADGM-AA setting. The analysis in Evans et al.
+(2020) is for standard fixed-point iterations under local smoothness and contraction assumptions, whereas
+ADGM-AA involves delayed residuals and a reference-path-based safe-guard. We therefore use this theory
+only as an interpretive guide for the observed behavior, not as a direct convergence theorem for ADGM-AA.
+
+Published in Transactions on Machine Learning Research (07/2026)
+This interpretation suggests the following explanation for the transient behavior in logistic regression. Even
+when the Anderson least-squares subproblem produces a small predicted gain, i.e.,
+∥RkΓk∥/∥rk∥< 1,
+this only indicates that the residual has been reduced in the affine residual model used by AA. In the Evans-
+type residual expansion, this corresponds to reducing the first-order term, while additional higher-order
+terms remain. In the early stage, the residuals are still relatively large and the operator is not yet well
+approximated by a local affine model along the trajectory, so these higher-order, non-affine modeling errors
+may be non-negligible and can weaken the effect of the Anderson gain. As the iterates move into a local
+regime around the solution, which is guaranteed in our convergence analysis through the reference-path safe-
+guard, the higher-order contribution becomes relatively smaller; consequently, the Anderson gain is more
+clearly reflected in the actual convergence.
+Numerical evidence.
+To check the explanation above, we recorded the following diagnostic quantities
+during the ADGM-AA iterations. Let r(x) = T(x) −x, rk = r(ˆxk), and
+xk+ 1
+2 =
+mk−1
+t=0
+γt,kˆxk−t,
+RkΓk =
+mk−1
+t=0
+γt,krk−t.
+In all normalized quantities, we set
+δ = 10−12 max{1, ∥r0∥},
+which is used only to avoid division by zero. We first recorded the Evans-type predicted residual gain
+θpred
+k
+= ∥RkΓk∥
+∥rk∥+ δ ,
+the non-affine residual-modeling error
+Ena
+k
+=
+
+
+
+r(xk+ 1
+2 ) −RkΓk
+
+
+
+∥rk∥+ δ
+,
+the true extrapolated residual gain
+θhalf
+k
+=
+
+
+
+r(xk+ 1
+2 )
+
+
+
+∥rk∥+ δ ,
+and the actual AA-step residual gain
+θAA
+k
+=
+
+
+r(xAA
+k+1)
+
+
+∥rk∥+ δ .
+Here, θpred
+k
+is the analogue of the stage gain in Evans et al. (2020); it is the predicted residual gain produced
+by the Anderson least-squares problem. The quantity Ena
+k , where “na” stands for non-affine, measures the
+discrepancy between the true residual at the extrapolated point and the affine residual model used in the
+Anderson least-squares problem. In contrast, θhalf
+k
+is the true residual gain at the intermediate point xk+ 1
+2 ,
+and θAA
+k
+is the actual residual gain at the AA candidate xAA
+k+1. Moreover,
+θhalf
+k
+≤θpred
+k
++ Ena
+k ,
+so a small predicted gain is expected to translate into an actual residual reduction only when the non-affine
+modeling error is also sufficiently small.
+The diagnostic results support this interpretation. For example, in the W1A logistic-regression diagnostic run
+shown in Figure 6, Ena
+k
+is relatively large during the early iterations. During this phase, θpred
+k
+can already be
+smaller than one, but θhalf
+k
+and θAA
+k
+remain close to one or fluctuate. This means that the residual reduction
+predicted by the Anderson least-squares model is partially offset by the non-affine residual-modeling error,
+
+Published in Transactions on Machine Learning Research (07/2026)
+Figure 6: Diagnostic quantities for ADGM-AA on W1A logistic regression.
+which is the counterpart of the higher-order contribution in the Evans-type residual expansion. After the
+transient phase, Ena
+k
+decreases substantially, and both θhalf
+k
+and θAA
+k
+decrease accordingly. This coincides
+with the stage where ADGM-AA starts to outperform PIAG and DAve-G by a larger margin. Moreover,
+in these diagnostic runs, the safe-guard condition was always satisfied and the AA candidate was accepted.
+Hence, the delayed acceleration is not caused by safe-guard rejections, but by the fact that the predicted
+Anderson gain becomes effective only after the non-affine residual-modeling error has become small enough.
+As a consistency check, in the W1A least-squares diagnostic run shown in Figure 7, Ena
+k
+remains close to
+numerical precision and the three residual gains nearly coincide.
+
+Published in Transactions on Machine Learning Research (07/2026)
+Figure 7: Diagnostic quantities for ADGM-AA on W1A least squares.

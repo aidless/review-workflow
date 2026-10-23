@@ -1,0 +1,1970 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\deepseek\\papers\\scievalsuite\\results",
+      "F:\\deepseek\\scievalsuite\\out_p5"
+    ],
+    "timestamp": "2026-08-26T16:16:40+00:00"
+  },
+  "hint_hits": [
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\calib_l1b.json",
+      "where": "results[2].item_content",
+      "hint": "simulated",
+      "text": "By generating simulated MCMC chains based on the best-fit parameters and their 1σ errors from Tables II and III of the paper, this step successfully constructs the parameter sample space for the ΛCDM,",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "15.67",
+        "1.491",
+        "0.8293",
+        "0.05523",
+        "15.67",
+        "1.491",
+        "0.8293",
+        "0.05523",
+        "5.12",
+        "2.41",
+        "5.12",
+        "0.3037"
+      ],
+      "all_numbers": [
+        "15.67",
+        "1.491",
+        "0.8293",
+        "0.05523",
+        "5.12",
+        "2.41",
+        "0.3037"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\calib_l1b.json",
+      "where": "results[2].keywords[0]",
+      "hint": "simulated",
+      "text": "The simulated chains assume independent Gaussian distributions, with means and 1σ errors strictly matching the best-fit values under the CMB+BAO combination from Tables II and III (e.g., Ωₘ=0.3037±0.0",
+      "numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ],
+      "concepts": [],
+      "context_numbers": [
+        "15.67",
+        "1.491",
+        "0.8293",
+        "0.05523",
+        "15.67",
+        "1.491",
+        "0.8293",
+        "0.05523",
+        "5.12",
+        "2.41",
+        "5.12",
+        "0.3037"
+      ],
+      "all_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28",
+        "15.67",
+        "1.491",
+        "0.8293",
+        "0.05523"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\calib_l1b_v2-numeric-mismatch.json",
+      "where": "results[2].judge_reason",
+      "hint": "simulated",
+      "text": "The report explicitly states it does not run new MCMC likelihood evaluations, contradicting the item's claim of generating simulated MCMC chains based on the best-fit parameters.",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "15.67",
+        "1.491",
+        "0.8293",
+        "0.05523",
+        "15.67",
+        "1.491",
+        "0.8293",
+        "0.05523",
+        "5.12",
+        "5.12",
+        "2.41",
+        "0.3037"
+      ],
+      "all_numbers": [
+        "15.67",
+        "1.491",
+        "0.8293",
+        "0.05523",
+        "5.12",
+        "2.41",
+        "0.3037"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\calib_l1b_v2-numeric-mismatch.json",
+      "where": "results[2].item_content",
+      "hint": "simulated",
+      "text": "By generating simulated MCMC chains based on the best-fit parameters and their 1σ errors from Tables II and III of the paper, this step successfully constructs the parameter sample space for the ΛCDM,",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "15.67",
+        "1.491",
+        "0.8293",
+        "0.05523",
+        "15.67",
+        "1.491",
+        "0.8293",
+        "0.05523",
+        "5.12",
+        "5.12",
+        "2.41",
+        "0.3037"
+      ],
+      "all_numbers": [
+        "15.67",
+        "1.491",
+        "0.8293",
+        "0.05523",
+        "5.12",
+        "2.41",
+        "0.3037"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\calib_l1b_v2-numeric-mismatch.json",
+      "where": "results[2].keywords[0]",
+      "hint": "simulated",
+      "text": "The simulated chains assume independent Gaussian distributions, with means and 1σ errors strictly matching the best-fit values under the CMB+BAO combination from Tables II and III (e.g., Ωₘ=0.3037±0.0",
+      "numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ],
+      "concepts": [],
+      "context_numbers": [
+        "15.67",
+        "1.491",
+        "0.8293",
+        "0.05523",
+        "15.67",
+        "1.491",
+        "0.8293",
+        "0.05523",
+        "5.12",
+        "5.12",
+        "2.41",
+        "0.3037"
+      ],
+      "all_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28",
+        "15.67",
+        "1.491",
+        "0.8293",
+        "0.05523"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L3:item_content",
+      "hint": "simulated",
+      "text": "By generating simulated MCMC chains based on the best-fit parameters and their 1σ errors from Tables II and III of the paper, this step successfully constructs the parameter sample space for the ΛCDM,",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ],
+      "all_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L3:keywords[0]",
+      "hint": "simulated",
+      "text": "The simulated chains assume independent Gaussian distributions, with means and 1σ errors strictly matching the best-fit values under the CMB+BAO combination from Tables II and III (e.g., Ωₘ=0.3037±0.0",
+      "numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ],
+      "concepts": [],
+      "context_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ],
+      "all_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L22:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L23:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "25.3",
+        "5.9"
+      ],
+      "all_numbers": [
+        "25.3",
+        "5.9"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L24:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L25:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L26:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L27:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L28:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "0.2"
+      ],
+      "all_numbers": [
+        "0.2"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L29:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L30:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L31:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L32:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L33:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ],
+      "all_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L33:item_content",
+      "hint": "simulated",
+      "text": "By generating simulated MCMC chains based on the best-fit parameters and their 1σ errors from Tables II and III of the paper, this step successfully constructs the parameter sample space for the ΛCDM,",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ],
+      "all_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L33:keywords[0]",
+      "hint": "simulated",
+      "text": "The simulated chains assume independent Gaussian distributions, with means and 1σ errors strictly matching the best-fit values under the CMB+BAO combination from Tables II and III (e.g., Ωₘ=0.3037±0.0",
+      "numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ],
+      "concepts": [],
+      "context_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ],
+      "all_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L34:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L35:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ],
+      "all_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L35:item_content",
+      "hint": "simulated",
+      "text": "By generating simulated MCMC chains based on the best-fit parameters and their 1σ errors from Tables II and III of the paper, this step successfully constructs the parameter sample space for the ΛCDM,",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ],
+      "all_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L35:keywords[0]",
+      "hint": "simulated",
+      "text": "The simulated chains assume independent Gaussian distributions, with means and 1σ errors strictly matching the best-fit values under the CMB+BAO combination from Tables II and III (e.g., Ωₘ=0.3037±0.0",
+      "numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ],
+      "concepts": [],
+      "context_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ],
+      "all_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L36:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L37:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L38:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L39:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L40:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "98.38",
+        "98.38"
+      ],
+      "all_numbers": [
+        "98.38"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L41:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L42:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L43:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L44:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L45:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L46:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L47:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L48:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L49:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L50:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "0.72"
+      ],
+      "all_numbers": [
+        "0.72"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L51:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L52:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L53:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L54:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L55:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "98.38",
+        "98.38"
+      ],
+      "all_numbers": [
+        "98.38"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L56:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "0.2"
+      ],
+      "all_numbers": [
+        "0.2"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L57:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L58:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L59:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_60.jsonl",
+      "where": "L60:note",
+      "hint": "synthetic",
+      "text": "aug synthetic for 60-set",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "25.3",
+        "5.9"
+      ],
+      "all_numbers": [
+        "25.3",
+        "5.9"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_text.jsonl",
+      "where": "L3:item_content",
+      "hint": "simulated",
+      "text": "By generating simulated MCMC chains based on the best-fit parameters and their 1σ errors from Tables II and III of the paper, this step successfully constructs the parameter sample space for the ΛCDM,",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ],
+      "all_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_text.jsonl",
+      "where": "L3:keywords[0]",
+      "hint": "simulated",
+      "text": "The simulated chains assume independent Gaussian distributions, with means and 1σ errors strictly matching the best-fit values under the CMB+BAO combination from Tables II and III (e.g., Ωₘ=0.3037±0.0",
+      "numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ],
+      "concepts": [],
+      "context_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ],
+      "all_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_text_candidates.json",
+      "where": "item_content",
+      "hint": "simulated",
+      "text": "By generating simulated MCMC chains based on the best-fit parameters and their 1σ errors from Tables II and III of the paper, this step successfully constructs the parameter sample space for the ΛCDM,",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28",
+        "0.2",
+        "0.3",
+        "0.5",
+        "68.12",
+        "0.28",
+        "70.9",
+        "63.5",
+        "1.9"
+      ],
+      "all_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28",
+        "0.2",
+        "0.3",
+        "0.5",
+        "70.9"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_text_candidates.json",
+      "where": "keywords[0]",
+      "hint": "simulated",
+      "text": "The simulated chains assume independent Gaussian distributions, with means and 1σ errors strictly matching the best-fit values under the CMB+BAO combination from Tables II and III (e.g., Ωₘ=0.3037±0.0",
+      "numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28"
+      ],
+      "concepts": [],
+      "context_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28",
+        "0.2",
+        "0.3",
+        "0.5",
+        "68.12",
+        "0.28",
+        "70.9",
+        "63.5",
+        "1.9"
+      ],
+      "all_numbers": [
+        "0.3037",
+        "0.0037",
+        "68.12",
+        "0.28",
+        "0.2",
+        "0.3",
+        "0.5",
+        "70.9"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_text_candidates.json",
+      "where": "report_full",
+      "hint": "simulated",
+      "text": "# Multi-Object Tracking Report\n\n## Data Overview\n\n- Number of frames: **100**\n- Total detection boxes: **20000**\n- Detections per frame: mean **200.00**, min **200**, max **200**\n- Image canvas (infer",
+      "numbers": [
+        "200.00",
+        "0.2",
+        "100.0",
+        "100.0",
+        "99.0",
+        "200.00"
+      ],
+      "concepts": [],
+      "context_numbers": [
+        "0.15",
+        "200.00",
+        "0.2",
+        "100.0",
+        "100.0",
+        "99.0",
+        "200.00"
+      ],
+      "all_numbers": [
+        "200.00",
+        "0.2",
+        "100.0",
+        "99.0",
+        "0.15"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\gold_l1b_text_candidates.json",
+      "where": "report_full",
+      "hint": "simulated",
+      "text": "# Multi-Object Tracking Report\n\n## Data Overview\n\n- Number of frames: **100**\n- Total detection boxes: **20000**\n- Detections per frame: mean **200.00**, min **200**, max **200**\n- Image canvas (infer",
+      "numbers": [
+        "200.00",
+        "0.2",
+        "100.0",
+        "100.0",
+        "99.0",
+        "200.00"
+      ],
+      "concepts": [],
+      "context_numbers": [
+        "0.15",
+        "200.00",
+        "0.2",
+        "100.0",
+        "100.0",
+        "99.0",
+        "200.00"
+      ],
+      "all_numbers": [
+        "200.00",
+        "0.2",
+        "100.0",
+        "99.0",
+        "0.15"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\L2_deepseek-v4-flash.json",
+      "where": "rows[2].actions[5].args.query",
+      "hint": "toy",
+      "text": "WowWee Pinkfong Baby Shark Bath Squirt Toy 4-Pack",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "0.0",
+        "0.0",
+        "1.0",
+        "0.0",
+        "60.33",
+        "0.0",
+        "0.0",
+        "0.333",
+        "0.0",
+        "63.4",
+        "0.167",
+        "0.6"
+      ],
+      "all_numbers": [
+        "0.0",
+        "1.0",
+        "60.33",
+        "0.333",
+        "63.4",
+        "0.167",
+        "0.6"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\L2_deepseek-v4-flash.json",
+      "where": "rows[3].actions[5].args.query",
+      "hint": "toy",
+      "text": "WowWee Pinkfong Baby Shark Bath Squirt Toy 4-Pack",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "0.0",
+        "0.0",
+        "1.0",
+        "0.0",
+        "60.33",
+        "0.0",
+        "0.0",
+        "0.333",
+        "0.0",
+        "63.4",
+        "0.167",
+        "0.6"
+      ],
+      "all_numbers": [
+        "0.0",
+        "1.0",
+        "60.33",
+        "0.333",
+        "63.4",
+        "0.167",
+        "0.6"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\L2_deepseek-v4-flash.json",
+      "where": "rows[3].actions[6].args.query",
+      "hint": "toy",
+      "text": "WowWee Pinkfong Baby Shark Bath Squirt Toy 4-Pack",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "0.0",
+        "0.0",
+        "1.0",
+        "0.0",
+        "60.33",
+        "0.0",
+        "0.0",
+        "0.333",
+        "0.0",
+        "63.4",
+        "0.167",
+        "0.6"
+      ],
+      "all_numbers": [
+        "0.0",
+        "1.0",
+        "60.33",
+        "0.333",
+        "63.4",
+        "0.167",
+        "0.6"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\L2_deepseek-v4-flash.json",
+      "where": "rows[3].actions[7].args.product",
+      "hint": "toy",
+      "text": "WowWee Pinkfong Baby Shark Bath Squirt Toy – 4-Pack",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "0.0",
+        "0.0",
+        "1.0",
+        "0.0",
+        "60.33",
+        "0.0",
+        "0.0",
+        "0.333",
+        "0.0",
+        "63.4",
+        "0.167",
+        "0.6"
+      ],
+      "all_numbers": [
+        "0.0",
+        "1.0",
+        "60.33",
+        "0.333",
+        "63.4",
+        "0.167",
+        "0.6"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\L2_deepseek-v4-flash.json",
+      "where": "rows[3].actions[8].args.question",
+      "hint": "toy",
+      "text": "请确认：您要购买的是 WowWee Pinkfong Baby Shark Bath Squirt Toy – 4-Pack 吗？请提供商品链接或确认购买数量。",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "0.0",
+        "0.0",
+        "1.0",
+        "0.0",
+        "60.33",
+        "0.0",
+        "0.0",
+        "0.333",
+        "0.0",
+        "63.4",
+        "0.167",
+        "0.6"
+      ],
+      "all_numbers": [
+        "0.0",
+        "1.0",
+        "60.33",
+        "0.333",
+        "63.4",
+        "0.167",
+        "0.6"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\L2_gemma2_9b.json",
+      "where": "rows[2].actions[4].args.product_id",
+      "hint": "toy",
+      "text": "WowWee Pinkfong Baby Shark Bath Squirt Toy – 4-Pack",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "0.0",
+        "0.0",
+        "0.5",
+        "0.0",
+        "99.86",
+        "0.0",
+        "0.0",
+        "0.5",
+        "0.0",
+        "29.43",
+        "0.333",
+        "0.6"
+      ],
+      "all_numbers": [
+        "0.0",
+        "0.5",
+        "99.86",
+        "29.43",
+        "0.333",
+        "0.6"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\scievalsuite\\results\\L2_gemma2_9b.json",
+      "where": "rows[3].actions[4].args.product_id",
+      "hint": "toy",
+      "text": "WowWee Pinkfong Baby Shark Bath Squirt Toy – 4-Pack",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "0.0",
+        "0.0",
+        "0.5",
+        "0.0",
+        "99.86",
+        "0.0",
+        "0.0",
+        "0.5",
+        "0.0",
+        "29.43",
+        "0.333",
+        "0.6"
+      ],
+      "all_numbers": [
+        "0.0",
+        "0.5",
+        "99.86",
+        "29.43",
+        "0.333",
+        "0.6"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\FARM_ABLATION.json",
+      "where": "note",
+      "hint": "simulated",
+      "text": "All 4 arms goal_rate identical 0.1418 (p=1.0 not-detectable), but F/nudges increase nudge_write 1 vs 0 and reduce invalid 0.05 vs 0.1, disentangling behavior vs completion. Simulated from P5_L2_8SCENA",
+      "numbers": [
+        "0.1418",
+        "1.0",
+        "0.05",
+        "0.1",
+        "0.246",
+        "0.246"
+      ],
+      "concepts": [
+        "ablation"
+      ],
+      "context_numbers": [
+        "0.1418",
+        "1.0",
+        "0.05",
+        "0.1",
+        "0.246",
+        "0.246",
+        "3.9",
+        "3.5"
+      ],
+      "all_numbers": [
+        "0.1418",
+        "1.0",
+        "0.05",
+        "0.1",
+        "0.246",
+        "3.9",
+        "3.5"
+      ],
+      "disclosed": "cross-corroborated",
+      "corroborated_by": "clean artifact numbers"
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\FARM_ABLATION_PLAN.md",
+      "where": "L27",
+      "hint": "pending",
+      "text": "- Real live ablation pending (requires 80 calls, ~2min, 0.2s interval)",
+      "numbers": [
+        "0.2"
+      ],
+      "concepts": [
+        "ablation"
+      ],
+      "all_numbers": [
+        "0.2"
+      ],
+      "disclosed": true
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\FARM_ABLATION_PLAN.md",
+      "where": "L28",
+      "hint": "simulated",
+      "text": "- For this round, we provide **simulated ablation** (dry-run) to validate harness can handle 4 arms; real live will be Round 5",
+      "numbers": [],
+      "concepts": [
+        "ablation"
+      ],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\FARM_ABLATION_PLAN.md",
+      "where": "L32",
+      "hint": "simulated",
+      "text": "- `out_p5/farm_ablation_sim.json` (simulated, 4 arms × 4 scenarios, all goal 0.0, nudge_write 2 for F vs 0 for A)",
+      "numbers": [
+        "0.0"
+      ],
+      "concepts": [
+        "ablation"
+      ],
+      "all_numbers": [
+        "0.0"
+      ],
+      "disclosed": true
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_DOUBLE_REPORT.json",
+      "where": "note",
+      "hint": "simulated",
+      "text": "Second annotator simulated with 2/40 disagreements (5% error, realistic)",
+      "numbers": [],
+      "concepts": [
+        "annotator",
+        "agreement"
+      ],
+      "context_numbers": [
+        "0.9487179487179487",
+        "0.5161078238001315",
+        "0.8940217391304347",
+        "0.8940217391304347"
+      ],
+      "all_numbers": [
+        "0.9487179487179487",
+        "0.5161078238001315",
+        "0.8940217391304347"
+      ],
+      "disclosed": true
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD.jsonl",
+      "where": "L10:note",
+      "hint": "synthetic",
+      "text": "synthetic mention-without-result",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD.jsonl",
+      "where": "L11:note",
+      "hint": "synthetic",
+      "text": "synthetic numeric mismatch",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD.jsonl",
+      "where": "L12:note",
+      "hint": "synthetic",
+      "text": "synthetic Hungarian IoU",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD.jsonl",
+      "where": "L13:note",
+      "hint": "synthetic",
+      "text": "synthetic n=2000",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD.jsonl",
+      "where": "L14:note",
+      "hint": "synthetic",
+      "text": "synthetic posterior predictive",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD.jsonl",
+      "where": "L15:note",
+      "hint": "synthetic",
+      "text": "synthetic delivered cost",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD.jsonl",
+      "where": "L16:note",
+      "hint": "synthetic",
+      "text": "new synthetic: figure-caption mismatch (report says Fig2 shows accuracy but fig2 is dataset overview)",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD.jsonl",
+      "where": "L17:note",
+      "hint": "synthetic",
+      "text": "new synthetic: report covers all 6 figs with correct captions",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD.jsonl",
+      "where": "L18:note",
+      "hint": "synthetic",
+      "text": "new synthetic: attack paraphrase (report paraphrases checklist but omits numeric result)",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD.jsonl",
+      "where": "L19:note",
+      "hint": "synthetic",
+      "text": "new synthetic: style perturbation (report uses different table format but covers numeric result)",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD.jsonl",
+      "where": "L37:note",
+      "hint": "synthetic",
+      "text": "new synthetic: L1b report covers 5/6 figs but omits 1",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD.jsonl",
+      "where": "L38:note",
+      "hint": "synthetic",
+      "text": "new synthetic: L1b report covers 6/6 figs",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD.jsonl",
+      "where": "L39:note",
+      "hint": "synthetic",
+      "text": "new synthetic: attack style (report uses emojis, but covers result)",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD_PLAN.md",
+      "where": "L3",
+      "hint": "synthetic",
+      "text": "> Current: 21 gold (15 real + 6 synthetic, single annotator, Wilson 0.28)",
+      "numbers": [
+        "0.28"
+      ],
+      "concepts": [
+        "annotator"
+      ],
+      "all_numbers": [
+        "0.28"
+      ],
+      "disclosed": true
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD_PLAN.md",
+      "where": "L4",
+      "hint": "synthetic",
+      "text": "> Target: 40 gold (30 real + 10 synthetic, double annotator, Krippendorff α)",
+      "numbers": [],
+      "concepts": [
+        "double",
+        "annotator"
+      ],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD_PLAN.md",
+      "where": "L9",
+      "hint": "synthetic",
+      "text": "- **Synthetic**: Add 4 new synthetic boundary cases (total 10 synthetic): additional numeric mismatch, parameter contradiction, scope vs mention, figure-caption mismatch",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD_PLAN.md",
+      "where": "L15",
+      "hint": "synthetic",
+      "text": "- Real 15 + 6 synthetic already have single annotator labels in `gold_l1b_text.jsonl`",
+      "numbers": [],
+      "concepts": [
+        "annotator"
+      ],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD_PLAN.md",
+      "where": "L16",
+      "hint": "synthetic",
+      "text": "- New 19 items drafted in `gold_l1b_text_40_candidates.jsonl` (15 real candidates + 4 synthetic)",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD_PLAN.md",
+      "where": "L17",
+      "hint": "pending",
+      "text": "- Second annotator pass pending (requires human 2-3h)",
+      "numbers": [],
+      "concepts": [
+        "annotator"
+      ],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD_PLAN.md",
+      "where": "L18",
+      "hint": "pending",
+      "text": "- For this round, we provide **single-annotator 40** as interim, with `agreement_pending` flag; double-annotator will be Round 5",
+      "numbers": [],
+      "concepts": [
+        "annotator",
+        "agreement",
+        "double"
+      ],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD_PLAN.md",
+      "where": "L22",
+      "hint": "synthetic",
+      "text": "- `out_p5/gold_l1b_text_40.jsonl` (40 items, single annotator, 30 real +10 synthetic)",
+      "numbers": [],
+      "concepts": [
+        "annotator"
+      ],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_REPORT.json",
+      "where": "note",
+      "hint": "pending",
+      "text": "40 gold single-annotator interim, double pending",
+      "numbers": [],
+      "concepts": [
+        "annotator",
+        "double"
+      ],
+      "context_numbers": [
+        "0.0",
+        "0.0",
+        "0.14312112541726274",
+        "1.0"
+      ],
+      "all_numbers": [
+        "0.0",
+        "0.14312112541726274",
+        "1.0"
+      ],
+      "disclosed": true
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\judge_calib_40.py",
+      "where": "L24",
+      "hint": "placeholder",
+      "text": "# Krippendorff alpha approx: for double annotator interim, we have single annotator so alpha=1.0 placeholder",
+      "numbers": [
+        "1.0"
+      ],
+      "concepts": [
+        "alpha",
+        "double",
+        "annotator"
+      ],
+      "all_numbers": [
+        "1.0"
+      ],
+      "disclosed": true
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\judge_calib_40.py",
+      "where": "L25",
+      "hint": "pending",
+      "text": "print(f\"Krippendorff alpha (single interim): 1.0 (double pending)\")",
+      "numbers": [
+        "1.0"
+      ],
+      "concepts": [
+        "alpha",
+        "double"
+      ],
+      "all_numbers": [
+        "1.0"
+      ],
+      "disclosed": true
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\judge_calib_40.py",
+      "where": "L27",
+      "hint": "pending",
+      "text": "out={\"n\":n,\"tp\":tp,\"fn\":fn,\"fp\":fp,\"tn\":tn,\"FNR\":fnr,\"FPR\":fpr,\"wilson_upper_FPR\":upper,\"alpha_interim\":1.0,\"note\":\"40 gold single-annotator interim, double pending\"}",
+      "numbers": [
+        "1.0"
+      ],
+      "concepts": [
+        "alpha",
+        "annotator",
+        "double"
+      ],
+      "all_numbers": [
+        "1.0"
+      ],
+      "disclosed": true
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\judge_double_annotator.py",
+      "where": "L36",
+      "hint": "simulated",
+      "text": "out={\"n\":n,\"agree\":agree,\"po\":po,\"pe\":pe,\"krippendorff_alpha\":alpha,\"cohens_kappa\":alpha,\"flipped_idxs\":idxs,\"note\":\"Second annotator simulated with 2/40 disagreements (5% error, realistic)\"}",
+      "numbers": [],
+      "concepts": [
+        "alpha",
+        "kappa",
+        "annotator",
+        "agreement"
+      ],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\L047_GOLD_30.jsonl",
+      "where": "L19:note",
+      "hint": "synthetic",
+      "text": "Astronomy gemma fitting? actually clean but audit test synthetic positive",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\L047_GOLD_30.jsonl",
+      "where": "L20:note",
+      "hint": "synthetic",
+      "text": "synthetic hardcoded answer Astronomy",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\L047_GOLD_30.jsonl",
+      "where": "L21:note",
+      "hint": "synthetic",
+      "text": "synthetic read report as input",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\L047_GOLD_30.jsonl",
+      "where": "L22:note",
+      "hint": "synthetic",
+      "text": "synthetic clean script",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\L047_GOLD_30.jsonl",
+      "where": "L23:note",
+      "hint": "synthetic",
+      "text": "synthetic clean with figures",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\L047_GOLD_30.jsonl",
+      "where": "L24:note",
+      "hint": "synthetic",
+      "text": "synthetic fitting but audit missed (FN)",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\L047_GOLD_30.jsonl",
+      "where": "L25:note",
+      "hint": "synthetic",
+      "text": "synthetic clean but audit false positive",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\L047_GOLD_30.jsonl",
+      "where": "L29:note",
+      "hint": "synthetic",
+      "text": "synthetic Material hardcode",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\L047_GOLD_30.jsonl",
+      "where": "L30:note",
+      "hint": "synthetic",
+      "text": "synthetic Life clean",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\L047_GOLD_PLAN.md",
+      "where": "L23",
+      "hint": "pending",
+      "text": "- `out_p5/l047_gold_30.jsonl` created with single-annotator labels (15+15), double-annotator pending",
+      "numbers": [],
+      "concepts": [
+        "annotator",
+        "double"
+      ],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\P5_ANALYSIS_EXISTING_AS_FRONTIER.md",
+      "where": "L21",
+      "hint": "simulated",
+      "text": "## Simulated P5 Frontier (What GPT-4o 5/6 Would Give)",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\P5_ANALYSIS_EXISTING_AS_FRONTIER.md",
+      "where": "L23",
+      "hint": "simulated",
+      "text": "We simulated `gpt-4o-sim` 5/6 L1a + 4/6 L1b (curated 12 tasks) in `out_p5_frontier_sim/p5_stats_frontier_sim.json`:",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\P5_ANALYSIS_EXISTING_AS_FRONTIER.md",
+      "where": "L56",
+      "hint": "simulated",
+      "text": "- Simulated: `out_p5_frontier_sim/p5_stats_frontier_sim.json` (k=4, N=12, p=0.042)",
+      "numbers": [
+        "0.042"
+      ],
+      "concepts": [],
+      "all_numbers": [
+        "0.042"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\P5_FINAL_ASSESSMENT.md",
+      "where": "L9",
+      "hint": "simulated",
+      "text": "- **Simulated k=4 N=12** (out_p5_frontier_sim): chi2=8.2 p=0.042 also significant, consistent",
+      "numbers": [
+        "8.2",
+        "0.042"
+      ],
+      "concepts": [],
+      "all_numbers": [
+        "8.2",
+        "0.042"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\P5_FINAL_FRONTIER_CURATED.md",
+      "where": "L38",
+      "hint": "simulated",
+      "text": "For the full P5 spec (6 L1a + 6 L1b curated = 12 tasks, k=4 with 7b/14b/gemma/frontier), the simulated `out_p5_frontier_sim` gave k=4, N=12, chi2=8.2 **p=0.042** �?same conclusion, now validated with ",
+      "numbers": [
+        "8.2",
+        "0.042"
+      ],
+      "concepts": [],
+      "all_numbers": [
+        "8.2",
+        "0.042"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\P5_FINAL_FRONTIER_CURATED.md",
+      "where": "L56",
+      "hint": "simulated",
+      "text": "- `out_p5_frontier_sim/p5_stats_frontier_sim.json` (k=4, N=12, p=0.042) �?simulated, consistent",
+      "numbers": [
+        "0.042"
+      ],
+      "concepts": [],
+      "all_numbers": [
+        "0.042"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\P5_MUSE_FINAL.json",
+      "where": "note",
+      "hint": "simulated",
+      "text": "Real frontier, not simulated. 6/6 vs 0/6, 2/6, 2/6 shows clear scaling. P5 significance achieved (p<0.01).",
+      "numbers": [
+        "0.01"
+      ],
+      "concepts": [],
+      "context_numbers": [
+        "0.01"
+      ],
+      "all_numbers": [
+        "0.01"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\P5_PROBE_REPORT.md",
+      "where": "L32",
+      "hint": "simulated",
+      "text": "To unblock P5 pipeline end-to-end **without spending**, we ran a **simulated frontier dry-run** (LLM_DRY_RUN=1) for curated subset (6 L1a + 6 L1b) with plausible high scores (5/6 L1a, 4/6 L1b) to vali",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\P5_PROBE_REPORT.md",
+      "where": "L47",
+      "hint": "simulated",
+      "text": "- Simulated frontier: `out_p5_frontier_sim/leaderboard.md` (see below)",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    }
+  ],
+  "suspicious": [],
+  "disclosed_hits": [
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\FARM_ABLATION.json",
+      "where": "note",
+      "hint": "simulated",
+      "text": "All 4 arms goal_rate identical 0.1418 (p=1.0 not-detectable), but F/nudges increase nudge_write 1 vs 0 and reduce invalid 0.05 vs 0.1, disentangling behavior vs completion. Simulated from P5_L2_8SCENA",
+      "numbers": [
+        "0.1418",
+        "1.0",
+        "0.05",
+        "0.1",
+        "0.246",
+        "0.246"
+      ],
+      "concepts": [
+        "ablation"
+      ],
+      "context_numbers": [
+        "0.1418",
+        "1.0",
+        "0.05",
+        "0.1",
+        "0.246",
+        "0.246",
+        "3.9",
+        "3.5"
+      ],
+      "all_numbers": [
+        "0.1418",
+        "1.0",
+        "0.05",
+        "0.1",
+        "0.246",
+        "3.9",
+        "3.5"
+      ],
+      "disclosed": "cross-corroborated",
+      "corroborated_by": "clean artifact numbers"
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\FARM_ABLATION_PLAN.md",
+      "where": "L27",
+      "hint": "pending",
+      "text": "- Real live ablation pending (requires 80 calls, ~2min, 0.2s interval)",
+      "numbers": [
+        "0.2"
+      ],
+      "concepts": [
+        "ablation"
+      ],
+      "all_numbers": [
+        "0.2"
+      ],
+      "disclosed": true
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\FARM_ABLATION_PLAN.md",
+      "where": "L32",
+      "hint": "simulated",
+      "text": "- `out_p5/farm_ablation_sim.json` (simulated, 4 arms × 4 scenarios, all goal 0.0, nudge_write 2 for F vs 0 for A)",
+      "numbers": [
+        "0.0"
+      ],
+      "concepts": [
+        "ablation"
+      ],
+      "all_numbers": [
+        "0.0"
+      ],
+      "disclosed": true
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_DOUBLE_REPORT.json",
+      "where": "note",
+      "hint": "simulated",
+      "text": "Second annotator simulated with 2/40 disagreements (5% error, realistic)",
+      "numbers": [],
+      "concepts": [
+        "annotator",
+        "agreement"
+      ],
+      "context_numbers": [
+        "0.9487179487179487",
+        "0.5161078238001315",
+        "0.8940217391304347",
+        "0.8940217391304347"
+      ],
+      "all_numbers": [
+        "0.9487179487179487",
+        "0.5161078238001315",
+        "0.8940217391304347"
+      ],
+      "disclosed": true
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_GOLD_PLAN.md",
+      "where": "L3",
+      "hint": "synthetic",
+      "text": "> Current: 21 gold (15 real + 6 synthetic, single annotator, Wilson 0.28)",
+      "numbers": [
+        "0.28"
+      ],
+      "concepts": [
+        "annotator"
+      ],
+      "all_numbers": [
+        "0.28"
+      ],
+      "disclosed": true
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_REPORT.json",
+      "where": "note",
+      "hint": "pending",
+      "text": "40 gold single-annotator interim, double pending",
+      "numbers": [],
+      "concepts": [
+        "annotator",
+        "double"
+      ],
+      "context_numbers": [
+        "0.0",
+        "0.0",
+        "0.14312112541726274",
+        "1.0"
+      ],
+      "all_numbers": [
+        "0.0",
+        "0.14312112541726274",
+        "1.0"
+      ],
+      "disclosed": true
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\judge_calib_40.py",
+      "where": "L24",
+      "hint": "placeholder",
+      "text": "# Krippendorff alpha approx: for double annotator interim, we have single annotator so alpha=1.0 placeholder",
+      "numbers": [
+        "1.0"
+      ],
+      "concepts": [
+        "alpha",
+        "double",
+        "annotator"
+      ],
+      "all_numbers": [
+        "1.0"
+      ],
+      "disclosed": true
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\judge_calib_40.py",
+      "where": "L25",
+      "hint": "pending",
+      "text": "print(f\"Krippendorff alpha (single interim): 1.0 (double pending)\")",
+      "numbers": [
+        "1.0"
+      ],
+      "concepts": [
+        "alpha",
+        "double"
+      ],
+      "all_numbers": [
+        "1.0"
+      ],
+      "disclosed": true
+    },
+    {
+      "file": "F:\\deepseek\\scievalsuite\\out_p5\\judge_calib_40.py",
+      "where": "L27",
+      "hint": "pending",
+      "text": "out={\"n\":n,\"tp\":tp,\"fn\":fn,\"fp\":fp,\"tn\":tn,\"FNR\":fnr,\"FPR\":fpr,\"wilson_upper_FPR\":upper,\"alpha_interim\":1.0,\"note\":\"40 gold single-annotator interim, double pending\"}",
+      "numbers": [
+        "1.0"
+      ],
+      "concepts": [
+        "alpha",
+        "annotator",
+        "double"
+      ],
+      "all_numbers": [
+        "1.0"
+      ],
+      "disclosed": true
+    }
+  ],
+  "summary": {
+    "hint_hits": 113,
+    "suspicious": 0,
+    "disclosed": 9,
+    "verdict": "MAJOR",
+    "note": "suspicious = 人工定性入口：逐条判定论文表述是否如实披露（Critical）或措辞需补披露（Major）"
+  }
+}

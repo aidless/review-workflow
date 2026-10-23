@@ -1,0 +1,651 @@
+{
+  "meta": {
+    "zip": "F:\\deepseek\\papers\\selfevolve-agent\\submission\\submission_selfevolve_agent.zip",
+    "tex": "F:\\deepseek\\papers\\selfevolve-agent\\paper\\main.tex",
+    "timestamp": "2026-08-26T04:39:42+00:00"
+  },
+  "manifest": {
+    "source": "zip:evidence_manifest.json",
+    "declared_root": "."
+  },
+  "entries_checked": [
+    {
+      "path": "_r7_followup.py",
+      "status": "OK",
+      "expected_sha": "5a30a6b4bf7146e9",
+      "actual_sha": "5a30a6b4bf7146e9",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "_r7_recheck.py",
+      "status": "OK",
+      "expected_sha": "fa292ff651a50884",
+      "actual_sha": "fa292ff651a50884",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "CLAIM_LEDGER.md",
+      "status": "OK",
+      "expected_sha": "7342d8ab4b70a8d9",
+      "actual_sha": "7342d8ab4b70a8d9",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/cloud/cloud_skills_library.json",
+      "status": "OK",
+      "expected_sha": "4424bd234a29bf4e",
+      "actual_sha": "4424bd234a29bf4e",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/cloud/cloud_STATUS.json",
+      "status": "OK",
+      "expected_sha": "d2631a5df9d7d6bf",
+      "actual_sha": "d2631a5df9d7d6bf",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/cloud/core_20260814_base_ledger.jsonl",
+      "status": "OK",
+      "expected_sha": "90cf12ce8e5c2d80",
+      "actual_sha": "90cf12ce8e5c2d80",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/cloud/core_20260814_snapshot.txt",
+      "status": "OK",
+      "expected_sha": "3db947e651da7daa",
+      "actual_sha": "3db947e651da7daa",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/cloud/core_20260816_ledger.jsonl",
+      "status": "OK",
+      "expected_sha": "fa9a2e1c30fba6f6",
+      "actual_sha": "fa9a2e1c30fba6f6",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/cloud/core_20260816_results.json",
+      "status": "OK",
+      "expected_sha": "8a7f697e4c554250",
+      "actual_sha": "8a7f697e4c554250",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/cloud/core_20260816_stdout.log",
+      "status": "OK",
+      "expected_sha": "450acdd1270d49de",
+      "actual_sha": "450acdd1270d49de",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/cloud/smoke_results.json",
+      "status": "OK",
+      "expected_sha": "858fc7cb226447b0",
+      "actual_sha": "858fc7cb226447b0",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/decisions_R1-17.json",
+      "status": "OK",
+      "expected_sha": "15d567a4eb8760b0",
+      "actual_sha": "15d567a4eb8760b0",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/EVALUATION.md",
+      "status": "OK",
+      "expected_sha": "a74133e6bebdca20",
+      "actual_sha": "a74133e6bebdca20",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/extprobe/extprobe_satisfiability_v2.json",
+      "status": "OK",
+      "expected_sha": "ba34ad0a0f8fcae1",
+      "actual_sha": "ba34ad0a0f8fcae1",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/extprobe/EXTPROBE_SPEC.md",
+      "status": "OK",
+      "expected_sha": "81dd46e5639505e6",
+      "actual_sha": "81dd46e5639505e6",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/extprobe/extprobe_v2.json",
+      "status": "OK",
+      "expected_sha": "1f4fabe45ed2a238",
+      "actual_sha": "1f4fabe45ed2a238",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/frozen/control_plane_cloud_o.json",
+      "status": "OK",
+      "expected_sha": "3e740bda58a33704",
+      "actual_sha": "3e740bda58a33704",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/frozen/skills_library.json",
+      "status": "OK",
+      "expected_sha": "4424bd234a29bf4e",
+      "actual_sha": "4424bd234a29bf4e",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/G8_form_checklist.md",
+      "status": "OK",
+      "expected_sha": "14d34c368534d221",
+      "actual_sha": "14d34c368534d221",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/protocol.md",
+      "status": "OK",
+      "expected_sha": "d218200d60d4bee4",
+      "actual_sha": "d218200d60d4bee4",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/REVIEW.md",
+      "status": "OK",
+      "expected_sha": "bf1107929b64c322",
+      "actual_sha": "bf1107929b64c322",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "figures/fig1_rounds.pdf",
+      "status": "OK",
+      "expected_sha": "5c86f15c9d1544cc",
+      "actual_sha": "5c86f15c9d1544cc",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "figures/fig2_extprobe.pdf",
+      "status": "OK",
+      "expected_sha": "f80569fe969bf9b2",
+      "actual_sha": "f80569fe969bf9b2",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "figures/fig3_delta.pdf",
+      "status": "OK",
+      "expected_sha": "7ad153d17450e693",
+      "actual_sha": "7ad153d17450e693",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "gates_config.json",
+      "status": "OK",
+      "expected_sha": "4cae1728acdc95a9",
+      "actual_sha": "4cae1728acdc95a9",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "LITERATURE_REVIEW.md",
+      "status": "OK",
+      "expected_sha": "104a89c7ba684cd1",
+      "actual_sha": "104a89c7ba684cd1",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/fancyhdr.sty",
+      "status": "OK",
+      "expected_sha": "2bfd910b99e0b0d4",
+      "actual_sha": "2bfd910b99e0b0d4",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/figures/fig1_rounds.pdf",
+      "status": "OK",
+      "expected_sha": "92c3b138fecd126c",
+      "actual_sha": "92c3b138fecd126c",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/figures/fig2_extprobe.pdf",
+      "status": "OK",
+      "expected_sha": "841f0832f59e62f2",
+      "actual_sha": "841f0832f59e62f2",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/figures/fig3_delta.pdf",
+      "status": "OK",
+      "expected_sha": "8bd3ba4d4383cc4c",
+      "actual_sha": "8bd3ba4d4383cc4c",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.aux",
+      "status": "OK",
+      "expected_sha": "81bac113637fa1c5",
+      "actual_sha": "81bac113637fa1c5",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.bbl",
+      "status": "OK",
+      "expected_sha": "bd10dc541b35e7a6",
+      "actual_sha": "bd10dc541b35e7a6",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.bib",
+      "status": "OK",
+      "expected_sha": "221eb3c9ebd5f87d",
+      "actual_sha": "221eb3c9ebd5f87d",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.blg",
+      "status": "OK",
+      "expected_sha": "ceb026afc56c4123",
+      "actual_sha": "ceb026afc56c4123",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.log",
+      "status": "HASH_MISMATCH",
+      "expected_sha": "9202a71af8419264",
+      "actual_sha": "aaf472db9d0a23f4",
+      "ok_sha": false,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.out",
+      "status": "OK",
+      "expected_sha": "af5eff051484ddf3",
+      "actual_sha": "af5eff051484ddf3",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.pdf",
+      "status": "HASH_MISMATCH",
+      "expected_sha": "0e7a880932221f1d",
+      "actual_sha": "81d8a059667a4422",
+      "ok_sha": false,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.tex",
+      "status": "HASH_MISMATCH",
+      "expected_sha": "361126a37b373563",
+      "actual_sha": "9ae164ea05b2e3c7",
+      "ok_sha": false,
+      "ok_size": false
+    },
+    {
+      "path": "paper/math_commands.tex",
+      "status": "OK",
+      "expected_sha": "0983e802ae604694",
+      "actual_sha": "0983e802ae604694",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/tmlr.bst",
+      "status": "OK",
+      "expected_sha": "ded3dbf610d9db32",
+      "actual_sha": "ded3dbf610d9db32",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/tmlr.sty",
+      "status": "OK",
+      "expected_sha": "a067e8286a3cf8e3",
+      "actual_sha": "a067e8286a3cf8e3",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "requirements.txt",
+      "status": "OK",
+      "expected_sha": "f762b59d0d222439",
+      "actual_sha": "f762b59d0d222439",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "REVIEW_R1_summary.md",
+      "status": "MISSING",
+      "expected_sha": "0cb3bb60ef7da692"
+    },
+    {
+      "path": "ROUND_R0.md",
+      "status": "MISSING",
+      "expected_sha": "9d5df16cce1e7748"
+    },
+    {
+      "path": "scripts/build_evidence_manifest.py",
+      "status": "OK",
+      "expected_sha": "c5ad25811f64137f",
+      "actual_sha": "c5ad25811f64137f",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_judge_calibration.py",
+      "status": "OK",
+      "expected_sha": "f801b991dcf66751",
+      "actual_sha": "f801b991dcf66751",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_literature_freshness.py",
+      "status": "OK",
+      "expected_sha": "53a2dd475bf4a128",
+      "actual_sha": "53a2dd475bf4a128",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_submission_package.py",
+      "status": "OK",
+      "expected_sha": "88804cfcb98258cb",
+      "actual_sha": "88804cfcb98258cb",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_submit_ready.py",
+      "status": "OK",
+      "expected_sha": "aebbea9faac17518",
+      "actual_sha": "aebbea9faac17518",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_tmlr_compliance.py",
+      "status": "OK",
+      "expected_sha": "009c0de6c8a8a0f9",
+      "actual_sha": "009c0de6c8a8a0f9",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_writing_style.py",
+      "status": "OK",
+      "expected_sha": "a053fdf181129097",
+      "actual_sha": "a053fdf181129097",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/compile_gate.py",
+      "status": "OK",
+      "expected_sha": "c2c438b824bda7d4",
+      "actual_sha": "c2c438b824bda7d4",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/draft_rebuttal.py",
+      "status": "OK",
+      "expected_sha": "01695879e866316c",
+      "actual_sha": "01695879e866316c",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/gate_citations.py",
+      "status": "OK",
+      "expected_sha": "eb28f658fada5722",
+      "actual_sha": "eb28f658fada5722",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/log_writing_session.py",
+      "status": "OK",
+      "expected_sha": "b7c5efa313f2f125",
+      "actual_sha": "b7c5efa313f2f125",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/make_camera_ready.py",
+      "status": "OK",
+      "expected_sha": "43abbd33bd71f0ce",
+      "actual_sha": "43abbd33bd71f0ce",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/make_figures.py",
+      "status": "OK",
+      "expected_sha": "2d81f27e68082ec6",
+      "actual_sha": "2d81f27e68082ec6",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/make_run_record.py",
+      "status": "OK",
+      "expected_sha": "6661f41f82a011d6",
+      "actual_sha": "6661f41f82a011d6",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/power_analysis.py",
+      "status": "OK",
+      "expected_sha": "1ef9f2944d11728c",
+      "actual_sha": "1ef9f2944d11728c",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/prepare_submission.py",
+      "status": "OK",
+      "expected_sha": "2f13827a872d615f",
+      "actual_sha": "2f13827a872d615f",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/release.py",
+      "status": "OK",
+      "expected_sha": "e78666a27b2c3595",
+      "actual_sha": "e78666a27b2c3595",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/run_acceptance_gates.py",
+      "status": "OK",
+      "expected_sha": "14e85e32d04cbb0c",
+      "actual_sha": "14e85e32d04cbb0c",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/run_experiment_plan.py",
+      "status": "OK",
+      "expected_sha": "ef750770273e058a",
+      "actual_sha": "ef750770273e058a",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/scan_figure_claims.py",
+      "status": "OK",
+      "expected_sha": "d082a0548d1bfad5",
+      "actual_sha": "d082a0548d1bfad5",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/scan_hallucination.py",
+      "status": "OK",
+      "expected_sha": "bef3790555f0f836",
+      "actual_sha": "bef3790555f0f836",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/scan_number_consistency.py",
+      "status": "OK",
+      "expected_sha": "59eae01a13cb1d95",
+      "actual_sha": "59eae01a13cb1d95",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/scan_stats_consistency.py",
+      "status": "OK",
+      "expected_sha": "8a8af1f5de9120d9",
+      "actual_sha": "8a8af1f5de9120d9",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/scanner_regression.py",
+      "status": "OK",
+      "expected_sha": "8a8b43cc423c60af",
+      "actual_sha": "8a8b43cc423c60af",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/seal_run.py",
+      "status": "OK",
+      "expected_sha": "8190882ec3e73e75",
+      "actual_sha": "8190882ec3e73e75",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/stats.py",
+      "status": "OK",
+      "expected_sha": "909f174aa46bdf6e",
+      "actual_sha": "909f174aa46bdf6e",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/suggest_experiments.py",
+      "status": "OK",
+      "expected_sha": "cc7c13cd760d0e80",
+      "actual_sha": "cc7c13cd760d0e80",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/switch_project.py",
+      "status": "OK",
+      "expected_sha": "5620a54363004cb2",
+      "actual_sha": "5620a54363004cb2",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/test_evidence_protection.py",
+      "status": "OK",
+      "expected_sha": "fe8a166406978cb0",
+      "actual_sha": "fe8a166406978cb0",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/test_pyramid.py",
+      "status": "OK",
+      "expected_sha": "0d779fa5724ced62",
+      "actual_sha": "0d779fa5724ced62",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/validate_judge_output.py",
+      "status": "OK",
+      "expected_sha": "10a40efe3f5bb4e1",
+      "actual_sha": "10a40efe3f5bb4e1",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/verify_claim_ledger.py",
+      "status": "MISSING",
+      "expected_sha": "d4cba827d819e9f8"
+    },
+    {
+      "path": "scripts/verify_labels.py",
+      "status": "MISSING",
+      "expected_sha": "ea643cff3383121f"
+    },
+    {
+      "path": "scripts/verify_taint.py",
+      "status": "MISSING",
+      "expected_sha": "d6e063f72358299f"
+    },
+    {
+      "path": "scripts/verify_tree_diff.py",
+      "status": "MISSING",
+      "expected_sha": "ae8335e62951c054"
+    },
+    {
+      "path": "STATE_SNAPSHOT.md",
+      "status": "OK",
+      "expected_sha": "9293e6ab706c49ee",
+      "actual_sha": "9293e6ab706c49ee",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "WORKING_NOTES.md",
+      "status": "OK",
+      "expected_sha": "40929adea8a59f92",
+      "actual_sha": "40929adea8a59f92",
+      "ok_sha": true,
+      "ok_size": true
+    }
+  ],
+  "tex_claims": [],
+  "summary": {
+    "manifest_entries": 81,
+    "ok": 72,
+    "hash_mismatch": 3,
+    "missing": 6,
+    "verdict": "CRITICAL"
+  }
+}

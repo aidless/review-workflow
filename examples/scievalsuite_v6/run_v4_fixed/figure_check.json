@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\deepseek\\papers\\scievalsuite\\results",
+      "F:\\deepseek\\scievalsuite\\out_p5"
+    ],
+    "timestamp": "2026-08-27T03:27:54+00:00"
+  },
+  "figures": [
+    {
+      "path": "fig_overview.pdf",
+      "line": 97,
+      "resolved": true,
+      "abs": "F:\\deepseek\\papers\\scievalsuite\\paper\\fig_overview.pdf",
+      "kind": "pdf",
+      "text_chars": 284,
+      "fig_decimals": 7,
+      "fig_numbers_sample": [
+        "0.0",
+        "0.1",
+        "0.2",
+        "0.3",
+        "0.142",
+        "0.192",
+        "0.275"
+      ],
+      "caption_decimals": [
+        {
+          "token": "1.0000",
+          "support": "evidence"
+        }
+      ],
+      "caption": "Overview of SciEvalSuite results. (a) L2 mean goal completion per model (A and F identical, $p=1.0000$, not-detectable). (b) L1a tasks above zero (/6) per model (stable after three trials). (c) L1b fa"
+    }
+  ],
+  "missing_files": [],
+  "caption_pending_review": [],
+  "figure_only_numbers": [],
+  "summary": {
+    "verdict": "PASS",
+    "figures_referenced": 1,
+    "text_extracted": 1,
+    "raster_skipped": 0,
+    "missing": 0,
+    "caption_decimals": 1,
+    "unsupported": 0,
+    "figure_only": 0,
+    "note": "caption_pending_review = 图注小数在图文本/证据/正文中均无支撑；figure_only = 仅出现在图内的高精度数（数据标签属正常，人工扫一眼即可）"
+  }
+}

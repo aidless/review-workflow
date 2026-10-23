@@ -1,0 +1,1664 @@
+{
+  "meta": {
+    "zip": "F:\\deepseek\\papers\\scievalsuite\\submission\\submission_scievalsuite_final_v6.zip",
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "entries": 150,
+    "timestamp": "2026-08-26T04:39:40+00:00"
+  },
+  "referenced_paths": [
+    {
+      "raw": "run.json",
+      "path": "run.json",
+      "line": 29,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "LITERATURE\\_REVIEW.md",
+      "path": "LITERATURE_REVIEW.md",
+      "line": 31,
+      "status": "exact",
+      "matched": [
+        "LITERATURE_REVIEW.md"
+      ]
+    },
+    {
+      "raw": "run.json",
+      "path": "run.json",
+      "line": 33,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "run.json",
+      "path": "run.json",
+      "line": 66,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "analysis.py",
+      "path": "analysis.py",
+      "line": 71,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "report/report.md",
+      "path": "report/report.md",
+      "line": 71,
+      "status": "basename",
+      "matched": [
+        "qa_out_final/report.md"
+      ]
+    },
+    {
+      "raw": "audit\\_generated\\_script.py",
+      "path": "audit_generated_script.py",
+      "line": 71,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "papers/agent-comparison/analysis.py",
+      "path": "papers/agent-comparison/analysis.py",
+      "line": 76,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "scievalsuite/p3\\_aggregate.py",
+      "path": "scievalsuite/p3_aggregate.py",
+      "line": 76,
+      "status": "basename",
+      "matched": [
+        "results/p3_aggregate.py"
+      ]
+    },
+    {
+      "raw": "p3\\_effects.py",
+      "path": "p3_effects.py",
+      "line": 76,
+      "status": "exact",
+      "matched": [
+        "results/p3_effects.py"
+      ]
+    },
+    {
+      "raw": "p3\\_recompute.py",
+      "path": "p3_recompute.py",
+      "line": 76,
+      "status": "exact",
+      "matched": [
+        "results/p3_recompute.py"
+      ]
+    },
+    {
+      "raw": "evidence\\_manifest.json",
+      "path": "evidence_manifest.json",
+      "line": 82,
+      "status": "exact",
+      "matched": [
+        "evidence_manifest.json",
+        "paper/evidence_manifest.json"
+      ]
+    },
+    {
+      "raw": "\\_g11\\_hashcheck.py",
+      "path": "_g11_hashcheck.py",
+      "line": 82,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "p3\\_cost.json",
+      "path": "p3_cost.json",
+      "line": 82,
+      "status": "exact",
+      "matched": [
+        "results/p3_cost.json"
+      ]
+    },
+    {
+      "raw": "results/p3\\_bootstrap.json",
+      "path": "results/p3_bootstrap.json",
+      "line": 89,
+      "status": "exact",
+      "matched": [
+        "results/p3_bootstrap.json"
+      ]
+    },
+    {
+      "raw": "p3\\_aggregate.py",
+      "path": "p3_aggregate.py",
+      "line": 91,
+      "status": "exact",
+      "matched": [
+        "results/p3_aggregate.py"
+      ]
+    },
+    {
+      "raw": "p3\\_recompute.py",
+      "path": "p3_recompute.py",
+      "line": 91,
+      "status": "exact",
+      "matched": [
+        "results/p3_recompute.py"
+      ]
+    },
+    {
+      "raw": "p3\\_cost.py",
+      "path": "p3_cost.py",
+      "line": 91,
+      "status": "exact",
+      "matched": [
+        "results/p3_cost.py"
+      ]
+    },
+    {
+      "raw": "p3\\_effects.py",
+      "path": "p3_effects.py",
+      "line": 91,
+      "status": "exact",
+      "matched": [
+        "results/p3_effects.py"
+      ]
+    },
+    {
+      "raw": "calib\\_run\\_l1b.py",
+      "path": "calib_run_l1b.py",
+      "line": 91,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "requirements.txt",
+      "path": "requirements.txt",
+      "line": 91,
+      "status": "exact",
+      "matched": [
+        "paper/requirements.txt",
+        "requirements.txt"
+      ]
+    },
+    {
+      "raw": "paper/requirements.txt",
+      "path": "paper/requirements.txt",
+      "line": 91,
+      "status": "exact",
+      "matched": [
+        "paper/requirements.txt"
+      ]
+    },
+    {
+      "raw": "data/cache",
+      "path": "data/cache",
+      "line": 91,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "evidence/protocol.md",
+      "path": "evidence/protocol.md",
+      "line": 91,
+      "status": "exact",
+      "matched": [
+        "evidence/protocol.md"
+      ]
+    },
+    {
+      "raw": "p3\\_effects.json",
+      "path": "p3_effects.json",
+      "line": 108,
+      "status": "exact",
+      "matched": [
+        "results/p3_effects.json"
+      ]
+    },
+    {
+      "raw": "results/L2\\_deepseek-v4-flash.json",
+      "path": "results/L2_deepseek-v4-flash.json",
+      "line": 126,
+      "status": "exact",
+      "matched": [
+        "results/L2_deepseek-v4-flash.json"
+      ]
+    },
+    {
+      "raw": "p3\\_stats\\_normalized.json",
+      "path": "p3_stats_normalized.json",
+      "line": 132,
+      "status": "exact",
+      "matched": [
+        "results/p3_stats_normalized.json"
+      ]
+    },
+    {
+      "raw": "report/report.md",
+      "path": "report/report.md",
+      "line": 155,
+      "status": "basename",
+      "matched": [
+        "qa_out_final/report.md"
+      ]
+    },
+    {
+      "raw": "report.md",
+      "path": "report.md",
+      "line": 155,
+      "status": "exact",
+      "matched": [
+        "qa_out_final/report.md"
+      ]
+    },
+    {
+      "raw": "insufficient\\_data.png",
+      "path": "insufficient_data.png",
+      "line": 155,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "workspaces/p5\\_muse\\_l1b\\_Chemistry\\_000",
+      "path": "workspaces/p5_muse_l1b_Chemistry_000",
+      "line": 155,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "p3\\_stats\\_normalized.json",
+      "path": "p3_stats_normalized.json",
+      "line": 158,
+      "status": "exact",
+      "matched": [
+        "results/p3_stats_normalized.json"
+      ]
+    },
+    {
+      "raw": "out\\_p5/P5\\_MUSE\\_FINAL.json",
+      "path": "out_p5/P5_MUSE_FINAL.json",
+      "line": 158,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "p3\\_recompute.py",
+      "path": "p3_recompute.py",
+      "line": 164,
+      "status": "exact",
+      "matched": [
+        "results/p3_recompute.py"
+      ]
+    },
+    {
+      "raw": "\\_g11\\_hashcheck.py",
+      "path": "_g11_hashcheck.py",
+      "line": 164,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "out\\_p5/",
+      "path": "out_p5/",
+      "line": 167,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "out\\_p5/P5\\_L2\\_8SCENARIOS.json",
+      "path": "out_p5/P5_L2_8SCENARIOS.json",
+      "line": 169,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "out\\_p5/JUDGE\\_40\\_GOLD.jsonl",
+      "path": "out_p5/JUDGE_40_GOLD.jsonl",
+      "line": 173,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "out\\_p5/JUDGE\\_40\\_DOUBLE\\_REPORT.json",
+      "path": "out_p5/JUDGE_40_DOUBLE_REPORT.json",
+      "line": 173,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "out\\_p5/FARM\\_ABLATION.json",
+      "path": "out_p5/FARM_ABLATION.json",
+      "line": 175,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "out\\_p5/CROSS\\_LAYER\\_ANALYSIS.md",
+      "path": "out_p5/CROSS_LAYER_ANALYSIS.md",
+      "line": 175,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "FAILURE\\_TAXONOMY\\_QUANTIFIED.md",
+      "path": "FAILURE_TAXONOMY_QUANTIFIED.md",
+      "line": 175,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "out\\_p5/L047\\_GOLD\\_30.jsonl",
+      "path": "out_p5/L047_GOLD_30.jsonl",
+      "line": 177,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "SCIEVALSUITE\\_README.md",
+      "path": "SCIEVALSUITE_README.md",
+      "line": 188,
+      "status": "exact",
+      "matched": [
+        "evidence/SCIEVALSUITE_README.md"
+      ]
+    },
+    {
+      "raw": "requirements.txt",
+      "path": "requirements.txt",
+      "line": 221,
+      "status": "exact",
+      "matched": [
+        "paper/requirements.txt",
+        "requirements.txt"
+      ]
+    },
+    {
+      "raw": "paper/requirements.txt",
+      "path": "paper/requirements.txt",
+      "line": 221,
+      "status": "exact",
+      "matched": [
+        "paper/requirements.txt"
+      ]
+    },
+    {
+      "raw": "data/cache",
+      "path": "data/cache",
+      "line": 221,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "evidence/protocol.md",
+      "path": "evidence/protocol.md",
+      "line": 221,
+      "status": "exact",
+      "matched": [
+        "evidence/protocol.md"
+      ]
+    },
+    {
+      "raw": "\\_g11\\_hashcheck.py",
+      "path": "_g11_hashcheck.py",
+      "line": 221,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "evidence\\_manifest.json",
+      "path": "evidence_manifest.json",
+      "line": 224,
+      "status": "exact",
+      "matched": [
+        "evidence_manifest.json",
+        "paper/evidence_manifest.json"
+      ]
+    },
+    {
+      "raw": "results/p3\\_stats.json",
+      "path": "results/p3_stats.json",
+      "line": 224,
+      "status": "exact",
+      "matched": [
+        "results/p3_stats.json"
+      ]
+    },
+    {
+      "raw": "results/p3\\_effects.json",
+      "path": "results/p3_effects.json",
+      "line": 224,
+      "status": "exact",
+      "matched": [
+        "results/p3_effects.json"
+      ]
+    },
+    {
+      "raw": "results/calib\\_l1b\\_v2-numeric-mismatch.json",
+      "path": "results/calib_l1b_v2-numeric-mismatch.json",
+      "line": 224,
+      "status": "exact",
+      "matched": [
+        "results/calib_l1b_v2-numeric-mismatch.json"
+      ]
+    },
+    {
+      "raw": "results/gold\\_l1b\\_text.jsonl",
+      "path": "results/gold_l1b_text.jsonl",
+      "line": 224,
+      "status": "exact",
+      "matched": [
+        "results/gold_l1b_text.jsonl"
+      ]
+    },
+    {
+      "raw": "results/p3\\_stats\\_normalized.json",
+      "path": "results/p3_stats_normalized.json",
+      "line": 224,
+      "status": "exact",
+      "matched": [
+        "results/p3_stats_normalized.json"
+      ]
+    },
+    {
+      "raw": "results/p3\\_bootstrap.json",
+      "path": "results/p3_bootstrap.json",
+      "line": 224,
+      "status": "exact",
+      "matched": [
+        "results/p3_bootstrap.json"
+      ]
+    },
+    {
+      "raw": "out\\_p5/P5\\_MUSE\\_FINAL.json",
+      "path": "out_p5/P5_MUSE_FINAL.json",
+      "line": 224,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "fig\\_overview.pdf",
+      "path": "fig_overview.pdf",
+      "line": 224,
+      "status": "exact",
+      "matched": [
+        "paper/fig_overview.pdf"
+      ]
+    }
+  ],
+  "missing_refs": [
+    {
+      "raw": "run.json",
+      "path": "run.json",
+      "line": 29,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "run.json",
+      "path": "run.json",
+      "line": 33,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "run.json",
+      "path": "run.json",
+      "line": 66,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "analysis.py",
+      "path": "analysis.py",
+      "line": 71,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "audit\\_generated\\_script.py",
+      "path": "audit_generated_script.py",
+      "line": 71,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "papers/agent-comparison/analysis.py",
+      "path": "papers/agent-comparison/analysis.py",
+      "line": 76,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "\\_g11\\_hashcheck.py",
+      "path": "_g11_hashcheck.py",
+      "line": 82,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "calib\\_run\\_l1b.py",
+      "path": "calib_run_l1b.py",
+      "line": 91,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "data/cache",
+      "path": "data/cache",
+      "line": 91,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "insufficient\\_data.png",
+      "path": "insufficient_data.png",
+      "line": 155,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "workspaces/p5\\_muse\\_l1b\\_Chemistry\\_000",
+      "path": "workspaces/p5_muse_l1b_Chemistry_000",
+      "line": 155,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "out\\_p5/P5\\_MUSE\\_FINAL.json",
+      "path": "out_p5/P5_MUSE_FINAL.json",
+      "line": 158,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "\\_g11\\_hashcheck.py",
+      "path": "_g11_hashcheck.py",
+      "line": 164,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "out\\_p5/",
+      "path": "out_p5/",
+      "line": 167,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "out\\_p5/P5\\_L2\\_8SCENARIOS.json",
+      "path": "out_p5/P5_L2_8SCENARIOS.json",
+      "line": 169,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "out\\_p5/JUDGE\\_40\\_GOLD.jsonl",
+      "path": "out_p5/JUDGE_40_GOLD.jsonl",
+      "line": 173,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "out\\_p5/JUDGE\\_40\\_DOUBLE\\_REPORT.json",
+      "path": "out_p5/JUDGE_40_DOUBLE_REPORT.json",
+      "line": 173,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "out\\_p5/FARM\\_ABLATION.json",
+      "path": "out_p5/FARM_ABLATION.json",
+      "line": 175,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "out\\_p5/CROSS\\_LAYER\\_ANALYSIS.md",
+      "path": "out_p5/CROSS_LAYER_ANALYSIS.md",
+      "line": 175,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "FAILURE\\_TAXONOMY\\_QUANTIFIED.md",
+      "path": "FAILURE_TAXONOMY_QUANTIFIED.md",
+      "line": 175,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "out\\_p5/L047\\_GOLD\\_30.jsonl",
+      "path": "out_p5/L047_GOLD_30.jsonl",
+      "line": 177,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "data/cache",
+      "path": "data/cache",
+      "line": 221,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "\\_g11\\_hashcheck.py",
+      "path": "_g11_hashcheck.py",
+      "line": 221,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "out\\_p5/P5\\_MUSE\\_FINAL.json",
+      "path": "out_p5/P5_MUSE_FINAL.json",
+      "line": 224,
+      "status": "MISSING",
+      "matched": []
+    }
+  ],
+  "local_path_leaks": [
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "F:\\deepseek\\papers\\agent-comparison\\analysis.py",
+      "context": "authority_policy.single_source_of_truth.statistics_protocol"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "C:\\Users\\Administrator\\.dsh\\.agent-presets\\qa-gate\\references\\AGIKIT评测门方法论.md",
+      "context": "authority_policy.single_source_of_truth.evaluation_gates_methodology"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "F:\\deepseek（本工作区）；E:\\AGI-KIT",
+      "context": "authority_policy.cross_drive"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "F:\\deepseek\\research-kit\\eval-contract\\",
+      "context": "assets[0].path"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "F:\\deepseek\\study_repos\\gaia2-eval-contract\\",
+      "context": "assets[1].path"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "F:\\deepseek\\papers\\agent-comparison\\",
+      "context": "assets[2].path"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "E:\\AGI-KIT\\",
+      "context": "assets[3].path"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "F:\\deepseek\\scievalsuite\\",
+      "context": "assets[4].path"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "F:\\deepseek\\research-kit\\judge-calibration\\",
+      "context": "assets[5].path"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "F:\\deepseek\\research-kit\\confidence-calibration\\",
+      "context": "assets[6].path"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "F:\\deepseek\\research-kit\\qa-gate\\",
+      "context": "assets[7].path"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "F:\\deepseek\\study_repos\\equal-budget-experiment\\",
+      "context": "assets[8].path"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "F:\\deepseek\\.agent-memory\\sci-agent-eval-significance-2026\\P4_EVIDENCE_PACKAGE.md",
+      "context": "assets[9].path"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "F:\\deepseek\\scievalsuite\\out_p3\\",
+      "context": "assets[9].path"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "F:\\deepseek\\cloud-gpu-setup\\（SOP/RUNBOOK/成本日志）；实例",
+      "context": "assets[10].path"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "F:\\deepseek\\research-kit\\",
+      "context": "assets[11].path"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "F:\\deepseek\\scievalsuite\\out_p3",
+      "context": "assets[12].path"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "F:\\deepseek\\research-kit\\airs-eval",
+      "context": "assets[13].path"
+    },
+    {
+      "file": "evidence/ASSET_MANIFEST.json",
+      "line": null,
+      "leak": "E:\\AGI-KIT",
+      "context": "healthchecks.results[3].check"
+    },
+    {
+      "file": "evidence/MISSION.md",
+      "line": 95,
+      "leak": "F:\\deepseek\\scievalsuite\\`（统一基准正式落盘）——contract_spec.json",
+      "context": "- P2：`F:\\deepseek\\scievalsuite\\`（统一基准正式落盘）——contract_spec.json + run.json"
+    },
+    {
+      "file": "evidence/MISSION.md",
+      "line": 98,
+      "leak": "F:\\deepseek\\scievalsuite\\out_p3\\`",
+      "context": "- P3：`F:\\deepseek\\scievalsuite\\out_p3\\` leaderboard + 统计 + 成本 + L2×3"
+    },
+    {
+      "file": "evidence/P0_STATUS_REPORT.md",
+      "line": 13,
+      "leak": "F:\\deepseek\\study_repos\\SELF_ASSESSMENT_v4.md`",
+      "context": "| 十二评审终评 | `F:\\deepseek\\study_repos\\SELF_ASSESSMENT_v4.md` | N 3.08 / **S 4.08 / Si 2.88"
+    },
+    {
+      "file": "evidence/P0_STATUS_REPORT.md",
+      "line": 14,
+      "leak": "F:\\deepseek\\study_repos\\NOVELTY_ARGUMENT.md`",
+      "context": "| 新颖性论证局限节 | `F:\\deepseek\\study_repos\\NOVELTY_ARGUMENT.md` §5 | 「单用户工具：无真实用户采用数据（Signifi"
+    },
+    {
+      "file": "evidence/P0_STATUS_REPORT.md",
+      "line": 23,
+      "leak": "F:\\deepseek\\research-kit\\`（10",
+      "context": "### 2.1 `F:\\deepseek\\research-kit\\`（10 件）"
+    },
+    {
+      "file": "evidence/P0_STATUS_REPORT.md",
+      "line": 36,
+      "leak": "E:\\AGI-KIT\\`（正式部署，logs",
+      "context": "### 2.2 `E:\\AGI-KIT\\`（正式部署，logs 今日仍在更新）"
+    },
+    {
+      "file": "evidence/P0_STATUS_REPORT.md",
+      "line": 46,
+      "leak": "E:\\AGI-KIT\\eval-contract\\`。",
+      "context": "- **eval-contract 部署**：`E:\\AGI-KIT\\eval-contract\\`。"
+    },
+    {
+      "file": "evidence/P0_STATUS_REPORT.md",
+      "line": 48,
+      "leak": "F:\\deepseek\\study_repos\\`（可执行协议与实验台）",
+      "context": "### 2.3 `F:\\deepseek\\study_repos\\`（可执行协议与实验台）"
+    },
+    {
+      "file": "evidence/P0_STATUS_REPORT.md",
+      "line": 53,
+      "leak": "C:\\Users\\Administrator\\.dsh\\.agent-presets\\qa-gate\\references\\AGIKIT评测门方法论.md`（单一权威源，G041",
+      "context": "- 方法论文档：`C:\\Users\\Administrator\\.dsh\\.agent-presets\\qa-gate\\references\\AGIKIT评测门方法论.md`（单一权威源，G041 已校验无漂移副本）。"
+    },
+    {
+      "file": "evidence/P0_STATUS_REPORT.md",
+      "line": 60,
+      "leak": "E:\\AGI-KIT\\logs\\`）。",
+      "context": "GAIA2 live 完成度引导三场景（G48–G50，`E:\\AGI-KIT\\logs\\`）。"
+    },
+    {
+      "file": "evidence/P0_STATUS_REPORT.md",
+      "line": 110,
+      "leak": "E:\\AGI-KIT",
+      "context": "- **新增 R5**：E:\\AGI-KIT 与 F:\\deepseek 分属两盘，统一基准须明确"
+    },
+    {
+      "file": "evidence/P0_STATUS_REPORT.md",
+      "line": 110,
+      "leak": "F:\\deepseek",
+      "context": "- **新增 R5**：E:\\AGI-KIT 与 F:\\deepseek 分属两盘，统一基准须明确"
+    },
+    {
+      "file": "evidence/P0_STATUS_REPORT.md",
+      "line": 111,
+      "leak": "F:\\deepseek`（本工作区），",
+      "context": "「哪边是权威源」——建议契约/结果落 `F:\\deepseek`（本工作区），"
+    },
+    {
+      "file": "evidence/P5_COMPLIANCE_REPORT.md",
+      "line": 35,
+      "leak": "E:\\AGI-KIT\\p3_benchmark.py`",
+      "context": "**发现 1：`E:\\AGI-KIT\\p3_benchmark.py` 哈希漂移**"
+    },
+    {
+      "file": "evidence/P5_COMPLIANCE_REPORT.md",
+      "line": 45,
+      "leak": "F:\\deepseek\\papers\\agent-comparison\\analysis.py`（文件而非目录）",
+      "context": "- manifest 曾指向 `F:\\deepseek\\papers\\agent-comparison\\analysis.py`（文件而非目录）"
+    },
+    {
+      "file": "evidence/P5_COMPLIANCE_REPORT.md",
+      "line": 46,
+      "leak": "F:\\deepseek\\papers\\agent-comparison\\`；哈希验真",
+      "context": "- 修正：`F:\\deepseek\\papers\\agent-comparison\\`；哈希验真 35527670… 匹配"
+    },
+    {
+      "file": "evidence/PHASE_LOG.md",
+      "line": 26,
+      "leak": "E:\\AGI-KIT`（正式部署，logs",
+      "context": "- 资产盘点 ✅：research-kit 10 件 + `E:\\AGI-KIT`（正式部署，logs 今日仍活跃）+"
+    },
+    {
+      "file": "evidence/PHASE_LOG.md",
+      "line": 31,
+      "leak": "E:\\AGI-KIT`（非",
+      "context": "- AGI-KIT 正式部署在 `E:\\AGI-KIT`（非 F 盘）；新增风险 R5：跨盘权威源问题，"
+    },
+    {
+      "file": "evidence/PHASE_LOG.md",
+      "line": 32,
+      "leak": "F:\\deepseek，AGI-KIT",
+      "context": "建议契约/结果落 F:\\deepseek，AGI-KIT 以 manifest 哈希引用。"
+    },
+    {
+      "file": "evidence/PHASE_LOG.md",
+      "line": 71,
+      "leak": "F:\\deepseek\\scievalsuite\\`）：",
+      "context": "**产出物**（统一基准正式落盘 `F:\\deepseek\\scievalsuite\\`）："
+    },
+    {
+      "file": "evidence/PHASE_LOG.md",
+      "line": 81,
+      "leak": "E:\\learn\\ResearchClawBench-main\\tasks；4",
+      "context": "E:\\learn\\ResearchClawBench-main\\tasks；4 GAIA2 场景 0144/0147/0154/0184"
+    },
+    {
+      "file": "evidence/PHASE_LOG.md",
+      "line": 141,
+      "leak": "F:\\deepseek\\_repo_survey\\airs-bench-main\\airs-bench-main`（work_*",
+      "context": "`F:\\deepseek\\_repo_survey\\airs-bench-main\\airs-bench-main`（work_* 史在）；"
+    },
+    {
+      "file": "evidence/PHASE_LOG.md",
+      "line": 291,
+      "leak": "E:\\AGI-KIT\\p3_benchmark.py`",
+      "context": "2. `E:\\AGI-KIT\\p3_benchmark.py` CloudLLM 新增 **HARD_DEADLINE_S"
+    },
+    {
+      "file": "evidence/PHASE_LOG.md",
+      "line": 539,
+      "leak": "E:\\AGI-KIT\\p3_benchmark.py`",
+      "context": "1. `E:\\AGI-KIT\\p3_benchmark.py` 哈希漂移（08-19 09:09 外部修改，评测后）："
+    },
+    {
+      "file": "evidence/SCIEVALSUITE_README.md",
+      "line": 9,
+      "leak": "E:\\AGI-KIT`、`study_repos`",
+      "context": "把分散在 `research-kit`、`E:\\AGI-KIT`、`study_repos` 的评测能力，"
+    },
+    {
+      "file": "evidence/SCIEVALSUITE_README.md",
+      "line": 35,
+      "leak": "E:\\AGI-KIT\\`",
+      "context": "IT（runner + 控制链 + p3 冻结评测） | `E:\\AGI-KIT\\` |"
+    },
+    {
+      "file": "evidence/SCIEVALSUITE_README.md",
+      "line": 43,
+      "leak": "E:\\AGI-KIT）",
+      "context": "的《AGIKIT评测门方法论.md》为唯一权威源。跨盘引用（E:\\AGI-KIT）"
+    },
+    {
+      "file": "evidence/SCIEVALSUITE_README.md",
+      "line": 50,
+      "leak": "F:\\deepseek\\study_repos\\gaia2-eval-contract\\cli.py",
+      "context": "python F:\\deepseek\\study_repos\\gaia2-eval-contract\\cli.py selftest"
+    },
+    {
+      "file": "evidence/SCIEVALSUITE_README.md",
+      "line": 53,
+      "leak": "F:\\deepseek\\papers\\agent-comparison\\analysis.py",
+      "context": "python F:\\deepseek\\papers\\agent-comparison\\analysis.py --selftest"
+    },
+    {
+      "file": "evidence/SCIEVALSUITE_README.md",
+      "line": 56,
+      "leak": "F:\\deepseek\\research-kit\\qa-gate\\group_healthcheck.py",
+      "context": "python F:\\deepseek\\research-kit\\qa-gate\\group_healthcheck.py --selftest"
+    },
+    {
+      "file": "evidence_manifest.json",
+      "line": null,
+      "leak": "F:\\deepseek\\papers\\scievalsuite",
+      "context": "root"
+    },
+    {
+      "file": "EXPERIENCE_DIGEST.md",
+      "line": 14,
+      "leak": "F:\\x",
+      "context": "- 动作: PowerShell 双引号里的反斜杠路径 F:\\x 传给 wsl.exe 时被吞（/mnt/fdeepseek"
+    },
+    {
+      "file": "EXPERIENCE_DIGEST.md",
+      "line": 20,
+      "leak": "F:\\deepseek",
+      "context": "- 动作: pilot S1/S3 在 F:\\deepseek 根目录创建 smoke_test_*.ps1/is_pri"
+    },
+    {
+      "file": "paper/evidence_manifest.json",
+      "line": null,
+      "leak": "F:\\deepseek\\papers\\scievalsuite\\paper",
+      "context": "root"
+    },
+    {
+      "file": "paper/fancyhdr.sty",
+      "line": 284,
+      "leak": "e:\\MessageBreak",
+      "context": "at least \\the\\ht0, for example:\\MessageBreak"
+    },
+    {
+      "file": "paper/fancyhdr.sty",
+      "line": 291,
+      "leak": "e:\\MessageBreak",
+      "context": "topmargin smaller to compensate:\\MessageBreak"
+    },
+    {
+      "file": "paper/tmlr_check.py",
+      "line": 3,
+      "leak": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+      "context": "tex = pathlib.Path(r\"F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex\").read_text(encoding='utf-8')"
+    },
+    {
+      "file": "paper/tmlr_check.py",
+      "line": 4,
+      "leak": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.bib",
+      "context": "bib = pathlib.Path(r\"F:\\deepseek\\papers\\scievalsuite\\paper\\main.bib\").read_text(encoding='utf-8')"
+    },
+    {
+      "file": "paper/tmlr_check.py",
+      "line": 15,
+      "leak": "F:\\deepseek\\papers\\scievalsuite\\paper\\evidence_manifest.json",
+      "context": "manifest = pathlib.Path(r\"F:\\deepseek\\papers\\scievalsuite\\paper\\evidence_manifest.json\")"
+    },
+    {
+      "file": "paper/tmlr_check.py",
+      "line": 21,
+      "leak": "F:\\deepseek\\papers\\scievalsuite\\paper\\tmlr_check_report.json",
+      "context": "pathlib.Path(r\"F:\\deepseek\\papers\\scievalsuite\\paper\\tmlr_check_report.json\").write_text(json.dumps(check"
+    },
+    {
+      "file": "qa_out_final/report.json",
+      "line": null,
+      "leak": "F:\\deepseek\\research-kit\\tmlr-checklist\\tmlr_submission_checklist.md",
+      "context": "stages.tmlr_checklist.path"
+    },
+    {
+      "file": "results/gold_l1b_text_candidates.json",
+      "line": null,
+      "leak": "E:\\learn\\ResearchClawBench-main\\tasks\\Earth_001\\data`",
+      "context": "[8].report_full"
+    },
+    {
+      "file": "results/gold_l1b_text_candidates.json",
+      "line": null,
+      "leak": "E:\\learn\\ResearchClawBench-main\\workspaces\\p0_Earth_001`",
+      "context": "[8].report_full"
+    },
+    {
+      "file": "results/p3_aggregate.py",
+      "line": 19,
+      "leak": "F:\\deepseek\\papers\\agent-comparison",
+      "context": "sys.path.insert(0, r\"F:\\deepseek\\papers\\agent-comparison\")"
+    },
+    {
+      "file": "results/p3_aggregate.py",
+      "line": 25,
+      "leak": "F:\\deepseek\\_repo_survey\\airs-bench-main\\airs-bench-main",
+      "context": "AIRS_ROOT = Path(r\"F:\\deepseek\\_repo_survey\\airs-bench-main\\airs-bench-main\")"
+    },
+    {
+      "file": "results/p3_aggregate.py",
+      "line": 26,
+      "leak": "E:\\learn\\ResearchClawBench-main",
+      "context": "RCB = Path(r\"E:\\learn\\ResearchClawBench-main\")"
+    },
+    {
+      "file": "results/p3_cost.py",
+      "line": 17,
+      "leak": "F:\\deepseek\\research-kit\\llm-client",
+      "context": "sys.path.insert(0, r\"F:\\deepseek\\research-kit\\llm-client\")"
+    },
+    {
+      "file": "results/p3_cost.py",
+      "line": 23,
+      "leak": "F:\\deepseek\\_repo_survey\\airs-bench-main\\airs-bench-main",
+      "context": "AIRS_ROOT = Path(r\"F:\\deepseek\\_repo_survey\\airs-bench-main\\airs-bench-main\")"
+    },
+    {
+      "file": "results/p3_cost.py",
+      "line": 24,
+      "leak": "E:\\learn\\ResearchClawBench-main",
+      "context": "RCB = Path(r\"E:\\learn\\ResearchClawBench-main\")"
+    },
+    {
+      "file": "results/p3_diag_cloud_e2e.py",
+      "line": 5,
+      "leak": "E:\\AGI-KIT",
+      "context": "sys.path.insert(0, r\"E:\\AGI-KIT\")"
+    },
+    {
+      "file": "results/p3_diag_pro_call.py",
+      "line": 3,
+      "leak": "E:\\AGI-KIT",
+      "context": "sys.path.insert(0, r\"E:\\AGI-KIT\")"
+    },
+    {
+      "file": "results/p3_diag_pro_call.py",
+      "line": 16,
+      "leak": "C:\\Users\\Administrator\\.dsh\\.credentials.yaml",
+      "context": "cred = Path(r\"C:\\Users\\Administrator\\.dsh\\.credentials.yaml\").read_text(encoding=\"utf-8\")"
+    },
+    {
+      "file": "results/p3_diag_pro_call.py",
+      "line": 17,
+      "leak": "Y:\\s*(\\S+",
+      "context": "re.search(r\"OPENCODE_GO_API_KEY:\\s*(\\S+)\", cred).group(1)"
+    },
+    {
+      "file": "results/p3_diag_pro_late_step.py",
+      "line": 5,
+      "leak": "E:\\AGI-KIT",
+      "context": "sys.path.insert(0, r\"E:\\AGI-KIT\")"
+    },
+    {
+      "file": "results/p3_diag_pro_late_step.py",
+      "line": 25,
+      "leak": "C:\\Users\\Administrator\\.dsh\\.credentials.yaml",
+      "context": "cred = Path(r\"C:\\Users\\Administrator\\.dsh\\.credentials.yaml\").read_text(encoding=\"utf-8\")"
+    },
+    {
+      "file": "results/p3_diag_pro_late_step.py",
+      "line": 26,
+      "leak": "Y:\\s*(\\S+",
+      "context": "re.search(r\"OPENCODE_GO_API_KEY:\\s*(\\S+)\", cred).group(1)"
+    },
+    {
+      "file": "results/p3_probe.py",
+      "line": 14,
+      "leak": "F:\\deepseek\\research-kit\\llm-client",
+      "context": "sys.path.insert(0, r\"F:\\deepseek\\research-kit\\llm-client\")"
+    },
+    {
+      "file": "results/p3_probe.py",
+      "line": 22,
+      "leak": "C:\\Users\\Administrator\\.dsh\\.credentials.yaml",
+      "context": "cred = Path(r\"C:\\Users\\Administrator\\.dsh\\.credentials.yaml\").read_text(encoding=\"utf-8\")"
+    },
+    {
+      "file": "results/p3_probe.py",
+      "line": 23,
+      "leak": "Y:\\s*(\\S+",
+      "context": "re.search(r\"OPENCODE_GO_API_KEY:\\s*(\\S+)\", cred)"
+    },
+    {
+      "file": "results/p3_probe_cloud.py",
+      "line": 4,
+      "leak": "F:\\deepseek\\research-kit\\llm-client",
+      "context": "sys.path.insert(0, r\"F:\\deepseek\\research-kit\\llm-client\")"
+    },
+    {
+      "file": "results/p3_probe_model_pool.py",
+      "line": 4,
+      "leak": "E:\\AGI-KIT",
+      "context": "sys.path.insert(0, r\"E:\\AGI-KIT\")"
+    },
+    {
+      "file": "results/p3_recompute.py",
+      "line": 18,
+      "leak": "F:\\deepseek\\_repo_survey\\airs-bench-main\\airs-bench-main",
+      "context": "AIRS_ROOT = Path(r\"F:\\deepseek\\_repo_survey\\airs-bench-main\\airs-bench-main\")"
+    },
+    {
+      "file": "results/p3_recompute.py",
+      "line": 19,
+      "leak": "E:\\learn\\ResearchClawBench-main",
+      "context": "RCB = Path(r\"E:\\learn\\ResearchClawBench-main\")"
+    },
+    {
+      "file": "results/p3_run_l1a.py",
+      "line": 19,
+      "leak": "F:\\deepseek\\_repo_survey\\airs-bench-main\\airs-bench-main",
+      "context": "AIRS_ROOT = Path(r\"F:\\deepseek\\_repo_survey\\airs-bench-main\\airs-bench-main\")"
+    },
+    {
+      "file": "results/p3_run_l1a.py",
+      "line": 20,
+      "leak": "F:\\deepseek\\research-kit\\airs-eval",
+      "context": "AIRS_EVAL = Path(r\"F:\\deepseek\\research-kit\\airs-eval\")"
+    },
+    {
+      "file": "results/p3_run_l1a.py",
+      "line": 39,
+      "leak": "C:\\Users\\Administrator\\.dsh\\.credentials.yaml",
+      "context": "cred = Path(r\"C:\\Users\\Administrator\\.dsh\\.credentials.yaml\").read_text(encoding=\"utf-8\")"
+    },
+    {
+      "file": "results/p3_run_l1a.py",
+      "line": 40,
+      "leak": "Y:\\s*(\\S+",
+      "context": "re.search(r\"OPENCODE_GO_API_KEY:\\s*(\\S+)\", cred)"
+    },
+    {
+      "file": "results/p3_run_l1b.py",
+      "line": 19,
+      "leak": "F:\\deepseek\\research-kit\\airs-eval",
+      "context": "AIRS_EVAL = Path(r\"F:\\deepseek\\research-kit\\airs-eval\")"
+    },
+    {
+      "file": "results/p3_run_l1b.py",
+      "line": 44,
+      "leak": "C:\\Users\\Administrator\\.dsh\\.credentials.yaml",
+      "context": "cred = Path(r\"C:\\Users\\Administrator\\.dsh\\.credentials.yaml\").read_text(encoding=\"utf-8\")"
+    },
+    {
+      "file": "results/p3_run_l1b.py",
+      "line": 45,
+      "leak": "Y:\\s*(\\S+",
+      "context": "re.search(r\"OPENCODE_GO_API_KEY:\\s*(\\S+)\", cred)"
+    },
+    {
+      "file": "results/p3_run_l2.py",
+      "line": 37,
+      "leak": "C:\\Users\\Administrator\\.dsh\\.credentials.yaml",
+      "context": "cred = Path(r\"C:\\Users\\Administrator\\.dsh\\.credentials.yaml\").read_text(encoding=\"utf-8\")"
+    },
+    {
+      "file": "results/p3_run_l2.py",
+      "line": 38,
+      "leak": "Y:\\s*(\\S+",
+      "context": "re.search(r\"OPENCODE_GO_API_KEY:\\s*(\\S+)\", cred)"
+    },
+    {
+      "file": "results/p3_run_l2.py",
+      "line": 55,
+      "leak": "E:\\AGI-KIT\\p3_benchmark.py",
+      "context": "cmd = [sys.executable, r\"E:\\AGI-KIT\\p3_benchmark.py\", \"--live\","
+    },
+    {
+      "file": "results/p3_run_l2.py",
+      "line": 62,
+      "leak": "E:\\AGI-KIT",
+      "context": "ocess.run(cmd, env=env, cwd=r\"E:\\AGI-KIT\")"
+    },
+    {
+      "file": "results/p3_seed_l1a.py",
+      "line": 15,
+      "leak": "F:\\deepseek\\_repo_survey\\airs-bench-main\\airs-bench-main",
+      "context": "ROOT = Path(r\"F:\\deepseek\\_repo_survey\\airs-bench-main\\airs-bench-main\")"
+    },
+    {
+      "file": "scripts/check_submission_package.py",
+      "line": 39,
+      "leak": "\\\\email\\s*\\{[^",
+      "context": "\"\\\\(?:author|and)\\s*\\{[^}]*\\}|\\\\email\\s*\\{[^}]*\\}|\\\\affiliation\\s*\\{[^}]*\\"
+    },
+    {
+      "file": "scripts/check_submission_package.py",
+      "line": 39,
+      "leak": "\\\\affiliation\\s*\\{[^",
+      "context": "\\{[^}]*\\}|\\\\email\\s*\\{[^}]*\\}|\\\\affiliation\\s*\\{[^}]*\\}\","
+    },
+    {
+      "file": "scripts/check_tmlr_compliance.py",
+      "line": 26,
+      "leak": "\\\\usepackage\\s*(?:\\[[^\\",
+      "context": "TMLR_PKG_RE = re.compile(r\"\\\\usepackage\\s*(?:\\[[^\\]]*\\])?\\s*\\{tmlr\\}\")"
+    },
+    {
+      "file": "scripts/check_tmlr_compliance.py",
+      "line": 27,
+      "leak": "\\\\documentclass\\s*(?:\\[[^\\",
+      "context": "JMLR_CLASS_RE = re.compile(r\"\\\\documentclass\\s*(?:\\[[^\\]]*\\])?\\s*\\{[^}]*jmlr[^}]*\\}\")"
+    },
+    {
+      "file": "scripts/check_tmlr_compliance.py",
+      "line": 34,
+      "leak": "\\\\bibliographystyle\\s*\\{[^",
+      "context": "BIBSTYLE_RE = re.compile(r\"\\\\bibliographystyle\\s*\\{[^}]*tmlr[^}]*\\}\")"
+    },
+    {
+      "file": "scripts/check_tmlr_compliance.py",
+      "line": 35,
+      "leak": "\\\\bibliography\\s*\\{",
+      "context": "BIB_RE = re.compile(r\"\\\\bibliography\\s*\\{\")"
+    },
+    {
+      "file": "scripts/compile_gate.py",
+      "line": 40,
+      "leak": "\\\\label\\{([^",
+      "context": "LABEL_CMD = re.compile(r\"\\\\label\\{([^}]*)\\}\")"
+    },
+    {
+      "file": "scripts/gate_citations.py",
+      "line": 58,
+      "leak": "F:\\deepseek\\research-kit\\citation-verifier\\verify_citations.py",
+      "context": "DEFAULT_VERIFIER = Path(r\"F:\\deepseek\\research-kit\\citation-verifier\\verify_citations.py\")"
+    },
+    {
+      "file": "scripts/make_camera_ready.py",
+      "line": 53,
+      "leak": "\\\\usepackage\\{tmlr\\",
+      "context": "new = re.sub(r\"\\\\usepackage\\{tmlr\\}\", r\"\\\\usepackage[accepted]{t"
+    },
+    {
+      "file": "scripts/make_camera_ready.py",
+      "line": 59,
+      "leak": "\\\\author\\s*\\{[^",
+      "context": "new = re.sub(r\"\\\\author\\s*\\{[^}]*\\}\", \"\", new, count=1, flag"
+    },
+    {
+      "file": "scripts/make_camera_ready.py",
+      "line": 75,
+      "leak": "\\\\begin\\{document\\",
+      "context": "new = re.sub(r\"(\\\\begin\\{document\\})\","
+    },
+    {
+      "file": "scripts/make_run_record.py",
+      "line": 55,
+      "leak": "F:\\deepseek\\.datasets\\cifar-10-batches-py",
+      "context": "data_dir = Path(r\"F:\\deepseek\\.datasets\\cifar-10-batches-py\")"
+    },
+    {
+      "file": "scripts/prepare_submission.py",
+      "line": 44,
+      "leak": "\\\\email\\s*\\{[^",
+      "context": "\"\\\\(?:author|and)\\s*\\{[^}]*\\}|\\\\email\\s*\\{[^}]*\\}|\\\\thanks\\s*\\{[^}]*\\}|\""
+    },
+    {
+      "file": "scripts/prepare_submission.py",
+      "line": 44,
+      "leak": "\\\\thanks\\s*\\{[^",
+      "context": "\\{[^}]*\\}|\\\\email\\s*\\{[^}]*\\}|\\\\thanks\\s*\\{[^}]*\\}|\""
+    },
+    {
+      "file": "scripts/prepare_submission.py",
+      "line": 45,
+      "leak": "\\\\affiliation\\s*\\{[^",
+      "context": "r\"\\\\affiliation\\s*\\{[^}]*\\}|Acknowledg(e)?ment\", re."
+    },
+    {
+      "file": "scripts/prepare_submission.py",
+      "line": 70,
+      "leak": "\\\\title\\s*\\{([^",
+      "context": "m = re.search(r\"\\\\title\\s*\\{([^}]+)\\}\", main_tex.read_text(en"
+    },
+    {
+      "file": "scripts/prepare_submission.py",
+      "line": 76,
+      "leak": "\\\\begin\\{abstract\\",
+      "context": "m = re.search(r\"\\\\begin\\{abstract\\}(.*?)\\\\end\\{abstract\\}\", text"
+    },
+    {
+      "file": "scripts/prepare_submission.py",
+      "line": 76,
+      "leak": "\\\\end\\{abstract\\",
+      "context": "rch(r\"\\\\begin\\{abstract\\}(.*?)\\\\end\\{abstract\\}\", text, re.DOTALL)"
+    },
+    {
+      "file": "scripts/prepare_submission.py",
+      "line": 86,
+      "leak": "\\\\keywords\\s*\\{([^",
+      "context": "m = re.search(r\"\\\\keywords\\s*\\{([^}]+)\\}\", text)"
+    },
+    {
+      "file": "scripts/scan_figure_claims.py",
+      "line": 64,
+      "leak": "\\\\label\\{(fig:[^",
+      "context": "LABEL_RE = re.compile(r\"\\\\label\\{(fig:[^}]*)\\}\")"
+    },
+    {
+      "file": "scripts/scan_number_consistency.py",
+      "line": 30,
+      "leak": "\\\\begin\\{(?:table|tabular|table\\*",
+      "context": "r\"\\\\begin\\{(?:table|tabular|table\\*)\\}.*?\\\\end\\{(?:table|tabular|"
+    },
+    {
+      "file": "scripts/scan_number_consistency.py",
+      "line": 30,
+      "leak": "\\\\end\\{(?:table|tabular|table\\*",
+      "context": "(?:table|tabular|table\\*)\\}.*?\\\\end\\{(?:table|tabular|table\\*)\\}|\""
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 55,
+      "leak": "s:\\s*(\\d+",
+      "context": "\"stale\": r\"## Stale markers:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 56,
+      "leak": "s:\\s*(\\d+",
+      "context": "# Inverted confidence intervals:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 57,
+      "leak": "t:\\s*(\\d+",
+      "context": "evidence JSON but never in text:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 58,
+      "leak": "s:\\s*(\\d+",
+      "context": "r\"## Table-vs-prose mismatches:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 101,
+      "leak": "s:\\s*(\\d+",
+      "context": "ssible or out-of-range p-values:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 102,
+      "leak": "s:\\s*(\\d+",
+      "context": "r\"## Out-of-range effect sizes:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 103,
+      "leak": "f:\\s*(\\d+",
+      "context": "Negative statistics or zero df:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 106,
+      "leak": "t:\\s*(\\d+",
+      "context": "t\": r\"## Same-line n/N conflict:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 109,
+      "leak": "k:\\s*(\\d+",
+      "context": ": r\"## Multiple-comparison risk:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 124,
+      "leak": "s:\\s*(\\d+",
+      "context": "refs\": r\"## Missing_figure_refs:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 125,
+      "leak": "s:\\s*(\\d+",
+      "context": "r\"## Undefined_includegraphics:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 126,
+      "leak": "d:\\s*(\\d+",
+      "context": "entioned\": r\"## Never_mentioned:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 149,
+      "leak": "s:\\s*(\\d+",
+      "context": "le_errors\": r\"## Compile errors:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 150,
+      "leak": "s:\\s*(\\d+",
+      "context": "efs\": r\"## Undefined references:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 151,
+      "leak": "s:\\s*(\\d+",
+      "context": "ions\": r\"## Undefined citations:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 152,
+      "leak": "s:\\s*(\\d+",
+      "context": "\": r\"## Multiply-defined labels:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 153,
+      "leak": "s:\\s*(\\d+",
+      "context": "overfull\": r\"## Overfull hboxes:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 154,
+      "leak": "s:\\s*(\\d+",
+      "context": "han_labels\": r\"## Orphan labels:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 155,
+      "leak": "s:\\s*(\\d+",
+      "context": "bibs\": r\"## Uncited bib entries:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 156,
+      "leak": "d:\\s*(\\d+",
+      "context": "_skipped\": r\"## Compile skipped:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/switch_project.py",
+      "line": 25,
+      "leak": "F:\\deepseek\\papers",
+      "context": "PROJECTS_ROOT = Path(r\"F:\\deepseek\\papers\") if Path(r\"F:\\deepseek\\paper"
+    },
+    {
+      "file": "scripts/switch_project.py",
+      "line": 25,
+      "leak": "F:\\deepseek\\papers",
+      "context": ":\\deepseek\\papers\") if Path(r\"F:\\deepseek\\papers\").exists() else Path(\"papers\""
+    },
+    {
+      "file": "scripts/test_pyramid.py",
+      "line": 78,
+      "leak": "F:\\deepseek\\.datasets",
+      "context": "d = tc.CifarData(Path(r\"F:\\deepseek\\.datasets\"), 1000, dev)"
+    }
+  ],
+  "count_claims": [
+    {
+      "claim": "150 files",
+      "declared": 150,
+      "kind": "zip_entries",
+      "line": 216,
+      "actual_entries": 150,
+      "matches_actual": true
+    },
+    {
+      "claim": "46-entry",
+      "declared": 46,
+      "kind": "manifest_entries",
+      "line": 20,
+      "actual_entries": 150,
+      "matches_actual": null
+    },
+    {
+      "claim": "46-entry",
+      "declared": 46,
+      "kind": "manifest_entries",
+      "line": 82,
+      "actual_entries": 150,
+      "matches_actual": null
+    },
+    {
+      "claim": "165-entry",
+      "declared": 165,
+      "kind": "manifest_entries",
+      "line": 216,
+      "actual_entries": 150,
+      "matches_actual": null
+    },
+    {
+      "claim": "46-entry",
+      "declared": 46,
+      "kind": "manifest_entries",
+      "line": 224,
+      "actual_entries": 150,
+      "matches_actual": null
+    },
+    {
+      "claim": "46 SHA-256 hashes",
+      "declared": 46,
+      "kind": "manifest_hashes",
+      "line": 82,
+      "actual_entries": 150,
+      "matches_actual": null
+    },
+    {
+      "claim": "46 hashes",
+      "declared": 46,
+      "kind": "manifest_hashes",
+      "line": 164,
+      "actual_entries": 150,
+      "matches_actual": null
+    },
+    {
+      "claim": "18/18 checks",
+      "declared": 18,
+      "kind": "recompute_checks",
+      "line": 82,
+      "actual_entries": 150,
+      "matches_actual": null
+    },
+    {
+      "claim": "18/18 recompute",
+      "declared": 18,
+      "kind": "recompute_checks",
+      "line": 216,
+      "actual_entries": 150,
+      "matches_actual": null
+    }
+  ],
+  "inpackage_tex": {
+    "entry": "paper/main.tex",
+    "desync_with_disk": true,
+    "count_claims": [
+      {
+        "claim": "144 files",
+        "declared": 144,
+        "kind": "zip_entries",
+        "line": 216,
+        "actual_entries": 150,
+        "matches_actual": false,
+        "in_package_tex": true
+      },
+      {
+        "claim": "46-entry",
+        "declared": 46,
+        "kind": "manifest_entries",
+        "line": 20,
+        "actual_entries": 150,
+        "matches_actual": null,
+        "in_package_tex": true
+      },
+      {
+        "claim": "46-entry",
+        "declared": 46,
+        "kind": "manifest_entries",
+        "line": 82,
+        "actual_entries": 150,
+        "matches_actual": null,
+        "in_package_tex": true
+      },
+      {
+        "claim": "46-entry",
+        "declared": 46,
+        "kind": "manifest_entries",
+        "line": 216,
+        "actual_entries": 150,
+        "matches_actual": null,
+        "in_package_tex": true
+      },
+      {
+        "claim": "46-entry",
+        "declared": 46,
+        "kind": "manifest_entries",
+        "line": 224,
+        "actual_entries": 150,
+        "matches_actual": null,
+        "in_package_tex": true
+      },
+      {
+        "claim": "46 SHA-256 hashes",
+        "declared": 46,
+        "kind": "manifest_hashes",
+        "line": 82,
+        "actual_entries": 150,
+        "matches_actual": null,
+        "in_package_tex": true
+      },
+      {
+        "claim": "46 hashes",
+        "declared": 46,
+        "kind": "manifest_hashes",
+        "line": 164,
+        "actual_entries": 150,
+        "matches_actual": null,
+        "in_package_tex": true
+      },
+      {
+        "claim": "18/18 checks",
+        "declared": 18,
+        "kind": "recompute_checks",
+        "line": 82,
+        "actual_entries": 150,
+        "matches_actual": null,
+        "in_package_tex": true
+      },
+      {
+        "claim": "18/18 recompute",
+        "declared": 18,
+        "kind": "recompute_checks",
+        "line": 216,
+        "actual_entries": 150,
+        "matches_actual": null,
+        "in_package_tex": true
+      }
+    ]
+  },
+  "summary": {
+    "refs_total": 58,
+    "refs_missing": 24,
+    "leaks": 139,
+    "count_claims": 9,
+    "count_claims_mismatched": 0,
+    "tex_desync": true,
+    "verdict": "CRITICAL"
+  }
+}

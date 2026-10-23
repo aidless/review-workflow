@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "tex": "F:\\Research\\MERGED_FLAGSHIPS\\F45_Merged\\paper\\main.tex",
+    "bib": "F:\\Research\\MERGED_FLAGSHIPS\\F45_Merged\\paper\\main.bib",
+    "online": false,
+    "entries": 18,
+    "timestamp": "2026-08-28T09:49:06+00:00"
+  },
+  "structural_issues": [],
+  "online_results": [],
+  "summary": {
+    "entries": 18,
+    "ghost_citations": 0,
+    "structural_major": 0,
+    "not_found": 0,
+    "title_mismatch": 0,
+    "online_checked": 0,
+    "verdict": "PASS"
+  }
+}

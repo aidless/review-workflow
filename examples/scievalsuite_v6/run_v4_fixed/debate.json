@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\examples\\scievalsuite_v6\\run_v4_fixed\\r6_llm.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-27T03:54:35+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Critical",
+      "text": "- Critical: \"P3 SHA-256 seal over 125 files verifying byte-for-byte reproducibility\"混淆了\"文件哈希一致\"与\"结果可复现\"：LLM 输出具随机性，未报告温度/种子固定策略时，哈希密封不保证数值结果可复现，可复现性前提（确定性生成）未验证。"
+    },
+    {
+      "id": 2,
+      "sev": "Critical",
+      "text": "- Critical: \"P5 frontier Model-F 得 6/6\"未指明是哪个模型/哪个权重文件/哪个 ollama digest，外部无法复现该前沿结果。"
+    },
+    {
+      "id": 3,
+      "sev": "Critical",
+      "text": "- Critical: \"curated L1a\"从 16 个任务中事后挑选 6 个子集再做 Friedman 检验属于选择偏差/p-hacking；同时 Holm 校正仅覆盖\"两个非退化编码\"，刻意缩小校正族，忽略了全篇同时进行的 McNemar、16 任务 Friedman、P5 探索性检验、LLM-judge 校准等大量检验，构成多重比较的系统性低估。"
+    },
+    {
+      "id": 4,
+      "sev": "Critical",
+      "text": "- Critical: L2 对照实验样本量 N=4（仅 3 模型×2 臂×4 场景），McNemar n_d=0、power=0.0000、CI[0,0] 退化，\"两臂无差异\"这一核心结论在统计上不可检验，实验按自身声明即无法检出任何效应，等同未做对照。"
+    },
+    {
+      "id": 5,
+      "sev": "Critical",
+      "text": "- Critical: L2 的 $N=4$ 严重欠功效（自报 $d_{\\min}=2.1279$、McNemar power $=0.0000$），却在摘要中将\"no statistically detectable difference\"作为实质性负面结论呈现；这混淆了\"无差异\"与\"无能力检测差异\"。"
+    },
+    {
+      "id": 6,
+      "sev": "Critical",
+      "text": "- Critical: LLM-as-judge 在 21 gold 上校准通过（FNR=0/FPR=0），但实际评估轮次零 judge 调用（全 SKIP），校准集与部署集完全脱节；gold 上完美不蕴含真实数据上可靠，\"methodological warrant\"无法替代实证验证，内部效度归零。"
+    },
+    {
+      "id": 7,
+      "sev": "Critical",
+      "text": "- Critical: LLM-as-judge 校准用到 \"21 gold\"\"39 gold（26 real + 13 synthetic）\"且明确为\"single annotator\"人工标注，却无 IRB/伦理委员会批准、无知情同意、无标注员报酬与劳动保护披露——隐私与人体受试规范缺失。"
+    },
+    {
+      "id": 8,
+      "sev": "Critical",
+      "text": "- Critical: McNemar 检验在 $n_d=0$（零不一致对）时是退化/未定义的，报告 $p=1.0000$ 作为\"无差异\"的有效证据具有误导性——该检验在此条件下不提供任何信息量，等价于\"无数据\"而非\"证实无差异\"。"
+    },
+    {
+      "id": 9,
+      "sev": "Critical",
+      "text": "- Critical: P5 frontier Model-F（6/6, p=0.0026）作为探索性结果被引入，但未提供其配置快猧、托管环境、模型权重哈希或 ollama tag；它不属于三个云端本地模型，证据链对该 headline 结果完全断裂。"
+    },
+    {
+      "id": 10,
+      "sev": "Critical",
+      "text": "- Critical: intention-to-treat 均值 0.355 无法从所给分量推出。若 \"0.2000Ã3\" 表示三次 0.2000、\"0.5330Ã2\" 表示两次 0.5330，加一次失败(0)，则 (0.6+1.066+0)/6=0.278；若除以 5 则为 0.333；均≠ 0.355。数字不自恰。"
+    },
+    {
+      "id": 11,
+      "sev": "Critical",
+      "text": "- Critical: seed 管理缺失——仅对 gemma 做\"3 次独立试验\"，bootstrap at step/seed level 被列为 future work，无固定 seed 协议、无跨 seed 方差报告，所谓\"可复现\"缺少随机性控制证据。"
+    },
+    {
+      "id": 12,
+      "sev": "Critical",
+      "text": "- Critical: 三个子基准 AIRS-Bench、ResearchClawBench、GAIA2 均为既有外部数据集，本文实质贡献退化为\"编排外壳 + run.json 契约 + SHA-256 封印\"，属于工程封装而非方法论新颖性，但摘要将其包装为 benchmark 贡献。"
+    },
+    {
+      "id": 13,
+      "sev": "Critical",
+      "text": "- Critical: 双盲去标识不足——摘要明确写出云平台\"AutoDL RTX3090\"、框架版本\"ollama 0.32.13\"及大量内部代号(P3/P5/L047/ARS v3.11/ResearchClawBench)，足以反查作者身份，违反 TMLR G3 匿名要求。"
+    },
+    {
+      "id": 14,
+      "sev": "Critical",
+      "text": "- Critical: 哈希对账自相矛盾——\"P3 SHA-256 seal over 125 underlying files (91 entries after the P5 expansion)\"，125 文件与 91 条目关系未澄清，且未给出任何 manifest/逐文件哈希列表，\"byte-for-byte reproducibility\"无据可对账。"
+    },
+    {
+      "id": 15,
+      "sev": "Critical",
+      "text": "- Critical: 在 16 任务 Friedman 非显著（$p=0.3679$）的情况下仍报告 Nemenyi CD$=0.8284$；omnibus 检验非显著时不应进行事后两两比较，CD 在此无统计意义。"
+    },
+    {
+      "id": 16,
+      "sev": "Critical",
+      "text": "- Critical: 数据许可完全缺失——AIRS-Bench、ResearchClawBench、GAIA2 及\"13 synthetic / attack-style synthetic\"gold 数据均未声明许可证与来源授权，复现者无法合法获取/再分发。"
+    },
+    {
+      "id": 17,
+      "sev": "Critical",
+      "text": "- Critical: 显著性结果 p=0.0026 来自\"curated L1a（6 tasks, k=4）\"的事后挑选，task 子集选择本身引入选择偏差，而 Holm 校正仅\"over the two non-degenerate encodings\"——按结果（是否退化）决定纳入哪些检验做校正，是选择性校正，p=0.0261 不可信。"
+    },
+    {
+      "id": 18,
+      "sev": "Critical",
+      "text": "- Critical: 涉及人工标注(single annotator, 21/39 gold)却无 IRB/伦理审查声明、无标注员知情同意与劳酬披鲲，不符人体受试/标注伦理要求。"
+    },
+    {
+      "id": 19,
+      "sev": "Critical",
+      "text": "- Critical: 缺乏真正的对照组/参考基线——L1b 三个模型全部 0/10，仅靠 Chemistry_000 单任务 1/4 的\"阳性对照\"证明 pipeline 可解，未建立 floor/ceiling，无法判断 0/10 是模型无能还是基准不可解。"
+    },
+    {
+      "id": 20,
+      "sev": "Major",
+      "text": "- Major: \"18/18 independent recomputation checks passing\" 中 \"independent\" 未定义——是否异机、异硬件、异 pull 日期？如在同一 AutoDL 实例重跑，则非真正独立复现，仅为重现而非复现。"
+    },
+    {
+      "id": 21,
+      "sev": "Minor",
+      "synthetic": true,
+      "text": "（另有 17 条问题超出 20 条上限被截断，未参与辩论）"
+    }
+  ],
+  "rebuttals": [],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "sustained",
+      "reason": "摘要自报seed/bootstrap为future work,无固定温度/种子协议；SHA-256仅密封文件字节,不保证LLM随机输出的数值可复现,前提未验证。"
+    },
+    {
+      "id": 2,
+      "disposition": "sustained",
+      "reason": "摘要仅称'Model-F scored 6/6',未给出模型名/权重/digest/ollama tag,外部无法复现该前沿结果。"
+    },
+    {
+      "id": 3,
+      "disposition": "sustained",
+      "reason": "从16任务事后挑选6个做Friedman属选择偏差；Holm仅覆盖'两个非退化编码',刻意缩小校正族,系统性低估多重比较。"
+    },
+    {
+      "id": 4,
+      "disposition": "sustained",
+      "reason": "N=4、n_d=0、power=0.0000、CI[0,0]退化,实验自报即无法检出任何效应,对照实质无效。"
+    },
+    {
+      "id": 5,
+      "disposition": "sustained",
+      "reason": "power=0.0000却将'no statistically detectable difference'作为实质结论呈现于摘要,混淆'无差异'与'无能力检测差异'。"
+    },
+    {
+      "id": 6,
+      "disposition": "sustained",
+      "reason": "judge在gold上FNR/FPR=0但实际轮次零调用全SKIP,校准集与部署集脱节,内部效度归零；论文自认仅'methodological warrant'。"
+    },
+    {
+      "id": 7,
+      "disposition": "sustained",
+      "reason": "single annotator标注21/39 gold,论文未提及IRB/知情同意/报酬披露,人体受试与标注伦理规范缺失。"
+    },
+    {
+      "id": 8,
+      "disposition": "sustained",
+      "reason": "n_d=0时McNemar退化/未定义,p=1.0000不提供任何信息量,作为'无差异'证据具误导性。"
+    },
+    {
+      "id": 9,
+      "disposition": "sustained",
+      "reason": "Model-F不属于三个本地模型,摘要未给配置快照/托管环境/权重哈希/ollama tag,证据链对headline结果断裂。"
+    },
+    {
+      "id": 10,
+      "disposition": "sustained",
+      "reason": "核算:0.2×3+0.533×2=1.666；/6=0.278、/5=0.333,均≠0.355；ITT均值数字不自洽。"
+    },
+    {
+      "id": 11,
+      "disposition": "sustained",
+      "reason": "仅gemma'3次独立试验',bootstrap列为future work,无固定seed协议、无跨seed方差,可复现性缺随机性控制证据。"
+    },
+    {
+      "id": 12,
+      "disposition": "sustained",
+      "reason": "三个子基准均为既有外部数据集,实质贡献为编排外壳+run.json+SHA-256封印,摘要却包装为benchmark贡献。"
+    },
+    {
+      "id": 13,
+      "disposition": "sustained",
+      "reason": "摘要写出AutoDL RTX3090、ollama 0.32.13及大量内部代号,足以反查作者,违反TMLR G3匿名要求。"
+    },
+    {
+      "id": 14,
+      "disposition": "sustained",
+      "reason": "125文件与91条目关系未澄清,无manifest/逐文件哈希列表,'byte-for-byte reproducibility'无可对账依据。"
+    },
+    {
+      "id": 15,
+      "disposition": "sustained",
+      "reason": "Friedman omnibus非显著(p=0.3679)时仍报告Nemenyi CD=0.8284,事后比较在非显著omnibus下无统计意义。"
+    },
+    {
+      "id": 16,
+      "disposition": "sustained",
+      "reason": "三个外部数据集及合成gold均未声明许可证与来源授权,复现者无法合法获取/再分发。"
+    },
+    {
+      "id": 17,
+      "disposition": "sustained",
+      "reason": "p=0.0026来自事后挑选6任务；Holm仅覆盖'两个非退化编码',按退化与否决定纳入属选择性校正,p不可信。"
+    },
+    {
+      "id": 18,
+      "disposition": "sustained",
+      "reason": "single annotator标注21/39 gold,无IRB/伦理审查/知情同意/劳酬披露,不符人体受试与标注伦理要求。"
+    },
+    {
+      "id": 19,
+      "disposition": "sustained",
+      "reason": "L1b三模型全0/10,仅Chemistry_000 1/4阳性对照,未建立floor/ceiling,无法判断0/10是模型无能还是基准不可解。"
+    },
+    {
+      "id": 20,
+      "disposition": "sustained",
+      "reason": "'independent recomputation'未定义是否异机/异硬件/异pull日期,若同AutoDL实例则非真正独立复现。"
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 19,
+      "Major": 1,
+      "Minor": 0
+    },
+    "n_issues": 20,
+    "n_sustained": 20,
+    "n_withdrawn": 0,
+    "n_partial": 0,
+    "truncation": {
+      "n_total": 37,
+      "n_debated": 20,
+      "n_truncated": 17,
+      "max_issues": 20
+    },
+    "detail": "辩论后维持 Critical 19 / Major 1 （撤回 0，部分成立 0）；注：原始 37 条中仅严重度前 20 条进入辩论（MAX_ISSUES=20，截断 17 条未辩论）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "withdrawn_ids": []
+  }
+}

@@ -1,0 +1,21 @@
+{
+ "adjudications": "papers/agent-comparison/reviews/pipeline_S5/adjudications.json",
+ "evidence_dirs": [
+  "papers/agent-comparison/results",
+  "papers/agent-comparison/evidence"
+ ],
+ "llm": {
+  "enabled": true,
+  "roles": "method,stat,experiment,novelty,repro,devil",
+  "rpc": "http://127.0.0.1:3081",
+  "script": "research-kit/adversarial_review.py"
+ },
+ "manifest": null,
+ "name": "agent-comparison",
+ "out": "papers/agent-comparison/reviews/pipeline_S5",
+ "tex": "papers/agent-comparison/paper/main.tex",
+ "zip": "papers/agent-comparison/submission/submission_s5_20260907.zip",
+ "citation_online": true,
+ "novelty_online": true,
+ "converge": 3
+}

@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_3i2ZRk8GDN\\extracted_text.txt",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-26T06:11:24+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "dimensions": {
+    "P": {
+      "status": "ok",
+      "score": 8,
+      "justification": "问题真实且重要:transferability scorer 评估缺乏统一协议导致结论相互矛盾（如 LEEP 在不同研究中排名截然相反）,TMLR 明确欢迎此类实证基准研究,契合度极高。论文与已有工作关系清晰,引用 Kornblith 等奠定基线来源。唯贡献类型偏常规（benchmarking+组合scorer）,且范围限于图像分类,故未达 9-10。",
+      "top_weakness": "研究范围仅限 ImageNet 图像分类,作者自承认扩展到其他任务需重新设计方法,普适性受限。",
+      "evidence": "the best-performing scorer in Pándy et al. (2022), LEEP, appears among the worst scorers in Agostinelli et al. (2022).",
+      "parse": "json"
+    },
+    "R": {
+      "status": "ok",
+      "score": 6,
+      "justification": "实验规模可观（13 scorers×10架构×11数据集）且设有ImageNet基线,但片段中未见统计显著性检验、seed管理、多重比较校正等证据。所提combined scorer的评估公平性存疑:若在同一benchmark上训练与评测,\"consistently outperforms\"的结论可能被高估,需held-out验证。",
+      "top_weakness": "Combined scorer在评测benchmark上训练存在循环验证风险,\"consistently outperforms\"结论可能因过拟合而虚高。",
+      "evidence": "we propose a novel combined scorer that leverages information from multiple individual scorers and demonstrate that it consistently outperforms all of them and the baseline.",
+      "parse": "json"
+    },
+    "I": {
+      "status": "ok",
+      "score": 7,
+      "justification": "提供了该领域急需的标准化基准（13 scorers/10架构/11数据集）,揭示了简单ImageNet精度基线超越多数现有scorers这一有价值的负结果洞察,并提出一致性更优的combined scorer。三项贡献组合形成扎实增量,但局限在ImageNet图像分类,社区级影响有限。",
+      "top_weakness": "仅覆盖ImageNet图像分类,未扩展到其他模态/任务,combined scorer的提升幅度与基线差距未充分量化,整体增量受限。",
+      "evidence": "our benchmark uses the model's accuracy on its source task (e.g., ImageNet), which surprisingly outperforms most existing scorers. We... propose a novel combined scorer... that consistently outperform",
+      "parse": "json"
+    },
+    "S": {
+      "status": "ok",
+      "score": 7,
+      "justification": "多处措辞克制（\"arguably\"、\"surprisingly\"）,并坦率披露范围局限（限定图像分类、扩展需重新设计方法）。但摘要中\"consistently outperforms all of them and the baseline\"使用绝对化语言,\"consistently\"横跨全部设定属偏强断言,属轻微夸大。片段截断,无法验证复现承诺与详细局限。",
+      "top_weakness": "\"consistently outperforms all\"绝对化措辞缺乏分数据集细分佐证,存在过度概括风险。",
+      "evidence": "we propose a novel combined scorer that leverages information from multiple individual scorers and demonstrate that it consistently outperforms all of them and the baseline.",
+      "parse": "json"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "scores": {
+      "P": 8,
+      "R": 6,
+      "I": 7,
+      "S": 7
+    },
+    "overall": 6,
+    "weakest": "R(严谨性)",
+    "detail": "最弱维度 R(严谨性) = 6 分（<= 6）→ 文本层 WARN；证据层门禁不受影响"
+  }
+}

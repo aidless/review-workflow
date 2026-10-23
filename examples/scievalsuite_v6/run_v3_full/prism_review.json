@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-26T16:16:41+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "dimensions": {
+    "P": {
+      "status": "ok",
+      "score": 7,
+      "justification": "TMLR 明确接收 benchmark 与评测方法论论文,SciEvalSuite 统一三层评测的选题与 venue 高度契合,碎片化评测问题是真实的。但贡献本质是将已有 benchmark（AIRS-Bench、ResearchClawBench、GAIA2）整合到一个契约下,问题较为常规；且小模型结果大面积为零（L1b 全 0/10）,研究问题虽成立但被有效验证的程度存疑。",
+      "top_weakness": "统一框架基于三个已有 benchmark 的再组合,非全新评测设计；小模型上结果近乎全零,难以证明该套件能产生有区分度的科学洞察。",
+      "evidence": "evaluation remains fragmented: prediction benchmarks test single-step code execution, workflow benchmarks test report synthesis, and environment benchmarks test multi-step tool use, each under differe",
+      "parse": "json"
+    },
+    "R": {
+      "status": "ok",
+      "score": 5,
+      "justification": "统计检验选择正确（配对二分类用exact McNemar,多模型用Friedman+Nemenyi）,且透明披露功效极限。但N=4致McNemar功效0.0000,核心L2比较CI退化[0,0]无信息量；校准好的LLM judge实际零调用；多重比较无校正。实验设计虽有诚实披露,但无法支撑有效结论。",
+      "top_weakness": "N=4致McNemar功效0.0000,核心L2比较统计上完全无信息量；校准的LLM judge零调用。",
+      "evidence": "McNemar power 0.0000 at n_d=4; ... the round made zero judge calls (all SKIP)",
+      "parse": "json"
+    },
+    "I": {
+      "status": "ok",
+      "score": 5,
+      "justification": "贡献本质是将已有基准（AIRS-Bench、GAIA2、ResearchClawBench）打包进统一可复现合约,属增量整合而非新任务/新能力。可复现基础设施（SHA-256 manifest、重算脚本）对社区有用,但实验样本极小（N=4）、大量零结果、judge零调用,证据不足以支撑更高影响声明。",
+      "top_weakness": "三基准组合+可复现合约的增量价值有限,且关键统计功效为零、L1b全零、judge未实际调用,贡献声明远超证据支撑。",
+      "evidence": "L2 showed no statistically detectable difference between arms (exact McNemar p=1.0000, n_d=0<6 not-detectable...N=4); McNemar power 0.0000 at n_d=4; the round made zero judge calls (all SKIP)",
+      "parse": "json"
+    },
+    "S": {
+      "status": "ok",
+      "score": 9,
+      "justification": "零结果直白报告（L2 p=1.0000, n_d=0）,功效极限显式量化（McNemar power 0.0000 at n_d=4）,探索性结果标注exploratory,0/10失败无粉饰,SHA-256清单与18/18复算核验具体到版本号。仅judge校准与零实际调用之间的措辞略软。",
+      "top_weakness": "\"calibrated LLM-as-judge\"品牌化与该轮零judge调用之间存在张力,虽然作者坦率披露了这一点。",
+      "evidence": "the round made zero judge calls (all SKIP) so calibration is a methodological warrant; We disclose power limits (N=4, McNemar power 0.0000 at n_d=4)",
+      "parse": "json"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "scores": {
+      "P": 7,
+      "R": 5,
+      "I": 5,
+      "S": 9
+    },
+    "overall": 5,
+    "weakest": "R(严谨性)",
+    "detail": "最弱维度 R(严谨性) = 5 分（<= 6）→ 文本层 WARN；证据层门禁不受影响"
+  }
+}

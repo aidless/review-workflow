@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_3i2ZRk8GDN\\extracted_text.txt",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_3i2ZRk8GDN\\r6_llm.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-26T06:12:39+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Critical",
+      "text": "- Critical: \"combined scorer\" 被作为核心方法贡献提出（\"novel combined scorer that leverages information from multiple individual scorers\"），但将已有 scorer 做集成/stacking 是非常成熟的技术路径。论文未在可见部分论证该组合方法在机制层面的创新性（如是否有新的信息融合策略"
+    },
+    {
+      "id": 2,
+      "sev": "Critical",
+      "text": "- Critical: 仅 110 个样本、13 个打分器作为特征训练组合器，样本维度比约 8.5:1，极易过拟合；未提及正则化/特征选择/嵌套交叉验证，组合器的泛化性存疑。"
+    },
+    {
+      "id": 3,
+      "sev": "Critical",
+      "text": "- Critical: 全文存在大量编码/连字符损坏（ligature 损坏）：\"e!cient\"（efficient）、\"o\"ers\"（offers）、\"e\"orts\"（efforts）、\"a\"ect\"（affect）、\"di!culty\"（difficulty）、\"di\"erent\"（different）——处于已发表状态的论文，此类损坏直接破坏可读性，属严重排版问题。"
+    },
+    {
+      "id": 4,
+      "sev": "Critical",
+      "text": "- Critical: 无哈希对账；10 种架构、11 个数据集、预训练权重均未给出 SHA256/MD5 校验和，Torchvision/Hugging Face 上同名模型会因版本漂移导致复现失败，“相同模型池”无法对齐。"
+    },
+    {
+      "id": 5,
+      "sev": "Critical",
+      "text": "- Critical: 未对所用预训练模型（Torchvision、Hugging Face 仓库中的 10 种架构）的许可条款（如 Apache-2.0、非商用、CC-BY-NC 等）进行核查与披露，benchmark 复用他人权重但未说明许可兼容性，存在合规隐患。"
+    },
+    {
+      "id": 6,
+      "sev": "Critical",
+      "text": "- Critical: 未提供一键复现路径；可见部分仅给出 Torchvision/HuggingFace 主页链接，未给出代码仓库、容器镜像、environment.yml/requirements.txt 或运行脚本，违反 TMLR 复现性承诺。"
+    },
+    {
+      "id": 7,
+      "sev": "Critical",
+      "text": "- Critical: 未提供配置快矧（configuration snapshot）；“standardized evaluation protocolâ 在引言中反复强调，却未公开协议细节（学习率、batch size、epoch、优化器、数据划分比例、增强策略），证据链从“标准协议”到“结论”断裂。"
+    },
+    {
+      "id": 8,
+      "sev": "Critical",
+      "text": "- Critical: 样本非独立。10×11=110 个 (模型, 数据集) 配对中，同一模型跨 11 个数据集、同一数据集跨 10 个模型反复出现，构成聚类/重复测量结构；任何相关性检验或显著性检验默认 i.i.d.，此处被严重违反，应使用混合效应模型或聚类 bootstrap。"
+    },
+    {
+      "id": 9,
+      "sev": "Critical",
+      "text": "- Critical: 组合 scorer 的评估存在数据泄漏/过拟合风险。若组合 scorer 在参与评估的同一批 11 个数据集上拟合并在其上\"一致超越\"各单一 scorer，属于样本内自我验证；正文未见留出集或交叉验证协议，\"consistently outperforms\" 的结论在统计上无效。"
+    },
+    {
+      "id": 10,
+      "sev": "Critical",
+      "text": "- Critical: 组合打分器声称\"一致地优于所有单打分器与基线\"，但其训练/调参与评测若共用同一批 11 数据集×10 架构的样本，存在数据泄漏与样本内过拟合风险，内部效度被破坏；必须说明是否采用留出/交叉验证、组合器权重是否在评测集外学习。"
+    },
+    {
+      "id": 11,
+      "sev": "Critical",
+      "text": "- Critical: 组合打分器（combined scorer）\"利用多个单打分器信息\"且\"始终优于所有单打分器与基线\"，但引言未说明其训练/评估协议。若在 10 架构×11 数据集=110 个 (model, dataset) 对上同时训练与评估组合器，存在严重数据泄漏；必须做留一数据集/留一架构的交叉验证，否则\"始终最优\"是过拟合产物。"
+    },
+    {
+      "id": 12,
+      "sev": "Critical",
+      "text": "- Critical: 论文使用 ImageNet、PASCAL VOC、SUN397 等 11 个数据集，但全文未见任何数据许可（license）合规声明；ImageNet、SUN397 等含未征得个人同意采集的人物图像，复用与再分发存在版权与肖像权风险，却未作任何说明。"
+    },
+    {
+      "id": 13,
+      "sev": "Critical",
+      "text": "- Critical: 论文宣称\"领域缺少标准化评估协议\"作为核心 GAP，但 Pándy et al. (2022)（论文自己引用）已经系统比较了多个 transferability estimators（LEEP、NCE、LogME 等），并提出了对比实验设计。论文虽提及该工作却仍将\"无统一协议\"作为本文动机，GAP 的表述存在自我矛盾，真实性与新颖性均被夸大。"
+    },
+    {
+      "id": 14,
+      "sev": "Critical",
+      "text": "- Critical: 通篇可见部分未提及任何随机种子（random seed）设定；微调、特征提取、scorer 计算均含随机性，缺种子则 13 scorers Ã 10 架构 Ã 11 数据集的排名结果无法复现。"
+    },
+    {
+      "id": 15,
+      "sev": "Major",
+      "text": "- Major: \"source accuracy baseline 出乎意料地优于大多数现有 scorer\"被当作关键发现，但 Kornblith et al. (2019) 及更早迁移学习文献已反复报告源任务精度与目标性能强相关，该\"surprising\"结论在现有文献基础上并非全新，增量贡献被叙事性地放大。"
+    },
+    {
+      "id": 16,
+      "sev": "Major",
+      "text": "- Major: Abstract 与 Introduction 多次声称\"best scorer in one study ranking among the worst in another\"以论证协议缺失导致矛盾结论，但未在可见文本中量化哪些研究结论矛盾、矛盾是否源于协议差异还是 scorer 本身对数据敏感。该动机性论断缺少可验证支撑，GAP 的\"真实性\"建立在未经举证的轶事上。"
+    },
+    {
+      "id": 17,
+      "sev": "Major",
+      "text": "- Major: ground-truth 迁移性能需对每个 (model, dataset) 对做微调，微调本身随机；可见部分未提及 seed 管理与多 seed 方差。若单 seed，排名相关系数（如 Kendall-τ）会被噪声污染，组合器的\"显著优势\"可能落在噪声范围内。"
+    },
+    {
+      "id": 18,
+      "sev": "Major",
+      "text": "- Major: 以源任务准确率作为基线存在严重混淆：当所有候选模型同源（如均 ImageNet 预训练）时，源准确率差异反映的是架构容量而非可迁移性，基线的\"胜出\"可能是容量伪迹而非方法论洞见；且在同源场景下该基线近乎常数、无判别力，使\"优于多数打分器\"的前提自相矛盾。"
+    },
+    {
+      "id": 19,
+      "sev": "Major",
+      "text": "- Major: 基线公平性问题——源任务准确率基线完全不需访问目标数据，而所有 transferability scorer 都需访问目标数据。二者信息量不对等，直接在同一排名指标上比较并不公平；且\"基线意外优于多数打分器\"恰恰暗示评估未在源准确率相近的难区分场景（scorer 真正有价值处）做压力测试。"
+    },
+    {
+      "id": 20,
+      "sev": "Major",
+      "text": "- Major: 多重比较未校正。组合 scorer 同时与 13 个 scorer + 1 基线 = 14 个对手逐对比较，\"超越全部\"的声明在 14 次同时比较下 I 类错误被放大，未见 Bonferroni/FDR 等校正，易得到虚高显著性。"
+    },
+    {
+      "id": 21,
+      "sev": "Minor",
+      "synthetic": true,
+      "text": "（另有 29 条问题超出 20 条上限被截断，未参与辩论）"
+    }
+  ],
+  "rebuttals": [
+    {
+      "id": 1,
+      "action": "concede",
+      "fix": "将在方法部分补充组合scorer信息融合策略的机制说明,明确区别于标准stacking的创新点。"
+    },
+    {
+      "id": 2,
+      "action": "concede",
+      "fix": "将加入L2正则化、特征选择及嵌套交叉验证,并报告留出集泛化性能以缓解过拟合。"
+    },
+    {
+      "id": 3,
+      "action": "concede",
+      "fix": "将以UTF-8重新生成PDF,修复全部ligature编码损坏（e!cientâefficient等）。"
+    },
+    {
+      "id": 4,
+      "action": "concede",
+      "fix": "将为10架构、11数据集及预训练权重补充SHA256校验和清单及具体版本号。"
+    },
+    {
+      "id": 5,
+      "action": "concede",
+      "fix": "将逐一核查并披露所有预训练模型及数据集的许可条款,标注license类型及合规性。"
+    },
+    {
+      "id": 6,
+      "action": "concede",
+      "fix": "将提供代码仓库、environment.yml、运行脚本及容器镜像的一键复现路径。"
+    },
+    {
+      "id": 7,
+      "action": "concede",
+      "fix": "将公开协议全部配置:学习率、batch size、epoch、优化器、数据划分及增强策略。"
+    },
+    {
+      "id": 8,
+      "action": "concede",
+      "fix": "将以混合效应模型或聚类bootstrap重新检验,以模型和数据集为随机效应。"
+    },
+    {
+      "id": 9,
+      "action": "concede",
+      "fix": "将引入留一数据集/留一架构交叉验证,组合器权重仅在训练fold上学习。"
+    },
+    {
+      "id": 10,
+      "action": "concede",
+      "fix": "将说明组合器权重在评测集外学习,采用留出集或k-fold交叉验证协议。"
+    },
+    {
+      "id": 11,
+      "action": "concede",
+      "fix": "将实施留一数据集与留一架构交叉验证,组合器训练与评估使用独立fold。"
+    },
+    {
+      "id": 12,
+      "action": "concede",
+      "fix": "将为11个数据集补充许可合规声明,标注license类型及肖像权风险说明。"
+    },
+    {
+      "id": 13,
+      "action": "rebut",
+      "rebuttal": "论文已举具体反例:LEEP在Pándy(2022)中最佳却在Agostinelli(2022)中垫底,证明跨研究协议不统一的GAP真实存在,引用Pándy恰为佐证而非矛盾。"
+    },
+    {
+      "id": 14,
+      "action": "concede",
+      "fix": "将公开全部实验随机种子设定,确保排名结果可精确复现。"
+    },
+    {
+      "id": 15,
+      "action": "rebut",
+      "rebuttal": "论文已引用Kornblith et al.(2019)并写明âPrior work...showed that the ImageNet baseline strongly correlates with downstream performanceâ,贡献定位为迁移估计社区未采用该基线,非声称全新发现。"
+    },
+    {
+      "id": 16,
+      "action": "rebut",
+      "rebuttal": "论文已给出可验证实例:LEEP在Pándy et al.(2022)中最佳、在Agostinelli et al.(2022)中垫底,系具体矛盾举证而非轶事。"
+    },
+    {
+      "id": 17,
+      "action": "concede",
+      "fix": "将对每对(model,dataset)多seed微调并报告Kendall-Ï均值与方差。"
+    },
+    {
+      "id": 18,
+      "action": "concede",
+      "fix": "将在源准确率相近子集上做压力测试,分析基线判别力,排除容量伪迹混淆。"
+    },
+    {
+      "id": 19,
+      "action": "concede",
+      "fix": "将在信息量对等条件下设计对比实验,并在难区分场景下做压力测试。"
+    },
+    {
+      "id": 20,
+      "action": "concede",
+      "fix": "将对14次多重比较进行Bonferroni/FDR校正并报告校正后显著性。"
+    }
+  ],
+  "verdicts": [],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 14,
+      "Major": 6,
+      "Minor": 0
+    },
+    "n_issues": 20,
+    "n_sustained": 20,
+    "n_withdrawn": 0,
+    "n_partial": 0,
+    "truncation": {
+      "n_total": 49,
+      "n_debated": 20,
+      "n_truncated": 29,
+      "max_issues": 20
+    },
+    "detail": "辩论后维持 Critical 14 / Major 6 （撤回 0，部分成立 0）；注：原始 49 条中仅严重度前 20 条进入辩论（MAX_ISSUES=20，截断 29 条未辩论）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "withdrawn_ids": []
+  }
+}

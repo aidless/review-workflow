@@ -1,0 +1,1049 @@
+{
+  "meta": {
+    "stage": "R6",
+    "timestamp": "2026-08-28T12:13:31+00:00",
+    "rpc": "http://127.0.0.1:3080",
+    "rounds": 3
+  },
+  "rpc_health": {
+    "ok": true,
+    "detail": "HTTP 200"
+  },
+  "rounds": [
+    {
+      "Critical": 13,
+      "Major": 37,
+      "Minor": 17
+    },
+    {
+      "Critical": 17,
+      "Major": 38,
+      "Minor": 18
+    },
+    {
+      "Critical": 12,
+      "Major": 31,
+      "Minor": 15
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts": {
+      "Critical": 10,
+      "Major": 11,
+      "Minor": 1
+    },
+    "unstable_counts": {
+      "Critical": 17,
+      "Major": 69
+    },
+    "stability_rule": "≥2 轮出现才计入门禁"
+  },
+  "stable_issues": [
+    {
+      "sev": "Critical",
+      "text": "- Critical: N=30 且未说明样本抽样机制；若 30 行来自便利样本或事后挑选，27/30 置信度恰为 1.0 的退化分布可能只是选择偏差，导致“该任务分布上置信度退化”这一前提不成立。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: OOD-gating 结论使用“harmful/removes”等因果语言，但仅基于 N=30 的探索性、可能是事后分组的相关分析；未控制 OOD 定义、item 难度、采样温度、重采样次数等混淆变量，因果推断不成立。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: “only extreme Holm-corrected pairs significant”未报告比较总数、各对比的检验统计量、未调整/调整后 p 值及效应量；先看数据再挑“extreme pairs”会使 Holm 校正失效，无法判断结果是否只是多重比较噪声。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 所有随机/重采样环节均未给出 seed：3 次 resample 的自洽性、OOD N=30 的选取、bootstrap/95% CI、跨域子采样、模型生成等都没有固定随机种子，结果不可重现。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 摘要中 `in-sample on 30 rows, circular 95\\% CI \\.4\\%,100\\%\\$` 是损坏的 LaTeX，且 30/30 正确的 95% CI 下限不可能是 0.4%，该句既不可读又在数字上不成立。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 未列出模型名称、版本、检查点或 API 调用日期，4/9 个模型无法被唯一定位。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 未提供 matcher 实现代码、规则、阈值和 MSI 计算代码，无法对 label matcher 进行独立对账。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 未提供原始模型输出和逐行 adjudication 数据，63.3%→86.7%→100% 的“证据链”无法审计。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 核心 pilot 结论建立在 N=30 且 27/30 置信度恰为 1.0 的退化样本上，三种 matcher 的 ECE（0.363/0.1297/0.0037）均未给标准误或 bootstrap CI，无法判断差异是否只是抽样误差。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 核心“matcher 决定测量到的校准”是在同一 30 行样本上轮换 matcher 得到的，并且“扩展 matcher”是根据这批样本逐行 adjudication 后构造的；用同一批数据既构造标签/规则又计算 accuracy/ECE 属于 in-sample circularity，100% 与 ECE=0.0037 是定义性结果，不能支持“过度自信信号消失”的实质结",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: MMLU 的 4999 pairs 由 600 items × 9 models 产生，同一 item/model 被重复使用，观测不独立；直接做 pair-level 检验会低估方差，需混合效应模型或聚类稳健标准误。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: MSI 1.000 vs 0.334 以单点值呈现，没有 SE/CI、样本量和配对结构；在退化置信度分布下该差异可能只是协议/标注假象，需 bootstrap 或非参数区间。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: MSI 1.000（free-form）vs 0.334（MMLU）是协议、题目分布、模型集合、标注格式多重因素混杂的比较，不是配对设计，缺每侧样本量和置信区间，不能归因于“protocol-dependent”。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: OOD-gating 分析仅 N=30 且标为 exploratory，40–50% wrong 对应极小计数（可能只有几例），未给二项/自助 CI，也未控制多个阈值与门控规则的搜索，不能支撑“confidence may be harmful”的部署建议。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: “ECE varies up to 4× / up to 0.45 absolute across domains”用跨多个 domain-model 单元的最大/最小差值，属事后极值描述；“up to”天然受多重比较和样本噪声放大，且没有逐单元置信区间或标准化效应量。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: “binning-based ECE 在退化置信分布下不可靠”是成熟结论，Nixon et al. (2019)、Kumar et al. (2018)、Błasiok & Nakkiran (2024) 等已提出 binning-free/KDE/MMCE 等替代；把该 caution 列为贡献会夸大增量。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要引用 `Proposition~8$'$`，但贡献列表只提及 Propositions 1--3，中间编号及撇号来源未交代，命题编号体系不一致。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 样本量证据链不一致/损耗未解释：600 items × 9 models 最多 5400 pairs，却报告 4999 pairs，缺少的 401 条（解析失败/拒答/截断/排除）未给出逐项统计；300→600、1159→4999 的扩展规则也未说明。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 泛化证据薄弱：核心结论来自 N=30 的 in-sample pilot 与 N=30 的 exploratory OOD 分析，未在独立外部数据集或多次随机抽样上验证，不能支撑部署级结论。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 若 30/30 的 95% CI 确为 [0.4%,100%]，数值有误——Clopper-Pearson 下限应约 88.4%；除非明确说明 Bayesian 先验，否则该区间不可复现。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 隐私与人工数据合规不明：若“per-row adjudication”涉及人工标注/裁决，未见 IRB/知情同意、标注者数据匿名化与报酬说明；OOD 分析的 30 个样本来源和敏感性也未交代。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 摘要用 mean confidence 0.9963 对比 86.7% 说明 overconfidence，却未解释为何不选更极端的 63.3% exact-match 作为“alarming”基线，基线选择不一致。",
+      "rounds": [
+        1,
+        2
+      ]
+    }
+  ],
+  "unstable_issues": [
+    {
+      "sev": "Major",
+      "text": "- Ablation completeness: They compare exact vs v1 vs v2 matcher, but v2 combines matcher extension + per-row adjudication, not separated. They don't ablate whether the ECE drop to 0.0037 comes from ex",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Control group: there is no baseline model/task set with human labels or independent gold for the pilot? The 30 tasks have gold labels but no human baseline; \"accuracy 100%\" under adjudicated labels ",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 4999 个 pair 并非独立样本：同一批 item 被多个模型/域重复使用；若 CI 和显著性检验按 pair 独立处理，会严重低估不确定性并可能制造虚假显著，应采用 item/model 交叉随机效应或聚类 bootstrap。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: OOD Stage B 的 30 个“不可答”题目没有 gold 标签，却报告“高置信 OOD 答案错误率”和“consistency 门控移除 overconfident OOD answers”，实际只能计算高置信比例/代理指标，无法证明“错误”或“移除错误答案”。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: OOD 门控结论建立在 N=30、且其中 27/30 个置信度退化为 1.0 的样本上，40–50% 的错误率没有 CI（n=30 时约 ±18pp），不足以支撑“confidence harmful / consistency helps”的规则性结论。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: “matcher 决定实测校准”的正式化本质上只是把二分类评估器误差写成混淆矩阵恒等式（FNR/FPR 与 base rate 的分解），等价于已有 annotation-noise、EM-vs-F1、LLM-as-judge 可靠性等已知问题；Propositions 1–3 的增量贡献被严重夸大。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 中心发现“matcher 决定标定测量”并非新贡献：Stengel-Eskin & Van Durme (TACL 2023) 已实证 exact-match vs execution accuracy 下标定不同，Kim & Kang (2026) 显示答案评分串/参考串替换可翻转 ECE/AUROC 排序，Feng et al. (2026) 更已证明 finite-r",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 全文未给出代码/数据仓库 URL、DOI 或 artifact 快照，读者无法定位任何可复现材料。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 全文未给出任何代码/数据仓库、工件版本或哈希对账，300 项/1159 对与 600 项/4999 对两批数据无法从外部核对行级证据链。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 全文未见任何 seed 管理：没有报告数据采样 seed、解码 seed、自洽性重采样 seed、训练/校准划分 seed 或多 seed 重复实验，单次结果无法给出方差与稳定性。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 声称的 GAP——“agent 在自身任务分布上的置信度校准几乎未被验证”——并不成立：verbalized confidence 的校准已在 MMLU/TriviaQA 等任务分布上被广泛研究，语义等价评估、semantic uncertainty/self-consistency 也是成熟方向，论文未与这些工作做差异化比较即宣称填补空白。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 提出的 `smECE_sem`/语义软标签估计与 MSI 与已有 semantic ECE、Sem-ECE、SECE 等高度重叠（Ross et al. 2025/2026、Wang et al. 2026、Semantic-Aware Confidence Calibration 2026），摘要中未说明其相对这些指标的新增益，作为新诊断工具被夸大。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 摘要给出 63.3%/86.7%/100% 和 “27 of 30” 这些主结果，却未声明主对比样本量是 N=30；后文 OOD 分析又出现同样的 N=30，读者无法确定 30 是指主实验还是 OOD 子样本，核心数字不可核对。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 未公开任何随机种子或采样配置，OOD N=30 子集、MMLU 300→600 项扩展、三次自洽重采样等步骤均不可复现。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 未提供完整配置快照：提示词模板、温度、max tokens、采样方式、推理框架及版本均缺失。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 标签真值缺乏独立性：pilot 的 adjudicator 与目标 agent 同属一个模型家族，cross-model 中又有同源模型自评；judge 与 agent 共享偏差时，“语义正确”与校准结论会被混淆。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 核心主张“标签匹配器决定测量到的校准”并非新发现：arXiv:2605.27752（*Same Answer, Different Confidence: Protocol Sensitivity in LLM Calibration*）已通过替换 exact/containment matcher 展示同一模型与数据上 ECE、AUROC 和优劣排序随 correctne",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 30-item pilot 中 27/30 confidence=1.0，未报告 accuracy/ECE/MSI 的置信区间；“up to 4×/up to 0.45”是从六域中挑选极值，且只有极端 Holm 显著对显著，结论强度与证据不匹配。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 300/600 items、1159/4999 pairs、30 行 pilot 与 N=30 OOD 之间的样本关系未说明，数据流不透明。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 95% CI、Holm 校正、MSI/smECE 的统计公式与代码版本未固定，且附录被截断，显著性结论无法复核。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: ECE “变化高达 4×”是点估计之比，退化分布下 ECE 接近 0 时比值极不稳定，不是有效效应量；应报告绝对差异及其 CI。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: ECE 跨域比较混淆了正确率/难度/类别先验分布；不同 domain 的 accuracy 差异本身就会改变 ECE，不能仅凭 ECE 数值差异声称 calibration 是 domain-specific。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: MMLU 数据集及其输出的许可/再分发条款未说明，合规附录未实际展示，无法确认数据许可合规。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: MSI 将 binning 病理与 matcher 敏感性混淆：MSI=ECE 差/(flip rate) 在退化分布上依赖有偏的 binning ECE，可能高估“matcher determines calibration”的结论。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: OOD gating 的因果/操作结论超出证据：基于 N=30 无 gold 标签的构造题、未检验的小相关系数和 high-confidence-rate 代理指标，不能推出“consistency gate removes overconfident OOD answers”或“confidence harmful”的规则。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: Proposition 8' 在 27/30 个置信度恰为 1.0 时断言置信度阈值无信息近乎同义反复；而 self-consistency 对正确性有判别力是 self-consistency/semantic entropy 文献的已知结果，因此“grounding OOD-aware gating rule”没有新增理论或机制贡献。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: Proposition 8' 在 confidence 全部为 1.0 时“阈值门无信息”是定义直接推出的平凡结果，而“self-consistency 比 self-reported confidence 更有判别力”已由 Kadavath et al. (2022)、Wang et al. (2024) 和 semantic entropy 等建立；以 N=30 的探索性 O",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: Proposition 的形式化界依赖于未知 gold labels 下的 matcher FPR/FNR 等量，但这些量在无独立金标准时无法估计；且界可能隐含 matcher 错误与置信度独立的假设，而实际中高置信度答案的 matcher 错误率往往不同。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: Propositions 1–3 的翻转率/不对称项上界本质上是对 label flip 下 accuracy 与 ECE 变化的初等概率分解；label noise 如何影响 calibration 已有系统研究（如 label-noise calibration 评测、label smoothing 分析），若未证明该界比已有结果更紧或导出新的非平凡结论，理论增量被夸大。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: binning ECE 对退化分布不可靠是已知问题（Guo et al. 的 binning bias、adaptive binning、kernel-based/distribution-free calibration error 等）；“binning-free estimator + smECE_sem + MSI”未与这些已有测度比较，看不出超出“软标签/语义匹配 + ",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: judge 标签本身不可靠：文中承认 judge 会接受事实性错误（如 1793 对 1789），且部分 source 由同模型自判；没有人类 gold standard 时 consensus 不能等同于 ground truth。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: matcher 的 tolerant/extended 规则与 adjudication 流程没有 held-out 或交叉验证；规则很可能是在看到数据后迭代出来的，内部效度受损，无法区分“真实校准改善”与“对同一批数据过拟合”。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: smECE_sem 与 MSI 的“诊断工具”和已有 semantic-level calibration 工作重叠明显：如 semantic entropy、semantic-level reward（CSR）、semantic parsing calibration 均已在语义等价/软标签空间做校准或打分；MSI 只是把不同 matcher 的 ECE/accuracy 差异",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: smECE_sem/MSI 依赖语义相似度阈值与 soft-label 判定，而 MSI 本身 protocol-dependent（1.000 vs 0.334）；没有独立人工标注或信度检验时，用它诊断 matcher 依赖性存在循环论证风险。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: three-arm calibration schedules 没有 no-calibration/no-evolution 对照组，三个 arm 各自独立 seed 和轨迹，且 A 的优势主要由 accuracy 驱动；即使声明 observational，放进 Results 仍会被误读为实验性排序。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: “adjudication 后扩展 matcher”与最终评估共用同一 30 行，虽声明 in-sample/circular，但缺少独立 holdout 协议来分离 matcher 调参与测量。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: “calibration is domain-specific”被过度陈述：MMLU 仅 3 个 subjects、single-seed，多数 ECE 差异 Holm 校正后不显著，且 subject 难度/格式/base rate 与 domain 混淆。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: “circular 95% CI”不是有效的统计学术语；用循环构造标签得到的区间不是置信区间，放在摘要中即使标注“circular”也极易误导。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 三种 matcher 不是独立实验条件而是逐步拟合标签的产物；缺少 held-out labels 或 inter-rater reliability，精确/宽容/判定后的准确率差异无法区分“标签噪声降低”与“标准被答案污染”。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 主要实证结论依赖作者自己判定不可靠的指标：论文声称 degenerate 分布下 binning ECE 不可靠，却用 10-bin ECE 0.363→0.0037 作为最核心差异，内部不自洽。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 人工逐行裁定后得到 100% 准确率/ECE=0 疑为循环验证：若标注者在看到模型输出后裁定标签，正确率被系统性抬高；应采用盲法、预注册 rubric，并报告标注者间一致性。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 使用多个商业/专有模型 API 生成自我报告置信度时，未确认并披露各服务商 ToS 是否允许发布、再分发模型输出或用于研究评估，存在合规风险。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 利益冲突未披露：评测九个模型且涉及校准/门控建议，但未声明作者与模型厂商、API 提供方或资助方的关系，缺少 COI 声明。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 可见材料未说明 MMLU 及派生集合（600 items/4999 pairs）的 MIT 许可与归属是否随数据和代码一并保留；若只抽取题目并重新分发，可能违反数据许可条件。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 各 domain/subject 的 ECE 缺少对应样本量、方差/CI 和预测数；600 items 分到六域、多模型后部分单元格可能极小，退化分布使 binning ECE 更不稳定。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 基准公平/泛化不足：MMLU 比较将“free-form 中文”与“multiple-choice 英文”混淆为 protocol 差异，且 DeepSeek 缺失、Llama 仅 259/300、Qwen1.5 置信度退化；摘要宣称的 600 items/six domains/nine models/4999 pairs 在可见方法和证据中没有对应对照，Q4 本地小模型单 s",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 基准公平性不足：MMLU 上 4/9 个模型的提示模板、解码温度、max tokens、模型版本、答案抽取格式未见统一说明，模型间 ECE/MSI 差异可能与生成协议混淆。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 存在大量 researcher degrees of freedom：matcher 版本、事后 relabeling、partial relabeling、bandwidth、温度网格与指标选择均未预注册，也没有用独立流程选择后的 holdout 验证。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 存在大量未完全校正的多重比较/选择性报告：多种 matcher、多个指标、多个模型、多个域和阈值都被尝试，只报告“极端 Holm 显著对”不能视为确认性证据，更未提供预注册。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 对 pilot 标签没有独立人工或跨家族 judge 控制组；deepseek 系模型既产出答案又裁定答案，同源失败模式未被排除，v2 的“语义正确”判定本身也可能继承被测模型的偏差。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 对退化分布仍以 binning-based ECE 作标题数字，虽然文中警告其不可靠，但没有给出 binning-free 估计量的方差、bootstrap 分布或与 bin 数/方法的敏感性分析，核心量纲不明确。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 将单轮 MMLU 自报置信度标定包装为“agent confidence calibration”的 GAP 不真实；该设置本质仍是标准 LLM/verbalized confidence 标定，且多步 agentic confidence calibration 已有专门工作（Zhang et al. 2026），本文既无工具交互也无轨迹级评估。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要与正文之间出现一个无编号、无小标题的独立句 “Our central finding…” 直接使用未定义的 `smECE_sem`+MSI，结构上不属于摘要也不是章节，术语上读者无法解码。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要严重超载，一段内塞入 matcher 结果、Proposition 1–3/8′、两组数据规模、MSI、OOD gating 与 compliance；关键限定词（in-sample、exploratory）被淹没，结构上不像摘要。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要宣称 “grounding an OOD-aware gating rule”，但同一摘要中的 OOD 分析仅为 exploratory、N=30，且结论是 confidence may be harmful，承诺强度与证据不匹配。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要断言 “temperature scaling is not robust to relabeling”，但可见摘要与正文贡献列表中没有对应的 temperature-scaling 实验、指标或结果，属于摘要与可见正文证据不对应。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 数据许可/溯源缺失：可见文本未说明 MMLU 子集和九个模型输出的许可条款、归属及再分发条件，也未说明商业 API 评测是否符合各模型服务条款。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 数据许可与来源不完整：MMLU 具体版本、license、原始题目来源、模型输出与人工 adjudication 数据是否可再分发均未说明；“Compliance in appendix”在可核查材料中不可见。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 无哈希对账：没有对原始 MMLU items、模型 raw outputs、matcher 判定、adjudication 记录和最终统计表提供 SHA-256 或等价校验，读者无法确认论文数字与数据文件一致。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 未在正文说明 MMLU 及扩展 600 项数据的许可证、来源和再分发条款，也未说明闭源/商业模型输出是否符合其服务条款，数据合规性无法核实。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 未声明利益冲突、资助来源或与所测模型厂商的关系；在评估多家商业模型时缺少 COI 披露，可能影响结果可信度。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 未披露资助、机构关系及潜在利益冲突，尤其是与模型/API 供应商的关系；匿名提交也应在合规附录中提供明确的 COI 声明。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 未提供 Docker/requirements/Makefile/一键运行脚本，声称的 reproducible pipeline 无法一键复现。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 未给出原始数据、日志或输出的 SHA-256 等哈希，无法通过哈希对账确认版本一致性。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 未说明 MMLU 的数据许可、版本、获取方式和校验哈希，数据合规性与完整性均无法确认。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 正文引用 “Compliance in appendix (Section ref:sec:compliance)” 但附录内容未提供，合规声明的证据链断裂。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 没有一键复现入口（Docker/README/脚本/依赖锁文件/Makefile），也未公开原始模型输出、matcher 判定、soft-label 与 ECE 计算中间产物。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 没有一键复现：未见代码仓库、Docker/conda 环境锁、固定依赖版本、运行命令或输入/输出 artifact 下载地址，“reproducible measurement”声明缺乏可执行支撑。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 消融不完整：exact→v1→v2 同时改变了 matcher 规则和 per-row adjudication，没有“只扩 matcher 不裁定”“只裁定不扩 matcher”的消融臂，无法把 ECE 从 0.363→0.0037 的效应归因到 matcher 还是 adjudication。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 消融不完整：semantic soft-label estimator、MSI、smECE 是新增核心组件，但没有逐一移除或替换为 exact-match、简单字符串相似度、binning-ECE 等 baseline，无法判断哪个组件真正起作用。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 涉及“逐行 adjudication”的人为标注/复核时，未见 IRB、标注者知情同意、匿名化、报酬与工作量等披露；若使用众包或内部 annotator，隐私与劳动伦理不透明。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 用“平均置信度 0.9963 vs 准确率 86.7%”作校准证据是误用：校准是逐点条件概率性质，整体均值差异不能替代 ECE/可靠性曲线，且未报告该差异的方差或检验。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 缺少对照组：没有与随机置信度、均值置信度、token 概率或固定规则 matcher 等基线比较，无法证明观察到的校准差异来自模型而非评估协议。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 超参数和 seed 管理不足：smECE 带宽 h=0.05 为固定值，OOS 温度折叠只用一个非分层 seed，temp>0 的 consistency resample 未设置 seed，采样鲁棒性仅 2 seeds，主结论仍基于单 seed 或未 seed 的生成。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 超参数报告与敏感性缺失：tolerant matcher 的容错阈值、语义相似度阈值、ECE 分箱数、3 次 resample 的温度/解码参数均未给出，也没有改变这些超参数后的稳定性分析。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 超参数未交代：ECE 分箱数/分箱方式、temperature scaling 的拟合集/优化器/正则化/迭代次数、OOD 置信度门限及一致性阈值均未报告，也未做敏感性分析。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 跨域 ECE 差异、域特异性等实证结论与已有大规模 LLM 标定调查一致，且显著性仅限极端 Holm-corrected 配对、OOD gating 仅 N=30（40–50% 高置信错误），不足以支撑“confidence 对 OOD gating 有害”的普适结论。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 跨域 MMLU 比较存在混淆：域间差异同时包含模型组合、题目难度、accuracy、答案分布、prompt/template 和 matcher 差异；“ECE 最多差 0.45”可能主要反映 base rate/accuracy 差异而非校准差异，且大多数 Holm 校正后比较不显著，强结论证据不足。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 跨域比较仅写“只有极端 Holm 校正对显著”，未报告检验类型、比较总数、全部校正后 p 值及 ECE 差值的效应量与 CI，多重比较结果不可审计。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 退化置信分布下只报 ECE 点估计和“up to 4×/0.45”范围，未报告 binning-free 估计的方差/bootstrap CI；比值型效应量在 ECE 接近 0 时不稳健。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 配置快照严重不足：仅写“4 models/9 models”，未列出模型标识与版本、temperature/top_p/max_tokens、system prompt、置信度提取 parser、matcher 实现版本及参数，无法按原配置复跑。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 除一个循环 95% CI 外，主要结论（ECE 差异、MSI 的 protocol 差异、OOD gating 危害）均无不确定性量化；在 n=30 且置信度退化的条件下，即使 binning-free ECE 也有很高方差，点估计不可靠。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 高亮句直接使用未定义的 `smECE_sem`，摘要只提到 “semantic soft-label estimator”，读者无法从摘要或可见正文得知该符号含义。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 600 items/9 models 的跨域实验只有“极端 Holm 校正对显著”，却总结为“calibration is domain-specific”；up to 4× 或 up to 0.45 的绝对差异可能落在宽 95% CI 内，结论强度超出证据强度。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: MMLU 本身不含个人数据，但若 agent 调用链涉及工具日志或发布原始 prompts/outputs，应明确说明去标识化、PII 清洗和数据保护审查，当前未见。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: Proposition 8' 依赖“置信度退化”假设；若在更大测试分布中置信度并非全部接近 1.0，则“阈值门无信息”的结论不能直接外推。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: Theorem 6 与模拟优势假定 judge noise 独立于模型和 matcher flip；真实中同家族 judge 误差与目标置信度相关，smECE_sem 的模拟优势未必可迁移。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “a first tolerant matcher” 中 “first” 含义模糊，可读作“第一个”也可读作“最初的尝试”，应改为 “the initial tolerant matcher” 或具体命名。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “agent 任务分布上的校准很少被验证”这一 GAP 不准确：已有 agentic/trajectory-level 置信度校准工作（如 *Agentic Confidence Calibration* / HTC）直接处理 agent 任务；本文又自我限定为 single-turn probe，所以真正填补的是单轮 QA 校准敏感度分析，而非所宣称的 agent 校准空白。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “overconfidence signal vanishes”是过度修辞：从 ECE 0.1297 到 0.0037 是“大幅下降/接近消失”，且 extended matcher 下 0.9963 相对 100% 已变成轻微欠自信，不是消失。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “温度缩放对 relabeling 不鲁棒”仅基于 30 行退化样本，未报告温度缩放的具体拟合/验证流程，结论被过度泛化。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “跨域/MMLU 分科校准是 domain-specific”是 confirmatory 结论：subject-level calibration heterogeneity 与 MMLU 分科 ECE 变异性已有工作（如 *Understanding Calibration Evolution in LLMs*、*Subject-Level Calibration Heter",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 三次重采样的 self-consistency 信度低，且可能只是低温度/确定性解码的产物；用 agreement 作为 epistemic uncertainty 的替代假设未被检验。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 关键词含 `self-improvement`，但摘要主线是 calibration、matcher、degeneracy、self-consistency；关键词与内容重心不完全一致。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 单模型跨 subject 的“4× 变化”可能混淆 model×domain 效应，未报告配对差异和边际样例量，不能直接归因于 domain。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 双盲材料中源文件残留 “camera-ready / corresponding@example.com / TMLR G3” 等模板注释，若上传源码或 PDF 元数据未清理，可能产生身份线索。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 双盲风险：模板虽匿名，但若附录、数据仓库或模型名/机构元数据被保留，可能破坏 TMLR 双盲；可见文本未声明补充材料已做匿名化检查。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 可见文本中没有图表或图表引用，无法核验摘要中 0.363、0.1297、0.0037、MSI 等数字与图表的对应关系；如正文有图表需补查一致性。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 合规声明不可验证：可见正文仅指向“附录 Compliance”，但未展示具体内容，数据/模型许可、隐私和 COI 是否实际覆盖无法确认。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 命题 1–3 的 FNR/FPR 界限和“退化置信度下阈值门无信息”基本是标签噪声分解与常数置信度分布的直接推论，未与 noisy-label calibration、self-consistency selective prediction 的既有理论形成实质区分。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 对 self-consistency “retains discriminative power”只引 Proposition 8′，未报告 AUC、秩相关、校准区分度或对应 CI，无法评估其实际增量。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 扩样与跨模型证据共享同一任务集、Q4 量化、single seed，且存在缺失数据（Llama 259/300、DeepSeek MMLU 缺失），使 pooled/cross-model 比较偏向描述性而非独立复制。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 摘要中的关键数字（63.3%、86.7%、0.363、0.1297 等）没有对应任何表/图编号，读者无法快速定位证据；正文应有 Table/Figure 交叉引用。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 摘要堆叠过多数字并以 appendix compliance 收尾，结构上稀释了 “matcher determines calibration” 这一核心信息。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 摘要混用 “subjects” 与 “domains” 且未定义二者层级关系，易让读者误以为它们是同一概念。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 数字精度不统一，如 63.3%、86.7%、100% 与 0.363、0.1297、0.0037、0.45 的小数位和有效数字不一致，给读者造成精度等级错觉。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 文献 `beyond2025` 未出现在参考文献中，证据链存在断点。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 未报告 0.9963 的置信度方差/SD、各 bin 样本量，以及 30 行 pilot 每个 matcher 下的混淆矩阵，FNR/FPR 等理论界也缺小样本不确定性。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 正文使用硬编码的 “\\S6 Discussion” 而非 `Section~\\ref{...}`，章节号漂移时会造成引用不一致。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 正文匿名方式本身合规，但代码、数据链接、模型名、致谢或附录元数据仍可能泄露作者身份；仅凭“Compliance in appendix”无法核验盲审安全。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 正文声称报告 95% CIs，但摘要和可见部分没有给出任何具体 ECE 差异区间，读者无法判断“4×/0.45”有多精确。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 缺少最简对照：未包含随机置信度、常数置信度、无 confidence gate、仅 consistency gate 等 baseline，使“confidence 有害”的结论缺少效应量参照。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 自报 confidence 被视为跨模型可比概率未经验证；未报告 prompt 的置信度措辞/尺度锚定，跨模型、跨域比较隐含同一概率标尺假设。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 除事后 Holm 外未见预注册或完整多重比较计划，“extreme pairs”和“confidence-consistency negative correlation”都存在 data-dependent selection / garden of forking paths 风险。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- The tolerant matcher v2 was designed/iterated on the same 30 rows after seeing exact/v1 failures, then evaluated on same 30 rows. The 100% accuracy / ECE 0.0037 is in-sample and circular. Paper ackn",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- They propose smECE_sem with soft labels; they compare to \"hard\" smECE and binning ECE, which is an ablation of soft vs hard labels and kernel smoothing vs binning. They report decomposition pooled: ",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "Key: OOD gating Stage B uses consistency computed as normalized string similarity (norm exact equality) of three temp 0.3 resamples, but no seeds set in `collect_ood.py` (body options temperature 0.3,",
+      "rounds": [
+        1
+      ]
+    }
+  ]
+}

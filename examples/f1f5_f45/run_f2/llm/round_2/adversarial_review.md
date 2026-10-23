@@ -1,0 +1,117 @@
+# 对抗审查报告
+
+- 时间: 2026-08-27T19:28:53.735380+00:00
+- 源: F:\deepseek\research-kit\review-workflow\examples\f1f5_f45\run_f2\extracted_text.txt
+- 角色: method, stat, experiment, novelty, repro, writing, ethics
+
+## 方法论（method）— ok
+### Critical（3）
+- - Critical: 下界 B 的 c0 在 K=3 的 pilot 数据上拟合，却又在包含同一 K=3 数据的所有 cell 上验证“P>B”，属于样本内循环验证；即使 K=4/5 是扩展集，也没有说明是否在拟合后再冻结 c0，因此“B 在所有 cell 成立”不能支持任何样本外或泛化结论。
+- - Critical: “用 95% Wilson CI [0.62,0.74] 来避免与 survey 0/15 zero-success 矛盾”不是统计理由；0/15 的 Wilson CI（约 [0,0.18]）并不退化，且依据外部结果选择估计量或区间属于结果依赖的分析决策，严重损害推断的客观性和内部效度。
+- - Critical: 引理“Cmin(K) 在 exchangeability 且 ρ<1 下单调非降”并非由这些前提必然推出；若平均投票正确率低于阈值，或 γ 对应绝对票数而非相对多数，coverage 完全可能随 K 下降，文中没有给出充分条件或证明，形式化前提不成立。
+### Major（7）
+- - Major: I(K) = (Δp)²/[σ²(ρ+(1−ρ)/K)] 只是在等方差、等相关系数（compound symmetry）的投票模型下的逆方差公式，不是 Fisher information；没有定义似然、估计量和正则条件，把“逆方差”重命名为“Fisher-like information”并据此做信息量增长推断是概念混淆。
+- - Major: 四个 local models 上比较 K 和 γ 时，模型能力、任务难度、解码温度、随机种子、阈值措辞、计算量等均可能混淆 K 的效应；设计未说明任何随机化或控制变量，因此“more verifiers yield better selective reliability”以及“0.68% improvement”不能做因果解读。
+- - Major: P = Rsel·Cmin 把风险与覆盖率相乘，K 或 γ 改变时会通过覆盖率产生机械性变化；没有报告 risk-coverage 曲线或 coverage-conditional 风险，P 的缩放不能归因于选择性风险的改善。
+- - Major: 2,700 cells 的样本并非独立：同一批 episodes 被复用于多个 K、γ 和 seeds，而 Wilson CI 和“all cells”统计把这些 cell 当作独立二项样本，有效样本量被严重高估；需要按 episode/model 做聚类稳健推断或混合效应模型。
+- - Major: 样本量表述不一致且依赖结构不清：270 episodes × 10 seeds 与“30 episodes/setting × 3×3×10”的对应关系不明确；若只有 30 或 270 个唯一 episode 被重复使用，跨条件重复依赖会进一步削弱内部效度。
+- - Major: B(K,γ)=c0 γ⁻¹K⁻¹/² exp(−γK/10) 中的 c0=0.05 和分母 10 缺乏理论依据或模型选择；一个处处低于观测点的下界是平凡成立的，tightness ratio 也不是覆盖率校准或预测效度指标，不能说明该 bound“描述”了真实缩放机制。
+- - Major: 数值报告存在内部矛盾：tightness ratio 声称“5–10×”却又给 median 10.88×，中位数超过所给上限，说明统计报告不一致或存在选择性摘要。
+### Minor（2）
+- - Minor: 只报告 P 的范围 0.14–0.26，没有分模型、分 γ、分 seed 的置信区间和方差，无法判断该范围的稳定性以及模型间差异是否来自混杂。
+- - Minor: 阈值机制 γ=scale*(1+ρ) 未定义清楚，且若 ρ 从同一批数据估计，γ 与 K/ρ 不独立，K×γ 网格可能内生性地影响 P/B 关系。
+
+## 统计（stat）— ok
+### Critical（2）
+- - Critical: c0 是在 K=3 pilot 上拟合的，却用同一份 K=3 数据报告“exceeded B in all cells”，属于样本内拟合/循环验证，B 并不是独立可证伪的下界。
+- - Critical: 2,700 cells 的计数与设计不自洽（270 episodes×10 seeds×3K×3γ 若再乘 4 个模型应为更多；若 cells 是 episode-seed 则又有聚类），且同一 episode/seed/model 内部强相关，直接当作 2,700 个独立样本会严重高估有效样本量。
+### Major（5）
+- - Major: “improvement of 0.68%”用 95% Wilson CI [0.62,0.74] 是区间类型误用：Wilson 面向单一比例，不适用于两条件差值；差值应报告 Newcombe/Wald 或 bootstrap CI 及原始事件数。
+- - Major: “tightness ratio P/B 5–10× … median 10.88×”内部矛盾：若 5–10× 是全集范围，中位数不可能超过 10.88×；若只覆盖 γ∈{0.5,1.0}，则应明确分开报告，否则效应量无法核对。
+- - Major: 对 K×γ×model×多个 checkpoint/ledger/gates 做了大量比较，但没有说明任何多重比较校正或预注册；9/9、86 PASS、“all cells”等逐项结论都可能被多重性放大。
+- - Major: 方差报告严重不足：ρ≈0.3、P、B、P/B 均无 SE/CI/区间传播；唯一 pooled SD 0.026 只覆盖 seeds 42–44，无法支撑“scaling with K”的统计结论。
+- - Major: K=3..5 只有 3 个 K 值，K=6 仅单点，却拟合指数函数 exp(−γK/10)；该函数形式不可辨识，单调幂律/对数/指数都能穿过这几个点，不能作为经验表征。
+### Minor（3）
+- - Minor: “inverse variance decreases”与后文 “Fisher-like information increases”自相矛盾；应为 variance decreases、inverse variance increases。
+- - Minor: 0/15 的 Wilson CI 并不退化（约为 [0,0.22]），退化的是 Wald 近似区间；若论文表述为“CI degenerate”属于区间估计误述。
+- - Minor: 把 (Δp)²/[σ²(ρ+(1−ρ)/K)] 直接称为 Fisher information/Fisher-like information 缺乏观测 Fisher 信息或似然推导，术语上容易过度解读。
+
+## 实验（experiment）— ok
+### Critical（2）
+- - Critical: 主要结果的 2,700 cells 只覆盖 K=3..5，K=1/2 基线没有进入同一采样/统计框架，K=6 仅为一个 observation，缺少真正可比的对照组来分离“投票数增加”和“选择性阈值”的效应。
+- - Critical: c0=0.05 是在 K=3 pilot 上拟合的，却用“all cells”包括 K=3 来验证 B(P) 并报告 100% exceed，存在样本内泄漏；P/B 的 5–10× 与 median 10.88× 不能作为样本外下界紧度证据。
+### Major（6）
+- - Major: 消融不完整：没有分别移除/替换 γ 阈值、投票数、相关结构 ρ、指数项 γK/10、c0 或聚合方式，无法判断 B 与 scaling 结论由哪个组件驱动。
+- - Major: K=1/2 基线不是 compute-matched：K=5 消耗更多 verifier 调用/token，0.68% 提升可能来自推理预算而非集成多样性。
+- - Major: seed 管理不一致：主网格用 10 seeds，但关键单生成器结果只来自 seed 42，且只用 42–44 的 pooled SD；seed 选择无预注册或敏感性证明，存在挑 seed 风险。
+- - Major: 泛化证据不足：仅 4 个未命名的 local models、每条件 30 episodes、K=6 单点，未做跨模型、跨任务、跨数据集的样本外验证，结论不能支持一般化 scaling 表述。
+- - Major: 基准公平与可复现性不足：任务、指标、难度、真值来源、verifier prompt、温度、解码参数均未报告；附录行号和 ledger 不能替代实际数据和代码。
+- - Major: 数据独立性存疑：若同一批 episodes 在 K×γ 网格上复用，2,700 cells 并非独立样本；未报告 episode-level clustering 或重复测量模型，CI 和显著性会偏乐观。
+### Minor（3）
+- - Minor: 超参数缺少敏感性分析：γ={0.5,1.0,2.0}、ρ≈0.3、c0=0.05、指数项常数 10 均未做扰动、替代形式或置信区间检验。
+- - Minor: K=6“observation”没有重复和 CI，不能作为 scaling 趋势证据；P/B 只给 aggregate median，未给 per-model/per-task 分布。
+- - Minor: 文本中的 “P0 26-block F1 24K→12K” 与 “Gamma string gamma=scale*(1+rho)” 等机制表述过于含糊，无法从实验设计层面核对控制变量与复现条件。
+
+## 新颖性（novelty）— ok
+### Critical（2）
+- - Critical: 核心理论贡献只是“相关随机变量均值方差公式”和“多数/一致覆盖随 K 变化”的改写；把 `1/[σ²(ρ+(1−ρ)/K)]` 命名为 Fisher-like information 并不等于 Fisher information，且“纠正平均会丢失信息”的靶子是稻草人，增量理论贡献接近零。
+- - Critical: 经验下界 `B(K,γ)=c0 γ^{-1}K^{-1/2}exp(-γK/10)` 是用同一批 K=3 pilot 数据拟合 `c0` 与指数形式，再用同一数据报告“所有 cell 都超过 B”，属于事后拟合/循环验证；单点 K=6 观测不足以支撑外推为 scaling 规律。
+### Major（4）
+- - Major: GAP 被窄化为“local models 下没有经验刻画”，但选择性集成、自一致性、置信阈值与 K 对风险-覆盖影响已有大量研究；未与具体 prior work 做定量对比或说明其机制无法覆盖本设置，GAP 真实性不足。
+- - Major: Lemma (i) 的 `Cmin(K)` 单调性仅靠 exchangeability 与 ρ<1 不能一般成立，还依赖投票规则和 γ 的定义；现有摘要未给出证明或反例边界，作为贡献可能被夸大。
+- - Major: 所谓“empirically characterize”的紧度只有 P/B=5–10×、中位 10.88×，说明下界比观测低约一个数量级；如此宽松且几乎恒成立的下界对理解 scaling 的增量信息有限。
+- - Major: 0.68% 的 K-Verifier 改进量级极小，Wilson CI 只能处理统计不确定性，不能处理 practical significance、多重比较、seed/模型异质性；作为实证贡献容易被夸大。
+### Minor（1）
+- - Minor: 实验仅覆盖 K=3–5（K=6 仅一次观测）、4 个 local models 和有限的阈值措辞，样本描述性结论外推受限；摘要中 P0/Panorama/Ledger 等不相关内容也损害论文可信度。
+
+## 可复现（repro）— ok
+### Critical（5）
+- - Critical: 四个 local model 未给出模型名、checkpoint/权重版本、量化方式、推理超参（温度、top-p、max_tokens、上下文长度等），实验结果无法在同等配置下重建。
+- - Critical: 未提供 270 episodes 的任务/提示词/答案生成器清单、原始数据或下载地址，也没有数据许可声明；核心样本不可获取与合法复用。
+- - Critical: 没有任何代码仓库、依赖锁文件或一键复现脚本；文中引用的 L401–L409、L203–L212 行号和附录在匿名材料中无法访问，不能形成可执行证据链。
+- - Critical: 未给出任何 SHA-256/内容哈希对账方案；代码、数据、预测日志、逐 cell 结果和 “Ledger 86 PASS” 均无机器可校验的哈希锚点。
+- - Critical: c0=0.05 的拟合过程不可复现：未说明 K=3 pilot 的划分、拟合目标/损失、是否独立留出，以及 B(K,γ) 的逐 cell 数值表。
+### Major（5）
+- - Major: seed 政策不完整且不一致：主实验声称 10 seeds，正文只给出 42–44 的生成器方差示例；未列出全部 seed、每 seed 的采样顺序或哪些随机源被固定。
+- - Major: 样本规模表述矛盾：“2,700 cells (270 episodes × 10 seeds, K=3..5 × γ=...)” 与 “30 episodes per setting ×10 seeds” 的 cell 层级不清，K/γ 是组内还是组间重复无法判定。
+- - Major: 配置快照缺失：没有 OS、GPU、框架、依赖版本、运行时长或随机库版本；仅有 “gamma=scale*(1+rho)” 公式不足以锁定环境。
+- - Major: 结果报告不一致：P/B 为 5–10× 却称 median 10.88× after expansion，且 K=6 的 P=0.3326 与主样本 0.14–0.26 的关系/入选标准未说明。
+- - Major: 外部材料（survey 0/15、Panorama 6-figure、P0 26-block F1 24K→12K、Ledger）只给行号或颜色编码，未提供来源、访问链接、许可或结构化原始数据。
+### Minor（2）
+- - Minor: 0.68% 提升的 Wilson CI [0.62,0.74] 未报告原始成功数、N 和基线定义，无法独立重算置信区间。
+- - Minor: 附录中的 “9/9 Gates” 只承诺行号锚定，未给出 checklist 条目内容、判定标准或可运行校验脚本。
+
+## 写作（writing）— ok
+### Critical（3）
+- - Critical: 摘要把内部修订/防御性元评论写进 Abstract（“避免与 survey 0/15 零成功案例矛盾”“hedged with pooled SD”“Gates 9/9 锚定 L401–L409”等），完全不符合摘要文体。
+- - Critical: 摘要第(ii)条自相矛盾：公式 `I(K)` 随 K 增大而增大，但文字写 “inverse variance decreases”；应是“variance decreases”或“inverse variance/Fisher-like information increases”。
+- - Critical: 样本量表述不一致：摘要写“2,700 cells (270 episodes ×10 seeds, K=3..5 × γ=0.5/1.0/2.0) across four local models”，未说明“30 episodes per setting”也未说明 four models 是否乘入，按字面会与 K×γ 网格/模型数冲突；贡献4才补成 3×3×30×10=2700。
+### Major（6）
+- - Major: 摘要中“P/B 为 5–10× for γ∈{0.5,1.0}”与“(median 10.88× across the full grid)”未解释中位数为何高于该区间，读者会直接视为矛盾。
+- - Major: “lower bound”是拟合于 K=3 pilot 的样本描述性曲线，随后“exceeded B in all cells”是在同一拟合样本上的循环论证；术语“lower bound/tightness”有误导性。
+- - Major: Introduction 贡献列表后突然出现“P0 26-block F1 24K→12K”“Panorama 6-figure set”“Ledger 86 PASS entries”等未定义黑话，像评审回复/补丁说明而非论文正文。
+- - Major: Abstract 引入未定义的“K-Verifier ensemble improvement of 0.68%”“95% Wilson CI [0.62,0.74]”“survey 0/15 zero-success case”“single-generator seed 42”“pooled SD 0.026”，读者无法在摘要中理解这些数字。
+- - Major: 图/表层面：正文只提及“Panorama 6-figure set”和“supplementary ledger table”，没有图表编号、标题、正文 callout 或可核验内容；“weakened to one paragraph”是修订说明而非图表描述。
+- - Major: 贡献列表结构不平行：第3条把 limitation（median、5–10×）写进贡献，第4条混入设计实现与 baselines，削弱 Contributions 的可读性。
+### Minor（4）
+- - Minor: “K-Verifier”在标题/摘要与正文“K-verifier ensembles”大小写不统一。
+- - Minor: “monotonically non-decreasing”和“increases”等单调性表述混用，应统一为“单调不减”或“递增”。
+- - Minor: “sample-descriptive”在摘要中反复出现并与“lower bound”连用，造成术语冗余和文体拖沓。
+- - Minor: “P = Rsel · Cmin”中 Cmin 只标注 K，Rsel 标注 (K,γ)，但摘要说 P 随 K 和 γ 变化；若 Cmin 与 γ 无关需显式说明，否则公式依赖关系不完整。
+
+## 伦理（ethics）— ok
+### Critical（2）
+- - Critical: 全文未披露任何数据来源、数据集许可证或使用条款；2,700 cells 的实证数据若来自受版权/服务条款保护的 benchmark 或未公开日志，发表与复现均存在数据许可合规风险。
+- - Critical: 正文残留 “P0 26-block F1 24K→12K”“Ledger 86 PASS”“Gamma string” 等疑似内部项目/审计痕迹，可能通过公开仓库或内部文档反查作者身份，直接破坏双盲审查承诺。
+### Major（3）
+- - Major: 未说明 episodes 是否包含个人数据、用户生成内容或敏感信息，也未提供脱敏、数据使用协议或 IRB/伦理审批信息，存在隐私合规漏洞。
+- - Major: 未声明与四个本地模型厂商、资助方、数据/工具提供方之间的利益冲突，评测结论可能受商业关系影响而无透明度。
+- - Major: 选择性预测/verifier ensemble 的结论未讨论误用风险，尤其 P/B 仅 5–10× 且为样本描述性结果，若被当作高可靠安全保证部署于高风险决策场景，将造成过度信任和实际危害。
+### Minor（2）
+- - Minor: “避免与 survey 0/15 zero-success case 矛盾”的表述暴露出结果导向/选择报告倾向，削弱统计报告的合规可信度。
+- - Minor: 缺少数据可用性与复现材料许可说明，附录 ledger 等若含非公开或可识别信息，在双盲期间无法安全共享。
+
+## 汇总
+
+- **Critical: 19 | Major: 36 | Minor: 17**
+- ⚠ 有 Critical：产出需修复后重审（收敛门：一轮无新 Critical/Major）

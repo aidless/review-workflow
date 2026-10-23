@@ -1,0 +1,8400 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_JQA0EfQIfj\\extracted_text.txt",
+    "evidence_dirs": [],
+    "timestamp": "2026-08-26T07:20:31+00:00"
+  },
+  "direction_A_evidence_to_paper": {
+    "checked": 0,
+    "found_in_paper": 0,
+    "hit_rate": null,
+    "key_matches": []
+  },
+  "direction_B_paper_to_evidence": {
+    "paper_decimals": 1081,
+    "supported": 0,
+    "unsupported": 1081,
+    "support_rate": 0.0,
+    "noise_filtered": [
+      {
+        "token": "2.1",
+        "value": 2.1,
+        "line": 101,
+        "context": "2.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.2",
+        "value": 2.2,
+        "line": 113,
+        "context": "2.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.1",
+        "value": 3.1,
+        "line": 127,
+        "context": "3.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.2",
+        "value": 3.2,
+        "line": 175,
+        "context": "3.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.3",
+        "value": 3.3,
+        "line": 195,
+        "context": "3.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.4",
+        "value": 3.4,
+        "line": 219,
+        "context": "3.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.5",
+        "value": 3.5,
+        "line": 257,
+        "context": "3.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.6",
+        "value": 3.6,
+        "line": 412,
+        "context": "3.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.7",
+        "value": 3.7,
+        "line": 446,
+        "context": "3.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.5",
+        "value": 3.5,
+        "line": 485,
+        "context": "adjacency bias G of Section 3.5), U(c), V(c) ∈RDz×r are low-rank CSI adaptation factors produced by",
+        "noise_kind": "section-ref"
+      },
+      {
+        "token": "3.8",
+        "value": 3.8,
+        "line": 566,
+        "context": "3.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "42.74",
+        "value": 42.74,
+        "line": 721,
+        "context": "42.74",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "41.78",
+        "value": 41.78,
+        "line": 722,
+        "context": "41.78",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "40.62",
+        "value": 40.62,
+        "line": 723,
+        "context": "40.62",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "38.64",
+        "value": 38.64,
+        "line": 724,
+        "context": "38.64",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.62",
+        "value": 26.62,
+        "line": 726,
+        "context": "26.62",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.21",
+        "value": 26.21,
+        "line": 727,
+        "context": "26.21",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.22",
+        "value": 26.22,
+        "line": 728,
+        "context": "26.22",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "25.74",
+        "value": 25.74,
+        "line": 729,
+        "context": "25.74",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "40.00",
+        "value": 40.0,
+        "line": 732,
+        "context": "40.00",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "39.64",
+        "value": 39.64,
+        "line": 733,
+        "context": "39.64",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "39.98",
+        "value": 39.98,
+        "line": 734,
+        "context": "39.98",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "39.69",
+        "value": 39.69,
+        "line": 735,
+        "context": "39.69",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.69",
+        "value": 26.69,
+        "line": 737,
+        "context": "26.69",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.60",
+        "value": 26.6,
+        "line": 738,
+        "context": "26.60",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.92",
+        "value": 26.92,
+        "line": 739,
+        "context": "26.92",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "27.01",
+        "value": 27.01,
+        "line": 740,
+        "context": "27.01",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "31.91",
+        "value": 31.91,
+        "line": 743,
+        "context": "31.91",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "31.36",
+        "value": 31.36,
+        "line": 744,
+        "context": "31.36",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "31.03",
+        "value": 31.03,
+        "line": 745,
+        "context": "31.03",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "31.07",
+        "value": 31.07,
+        "line": 746,
+        "context": "31.07",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "23.48",
+        "value": 23.48,
+        "line": 748,
+        "context": "23.48",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "23.27",
+        "value": 23.27,
+        "line": 749,
+        "context": "23.27",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "23.13",
+        "value": 23.13,
+        "line": 750,
+        "context": "23.13",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "23.43",
+        "value": 23.43,
+        "line": 751,
+        "context": "23.43",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "36.87",
+        "value": 36.87,
+        "line": 754,
+        "context": "36.87",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "36.19",
+        "value": 36.19,
+        "line": 755,
+        "context": "36.19",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "34.66",
+        "value": 34.66,
+        "line": 756,
+        "context": "34.66",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "32.88",
+        "value": 32.88,
+        "line": 757,
+        "context": "32.88",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "24.11",
+        "value": 24.11,
+        "line": 759,
+        "context": "24.11",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "23.94",
+        "value": 23.94,
+        "line": 760,
+        "context": "23.94",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "23.76",
+        "value": 23.76,
+        "line": 761,
+        "context": "23.76",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "23.62",
+        "value": 23.62,
+        "line": 762,
+        "context": "23.62",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "66.44",
+        "value": 66.44,
+        "line": 765,
+        "context": "66.44",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.91",
+        "value": 65.91,
+        "line": 766,
+        "context": "65.91",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "66.02",
+        "value": 66.02,
+        "line": 767,
+        "context": "66.02",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "66.57",
+        "value": 66.57,
+        "line": 768,
+        "context": "66.57",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "37.00",
+        "value": 37.0,
+        "line": 770,
+        "context": "37.00",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "36.96",
+        "value": 36.96,
+        "line": 771,
+        "context": "36.96",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "36.87",
+        "value": 36.87,
+        "line": 772,
+        "context": "36.87",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "37.15",
+        "value": 37.15,
+        "line": 773,
+        "context": "37.15",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "32.20",
+        "value": 32.2,
+        "line": 776,
+        "context": "32.20",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "31.68",
+        "value": 31.68,
+        "line": 777,
+        "context": "31.68",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "31.28",
+        "value": 31.28,
+        "line": 778,
+        "context": "31.28",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "31.22",
+        "value": 31.22,
+        "line": 779,
+        "context": "31.22",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "23.36",
+        "value": 23.36,
+        "line": 781,
+        "context": "23.36",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "23.37",
+        "value": 23.37,
+        "line": 782,
+        "context": "23.37",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "23.32",
+        "value": 23.32,
+        "line": 783,
+        "context": "23.32",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "23.30",
+        "value": 23.3,
+        "line": 784,
+        "context": "23.30",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "42.07",
+        "value": 42.07,
+        "line": 787,
+        "context": "42.07",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "41.00",
+        "value": 41.0,
+        "line": 788,
+        "context": "41.00",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "40.38",
+        "value": 40.38,
+        "line": 789,
+        "context": "40.38",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "39.35",
+        "value": 39.35,
+        "line": 790,
+        "context": "39.35",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "28.57",
+        "value": 28.57,
+        "line": 792,
+        "context": "28.57",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "28.41",
+        "value": 28.41,
+        "line": 793,
+        "context": "28.41",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "28.44",
+        "value": 28.44,
+        "line": 794,
+        "context": "28.44",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "28.38",
+        "value": 28.38,
+        "line": 795,
+        "context": "28.38",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "39.54",
+        "value": 39.54,
+        "line": 798,
+        "context": "39.54",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "39.41",
+        "value": 39.41,
+        "line": 799,
+        "context": "39.41",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "39.24",
+        "value": 39.24,
+        "line": 800,
+        "context": "39.24",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "39.14",
+        "value": 39.14,
+        "line": 801,
+        "context": "39.14",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.62",
+        "value": 26.62,
+        "line": 803,
+        "context": "26.62",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.95",
+        "value": 26.95,
+        "line": 804,
+        "context": "26.95",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "27.07",
+        "value": 27.07,
+        "line": 805,
+        "context": "27.07",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.60",
+        "value": 26.6,
+        "line": 806,
+        "context": "26.60",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.14",
+        "value": 26.14,
+        "line": 809,
+        "context": "26.14",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.03",
+        "value": 26.03,
+        "line": 810,
+        "context": "26.03",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.49",
+        "value": 26.49,
+        "line": 811,
+        "context": "26.49",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "27.28",
+        "value": 27.28,
+        "line": 812,
+        "context": "27.28",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "20.81",
+        "value": 20.81,
+        "line": 814,
+        "context": "20.81",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "20.77",
+        "value": 20.77,
+        "line": 815,
+        "context": "20.77",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "20.98",
+        "value": 20.98,
+        "line": 816,
+        "context": "20.98",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "21.28",
+        "value": 21.28,
+        "line": 817,
+        "context": "21.28",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "54.5",
+        "value": 54.5,
+        "line": 826,
+        "context": "54.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "58.2",
+        "value": 58.2,
+        "line": 827,
+        "context": "58.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "62.5",
+        "value": 62.5,
+        "line": 828,
+        "context": "62.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "66.7",
+        "value": 66.7,
+        "line": 829,
+        "context": "66.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.0",
+        "value": 65.0,
+        "line": 830,
+        "context": "65.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "63.6",
+        "value": 63.6,
+        "line": 831,
+        "context": "63.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "53.2",
+        "value": 53.2,
+        "line": 832,
+        "context": "53.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "56.9",
+        "value": 56.9,
+        "line": 833,
+        "context": "56.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "60.8",
+        "value": 60.8,
+        "line": 834,
+        "context": "60.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "64.0",
+        "value": 64.0,
+        "line": 835,
+        "context": "64.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "62.1",
+        "value": 62.1,
+        "line": 836,
+        "context": "62.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.0",
+        "value": 61.0,
+        "line": 837,
+        "context": "61.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "55.2",
+        "value": 55.2,
+        "line": 838,
+        "context": "55.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "62.3",
+        "value": 62.3,
+        "line": 839,
+        "context": "62.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "69.2",
+        "value": 69.2,
+        "line": 840,
+        "context": "69.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "76.2",
+        "value": 76.2,
+        "line": 841,
+        "context": "76.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "73.3",
+        "value": 73.3,
+        "line": 842,
+        "context": "73.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "69.8",
+        "value": 69.8,
+        "line": 843,
+        "context": "69.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "45.5",
+        "value": 45.5,
+        "line": 845,
+        "context": "45.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "48.0",
+        "value": 48.0,
+        "line": 846,
+        "context": "48.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.2",
+        "value": 51.2,
+        "line": 847,
+        "context": "51.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "54.1",
+        "value": 54.1,
+        "line": 848,
+        "context": "54.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "53.4",
+        "value": 53.4,
+        "line": 849,
+        "context": "53.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.6",
+        "value": 52.6,
+        "line": 850,
+        "context": "52.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "44.3",
+        "value": 44.3,
+        "line": 851,
+        "context": "44.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "46.6",
+        "value": 46.6,
+        "line": 852,
+        "context": "46.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "49.1",
+        "value": 49.1,
+        "line": 853,
+        "context": "49.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.0",
+        "value": 51.0,
+        "line": 854,
+        "context": "51.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "50.2",
+        "value": 50.2,
+        "line": 855,
+        "context": "50.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "49.8",
+        "value": 49.8,
+        "line": 856,
+        "context": "49.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "46.5",
+        "value": 46.5,
+        "line": 857,
+        "context": "46.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.6",
+        "value": 52.6,
+        "line": 858,
+        "context": "52.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "58.3",
+        "value": 58.3,
+        "line": 859,
+        "context": "58.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.3",
+        "value": 61.3,
+        "line": 860,
+        "context": "61.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "63.2",
+        "value": 63.2,
+        "line": 861,
+        "context": "63.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "60.1",
+        "value": 60.1,
+        "line": 862,
+        "context": "60.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "91.0",
+        "value": 91.0,
+        "line": 864,
+        "context": "91.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "89.5",
+        "value": 89.5,
+        "line": 865,
+        "context": "89.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "87.6",
+        "value": 87.6,
+        "line": 866,
+        "context": "87.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "85.6",
+        "value": 85.6,
+        "line": 867,
+        "context": "85.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "86.5",
+        "value": 86.5,
+        "line": 868,
+        "context": "86.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "87.3",
+        "value": 87.3,
+        "line": 869,
+        "context": "87.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "91.3",
+        "value": 91.3,
+        "line": 870,
+        "context": "91.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "89.9",
+        "value": 89.9,
+        "line": 871,
+        "context": "89.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "88.2",
+        "value": 88.2,
+        "line": 872,
+        "context": "88.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "86.6",
+        "value": 86.6,
+        "line": 873,
+        "context": "86.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "87.5",
+        "value": 87.5,
+        "line": 874,
+        "context": "87.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "88.3",
+        "value": 88.3,
+        "line": 875,
+        "context": "88.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "90.6",
+        "value": 90.6,
+        "line": 876,
+        "context": "90.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "87.8",
+        "value": 87.8,
+        "line": 877,
+        "context": "87.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "85.0",
+        "value": 85.0,
+        "line": 878,
+        "context": "85.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "82.3",
+        "value": 82.3,
+        "line": 879,
+        "context": "82.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "83.7",
+        "value": 83.7,
+        "line": 880,
+        "context": "83.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "85.3",
+        "value": 85.3,
+        "line": 881,
+        "context": "85.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "72.5",
+        "value": 72.5,
+        "line": 883,
+        "context": "72.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "69.9",
+        "value": 69.9,
+        "line": 884,
+        "context": "69.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.3",
+        "value": 67.3,
+        "line": 885,
+        "context": "67.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "64.7",
+        "value": 64.7,
+        "line": 886,
+        "context": "64.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.9",
+        "value": 65.9,
+        "line": 887,
+        "context": "65.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.1",
+        "value": 67.1,
+        "line": 888,
+        "context": "67.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "73.1",
+        "value": 73.1,
+        "line": 889,
+        "context": "73.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "70.6",
+        "value": 70.6,
+        "line": 890,
+        "context": "70.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "68.1",
+        "value": 68.1,
+        "line": 891,
+        "context": "68.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "66.0",
+        "value": 66.0,
+        "line": 892,
+        "context": "66.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.2",
+        "value": 67.2,
+        "line": 893,
+        "context": "67.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "68.3",
+        "value": 68.3,
+        "line": 894,
+        "context": "68.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "72.0",
+        "value": 72.0,
+        "line": 895,
+        "context": "72.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "68.3",
+        "value": 68.3,
+        "line": 896,
+        "context": "68.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.1",
+        "value": 65.1,
+        "line": 897,
+        "context": "65.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "62.3",
+        "value": 62.3,
+        "line": 898,
+        "context": "62.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "64.1",
+        "value": 64.1,
+        "line": 899,
+        "context": "64.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.8",
+        "value": 65.8,
+        "line": 900,
+        "context": "65.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "55.7",
+        "value": 55.7,
+        "line": 903,
+        "context": "55.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "62.0",
+        "value": 62.0,
+        "line": 904,
+        "context": "62.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "68.4",
+        "value": 68.4,
+        "line": 905,
+        "context": "68.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "74.7",
+        "value": 74.7,
+        "line": 906,
+        "context": "74.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "71.9",
+        "value": 71.9,
+        "line": 907,
+        "context": "71.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "68.7",
+        "value": 68.7,
+        "line": 908,
+        "context": "68.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.8",
+        "value": 52.8,
+        "line": 909,
+        "context": "52.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "58.2",
+        "value": 58.2,
+        "line": 910,
+        "context": "58.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "63.5",
+        "value": 63.5,
+        "line": 911,
+        "context": "63.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "68.0",
+        "value": 68.0,
+        "line": 912,
+        "context": "68.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.4",
+        "value": 65.4,
+        "line": 913,
+        "context": "65.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "63.5",
+        "value": 63.5,
+        "line": 914,
+        "context": "63.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "53.1",
+        "value": 53.1,
+        "line": 915,
+        "context": "53.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "59.0",
+        "value": 59.0,
+        "line": 916,
+        "context": "59.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "64.5",
+        "value": 64.5,
+        "line": 917,
+        "context": "64.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "68.9",
+        "value": 68.9,
+        "line": 918,
+        "context": "68.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "66.4",
+        "value": 66.4,
+        "line": 919,
+        "context": "66.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "64.4",
+        "value": 64.4,
+        "line": 920,
+        "context": "64.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "47.3",
+        "value": 47.3,
+        "line": 922,
+        "context": "47.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.5",
+        "value": 52.5,
+        "line": 923,
+        "context": "52.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "57.7",
+        "value": 57.7,
+        "line": 924,
+        "context": "57.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "62.8",
+        "value": 62.8,
+        "line": 925,
+        "context": "62.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.8",
+        "value": 61.8,
+        "line": 926,
+        "context": "61.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "59.2",
+        "value": 59.2,
+        "line": 927,
+        "context": "59.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "44.0",
+        "value": 44.0,
+        "line": 928,
+        "context": "44.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "48.0",
+        "value": 48.0,
+        "line": 929,
+        "context": "48.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.8",
+        "value": 51.8,
+        "line": 930,
+        "context": "51.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "54.7",
+        "value": 54.7,
+        "line": 931,
+        "context": "54.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "53.5",
+        "value": 53.5,
+        "line": 932,
+        "context": "53.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.6",
+        "value": 52.6,
+        "line": 933,
+        "context": "52.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "44.7",
+        "value": 44.7,
+        "line": 934,
+        "context": "44.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "49.0",
+        "value": 49.0,
+        "line": 935,
+        "context": "49.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.9",
+        "value": 52.9,
+        "line": 936,
+        "context": "52.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "55.5",
+        "value": 55.5,
+        "line": 937,
+        "context": "55.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "54.4",
+        "value": 54.4,
+        "line": 938,
+        "context": "54.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "53.5",
+        "value": 53.5,
+        "line": 939,
+        "context": "53.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "90.3",
+        "value": 90.3,
+        "line": 941,
+        "context": "90.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "87.8",
+        "value": 87.8,
+        "line": 942,
+        "context": "87.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "85.2",
+        "value": 85.2,
+        "line": 943,
+        "context": "85.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "82.6",
+        "value": 82.6,
+        "line": 944,
+        "context": "82.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "84.1",
+        "value": 84.1,
+        "line": 945,
+        "context": "84.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "85.6",
+        "value": 85.6,
+        "line": 946,
+        "context": "85.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "91.5",
+        "value": 91.5,
+        "line": 947,
+        "context": "91.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "89.4",
+        "value": 89.4,
+        "line": 948,
+        "context": "89.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "87.2",
+        "value": 87.2,
+        "line": 949,
+        "context": "87.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "85.2",
+        "value": 85.2,
+        "line": 950,
+        "context": "85.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "86.3",
+        "value": 86.3,
+        "line": 951,
+        "context": "86.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "87.4",
+        "value": 87.4,
+        "line": 952,
+        "context": "87.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "91.3",
+        "value": 91.3,
+        "line": 953,
+        "context": "91.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "89.1",
+        "value": 89.1,
+        "line": 954,
+        "context": "89.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "86.7",
+        "value": 86.7,
+        "line": 955,
+        "context": "86.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "84.6",
+        "value": 84.6,
+        "line": 956,
+        "context": "84.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "85.8",
+        "value": 85.8,
+        "line": 957,
+        "context": "85.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "86.9",
+        "value": 86.9,
+        "line": 958,
+        "context": "86.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "71.7",
+        "value": 71.7,
+        "line": 960,
+        "context": "71.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "68.5",
+        "value": 68.5,
+        "line": 961,
+        "context": "68.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.3",
+        "value": 65.3,
+        "line": 962,
+        "context": "65.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "62.6",
+        "value": 62.6,
+        "line": 963,
+        "context": "62.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.4",
+        "value": 61.4,
+        "line": 964,
+        "context": "61.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "66.2",
+        "value": 66.2,
+        "line": 965,
+        "context": "66.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "73.5",
+        "value": 73.5,
+        "line": 966,
+        "context": "73.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "70.1",
+        "value": 70.1,
+        "line": 967,
+        "context": "70.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.1",
+        "value": 67.1,
+        "line": 968,
+        "context": "67.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "64.2",
+        "value": 64.2,
+        "line": 969,
+        "context": "64.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.9",
+        "value": 65.9,
+        "line": 970,
+        "context": "65.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.7",
+        "value": 67.7,
+        "line": 971,
+        "context": "67.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "73.4",
+        "value": 73.4,
+        "line": 972,
+        "context": "73.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "69.8",
+        "value": 69.8,
+        "line": 973,
+        "context": "69.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "66.7",
+        "value": 66.7,
+        "line": 974,
+        "context": "66.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "63.8",
+        "value": 63.8,
+        "line": 975,
+        "context": "63.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.5",
+        "value": 65.5,
+        "line": 976,
+        "context": "65.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.2",
+        "value": 67.2,
+        "line": 977,
+        "context": "67.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.1",
+        "value": 52.1,
+        "line": 980,
+        "context": "52.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "57.0",
+        "value": 57.0,
+        "line": 981,
+        "context": "57.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.9",
+        "value": 61.9,
+        "line": 982,
+        "context": "61.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.7",
+        "value": 65.7,
+        "line": 983,
+        "context": "65.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "63.4",
+        "value": 63.4,
+        "line": 984,
+        "context": "63.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.9",
+        "value": 61.9,
+        "line": 985,
+        "context": "61.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.5",
+        "value": 51.5,
+        "line": 986,
+        "context": "51.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "54.6",
+        "value": 54.6,
+        "line": 987,
+        "context": "54.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "58.5",
+        "value": 58.5,
+        "line": 988,
+        "context": "58.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "62.2",
+        "value": 62.2,
+        "line": 989,
+        "context": "62.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "60.6",
+        "value": 60.6,
+        "line": 990,
+        "context": "60.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "59.4",
+        "value": 59.4,
+        "line": 991,
+        "context": "59.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.6",
+        "value": 52.6,
+        "line": 992,
+        "context": "52.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "58.3",
+        "value": 58.3,
+        "line": 993,
+        "context": "58.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "63.2",
+        "value": 63.2,
+        "line": 994,
+        "context": "63.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.2",
+        "value": 67.2,
+        "line": 995,
+        "context": "67.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "64.5",
+        "value": 64.5,
+        "line": 996,
+        "context": "64.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "62.5",
+        "value": 62.5,
+        "line": 997,
+        "context": "62.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "43.5",
+        "value": 43.5,
+        "line": 999,
+        "context": "43.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "47.0",
+        "value": 47.0,
+        "line": 1000,
+        "context": "47.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "50.5",
+        "value": 50.5,
+        "line": 1001,
+        "context": "50.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.8",
+        "value": 52.8,
+        "line": 1002,
+        "context": "52.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.8",
+        "value": 51.8,
+        "line": 1003,
+        "context": "51.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.1",
+        "value": 51.1,
+        "line": 1004,
+        "context": "51.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "42.8",
+        "value": 42.8,
+        "line": 1005,
+        "context": "42.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "44.9",
+        "value": 44.9,
+        "line": 1006,
+        "context": "44.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "47.6",
+        "value": 47.6,
+        "line": 1007,
+        "context": "47.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "50.0",
+        "value": 50.0,
+        "line": 1008,
+        "context": "50.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "49.2",
+        "value": 49.2,
+        "line": 1009,
+        "context": "49.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "48.9",
+        "value": 48.9,
+        "line": 1010,
+        "context": "48.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "41.2",
+        "value": 41.2,
+        "line": 1011,
+        "context": "41.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "48.5",
+        "value": 48.5,
+        "line": 1012,
+        "context": "48.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.0",
+        "value": 52.0,
+        "line": 1013,
+        "context": "52.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "54.3",
+        "value": 54.3,
+        "line": 1014,
+        "context": "54.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.9",
+        "value": 52.9,
+        "line": 1015,
+        "context": "52.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.7",
+        "value": 51.7,
+        "line": 1016,
+        "context": "51.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "91.8",
+        "value": 91.8,
+        "line": 1018,
+        "context": "91.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "89.9",
+        "value": 89.9,
+        "line": 1019,
+        "context": "89.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "87.8",
+        "value": 87.8,
+        "line": 1020,
+        "context": "87.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "85.9",
+        "value": 85.9,
+        "line": 1021,
+        "context": "85.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "86.9",
+        "value": 86.9,
+        "line": 1022,
+        "context": "86.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "87.9",
+        "value": 87.9,
+        "line": 1023,
+        "context": "87.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "92.0",
+        "value": 92.0,
+        "line": 1024,
+        "context": "92.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "90.9",
+        "value": 90.9,
+        "line": 1025,
+        "context": "90.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "89.3",
+        "value": 89.3,
+        "line": 1026,
+        "context": "89.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "87.6",
+        "value": 87.6,
+        "line": 1027,
+        "context": "87.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "88.3",
+        "value": 88.3,
+        "line": 1028,
+        "context": "88.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "88.9",
+        "value": 88.9,
+        "line": 1029,
+        "context": "88.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "91.6",
+        "value": 91.6,
+        "line": 1030,
+        "context": "91.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "89.3",
+        "value": 89.3,
+        "line": 1031,
+        "context": "89.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "87.2",
+        "value": 87.2,
+        "line": 1032,
+        "context": "87.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "85.4",
+        "value": 85.4,
+        "line": 1033,
+        "context": "85.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "86.5",
+        "value": 86.5,
+        "line": 1034,
+        "context": "86.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "87.7",
+        "value": 87.7,
+        "line": 1035,
+        "context": "87.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "73.9",
+        "value": 73.9,
+        "line": 1037,
+        "context": "73.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "70.7",
+        "value": 70.7,
+        "line": 1038,
+        "context": "70.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.8",
+        "value": 67.8,
+        "line": 1039,
+        "context": "67.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.1",
+        "value": 65.1,
+        "line": 1040,
+        "context": "65.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "66.5",
+        "value": 66.5,
+        "line": 1041,
+        "context": "66.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.7",
+        "value": 67.7,
+        "line": 1042,
+        "context": "67.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "74.3",
+        "value": 74.3,
+        "line": 1043,
+        "context": "74.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "72.1",
+        "value": 72.1,
+        "line": 1044,
+        "context": "72.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "69.6",
+        "value": 69.6,
+        "line": 1045,
+        "context": "69.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.0",
+        "value": 67.0,
+        "line": 1046,
+        "context": "67.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "68.1",
+        "value": 68.1,
+        "line": 1047,
+        "context": "68.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "69.5",
+        "value": 69.5,
+        "line": 1048,
+        "context": "69.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "73.7",
+        "value": 73.7,
+        "line": 1049,
+        "context": "73.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "70.2",
+        "value": 70.2,
+        "line": 1050,
+        "context": "70.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.3",
+        "value": 67.3,
+        "line": 1051,
+        "context": "67.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "64.6",
+        "value": 64.6,
+        "line": 1052,
+        "context": "64.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "66.3",
+        "value": 66.3,
+        "line": 1053,
+        "context": "66.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.8",
+        "value": 67.8,
+        "line": 1054,
+        "context": "67.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "375.2",
+        "value": 375.2,
+        "line": 1078,
+        "context": "375.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "383.4",
+        "value": 383.4,
+        "line": 1079,
+        "context": "383.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "351.6",
+        "value": 351.6,
+        "line": 1080,
+        "context": "351.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "351.2",
+        "value": 351.2,
+        "line": 1081,
+        "context": "351.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "339.8",
+        "value": 339.8,
+        "line": 1082,
+        "context": "339.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "368.5",
+        "value": 368.5,
+        "line": 1083,
+        "context": "368.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "120.7",
+        "value": 120.7,
+        "line": 1085,
+        "context": "120.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "122.3",
+        "value": 122.3,
+        "line": 1086,
+        "context": "122.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "119.4",
+        "value": 119.4,
+        "line": 1087,
+        "context": "119.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "118.4",
+        "value": 118.4,
+        "line": 1088,
+        "context": "118.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "119.5",
+        "value": 119.5,
+        "line": 1089,
+        "context": "119.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "122.8",
+        "value": 122.8,
+        "line": 1090,
+        "context": "122.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.8",
+        "value": 3.8,
+        "line": 1092,
+        "context": "3.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.3",
+        "value": 4.3,
+        "line": 1093,
+        "context": "4.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "7.0",
+        "value": 7.0,
+        "line": 1094,
+        "context": "7.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "8.6",
+        "value": 8.6,
+        "line": 1095,
+        "context": "8.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "10.0",
+        "value": 10.0,
+        "line": 1096,
+        "context": "10.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "6.3",
+        "value": 6.3,
+        "line": 1097,
+        "context": "6.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "0.3",
+        "value": 0.3,
+        "line": 1099,
+        "context": "0.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "0.2",
+        "value": 0.2,
+        "line": 1100,
+        "context": "0.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "0.8",
+        "value": 0.8,
+        "line": 1101,
+        "context": "0.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "1.0",
+        "value": 1.0,
+        "line": 1102,
+        "context": "1.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "1.1",
+        "value": 1.1,
+        "line": 1103,
+        "context": "1.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "0.5",
+        "value": 0.5,
+        "line": 1104,
+        "context": "0.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "311.7",
+        "value": 311.7,
+        "line": 1107,
+        "context": "311.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "308.4",
+        "value": 308.4,
+        "line": 1108,
+        "context": "308.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "311.2",
+        "value": 311.2,
+        "line": 1109,
+        "context": "311.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "312.8",
+        "value": 312.8,
+        "line": 1110,
+        "context": "312.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "316.9",
+        "value": 316.9,
+        "line": 1111,
+        "context": "316.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "312.0",
+        "value": 312.0,
+        "line": 1112,
+        "context": "312.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "105.5",
+        "value": 105.5,
+        "line": 1114,
+        "context": "105.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "105.4",
+        "value": 105.4,
+        "line": 1115,
+        "context": "105.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "104.6",
+        "value": 104.6,
+        "line": 1116,
+        "context": "104.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "104.7",
+        "value": 104.7,
+        "line": 1117,
+        "context": "104.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "105.1",
+        "value": 105.1,
+        "line": 1118,
+        "context": "105.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "105.1",
+        "value": 105.1,
+        "line": 1119,
+        "context": "105.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "78.8",
+        "value": 78.8,
+        "line": 1121,
+        "context": "78.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "80.7",
+        "value": 80.7,
+        "line": 1122,
+        "context": "80.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "78.4",
+        "value": 78.4,
+        "line": 1123,
+        "context": "78.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "78.4",
+        "value": 78.4,
+        "line": 1124,
+        "context": "78.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "75.9",
+        "value": 75.9,
+        "line": 1125,
+        "context": "75.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "80.1",
+        "value": 80.1,
+        "line": 1126,
+        "context": "80.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "18.1",
+        "value": 18.1,
+        "line": 1128,
+        "context": "18.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "17.7",
+        "value": 17.7,
+        "line": 1129,
+        "context": "17.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "18.4",
+        "value": 18.4,
+        "line": 1130,
+        "context": "18.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "17.2",
+        "value": 17.2,
+        "line": 1131,
+        "context": "17.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "18.2",
+        "value": 18.2,
+        "line": 1132,
+        "context": "18.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "16.8",
+        "value": 16.8,
+        "line": 1133,
+        "context": "16.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "330.5",
+        "value": 330.5,
+        "line": 1136,
+        "context": "330.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "326.9",
+        "value": 326.9,
+        "line": 1137,
+        "context": "326.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "328.9",
+        "value": 328.9,
+        "line": 1138,
+        "context": "328.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "331.5",
+        "value": 331.5,
+        "line": 1139,
+        "context": "331.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "335.7",
+        "value": 335.7,
+        "line": 1140,
+        "context": "335.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "334.9",
+        "value": 334.9,
+        "line": 1141,
+        "context": "334.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "110.7",
+        "value": 110.7,
+        "line": 1143,
+        "context": "110.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "109.5",
+        "value": 109.5,
+        "line": 1144,
+        "context": "109.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "109.6",
+        "value": 109.6,
+        "line": 1145,
+        "context": "109.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "110.4",
+        "value": 110.4,
+        "line": 1146,
+        "context": "110.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "111.4",
+        "value": 111.4,
+        "line": 1147,
+        "context": "111.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "111.2",
+        "value": 111.2,
+        "line": 1148,
+        "context": "111.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "70.4",
+        "value": 70.4,
+        "line": 1150,
+        "context": "70.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "72.5",
+        "value": 72.5,
+        "line": 1151,
+        "context": "72.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "70.7",
+        "value": 70.7,
+        "line": 1152,
+        "context": "70.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "69.1",
+        "value": 69.1,
+        "line": 1153,
+        "context": "69.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "70.7",
+        "value": 70.7,
+        "line": 1154,
+        "context": "70.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "70.3",
+        "value": 70.3,
+        "line": 1155,
+        "context": "70.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "10.5",
+        "value": 10.5,
+        "line": 1157,
+        "context": "10.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "11.9",
+        "value": 11.9,
+        "line": 1158,
+        "context": "11.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "11.2",
+        "value": 11.2,
+        "line": 1159,
+        "context": "11.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "10.7",
+        "value": 10.7,
+        "line": 1160,
+        "context": "10.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "12.0",
+        "value": 12.0,
+        "line": 1161,
+        "context": "12.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "12.1",
+        "value": 12.1,
+        "line": 1162,
+        "context": "12.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "337.1",
+        "value": 337.1,
+        "line": 1165,
+        "context": "337.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "342.9",
+        "value": 342.9,
+        "line": 1166,
+        "context": "342.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "356.0",
+        "value": 356.0,
+        "line": 1167,
+        "context": "356.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "365.0",
+        "value": 365.0,
+        "line": 1168,
+        "context": "365.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "347.2",
+        "value": 347.2,
+        "line": 1169,
+        "context": "347.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "337.2",
+        "value": 337.2,
+        "line": 1170,
+        "context": "337.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "106.9",
+        "value": 106.9,
+        "line": 1172,
+        "context": "106.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "107.2",
+        "value": 107.2,
+        "line": 1173,
+        "context": "107.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "107.2",
+        "value": 107.2,
+        "line": 1174,
+        "context": "107.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "107.1",
+        "value": 107.1,
+        "line": 1175,
+        "context": "107.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "106.9",
+        "value": 106.9,
+        "line": 1176,
+        "context": "106.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "106.7",
+        "value": 106.7,
+        "line": 1177,
+        "context": "106.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "48.9",
+        "value": 48.9,
+        "line": 1179,
+        "context": "48.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "46.3",
+        "value": 46.3,
+        "line": 1180,
+        "context": "46.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "39.0",
+        "value": 39.0,
+        "line": 1181,
+        "context": "39.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "34.9",
+        "value": 34.9,
+        "line": 1182,
+        "context": "34.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "46.4",
+        "value": 46.4,
+        "line": 1183,
+        "context": "46.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "50.4",
+        "value": 50.4,
+        "line": 1184,
+        "context": "50.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.9",
+        "value": 5.9,
+        "line": 1186,
+        "context": "5.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.3",
+        "value": 5.3,
+        "line": 1187,
+        "context": "5.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.5",
+        "value": 3.5,
+        "line": 1188,
+        "context": "3.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.4",
+        "value": 3.4,
+        "line": 1189,
+        "context": "3.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.9",
+        "value": 5.9,
+        "line": 1190,
+        "context": "5.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "6.2",
+        "value": 6.2,
+        "line": 1191,
+        "context": "6.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "345.0",
+        "value": 345.0,
+        "line": 1194,
+        "context": "345.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "340.9",
+        "value": 340.9,
+        "line": 1195,
+        "context": "340.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "338.7",
+        "value": 338.7,
+        "line": 1196,
+        "context": "338.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "334.9",
+        "value": 334.9,
+        "line": 1197,
+        "context": "334.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "334.3",
+        "value": 334.3,
+        "line": 1198,
+        "context": "334.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "342.1",
+        "value": 342.1,
+        "line": 1199,
+        "context": "342.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.9",
+        "value": 102.9,
+        "line": 1201,
+        "context": "102.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.8",
+        "value": 102.8,
+        "line": 1202,
+        "context": "102.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.7",
+        "value": 102.7,
+        "line": 1203,
+        "context": "102.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.6",
+        "value": 102.6,
+        "line": 1204,
+        "context": "102.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.8",
+        "value": 102.8,
+        "line": 1205,
+        "context": "102.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.5",
+        "value": 102.5,
+        "line": 1206,
+        "context": "102.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "44.78",
+        "value": 44.78,
+        "line": 1208,
+        "context": "44.78",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "47.04",
+        "value": 47.04,
+        "line": 1209,
+        "context": "47.04",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "49.17",
+        "value": 49.17,
+        "line": 1210,
+        "context": "49.17",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.74",
+        "value": 51.74,
+        "line": 1211,
+        "context": "51.74",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.71",
+        "value": 51.71,
+        "line": 1212,
+        "context": "51.71",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "46.89",
+        "value": 46.89,
+        "line": 1213,
+        "context": "46.89",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.7",
+        "value": 3.7,
+        "line": 1215,
+        "context": "3.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.2",
+        "value": 4.2,
+        "line": 1216,
+        "context": "4.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.7",
+        "value": 4.7,
+        "line": 1217,
+        "context": "4.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.5",
+        "value": 5.5,
+        "line": 1218,
+        "context": "5.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.7",
+        "value": 5.7,
+        "line": 1219,
+        "context": "5.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.14",
+        "value": 4.14,
+        "line": 1220,
+        "context": "4.14",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "335.6",
+        "value": 335.6,
+        "line": 1223,
+        "context": "335.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "337.5",
+        "value": 337.5,
+        "line": 1224,
+        "context": "337.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "340.1",
+        "value": 340.1,
+        "line": 1225,
+        "context": "340.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "339.8",
+        "value": 339.8,
+        "line": 1226,
+        "context": "339.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "338.5",
+        "value": 338.5,
+        "line": 1227,
+        "context": "338.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "337.3",
+        "value": 337.3,
+        "line": 1228,
+        "context": "337.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.9",
+        "value": 102.9,
+        "line": 1230,
+        "context": "102.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.8",
+        "value": 102.8,
+        "line": 1231,
+        "context": "102.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.6",
+        "value": 102.6,
+        "line": 1232,
+        "context": "102.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.7",
+        "value": 102.7,
+        "line": 1233,
+        "context": "102.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.5",
+        "value": 102.5,
+        "line": 1234,
+        "context": "102.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.1",
+        "value": 102.1,
+        "line": 1235,
+        "context": "102.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "53.85",
+        "value": 53.85,
+        "line": 1237,
+        "context": "53.85",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.75",
+        "value": 52.75,
+        "line": 1238,
+        "context": "52.75",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "49.87",
+        "value": 49.87,
+        "line": 1239,
+        "context": "49.87",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "49.44",
+        "value": 49.44,
+        "line": 1240,
+        "context": "49.44",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.64",
+        "value": 51.64,
+        "line": 1241,
+        "context": "51.64",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.90",
+        "value": 52.9,
+        "line": 1242,
+        "context": "52.90",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "6.2",
+        "value": 6.2,
+        "line": 1244,
+        "context": "6.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.7",
+        "value": 5.7,
+        "line": 1245,
+        "context": "5.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.4",
+        "value": 5.4,
+        "line": 1246,
+        "context": "5.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.20",
+        "value": 5.2,
+        "line": 1247,
+        "context": "5.20",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.9",
+        "value": 5.9,
+        "line": 1248,
+        "context": "5.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.8",
+        "value": 5.8,
+        "line": 1249,
+        "context": "5.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "332.6",
+        "value": 332.6,
+        "line": 1252,
+        "context": "332.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "330.8",
+        "value": 330.8,
+        "line": 1253,
+        "context": "330.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "330.9",
+        "value": 330.9,
+        "line": 1254,
+        "context": "330.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "335.5",
+        "value": 335.5,
+        "line": 1255,
+        "context": "335.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "334.70",
+        "value": 334.7,
+        "line": 1256,
+        "context": "334.70",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "340.8",
+        "value": 340.8,
+        "line": 1257,
+        "context": "340.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "101.7",
+        "value": 101.7,
+        "line": 1259,
+        "context": "101.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "101.8",
+        "value": 101.8,
+        "line": 1260,
+        "context": "101.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "101.9",
+        "value": 101.9,
+        "line": 1261,
+        "context": "101.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "101.8",
+        "value": 101.8,
+        "line": 1262,
+        "context": "101.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "101.8",
+        "value": 101.8,
+        "line": 1263,
+        "context": "101.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.3",
+        "value": 102.3,
+        "line": 1264,
+        "context": "102.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "53.4",
+        "value": 53.4,
+        "line": 1266,
+        "context": "53.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "53.3",
+        "value": 53.3,
+        "line": 1267,
+        "context": "53.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "53.8",
+        "value": 53.8,
+        "line": 1268,
+        "context": "53.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.1",
+        "value": 51.1,
+        "line": 1269,
+        "context": "51.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.8",
+        "value": 51.8,
+        "line": 1270,
+        "context": "51.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "49.4",
+        "value": 49.4,
+        "line": 1271,
+        "context": "49.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.7",
+        "value": 5.7,
+        "line": 1273,
+        "context": "5.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.8",
+        "value": 5.8,
+        "line": 1274,
+        "context": "5.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.72",
+        "value": 5.72,
+        "line": 1275,
+        "context": "5.72",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.9",
+        "value": 4.9,
+        "line": 1276,
+        "context": "4.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.4",
+        "value": 5.4,
+        "line": 1277,
+        "context": "5.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.7",
+        "value": 4.7,
+        "line": 1278,
+        "context": "4.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "338.2",
+        "value": 338.2,
+        "line": 1281,
+        "context": "338.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "340.1",
+        "value": 340.1,
+        "line": 1282,
+        "context": "340.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "343.1",
+        "value": 343.1,
+        "line": 1283,
+        "context": "343.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "349.9",
+        "value": 349.9,
+        "line": 1284,
+        "context": "349.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "343.8",
+        "value": 343.8,
+        "line": 1285,
+        "context": "343.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "333.7",
+        "value": 333.7,
+        "line": 1286,
+        "context": "333.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.6",
+        "value": 102.6,
+        "line": 1288,
+        "context": "102.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "101.9",
+        "value": 101.9,
+        "line": 1289,
+        "context": "101.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "101.9",
+        "value": 101.9,
+        "line": 1290,
+        "context": "101.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.0",
+        "value": 102.0,
+        "line": 1291,
+        "context": "102.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "101.8",
+        "value": 101.8,
+        "line": 1292,
+        "context": "101.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.1",
+        "value": 102.1,
+        "line": 1293,
+        "context": "102.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "48.1",
+        "value": 48.1,
+        "line": 1295,
+        "context": "48.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "48.7",
+        "value": 48.7,
+        "line": 1296,
+        "context": "48.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "47.5",
+        "value": 47.5,
+        "line": 1297,
+        "context": "47.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "43.9",
+        "value": 43.9,
+        "line": 1298,
+        "context": "43.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "48.5",
+        "value": 48.5,
+        "line": 1299,
+        "context": "48.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.4",
+        "value": 52.4,
+        "line": 1300,
+        "context": "52.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "7.2",
+        "value": 7.2,
+        "line": 1302,
+        "context": "7.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "7.8",
+        "value": 7.8,
+        "line": 1303,
+        "context": "7.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "7.6",
+        "value": 7.6,
+        "line": 1304,
+        "context": "7.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "7.4",
+        "value": 7.4,
+        "line": 1305,
+        "context": "7.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "7.9",
+        "value": 7.9,
+        "line": 1306,
+        "context": "7.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "8.3",
+        "value": 8.3,
+        "line": 1307,
+        "context": "8.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "365.4",
+        "value": 365.4,
+        "line": 1310,
+        "context": "365.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "362.7",
+        "value": 362.7,
+        "line": 1311,
+        "context": "362.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "359.6",
+        "value": 359.6,
+        "line": 1312,
+        "context": "359.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "364.7",
+        "value": 364.7,
+        "line": 1313,
+        "context": "364.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "368.5",
+        "value": 368.5,
+        "line": 1314,
+        "context": "368.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "368.9",
+        "value": 368.9,
+        "line": 1315,
+        "context": "368.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "107.99",
+        "value": 107.99,
+        "line": 1317,
+        "context": "107.99",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "108.19",
+        "value": 108.19,
+        "line": 1318,
+        "context": "108.19",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "108.41",
+        "value": 108.41,
+        "line": 1319,
+        "context": "108.41",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "108.13",
+        "value": 108.13,
+        "line": 1320,
+        "context": "108.13",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "107.94",
+        "value": 107.94,
+        "line": 1321,
+        "context": "107.94",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "107.88",
+        "value": 107.88,
+        "line": 1322,
+        "context": "107.88",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "34.3",
+        "value": 34.3,
+        "line": 1324,
+        "context": "34.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "35.3",
+        "value": 35.3,
+        "line": 1325,
+        "context": "35.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "36.5",
+        "value": 36.5,
+        "line": 1326,
+        "context": "36.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "32.92",
+        "value": 32.92,
+        "line": 1327,
+        "context": "32.92",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "32.1",
+        "value": 32.1,
+        "line": 1328,
+        "context": "32.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "33.6",
+        "value": 33.6,
+        "line": 1329,
+        "context": "33.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.41",
+        "value": 2.41,
+        "line": 1331,
+        "context": "2.41",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.72",
+        "value": 2.72,
+        "line": 1332,
+        "context": "2.72",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.06",
+        "value": 3.06,
+        "line": 1333,
+        "context": "3.06",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.40",
+        "value": 2.4,
+        "line": 1334,
+        "context": "2.40",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.23",
+        "value": 2.23,
+        "line": 1335,
+        "context": "2.23",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.47",
+        "value": 2.47,
+        "line": 1336,
+        "context": "2.47",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "348.7",
+        "value": 348.7,
+        "line": 1339,
+        "context": "348.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "357.1",
+        "value": 357.1,
+        "line": 1340,
+        "context": "357.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "365.7",
+        "value": 365.7,
+        "line": 1341,
+        "context": "365.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "376.9",
+        "value": 376.9,
+        "line": 1342,
+        "context": "376.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "383.6",
+        "value": 383.6,
+        "line": 1343,
+        "context": "383.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "380.4",
+        "value": 380.4,
+        "line": 1344,
+        "context": "380.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "106.3",
+        "value": 106.3,
+        "line": 1346,
+        "context": "106.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "105.8",
+        "value": 105.8,
+        "line": 1347,
+        "context": "105.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "104.2",
+        "value": 104.2,
+        "line": 1348,
+        "context": "104.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "107.4",
+        "value": 107.4,
+        "line": 1349,
+        "context": "107.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "107.4",
+        "value": 107.4,
+        "line": 1350,
+        "context": "107.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "108.2",
+        "value": 108.2,
+        "line": 1351,
+        "context": "108.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "28.34",
+        "value": 28.34,
+        "line": 1353,
+        "context": "28.34",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "28.25",
+        "value": 28.25,
+        "line": 1354,
+        "context": "28.25",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "25.07",
+        "value": 25.07,
+        "line": 1355,
+        "context": "25.07",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "20.75",
+        "value": 20.75,
+        "line": 1356,
+        "context": "20.75",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "18.74",
+        "value": 18.74,
+        "line": 1357,
+        "context": "18.74",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "20.14",
+        "value": 20.14,
+        "line": 1358,
+        "context": "20.14",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.82",
+        "value": 2.82,
+        "line": 1360,
+        "context": "2.82",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.46",
+        "value": 3.46,
+        "line": 1361,
+        "context": "3.46",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.35",
+        "value": 3.35,
+        "line": 1362,
+        "context": "3.35",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.98",
+        "value": 2.98,
+        "line": 1363,
+        "context": "2.98",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.61",
+        "value": 2.61,
+        "line": 1364,
+        "context": "2.61",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.10",
+        "value": 2.1,
+        "line": 1365,
+        "context": "2.10",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "373.2",
+        "value": 373.2,
+        "line": 1368,
+        "context": "373.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "385.9",
+        "value": 385.9,
+        "line": 1369,
+        "context": "385.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "382.5",
+        "value": 382.5,
+        "line": 1370,
+        "context": "382.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "357.2",
+        "value": 357.2,
+        "line": 1371,
+        "context": "357.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "394.5",
+        "value": 394.5,
+        "line": 1372,
+        "context": "394.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "367.6",
+        "value": 367.6,
+        "line": 1373,
+        "context": "367.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "103.6",
+        "value": 103.6,
+        "line": 1375,
+        "context": "103.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "101.8",
+        "value": 101.8,
+        "line": 1376,
+        "context": "101.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.2",
+        "value": 102.2,
+        "line": 1377,
+        "context": "102.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "102.8",
+        "value": 102.8,
+        "line": 1378,
+        "context": "102.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "101.4",
+        "value": 101.4,
+        "line": 1379,
+        "context": "101.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "101.49",
+        "value": 101.49,
+        "line": 1380,
+        "context": "101.49",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "18.6",
+        "value": 18.6,
+        "line": 1382,
+        "context": "18.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "15.5",
+        "value": 15.5,
+        "line": 1383,
+        "context": "15.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "18.5",
+        "value": 18.5,
+        "line": 1384,
+        "context": "18.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "24.75",
+        "value": 24.75,
+        "line": 1385,
+        "context": "24.75",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "11.74",
+        "value": 11.74,
+        "line": 1386,
+        "context": "11.74",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "21.75",
+        "value": 21.75,
+        "line": 1387,
+        "context": "21.75",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "1.53",
+        "value": 1.53,
+        "line": 1389,
+        "context": "1.53",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "1.89",
+        "value": 1.89,
+        "line": 1390,
+        "context": "1.89",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "1.75",
+        "value": 1.75,
+        "line": 1391,
+        "context": "1.75",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.90",
+        "value": 2.9,
+        "line": 1392,
+        "context": "2.90",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "1.06",
+        "value": 1.06,
+        "line": 1393,
+        "context": "1.06",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.07",
+        "value": 3.07,
+        "line": 1394,
+        "context": "3.07",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.1",
+        "value": 52.1,
+        "line": 1397,
+        "context": "52.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "57.0",
+        "value": 57.0,
+        "line": 1398,
+        "context": "57.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.9",
+        "value": 61.9,
+        "line": 1399,
+        "context": "61.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.7",
+        "value": 65.7,
+        "line": 1400,
+        "context": "65.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "63.4",
+        "value": 63.4,
+        "line": 1401,
+        "context": "63.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.9",
+        "value": 61.9,
+        "line": 1402,
+        "context": "61.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "43.5",
+        "value": 43.5,
+        "line": 1404,
+        "context": "43.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "47.0",
+        "value": 47.0,
+        "line": 1405,
+        "context": "47.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "50.5",
+        "value": 50.5,
+        "line": 1406,
+        "context": "50.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.8",
+        "value": 52.8,
+        "line": 1407,
+        "context": "52.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.8",
+        "value": 51.8,
+        "line": 1408,
+        "context": "51.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.1",
+        "value": 51.1,
+        "line": 1409,
+        "context": "51.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "91.8",
+        "value": 91.8,
+        "line": 1411,
+        "context": "91.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "89.9",
+        "value": 89.9,
+        "line": 1412,
+        "context": "89.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "87.8",
+        "value": 87.8,
+        "line": 1413,
+        "context": "87.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "85.9",
+        "value": 85.9,
+        "line": 1414,
+        "context": "85.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "86.9",
+        "value": 86.9,
+        "line": 1415,
+        "context": "86.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "87.9",
+        "value": 87.9,
+        "line": 1416,
+        "context": "87.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "73.9",
+        "value": 73.9,
+        "line": 1418,
+        "context": "73.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "70.7",
+        "value": 70.7,
+        "line": 1419,
+        "context": "70.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.8",
+        "value": 67.8,
+        "line": 1420,
+        "context": "67.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.1",
+        "value": 65.1,
+        "line": 1421,
+        "context": "65.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "66.5",
+        "value": 66.5,
+        "line": 1422,
+        "context": "66.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.7",
+        "value": 67.7,
+        "line": 1423,
+        "context": "67.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 1436,
+        "context": "4.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.2",
+        "value": 4.2,
+        "line": 1444,
+        "context": "4.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.3",
+        "value": 4.3,
+        "line": 1454,
+        "context": "4.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "1.0",
+        "value": 1.0,
+        "line": 1908,
+        "context": "1.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "0.0",
+        "value": 0.0,
+        "line": 1916,
+        "context": "0.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.8",
+        "value": 3.8,
+        "line": 1920,
+        "context": "through the HPE module, only Lest trains the HPE parameters (Section 3.8).",
+        "noise_kind": "section-ref"
+      },
+      {
+        "token": "0.00",
+        "value": 0.0,
+        "line": 1995,
+        "context": "0.00",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.13",
+        "value": 51.13,
+        "line": 1997,
+        "context": "51.13",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "16.88",
+        "value": 16.88,
+        "line": 1999,
+        "context": "16.88",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "50.49",
+        "value": 50.49,
+        "line": 2001,
+        "context": "50.49",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "16.51",
+        "value": 16.51,
+        "line": 2003,
+        "context": "16.51",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.97",
+        "value": 52.97,
+        "line": 2005,
+        "context": "52.97",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "22.86",
+        "value": 22.86,
+        "line": 2007,
+        "context": "22.86",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "54.21",
+        "value": 54.21,
+        "line": 2009,
+        "context": "54.21",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "41.93",
+        "value": 41.93,
+        "line": 2011,
+        "context": "41.93",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "53.04",
+        "value": 53.04,
+        "line": 2013,
+        "context": "53.04",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "42.59",
+        "value": 42.59,
+        "line": 2015,
+        "context": "42.59",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "53.22",
+        "value": 53.22,
+        "line": 2017,
+        "context": "53.22",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "42.82",
+        "value": 42.82,
+        "line": 2019,
+        "context": "42.82",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "77.07",
+        "value": 77.07,
+        "line": 2021,
+        "context": "77.07",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "77.86",
+        "value": 77.86,
+        "line": 2023,
+        "context": "77.86",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "115.77",
+        "value": 115.77,
+        "line": 2025,
+        "context": "115.77",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "116.76",
+        "value": 116.76,
+        "line": 2027,
+        "context": "116.76",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.12",
+        "value": 52.12,
+        "line": 2029,
+        "context": "52.12",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "16.42",
+        "value": 16.42,
+        "line": 2036,
+        "context": "16.42",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "22.84",
+        "value": 22.84,
+        "line": 2038,
+        "context": "22.84",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "16.91",
+        "value": 16.91,
+        "line": 2040,
+        "context": "16.91",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "23.01",
+        "value": 23.01,
+        "line": 2042,
+        "context": "23.01",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "17.63",
+        "value": 17.63,
+        "line": 2044,
+        "context": "17.63",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "23.32",
+        "value": 23.32,
+        "line": 2046,
+        "context": "23.32",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "18.58",
+        "value": 18.58,
+        "line": 2048,
+        "context": "18.58",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "24.46",
+        "value": 24.46,
+        "line": 2050,
+        "context": "24.46",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "19.30",
+        "value": 19.3,
+        "line": 2052,
+        "context": "19.30",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "28.53",
+        "value": 28.53,
+        "line": 2054,
+        "context": "28.53",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "19.56",
+        "value": 19.56,
+        "line": 2056,
+        "context": "19.56",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "30.04",
+        "value": 30.04,
+        "line": 2058,
+        "context": "30.04",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "20.70",
+        "value": 20.7,
+        "line": 2060,
+        "context": "20.70",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "35.13",
+        "value": 35.13,
+        "line": 2062,
+        "context": "35.13",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "21.11",
+        "value": 21.11,
+        "line": 2064,
+        "context": "21.11",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "40.02",
+        "value": 40.02,
+        "line": 2066,
+        "context": "40.02",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "21.62",
+        "value": 21.62,
+        "line": 2068,
+        "context": "21.62",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "70.40",
+        "value": 70.4,
+        "line": 2070,
+        "context": "70.40",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.14",
+        "value": 26.14,
+        "line": 2072,
+        "context": "26.14",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.7",
+        "value": 3.7,
+        "line": 2074,
+        "context": "As discussed in Section 3.7 and the note following Theorem 1, our use of “Koopman” de-",
+        "noise_kind": "section-ref"
+      },
+      {
+        "token": "55.8",
+        "value": 55.8,
+        "line": 2138,
+        "context": "55.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "62.4",
+        "value": 62.4,
+        "line": 2139,
+        "context": "62.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.8",
+        "value": 67.8,
+        "line": 2140,
+        "context": "67.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "72.1",
+        "value": 72.1,
+        "line": 2141,
+        "context": "72.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "69.7",
+        "value": 69.7,
+        "line": 2142,
+        "context": "69.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.4",
+        "value": 67.4,
+        "line": 2143,
+        "context": "67.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.7",
+        "value": 67.7,
+        "line": 2145,
+        "context": "67.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "64.8",
+        "value": 64.8,
+        "line": 2146,
+        "context": "64.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "64.6",
+        "value": 64.6,
+        "line": 2147,
+        "context": "64.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.2",
+        "value": 65.2,
+        "line": 2148,
+        "context": "65.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.7",
+        "value": 65.7,
+        "line": 2149,
+        "context": "65.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "66.5",
+        "value": 66.5,
+        "line": 2150,
+        "context": "66.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.7",
+        "value": 52.7,
+        "line": 2152,
+        "context": "52.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.2",
+        "value": 67.2,
+        "line": 2153,
+        "context": "67.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "80.2",
+        "value": 80.2,
+        "line": 2154,
+        "context": "80.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "92.8",
+        "value": 92.8,
+        "line": 2155,
+        "context": "92.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "90.1",
+        "value": 90.1,
+        "line": 2156,
+        "context": "90.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "78.8",
+        "value": 78.8,
+        "line": 2157,
+        "context": "78.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "105.4",
+        "value": 105.4,
+        "line": 2159,
+        "context": "105.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "106.1",
+        "value": 106.1,
+        "line": 2160,
+        "context": "106.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "106.7",
+        "value": 106.7,
+        "line": 2161,
+        "context": "106.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "107.7",
+        "value": 107.7,
+        "line": 2162,
+        "context": "107.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "107.3",
+        "value": 107.3,
+        "line": 2163,
+        "context": "107.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "106.7",
+        "value": 106.7,
+        "line": 2164,
+        "context": "106.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.1",
+        "value": 52.1,
+        "line": 2166,
+        "context": "52.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "57.0",
+        "value": 57.0,
+        "line": 2167,
+        "context": "57.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.9",
+        "value": 61.9,
+        "line": 2168,
+        "context": "61.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.7",
+        "value": 65.7,
+        "line": 2169,
+        "context": "65.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "63.4",
+        "value": 63.4,
+        "line": 2170,
+        "context": "63.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.9",
+        "value": 61.9,
+        "line": 2171,
+        "context": "61.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "8.9",
+        "value": 8.9,
+        "line": 2195,
+        "context": "8.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "13.2",
+        "value": 13.2,
+        "line": 2196,
+        "context": "13.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "16.4",
+        "value": 16.4,
+        "line": 2197,
+        "context": "16.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "22.1",
+        "value": 22.1,
+        "line": 2198,
+        "context": "22.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "15.2",
+        "value": 15.2,
+        "line": 2199,
+        "context": "15.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "10.3",
+        "value": 10.3,
+        "line": 2201,
+        "context": "10.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "13.8",
+        "value": 13.8,
+        "line": 2202,
+        "context": "13.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "16.1",
+        "value": 16.1,
+        "line": 2203,
+        "context": "16.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "19.6",
+        "value": 19.6,
+        "line": 2204,
+        "context": "19.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "15.0",
+        "value": 15.0,
+        "line": 2205,
+        "context": "15.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.1",
+        "value": 26.1,
+        "line": 2208,
+        "context": "26.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.0",
+        "value": 26.0,
+        "line": 2209,
+        "context": "26.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.5",
+        "value": 26.5,
+        "line": 2210,
+        "context": "26.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "27.3",
+        "value": 27.3,
+        "line": 2211,
+        "context": "27.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.5",
+        "value": 26.5,
+        "line": 2212,
+        "context": "26.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "20.8",
+        "value": 20.8,
+        "line": 2214,
+        "context": "20.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "20.8",
+        "value": 20.8,
+        "line": 2215,
+        "context": "20.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "21.0",
+        "value": 21.0,
+        "line": 2216,
+        "context": "21.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "21.3",
+        "value": 21.3,
+        "line": 2217,
+        "context": "21.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "21.0",
+        "value": 21.0,
+        "line": 2218,
+        "context": "21.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "17.2",
+        "value": 17.2,
+        "line": 2221,
+        "context": "17.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "12.8",
+        "value": 12.8,
+        "line": 2222,
+        "context": "12.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "9.6",
+        "value": 9.6,
+        "line": 2223,
+        "context": "9.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.2",
+        "value": 5.2,
+        "line": 2224,
+        "context": "5.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "11.2",
+        "value": 11.2,
+        "line": 2225,
+        "context": "11.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "10.5",
+        "value": 10.5,
+        "line": 2227,
+        "context": "10.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "7.0",
+        "value": 7.0,
+        "line": 2228,
+        "context": "7.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.1",
+        "value": 5.1,
+        "line": 2229,
+        "context": "5.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "1.7",
+        "value": 1.7,
+        "line": 2230,
+        "context": "1.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "6.1",
+        "value": 6.1,
+        "line": 2231,
+        "context": "6.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "25.3",
+        "value": 25.3,
+        "line": 2246,
+        "context": "25.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "42.9",
+        "value": 42.9,
+        "line": 2247,
+        "context": "42.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.5",
+        "value": 52.5,
+        "line": 2248,
+        "context": "52.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "58.4",
+        "value": 58.4,
+        "line": 2249,
+        "context": "58.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "56.3",
+        "value": 56.3,
+        "line": 2250,
+        "context": "56.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "53.9",
+        "value": 53.9,
+        "line": 2251,
+        "context": "53.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "48.2",
+        "value": 48.2,
+        "line": 2252,
+        "context": "48.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "22.0",
+        "value": 22.0,
+        "line": 2254,
+        "context": "22.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "37.0",
+        "value": 37.0,
+        "line": 2255,
+        "context": "37.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "44.5",
+        "value": 44.5,
+        "line": 2256,
+        "context": "44.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "47.1",
+        "value": 47.1,
+        "line": 2257,
+        "context": "47.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "46.2",
+        "value": 46.2,
+        "line": 2258,
+        "context": "46.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "45.1",
+        "value": 45.1,
+        "line": 2259,
+        "context": "45.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "40.3",
+        "value": 40.3,
+        "line": 2260,
+        "context": "40.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.1",
+        "value": 52.1,
+        "line": 2263,
+        "context": "52.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "57.0",
+        "value": 57.0,
+        "line": 2264,
+        "context": "57.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.9",
+        "value": 61.9,
+        "line": 2265,
+        "context": "61.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.7",
+        "value": 65.7,
+        "line": 2266,
+        "context": "65.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "63.4",
+        "value": 63.4,
+        "line": 2267,
+        "context": "63.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.9",
+        "value": 61.9,
+        "line": 2268,
+        "context": "61.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "60.3",
+        "value": 60.3,
+        "line": 2269,
+        "context": "60.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "43.5",
+        "value": 43.5,
+        "line": 2271,
+        "context": "43.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "47.0",
+        "value": 47.0,
+        "line": 2272,
+        "context": "47.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "50.5",
+        "value": 50.5,
+        "line": 2273,
+        "context": "50.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.8",
+        "value": 52.8,
+        "line": 2274,
+        "context": "52.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.8",
+        "value": 51.8,
+        "line": 2275,
+        "context": "51.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.1",
+        "value": 51.1,
+        "line": 2276,
+        "context": "51.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "49.5",
+        "value": 49.5,
+        "line": 2277,
+        "context": "49.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "26.8",
+        "value": 26.8,
+        "line": 2280,
+        "context": "26.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "14.1",
+        "value": 14.1,
+        "line": 2281,
+        "context": "14.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "9.4",
+        "value": 9.4,
+        "line": 2282,
+        "context": "9.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "7.3",
+        "value": 7.3,
+        "line": 2283,
+        "context": "7.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "7.1",
+        "value": 7.1,
+        "line": 2284,
+        "context": "7.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "8.0",
+        "value": 8.0,
+        "line": 2285,
+        "context": "8.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "12.1",
+        "value": 12.1,
+        "line": 2286,
+        "context": "12.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "21.5",
+        "value": 21.5,
+        "line": 2288,
+        "context": "21.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "10.0",
+        "value": 10.0,
+        "line": 2289,
+        "context": "10.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "6.0",
+        "value": 6.0,
+        "line": 2290,
+        "context": "6.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.7",
+        "value": 5.7,
+        "line": 2291,
+        "context": "5.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.6",
+        "value": 5.6,
+        "line": 2292,
+        "context": "5.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "6.0",
+        "value": 6.0,
+        "line": 2293,
+        "context": "6.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "9.2",
+        "value": 9.2,
+        "line": 2294,
+        "context": "9.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "56.3",
+        "value": 56.3,
+        "line": 2455,
+        "context": "56.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "68.9",
+        "value": 68.9,
+        "line": 2456,
+        "context": "68.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "80.4",
+        "value": 80.4,
+        "line": 2457,
+        "context": "80.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "91.9",
+        "value": 91.9,
+        "line": 2458,
+        "context": "91.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "89.6",
+        "value": 89.6,
+        "line": 2459,
+        "context": "89.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "78.9",
+        "value": 78.9,
+        "line": 2460,
+        "context": "78.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "22.6",
+        "value": 22.6,
+        "line": 2461,
+        "context": "22.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.1",
+        "value": 52.1,
+        "line": 2463,
+        "context": "52.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "57.0",
+        "value": 57.0,
+        "line": 2464,
+        "context": "57.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.9",
+        "value": 61.9,
+        "line": 2465,
+        "context": "61.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.7",
+        "value": 65.7,
+        "line": 2466,
+        "context": "65.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "63.4",
+        "value": 63.4,
+        "line": 2467,
+        "context": "63.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.9",
+        "value": 61.9,
+        "line": 2468,
+        "context": "61.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "9.8",
+        "value": 9.8,
+        "line": 2469,
+        "context": "9.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.1",
+        "value": 61.1,
+        "line": 2498,
+        "context": "61.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "72.3",
+        "value": 72.3,
+        "line": 2499,
+        "context": "72.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "84.4",
+        "value": 84.4,
+        "line": 2500,
+        "context": "84.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "97.2",
+        "value": 97.2,
+        "line": 2501,
+        "context": "97.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "95.6",
+        "value": 95.6,
+        "line": 2502,
+        "context": "95.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "86.8",
+        "value": 86.8,
+        "line": 2503,
+        "context": "86.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.6",
+        "value": 51.6,
+        "line": 2505,
+        "context": "51.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "62.2",
+        "value": 62.2,
+        "line": 2506,
+        "context": "62.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "72.7",
+        "value": 72.7,
+        "line": 2507,
+        "context": "72.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "83.3",
+        "value": 83.3,
+        "line": 2508,
+        "context": "83.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "83.9",
+        "value": 83.9,
+        "line": 2509,
+        "context": "83.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "75.7",
+        "value": 75.7,
+        "line": 2510,
+        "context": "75.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "88.4",
+        "value": 88.4,
+        "line": 2512,
+        "context": "88.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "84.4",
+        "value": 84.4,
+        "line": 2513,
+        "context": "84.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "80.7",
+        "value": 80.7,
+        "line": 2514,
+        "context": "80.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "77.2",
+        "value": 77.2,
+        "line": 2515,
+        "context": "77.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "77.9",
+        "value": 77.9,
+        "line": 2516,
+        "context": "77.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "80.0",
+        "value": 80.0,
+        "line": 2517,
+        "context": "80.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "68.9",
+        "value": 68.9,
+        "line": 2519,
+        "context": "68.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.4",
+        "value": 65.4,
+        "line": 2520,
+        "context": "65.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "62.2",
+        "value": 62.2,
+        "line": 2521,
+        "context": "62.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "59.3",
+        "value": 59.3,
+        "line": 2522,
+        "context": "59.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "59.9",
+        "value": 59.9,
+        "line": 2523,
+        "context": "59.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.0",
+        "value": 61.0,
+        "line": 2524,
+        "context": "61.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "54.1",
+        "value": 54.1,
+        "line": 2528,
+        "context": "54.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "58.4",
+        "value": 58.4,
+        "line": 2529,
+        "context": "58.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "60.8",
+        "value": 60.8,
+        "line": 2530,
+        "context": "60.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.3",
+        "value": 61.3,
+        "line": 2531,
+        "context": "61.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "59.2",
+        "value": 59.2,
+        "line": 2532,
+        "context": "59.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "59.0",
+        "value": 59.0,
+        "line": 2533,
+        "context": "59.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "45.4",
+        "value": 45.4,
+        "line": 2535,
+        "context": "45.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "49.4",
+        "value": 49.4,
+        "line": 2536,
+        "context": "49.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.5",
+        "value": 51.5,
+        "line": 2537,
+        "context": "51.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.3",
+        "value": 51.3,
+        "line": 2538,
+        "context": "51.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "49.6",
+        "value": 49.6,
+        "line": 2539,
+        "context": "49.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "49.6",
+        "value": 49.6,
+        "line": 2540,
+        "context": "49.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "91.0",
+        "value": 91.0,
+        "line": 2542,
+        "context": "91.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "89.3",
+        "value": 89.3,
+        "line": 2543,
+        "context": "89.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "88.3",
+        "value": 88.3,
+        "line": 2544,
+        "context": "88.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "88.0",
+        "value": 88.0,
+        "line": 2545,
+        "context": "88.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "88.7",
+        "value": 88.7,
+        "line": 2546,
+        "context": "88.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "88.9",
+        "value": 88.9,
+        "line": 2547,
+        "context": "88.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "72.6",
+        "value": 72.6,
+        "line": 2549,
+        "context": "72.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "70.4",
+        "value": 70.4,
+        "line": 2550,
+        "context": "70.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "68.8",
+        "value": 68.8,
+        "line": 2551,
+        "context": "68.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "68.1",
+        "value": 68.1,
+        "line": 2552,
+        "context": "68.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "69.3",
+        "value": 69.3,
+        "line": 2553,
+        "context": "69.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "69.6",
+        "value": 69.6,
+        "line": 2554,
+        "context": "69.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "59.6",
+        "value": 59.6,
+        "line": 2558,
+        "context": "59.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "71.6",
+        "value": 71.6,
+        "line": 2559,
+        "context": "71.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "82.5",
+        "value": 82.5,
+        "line": 2560,
+        "context": "82.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "93.8",
+        "value": 93.8,
+        "line": 2561,
+        "context": "93.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "91.5",
+        "value": 91.5,
+        "line": 2562,
+        "context": "91.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "80.8",
+        "value": 80.8,
+        "line": 2563,
+        "context": "80.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "50.3",
+        "value": 50.3,
+        "line": 2565,
+        "context": "50.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.5",
+        "value": 61.5,
+        "line": 2566,
+        "context": "61.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "71.2",
+        "value": 71.2,
+        "line": 2567,
+        "context": "71.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "80.5",
+        "value": 80.5,
+        "line": 2568,
+        "context": "80.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "80.5",
+        "value": 80.5,
+        "line": 2569,
+        "context": "80.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "70.4",
+        "value": 70.4,
+        "line": 2570,
+        "context": "70.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "88.9",
+        "value": 88.9,
+        "line": 2572,
+        "context": "88.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "84.6",
+        "value": 84.6,
+        "line": 2573,
+        "context": "84.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "81.3",
+        "value": 81.3,
+        "line": 2574,
+        "context": "81.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "78.1",
+        "value": 78.1,
+        "line": 2575,
+        "context": "78.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "79.3",
+        "value": 79.3,
+        "line": 2576,
+        "context": "79.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "82.3",
+        "value": 82.3,
+        "line": 2577,
+        "context": "82.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "69.8",
+        "value": 69.8,
+        "line": 2579,
+        "context": "69.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.9",
+        "value": 65.9,
+        "line": 2580,
+        "context": "65.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "63.1",
+        "value": 63.1,
+        "line": 2581,
+        "context": "63.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "60.7",
+        "value": 60.7,
+        "line": 2582,
+        "context": "60.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.6",
+        "value": 61.6,
+        "line": 2583,
+        "context": "61.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "64.0",
+        "value": 64.0,
+        "line": 2584,
+        "context": "64.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.1",
+        "value": 52.1,
+        "line": 2587,
+        "context": "52.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "57.0",
+        "value": 57.0,
+        "line": 2588,
+        "context": "57.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.9",
+        "value": 61.9,
+        "line": 2589,
+        "context": "61.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.7",
+        "value": 65.7,
+        "line": 2590,
+        "context": "65.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "63.4",
+        "value": 63.4,
+        "line": 2591,
+        "context": "63.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "61.9",
+        "value": 61.9,
+        "line": 2592,
+        "context": "61.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "43.5",
+        "value": 43.5,
+        "line": 2594,
+        "context": "43.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "47.0",
+        "value": 47.0,
+        "line": 2595,
+        "context": "47.0",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "50.5",
+        "value": 50.5,
+        "line": 2596,
+        "context": "50.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "52.8",
+        "value": 52.8,
+        "line": 2597,
+        "context": "52.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.8",
+        "value": 51.8,
+        "line": 2598,
+        "context": "51.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "51.1",
+        "value": 51.1,
+        "line": 2599,
+        "context": "51.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "91.8",
+        "value": 91.8,
+        "line": 2601,
+        "context": "91.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "89.9",
+        "value": 89.9,
+        "line": 2602,
+        "context": "89.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "87.8",
+        "value": 87.8,
+        "line": 2603,
+        "context": "87.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "85.9",
+        "value": 85.9,
+        "line": 2604,
+        "context": "85.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "86.9",
+        "value": 86.9,
+        "line": 2605,
+        "context": "86.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "87.9",
+        "value": 87.9,
+        "line": 2606,
+        "context": "87.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "73.9",
+        "value": 73.9,
+        "line": 2608,
+        "context": "73.9",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "70.7",
+        "value": 70.7,
+        "line": 2609,
+        "context": "70.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.8",
+        "value": 67.8,
+        "line": 2610,
+        "context": "67.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "65.1",
+        "value": 65.1,
+        "line": 2611,
+        "context": "65.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "66.5",
+        "value": 66.5,
+        "line": 2612,
+        "context": "66.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "67.7",
+        "value": 67.7,
+        "line": 2613,
+        "context": "67.7",
+        "noise_kind": "section-heading"
+      }
+    ],
+    "adjudicated": [],
+    "manual_review_list": [
+      {
+        "token": "802.11",
+        "value": 802.11,
+        "line": 130,
+        "context": "Modern WiFi standards, such as IEEE 802.11, employ Orthogonal"
+      },
+      {
+        "token": "0.1",
+        "value": 0.1,
+        "line": 505,
+        "context": "and γ ≈0.1, the amplification factor at h = 20 remains bounded during early training, preventing run"
+      },
+      {
+        "token": "3.1",
+        "value": 3.1,
+        "line": 542,
+        "context": "tion 3.1), and δh := |ϕ( ˜fT + h)−ϕ(F h(vT ))| measures how well the temporal-encoder feature at fra"
+      },
+      {
+        "token": "1.5",
+        "value": 1.5,
+        "line": 1059,
+        "context": "with λp = 1.5, λk = 0.5, λe = 1.0. This three-term objective is more compact than the seven-term obj"
+      },
+      {
+        "token": "0.5",
+        "value": 0.5,
+        "line": 1059,
+        "context": "with λp = 1.5, λk = 0.5, λe = 1.0. This three-term objective is more compact than the seven-term obj"
+      },
+      {
+        "token": "1.0",
+        "value": 1.0,
+        "line": 1059,
+        "context": "with λp = 1.5, λk = 0.5, λe = 1.0. This three-term objective is more compact than the seven-term obj"
+      },
+      {
+        "token": "26.14",
+        "value": 26.14,
+        "line": 1447,
+        "context": "every horizon, reaching 26.14 mm at 100 ms and 27.28 mm at 1000 ms, an improvement of approximately"
+      },
+      {
+        "token": "27.28",
+        "value": 27.28,
+        "line": 1447,
+        "context": "every horizon, reaching 26.14 mm at 100 ms and 27.28 mm at 1000 ms, an improvement of approximately"
+      },
+      {
+        "token": "1.14",
+        "value": 1.14,
+        "line": 1448,
+        "context": "19% over the strongest baseline VMRNN. Notably, KOALA degradation across horizons is only 1.14 mm in"
+      },
+      {
+        "token": "65.3",
+        "value": 65.3,
+        "line": 1457,
+        "context": "moderately with horizon, with PA-MPJPE below 65.3 mm and PCK@20 above 82.3% across all configu-"
+      },
+      {
+        "token": "82.3",
+        "value": 82.3,
+        "line": 1457,
+        "context": "moderately with horizon, with PA-MPJPE below 65.3 mm and PCK@20 above 82.3% across all configu-"
+      },
+      {
+        "token": "52.1",
+        "value": 52.1,
+        "line": 1458,
+        "context": "rations. S3 achieves the lowest short-horizon errors (52.1 mm under P1 at 100 ms), while S2 is the m"
+      },
+      {
+        "token": "74.7",
+        "value": 74.7,
+        "line": 1459,
+        "context": "challenging (74.7 mm at 1000 ms under P1) due to unseen body geometries. Protocol 2 yields the lowes"
+      },
+      {
+        "token": "85.4",
+        "value": 85.4,
+        "line": 1461,
+        "context": "85.4% at 1000 ms despite covering all 27 categories. Figure 3 confirms coherent rollouts with anatom"
+      },
+      {
+        "token": "52.1",
+        "value": 52.1,
+        "line": 1467,
+        "context": "by a substantial margin across every metric and horizon: at 100 ms it achieves 52.1 mm MPJPE, roughl"
+      },
+      {
+        "token": "6.4",
+        "value": 6.4,
+        "line": 1468,
+        "context": "6.4× lower than the best competing method SwinLSTM (332.6 mm) and 73.9% PCK@10 while no baseline"
+      },
+      {
+        "token": "332.6",
+        "value": 332.6,
+        "line": 1468,
+        "context": "6.4× lower than the best competing method SwinLSTM (332.6 mm) and 73.9% PCK@10 while no baseline"
+      },
+      {
+        "token": "73.9",
+        "value": 73.9,
+        "line": 1468,
+        "context": "6.4× lower than the best competing method SwinLSTM (332.6 mm) and 73.9% PCK@10 while no baseline"
+      },
+      {
+        "token": "18.1",
+        "value": 18.1,
+        "line": 1469,
+        "context": "exceeds 18.1%. Among WiFi baselines, MetaFi++ consistently outperforms other architectures, confirmi"
+      },
+      {
+        "token": "802.11",
+        "value": 802.11,
+        "line": 1511,
+        "context": "Std 802.11ah-2016 (Amendment to IEEE Std 802.11-2016, as amended by IEEE Std 802.11ai-2016), pp."
+      },
+      {
+        "token": "802.11",
+        "value": 802.11,
+        "line": 1511,
+        "context": "Std 802.11ah-2016 (Amendment to IEEE Std 802.11-2016, as amended by IEEE Std 802.11ai-2016), pp."
+      },
+      {
+        "token": "802.11",
+        "value": 802.11,
+        "line": 1511,
+        "context": "Std 802.11ah-2016 (Amendment to IEEE Std 802.11-2016, as amended by IEEE Std 802.11ai-2016), pp."
+      },
+      {
+        "token": "1.0",
+        "value": 1.0,
+        "line": 1880,
+        "context": "batch size 8, and gradient clipping at 1.0 with the observation window T = 10 frames. Multi-"
+      },
+      {
+        "token": "0.3",
+        "value": 0.3,
+        "line": 1890,
+        "context": "dh = d/nhead = 32. Horizon weights in Lpred are set to wh ∈{0.3, 0.5, 0.8, 1.2, 1.5, 2.0} for"
+      },
+      {
+        "token": "0.5",
+        "value": 0.5,
+        "line": 1890,
+        "context": "dh = d/nhead = 32. Horizon weights in Lpred are set to wh ∈{0.3, 0.5, 0.8, 1.2, 1.5, 2.0} for"
+      },
+      {
+        "token": "0.8",
+        "value": 0.8,
+        "line": 1890,
+        "context": "dh = d/nhead = 32. Horizon weights in Lpred are set to wh ∈{0.3, 0.5, 0.8, 1.2, 1.5, 2.0} for"
+      },
+      {
+        "token": "1.2",
+        "value": 1.2,
+        "line": 1890,
+        "context": "dh = d/nhead = 32. Horizon weights in Lpred are set to wh ∈{0.3, 0.5, 0.8, 1.2, 1.5, 2.0} for"
+      },
+      {
+        "token": "1.5",
+        "value": 1.5,
+        "line": 1890,
+        "context": "dh = d/nhead = 32. Horizon weights in Lpred are set to wh ∈{0.3, 0.5, 0.8, 1.2, 1.5, 2.0} for"
+      },
+      {
+        "token": "2.0",
+        "value": 2.0,
+        "line": 1890,
+        "context": "dh = d/nhead = 32. Horizon weights in Lpred are set to wh ∈{0.3, 0.5, 0.8, 1.2, 1.5, 2.0} for"
+      },
+      {
+        "token": "0.5",
+        "value": 0.5,
+        "line": 1892,
+        "context": "B is initialized with entries of scale 0.5/Dz, and its Frobenius norm ∥B∥F is logged as a"
+      },
+      {
+        "token": "4.8",
+        "value": 4.8,
+        "line": 1958,
+        "context": "4.8M"
+      },
+      {
+        "token": "4.5",
+        "value": 4.5,
+        "line": 1959,
+        "context": "4.5M"
+      },
+      {
+        "token": "0.083",
+        "value": 0.083,
+        "line": 1961,
+        "context": "0.083G"
+      },
+      {
+        "token": "0.083",
+        "value": 0.083,
+        "line": 1962,
+        "context": "0.083G"
+      },
+      {
+        "token": "3.4",
+        "value": 3.4,
+        "line": 1964,
+        "context": "3.4 ms"
+      },
+      {
+        "token": "3.1",
+        "value": 3.1,
+        "line": 1965,
+        "context": "3.1 ms"
+      },
+      {
+        "token": "10.6",
+        "value": 10.6,
+        "line": 2093,
+        "context": "10.6 ± 1.7"
+      },
+      {
+        "token": "1.7",
+        "value": 1.7,
+        "line": 2093,
+        "context": "10.6 ± 1.7"
+      },
+      {
+        "token": "40.3",
+        "value": 40.3,
+        "line": 2094,
+        "context": "40.3 ± 5.4"
+      },
+      {
+        "token": "5.4",
+        "value": 5.4,
+        "line": 2094,
+        "context": "40.3 ± 5.4"
+      },
+      {
+        "token": "113.7",
+        "value": 113.7,
+        "line": 2095,
+        "context": "113.7 ± 17.6"
+      },
+      {
+        "token": "17.6",
+        "value": 17.6,
+        "line": 2095,
+        "context": "113.7 ± 17.6"
+      },
+      {
+        "token": "1218.7",
+        "value": 1218.7,
+        "line": 2096,
+        "context": "1218.7 ± 250.1"
+      },
+      {
+        "token": "250.1",
+        "value": 250.1,
+        "line": 2096,
+        "context": "1218.7 ± 250.1"
+      },
+      {
+        "token": "12120.0",
+        "value": 12120.0,
+        "line": 2097,
+        "context": "12120.0 ± 3076.8"
+      },
+      {
+        "token": "3076.8",
+        "value": 3076.8,
+        "line": 2097,
+        "context": "12120.0 ± 3076.8"
+      },
+      {
+        "token": "115888.3",
+        "value": 115888.3,
+        "line": 2098,
+        "context": "115888.3 ± 34070.9"
+      },
+      {
+        "token": "34070.9",
+        "value": 34070.9,
+        "line": 2098,
+        "context": "115888.3 ± 34070.9"
+      },
+      {
+        "token": "0.68",
+        "value": 0.68,
+        "line": 2100,
+        "context": "0.68 ± 0.11"
+      },
+      {
+        "token": "0.11",
+        "value": 0.11,
+        "line": 2100,
+        "context": "0.68 ± 0.11"
+      },
+      {
+        "token": "2.59",
+        "value": 2.59,
+        "line": 2101,
+        "context": "2.59 ± 0.36"
+      },
+      {
+        "token": "0.36",
+        "value": 0.36,
+        "line": 2101,
+        "context": "2.59 ± 0.36"
+      },
+      {
+        "token": "7.30",
+        "value": 7.3,
+        "line": 2102,
+        "context": "7.30 ± 1.15"
+      },
+      {
+        "token": "1.15",
+        "value": 1.15,
+        "line": 2102,
+        "context": "7.30 ± 1.15"
+      },
+      {
+        "token": "78.3",
+        "value": 78.3,
+        "line": 2103,
+        "context": "78.3 ± 16.2"
+      },
+      {
+        "token": "16.2",
+        "value": 16.2,
+        "line": 2103,
+        "context": "78.3 ± 16.2"
+      },
+      {
+        "token": "778.7",
+        "value": 778.7,
+        "line": 2104,
+        "context": "778.7 ± 199.8"
+      },
+      {
+        "token": "199.8",
+        "value": 199.8,
+        "line": 2104,
+        "context": "778.7 ± 199.8"
+      },
+      {
+        "token": "7444.4",
+        "value": 7444.4,
+        "line": 2105,
+        "context": "7444.4 ± 2206.6"
+      },
+      {
+        "token": "2206.6",
+        "value": 2206.6,
+        "line": 2105,
+        "context": "7444.4 ± 2206.6"
+      },
+      {
+        "token": "0.68",
+        "value": 0.68,
+        "line": 2106,
+        "context": "The relative defect grows from 0.68× at h=1 to 7444.4× the scale of the true target at h=20,"
+      },
+      {
+        "token": "7444.4",
+        "value": 7444.4,
+        "line": 2106,
+        "context": "The relative defect grows from 0.68× at h=1 to 7444.4× the scale of the true target at h=20,"
+      },
+      {
+        "token": "64.6",
+        "value": 64.6,
+        "line": 2116,
+        "context": "prediction produces a characteristic flat error profile (64.6-67.7 mm across horizons), consis-"
+      },
+      {
+        "token": "67.7",
+        "value": 67.7,
+        "line": 2116,
+        "context": "prediction produces a characteristic flat error profile (64.6-67.7 mm across horizons), consis-"
+      },
+      {
+        "token": "52.7",
+        "value": 52.7,
+        "line": 2121,
+        "context": "dual-stream fusion keeps short-horizon performance competitive (52.7 mm at 100 ms) but de-"
+      },
+      {
+        "token": "92.8",
+        "value": 92.8,
+        "line": 2122,
+        "context": "grades rapidly at longer horizons (92.8 mm at 1000 ms), indicating that CSI features provide"
+      },
+      {
+        "token": "26.8",
+        "value": 26.8,
+        "line": 2176,
+        "context": "with horizon, from 26.8 mm at 100 ms to 7.1 mm at 1500 ms, indicating that the Koopman"
+      },
+      {
+        "token": "7.1",
+        "value": 7.1,
+        "line": 2176,
+        "context": "with horizon, from 26.8 mm at 100 ms to 7.1 mm at 1500 ms, indicating that the Koopman"
+      },
+      {
+        "token": "5.2",
+        "value": 5.2,
+        "line": 2179,
+        "context": "the gap shrinks to just 5.2 mm MPJPE and 1.7 mm PA-MPJPE at 1000 ms, suggesting the"
+      },
+      {
+        "token": "1.7",
+        "value": 1.7,
+        "line": 2179,
+        "context": "the gap shrinks to just 5.2 mm MPJPE and 1.7 mm PA-MPJPE at 1000 ms, suggesting the"
+      },
+      {
+        "token": "12.1",
+        "value": 12.1,
+        "line": 2181,
+        "context": "icant bottleneck at long horizons. Across both datasets, the average ∆of 12.1 mm (MM-Fi)"
+      },
+      {
+        "token": "11.2",
+        "value": 11.2,
+        "line": 2182,
+        "context": "and 11.2 mm (WiPose) represents the remaining headroom from end-to-end pose estima-"
+      },
+      {
+        "token": "54.16",
+        "value": 54.16,
+        "line": 2306,
+        "context": "54.16 / 45.75"
+      },
+      {
+        "token": "45.75",
+        "value": 45.75,
+        "line": 2306,
+        "context": "54.16 / 45.75"
+      },
+      {
+        "token": "58.74",
+        "value": 58.74,
+        "line": 2307,
+        "context": "58.74 / 48.94"
+      },
+      {
+        "token": "48.94",
+        "value": 48.94,
+        "line": 2307,
+        "context": "58.74 / 48.94"
+      },
+      {
+        "token": "63.32",
+        "value": 63.32,
+        "line": 2308,
+        "context": "63.32 / 52.19"
+      },
+      {
+        "token": "52.19",
+        "value": 52.19,
+        "line": 2308,
+        "context": "63.32 / 52.19"
+      },
+      {
+        "token": "67.55",
+        "value": 67.55,
+        "line": 2309,
+        "context": "67.55 / 54.72"
+      },
+      {
+        "token": "54.72",
+        "value": 54.72,
+        "line": 2309,
+        "context": "67.55 / 54.72"
+      },
+      {
+        "token": "65.28",
+        "value": 65.28,
+        "line": 2310,
+        "context": "65.28 / 53.82"
+      },
+      {
+        "token": "53.82",
+        "value": 53.82,
+        "line": 2310,
+        "context": "65.28 / 53.82"
+      },
+      {
+        "token": "63.59",
+        "value": 63.59,
+        "line": 2311,
+        "context": "63.59 / 52.94"
+      },
+      {
+        "token": "52.94",
+        "value": 52.94,
+        "line": 2311,
+        "context": "63.59 / 52.94"
+      },
+      {
+        "token": "52.95",
+        "value": 52.95,
+        "line": 2313,
+        "context": "52.95 / 44.12"
+      },
+      {
+        "token": "44.12",
+        "value": 44.12,
+        "line": 2313,
+        "context": "52.95 / 44.12"
+      },
+      {
+        "token": "56.54",
+        "value": 56.54,
+        "line": 2314,
+        "context": "56.54 / 46.48"
+      },
+      {
+        "token": "46.48",
+        "value": 46.48,
+        "line": 2314,
+        "context": "56.54 / 46.48"
+      },
+      {
+        "token": "60.49",
+        "value": 60.49,
+        "line": 2315,
+        "context": "60.49 / 49.30"
+      },
+      {
+        "token": "49.30",
+        "value": 49.3,
+        "line": 2315,
+        "context": "60.49 / 49.30"
+      },
+      {
+        "token": "64.24",
+        "value": 64.24,
+        "line": 2316,
+        "context": "64.24 / 51.82"
+      },
+      {
+        "token": "51.82",
+        "value": 51.82,
+        "line": 2316,
+        "context": "64.24 / 51.82"
+      },
+      {
+        "token": "62.41",
+        "value": 62.41,
+        "line": 2317,
+        "context": "62.41 / 50.84"
+      },
+      {
+        "token": "50.84",
+        "value": 50.84,
+        "line": 2317,
+        "context": "62.41 / 50.84"
+      },
+      {
+        "token": "61.31",
+        "value": 61.31,
+        "line": 2318,
+        "context": "61.31 / 50.40"
+      },
+      {
+        "token": "50.40",
+        "value": 50.4,
+        "line": 2318,
+        "context": "61.31 / 50.40"
+      },
+      {
+        "token": "53.75",
+        "value": 53.75,
+        "line": 2321,
+        "context": "53.75 / 45.31"
+      },
+      {
+        "token": "45.31",
+        "value": 45.31,
+        "line": 2321,
+        "context": "53.75 / 45.31"
+      },
+      {
+        "token": "61.14",
+        "value": 61.14,
+        "line": 2322,
+        "context": "61.14 / 51.39"
+      },
+      {
+        "token": "51.39",
+        "value": 51.39,
+        "line": 2322,
+        "context": "61.14 / 51.39"
+      },
+      {
+        "token": "67.85",
+        "value": 67.85,
+        "line": 2323,
+        "context": "67.85 / 56.91"
+      },
+      {
+        "token": "56.91",
+        "value": 56.91,
+        "line": 2323,
+        "context": "67.85 / 56.91"
+      },
+      {
+        "token": "74.60",
+        "value": 74.6,
+        "line": 2324,
+        "context": "74.60 / 62.82"
+      },
+      {
+        "token": "62.82",
+        "value": 62.82,
+        "line": 2324,
+        "context": "74.60 / 62.82"
+      },
+      {
+        "token": "72.32",
+        "value": 72.32,
+        "line": 2325,
+        "context": "72.32 / 62.44"
+      },
+      {
+        "token": "62.44",
+        "value": 62.44,
+        "line": 2325,
+        "context": "72.32 / 62.44"
+      },
+      {
+        "token": "68.60",
+        "value": 68.6,
+        "line": 2326,
+        "context": "68.60 / 59.23"
+      },
+      {
+        "token": "59.23",
+        "value": 59.23,
+        "line": 2326,
+        "context": "68.60 / 59.23"
+      },
+      {
+        "token": "54.72",
+        "value": 54.72,
+        "line": 2328,
+        "context": "54.72 / 45.94"
+      },
+      {
+        "token": "45.94",
+        "value": 45.94,
+        "line": 2328,
+        "context": "54.72 / 45.94"
+      },
+      {
+        "token": "59.86",
+        "value": 59.86,
+        "line": 2329,
+        "context": "59.86 / 49.56"
+      },
+      {
+        "token": "49.56",
+        "value": 49.56,
+        "line": 2329,
+        "context": "59.86 / 49.56"
+      },
+      {
+        "token": "64.83",
+        "value": 64.83,
+        "line": 2330,
+        "context": "64.83 / 52.93"
+      },
+      {
+        "token": "52.93",
+        "value": 52.93,
+        "line": 2330,
+        "context": "64.83 / 52.93"
+      },
+      {
+        "token": "69.13",
+        "value": 69.13,
+        "line": 2331,
+        "context": "69.13 / 55.67"
+      },
+      {
+        "token": "55.67",
+        "value": 55.67,
+        "line": 2331,
+        "context": "69.13 / 55.67"
+      },
+      {
+        "token": "66.83",
+        "value": 66.83,
+        "line": 2332,
+        "context": "66.83 / 54.80"
+      },
+      {
+        "token": "54.80",
+        "value": 54.8,
+        "line": 2332,
+        "context": "66.83 / 54.80"
+      },
+      {
+        "token": "64.89",
+        "value": 64.89,
+        "line": 2333,
+        "context": "64.89 / 53.78"
+      },
+      {
+        "token": "53.78",
+        "value": 53.78,
+        "line": 2333,
+        "context": "64.89 / 53.78"
+      },
+      {
+        "token": "55.53",
+        "value": 55.53,
+        "line": 2336,
+        "context": "55.53 / 46.36"
+      },
+      {
+        "token": "46.36",
+        "value": 46.36,
+        "line": 2336,
+        "context": "55.53 / 46.36"
+      },
+      {
+        "token": "59.23",
+        "value": 59.23,
+        "line": 2337,
+        "context": "59.23 / 48.90"
+      },
+      {
+        "token": "48.90",
+        "value": 48.9,
+        "line": 2337,
+        "context": "59.23 / 48.90"
+      },
+      {
+        "token": "63.66",
+        "value": 63.66,
+        "line": 2338,
+        "context": "63.66 / 52.10"
+      },
+      {
+        "token": "52.10",
+        "value": 52.1,
+        "line": 2338,
+        "context": "63.66 / 52.10"
+      },
+      {
+        "token": "67.83",
+        "value": 67.83,
+        "line": 2339,
+        "context": "67.83 / 55.08"
+      },
+      {
+        "token": "55.08",
+        "value": 55.08,
+        "line": 2339,
+        "context": "67.83 / 55.08"
+      },
+      {
+        "token": "65.75",
+        "value": 65.75,
+        "line": 2340,
+        "context": "65.75 / 53.96"
+      },
+      {
+        "token": "53.96",
+        "value": 53.96,
+        "line": 2340,
+        "context": "65.75 / 53.96"
+      },
+      {
+        "token": "64.44",
+        "value": 64.44,
+        "line": 2341,
+        "context": "64.44 / 53.46"
+      },
+      {
+        "token": "53.46",
+        "value": 53.46,
+        "line": 2341,
+        "context": "64.44 / 53.46"
+      },
+      {
+        "token": "53.23",
+        "value": 53.23,
+        "line": 2343,
+        "context": "53.23 / 44.87"
+      },
+      {
+        "token": "44.87",
+        "value": 44.87,
+        "line": 2343,
+        "context": "53.23 / 44.87"
+      },
+      {
+        "token": "60.79",
+        "value": 60.79,
+        "line": 2344,
+        "context": "60.79 / 50.93"
+      },
+      {
+        "token": "50.93",
+        "value": 50.93,
+        "line": 2344,
+        "context": "60.79 / 50.93"
+      },
+      {
+        "token": "67.59",
+        "value": 67.59,
+        "line": 2345,
+        "context": "67.59 / 56.40"
+      },
+      {
+        "token": "56.40",
+        "value": 56.4,
+        "line": 2345,
+        "context": "67.59 / 56.40"
+      },
+      {
+        "token": "74.08",
+        "value": 74.08,
+        "line": 2346,
+        "context": "74.08 / 61.29"
+      },
+      {
+        "token": "61.29",
+        "value": 61.29,
+        "line": 2346,
+        "context": "74.08 / 61.29"
+      },
+      {
+        "token": "71.23",
+        "value": 71.23,
+        "line": 2347,
+        "context": "71.23 / 60.27"
+      },
+      {
+        "token": "60.27",
+        "value": 60.27,
+        "line": 2347,
+        "context": "71.23 / 60.27"
+      },
+      {
+        "token": "68.05",
+        "value": 68.05,
+        "line": 2348,
+        "context": "68.05 / 58.07"
+      },
+      {
+        "token": "58.07",
+        "value": 58.07,
+        "line": 2348,
+        "context": "68.05 / 58.07"
+      },
+      {
+        "token": "52.76",
+        "value": 52.76,
+        "line": 2351,
+        "context": "52.76 / 44.01"
+      },
+      {
+        "token": "44.01",
+        "value": 44.01,
+        "line": 2351,
+        "context": "52.76 / 44.01"
+      },
+      {
+        "token": "58.00",
+        "value": 58.0,
+        "line": 2352,
+        "context": "58.00 / 47.89"
+      },
+      {
+        "token": "47.89",
+        "value": 47.89,
+        "line": 2352,
+        "context": "58.00 / 47.89"
+      },
+      {
+        "token": "62.58",
+        "value": 62.58,
+        "line": 2353,
+        "context": "62.58 / 51.15"
+      },
+      {
+        "token": "51.15",
+        "value": 51.15,
+        "line": 2353,
+        "context": "62.58 / 51.15"
+      },
+      {
+        "token": "66.58",
+        "value": 66.58,
+        "line": 2354,
+        "context": "66.58 / 53.68"
+      },
+      {
+        "token": "53.68",
+        "value": 53.68,
+        "line": 2354,
+        "context": "66.58 / 53.68"
+      },
+      {
+        "token": "64.11",
+        "value": 64.11,
+        "line": 2355,
+        "context": "64.11 / 52.39"
+      },
+      {
+        "token": "52.39",
+        "value": 52.39,
+        "line": 2355,
+        "context": "64.11 / 52.39"
+      },
+      {
+        "token": "62.44",
+        "value": 62.44,
+        "line": 2356,
+        "context": "62.44 / 51.51"
+      },
+      {
+        "token": "51.51",
+        "value": 51.51,
+        "line": 2356,
+        "context": "62.44 / 51.51"
+      },
+      {
+        "token": "54.44",
+        "value": 54.44,
+        "line": 2358,
+        "context": "54.44 / 45.89"
+      },
+      {
+        "token": "45.89",
+        "value": 45.89,
+        "line": 2358,
+        "context": "54.44 / 45.89"
+      },
+      {
+        "token": "61.21",
+        "value": 61.21,
+        "line": 2359,
+        "context": "61.21 / 51.46"
+      },
+      {
+        "token": "51.46",
+        "value": 51.46,
+        "line": 2359,
+        "context": "61.21 / 51.46"
+      },
+      {
+        "token": "66.77",
+        "value": 66.77,
+        "line": 2360,
+        "context": "66.77 / 55.79"
+      },
+      {
+        "token": "55.79",
+        "value": 55.79,
+        "line": 2360,
+        "context": "66.77 / 55.79"
+      },
+      {
+        "token": "71.07",
+        "value": 71.07,
+        "line": 2361,
+        "context": "71.07 / 58.66"
+      },
+      {
+        "token": "58.66",
+        "value": 58.66,
+        "line": 2361,
+        "context": "71.07 / 58.66"
+      },
+      {
+        "token": "68.68",
+        "value": 68.68,
+        "line": 2362,
+        "context": "68.68 / 57.90"
+      },
+      {
+        "token": "57.90",
+        "value": 57.9,
+        "line": 2362,
+        "context": "68.68 / 57.90"
+      },
+      {
+        "token": "67.04",
+        "value": 67.04,
+        "line": 2363,
+        "context": "67.04 / 56.86"
+      },
+      {
+        "token": "56.86",
+        "value": 56.86,
+        "line": 2363,
+        "context": "67.04 / 56.86"
+      },
+      {
+        "token": "52.10",
+        "value": 52.1,
+        "line": 2365,
+        "context": "52.10 / 43.50"
+      },
+      {
+        "token": "43.50",
+        "value": 43.5,
+        "line": 2365,
+        "context": "52.10 / 43.50"
+      },
+      {
+        "token": "57.00",
+        "value": 57.0,
+        "line": 2366,
+        "context": "57.00 / 47.00"
+      },
+      {
+        "token": "47.00",
+        "value": 47.0,
+        "line": 2366,
+        "context": "57.00 / 47.00"
+      },
+      {
+        "token": "61.90",
+        "value": 61.9,
+        "line": 2367,
+        "context": "61.90 / 50.50"
+      },
+      {
+        "token": "50.50",
+        "value": 50.5,
+        "line": 2367,
+        "context": "61.90 / 50.50"
+      },
+      {
+        "token": "65.70",
+        "value": 65.7,
+        "line": 2368,
+        "context": "65.70 / 52.80"
+      },
+      {
+        "token": "52.80",
+        "value": 52.8,
+        "line": 2368,
+        "context": "65.70 / 52.80"
+      },
+      {
+        "token": "63.40",
+        "value": 63.4,
+        "line": 2369,
+        "context": "63.40 / 51.80"
+      },
+      {
+        "token": "51.80",
+        "value": 51.8,
+        "line": 2369,
+        "context": "63.40 / 51.80"
+      },
+      {
+        "token": "61.90",
+        "value": 61.9,
+        "line": 2370,
+        "context": "61.90 / 51.10"
+      },
+      {
+        "token": "51.10",
+        "value": 51.1,
+        "line": 2370,
+        "context": "61.90 / 51.10"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 2374,
+        "context": "dimension, reducing to d = 64 increases MPJPE by 2-2.5 mm while d = 256 yields marginal"
+      },
+      {
+        "token": "74.6",
+        "value": 74.6,
+        "line": 2376,
+        "context": "trade-off. Latent dimension has the strongest effect: Dz = 64 reaches 74.6 mm at 1000 ms"
+      },
+      {
+        "token": "65.7",
+        "value": 65.7,
+        "line": 2377,
+        "context": "versus 65.7 mm for the default Dz = 256, confirming that a sufficiently large Koopman space"
+      },
+      {
+        "token": "74.1",
+        "value": 74.1,
+        "line": 2381,
+        "context": "adaptation and destabilizes long-horizon rollouts (74.1 mm at 1000 ms), identifying r = 16"
+      },
+      {
+        "token": "0.2",
+        "value": 0.2,
+        "line": 2389,
+        "context": "profile, MPJPE varies by less than 0.2 mm across all horizons (132.75-132.92 mm). Without"
+      },
+      {
+        "token": "132.75",
+        "value": 132.75,
+        "line": 2389,
+        "context": "profile, MPJPE varies by less than 0.2 mm across all horizons (132.75-132.92 mm). Without"
+      },
+      {
+        "token": "132.92",
+        "value": 132.92,
+        "line": 2389,
+        "context": "profile, MPJPE varies by less than 0.2 mm across all horizons (132.75-132.92 mm). Without"
+      },
+      {
+        "token": "141.09",
+        "value": 141.09,
+        "line": 2395,
+        "context": "Removing Lpred instead produces horizon-varying predictions (141.09 mm at 100 ms rising to"
+      },
+      {
+        "token": "168.06",
+        "value": 168.06,
+        "line": 2396,
+        "context": "168.06 mm at 1000 ms), showing that LKAL alone induces non-degenerate dynamics. How-"
+      },
+      {
+        "token": "132.7",
+        "value": 132.7,
+        "line": 2409,
+        "context": "132.7 / 116.3"
+      },
+      {
+        "token": "116.3",
+        "value": 116.3,
+        "line": 2409,
+        "context": "132.7 / 116.3"
+      },
+      {
+        "token": "132.8",
+        "value": 132.8,
+        "line": 2410,
+        "context": "132.8 / 116.1"
+      },
+      {
+        "token": "116.1",
+        "value": 116.1,
+        "line": 2410,
+        "context": "132.8 / 116.1"
+      },
+      {
+        "token": "132.8",
+        "value": 132.8,
+        "line": 2411,
+        "context": "132.8 / 116.0"
+      },
+      {
+        "token": "116.0",
+        "value": 116.0,
+        "line": 2411,
+        "context": "132.8 / 116.0"
+      },
+      {
+        "token": "132.8",
+        "value": 132.8,
+        "line": 2412,
+        "context": "132.8 / 116.0"
+      },
+      {
+        "token": "116.0",
+        "value": 116.0,
+        "line": 2412,
+        "context": "132.8 / 116.0"
+      },
+      {
+        "token": "132.8",
+        "value": 132.8,
+        "line": 2413,
+        "context": "132.8 / 116.0"
+      },
+      {
+        "token": "116.0",
+        "value": 116.0,
+        "line": 2413,
+        "context": "132.8 / 116.0"
+      },
+      {
+        "token": "132.9",
+        "value": 132.9,
+        "line": 2414,
+        "context": "132.9 / 116.1"
+      },
+      {
+        "token": "116.1",
+        "value": 116.1,
+        "line": 2414,
+        "context": "132.9 / 116.1"
+      },
+      {
+        "token": "141.0",
+        "value": 141.0,
+        "line": 2416,
+        "context": "141.0 / 94.2"
+      },
+      {
+        "token": "94.2",
+        "value": 94.2,
+        "line": 2416,
+        "context": "141.0 / 94.2"
+      },
+      {
+        "token": "150.3",
+        "value": 150.3,
+        "line": 2417,
+        "context": "150.3 / 102.6"
+      },
+      {
+        "token": "102.6",
+        "value": 102.6,
+        "line": 2417,
+        "context": "150.3 / 102.6"
+      },
+      {
+        "token": "159.1",
+        "value": 159.1,
+        "line": 2418,
+        "context": "159.1 / 110.1"
+      },
+      {
+        "token": "110.1",
+        "value": 110.1,
+        "line": 2418,
+        "context": "159.1 / 110.1"
+      },
+      {
+        "token": "168.0",
+        "value": 168.0,
+        "line": 2419,
+        "context": "168.0 / 117.0"
+      },
+      {
+        "token": "117.0",
+        "value": 117.0,
+        "line": 2419,
+        "context": "168.0 / 117.0"
+      },
+      {
+        "token": "166.4",
+        "value": 166.4,
+        "line": 2420,
+        "context": "166.4 / 117.5"
+      },
+      {
+        "token": "117.5",
+        "value": 117.5,
+        "line": 2420,
+        "context": "166.4 / 117.5"
+      },
+      {
+        "token": "158.0",
+        "value": 158.0,
+        "line": 2421,
+        "context": "158.0 / 110.0"
+      },
+      {
+        "token": "110.0",
+        "value": 110.0,
+        "line": 2421,
+        "context": "158.0 / 110.0"
+      },
+      {
+        "token": "52.1",
+        "value": 52.1,
+        "line": 2423,
+        "context": "52.1 / 43.5"
+      },
+      {
+        "token": "43.5",
+        "value": 43.5,
+        "line": 2423,
+        "context": "52.1 / 43.5"
+      },
+      {
+        "token": "57.0",
+        "value": 57.0,
+        "line": 2424,
+        "context": "57.0 / 47.0"
+      },
+      {
+        "token": "47.0",
+        "value": 47.0,
+        "line": 2424,
+        "context": "57.0 / 47.0"
+      },
+      {
+        "token": "61.9",
+        "value": 61.9,
+        "line": 2425,
+        "context": "61.9 / 50.5"
+      },
+      {
+        "token": "50.5",
+        "value": 50.5,
+        "line": 2425,
+        "context": "61.9 / 50.5"
+      },
+      {
+        "token": "65.7",
+        "value": 65.7,
+        "line": 2426,
+        "context": "65.7 / 52.8"
+      },
+      {
+        "token": "52.8",
+        "value": 52.8,
+        "line": 2426,
+        "context": "65.7 / 52.8"
+      },
+      {
+        "token": "63.4",
+        "value": 63.4,
+        "line": 2427,
+        "context": "63.4 / 51.8"
+      },
+      {
+        "token": "51.8",
+        "value": 51.8,
+        "line": 2427,
+        "context": "63.4 / 51.8"
+      },
+      {
+        "token": "61.9",
+        "value": 61.9,
+        "line": 2428,
+        "context": "61.9 / 51.1"
+      },
+      {
+        "token": "51.1",
+        "value": 51.1,
+        "line": 2428,
+        "context": "61.9 / 51.1"
+      },
+      {
+        "token": "56.3",
+        "value": 56.3,
+        "line": 2436,
+        "context": "(56.3mm at 100ms to 91.9mm at 1000ms, a spread of 22.6mm between h=1 and h=20),"
+      },
+      {
+        "token": "91.9",
+        "value": 91.9,
+        "line": 2436,
+        "context": "(56.3mm at 100ms to 91.9mm at 1000ms, a spread of 22.6mm between h=1 and h=20),"
+      },
+      {
+        "token": "22.6",
+        "value": 22.6,
+        "line": 2436,
+        "context": "(56.3mm at 100ms to 91.9mm at 1000ms, a spread of 22.6mm between h=1 and h=20),"
+      },
+      {
+        "token": "9.8",
+        "value": 9.8,
+        "line": 2438,
+        "context": "prediction window. KOALA own spread over the same range is only 9.8mm (52.1mm to"
+      },
+      {
+        "token": "52.1",
+        "value": 52.1,
+        "line": 2438,
+        "context": "prediction window. KOALA own spread over the same range is only 9.8mm (52.1mm to"
+      },
+      {
+        "token": "61.9",
+        "value": 61.9,
+        "line": 2439,
+        "context": "61.9mm), less than half that of the zero-velocity baseline, while also achieving substantially"
+      },
+      {
+        "token": "65.7",
+        "value": 65.7,
+        "line": 2440,
+        "context": "lower absolute error at every horizon (e.g., 65.7mm vs. 91.9mm at 1000ms). If KOALA"
+      },
+      {
+        "token": "91.9",
+        "value": 91.9,
+        "line": 2440,
+        "context": "lower absolute error at every horizon (e.g., 65.7mm vs. 91.9mm at 1000ms). If KOALA"
+      },
+      {
+        "token": "61.1",
+        "value": 61.1,
+        "line": 2476,
+        "context": "zon. DMD performs worst overall, degrading sharply with horizon (61.1mm at 100ms to"
+      },
+      {
+        "token": "97.2",
+        "value": 97.2,
+        "line": 2477,
+        "context": "97.2mm at 1000ms), consistent with it fitting a single global linear operator without CSI-"
+      },
+      {
+        "token": "54.1",
+        "value": 54.1,
+        "line": 2481,
+        "context": "shows a notably flat error profile across horizons (54.1-61.3mm), reflecting its built-in stabil-"
+      },
+      {
+        "token": "61.3",
+        "value": 61.3,
+        "line": 2481,
+        "context": "shows a notably flat error profile across horizons (54.1-61.3mm), reflecting its built-in stabil-"
+      },
+      {
+        "token": "93.8",
+        "value": 93.8,
+        "line": 2483,
+        "context": "non-monotonically and substantially at mid-to-long horizons (up to 93.8mm), showing that"
+      }
+    ]
+  },
+  "adjudications_state": {
+    "802.11": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Modern WiFi standards, such as IEEE 802.11, employ Orthogonal"
+    },
+    "0.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "and γ ≈0.1, the amplification factor at h = 20 remains bounded during early training, preventing runaway"
+    },
+    "3.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "tion 3.1), and δh := |ϕ( ˜fT + h)−ϕ(F h(vT ))| measures how well the temporal-encoder feature at frame T +h"
+    },
+    "1.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "with λp = 1.5, λk = 0.5, λe = 1.0. This three-term objective is more compact than the seven-term objectives"
+    },
+    "0.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "with λp = 1.5, λk = 0.5, λe = 1.0. This three-term objective is more compact than the seven-term objectives"
+    },
+    "1.0": {
+      "verdict": "pending",
+      "note": "",
+      "context": "with λp = 1.5, λk = 0.5, λe = 1.0. This three-term objective is more compact than the seven-term objectives"
+    },
+    "26.14": {
+      "verdict": "pending",
+      "note": "",
+      "context": "every horizon, reaching 26.14 mm at 100 ms and 27.28 mm at 1000 ms, an improvement of approximately"
+    },
+    "27.28": {
+      "verdict": "pending",
+      "note": "",
+      "context": "every horizon, reaching 26.14 mm at 100 ms and 27.28 mm at 1000 ms, an improvement of approximately"
+    },
+    "1.14": {
+      "verdict": "pending",
+      "note": "",
+      "context": "19% over the strongest baseline VMRNN. Notably, KOALA degradation across horizons is only 1.14 mm in"
+    },
+    "65.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "moderately with horizon, with PA-MPJPE below 65.3 mm and PCK@20 above 82.3% across all configu-"
+    },
+    "82.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "moderately with horizon, with PA-MPJPE below 65.3 mm and PCK@20 above 82.3% across all configu-"
+    },
+    "52.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "rations. S3 achieves the lowest short-horizon errors (52.1 mm under P1 at 100 ms), while S2 is the most"
+    },
+    "74.7": {
+      "verdict": "pending",
+      "note": "",
+      "context": "challenging (74.7 mm at 1000 ms under P1) due to unseen body geometries. Protocol 2 yields the lowest"
+    },
+    "85.4": {
+      "verdict": "pending",
+      "note": "",
+      "context": "85.4% at 1000 ms despite covering all 27 categories. Figure 3 confirms coherent rollouts with anatomically"
+    },
+    "6.4": {
+      "verdict": "pending",
+      "note": "",
+      "context": "6.4× lower than the best competing method SwinLSTM (332.6 mm) and 73.9% PCK@10 while no baseline"
+    },
+    "332.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "6.4× lower than the best competing method SwinLSTM (332.6 mm) and 73.9% PCK@10 while no baseline"
+    },
+    "73.9": {
+      "verdict": "pending",
+      "note": "",
+      "context": "6.4× lower than the best competing method SwinLSTM (332.6 mm) and 73.9% PCK@10 while no baseline"
+    },
+    "18.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "exceeds 18.1%. Among WiFi baselines, MetaFi++ consistently outperforms other architectures, confirming"
+    },
+    "0.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "dh = d/nhead = 32. Horizon weights in Lpred are set to wh ∈{0.3, 0.5, 0.8, 1.2, 1.5, 2.0} for"
+    },
+    "0.8": {
+      "verdict": "pending",
+      "note": "",
+      "context": "dh = d/nhead = 32. Horizon weights in Lpred are set to wh ∈{0.3, 0.5, 0.8, 1.2, 1.5, 2.0} for"
+    },
+    "1.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "dh = d/nhead = 32. Horizon weights in Lpred are set to wh ∈{0.3, 0.5, 0.8, 1.2, 1.5, 2.0} for"
+    },
+    "2.0": {
+      "verdict": "pending",
+      "note": "",
+      "context": "dh = d/nhead = 32. Horizon weights in Lpred are set to wh ∈{0.3, 0.5, 0.8, 1.2, 1.5, 2.0} for"
+    },
+    "4.8": {
+      "verdict": "pending",
+      "note": "",
+      "context": "4.8M"
+    },
+    "4.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "4.5M"
+    },
+    "0.083": {
+      "verdict": "pending",
+      "note": "",
+      "context": "0.083G"
+    },
+    "3.4": {
+      "verdict": "pending",
+      "note": "",
+      "context": "3.4 ms"
+    },
+    "10.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "10.6 ± 1.7"
+    },
+    "1.7": {
+      "verdict": "pending",
+      "note": "",
+      "context": "10.6 ± 1.7"
+    },
+    "40.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "40.3 ± 5.4"
+    },
+    "5.4": {
+      "verdict": "pending",
+      "note": "",
+      "context": "40.3 ± 5.4"
+    },
+    "113.7": {
+      "verdict": "pending",
+      "note": "",
+      "context": "113.7 ± 17.6"
+    },
+    "17.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "113.7 ± 17.6"
+    },
+    "1218.7": {
+      "verdict": "pending",
+      "note": "",
+      "context": "1218.7 ± 250.1"
+    },
+    "250.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "1218.7 ± 250.1"
+    },
+    "12120.0": {
+      "verdict": "pending",
+      "note": "",
+      "context": "12120.0 ± 3076.8"
+    },
+    "3076.8": {
+      "verdict": "pending",
+      "note": "",
+      "context": "12120.0 ± 3076.8"
+    },
+    "115888.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "115888.3 ± 34070.9"
+    },
+    "34070.9": {
+      "verdict": "pending",
+      "note": "",
+      "context": "115888.3 ± 34070.9"
+    },
+    "0.68": {
+      "verdict": "pending",
+      "note": "",
+      "context": "0.68 ± 0.11"
+    },
+    "0.11": {
+      "verdict": "pending",
+      "note": "",
+      "context": "0.68 ± 0.11"
+    },
+    "2.59": {
+      "verdict": "pending",
+      "note": "",
+      "context": "2.59 ± 0.36"
+    },
+    "0.36": {
+      "verdict": "pending",
+      "note": "",
+      "context": "2.59 ± 0.36"
+    },
+    "7.30": {
+      "verdict": "pending",
+      "note": "",
+      "context": "7.30 ± 1.15"
+    },
+    "1.15": {
+      "verdict": "pending",
+      "note": "",
+      "context": "7.30 ± 1.15"
+    },
+    "78.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "78.3 ± 16.2"
+    },
+    "16.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "78.3 ± 16.2"
+    },
+    "778.7": {
+      "verdict": "pending",
+      "note": "",
+      "context": "778.7 ± 199.8"
+    },
+    "199.8": {
+      "verdict": "pending",
+      "note": "",
+      "context": "778.7 ± 199.8"
+    },
+    "7444.4": {
+      "verdict": "pending",
+      "note": "",
+      "context": "7444.4 ± 2206.6"
+    },
+    "2206.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "7444.4 ± 2206.6"
+    },
+    "64.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "prediction produces a characteristic flat error profile (64.6-67.7 mm across horizons), consis-"
+    },
+    "67.7": {
+      "verdict": "pending",
+      "note": "",
+      "context": "prediction produces a characteristic flat error profile (64.6-67.7 mm across horizons), consis-"
+    },
+    "52.7": {
+      "verdict": "pending",
+      "note": "",
+      "context": "dual-stream fusion keeps short-horizon performance competitive (52.7 mm at 100 ms) but de-"
+    },
+    "92.8": {
+      "verdict": "pending",
+      "note": "",
+      "context": "grades rapidly at longer horizons (92.8 mm at 1000 ms), indicating that CSI features provide"
+    },
+    "26.8": {
+      "verdict": "pending",
+      "note": "",
+      "context": "with horizon, from 26.8 mm at 100 ms to 7.1 mm at 1500 ms, indicating that the Koopman"
+    },
+    "7.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "with horizon, from 26.8 mm at 100 ms to 7.1 mm at 1500 ms, indicating that the Koopman"
+    },
+    "5.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "the gap shrinks to just 5.2 mm MPJPE and 1.7 mm PA-MPJPE at 1000 ms, suggesting the"
+    },
+    "12.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "icant bottleneck at long horizons. Across both datasets, the average ∆of 12.1 mm (MM-Fi)"
+    },
+    "11.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "and 11.2 mm (WiPose) represents the remaining headroom from end-to-end pose estima-"
+    },
+    "54.16": {
+      "verdict": "pending",
+      "note": "",
+      "context": "54.16 / 45.75"
+    },
+    "45.75": {
+      "verdict": "pending",
+      "note": "",
+      "context": "54.16 / 45.75"
+    },
+    "58.74": {
+      "verdict": "pending",
+      "note": "",
+      "context": "58.74 / 48.94"
+    },
+    "48.94": {
+      "verdict": "pending",
+      "note": "",
+      "context": "58.74 / 48.94"
+    },
+    "63.32": {
+      "verdict": "pending",
+      "note": "",
+      "context": "63.32 / 52.19"
+    },
+    "52.19": {
+      "verdict": "pending",
+      "note": "",
+      "context": "63.32 / 52.19"
+    },
+    "67.55": {
+      "verdict": "pending",
+      "note": "",
+      "context": "67.55 / 54.72"
+    },
+    "54.72": {
+      "verdict": "pending",
+      "note": "",
+      "context": "67.55 / 54.72"
+    },
+    "65.28": {
+      "verdict": "pending",
+      "note": "",
+      "context": "65.28 / 53.82"
+    },
+    "53.82": {
+      "verdict": "pending",
+      "note": "",
+      "context": "65.28 / 53.82"
+    },
+    "63.59": {
+      "verdict": "pending",
+      "note": "",
+      "context": "63.59 / 52.94"
+    },
+    "52.94": {
+      "verdict": "pending",
+      "note": "",
+      "context": "63.59 / 52.94"
+    },
+    "52.95": {
+      "verdict": "pending",
+      "note": "",
+      "context": "52.95 / 44.12"
+    },
+    "44.12": {
+      "verdict": "pending",
+      "note": "",
+      "context": "52.95 / 44.12"
+    },
+    "56.54": {
+      "verdict": "pending",
+      "note": "",
+      "context": "56.54 / 46.48"
+    },
+    "46.48": {
+      "verdict": "pending",
+      "note": "",
+      "context": "56.54 / 46.48"
+    },
+    "60.49": {
+      "verdict": "pending",
+      "note": "",
+      "context": "60.49 / 49.30"
+    },
+    "49.30": {
+      "verdict": "pending",
+      "note": "",
+      "context": "60.49 / 49.30"
+    },
+    "64.24": {
+      "verdict": "pending",
+      "note": "",
+      "context": "64.24 / 51.82"
+    },
+    "51.82": {
+      "verdict": "pending",
+      "note": "",
+      "context": "64.24 / 51.82"
+    },
+    "62.41": {
+      "verdict": "pending",
+      "note": "",
+      "context": "62.41 / 50.84"
+    },
+    "50.84": {
+      "verdict": "pending",
+      "note": "",
+      "context": "62.41 / 50.84"
+    },
+    "61.31": {
+      "verdict": "pending",
+      "note": "",
+      "context": "61.31 / 50.40"
+    },
+    "50.40": {
+      "verdict": "pending",
+      "note": "",
+      "context": "61.31 / 50.40"
+    },
+    "53.75": {
+      "verdict": "pending",
+      "note": "",
+      "context": "53.75 / 45.31"
+    },
+    "45.31": {
+      "verdict": "pending",
+      "note": "",
+      "context": "53.75 / 45.31"
+    },
+    "61.14": {
+      "verdict": "pending",
+      "note": "",
+      "context": "61.14 / 51.39"
+    },
+    "51.39": {
+      "verdict": "pending",
+      "note": "",
+      "context": "61.14 / 51.39"
+    },
+    "67.85": {
+      "verdict": "pending",
+      "note": "",
+      "context": "67.85 / 56.91"
+    },
+    "56.91": {
+      "verdict": "pending",
+      "note": "",
+      "context": "67.85 / 56.91"
+    },
+    "74.60": {
+      "verdict": "pending",
+      "note": "",
+      "context": "74.60 / 62.82"
+    },
+    "62.82": {
+      "verdict": "pending",
+      "note": "",
+      "context": "74.60 / 62.82"
+    },
+    "72.32": {
+      "verdict": "pending",
+      "note": "",
+      "context": "72.32 / 62.44"
+    },
+    "62.44": {
+      "verdict": "pending",
+      "note": "",
+      "context": "72.32 / 62.44"
+    },
+    "68.60": {
+      "verdict": "pending",
+      "note": "",
+      "context": "68.60 / 59.23"
+    },
+    "59.23": {
+      "verdict": "pending",
+      "note": "",
+      "context": "68.60 / 59.23"
+    },
+    "45.94": {
+      "verdict": "pending",
+      "note": "",
+      "context": "54.72 / 45.94"
+    },
+    "59.86": {
+      "verdict": "pending",
+      "note": "",
+      "context": "59.86 / 49.56"
+    },
+    "49.56": {
+      "verdict": "pending",
+      "note": "",
+      "context": "59.86 / 49.56"
+    },
+    "64.83": {
+      "verdict": "pending",
+      "note": "",
+      "context": "64.83 / 52.93"
+    },
+    "52.93": {
+      "verdict": "pending",
+      "note": "",
+      "context": "64.83 / 52.93"
+    },
+    "69.13": {
+      "verdict": "pending",
+      "note": "",
+      "context": "69.13 / 55.67"
+    },
+    "55.67": {
+      "verdict": "pending",
+      "note": "",
+      "context": "69.13 / 55.67"
+    },
+    "66.83": {
+      "verdict": "pending",
+      "note": "",
+      "context": "66.83 / 54.80"
+    },
+    "54.80": {
+      "verdict": "pending",
+      "note": "",
+      "context": "66.83 / 54.80"
+    },
+    "64.89": {
+      "verdict": "pending",
+      "note": "",
+      "context": "64.89 / 53.78"
+    },
+    "53.78": {
+      "verdict": "pending",
+      "note": "",
+      "context": "64.89 / 53.78"
+    },
+    "55.53": {
+      "verdict": "pending",
+      "note": "",
+      "context": "55.53 / 46.36"
+    },
+    "46.36": {
+      "verdict": "pending",
+      "note": "",
+      "context": "55.53 / 46.36"
+    },
+    "48.90": {
+      "verdict": "pending",
+      "note": "",
+      "context": "59.23 / 48.90"
+    },
+    "63.66": {
+      "verdict": "pending",
+      "note": "",
+      "context": "63.66 / 52.10"
+    },
+    "52.10": {
+      "verdict": "pending",
+      "note": "",
+      "context": "63.66 / 52.10"
+    },
+    "67.83": {
+      "verdict": "pending",
+      "note": "",
+      "context": "67.83 / 55.08"
+    },
+    "55.08": {
+      "verdict": "pending",
+      "note": "",
+      "context": "67.83 / 55.08"
+    },
+    "65.75": {
+      "verdict": "pending",
+      "note": "",
+      "context": "65.75 / 53.96"
+    },
+    "53.96": {
+      "verdict": "pending",
+      "note": "",
+      "context": "65.75 / 53.96"
+    },
+    "64.44": {
+      "verdict": "pending",
+      "note": "",
+      "context": "64.44 / 53.46"
+    },
+    "53.46": {
+      "verdict": "pending",
+      "note": "",
+      "context": "64.44 / 53.46"
+    },
+    "53.23": {
+      "verdict": "pending",
+      "note": "",
+      "context": "53.23 / 44.87"
+    },
+    "44.87": {
+      "verdict": "pending",
+      "note": "",
+      "context": "53.23 / 44.87"
+    },
+    "60.79": {
+      "verdict": "pending",
+      "note": "",
+      "context": "60.79 / 50.93"
+    },
+    "50.93": {
+      "verdict": "pending",
+      "note": "",
+      "context": "60.79 / 50.93"
+    },
+    "67.59": {
+      "verdict": "pending",
+      "note": "",
+      "context": "67.59 / 56.40"
+    },
+    "56.40": {
+      "verdict": "pending",
+      "note": "",
+      "context": "67.59 / 56.40"
+    },
+    "74.08": {
+      "verdict": "pending",
+      "note": "",
+      "context": "74.08 / 61.29"
+    },
+    "61.29": {
+      "verdict": "pending",
+      "note": "",
+      "context": "74.08 / 61.29"
+    },
+    "71.23": {
+      "verdict": "pending",
+      "note": "",
+      "context": "71.23 / 60.27"
+    },
+    "60.27": {
+      "verdict": "pending",
+      "note": "",
+      "context": "71.23 / 60.27"
+    },
+    "68.05": {
+      "verdict": "pending",
+      "note": "",
+      "context": "68.05 / 58.07"
+    },
+    "58.07": {
+      "verdict": "pending",
+      "note": "",
+      "context": "68.05 / 58.07"
+    },
+    "52.76": {
+      "verdict": "pending",
+      "note": "",
+      "context": "52.76 / 44.01"
+    },
+    "44.01": {
+      "verdict": "pending",
+      "note": "",
+      "context": "52.76 / 44.01"
+    },
+    "58.00": {
+      "verdict": "pending",
+      "note": "",
+      "context": "58.00 / 47.89"
+    },
+    "47.89": {
+      "verdict": "pending",
+      "note": "",
+      "context": "58.00 / 47.89"
+    },
+    "62.58": {
+      "verdict": "pending",
+      "note": "",
+      "context": "62.58 / 51.15"
+    },
+    "51.15": {
+      "verdict": "pending",
+      "note": "",
+      "context": "62.58 / 51.15"
+    },
+    "66.58": {
+      "verdict": "pending",
+      "note": "",
+      "context": "66.58 / 53.68"
+    },
+    "53.68": {
+      "verdict": "pending",
+      "note": "",
+      "context": "66.58 / 53.68"
+    },
+    "64.11": {
+      "verdict": "pending",
+      "note": "",
+      "context": "64.11 / 52.39"
+    },
+    "52.39": {
+      "verdict": "pending",
+      "note": "",
+      "context": "64.11 / 52.39"
+    },
+    "51.51": {
+      "verdict": "pending",
+      "note": "",
+      "context": "62.44 / 51.51"
+    },
+    "54.44": {
+      "verdict": "pending",
+      "note": "",
+      "context": "54.44 / 45.89"
+    },
+    "45.89": {
+      "verdict": "pending",
+      "note": "",
+      "context": "54.44 / 45.89"
+    },
+    "61.21": {
+      "verdict": "pending",
+      "note": "",
+      "context": "61.21 / 51.46"
+    },
+    "51.46": {
+      "verdict": "pending",
+      "note": "",
+      "context": "61.21 / 51.46"
+    },
+    "66.77": {
+      "verdict": "pending",
+      "note": "",
+      "context": "66.77 / 55.79"
+    },
+    "55.79": {
+      "verdict": "pending",
+      "note": "",
+      "context": "66.77 / 55.79"
+    },
+    "71.07": {
+      "verdict": "pending",
+      "note": "",
+      "context": "71.07 / 58.66"
+    },
+    "58.66": {
+      "verdict": "pending",
+      "note": "",
+      "context": "71.07 / 58.66"
+    },
+    "68.68": {
+      "verdict": "pending",
+      "note": "",
+      "context": "68.68 / 57.90"
+    },
+    "57.90": {
+      "verdict": "pending",
+      "note": "",
+      "context": "68.68 / 57.90"
+    },
+    "67.04": {
+      "verdict": "pending",
+      "note": "",
+      "context": "67.04 / 56.86"
+    },
+    "56.86": {
+      "verdict": "pending",
+      "note": "",
+      "context": "67.04 / 56.86"
+    },
+    "43.50": {
+      "verdict": "pending",
+      "note": "",
+      "context": "52.10 / 43.50"
+    },
+    "57.00": {
+      "verdict": "pending",
+      "note": "",
+      "context": "57.00 / 47.00"
+    },
+    "47.00": {
+      "verdict": "pending",
+      "note": "",
+      "context": "57.00 / 47.00"
+    },
+    "61.90": {
+      "verdict": "pending",
+      "note": "",
+      "context": "61.90 / 50.50"
+    },
+    "50.50": {
+      "verdict": "pending",
+      "note": "",
+      "context": "61.90 / 50.50"
+    },
+    "65.70": {
+      "verdict": "pending",
+      "note": "",
+      "context": "65.70 / 52.80"
+    },
+    "52.80": {
+      "verdict": "pending",
+      "note": "",
+      "context": "65.70 / 52.80"
+    },
+    "63.40": {
+      "verdict": "pending",
+      "note": "",
+      "context": "63.40 / 51.80"
+    },
+    "51.80": {
+      "verdict": "pending",
+      "note": "",
+      "context": "63.40 / 51.80"
+    },
+    "51.10": {
+      "verdict": "pending",
+      "note": "",
+      "context": "61.90 / 51.10"
+    },
+    "2.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "dimension, reducing to d = 64 increases MPJPE by 2-2.5 mm while d = 256 yields marginal"
+    },
+    "74.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "trade-off. Latent dimension has the strongest effect: Dz = 64 reaches 74.6 mm at 1000 ms"
+    },
+    "65.7": {
+      "verdict": "pending",
+      "note": "",
+      "context": "versus 65.7 mm for the default Dz = 256, confirming that a sufficiently large Koopman space"
+    },
+    "74.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "adaptation and destabilizes long-horizon rollouts (74.1 mm at 1000 ms), identifying r = 16"
+    },
+    "0.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "profile, MPJPE varies by less than 0.2 mm across all horizons (132.75-132.92 mm). Without"
+    },
+    "132.75": {
+      "verdict": "pending",
+      "note": "",
+      "context": "profile, MPJPE varies by less than 0.2 mm across all horizons (132.75-132.92 mm). Without"
+    },
+    "132.92": {
+      "verdict": "pending",
+      "note": "",
+      "context": "profile, MPJPE varies by less than 0.2 mm across all horizons (132.75-132.92 mm). Without"
+    },
+    "141.09": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Removing Lpred instead produces horizon-varying predictions (141.09 mm at 100 ms rising to"
+    },
+    "168.06": {
+      "verdict": "pending",
+      "note": "",
+      "context": "168.06 mm at 1000 ms), showing that LKAL alone induces non-degenerate dynamics. How-"
+    },
+    "132.7": {
+      "verdict": "pending",
+      "note": "",
+      "context": "132.7 / 116.3"
+    },
+    "116.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "132.7 / 116.3"
+    },
+    "132.8": {
+      "verdict": "pending",
+      "note": "",
+      "context": "132.8 / 116.1"
+    },
+    "116.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "132.8 / 116.1"
+    },
+    "116.0": {
+      "verdict": "pending",
+      "note": "",
+      "context": "132.8 / 116.0"
+    },
+    "132.9": {
+      "verdict": "pending",
+      "note": "",
+      "context": "132.9 / 116.1"
+    },
+    "141.0": {
+      "verdict": "pending",
+      "note": "",
+      "context": "141.0 / 94.2"
+    },
+    "94.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "141.0 / 94.2"
+    },
+    "150.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "150.3 / 102.6"
+    },
+    "102.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "150.3 / 102.6"
+    },
+    "159.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "159.1 / 110.1"
+    },
+    "110.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "159.1 / 110.1"
+    },
+    "168.0": {
+      "verdict": "pending",
+      "note": "",
+      "context": "168.0 / 117.0"
+    },
+    "117.0": {
+      "verdict": "pending",
+      "note": "",
+      "context": "168.0 / 117.0"
+    },
+    "166.4": {
+      "verdict": "pending",
+      "note": "",
+      "context": "166.4 / 117.5"
+    },
+    "117.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "166.4 / 117.5"
+    },
+    "158.0": {
+      "verdict": "pending",
+      "note": "",
+      "context": "158.0 / 110.0"
+    },
+    "110.0": {
+      "verdict": "pending",
+      "note": "",
+      "context": "158.0 / 110.0"
+    },
+    "43.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "52.1 / 43.5"
+    },
+    "57.0": {
+      "verdict": "pending",
+      "note": "",
+      "context": "57.0 / 47.0"
+    },
+    "47.0": {
+      "verdict": "pending",
+      "note": "",
+      "context": "57.0 / 47.0"
+    },
+    "61.9": {
+      "verdict": "pending",
+      "note": "",
+      "context": "61.9 / 50.5"
+    },
+    "50.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "61.9 / 50.5"
+    },
+    "52.8": {
+      "verdict": "pending",
+      "note": "",
+      "context": "65.7 / 52.8"
+    },
+    "63.4": {
+      "verdict": "pending",
+      "note": "",
+      "context": "63.4 / 51.8"
+    },
+    "51.8": {
+      "verdict": "pending",
+      "note": "",
+      "context": "63.4 / 51.8"
+    },
+    "51.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "61.9 / 51.1"
+    },
+    "56.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "(56.3mm at 100ms to 91.9mm at 1000ms, a spread of 22.6mm between h=1 and h=20),"
+    },
+    "91.9": {
+      "verdict": "pending",
+      "note": "",
+      "context": "(56.3mm at 100ms to 91.9mm at 1000ms, a spread of 22.6mm between h=1 and h=20),"
+    },
+    "22.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "(56.3mm at 100ms to 91.9mm at 1000ms, a spread of 22.6mm between h=1 and h=20),"
+    },
+    "9.8": {
+      "verdict": "pending",
+      "note": "",
+      "context": "prediction window. KOALA own spread over the same range is only 9.8mm (52.1mm to"
+    },
+    "61.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "zon. DMD performs worst overall, degrading sharply with horizon (61.1mm at 100ms to"
+    },
+    "97.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "97.2mm at 1000ms), consistent with it fitting a single global linear operator without CSI-"
+    },
+    "54.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "shows a notably flat error profile across horizons (54.1-61.3mm), reflecting its built-in stabil-"
+    },
+    "61.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "shows a notably flat error profile across horizons (54.1-61.3mm), reflecting its built-in stabil-"
+    },
+    "93.8": {
+      "verdict": "pending",
+      "note": "",
+      "context": "non-monotonically and substantially at mid-to-long horizons (up to 93.8mm), showing that"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "critical_adjudicated": 0,
+    "pending_review": 238,
+    "noise_filtered": 843,
+    "adjudicated": 0,
+    "paper_decimals": 1081,
+    "evidence_absent": true,
+    "note": "manual_review_list = 未裁决且非机械噪音；裁决文件填 verdict(noise|supported|critical) 后重跑即收敛"
+  }
+}

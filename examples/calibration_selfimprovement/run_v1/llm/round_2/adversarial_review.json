@@ -1,0 +1,178 @@
+[
+  {
+    "role": "method",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- **Critical**: 第三匹配器经\"per-row adjudication\"达到 100% 准确率构成循环论证——事后逐行裁定残存错误本质上是\"把答错的标成对的直到没有错误\"，\"overconfidence vanishes\"声明在此程序下是同义反复，内部效度从根本上失效。",
+        "- **Critical**: 置信度分布退化（27/30 = 1.0）使 ECE ≈ |0.9963 − accuracy|，\"matcher determines calibration\"这一核心因果声明在数学上退化为\"matcher determines accuracy\"——后者由构造即为真（更宽松的匹配器必然判定更多答案正确），不是经验发现。",
+        "- **Critical**: Propositions 1–3 的偏差界依赖匹配器 FNR/FPR（相对真值），但\"真值\"本身由事后裁定确立——用裁定标签估计 FNR/FPR 再用其界定裁定偏差，形成估计循环；若真值不可知则该界不可估计。"
+      ],
+      "Major": [
+        "- **Major**: 三个匹配器是嵌套处理（精确 ⊂ 宽容 ⊂ 裁定后扩展），非独立干预；裁定努力与匹配宽松度构成混淆，无法分离\"匹配器效应\"与\"裁定效应\"，缺少因果识别策略。",
+        "- **Major**: \"domain-specific, up to 17×\"声明与自身统计矛盾——95% CI 极宽且 Holm 校正后仅极端对显著，多数两两比较为 null；从多数非显著结果推出\"领域特异性\"因果结论不成立。",
+        "- **Major**: OOD 门控结论\"confidence useless—even harmful\"基于 N=30、无形式检验、无效应量 CI、无多重比较校正；self-consistency 结果以\"置信度与一致性负相关的模型\"为条件——这是对结果变量的事后子组选择（selection on outcome），引入偏倚。",
+        "- **Major**: MSI 比较（中文自由形式 1.000 vs MMLU 选择题 0.334）同时混淆语言×作答格式×领域×题目选择，无法将差异归因于任何单一因素。",
+        "- **Major**: Proposition 8' 假设完美退化，但 3/30 ≠ 1.0，\"no information\"声明仅为近似；且\"self-consistency retains discriminative power\"基于 n=30 可为小样本假象，三次重采样来自同一模型同一温度并非独立抽样。"
+      ],
+      "Minor": [
+        "- **Minor**: \"temperature scaling not robust to relabeling\"是数学平凡事实（任何拟合标签的方法随标签改变而改变），并非需要 N=30 支撑的经验发现。",
+        "- **Minor**: 30 题选取程序未描述（潜在选择偏倚）；4999 双判对缺报告标注者间一致性（kappa），标签质量未验证。",
+        "- **Minor**: \"external validity from 600-item census\"声明自相矛盾——普查本身多数领域比较非显著，不能为 N=30 发现提供外部效度。"
+      ]
+    },
+    "raw": "我来仔细审查这份 agent 产出（一篇关于 agent 置信度校准的方法论研究论文摘要），从方法论严谨性角度进行对抗性审查。\n\n让我先通读全文，检查关键声明的前提、内部效度、混淆变量、假设成立性和因果推断。\n用户已将内容直接粘贴到提示中。我将基于所提供的文本进行审查。让我核实一下是否有需要单独查看的文件：\n内容直接粘贴在提示中。我已经仔细审阅了摘要和引言。以下是我的方法论对抗审查：\n\n---\n\n- **Critical**: 第三匹配器经\"per-row adjudication\"达到 100% 准确率构成循环论证——事后逐行裁定残存错误本质上是\"把答错的标成对的直到没有错误\"，\"overconfidence vanishes\"声明在此程序下是同义反复，内部效度从根本上失效。\n- **Critical**: 置信度分布退化（27/30 = 1.0）使 ECE ≈ |0.9963 − accuracy|，\"matcher determines calibration\"这一核心因果声明在数学上退化为\"matcher determines accuracy\"——后者由构造即为真（更宽松的匹配器必然判定更多答案正确），不是经验发现。\n- **Critical**: Propositions 1–3 的偏差界依赖匹配器 FNR/FPR（相对真值），但\"真值\"本身由事后裁定确立——用裁定标签估计 FNR/FPR 再用其界定裁定偏差，形成估计循环；若真值不可知则该界不可估计。\n- **Major**: 三个匹配器是嵌套处理（精确 ⊂ 宽容 ⊂ 裁定后扩展），非独立干预；裁定努力与匹配宽松度构成混淆，无法分离\"匹配器效应\"与\"裁定效应\"，缺少因果识别策略。\n- **Major**: \"domain-specific, up to 17×\"声明与自身统计矛盾——95% CI 极宽且 Holm 校正后仅极端对显著，多数两两比较为 null；从多数非显著结果推出\"领域特异性\"因果结论不成立。\n- **Major**: OOD 门控结论\"confidence useless—even harmful\"基于 N=30、无形式检验、无效应量 CI、无多重比较校正；self-consistency 结果以\"置信度与一致性负相关的模型\"为条件——这是对结果变量的事后子组选择（selection on outcome），引入偏倚。\n- **Major**: MSI 比较（中文自由形式 1.000 vs MMLU 选择题 0.334）同时混淆语言×作答格式×领域×题目选择，无法将差异归因于任何单一因素。\n- **Major**: Proposition 8' 假设完美退化，但 3/30 ≠ 1.0，\"no information\"声明仅为近似；且\"self-consistency retains discriminative power\"基于 n=30 可为小样本假象，三次重采样来自同一模型同一温度并非独立抽样。\n- **Minor**: \"temperature scaling not robust to relabeling\"是数学平凡事实（任何拟合标签的方法随标签改变而改变），并非需要 N=30 支撑的经验发现。\n- **Minor**: 30 题选取程序未描述（潜在选择偏倚）；4999 双判对缺报告标注者间一致性（kappa），标签质量未验证。\n- **Minor**: \"external validity from 600-item census\"声明自相矛盾——普查本身多数领域比较非显著，不能为 N=30 发现提供外部效度。\n\n建议: 将经验声明（需预注册裁定协议、以 600 题普查为主分析、全量报告 CI 与显著性）与形式命题（需显式验证假设成立性）分离，并将所有因果措辞（\"determined by\"/\"vanishes\"/\"useless\"）降级为带不确定性量化的关联性陈述。",
+    "sessionId": "session-233defac-83e4-445d-87e7-6c743894d8f5"
+  },
+  {
+    "role": "stat",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: N=30 的先导实验中 27/30=90% 的置信度值为 1.0（退化分布），却报告 ECE 至小数点后四位（0.0037），而 30 个样本的 ECE 粒度下限约为 1/30≈0.033，0.0037 这一精度在统计上不可能成立，属于假精度。",
+        "- Critical: 全文无任何样本量论证或功效分析；N=30 对 ECE、相关性、OOD 门控等推断的功效极低，但多处将\"indicative, n=30\"结果作为实质结论呈现（如自洽性\"消除\"过自信 OOD 答案）。",
+        "- Critical: \"ECE 跨域变化达 17×\"作为摘要级头条效应量报告，但所给 95% CI（0.028 [0.001,0.08] vs 0.479 [0.30,0.60]）严重重叠，比值本身的 CI 几乎必然包含 1；以点估计比值做头条而仅以括号注\"CI 宽\"淡化为误导性效应量报告。",
+        "- Critical: 95% CI 的计算方法（bootstrap？parametric？）未说明；在退化分布上 bootstrap 区间严重不可靠，下界 0.001 在 27/30=1.0 的数据上极可疑，缺乏方法透明度。"
+      ],
+      "Major": [
+        "- Major: Holm 校正的\"domain-pair p 值\"未指明所用检验（t 检验？bootstrap？Wilcoxon？），在退化/非正态数据上若用参数检验则假设被违反；亦未报告比较总数（6 域应为 C(6,2)=15 对），读者无法核实 Holm 校正的严格性。",
+        "- Major: 摘要\"40–50% 高置信 OOD 答案错误\"未给出分母（多少条属于 high-confidence OOD），在 N=30 中该子集可能仅个位数，比例的 CI 极宽却被当作可引用数字。",
+        "- Major: 先导 ECE 值（0.363、0.1297、0.0037）均为点估计，未报告任何标准误/置信区间/重复估计方差，无法判断跨 matcher 的差异是否超出抽样噪声。",
+        "- Major: 4999 与 1159 条\"dual-judged pairs\"未报告评分者间一致性（Cohen's κ 或 agreement rate），而全文核心论点正依赖 matcher/ adjudication 判定可靠性，缺失该方差来源报告属关键遗漏。",
+        "- Major: 摘要称自洽性信号对\"置信度与一致性负相关的模型\"有效，但未报告相关系数及其 CI、也未说明\"负相关\"判定阈值，效应量与方向性均无量化。"
+      ],
+      "Minor": [
+        "- Minor: ECE 小数位精度不一致（0.363 为 3 位、0.1297/0.0037 为 4 位），暗示按需选择精度，应统一至与样本量匹配的有效数字（约 2 位）。",
+        "- Minor: \"mean confidence 0.9963 vs 86.7%\"的比较在 27/30=1.0 时均值由 3 个非 1.0 值主导，该汇总统计量本身不具信息量却作为校准证据呈现。"
+      ]
+    },
+    "raw": "审查输出：\n\n- Critical: N=30 的先导实验中 27/30=90% 的置信度值为 1.0（退化分布），却报告 ECE 至小数点后四位（0.0037），而 30 个样本的 ECE 粒度下限约为 1/30≈0.033，0.0037 这一精度在统计上不可能成立，属于假精度。\n- Critical: 全文无任何样本量论证或功效分析；N=30 对 ECE、相关性、OOD 门控等推断的功效极低，但多处将\"indicative, n=30\"结果作为实质结论呈现（如自洽性\"消除\"过自信 OOD 答案）。\n- Critical: \"ECE 跨域变化达 17×\"作为摘要级头条效应量报告，但所给 95% CI（0.028 [0.001,0.08] vs 0.479 [0.30,0.60]）严重重叠，比值本身的 CI 几乎必然包含 1；以点估计比值做头条而仅以括号注\"CI 宽\"淡化为误导性效应量报告。\n- Critical: 95% CI 的计算方法（bootstrap？parametric？）未说明；在退化分布上 bootstrap 区间严重不可靠，下界 0.001 在 27/30=1.0 的数据上极可疑，缺乏方法透明度。\n- Major: Holm 校正的\"domain-pair p 值\"未指明所用检验（t 检验？bootstrap？Wilcoxon？），在退化/非正态数据上若用参数检验则假设被违反；亦未报告比较总数（6 域应为 C(6,2)=15 对），读者无法核实 Holm 校正的严格性。\n- Major: 摘要\"40–50% 高置信 OOD 答案错误\"未给出分母（多少条属于 high-confidence OOD），在 N=30 中该子集可能仅个位数，比例的 CI 极宽却被当作可引用数字。\n- Major: 先导 ECE 值（0.363、0.1297、0.0037）均为点估计，未报告任何标准误/置信区间/重复估计方差，无法判断跨 matcher 的差异是否超出抽样噪声。\n- Major: 4999 与 1159 条\"dual-judged pairs\"未报告评分者间一致性（Cohen's κ 或 agreement rate），而全文核心论点正依赖 matcher/ adjudication 判定可靠性，缺失该方差来源报告属关键遗漏。\n- Major: 摘要称自洽性信号对\"置信度与一致性负相关的模型\"有效，但未报告相关系数及其 CI、也未说明\"负相关\"判定阈值，效应量与方向性均无量化。\n- Minor: ECE 小数位精度不一致（0.363 为 3 位、0.1297/0.0037 为 4 位），暗示按需选择精度，应统一至与样本量匹配的有效数字（约 2 位）。\n- Minor: \"mean confidence 0.9963 vs 86.7%\"的比较在 27/30=1.0 时均值由 3 个非 1.0 值主导，该汇总统计量本身不具信息量却作为校准证据呈现。\n\n建议: 统一将所有 ECE/比值/比例降为与样本量匹配的有效数字并附 bootstrap（或排列）95% CI 与所用检验名称、比较总数、评分者间一致性，对 N=30 退化数据上的结论仅作探索性陈述、不作显著性或效应量头条。",
+    "sessionId": "session-a4910ccb-3528-4abc-9bda-2cb8405dc76a"
+  },
+  {
+    "role": "experiment",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: N=30 试点中\"逐行裁定后扩展 matcher\"达到 100% 准确率，本质是把 matcher 拟合到测试样本本身（逐行 patch 直到没错），ECE=0.0037 完全 in-sample，无任何 held-out 验证，\"过度自信信号消失\"这一核心结论零外部效度。",
+        "- Critical: 门控分析缺少对照组——只比较 confidence-gating vs self-consistency-gating，没有随机门控 / 无门控 / oracle 上界基线，无法判断 self-consistency 是真有用还是仅胜过一个坏信号。"
+      ],
+      "Major": [
+        "- Major: self-consistency 仅用 3 次 resample（标准实践 10–40+），且未对 K 做消融（K=1/3/5/10），Proposition 8' 的\"保留判别力\"结论是否在其它 K 成立未知。",
+        "- Major: 全文无 seed 管理——30 项试点抽样、600 项 MMLU 采样、3 次 resample 的随机性均未报告种子，所有随机结果不可复现且可能被选择性呈现。",
+        "- Major: resample 温度（self-consistency 的采样温度）未报告；self-consistency 对温度高度敏感，缺失该超参结果可能无法复现。",
+        "- Major: MSI 跨协议比较（中文自由形式 1.000 vs MMLU 选择题 0.334）同时混淆了语言×任务格式×matcher 类型三方变量，并非受控对比，\"protocol-dependent\"泛化结论站不住。",
+        "- Major: smECE_sem 与 MSI 两个新指标无独立消融——两者同时引入，未证明各自单独必要、孰主孰次，甚至可能一个冗余。",
+        "- Major: 域特异性结论（4×/17×）用点估计比值 + 极宽 CI，Holm 校正后仅极端对显著，统计强度不足以支撑\"calibration is domain-specific\"的泛化主张。",
+        "- Major: 温度缩放\"对 relabel 不鲁棒\"是断言还是实测未明——未报告 T 如何拟合、在哪个 matcher 的标签上拟合、在哪个上评估，缺少完整的 fit-on-A/eval-on-B 交叉实验。",
+        "- Major: 9 模型/5 家族的选取标准未说明，疑似便利样本；且 4999 dual-judged pairs 的标注一致性（IAA）/裁定流程未报告，直接影响全部下游校准测量的标签质量。"
+      ],
+      "Minor": [
+        "- Minor: ECE 分箱方案（bin 数、等宽 vs 等频）未指定，而\"分箱型 ECE 不可靠\"是论文核心论点之一，该超参应显式报告并消融。",
+        "- Minor: OOD 的定义与选取流程未在可见部分给出；门控结论\"高置信 OOD 40–50% 错\"完全依赖什么算 OOD，缺此则结论不可解读。",
+        "- Minor: Propositions 1–3 的 matcher flip-rate / FNR·FPR 不对称界界紧性无实证检验——仅推导而未在数据上验证 bound 是否可达到/是否松弛。"
+      ]
+    },
+    "raw": "# 实验设计对抗审查\n\n- Critical: N=30 试点中\"逐行裁定后扩展 matcher\"达到 100% 准确率，本质是把 matcher 拟合到测试样本本身（逐行 patch 直到没错），ECE=0.0037 完全 in-sample，无任何 held-out 验证，\"过度自信信号消失\"这一核心结论零外部效度。\n- Critical: 门控分析缺少对照组——只比较 confidence-gating vs self-consistency-gating，没有随机门控 / 无门控 / oracle 上界基线，无法判断 self-consistency 是真有用还是仅胜过一个坏信号。\n- Major: self-consistency 仅用 3 次 resample（标准实践 10–40+），且未对 K 做消融（K=1/3/5/10），Proposition 8' 的\"保留判别力\"结论是否在其它 K 成立未知。\n- Major: 全文无 seed 管理——30 项试点抽样、600 项 MMLU 采样、3 次 resample 的随机性均未报告种子，所有随机结果不可复现且可能被选择性呈现。\n- Major: resample 温度（self-consistency 的采样温度）未报告；self-consistency 对温度高度敏感，缺失该超参结果可能无法复现。\n- Major: MSI 跨协议比较（中文自由形式 1.000 vs MMLU 选择题 0.334）同时混淆了语言×任务格式×matcher 类型三方变量，并非受控对比，\"protocol-dependent\"泛化结论站不住。\n- Major: smECE_sem 与 MSI 两个新指标无独立消融——两者同时引入，未证明各自单独必要、孰主孰次，甚至可能一个冗余。\n- Major: 域特异性结论（4×/17×）用点估计比值 + 极宽 CI，Holm 校正后仅极端对显著，统计强度不足以支撑\"calibration is domain-specific\"的泛化主张。\n- Major: 温度缩放\"对 relabel 不鲁棒\"是断言还是实测未明——未报告 T 如何拟合、在哪个 matcher 的标签上拟合、在哪个上评估，缺少完整的 fit-on-A/eval-on-B 交叉实验。\n- Minor: ECE 分箱方案（bin 数、等宽 vs 等频）未指定，而\"分箱型 ECE 不可靠\"是论文核心论点之一，该超参应显式报告并消融。\n- Minor: OOD 的定义与选取流程未在可见部分给出；门控结论\"高置信 OOD 40–50% 错\"完全依赖什么算 OOD，缺此则结论不可解读。\n- Major: 9 模型/5 家族的选取标准未说明，疑似便利样本；且 4999 dual-judged pairs 的标注一致性（IAA）/裁定流程未报告，直接影响全部下游校准测量的标签质量。\n- Minor: Propositions 1–3 的 matcher flip-rate / FNR·FPR 不对称界界紧性无实证检验——仅推导而未在数据上验证 bound 是否可达到/是否松弛。\n\n建议: 设立 held-out matcher 验证集与随机/oracle 门控对照组，对 K(resample 数)、温度、bin 数、seed 做完整网格消融，并用受控同协议对比替换混淆性跨域 MSI 比较。",
+    "sessionId": "session-a703896c-31dd-43eb-8fa1-a43d295b5f72"
+  },
+  {
+    "role": "novelty",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 核心“新颖”发现（matcher 决定测得 calibration）本质上是评估方法对标签匹配方式的敏感性这一已知现象的重新表述；字符串匹配 vs. 语义匹配影响 accuracy/calibration 在生成式 QA、MMLU 评估方法论、标注噪声对分类指标影响的文献中已是既定事实，本文未引用也未区分这些工作，差异性与增量贡献被显著夸大。",
+        "- Critical: Propositions 1â3（将 matcher 依赖性界定为 flip rate + 不对称项 |FNRÂ·p â FPR(1âp)|）极可能只是“标签噪声扭曲 calibration”这一已知结果的形式化重推；测量偏差的有界性是已知推导，被包装为“新颖形式化贡献”，GAP 是否真实存在存疑。"
+      ],
+      "Major": [
+        "- Major: Proposition 8'（confidence degeneracy 下 confidence-threshold gate 不携带 correctness 信息、self-consistency 保留判别力）近乎同义反复：30 个值有 27 个恰为 1.0 时，按构造定义置信度阈值即不携带任何信息，这是重言式而非 insight，却被抬升为“OOD-aware gating rule 的形式基础”。",
+        "- Major: âbinning-based ECE 在 degenerate 分布上不可靠”并非新颖；ECE 分箱偏差/方差局限与 degenerate/skewed 分布下的 artifact 已有文献（smECE 及 ECE 估计器性质研究），本文未引用也未区分，把已知局限当作发现报告。",
+        "- Major: OOD-aware gating 分析（“self-reported confidence 在 OOD 上无用甚至有害；self-consistency 有效”）重复了已确立的结果（confidence 在 OOD 下失效为分布外/对齐文献所矚；self-consistency 见 Wang et al. 2022 及后续），未讨论与 self-consistency 用于 OOD gating 的关系，增量不清。",
+        "- Major: 摘要存在规格不匹配：N=30 的 pilot 却衍生出多条“Propositions”，又将 600-item census 定性为“external validity”；在 N=30 上建立微观建模产出的命题在同一小样本上几乎不可证伪，真正新颖的贡献实际收缩为“标注前置 + 报告 binning-free metric”等实践建议，属于 sound practice 而非 novel research output。"
+      ],
+      "Minor": [
+        "- Minor: 所谓 GAP（“self-reported confidence 很少在 agent 自身任务分布上被验证”）可能被夸大：task-specific calibration evaluation 在实践中很常见；真正的、未被解决的细分 gap（agent 的自报/元认知 confidence vs. 模型 logprob）未与更宽泛的 calibration 文献做清晰区隔。",
+        "- Minor: “域特异性 calibration”与“ECE 跨域变化高达 17×”属已知现象（calibration 随 task/domain 变化），且 95% CI 极宽、Holm 校正后仅最极端 domain pair 显著，“17×”的 headlining 弱化了实质，不构成新颖发现。",
+        "- Minor: 600-item census 被描述为提供“external validity”，但实质上只是复现了 matcher 依赖、degeneracy、domain 特异性等已知/既定现象，并未验证新机制，外部效力的定位过度。"
+      ]
+    },
+    "raw": "- Critical: 核心“新颖”发现（matcher 决定测得 calibration）本质上是评估方法对标签匹配方式的敏感性这一已知现象的重新表述；字符串匹配 vs. 语义匹配影响 accuracy/calibration 在生成式 QA、MMLU 评估方法论、标注噪声对分类指标影响的文献中已是既定事实，本文未引用也未区分这些工作，差异性与增量贡献被显著夸大。\n- Critical: Propositions 1â3（将 matcher 依赖性界定为 flip rate + 不对称项 |FNRÂ·p â FPR(1âp)|）极可能只是“标签噪声扭曲 calibration”这一已知结果的形式化重推；测量偏差的有界性是已知推导，被包装为“新颖形式化贡献”，GAP 是否真实存在存疑。\n- Major: Proposition 8'（confidence degeneracy 下 confidence-threshold gate 不携带 correctness 信息、self-consistency 保留判别力）近乎同义反复：30 个值有 27 个恰为 1.0 时，按构造定义置信度阈值即不携带任何信息，这是重言式而非 insight，却被抬升为“OOD-aware gating rule 的形式基础”。\n- Major: âbinning-based ECE 在 degenerate 分布上不可靠”并非新颖；ECE 分箱偏差/方差局限与 degenerate/skewed 分布下的 artifact 已有文献（smECE 及 ECE 估计器性质研究），本文未引用也未区分，把已知局限当作发现报告。\n- Major: OOD-aware gating 分析（“self-reported confidence 在 OOD 上无用甚至有害；self-consistency 有效”）重复了已确立的结果（confidence 在 OOD 下失效为分布外/对齐文献所矚；self-consistency 见 Wang et al. 2022 及后续），未讨论与 self-consistency 用于 OOD gating 的关系，增量不清。\n- Major: 摘要存在规格不匹配：N=30 的 pilot 却衍生出多条“Propositions”，又将 600-item census 定性为“external validity”；在 N=30 上建立微观建模产出的命题在同一小样本上几乎不可证伪，真正新颖的贡献实际收缩为“标注前置 + 报告 binning-free metric”等实践建议，属于 sound practice 而非 novel research output。\n- Minor: 所谓 GAP（“self-reported confidence 很少在 agent 自身任务分布上被验证”）可能被夸大：task-specific calibration evaluation 在实践中很常见；真正的、未被解决的细分 gap（agent 的自报/元认知 confidence vs. 模型 logprob）未与更宽泛的 calibration 文献做清晰区隔。\n- Minor: “域特异性 calibration”与“ECE 跨域变化高达 17×”属已知现象（calibration 随 task/domain 变化），且 95% CI 极宽、Holm 校正后仅最极端 domain pair 显著，“17×”的 headlining 弱化了实质，不构成新颖发现。\n- Minor: 600-item census 被描述为提供“external validity”，但实质上只是复现了 matcher 依赖、degeneracy、domain 特异性等已知/既定现象，并未验证新机制，外部效力的定位过度。\n\n建议: 将贡献重新定位为“已知标签噪声/评估敏感性现象在 agent 自报 confidence 场景下的实证与实践指南”，明确引用并区分标签噪声影响 calibration、smECE/ECE 估计器局限、self-consistency 三类既有工作，删去对 Propositions 1â3 与 8' 的“新颖形式化贡献”定性，并将 N=30 的命题降格为观察性假设。",
+    "sessionId": "session-c986ef81-c828-4e8f-9a21-d3a57214039c"
+  },
+  {
+    "role": "repro",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 全文未给出任何随机种子或随机状态（`seed`/`torch.manual_seed`/`numpy.random`）。摘要中\"three resamples\"的自一致性信号、MMLU 抽样、N=30 pilot 的题目选取均依赖随机过程，无 seed 则两次运行得到的 ECE、MSI、CI 区间皆不可对账。",
+        "- Critical: 标注流程不可复现。\"per-row adjudication of residual errors\" 是人工逐行裁定，全文未提供标注规范文档、标注者数量、inter-annotator agreement（如 Cohen's κ）、裁定准则文本。`4999 dual-judged pairs` 的标签是复现的核心产物，但裁定协议缺失即等价于数据缺失。",
+        "- Critical: 无模型版本/权重快照。文中出现 Qwen2.5-7B、\"nine models spanning five families\"，但未给出 HuggingFace commit hash、模型卡版本、量化配置、推理后端（vLLM/Transformers/闭源 API）。同一\"Qwen2.5-7B\"在不同 commit 下输出分布可能漂移，使 ECE=0.479 等点估计无法对账。",
+        "- Critical: 缺少解码配置快照。温度（温度缩放实验与生成温度同名易混）、`top_p`、`max_tokens`、`do_sample`、`n` 等采样参数未声明。自一致性\"three resamples\"尤其依赖 `temperature`/`top_p`，无配置则该结论无法复现。",
+        "- Critical: 无数据许可声明。MMLU（MIT License）、Chinese free-form set 的来源与许可证均未披露；600 items 跨六个 domain 的子集是否为 MMLU 原始拆分、是否含衍生标注、标注语料的再分发条款均未说明，违反可复现数据披露惯例。",
+        "- Critical: 无数据/代码哈希对账机制。`600 items × 9-model census`、`300 items (4 models, 1159 pairs)`、N=30 pilot 均无 SHA-256/`git rev-parse`/`datasets` 加载指纹，无法验证下游使用的快照与论文声称的快照一致；匹配器与 `smECE_sem` 亦无参考实现哈希。"
+      ],
+      "Major": [
+        "- Major: 匹配器定义不可执行。\"exact-string\"、\"first tolerant matcher\"、\"matcher extended after adjudication\" 三档以自然语言描述，缺少正则/规范化函数/容差阈值的形式化定义；读者无法重建 matcher flip rate 与 FNR/FPR 所依赖的同一匹配器。",
+        "- Major: ECE 数值精度可疑对账。摘要给出 ECE=0.1297、0.0037、0.363 等多位小数，但未声明 binning 方案（等宽/等频、bin 数）、`smECE_sem` 的平滑参数与 soft-label 构造方式，数值无法被独立复算到同位精度。",
+        "- Major: 无一键复现入口。未见 `README` 复现脚本、`requirements.txt`/`environment.yml`/容器镜像/Dockerfile、`make reproduce` 或 `bash run_all.sh`；命题 1–3、8′ 的经验验证与 census 表均无可执行管线。",
+        "- Major: 外部有效性声称与样本量脱节。\"external validity from 600-item × 9-model census\" 与\"indicative, n=30\"并存，但未给出采样协议（题目是否分层、是否固定 split id）、bootstrap 重采样次数与 CI 构造方法（percentile/BCa），`95% CI` 不可复现。",
+        "- Major: `MSI` 计算未给出输入与代码。\"MSI 1.000 vs 0.334\" 为关键跨协议对比，但 MSI 的扰动集合（哪些匹配器变体参与 sensitivity 计算）、是否需人类 gold 标签等均未形式化，导致该数字无法被对账。"
+      ],
+      "Minor": [
+        "- Minor: LaTeX 中存在排版泄露 `\\fix`/`\\new` 宏且正文出现一处未渲染断词\"v…\"（截断处），影响源码快照的可解析性，建议发布前 `git clean`。",
+        "- Minor: 摘要内\"point-estimate ratio\"与\"Holm-corrected p-values\"未说明检验族（family）规模与多重比较的完整列表，复现者无法重建 Holm 序列。"
+      ]
+    },
+    "raw": "# 可复现性审查报告\n\n- Critical: 全文未给出任何随机种子或随机状态（`seed`/`torch.manual_seed`/`numpy.random`）。摘要中\"three resamples\"的自一致性信号、MMLU 抽样、N=30 pilot 的题目选取均依赖随机过程，无 seed 则两次运行得到的 ECE、MSI、CI 区间皆不可对账。\n- Critical: 标注流程不可复现。\"per-row adjudication of residual errors\" 是人工逐行裁定，全文未提供标注规范文档、标注者数量、inter-annotator agreement（如 Cohen's κ）、裁定准则文本。`4999 dual-judged pairs` 的标签是复现的核心产物，但裁定协议缺失即等价于数据缺失。\n- Critical: 无模型版本/权重快照。文中出现 Qwen2.5-7B、\"nine models spanning five families\"，但未给出 HuggingFace commit hash、模型卡版本、量化配置、推理后端（vLLM/Transformers/闭源 API）。同一\"Qwen2.5-7B\"在不同 commit 下输出分布可能漂移，使 ECE=0.479 等点估计无法对账。\n- Critical: 缺少解码配置快照。温度（温度缩放实验与生成温度同名易混）、`top_p`、`max_tokens`、`do_sample`、`n` 等采样参数未声明。自一致性\"three resamples\"尤其依赖 `temperature`/`top_p`，无配置则该结论无法复现。\n- Critical: 无数据许可声明。MMLU（MIT License）、Chinese free-form set 的来源与许可证均未披露；600 items 跨六个 domain 的子集是否为 MMLU 原始拆分、是否含衍生标注、标注语料的再分发条款均未说明，违反可复现数据披露惯例。\n- Critical: 无数据/代码哈希对账机制。`600 items × 9-model census`、`300 items (4 models, 1159 pairs)`、N=30 pilot 均无 SHA-256/`git rev-parse`/`datasets` 加载指纹，无法验证下游使用的快照与论文声称的快照一致；匹配器与 `smECE_sem` 亦无参考实现哈希。\n- Major: 匹配器定义不可执行。\"exact-string\"、\"first tolerant matcher\"、\"matcher extended after adjudication\" 三档以自然语言描述，缺少正则/规范化函数/容差阈值的形式化定义；读者无法重建 matcher flip rate 与 FNR/FPR 所依赖的同一匹配器。\n- Major: ECE 数值精度可疑对账。摘要给出 ECE=0.1297、0.0037、0.363 等多位小数，但未声明 binning 方案（等宽/等频、bin 数）、`smECE_sem` 的平滑参数与 soft-label 构造方式，数值无法被独立复算到同位精度。\n- Major: 无一键复现入口。未见 `README` 复现脚本、`requirements.txt`/`environment.yml`/容器镜像/Dockerfile、`make reproduce` 或 `bash run_all.sh`；命题 1–3、8′ 的经验验证与 census 表均无可执行管线。\n- Major: 外部有效性声称与样本量脱节。\"external validity from 600-item × 9-model census\" 与\"indicative, n=30\"并存，但未给出采样协议（题目是否分层、是否固定 split id）、bootstrap 重采样次数与 CI 构造方法（percentile/BCa），`95% CI` 不可复现。\n- Major: `MSI` 计算未给出输入与代码。\"MSI 1.000 vs 0.334\" 为关键跨协议对比，但 MSI 的扰动集合（哪些匹配器变体参与 sensitivity 计算）、是否需人类 gold 标签等均未形式化，导致该数字无法被对账。\n- Minor: LaTeX 中存在排版泄露 `\\fix`/`\\new` 宏且正文出现一处未渲染断词\"v…\"（截断处），影响源码快照的可解析性，建议发布前 `git clean`。\n- Minor: 摘要内\"point-estimate ratio\"与\"Holm-corrected p-values\"未说明检验族（family）规模与多重比较的完整列表，复现者无法重建 Holm 序列。\n\n建议: 随论文附 `repro/` 目录，包含固定 `seed=42`、模型 commit hash、解码参数 YAML、匹配器与标注协议的版本化代码、带 SHA-256 的数据快照与许可文件、以及一条 `make reproduce` 管线，并在附录给出标注者 κ 与 bootstrap 配置。",
+    "sessionId": "session-ebe23f82-2d69-45cb-a508-d69f3e5b1507"
+  },
+  {
+    "role": "writing",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 摘要约 450+ 词，远超常规 150â250 词限制；多层嵌套括号与分号长句交织（如 \"in-sample illustrative, not a validated bound; external validity from 600-item Ã 9-model census\" 嵌套在括号内），严重损害单独可读性，失去摘要功能。",
+        "- Critical: N=30 研究被反复定性为 \"illustrative example\"\"external-validity demonstration\"\"proof-of-concept pilot\" 三种矛盾身份，既声称 \"not a validated bound\" 又断言 \"external validity from 600-item Ã 9-model census\"，后文又将该 census 称为 \"proof-of-concept pilot\"，读者无法判断证据地位。"
+      ],
+      "Major": [
+        "- Major: \"smECE$_{\\text{sem}}$\" 在关键发现行（\"\\textit{Our central finding isâ¦}\"）首次出现，但摘要正文从未定义或引出该符号；摘要只提到 \"semantic soft-label calibration estimator\"，缩写与命名不对应。",
+        "- Major: 命题编号从 \"Propositions~1--3\" 直接跳至 \"Proposition~8$'$\"，4â8 未提及；\"8â²\" 撇号记法未做任何说明，读者不知原命题 8 为何、撇号修改了什么。",
+        "- Major: 数字不一致：300 items Ã 4 models = 1200，却报 \"1159 dual-judged pairs\"；600 items Ã 9 models = 5400，却报 \"4999 dual-judged pairs\"；缺失的 41 与 401 个 pair 无任何解释（过滤、缺失、定义不同？）。",
+        "- Major: \"our 30-item probe\"（OOD gating）与前文 \"N=30 pilot\"（校准测量）是否同一批数据未作区分；若相同，则同一批 30 条既被称为 \"agent's own task distribution\" 又被称为 \"out-of-distribution\"，性质矛盾。",
+        "- Major: \"a Chinese free-form set\"（MSI 1.000）突然出现，未说明它与 600-item / six-domain census 的关系——是其中一个 domain、独立数据集、还是另一趟实验？",
+        "- Major: 摘要结构缺乏层次，将方法论描述、形式命题、跨域 census、OOD gating、三条建议无序堆叠在单段内，无明确 \"问题→方法→发现→结论\" 脉络。"
+      ],
+      "Minor": [
+        "- Minor: ECE 小数位精度不一致：0.363（3 位） vs 0.1297、0.0037（4 位）；同一指标应统一精度。",
+        "- Minor: \"up to $17\\times$ across six\"ââ\"six\" 指代不明（six domains? six subjects? 前文写 \"three subjects\"，此处突然省略名词）。",
+        "- Minor: 关键词含 \"self-improvement\"，与论文实际聚焦的校准测量方法论主题错位；应替换为 \"calibration\"\"label adjudication\"\"confidence gating\" 等。",
+        "- Minor: \"\\textit{Our central finding isâ¦}\" 作为孤立句置于 Keywords 与 \\texttt{\\textbackslash section\\{Introduction\\}} 之间，既不属摘要也不属任何小节，结构归属不明。",
+        "- Minor: \"temperature scaling is not robust to relabeling\" 在摘要中被断言但无任何支撑（无引用、无实验、无命题）。",
+        "- Minor: 摘要含大量定量结果（ECE、CI、MSI、p 值、百分比），却未引用任何 Table 或 Figure 编号，读者无前向指针核实。"
+      ]
+    },
+    "raw": "# 写作对抗审查报告\n\n- Critical: 摘要约 450+ 词，远超常规 150â250 词限制；多层嵌套括号与分号长句交织（如 \"in-sample illustrative, not a validated bound; external validity from 600-item Ã 9-model census\" 嵌套在括号内），严重损害单独可读性，失去摘要功能。\n- Critical: N=30 研究被反复定性为 \"illustrative example\"\"external-validity demonstration\"\"proof-of-concept pilot\" 三种矛盾身份，既声称 \"not a validated bound\" 又断言 \"external validity from 600-item Ã 9-model census\"，后文又将该 census 称为 \"proof-of-concept pilot\"，读者无法判断证据地位。\n- Major: \"smECE$_{\\text{sem}}$\" 在关键发现行（\"\\textit{Our central finding isâ¦}\"）首次出现，但摘要正文从未定义或引出该符号；摘要只提到 \"semantic soft-label calibration estimator\"，缩写与命名不对应。\n- Major: 命题编号从 \"Propositions~1--3\" 直接跳至 \"Proposition~8$'$\"，4â8 未提及；\"8â²\" 撇号记法未做任何说明，读者不知原命题 8 为何、撇号修改了什么。\n- Major: 数字不一致：300 items Ã 4 models = 1200，却报 \"1159 dual-judged pairs\"；600 items Ã 9 models = 5400，却报 \"4999 dual-judged pairs\"；缺失的 41 与 401 个 pair 无任何解释（过滤、缺失、定义不同？）。\n- Major: \"our 30-item probe\"（OOD gating）与前文 \"N=30 pilot\"（校准测量）是否同一批数据未作区分；若相同，则同一批 30 条既被称为 \"agent's own task distribution\" 又被称为 \"out-of-distribution\"，性质矛盾。\n- Major: \"a Chinese free-form set\"（MSI 1.000）突然出现，未说明它与 600-item / six-domain census 的关系——是其中一个 domain、独立数据集、还是另一趟实验？\n- Major: 摘要结构缺乏层次，将方法论描述、形式命题、跨域 census、OOD gating、三条建议无序堆叠在单段内，无明确 \"问题→方法→发现→结论\" 脉络。\n- Minor: ECE 小数位精度不一致：0.363（3 位） vs 0.1297、0.0037（4 位）；同一指标应统一精度。\n- Minor: \"up to $17\\times$ across six\"ââ\"six\" 指代不明（six domains? six subjects? 前文写 \"three subjects\"，此处突然省略名词）。\n- Minor: 关键词含 \"self-improvement\"，与论文实际聚焦的校准测量方法论主题错位；应替换为 \"calibration\"\"label adjudication\"\"confidence gating\" 等。\n- Minor: \"\\textit{Our central finding isâ¦}\" 作为孤立句置于 Keywords 与 \\texttt{\\textbackslash section\\{Introduction\\}} 之间，既不属摘要也不属任何小节，结构归属不明。\n- Minor: \"temperature scaling is not robust to relabeling\" 在摘要中被断言但无任何支撑（无引用、无实验、无命题）。\n- Minor: 摘要含大量定量结果（ECE、CI、MSI、p 值、百分比），却未引用任何 Table 或 Figure 编号，读者无前向指针核实。\n\n建议: 将摘要压缩至 200 词内、固定 \"问题→方法→发现→建议\" 四段式结构，统一所有数字精度与术语定义，消除 N=30 / 600-item 的矛盾定性，并补齐 pair 计数差额与命题编号缺口。",
+    "sessionId": "session-debab768-3b0b-4969-a126-6f4c7c577c3d"
+  },
+  {
+    "role": "ethics",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 大规模人工标注（4999 dual-judged pairs、逐行 adjudication、600 items 跨多判官）全程未披露 IRB/伦理审查、标注者知情同意、报酬与劳动保护，属人体/人工标注研究却无任何伦理合规说明。",
+        "- Critical: 数据许可完全缺失——MMLU、Chinese free-form set、600-item census 等数据集的来源、License（MMLU 为 MIT，其余不明）与再分发权均未声明，无法判断是否合法合规使用。"
+      ],
+      "Major": [
+        "- Major: 隐私风险未评估——Chinese free-form set 及模型自由生成内容可能含 PII，论文未说明是否做过 PII 过滤、脱敏或隐私审查。",
+        "- Major: 误用风险——\"matcher 放宽到 100% 准确率\"虽加了 in-sample 警告，但该方法本身是可复现的\"调 matcher 刷校准\"配方，易被滥用于制造虚假校准声明，caveat 不足以覆盖。",
+        "- Major: 利益冲突未披露——点名评测商用模型（Qwen2.5-7B 及\"五大模型家族\"），既未声明各模型 License 条款，也未披露作者是否与模型厂商存在隶属或商业关系。"
+      ],
+      "Minor": [
+        "- Minor: 双盲潜在泄露——突出点名特定厂商模型且给出细分 ECE 数值，若作者与该厂商有关联，可能间接暴露身份（虽未直接违规）。",
+        "- Minor: 安全误用——基于 N=30 的小样本就给出\"部署级 gating/人机交接\"建议，若被直接采纳用于真实 deferral 决策存在安全风险。"
+      ]
+    },
+    "raw": "- Critical: 大规模人工标注（4999 dual-judged pairs、逐行 adjudication、600 items 跨多判官）全程未披露 IRB/伦理审查、标注者知情同意、报酬与劳动保护，属人体/人工标注研究却无任何伦理合规说明。\n- Critical: 数据许可完全缺失——MMLU、Chinese free-form set、600-item census 等数据集的来源、License（MMLU 为 MIT，其余不明）与再分发权均未声明，无法判断是否合法合规使用。\n- Major: 隐私风险未评估——Chinese free-form set 及模型自由生成内容可能含 PII，论文未说明是否做过 PII 过滤、脱敏或隐私审查。\n- Major: 误用风险——\"matcher 放宽到 100% 准确率\"虽加了 in-sample 警告，但该方法本身是可复现的\"调 matcher 刷校准\"配方，易被滥用于制造虚假校准声明，caveat 不足以覆盖。\n- Major: 利益冲突未披露——点名评测商用模型（Qwen2.5-7B 及\"五大模型家族\"），既未声明各模型 License 条款，也未披露作者是否与模型厂商存在隶属或商业关系。\n- Minor: 双盲潜在泄露——突出点名特定厂商模型且给出细分 ECE 数值，若作者与该厂商有关联，可能间接暴露身份（虽未直接违规）。\n- Minor: 安全误用——基于 N=30 的小样本就给出\"部署级 gating/人机交接\"建议，若被直接采纳用于真实 deferral 决策存在安全风险。\n\n建议: 新增\"数据与伦理\"小节，集中披露各数据集 License 与来源、标注协议（知情同意/报酬/IRB 状态）、PII 过滤措施、模型 License 与作者利益冲突声明，并显式警告 matcher-relaxation 不得用于制造校准声明、小样本结论不得直接用于部署级 gating。",
+    "sessionId": "session-a76f2595-cc15-4cc2-af2c-0a5bf2841dfa"
+  }
+]

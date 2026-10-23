@@ -1,0 +1,403 @@
+{
+  "meta": {
+    "tex": "F:\\Research\\F1_Single_10page\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\Research\\_inbox\\F1-F5_F45_2026-08-26\\supplementary"
+    ],
+    "timestamp": "2026-08-28T09:49:01+00:00"
+  },
+  "tables": [
+    {
+      "line": 52,
+      "has_tabular": true,
+      "caption": "GAP: prior work vs.\\ ours. To our knowledge, no prior work measures paired $\\Delta$MAE on MMLU with 4 baselines.",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "Ours",
+          "col": "Post-hoc baselines / temp only / no",
+          "text": "4",
+          "value": 4.0,
+          "support": "evidence"
+        }
+      ]
+    },
+    {
+      "line": 104,
+      "has_tabular": true,
+      "caption": "Main $\\Delta$MAE on MMLU 500 (6{,}000 paired cells, Wilcoxon $p$, Bonferroni $k{=}3$, $\\alpha'{=}0.017$). $^*$ denotes significance.",
+      "caption_decimals": [
+        {
+          "token": "0.017",
+          "support": "evidence"
+        }
+      ],
+      "cells": [
+        {
+          "row": "Qwen3:4b",
+          "col": "CLES",
+          "text": "0.68",
+          "value": 0.68,
+          "support": "evidence"
+        },
+        {
+          "row": "Gemma3:4b",
+          "col": "CLES",
+          "text": "0.62",
+          "value": 0.62,
+          "support": "body"
+        },
+        {
+          "row": "Qwen2.5:14B",
+          "col": "CLES",
+          "text": "0.60",
+          "value": 0.6,
+          "support": "unsupported"
+        },
+        {
+          "row": "Gemma3:4b",
+          "col": "CLES",
+          "text": "0.65",
+          "value": 0.65,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen3:4b",
+          "col": "MAE",
+          "text": "-0.029",
+          "value": -0.029,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen3:4b",
+          "col": "CLES",
+          "text": "0.44",
+          "value": 0.44,
+          "support": "unsupported"
+        }
+      ]
+    },
+    {
+      "line": 125,
+      "has_tabular": true,
+      "caption": "Four post-hoc baselines on Qwen3:4b instruction channel (same 500 paired). All remain significant at $p < .02$ (Bonferroni $\\alpha'{=}0.017$). Shifts ",
+      "caption_decimals": [
+        {
+          "token": "0.017",
+          "support": "evidence"
+        },
+        {
+          "token": "0.42",
+          "support": "body"
+        },
+        {
+          "token": "0.35",
+          "support": "evidence"
+        },
+        {
+          "token": "0.37",
+          "support": "evidence"
+        },
+        {
+          "token": "0.34",
+          "support": "evidence"
+        },
+        {
+          "token": "0.38",
+          "support": "evidence"
+        }
+      ],
+      "cells": []
+    },
+    {
+      "line": 209,
+      "has_tabular": true,
+      "caption": "Full per-model per-channel stats (MMLU 500, 6{,}000 paired).",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "Qwen3:4b",
+          "col": "d_z",
+          "text": "0.42",
+          "value": 0.42,
+          "support": "body"
+        },
+        {
+          "row": "Qwen3:4b",
+          "col": "CLES",
+          "text": "0.68",
+          "value": 0.68,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen3:4b",
+          "col": "d_z",
+          "text": "0.15",
+          "value": 0.15,
+          "support": "unsupported"
+        },
+        {
+          "row": "Qwen3:4b",
+          "col": "CLES",
+          "text": "0.55",
+          "value": 0.55,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen3:4b",
+          "col": "p",
+          "text": "0.18",
+          "value": 0.18,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen3:4b",
+          "col": "MAE",
+          "text": "-0.029",
+          "value": -0.029,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen3:4b",
+          "col": "d_z",
+          "text": "-0.12",
+          "value": -0.12,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen3:4b",
+          "col": "CLES",
+          "text": "0.44",
+          "value": 0.44,
+          "support": "unsupported"
+        },
+        {
+          "row": "Qwen3:4b",
+          "col": "p",
+          "text": "0.70",
+          "value": 0.7,
+          "support": "evidence"
+        },
+        {
+          "row": "Gemma3:4b",
+          "col": "d_z",
+          "text": "0.31",
+          "value": 0.31,
+          "support": "evidence"
+        },
+        {
+          "row": "Gemma3:4b",
+          "col": "CLES",
+          "text": "0.62",
+          "value": 0.62,
+          "support": "body"
+        },
+        {
+          "row": "Gemma3:4b",
+          "col": "p",
+          "text": "0.024",
+          "value": 0.024,
+          "support": "evidence"
+        },
+        {
+          "row": "Gemma3:4b",
+          "col": "d_z",
+          "text": "0.38",
+          "value": 0.38,
+          "support": "evidence"
+        },
+        {
+          "row": "Gemma3:4b",
+          "col": "CLES",
+          "text": "0.65",
+          "value": 0.65,
+          "support": "evidence"
+        },
+        {
+          "row": "Gemma3:4b",
+          "col": "p",
+          "text": "0.007",
+          "value": 0.007,
+          "support": "evidence"
+        },
+        {
+          "row": "Gemma3:4b",
+          "col": "d_z",
+          "text": "0.10",
+          "value": 0.1,
+          "support": "evidence"
+        },
+        {
+          "row": "Gemma3:4b",
+          "col": "CLES",
+          "text": "0.54",
+          "value": 0.54,
+          "support": "unsupported"
+        },
+        {
+          "row": "Gemma3:4b",
+          "col": "p",
+          "text": "0.35",
+          "value": 0.35,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-R1:7B",
+          "col": "d_z",
+          "text": "0.22",
+          "value": 0.22,
+          "support": "unsupported"
+        },
+        {
+          "row": "DeepSeek-R1:7B",
+          "col": "CLES",
+          "text": "0.58",
+          "value": 0.58,
+          "support": "unsupported"
+        },
+        {
+          "row": "DeepSeek-R1:7B",
+          "col": "p",
+          "text": "0.089",
+          "value": 0.089,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-R1:7B",
+          "col": "d_z",
+          "text": "0.09",
+          "value": 0.09,
+          "support": "unsupported"
+        },
+        {
+          "row": "DeepSeek-R1:7B",
+          "col": "CLES",
+          "text": "0.52",
+          "value": 0.52,
+          "support": "evidence"
+        },
+        {
+          "row": "DeepSeek-R1:7B",
+          "col": "p",
+          "text": "0.22",
+          "value": 0.22,
+          "support": "unsupported"
+        },
+        {
+          "row": "Qwen2.5:14B",
+          "col": "d_z",
+          "text": "0.28",
+          "value": 0.28,
+          "support": "evidence"
+        },
+        {
+          "row": "Qwen2.5:14B",
+          "col": "CLES",
+          "text": "0.60",
+          "value": 0.6,
+          "support": "unsupported"
+        },
+        {
+          "row": "Qwen2.5:14B",
+          "col": "p",
+          "text": "0.013",
+          "value": 0.013,
+          "support": "evidence"
+        }
+      ]
+    }
+  ],
+  "missing_inputs": [],
+  "pending_review": [
+    {
+      "token": "0.60",
+      "value": 0.6,
+      "line": 104,
+      "context": "[Qwen2.5:14B × CLES] = 0.60",
+      "table_line": 104,
+      "where": "cell"
+    },
+    {
+      "token": "0.44",
+      "value": 0.44,
+      "line": 104,
+      "context": "[Qwen3:4b × CLES] = 0.44",
+      "table_line": 104,
+      "where": "cell"
+    },
+    {
+      "token": "0.15",
+      "value": 0.15,
+      "line": 209,
+      "context": "[Qwen3:4b × d_z] = 0.15",
+      "table_line": 209,
+      "where": "cell"
+    },
+    {
+      "token": "0.44",
+      "value": 0.44,
+      "line": 209,
+      "context": "[Qwen3:4b × CLES] = 0.44",
+      "table_line": 209,
+      "where": "cell"
+    },
+    {
+      "token": "0.54",
+      "value": 0.54,
+      "line": 209,
+      "context": "[Gemma3:4b × CLES] = 0.54",
+      "table_line": 209,
+      "where": "cell"
+    },
+    {
+      "token": "0.22",
+      "value": 0.22,
+      "line": 209,
+      "context": "[DeepSeek-R1:7B × d_z] = 0.22",
+      "table_line": 209,
+      "where": "cell"
+    },
+    {
+      "token": "0.58",
+      "value": 0.58,
+      "line": 209,
+      "context": "[DeepSeek-R1:7B × CLES] = 0.58",
+      "table_line": 209,
+      "where": "cell"
+    },
+    {
+      "token": "0.09",
+      "value": 0.09,
+      "line": 209,
+      "context": "[DeepSeek-R1:7B × d_z] = 0.09",
+      "table_line": 209,
+      "where": "cell"
+    },
+    {
+      "token": "0.22",
+      "value": 0.22,
+      "line": 209,
+      "context": "[DeepSeek-R1:7B × p] = 0.22",
+      "table_line": 209,
+      "where": "cell"
+    },
+    {
+      "token": "0.60",
+      "value": 0.6,
+      "line": 209,
+      "context": "[Qwen2.5:14B × CLES] = 0.60",
+      "table_line": 209,
+      "where": "cell"
+    }
+  ],
+  "precision_anomalies": [],
+  "summary": {
+    "verdict": "MAJOR",
+    "tables": 4,
+    "numeric_cells": 34,
+    "unsupported": 10,
+    "missing_inputs": 0,
+    "precision_anomalies": 0,
+    "note": "pending_review = 表格 cell/图注数字在证据与表格外正文中均无支撑；precision_anomalies = 列内混精度（INFO，人工扫一眼）"
+  }
+}

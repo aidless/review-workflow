@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_JQA0EfQIfj\\extracted_text.txt",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_JQA0EfQIfj\\r6_llm.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-26T06:46:54+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Critical",
+      "text": "- Critical: Koopman 理论仅在无穷维观测函数空间下严格保证非线性动力学线性化，论文用有限维学习到的潜在空间即声称\"nonlinear dynamics become linear\"，属于把渐近性理论结果当作有限实现的前提，方法论前提不成立。"
+    },
+    {
+      "id": 2,
+      "sev": "Critical",
+      "text": "- Critical: OpenReview 链接书写为 `https: // openreview. net/ forum? id= JQA0EfQIfj`，URL 中插入空格，直接点击/复制无法访问，证据链的入口本身已断裂。"
+    },
+    {
+      "id": 3,
+      "sev": "Critical",
+      "text": "- Critical: seed 管理与统计显著性缺失——在可见文本中无任何多 seed 运行、标准差、置信区间或显著性检验的描述；对于含噪 CSI 这种方差较大的模态，单次运行的“substantial margin”声明没有统计支撑。"
+    },
+    {
+      "id": 4,
+      "sev": "Critical",
+      "text": "- Critical: åºåå ¬å¹³æ§å­çââæè¦ç§°âoutperforming all baselines by a substantial margin”，但引言明确指出现有 CSI 方法均为“instantaneous regressors”，而引用的视觉预测 baseline（Martinez et al. 2017、Mao et al. 2"
+    },
+    {
+      "id": 5,
+      "sev": "Critical",
+      "text": "- Critical: 三项\"创新组件\"中 anchor-delta 预测头即残差/零速度预测（Martinez et al. 2017 起在人体运动预测中已广泛使用），KAL loss 等价于 Deep Koopman 的标准多步预测+线性一致性损失；二者均非方法层创新却被并列列为贡献，增量被包装为突破。"
+    },
+    {
+      "id": 6,
+      "sev": "Critical",
+      "text": "- Critical: 作者所屬機構「Middesex University」拼寫錯誤，應為「Middlesex University」，並出現兩次（Huan X. Nguyen 與 Quang-Anh N. D. 各一），直接損害論文可信度。"
+    },
+    {
+      "id": 7,
+      "sev": "Critical",
+      "text": "- Critical: 全文使用 MM-Fi 与 WiPose 两个含人体动作/姿态数据的数据集进行训练与评测,但未出现任何 IRB/伦理审查批准号、受试者知情同意(informed consent)声明或人体研究合规说明;TMLR 投稿虽不强制,但涉及人体姿态序列属人体受试数据,缺失合规依据属严重疏漏。"
+    },
+    {
+      "id": 8,
+      "sev": "Critical",
+      "text": "- Critical: 可见文本（Abstract、作者信息块、Introduction）中未出现任何代码仓库 URL、commit hash 或 artifact 链接，论文声称的实验结果无法追溯到可执行的证据链，OpenReview 链接本身不构成代码/数据披露。"
+    },
+    {
+      "id": 9,
+      "sev": "Critical",
+      "text": "- Critical: 声称\"robust, consistent performance across both short- and long-term prediction horizons\"，\"consistent\"本质是方差/分布性质的统计断言，但无方差、标准差、置信区间或跨 horizon 离散度报告；单点点估计无法支撑\"robust\"与\"consistent\"。"
+    },
+    {
+      "id": 10,
+      "sev": "Critical",
+      "text": "- Critical: 摘要声称\"outperforming all baselines by a substantial margin\"，属对比性统计断言，但可见文本未报告任何显著性检验（paired t-test / Wilcoxon / bootstrap CI）；\"substantial\"隐含效应量判断，却无效应量（Cohen's d / 相对改进%附95%CI）支撑，属 p 值/效应量双"
+    },
+    {
+      "id": 11,
+      "sev": "Critical",
+      "text": "- Critical: 摘要断言 KOALA 在 MM-Fi 与 WiPose 上\"outperforming all baselines by a substantial margin\"并把性能归因于 Koopman 潜在空间、残差算子、anchor-delta 头、KAL 损失等设计，但未在可见文本中提供逐组件消融以隔离各因素的因果贡献，存在严重的内部效度威胁：性能差异可能由模型容量、训练预算"
+    },
+    {
+      "id": 12,
+      "sev": "Critical",
+      "text": "- Critical: 未披露随机种子（random seed / numpy seed / torch manual_seed / CUDA determinism），Koopman lifting、残差 operator、KAL loss 均涉及随机初始化与采样，缺就 seed 则所有数值结果不可复现。"
+    },
+    {
+      "id": 13,
+      "sev": "Critical",
+      "text": "- Critical: 核心 GAP（\"CSI 时序预测几乎未被探索\"）可能成立，但填充该 GAP 的主力方法 Deep Koopman 线性化在动力学学习与人体运动预测文献中已成熟（Lusch et al. 2018、Otto & Rowley 等），本文实质是\"模态迁移+组件拼装\"，却被摘要表述为 \"new modeling paradigms / fundamentally differen"
+    },
+    {
+      "id": 14,
+      "sev": "Critical",
+      "text": "- Critical: 缺少任何 dual-use/误用风险讨论。穿墙式人体运动预测天然可用于非知情监控(如非法跟踪住户/病患、家庭暴力场景下的隐蔽监视),论文只列举\"智能家居/避障/医疗\"正面用途,未给出威胁模型或缓解措施,违反负责任研究披露惯例。"
+    },
+    {
+      "id": 15,
+      "sev": "Critical",
+      "text": "- Critical: 论文反复声称 WiFi CSI 是\"inherently privacy-preserving\"\"privacy-preserving alternative to cameras\",但 CSI 感知可穿透墙壁/无可见传感器/难以被察觉地推断在场、身份、步态、手势乃至呼吸,实际上比摄像头更难被监测对象察觉;将一项本质具备监控能力的技术定性为\"天然隐私保护\"会误导部署者与被监"
+    },
+    {
+      "id": 16,
+      "sev": "Critical",
+      "text": "- Minor: 簡介段出現逗號斷句（comma splice）：「share a critical architectural assumption, they operate as instantaneous regressors」，应改為分號或冒號。"
+    },
+    {
+      "id": 17,
+      "sev": "Major",
+      "text": "- Major: \"anchor-delta prediction head eliminates the degenerate shortcut\"假设该捷径由架构产生且可被 head 消除，但未验证消除后是否将捷径转移到 anchor 通道（如 anchor 过强、delta 趋零的退化），属于假设成立性未经验证。"
+    },
+    {
+      "id": 18,
+      "sev": "Major",
+      "text": "- Major: \"autoregressive rollouts amplify errors at every step\"被当作普适前提，但误差放大取决于误差结构（是否零均值、是否时间相关）与训练-推理匹配；将其作为 KOALA 优越性的因果根基本身即循环论证，且未给出 CSI 噪声误差传播的定量建模来支撑该假设。"
+    },
+    {
+      "id": 19,
+      "sev": "Major",
+      "text": "- Major: \"identity attractor problem inherent from Koopman formulations\"被描述为 Koopman 方法固有问题，但该命名与现象并未对应文献中公认且可复现的定义，将其作为既定前提来论证残差算子的必要性，存在假设虚构风险。"
+    },
+    {
+      "id": 20,
+      "sev": "Major",
+      "text": "- Major: KAL 损失被宣称\"无需 contrastive、spectral、auxiliary losses\"，但该损失在时间编码特征空间强制动力学一致性，其机制可能与谱/对比目标功能等价；以\"不需要\"为前提否定其他范式缺乏等价性证明，因果归因不当。"
+    },
+    {
+      "id": 21,
+      "sev": "Minor",
+      "synthetic": true,
+      "text": "（另有 26 条问题超出 20 条上限被截断，未参与辩论）"
+    }
+  ],
+  "rebuttals": [],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "sustained",
+      "reason": "论文确实声称有限维学习潜空间使非线性动力学线性化,Ko pman严格保证需无穷维,方法论前提过度泛化。"
+    },
+    {
+      "id": 2,
+      "disposition": "sustained",
+      "reason": "论文片段中URL确实含空格'https: // openreview. net/ forum? id=',链接断裂属实。"
+    },
+    {
+      "id": 3,
+      "disposition": "sustained",
+      "reason": "可见文本无多seed、标准差、置信区间或显著性检验描述,统计支撑缺失属实。"
+    },
+    {
+      "id": 4,
+      "disposition": "sustained",
+      "reason": "摘要称超越所有baseline但baseline为视觉预测方法与CSI瞬时回归器性质不同,公平性存疑属实。"
+    },
+    {
+      "id": 5,
+      "disposition": "sustained",
+      "reason": "anchor-delta即残差预测、KAL loss等价标准多步+线性一致性损失,二者非方法层创新却列为贡献。"
+    },
+    {
+      "id": 6,
+      "disposition": "sustained",
+      "reason": "论文片段中'Middesex University'确实出现两次,应为'Middlesex',拼写错误属实。"
+    },
+    {
+      "id": 7,
+      "disposition": "sustained",
+      "reason": "使用MM-Fi与WiPose人体数据但无IRB/知情同意/合规说明,伦理审查疏漏属实。"
+    },
+    {
+      "id": 8,
+      "disposition": "sustained",
+      "reason": "可见文本无代码仓库URL、commit hash或artifact链接,可复现性证据链缺失属实。"
+    },
+    {
+      "id": 9,
+      "disposition": "sustained",
+      "reason": "声称robust/consistent但无方差、标准差或跨horizon离散度报告,统计断言无支撑。"
+    },
+    {
+      "id": 10,
+      "disposition": "sustained",
+      "reason": "'substantial margin'为统计断言但无显著性检验或效应量报告,双重缺失属实。"
+    },
+    {
+      "id": 11,
+      "disposition": "sustained",
+      "reason": "未见逐组件消融实验隔离各因素因果贡献,内部效度威胁属实。"
+    },
+    {
+      "id": 12,
+      "disposition": "sustained",
+      "reason": "未披露任何随机种子设置,数值结果不可复现属实。"
+    },
+    {
+      "id": 13,
+      "disposition": "sustained",
+      "reason": "Deep Koopman在动力学学习中已成熟,实质为模态迁移却被表述为new paradigm/fundamentally different。"
+    },
+    {
+      "id": 14,
+      "disposition": "sustained",
+      "reason": "穿墙式人体运动预测有监控滥用风险,论文仅列正面用途无威胁模型或缓解措施。"
+    },
+    {
+      "id": 15,
+      "disposition": "sustained",
+      "reason": "CSI可穿墙推断在场/步态/手势,称'inherently privacy-preserving'误导部署者与被监测者属实。"
+    },
+    {
+      "id": 16,
+      "disposition": "sustained",
+      "reason": "'share a critical architectural assumption, they operate'确为逗号断句,语法问题属实。"
+    },
+    {
+      "id": 17,
+      "disposition": "sustained",
+      "reason": "声称anchor-delta消除shortcut但未验证捷径是否转移到anchor通道,假设成立性未验证属实。"
+    },
+    {
+      "id": 18,
+      "disposition": "sustained",
+      "reason": "将误差放大作为普适前提未给出CSI噪声误差传播定量建模,因果根基薄弱属实。"
+    },
+    {
+      "id": 19,
+      "disposition": "sustained",
+      "reason": "'identity attractor problem'未对应文献公认定义,命名与现象缺乏可复现依据属实。"
+    },
+    {
+      "id": 20,
+      "disposition": "sustained",
+      "reason": "声称无需contrastive/spectral/auxiliary损失但未证明功能不等价,因果归因不当属实。"
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 16,
+      "Major": 4,
+      "Minor": 0
+    },
+    "n_issues": 20,
+    "n_sustained": 20,
+    "n_withdrawn": 0,
+    "n_partial": 0,
+    "truncation": {
+      "n_total": 46,
+      "n_debated": 20,
+      "n_truncated": 26,
+      "max_issues": 20
+    },
+    "detail": "辩论后维持 Critical 16 / Major 4 （撤回 0，部分成立 0）；注：原始 46 条中仅严重度前 20 条进入辩论（MAX_ISSUES=20，截断 26 条未辩论）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "withdrawn_ids": []
+  }
+}

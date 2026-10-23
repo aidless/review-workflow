@@ -1,0 +1,344 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\deepseek\\papers\\calibration-self-improvement\\evidence"
+    ],
+    "timestamp": "2026-08-27T11:56:11+00:00"
+  },
+  "figures": [
+    {
+      "path": "figures/fig_matcher_regimes.pdf",
+      "line": 496,
+      "resolved": true,
+      "abs": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\figures\\fig_matcher_regimes.pdf",
+      "kind": "pdf",
+      "text_chars": 153,
+      "fig_decimals": 11,
+      "fig_numbers_sample": [
+        "63.3",
+        "86.7",
+        "100.0",
+        "0.0",
+        "0.1",
+        "0.2",
+        "0.3",
+        "0.4",
+        "0.363",
+        "0.130",
+        "0.004"
+      ],
+      "caption_decimals": [
+        {
+          "token": "63.3",
+          "support": "figtext"
+        },
+        {
+          "token": "86.7",
+          "support": "figtext"
+        },
+        {
+          "token": "0.363",
+          "support": "figtext"
+        },
+        {
+          "token": "0.1297",
+          "support": "figtext"
+        },
+        {
+          "token": "0.0037",
+          "support": "figtext"
+        }
+      ],
+      "caption": "Measured calibration under the three label-judgment regimes on the same 30 answers and confidences (N=30 pilot). Accuracy (left axis) rises 63.3\\% $\\rightarrow$ 86.7\\% $\\rightarrow$ 100\\% while 10-bin"
+    },
+    {
+      "path": "figures/fig_conf_distribution.pdf",
+      "line": 552,
+      "resolved": true,
+      "abs": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\figures\\fig_conf_distribution.pdf",
+      "kind": "pdf",
+      "text_chars": 79,
+      "fig_decimals": 3,
+      "fig_numbers_sample": [
+        "0.95",
+        "0.99",
+        "1.0"
+      ],
+      "caption_decimals": [
+        {
+          "token": "1.0",
+          "support": "figtext"
+        },
+        {
+          "token": "0.99",
+          "support": "figtext"
+        },
+        {
+          "token": "0.95",
+          "support": "figtext"
+        },
+        {
+          "token": "0.9963",
+          "support": "evidence"
+        }
+      ],
+      "caption": "Distribution of the 30 self-reported confidence values in the pilot: 27 of 30 are exactly 1.0, one is 0.99, and two are 0.95 (three distinct values; mean 0.9963). The near-degenerate channel makes bin"
+    },
+    {
+      "path": "figures/fig_reliability.pdf",
+      "line": 616,
+      "resolved": true,
+      "abs": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\figures\\fig_reliability.pdf",
+      "kind": "pdf",
+      "text_chars": 546,
+      "fig_decimals": 28,
+      "fig_numbers_sample": [
+        "0.5",
+        "0.7",
+        "0.9",
+        "1.0",
+        "0.0",
+        "0.2",
+        "0.4",
+        "0.6",
+        "0.8",
+        "1.0",
+        "1.0",
+        "0.0037",
+        "0.996",
+        "0.5",
+        "0.6",
+        "0.7",
+        "0.8",
+        "0.9",
+        "1.0",
+        "0.0",
+        "0.2",
+        "0.4",
+        "0.6",
+        "0.8",
+        "1.0",
+        "0.2011",
+        "0.2011",
+        "2.5"
+      ],
+      "caption_decimals": [
+        {
+          "token": "1.0",
+          "support": "figtext"
+        },
+        {
+          "token": "0.0037",
+          "support": "figtext"
+        },
+        {
+          "token": "2.5",
+          "support": "figtext"
+        },
+        {
+          "token": "0.2011",
+          "support": "figtext"
+        },
+        {
+          "token": "0.14",
+          "support": "evidence"
+        },
+        {
+          "token": "0.36",
+          "support": "evidence"
+        }
+      ],
+      "caption": "Reliability diagram (10-bin equi-frequency) illustrating calibration measurement collapse under degenerate confidence. \\textbf{Left:} pilot ($N=30$, DeepSeek-V4-Flash) --- 27 of 30 confidences at exac"
+    },
+    {
+      "path": "figures/fig_estimators_real.pdf",
+      "line": 625,
+      "resolved": true,
+      "abs": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\figures\\fig_estimators_real.pdf",
+      "kind": "pdf",
+      "text_chars": 259,
+      "fig_decimals": 24,
+      "fig_numbers_sample": [
+        "0.4",
+        "0.6",
+        "0.8",
+        "1.0",
+        "0.3",
+        "0.4",
+        "0.5",
+        "0.6",
+        "0.7",
+        "0.8",
+        "0.9",
+        "1.0",
+        "0.2011",
+        "0.2005",
+        "0.1993",
+        "2.5",
+        "0.5",
+        "0.6",
+        "0.7",
+        "0.8",
+        "0.9",
+        "1.0",
+        "0.00666",
+        "0.898"
+      ],
+      "caption_decimals": [
+        {
+          "token": "2.5",
+          "support": "figtext"
+        },
+        {
+          "token": "0.2011",
+          "support": "figtext"
+        },
+        {
+          "token": "0.2005",
+          "support": "figtext"
+        },
+        {
+          "token": "0.1993",
+          "support": "figtext"
+        },
+        {
+          "token": "0.00666",
+          "support": "figtext"
+        },
+        {
+          "token": "0.002",
+          "support": "evidence"
+        },
+        {
+          "token": "0.126",
+          "support": "evidence"
+        },
+        {
+          "token": "0.038",
+          "support": "evidence"
+        }
+      ],
+      "caption": "Head-to-head calibration estimators on real census (qwen2.5-7b, $N=599$). \\textbf{Left:} reliability (binned 0.2011 vs smECE 0.2005 vs isotonic in-sample 0.1993, 5/10 bins non-empty due to ties, 5 emp"
+    },
+    {
+      "path": "figures/fig_crossmodel_conf.pdf",
+      "line": 756,
+      "resolved": true,
+      "abs": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\figures\\fig_crossmodel_conf.pdf",
+      "kind": "pdf",
+      "text_chars": 223,
+      "fig_decimals": 37,
+      "fig_numbers_sample": [
+        "0.8",
+        "0.9",
+        "1.0",
+        "2.5",
+        "0.5",
+        "0.7",
+        "0.8",
+        "0.9",
+        "1.0",
+        "2.5",
+        "0.0",
+        "0.5",
+        "0.8",
+        "0.9",
+        "0.98",
+        "1.0",
+        "2.5",
+        "1.5",
+        "0.0",
+        "0.15",
+        "0.5",
+        "0.75",
+        "0.8",
+        "0.9",
+        "0.98",
+        "0.99",
+        "0.999",
+        "1.0",
+        "3.2",
+        "0.5"
+      ],
+      "caption_decimals": [
+        {
+          "token": "2.5",
+          "support": "figtext"
+        },
+        {
+          "token": "1.0",
+          "support": "figtext"
+        }
+      ],
+      "caption": "Self-reported confidence distributions across the five cross-model sources (90 tasks each, temperature 0). The Qwen2.5 models are near-degenerate (3--6 distinct values, mass at 1.0); DeepSeek-R1-7B an"
+    },
+    {
+      "path": "figures/fig_census_domains.pdf",
+      "line": 1169,
+      "resolved": true,
+      "abs": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\figures\\fig_census_domains.pdf",
+      "kind": "pdf",
+      "text_chars": 141,
+      "fig_decimals": 11,
+      "fig_numbers_sample": [
+        "0.0",
+        "0.1",
+        "0.2",
+        "0.3",
+        "0.4",
+        "0.5",
+        "0.6",
+        "2.5",
+        "2.5",
+        "2.5",
+        "1.5"
+      ],
+      "caption_decimals": [
+        {
+          "token": "2.5",
+          "support": "figtext"
+        },
+        {
+          "token": "0.479",
+          "support": "evidence"
+        },
+        {
+          "token": "0.121",
+          "support": "evidence"
+        },
+        {
+          "token": "2.5",
+          "support": "figtext"
+        },
+        {
+          "token": "1.5",
+          "support": "figtext"
+        },
+        {
+          "token": "0.410",
+          "support": "evidence"
+        },
+        {
+          "token": "0.041",
+          "support": "evidence"
+        }
+      ],
+      "caption": "Measured ECE is domain-specific: within each model, ECE on high\\_school\\_mathematics is roughly $4\\times$ that on college\\_biology (e.g.\\ Qwen2.5-7B 0.479 vs 0.121; Qwen2.5-1.5B 0.410 vs 0.041). Toler"
+    }
+  ],
+  "missing_files": [],
+  "caption_pending_review": [],
+  "figure_only_numbers": [],
+  "summary": {
+    "verdict": "PASS",
+    "figures_referenced": 6,
+    "text_extracted": 6,
+    "raster_skipped": 0,
+    "missing": 0,
+    "caption_decimals": 32,
+    "unsupported": 0,
+    "figure_only": 0,
+    "note": "caption_pending_review = 图注小数在图文本/证据/正文中均无支撑；figure_only = 仅出现在图内的高精度数（数据标签属正常，人工扫一眼即可）"
+  }
+}

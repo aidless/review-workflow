@@ -1,0 +1,360 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_e0pSqIqwXO\\extracted_text.txt",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_e0pSqIqwXO\\r6_llm.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-26T06:37:05+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Critical",
+      "text": "- Critical: \"62 also show long-horizon loss worsening, never without the radius increase\" 被解读为谱半径增大是远程恶化的必要条件，暗含因果/必要性断言。但这是观测性共现，谱半径变化与行为恶化可同源于训练动力学这一共同原因（common cause），未做干预或对照以排除反向因果与混淆。"
+    },
+    {
+      "id": 2,
+      "sev": "Critical",
+      "text": "- Critical: \"no run reaches our 5 percent meaningful-gap threshold, so ... losses are similar\" 是典型的接受零假设（H0）错误——仅因差异未越过任意阈值就断言\"相似\"，未做统计功效分析（power analysis），缺席证据≠缺席。在50个种子的成对比较中，若无效应量与功效报告，\"无差异\"结论无内部效度"
+    },
+    {
+      "id": 3,
+      "sev": "Critical",
+      "text": "- Critical: GAP 的真实性存疑。原文的耦合系统分析（coupled-system diagnostics、spectral radius of the coupled agent-environment system）本就是 Ger and Barak 自己提出的框架，本文只是沿用并复现它；而 Section 10 的\"建议\"——沿部署轨迹跟踪训练、显式报告 horizon 与失败 "
+    },
+    {
+      "id": 4,
+      "sev": "Critical",
+      "text": "- Critical: 低秩控制器\"meet the same criterion because their open-loop rollouts often produce extremely large losses\"——判定准则被数值爆炸/溢出满足，而非被其声称的耦合动力学机制满足。这使该准则对该架构丧失构念效度（construct validity），属于测量效度污染，却仍被计入\"满足同"
+    },
+    {
+      "id": 5,
+      "sev": "Critical",
+      "text": "- Critical: 低秩控制器\"因开环 rollout 产生极大 loss\"而满足同一判据——这是数值发散而非耦合动力学效应，说明该判据对此架构缺乏区分效度，却仍被并入\"泛化成功\"的叙事；缺少区分\"真耦合效应\"与\"开环数值失稳\"的控制实验。"
+    },
+    {
+      "id": 6,
+      "sev": "Critical",
+      "text": "- Critical: 全文同时检验 GRU、tanh、low-rank、two-layer、gated-controller、partial-observation、hidden size 50→400、path-integration 等十余个条件子集，属于典型多重比较场景，却无 Bonferroni / BH-FDR 校正，也未声明预先锁定的 family-wise 错误率，假阳性率不可控。"
+    },
+    {
+      "id": 7,
+      "sev": "Critical",
+      "text": "- Critical: 全文未包含任何利益冲突披露；唯一作者隶属商业实体 Eon Systems PBC（Public Benefit Corporation），且为单作者，若该公司在闭环控制/RNN 部署诊断方向有产品或投资利益，则\"部署诊断\"的正面框架存在未披露的财务偏向，且单作者结构消除了机构内部制衡。"
+    },
+    {
+      "id": 8,
+      "sev": "Critical",
+      "text": "- Critical: 全文未声明任务数据（double-integrator、tracking、path-integration）的来源与数据许可（License），下游复现者无法合法获取/再分发数据。"
+    },
+    {
+      "id": 9,
+      "sev": "Critical",
+      "text": "- Critical: 全文未提供任何代码/数据仓库链接、DOI 或长期归档快照；摘要声称\"Explicit configuration files control our independent reproduction\"，但这些配置文件根本无法访问，证据链在第一环就断裂。"
+    },
+    {
+      "id": 10,
+      "sev": "Critical",
+      "text": "- Critical: 唯一指向评审记录的 OpenReview 链接被注入了空格（\"https: // openreview. net / forum? id= e0pSqIqwXO\"），无法直接解析跳转，主证据链失效。"
+    },
+    {
+      "id": 11,
+      "sev": "Critical",
+      "text": "- Critical: 头条效应量\"mean peak reaching 19.1 times the initial loss\"仅报告均值，跨 50 个 seed 无任何离散度指标（无 SD、无 95% CI、无中位数/范围）；比率型量天然右偏，均值极易被少数极端 rollout 拉高，读者无法判断 19.1x 的可靠性。"
+    },
+    {
+      "id": 12,
+      "sev": "Critical",
+      "text": "- Critical: 未给出代码 commit hash、数据 checksum/SHA256 或模型权重指纹，哈希对账完全无法进行，无法判定\"独立实现\"是否与原始 Ger & Barak 协议一致。"
+    },
+    {
+      "id": 13,
+      "sev": "Critical",
+      "text": "- Critical: 本文核心定位是 Ger and Barak (2025) 的\"独立复现\"，而摘要自述的主要发现是\"50 个配对种子全部复现瞬态峰值\"\"谱阶段与耦合稳定性转换在全部 50 种子中复现\"——这本质上是确认原结论，而非发现新现象。一篇以\"复现且结论成立\"为主轴的论文，其科学贡献的增量本身就很薄，但摘要用\"every one of 50\"\"all 120 runs meet the"
+    },
+    {
+      "id": 14,
+      "sev": "Critical",
+      "text": "- Critical: 预设阈值（5% meaningful-gap、短视界改善+谱半径增加的复合判据）驱动了全部二元结论，但全文未对该阈值做任何敏感性分析；5% 与 1%、10% 之间结论是否翻转完全未知。"
+    },
+    {
+      "id": 15,
+      "sev": "Major",
+      "text": "- Major: \"5 percent meaningful-gap threshold\"是实用显著性阈值，却被当作统计推断使用——它既不提供 CI、也不控制第一类错误，实质是把决策规则伪装成统计检验，且未与效应量及其不确定性挂钩。"
+    },
+    {
+      "id": 16,
+      "sev": "Major",
+      "text": "- Major: \"50 paired seeds\"歧义——是 50 个种子（paired 与什么配对？）还是 50 对（=100 个种子）？数字含义不明。"
+    },
+    {
+      "id": 17,
+      "sev": "Major",
+      "text": "- Major: \"all 120 runs meet the criterion\"与\"reproduce in all 50 seeds\"的100%通过率，本身可能是准则区分度不足（overly permissive criterion）的征兆而非稳健性的证据；若任何配置都通过，该检验几乎不具备证伪力。"
+    },
+    {
+      "id": 18,
+      "sev": "Major",
+      "text": "- Major: \"independent implementation\"是核心主张，却未提供与 Ger & Barak 原始代码的 fork/diff 或协议对齐表，独立性无法证伪。"
+    },
+    {
+      "id": 19,
+      "sev": "Major",
+      "text": "- Major: \"losses are similar\"\"transfer is weak\"为定性判断，既无效应量（Cohen's d / Δ / 优势比）也无对应统计检验；自称\"paired seeds\"却未对连续结局（峰值比、final-loss gap）做配对检验（配对 t / Wilcoxon signed-rank），配对设计的信息被浪费。"
+    },
+    {
+      "id": 20,
+      "sev": "Major",
+      "text": "- Major: \"protocol changes\"在摘要与引言中被反复提及为 robustness 审查的关键手段，但从未在可见文本中具体说明改了什么协议（仅说\"new seeds and protocol changes\"）。若协议扰动的内容不透明，则\"协议敏感性\"这一贡献维度无法被读者评估，存在用未定义的实验维度填充贡献叙事的嫌疑。"
+    },
+    {
+      "id": 21,
+      "sev": "Minor",
+      "synthetic": true,
+      "text": "（另有 42 条问题超出 20 条上限被截断，未参与辩论）"
+    }
+  ],
+  "rebuttals": [
+    {
+      "id": 1,
+      "action": "concede",
+      "fix": "将'never without'改为纯观测性共现表述,讨论共同原因可能性,明确声明未做干预实验"
+    },
+    {
+      "id": 2,
+      "action": "concede",
+      "fix": "将补充功效分析与效应量报告,不再仅以未越阈值断言'相似'"
+    },
+    {
+      "id": 3,
+      "action": "rebut",
+      "rebuttal": "论文透明声明'We use their framework',但报告阴性结果:tanh仅保留transient peak、two-layer develops persistent final gap、path-integration transfer is weak——框架产出分化,非同义反复"
+    },
+    {
+      "id": 4,
+      "action": "concede",
+      "fix": "将加入数值溢出/梯度范数检测,将发散rollout单独报告,不计入准则通过"
+    },
+    {
+      "id": 5,
+      "action": "concede",
+      "fix": "将增设控制实验:同初始条件下teacher-forced与free-running rollout对比,区分数值失稳与耦合效应"
+    },
+    {
+      "id": 6,
+      "action": "concede",
+      "fix": "将对该多重比较场景施加BH-FDR校正并声明family-wise错误率"
+    },
+    {
+      "id": 7,
+      "action": "concede",
+      "fix": "将补充利益冲突披露声明,说明Eon Systems PBC在本方向无相关产品或投资利益"
+    },
+    {
+      "id": 8,
+      "action": "concede",
+      "fix": "将补充double-integrator/tracking/path-integration任务数据来源与许可声明"
+    },
+    {
+      "id": 9,
+      "action": "concede",
+      "fix": "将提供代码仓库链接、DOI及配置文件长期归档快照"
+    },
+    {
+      "id": 10,
+      "action": "concede",
+      "fix": "将修正OpenReview链接,去除注入空格,确保可解析跳转"
+    },
+    {
+      "id": 11,
+      "action": "concede",
+      "fix": "将补充50 seed的SD、95% CI及中位数/范围"
+    },
+    {
+      "id": 12,
+      "action": "concede",
+      "fix": "将提供代码commit hash、数据SHA256校验和及模型权重指纹"
+    },
+    {
+      "id": 13,
+      "action": "rebut",
+      "rebuttal": "摘要报告多项架构特异性新发现:GRU/tracking retain final-loss divergence、tanh仅保留transient peak、two-layer develops persistent final gap——这些界定原结论scope,非单纯确认"
+    },
+    {
+      "id": 14,
+      "action": "concede",
+      "fix": "将对1%/5%/10%阈值做敏感性分析,报告结论是否翻转"
+    },
+    {
+      "id": 15,
+      "action": "concede",
+      "fix": "将该阈值与效应量及置信区间挂钩,补充配对统计检验"
+    },
+    {
+      "id": 16,
+      "action": "concede",
+      "fix": "将明确'50 paired seeds'为50个种子在开/闭环paired条件下的测试"
+    },
+    {
+      "id": 17,
+      "action": "rebut",
+      "rebuttal": "准则具证伪力:仅62/120出现long-horizon worsening；tanh仅保留transient peak；two-layer develops persistent gap；transfer is weak——架构间分化明显"
+    },
+    {
+      "id": 18,
+      "action": "concede",
+      "fix": "将补充与Ger & Barak原始代码的协议对齐表及关键差异diff"
+    },
+    {
+      "id": 19,
+      "action": "concede",
+      "fix": "将补充Cohen's d效应量及配对t/Wilcoxon signed-rank检验"
+    },
+    {
+      "id": 20,
+      "action": "concede",
+      "fix": "将在正文逐项列出protocol changes的具体改动内容"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "sustained",
+      "reason": "作者concede；当前版本含因果/必要性断言,观测性共现未经干预验证,问题属实"
+    },
+    {
+      "id": 2,
+      "disposition": "sustained",
+      "reason": "作者concede；当前版本仅因未越阈值断言相似,缺功效分析与效应量,接受H0错误属实"
+    },
+    {
+      "id": 3,
+      "disposition": "partial",
+      "reason": "rebut引用框架透明声明及分化结果成立,但Section 10建议非新创的质疑未直接回应"
+    },
+    {
+      "id": 4,
+      "disposition": "sustained",
+      "reason": "作者concede；当前版本低秩rollout数值爆炸满足准则,构念效度污染问题属实"
+    },
+    {
+      "id": 5,
+      "disposition": "sustained",
+      "reason": "作者concede；当前版本无数值失稳控制实验,区分效度缺失问题属实"
+    },
+    {
+      "id": 6,
+      "disposition": "sustained",
+      "reason": "作者concede；当前版本十余子集多重比较无FDR校正,假阳性率不可控属实"
+    },
+    {
+      "id": 7,
+      "disposition": "sustained",
+      "reason": "作者concede；当前版本无利益冲突披露,单作者商业实体隶属属实"
+    },
+    {
+      "id": 8,
+      "disposition": "sustained",
+      "reason": "作者concede；当前版本未声明任务数据来源与许可属实"
+    },
+    {
+      "id": 9,
+      "disposition": "sustained",
+      "reason": "作者concede；摘要声称配置文件可访问但实际无仓库链接/DOI,证据链断裂属实"
+    },
+    {
+      "id": 10,
+      "disposition": "sustained",
+      "reason": "作者concede；当前版本OpenReview链接确含注入空格无法解析"
+    },
+    {
+      "id": 11,
+      "disposition": "sustained",
+      "reason": "作者concede；当前版本19.1x仅报均值无SD/CI/中位数,右偏比率可靠性不明属实"
+    },
+    {
+      "id": 12,
+      "disposition": "sustained",
+      "reason": "作者concede；当前版本无commit hash/checksum/权重指纹属实"
+    },
+    {
+      "id": 13,
+      "disposition": "partial",
+      "reason": "rebutt引用架构特异性新发现属实,但摘要仍以确认性表述为主轴,贡献偏薄问题部分成立"
+    },
+    {
+      "id": 14,
+      "disposition": "sustained",
+      "reason": "作者concede；当前版本预设阈值无敏感性分析,结论稳健性未知属实"
+    },
+    {
+      "id": 15,
+      "disposition": "sustained",
+      "reason": "作者concede；当前版本5%阈值被用作统计推断却无CI/错误率控制属实"
+    },
+    {
+      "id": 16,
+      "disposition": "sustained",
+      "reason": "作者concede；当前版本50 paired seeds含义歧义属实"
+    },
+    {
+      "id": 17,
+      "disposition": "partial",
+      "reason": "rebut示62/120及架构分化有证伪力,但复合准则仍100%通过,过度宽松问题部分成立"
+    },
+    {
+      "id": 18,
+      "disposition": "sustained",
+      "reason": "作者concede；当前版本无协议对齐表/diff,独立性不可证伪属实"
+    },
+    {
+      "id": 19,
+      "disposition": "sustained",
+      "reason": "作者concede；当前版本定性判断无效应量及配对检验属实"
+    },
+    {
+      "id": 20,
+      "disposition": "sustained",
+      "reason": "作者concede；当前版本protocol changes具体内容未说明属实"
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 12,
+      "Major": 5,
+      "Minor": 0
+    },
+    "n_issues": 20,
+    "n_sustained": 17,
+    "n_withdrawn": 0,
+    "n_partial": 3,
+    "truncation": {
+      "n_total": 62,
+      "n_debated": 20,
+      "n_truncated": 42,
+      "max_issues": 20
+    },
+    "detail": "辩论后维持 Critical 12 / Major 5 （撤回 0，部分成立 3）；注：原始 62 条中仅严重度前 20 条进入辩论（MAX_ISSUES=20，截断 42 条未辩论）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20
+    ],
+    "withdrawn_ids": []
+  }
+}

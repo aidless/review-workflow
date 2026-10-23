@@ -1,0 +1,362 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\f1f5_f45\\run_f3\\extracted_text.txt",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\examples\\f1f5_f45\\run_f3\\r6_llm.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-27T19:58:56+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Critical",
+      "text": "- Critical: 双盲合规风险：正文出现 `gates_config.json L10–L28`、`protocol.md L42–L58`、`results/analysis.json` 及附录行号等内部仓库痕迹，可能让审稿人定位到作者基础设施/代码库，违反 TMLR 双盲匿名要求。"
+    },
+    {
+      "id": 2,
+      "sev": "Critical",
+      "text": "- Critical: 对照组不匹配：no-memory 与 memory 条件未控制上下文长度/注入内容量，append-only 天然比 RAG 前缀更长，Γ 与 ΔMAE 可能反映 token 预算或 prefix length 而非记忆架构本身。"
+    },
+    {
+      "id": 3,
+      "sev": "Critical",
+      "text": "- Critical: 样本量报告自相矛盾：摘要写 24,000 单元、18,000 paired，贡献节却写 18,000 单元、9,000 paired；无法确认配对定义和有效独立样本量，power analysis 的 n=500 与这些单元数之间的关系也不清楚。"
+    },
+    {
+      "id": 4,
+      "sev": "Critical",
+      "text": "- Critical: 核心推断把 18,000/24,000 个“单元格”或 500 题当作独立样本，但同一 500 题被 4 模型×3 种子×3 架构反复复用；未按题目、模型、种子做聚类/混合效应建模，p 值和置信区间会严重低估不确定性。"
+    },
+    {
+      "id": 5,
+      "sev": "Critical",
+      "text": "- Critical: 正文在贡献列表后混入内部工作流内容（“Claim ledger 86 PASS”“protocol.md L42–L58”“gates_config.json”“Gamma precursor strings (24K→12K)”），这些不是论文写作语言，严重破坏 TMLR 稿件结构和可读性。"
+    },
+    {
+      "id": 6,
+      "sev": "Critical",
+      "text": "- Critical: 证据链核心数字对不上——摘要称 24,000 cells（18,000 memory + 6,000 no-memory；18,000 paired），贡献节却写 18,000 cells（9,000 paired），且 18,000 memory 与 6,000 no-memory 如何形成 18,000 个配对未解释，无法对账实验规模。"
+    },
+    {
+      "id": 7,
+      "sev": "Critical",
+      "text": "- Critical: 配对结构重复使用同一批 no-memory 样本（6,000 cells）与 3 个记忆条件配对成 18,000 对，造成跨条件非独立比较；若不按题目/模型/seed/no-memory cell 建模相关性，检验的样本量和 p 值会被系统性高估。"
+    },
+    {
+      "id": 8,
+      "sev": "Major",
+      "text": "- Major: Γ=W1 的分布对象和量纲未明确，Γ=12.3 相对 ΔMAE=-0.034 的显著结果可能由极端值或分布形状驱动，而非系统性记忆效应；应报告效应量、分布图与稳健性。"
+    },
+    {
+      "id": 9,
+      "sev": "Major",
+      "text": "- Major: “post-hoc calibrators reduced but did not eliminate”未说明校准器是否在独立训练/验证集上拟合；若在同一批数据上拟合再评估，会低估校准后的误差，不能支持“无法消除 shift”的结论。"
+    },
+    {
+      "id": 10,
+      "sev": "Major",
+      "text": "- Major: 仅 3 个低编号 seed，且“seed-pooled”是在 seed 42 之后补充 43/44 的做法，存在事后分析/选择痕迹；应预先注册 seed 与聚合规则，并报告每个 model×seed 的完整分布而非只给 pooled SD。"
+    },
+    {
+      "id": 11,
+      "sev": "Major",
+      "text": "- Major: 图表层面混乱：正文出现“Panorama six-figure synthesis”，但全文没有规范的 Figure/Table 编号、标题或正文引用；“six-figure”含义不明，违反论文图表写作规范。"
+    },
+    {
+      "id": 12,
+      "sev": "Major",
+      "text": "- Major: 多重比较控制不足：3 架构、4 模型、3 种子、4 个 post-hoc calibrator、6-group ablation、θ sweep 均涉及多次检验，全文只在 ablation 处提到 Holm，主结果未说明是否控制多重比较。"
+    },
+    {
+      "id": 13,
+      "sev": "Major",
+      "text": "- Major: 摘要中“0.68% share”和“survey Wilson [0, 0.21] for 0/15”完全没有前置语境，读者不知道这是在描述什么结果，也看不出与主要结论的关系。"
+    },
+    {
+      "id": 14,
+      "sev": "Major",
+      "text": "- Major: 摘要中的 MAE 公式书写错误且术语不完整：“MAE = i |ci −yi|”缺少求和号、下标范围及 ci/yi 的定义，作为核心指标定义不可读。"
+    },
+    {
+      "id": 15,
+      "sev": "Major",
+      "text": "- Major: 数据许可与版本缺失——未指明 MMLU 的版本/来源/许可证、500 题的具体 ID 或抽样方式，也未说明衍生日志和分析文件的再分发许可，复现与合规均存障碍。"
+    },
+    {
+      "id": 16,
+      "sev": "Major",
+      "text": "- Major: 方差报告不充分：仅报告 seed-pooled SD=0.026 和某些百分比的 Wilson CI，未报告各架构/模型的 paired ∆MAE 方差、题目间相关、W1 的抽样方差或主效应的置信区间。"
+    },
+    {
+      "id": 17,
+      "sev": "Major",
+      "text": "- Major: 校准器评估公平性：四个 post-hoc calibrator 未说明是否在独立验证集上拟合、在测试集上评估；若在同一批 500 题上 in-sample 拟合，MAE 下降会被高估。"
+    },
+    {
+      "id": 18,
+      "sev": "Major",
+      "text": "- Major: 理论贡献 |ΔMAE| ≤ LΓ 是 |c−y| 作为 1-Lipschitz 函数下 Wasserstein 上界的直接推论，属于已知 Lipschitz/Wasserstein 性质的平凡应用；文中还给出反例与退化条件，进一步说明该 bound 不足以支撑“定理”级别的贡献。"
+    },
+    {
+      "id": 19,
+      "sev": "Major",
+      "text": "- Major: 结构重复且越界：“Under review as submission to TMLR” 在摘要前后重复出现；贡献列表后直接插入流程说明，摘要、贡献、引言边界不清。"
+    },
+    {
+      "id": 20,
+      "sev": "Major",
+      "text": "- Major: 补充 θ sweep 与主结果未对齐：主文 θ=0.1 的 Γ=1.2，sweep 只给 8.1→0.9，且 “conf 0.99” 含义不明；需报告 θ=0.1 在 sweep 中的 Γ 并解释差异。"
+    },
+    {
+      "id": 21,
+      "sev": "Minor",
+      "synthetic": true,
+      "text": "（另有 1 条问题超出 20 条上限被截断，未参与辩论）"
+    }
+  ],
+  "rebuttals": [
+    {
+      "id": 1,
+      "action": "concede",
+      "fix": "将删除全部内部文件路径与行号（gates_config/protocol/results/analysis.json）,改为匿名补充材料说明。"
+    },
+    {
+      "id": 2,
+      "action": "concede",
+      "fix": "将增加匹配 token/字符预算的 no-memory 基线,并报告 prefix-length 协变量与长度匹配后的稳健性结果。"
+    },
+    {
+      "id": 3,
+      "action": "concede",
+      "fix": "将统一 24,000/18,000/9,000 数字,明确定义 paired cell,并补充 power n=500 的对应关系。"
+    },
+    {
+      "id": 4,
+      "action": "concede",
+      "fix": "将按题目、模型、seed 建立混合效应/聚类稳健推断,报告聚类内相关与有效样本量。"
+    },
+    {
+      "id": 5,
+      "action": "concede",
+      "fix": "将删除 Claim ledger、protocol.md、Gamma precursor 等流程用语,改写为正式方法/附录描述。"
+    },
+    {
+      "id": 6,
+      "action": "concede",
+      "fix": "将统一对账公式:18,000 memory cell 与 6,000 no-memory cell 复用形成 18,000 对,并说明 pairing 定义。"
+    },
+    {
+      "id": 7,
+      "action": "concede",
+      "fix": "将共享 no-memory baseline 的跨条件相关性纳入模型,改用分层/宽格式配对分析并调整检验。"
+    },
+    {
+      "id": 8,
+      "action": "concede",
+      "fix": "将明确定义 W1 的分布对象与单位,报告效应量、Γ/ΔMAE 分布图及去极值稳健性。"
+    },
+    {
+      "id": 9,
+      "action": "concede",
+      "fix": "将说明校准器在独立训练/验证集拟合、测试集评估,并补充 in-sample/out-of-sample 对比。"
+    },
+    {
+      "id": 10,
+      "action": "concede",
+      "fix": "将预先注册 seed 与聚合规则（或明确 exploratory）,报告每个 model×seed 的完整分布与 per-seed 结果。"
+    },
+    {
+      "id": 11,
+      "action": "concede",
+      "fix": "将 Panorama six-figure 改为规范编号 Figure/Table,补充标题、图注与正文引用。"
+    },
+    {
+      "id": 12,
+      "action": "concede",
+      "fix": "将对主结果与 θ sweep、calibrator、ablation 统一应用 Holm/FDR,并明确主要-次要检验层级。"
+    },
+    {
+      "id": 13,
+      "action": "concede",
+      "fix": "将删除摘要中无语境百分比,移至 Results 并定义 0.68% 与 0/15 的分子分母及结论关系。"
+    },
+    {
+      "id": 14,
+      "action": "concede",
+      "fix": "将改写为 MAE=(1/n)Σ_{i=1}^n |c_i−y_i|,明确定义 c_i、y_i、n。"
+    },
+    {
+      "id": 15,
+      "action": "concede",
+      "fix": "将补充 MMLU 版本/许可证、500 题抽样方式与题目 ID 清单,并说明衍生数据再分发许可。"
+    },
+    {
+      "id": 16,
+      "action": "concede",
+      "fix": "将报告各架构×模型的 paired ΔMAE 方差、Γ 的 bootstrap CI 与主效应置信区间。"
+    },
+    {
+      "id": 17,
+      "action": "concede",
+      "fix": "将在独立验证集拟合四个 calibrator,在测试集评估,并报告拟合/评估样本与 MAE。"
+    },
+    {
+      "id": 18,
+      "action": "rebut",
+      "rebuttal": "我们已限定为 descriptive upper bound 并提供非退化条件与反例,贡献是刻画退化/过滤检索下失效边界,非仅 Lipschitz 推论。"
+    },
+    {
+      "id": 19,
+      "action": "concede",
+      "fix": "将删除重复的 TMLR 页眉,重构摘要/贡献/引言边界,将流程内容移至附录。"
+    },
+    {
+      "id": 20,
+      "action": "concede",
+      "fix": "将补充 θ sweep 中 θ=0.1 的 Γ 值,统一与主结果 1.2 的对账,并定义 conf 0.99。"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺删除内部文件路径与行号；按规则concede一律维持,待修订。"
+    },
+    {
+      "id": 2,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺增加匹配token/字符预算的基线与prefix-length协变量分析；问题真实待修订。"
+    },
+    {
+      "id": 3,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺统一样本量数字并定义paired cell与power关系；concede成立。"
+    },
+    {
+      "id": 4,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺按题目/模型/seed做混合效应或聚类稳健推断；concede成立。"
+    },
+    {
+      "id": 5,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺删除流程用语并改写为正式方法/附录；concede成立。"
+    },
+    {
+      "id": 6,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺统一对账公式并解释配对定义；concede成立。"
+    },
+    {
+      "id": 7,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺将共享no-memory非独立结构纳入模型；concede成立。"
+    },
+    {
+      "id": 8,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺明确W1对象/单位并报告效应量与稳健性；concede成立。"
+    },
+    {
+      "id": 9,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺说明校准器独立拟合与in/out-of-sample对比；concede成立。"
+    },
+    {
+      "id": 10,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺预注册seed或说明exploratory并报告per-seed分布；concede成立。"
+    },
+    {
+      "id": 11,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺改为规范图表编号、标题、图注与正文引用；concede成立。"
+    },
+    {
+      "id": 12,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺统一应用Holm/FDR并明确检验层级；concede成立。"
+    },
+    {
+      "id": 13,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺删除无语境百分比并移至Results定义分子分母；concede成立。"
+    },
+    {
+      "id": 14,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺改写MAE公式并定义变量；concede成立。"
+    },
+    {
+      "id": 15,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺补充MMLU版本/许可证、抽样与再分发许可；concede成立。"
+    },
+    {
+      "id": 16,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺报告方差、bootstrap CI与主效应CI；concede成立。"
+    },
+    {
+      "id": 17,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺独立验证集拟合、测试集评估并报告样本；concede成立。"
+    },
+    {
+      "id": 18,
+      "disposition": "partial",
+      "reason": "论文确有非退化条件与反例,rebut部分成立；但核心上界仍属简单Lipschitz推论,定理级贡献质疑未完全消除。"
+    },
+    {
+      "id": 19,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺删除重复TMLR页眉并重构章节边界；concede成立。"
+    },
+    {
+      "id": 20,
+      "disposition": "sustained",
+      "reason": "作者承认并承诺补充θ=0.1的Γ值、统一对账并定义conf；concede成立。"
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 7,
+      "Major": 12,
+      "Minor": 0
+    },
+    "n_issues": 20,
+    "n_sustained": 19,
+    "n_withdrawn": 0,
+    "n_partial": 1,
+    "truncation": {
+      "n_total": 21,
+      "n_debated": 20,
+      "n_truncated": 1,
+      "max_issues": 20
+    },
+    "detail": "辩论后维持 Critical 7 / Major 12 （撤回 0，部分成立 1）；注：原始 21 条中仅严重度前 20 条进入辩论（MAX_ISSUES=20，截断 1 条未辩论）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      19,
+      20
+    ],
+    "withdrawn_ids": []
+  }
+}

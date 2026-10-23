@@ -1,0 +1,315 @@
+{
+  "meta": {
+    "stage": "R6",
+    "timestamp": "2026-08-26T06:48:55+00:00",
+    "rpc": "http://127.0.0.1:3080",
+    "rounds": 1
+  },
+  "rpc_health": {
+    "ok": true,
+    "detail": "HTTP 200"
+  },
+  "rounds": [
+    {
+      "Critical": 11,
+      "Major": 27,
+      "Minor": 13
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts": {
+      "Critical": 10,
+      "Major": 20,
+      "Minor": 10
+    },
+    "unstable_counts": {
+      "Critical": 0,
+      "Major": 0
+    },
+    "stability_rule": "单轮"
+  },
+  "stable_issues": [
+    {
+      "sev": "Critical",
+      "text": "- **Critical**: 基准公平性存疑——文中强调自己的\"delay-free step-size\"比现有方法的\"delay-dependent step-size\"更易确定且收敛更快；但如果基准方法的 delay-dependent step-size 未经公平调优（如未搜索最伏步长、或故意取保守参数），则对比结果存在系统性偏见；摘要未提及基准方法的步长调优协议。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- **Critical**: 泛化性严重不足——仅在\"convex classification tasks\"上验证，未涵盖非凸优化（如深度学习训练）、回归、非平滑优化等场景；而异步分布式优化的实际主要应用场景恰恰是非凸大规模模型训练，凸分类任务是最容易收敛的设定，泛化论证极弱。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- **Major**: seed 管理与统计显著性缺失——摘要完全未提及随机种子数量、方差/置信区间、或统计检验；异步方法因延迟随机性与数据 shuffle，run-to-run 方差可能很大，单次运行的收敛曲线不足以支持\"faster convergence\"的结论。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- **Major**: wall-clock-time 对比的前提条件不明——异步方法的墙钟时间强烈依赖于延迟模型的设定（工作节点异构性、网络延迟分布、 straggler 比例）；若延迟模型为人工模拟且未经实测验证，则 wall-clock 结论的外部效度存疑；同时 AA 每步额外计算成本（矩阵求解）应在 wall-clock 中公平计入。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- **Major**: 消融实验不完整——论文提出两个核心组件（Anderson acceleration 本身 + reference-path-based safe-guard scheme），摘要中无任何消融实验的提及，无法判断性能提升到底来自 AA 还是 safe-guard，抑或二者相互依赖；应至少提供\"基础异步法 vs. AA-only vs. AA+safeguard\"的三路对比。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- **Major**: 结果报道存在选择性偏差嫌疑——\"improves...in most test examples, while achieving comparable performance in the remaining cases\"是典型的套话式表述，暗示部分实验中未能超越基准，但未明确披鲲失败案例的比例、场景及原因，存在 cherry-picking 风险。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- **Minor**: 实验章节未在审阅材料中完整呈现（内容被截断），无法核实上述猜测是否在正文中已被克服；建议审稿中要求作者补全完整实验细节后再评。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: **Li & Li (2020) 在相关工作中被矛盾性地分类。** 第1.1.1节将 Li & Li (2020) 与 Mai & Johansson (2020)、Liu et al. (2024) 一并归为\"apply AA to the **proximal gradient method**\"的工作，但紧接着又单独描述\"the work (Li & Li, 2020",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 全文未见任何代码仓库链接或匿名代码提交地址，读者无法获取 ADGM-AA 实现源码，整个实验证据链从源头断裂。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 前提不成立风险——将含随机延迟的异步梯度法当作经典 AA 所要求的确定性、平稳不动点迭代；延迟使每步算子依到达顺序随机变化，AA 收敛与加速所依赖的\"一致压缩且算子平稳\"前提在异步设定下是否成立，全文未见严格论证，动摇整个方法的地基。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 异步分布式方法的核心特征是执行顺序由 worker 完成时间（wall-clock）驱动，具有内在非确定性；论文未说明如何在实验中控制/模拟延迟时序（如固定延迟序列、进程调度快照），导致\"异步\"这一关键变量不可复现。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 摘要核心结论\"ADGM-AA improves both iteration-count and wall-clock-time convergence over the baselines in most test examples\"为比较性效能主张，但全文未见任何统计检验、置信区间或重复试验次数（n）的报告，等于以无统计支撑的定性叙述做出泛化性优劣判断，存在 p 值/检",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 文猠自己声称“the application of AA to distributed optimization remains unexplored”，但引用的 Ouyang et al. (2020) 已将 AA 应用于 ADMM，而 ADMM 本身就是分布式优化的核心框架，GAP 应收窄为“异步 + 分布式”而非“分布式”，现有表述构成对文献的误导性概括。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 混淆变量与因果归因——safe-guard 回退机制本身可能成为加速来源的混淆变量；若实验中 safe-guard 频繁触发、回退到普通梯度步，则观测到的收敛/加速无法归因于 AA，论文未做消融以隔离 AA 贡献与 safe-guard 贡献，加速的因果归因不当。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 论文未声明任何利益冲突（conflict of interest）与资金来源（funding/sponsorship），TMLR 投稿规范要求作者披露资助方与潜在利益冲突，此处完全缺失。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: **\"incorporate it with AA\" / \"incorporates AA with\" 表达不符合英语习惯。** 摘要写\"transform the asynchronous gradient method into a fixed-point iteration, and then **incorporate it with AA**\"，相关工作中同样出现\"**",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: ânovel reference-path-based safe-guard scheme”的新颖性缺乏与已有 safe-guarded Anderson acceleration（如 Toth & Kelly 2015、Evans et al. 2018，以及本文自引的 Mai & Johansson 2020 中的安全网设计）的细致差异化对比，“reference-pat",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: “首次将异步梯度法转化为定点迭代”被作为贡献之一，但异步方法作为定点迭代分析是 ARock、异步坐标更新等的标准范式，此步骤不存在方法论新意，增量贡献被夸大。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 假设过强——\"mild conditions\" 的含糊表述掩盖了全局收敛对强凸性、光滑性、有界延迟等强假设的依赖；这些假设排除了动机部分强调的非凸深度学习场景，前提与动机自相矛盾。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 多重比较未校正——ADGM-AA 同时与多个 baseline 在多个数据集 × 2 个指标（iteration-count、wall-clock-time）上做比较，比较矩阵膨胀假阳性率，未见 Bonferroni/Holm/FDR 等校正或预注册分析协议。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 所提分布式方法以 master-worker 架构在本地数据上训练模型，但全文未讨论梯度/聚合结果可能泄露 worker 私有训练样本的隐私风险（如梯度反演、成员推断），缺乏隐私影响评估。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 无效应量量化——\"improves\"与\"comparable\"无操作化定义，缺少如相对加速比（speedup ratio）、收敛步数减少百分比等效应量指标及其置信区间，无法判断改进的实际意义大小。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 无方差/不确定性报告——未见误差棒、标准差、置信带或多次随机种子下的均值±SD/SE 报告，读者无法评估结果的可重复性与显著性。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 未包含 Broader Impact / Misuse Risk 章节；加速式异步分布式优化可被用于大规模监控训练或对抗模型拟合等高风险场景，作者未提示潜在误用与缓解措施。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 未声明任何随机种子（数据划分、初始化、异步调度中的随机因素），多次运行结果无法对账。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 未提供一键复现方案（Docker/Singularity 容器、Makefile、README 跑通脚本），第三方需自行逆向工程环境与超参，复现成本极高。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 未提供代码/数据的哈希校验（如 commit SHA、数据集 checksum），即使后续补传代码也无法做版本对账，难以锁定被评审的精确版本。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 混淆变量未控——迭代数收敛比较未扣除 AA 每步额外的最小二乘求解与历史存储开销；墙上时间比较又受实现质量、通信与硬件强混淆，\"同时改进迭代数与墙上时间\"在两套口径下都不干净。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 相关工作以“AA”与“异步分布式优化”两个独立类别展开，却未调研二者交集的潜在工作（AA + asynchronous、quasi-Newton + async distributed、或 async ADMM-AA），造成“交集未被开拓”的错觉，是利用分类割裂来放大新颖性的常见手法。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 缺少配置快照：软件栈版本（PyTorch/TensorFlow、MPI/gRPC、CUDA）、固定步长具体取值、Anderson 加速深度 m、safe-guard 阈值、延迟分布参数等超参数均未在可见部分完整列出。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 验证范围不匹配——实验仅限凸分类任务，而动机与应用场景（多 GPU 分布式训练）普遍非凸；在凸问题上得到的加速结论无法外推至论文宣称的目标场景，内部与外部效度均存疑。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: **Anderson 大小写不一致。** 标题为\"Anderson **Accelerated** Asynchronous Method\"，方法全称为\"...with Anderson **Acceleration**\"（大写A），但正文中反复使用\"Anderson **acceleration** (AA)\"（小写a）。术语在文中的大小写应统一。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: **OpenReview 链接格式异常。** 首页链接显示为\"https: // openreview. net/ forum? id= Nm7dTogzfa\"，含多余空格，链接无法直接点击（可能为 PDF 提取副产品，但仍应检查源文件）。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: **摘要与引言高度冗余。** 摘要已阐述\"AA is an effective technique for accelerating fixed-point iterations, but it is rarely applied to distributed optimization\"，引言相关工作1.1.1又以近乎相同的句式重新定义AA，且引言对贡献的概述（fixed-poi",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: OpenReview 链接格式含空格（`https: // openreview. net/`），无法直接点击，增加定位原始材料的摩擦。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 两个指标（iteration-count 与 wall-clock-time）并列声称改进，但未讨论二者一致性——异步场景下 iteration-count 少未必 wall-clock-time 快（单次迭代通信/同步开销可能更大），缺乏对指标间不一致可能性的统计讨论。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 创新性宣称过强——\"AA 在分布式优化中尚未被探索\"忽略了多块 ADMM 加速、分布式拟牛顿等已有工作，新颖性框架可能夸大，影响对方法定位的判断。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 实验仅限“convex classification tasks”，贡献声称的“easier to determine, often leads to faster convergence”缺乏对非凸/强凸场景的宽广度，增量优势的普适性论证不足。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 未提供代码与数据可用性声明（Reproducibility Statement），第三方无法核验实验所用数据许可与来源，削弱合规可追溯性。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 论文采用单盲评审（TMLR 为 single-blind）故公开作者身份不违规，但作者邮箱（licong@sustech.edu.cn 等）与机构同时出现在正文，未在单独元数据字段隔离，存在轻度信息规范问题。",
+      "rounds": [
+        1
+      ]
+    }
+  ],
+  "unstable_issues": []
+}

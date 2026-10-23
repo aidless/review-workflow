@@ -1,0 +1,142 @@
+{
+  "_meta": {
+    "usage": "verdict: noise=误报 | supported=人工确认有来源 | critical=真实无支撑(一票Critical) | pending=待判",
+    "updated": "2026-08-26T04:08:46+00:00",
+    "pending": 27
+  },
+  "2.5": {
+    "verdict": "pending",
+    "note": "",
+    "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three capabilities under o"
+  },
+  "0.0000": {
+    "verdict": "pending",
+    "note": "",
+    "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three capabilities under o"
+  },
+  "0.355": {
+    "verdict": "pending",
+    "note": "",
+    "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three capabilities under o"
+  },
+  "1.2": {
+    "verdict": "pending",
+    "note": "",
+    "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three capabilities under o"
+  },
+  "3.1": {
+    "verdict": "pending",
+    "note": "",
+    "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three capabilities under o"
+  },
+  "0.28": {
+    "verdict": "pending",
+    "note": "",
+    "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three capabilities under o"
+  },
+  "3.11": {
+    "verdict": "pending",
+    "note": "",
+    "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three capabilities under o"
+  },
+  "2.4": {
+    "verdict": "pending",
+    "note": "",
+    "context": "\\begin{tabular}{p{2.4cm}p{2.8cm}p{2.4cm}p{4.2cm}}"
+  },
+  "2.8": {
+    "verdict": "pending",
+    "note": "",
+    "context": "\\begin{tabular}{p{2.4cm}p{2.8cm}p{2.4cm}p{4.2cm}}"
+  },
+  "4.2": {
+    "verdict": "pending",
+    "note": "",
+    "context": "\\begin{tabular}{p{2.4cm}p{2.8cm}p{2.4cm}p{4.2cm}}"
+  },
+  "0.007": {
+    "verdict": "pending",
+    "note": "",
+    "context": "ResearchClawBench (RCB) is the closest to L1b, providing checklist-based report scoring, but it covers only the workflow"
+  },
+  "0.10": {
+    "verdict": "pending",
+    "note": "",
+    "context": "L1b text-judge was llama3.1:8b (cloud). Before use it had to pass a calibration gate on a gold set of $\\ge$20 items (ARS"
+  },
+  "1.87": {
+    "verdict": "pending",
+    "note": "",
+    "context": "\\paragraph{Models.} Evaluated: qwen2.5:7b, qwen2.5:14b, gemma2:9b (SUTs); judge: llama3.1:8b. Reference API model deepse"
+  },
+  "0.4600": {
+    "verdict": "pending",
+    "note": "",
+    "context": "\\paragraph{Power.} Sample size is fixed by benchmark design, so we report achieved power / minimum detectable effect at "
+  },
+  "3.12": {
+    "verdict": "pending",
+    "note": "",
+    "context": "\\paragraph{Implementation.} \\texttt{scievalsuite/p3\\_run\\_l\\{1a,1b,2\\}.py} launchers (provider flag: \\texttt{cloud} vs \\"
+  },
+  "0.98": {
+    "verdict": "pending",
+    "note": "",
+    "context": "\\includegraphics[width=0.98\\linewidth]{fig_overview.pdf}"
+  },
+  "0.42": {
+    "verdict": "pending",
+    "note": "",
+    "context": "All three models showed \\emph{identical} paired outcomes: win\\_F=0, loss\\_F=0, ties=4, exact McNemar $p=1.0000$ (not-det"
+  },
+  "0.69": {
+    "verdict": "pending",
+    "note": "",
+    "context": "All three models showed \\emph{identical} paired outcomes: win\\_F=0, loss\\_F=0, ties=4, exact McNemar $p=1.0000$ (not-det"
+  },
+  "2.3333": {
+    "verdict": "pending",
+    "note": "",
+    "context": "Friedman over 16 paired tasks (L1a+L1b, lower-is-better after sign-flipping accuracy/correlation where needed and tie-co"
+  },
+  "0.64": {
+    "verdict": "pending",
+    "note": "",
+    "context": "Total calls 568 $<1000$ (L2 480 usage-logged, L1a 54 (18 initial + 36 extra trials), L1b gen 34, judge 0 for this round;"
+  },
+  "0.04": {
+    "verdict": "pending",
+    "note": "",
+    "context": "Total calls 568 $<1000$ (L2 480 usage-logged, L1a 54 (18 initial + 36 extra trials), L1b gen 34, judge 0 for this round;"
+  },
+  "0.074": {
+    "verdict": "pending",
+    "note": "",
+    "context": "\\textbf{(Q2) Larger N:} L2 N=8 (vs 4) and curated L1a N=6 k=4 (muse 6/6) give \\textbf{p=0.0026 exploratory} overall, vs "
+  },
+  "0.14": {
+    "verdict": "pending",
+    "note": "",
+    "context": "\\textbf{(Q5) F-arm Ablation:} 2$\\times$2 (nudges$\\times$guards) on 4 scenarios: all arms goal 0.1418 ($p=1.0000$) but F/"
+  },
+  "0.27": {
+    "verdict": "pending",
+    "note": "",
+    "context": "\\textbf{(Q5) F-arm Ablation:} 2$\\times$2 (nudges$\\times$guards) on 4 scenarios: all arms goal 0.1418 ($p=1.0000$) but F/"
+  },
+  "0.87": {
+    "verdict": "pending",
+    "note": "",
+    "context": "\\textbf{(Q5) F-arm Ablation:} 2$\\times$2 (nudges$\\times$guards) on 4 scenarios: all arms goal 0.1418 ($p=1.0000$) but F/"
+  },
+  "0.2400": {
+    "verdict": "pending",
+    "note": "",
+    "context": "The central empirical pattern was a consistently not-detectable difference between arms: three independent models, four "
+  },
+  "5.2": {
+    "verdict": "pending",
+    "note": "",
+    "context": "Fail MAE as worst is post-hoc. Sensitivity on curated 6-task k=3 Friedman: fail=-10 $\\rightarrow$ chi2=6.0 p=0.0498; fai"
+  }
+}

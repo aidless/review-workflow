@@ -1,0 +1,335 @@
+{
+  "meta": {
+    "zip": "F:\\Research\\_inbox\\F1-F5_F45_2026-08-26\\TMLR_4p5_Tier123_FINAL_20260827.zip",
+    "tex": "F:\\Research\\MERGED_FLAGSHIPS\\F45_Merged\\paper\\main.tex",
+    "entries": 12,
+    "timestamp": "2026-08-28T09:49:06+00:00"
+  },
+  "referenced_paths": [
+    {
+      "raw": "results/cells.jsonl",
+      "path": "results/cells.jsonl",
+      "line": 179,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "gen\\_figures\\_f4.py",
+      "path": "gen_figures_f4.py",
+      "line": 179,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/cells.jsonl",
+      "path": "results/cells.jsonl",
+      "line": 304,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/analysis.json",
+      "path": "results/analysis.json",
+      "line": 306,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "gen\\_figures\\_f4.py",
+      "path": "gen_figures_f4.py",
+      "line": 306,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "gen\\_f5\\_figures\\_real.py",
+      "path": "gen_f5_figures_real.py",
+      "line": 306,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "figures/voting\\_comparison.pdf",
+      "path": "figures/voting_comparison.pdf",
+      "line": 306,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "figures/sign\\_flip.pdf",
+      "path": "figures/sign_flip.pdf",
+      "line": 306,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "figures/reliability\\_voting.pdf",
+      "path": "figures/reliability_voting.pdf",
+      "line": 306,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "paper/",
+      "path": "paper/",
+      "line": 310,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/cells.jsonl",
+      "path": "results/cells.jsonl",
+      "line": 495,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/analysis.json",
+      "path": "results/analysis.json",
+      "line": 495,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "gen\\_figures\\_f4.py",
+      "path": "gen_figures_f4.py",
+      "line": 495,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "figures/",
+      "path": "figures/",
+      "line": 495,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "figures/",
+      "path": "figures/",
+      "line": 528,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/analysis.json",
+      "path": "results/analysis.json",
+      "line": 528,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "F:/Research/F4\\_Single\\_10page/simulator.py",
+      "path": "F:/Research/F4_Single_10page/simulator.py",
+      "line": 603,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "paper/appendix\\_Q\\_sweep.json",
+      "path": "paper/appendix_Q_sweep.json",
+      "line": 603,
+      "status": "MISSING",
+      "matched": []
+    }
+  ],
+  "missing_refs": [
+    {
+      "raw": "results/cells.jsonl",
+      "path": "results/cells.jsonl",
+      "line": 179,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "gen\\_figures\\_f4.py",
+      "path": "gen_figures_f4.py",
+      "line": 179,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/cells.jsonl",
+      "path": "results/cells.jsonl",
+      "line": 304,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/analysis.json",
+      "path": "results/analysis.json",
+      "line": 306,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "gen\\_figures\\_f4.py",
+      "path": "gen_figures_f4.py",
+      "line": 306,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "gen\\_f5\\_figures\\_real.py",
+      "path": "gen_f5_figures_real.py",
+      "line": 306,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "figures/voting\\_comparison.pdf",
+      "path": "figures/voting_comparison.pdf",
+      "line": 306,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "figures/sign\\_flip.pdf",
+      "path": "figures/sign_flip.pdf",
+      "line": 306,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "figures/reliability\\_voting.pdf",
+      "path": "figures/reliability_voting.pdf",
+      "line": 306,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "paper/",
+      "path": "paper/",
+      "line": 310,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/cells.jsonl",
+      "path": "results/cells.jsonl",
+      "line": 495,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/analysis.json",
+      "path": "results/analysis.json",
+      "line": 495,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "gen\\_figures\\_f4.py",
+      "path": "gen_figures_f4.py",
+      "line": 495,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "figures/",
+      "path": "figures/",
+      "line": 495,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "figures/",
+      "path": "figures/",
+      "line": 528,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/analysis.json",
+      "path": "results/analysis.json",
+      "line": 528,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "F:/Research/F4\\_Single\\_10page/simulator.py",
+      "path": "F:/Research/F4_Single_10page/simulator.py",
+      "line": 603,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "paper/appendix\\_Q\\_sweep.json",
+      "path": "paper/appendix_Q_sweep.json",
+      "line": 603,
+      "status": "MISSING",
+      "matched": []
+    }
+  ],
+  "local_path_leaks": [
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F3_Single_10page",
+      "context": "data.cells_path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F1_Single_10page",
+      "context": "data.cross_study_checks.F1_cells.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F1_Single_10page",
+      "context": "data.cross_study_checks.F1_phrasing_500.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F4_Single_10page",
+      "context": "data.cross_study_checks.F45_cells.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F4_Single_10page",
+      "context": "data.cross_study_checks.F45_real_llm_400_v6.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F2_Single_10page",
+      "context": "data.cross_study_checks.F2_cells.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F2_Single_10page",
+      "context": "data.cross_study_checks.F2_analysis.path"
+    },
+    {
+      "file": "supplementary/tier2_phrasing_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F1_Single_10page",
+      "context": "meta.cells"
+    },
+    {
+      "file": "supplementary/tier2_phrasing_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F1_Single_10page",
+      "context": "meta.phrasing_cells"
+    }
+  ],
+  "count_claims": [],
+  "inpackage_tex": {
+    "entry": null,
+    "desync_with_disk": false,
+    "count_claims": []
+  },
+  "summary": {
+    "refs_total": 18,
+    "refs_missing": 18,
+    "leaks": 9,
+    "count_claims": 0,
+    "count_claims_mismatched": 0,
+    "tex_desync": false,
+    "verdict": "CRITICAL"
+  }
+}

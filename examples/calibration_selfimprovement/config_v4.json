@@ -1,0 +1,23 @@
+{
+ "name": "calibration_selfimprovement_v4_textfix",
+ "tex": "F:/deepseek/papers/calibration-self-improvement/paper/main.tex",
+ "zip": "F:/deepseek/papers/calibration-self-improvement/submission_clean_20260827_v4.zip",
+ "evidence_dirs": [
+  "F:/deepseek/papers/calibration-self-improvement/evidence"
+ ],
+ "manifest": "F:/deepseek/papers/calibration-self-improvement/evidence_manifest.json",
+ "adjudications": "F:/deepseek/research-kit/review-workflow/examples/calibration_selfimprovement/adjudications_r3.json",
+ "converge": 3,
+ "citation_online": false,
+ "novelty_online": false,
+ "r3_llm": true,
+ "r4_llm": true,
+ "calibration": "F:/deepseek/research-kit/review-workflow/examples/tmlr_calibration/cal_results",
+ "llm": {
+  "enabled": true,
+  "script": "F:/deepseek/research-kit/adversarial_review.py",
+  "rpc": "http://127.0.0.1:3080",
+  "roles": "all"
+ },
+ "out": "F:/deepseek/research-kit/review-workflow/examples/calibration_selfimprovement/run_v4"
+}

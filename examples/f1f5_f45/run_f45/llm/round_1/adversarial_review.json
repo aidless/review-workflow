@@ -1,0 +1,157 @@
+[
+  {
+    "role": "method",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 混合规则是在同一个 128K cells 上“derived”并“evaluated”的，没有独立验证集或交叉验证；阈值 0.5 和 hybrid 定义可能从事后数据中选择，F5 不能被视为对假设的验证性检验。",
+        "- Critical: 仅用单一参数点（N=7, f=2, pH=0.65）和两种 capture 策略就宣称“falsify sign flip”，因果自变量只有一个二值对比，无法排除中间策略、其他 f/pH 或置信度分布下出现 sign flip；“studied regime”是事后划定的边界。"
+      ],
+      "Major": [
+        "- Major: 4 个 model families 被合并为 16,000 per strategy–rule cell，但 model family 本身可能是重要调节变量；未报告各 family 单独结果，可能掩盖 Simpson’s paradox，甚至个别 family 内存在 sign flip。",
+        "- Major: c=0（trust 从未输给 majority）在所有 trial 上零反例过于理想，可能由模拟假设（captured confidence 极端、honest confidence 完全单调）在构造上必然导致，而不是稳健的经验发现；缺少对置信度生成机制的敏感性分析。",
+        "- Major: 真实 LLM pilot 报告不一致（摘要写 400 trials，但出现 “3991/4000” 和 99.78%）；若 verbalized confidence 几乎恒定（0.985 vs 0.985），trust weighting 近似退化为 majority，c=0 是平凡结果，不能作为主结论的独立佐证。",
+        "- Major: 没有预先注册假设和分析流程，“sign-flip hypothesis”可能是看到 c=0 后才形成的；用同一数据做探索性发现并称“falsify”，存在 HARKing 风险。",
+        "- Minor: pH=0.65、f=2 且 captured 可稳定拖垮 majority 的参数选择使 majority 基线被人为压低，任何利用置信度信息的规则都更容易胜出；该 regime 不代表现实 verifier pipelines。"
+      ],
+      "Minor": [
+        "- Minor: pH=0.65、f=2 且 captured 可稳定拖垮 majority 的参数选择使 majority 基线被人为压低，任何利用置信度信息的规则都更容易胜出；该 regime 不代表现实 verifier pipelines。",
+        "- Minor: 依赖单个 seed、单个 pH 和 McNemar 极端 p 值，未给出多种子 Monte Carlo 区间或按 model family 分层效应量，统计显著性被过度强调。",
+        "- Minor: “因为 honest 是多数且置信度 informative 所以加权有效”的机制解释是事后叙事，未通过消融（如打乱置信度、移除 captured 再比较）或中介分析验证。",
+        "- Minor: SHA 哈希只证明数据未被篡改，不等于分析计划预先固定；不能作为“诚实报告”或防止 data dredging 的方法论保障。"
+      ]
+    },
+    "raw": "- Critical: 混合规则是在同一个 128K cells 上“derived”并“evaluated”的，没有独立验证集或交叉验证；阈值 0.5 和 hybrid 定义可能从事后数据中选择，F5 不能被视为对假设的验证性检验。\n- Critical: 仅用单一参数点（N=7, f=2, pH=0.65）和两种 capture 策略就宣称“falsify sign flip”，因果自变量只有一个二值对比，无法排除中间策略、其他 f/pH 或置信度分布下出现 sign flip；“studied regime”是事后划定的边界。\n- Major: 4 个 model families 被合并为 16,000 per strategy–rule cell，但 model family 本身可能是重要调节变量；未报告各 family 单独结果，可能掩盖 Simpson’s paradox，甚至个别 family 内存在 sign flip。\n- Major: c=0（trust 从未输给 majority）在所有 trial 上零反例过于理想，可能由模拟假设（captured confidence 极端、honest confidence 完全单调）在构造上必然导致，而不是稳健的经验发现；缺少对置信度生成机制的敏感性分析。\n- Major: 真实 LLM pilot 报告不一致（摘要写 400 trials，但出现 “3991/4000” 和 99.78%）；若 verbalized confidence 几乎恒定（0.985 vs 0.985），trust weighting 近似退化为 majority，c=0 是平凡结果，不能作为主结论的独立佐证。\n- Major: 没有预先注册假设和分析流程，“sign-flip hypothesis”可能是看到 c=0 后才形成的；用同一数据做探索性发现并称“falsify”，存在 HARKing 风险。\n- Minor: pH=0.65、f=2 且 captured 可稳定拖垮 majority 的参数选择使 majority 基线被人为压低，任何利用置信度信息的规则都更容易胜出；该 regime 不代表现实 verifier pipelines。\n- Minor: 依赖单个 seed、单个 pH 和 McNemar 极端 p 值，未给出多种子 Monte Carlo 区间或按 model family 分层效应量，统计显著性被过度强调。\n- Minor: “因为 honest 是多数且置信度 informative 所以加权有效”的机制解释是事后叙事，未通过消融（如打乱置信度、移除 captured 再比较）或中介分析验证。\n- Minor: SHA 哈希只证明数据未被篡改，不等于分析计划预先固定；不能作为“诚实报告”或防止 data dredging 的方法论保障。\n建议: 将 sign-flip 检验预注册，并在独立数据/交叉验证上系统扫描 f、pH、capture 策略和 confidence 生成机制，同时分别报告每个 model family 与多种子结果。",
+    "sessionId": "session-a6deb7bb-7dae-4d20-b54f-76f77bc29a1b"
+  },
+  {
+    "role": "stat",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 混合规则是在同一 128K 数据上“derived/阈值选择”后又在同一批数据上报告 McNemar p 值的，属于 data-adaptive 后检验；hybrid 的 p 值存在乐观偏倚，不能作为确认性证据。"
+      ],
+      "Major": [
+        "- Major: c=0 只是有限样本中未观察到反超，不能推出该 regime 内“never loses/never sign flip”；最多只能说“在本次 16,000 个样本中未出现”，需给出置信区间或理论证明。",
+        "- Major: 有效样本量可能被高估：若 4 个 model families 共享同一批 4,000 trials，则每策略-规则只有 4,000 个独立问题（而非 16,000 cells），McNemar 的独立配对假设和 p 值会被高估。",
+        "- Major: 多个规则、两个策略、primary/secondary/trimmed/real-LLM 分析均未做多重比较控制；即使 c=0 较强，仍需明确区分预先指定与探索性分析，并报告校正后结果。",
+        "- Major: 只报告点准确率和配对差值，没有 95% CI、SE 或标准化效应量，也未报告 trial/model-family 层面的变异，无法评估效应稳定性。",
+        "- Major: 仅在单一参数点 N=7、f=2、pH=0.65 上检验，不能支持“No sign flip”的一般性结论；至少应在 pH、f/N 网格上检验符号是否稳定。"
+      ],
+      "Minor": [
+        "- Minor: 真实 LLM pilot 样本量前后不一致（“400 trials”与“3991/4000”），且 400 次观测不足以支撑“confidence 0.985 vs 0.985 uninformative”或 c=0 模式的结论，应更正并加 CI。",
+        "- Minor: 报告 p<10^-100 / p<10^-400 不如报告精确 McNemar/binomial p 值、b/c 计数及效应量；极小的 p 值容易掩盖实际差异大小。"
+      ]
+    },
+    "raw": "- Critical: 混合规则是在同一 128K 数据上“derived/阈值选择”后又在同一批数据上报告 McNemar p 值的，属于 data-adaptive 后检验；hybrid 的 p 值存在乐观偏倚，不能作为确认性证据。\n- Major: c=0 只是有限样本中未观察到反超，不能推出该 regime 内“never loses/never sign flip”；最多只能说“在本次 16,000 个样本中未出现”，需给出置信区间或理论证明。\n- Major: 有效样本量可能被高估：若 4 个 model families 共享同一批 4,000 trials，则每策略-规则只有 4,000 个独立问题（而非 16,000 cells），McNemar 的独立配对假设和 p 值会被高估。\n- Major: 多个规则、两个策略、primary/secondary/trimmed/real-LLM 分析均未做多重比较控制；即使 c=0 较强，仍需明确区分预先指定与探索性分析，并报告校正后结果。\n- Major: 只报告点准确率和配对差值，没有 95% CI、SE 或标准化效应量，也未报告 trial/model-family 层面的变异，无法评估效应稳定性。\n- Major: 仅在单一参数点 N=7、f=2、pH=0.65 上检验，不能支持“No sign flip”的一般性结论；至少应在 pH、f/N 网格上检验符号是否稳定。\n- Minor: 真实 LLM pilot 样本量前后不一致（“400 trials”与“3991/4000”），且 400 次观测不足以支撑“confidence 0.985 vs 0.985 uninformative”或 c=0 模式的结论，应更正并加 CI。\n- Minor: 报告 p<10^-100 / p<10^-400 不如报告精确 McNemar/binomial p 值、b/c 计数及效应量；极小的 p 值容易掩盖实际差异大小。\n建议: 将混合规则改为预注册/独立验证集评估，并以 trial 为独立单位报告校正后的置信区间和效应量。",
+    "sessionId": "session-3f2ec121-14c1-4093-935f-19306141ba92"
+  },
+  {
+    "role": "experiment",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: F5 的 adaptive-hybrid 规则在同一 128K cells 上“导出并评估”，没有独立验证集或交叉验证；“no new data”不能消除选择偏差，hybrid 的 c=0/b≈1600 不能作为强化证据。"
+      ],
+      "Major": [
+        "- Major: 对照组缺失：没有“无捕获/无攻击”或“置信度无信息”的 synthetic 条件，无法分离 trust weighting 的真实收益，也无法在 synthetic 中检验 sign-flip 是否依赖 confidence informativeness。",
+        "- Major: 消融不完整：只报告 trust_mean、trimmed_mean 和唯一一种固定阈值 hybrid，缺少对 hybrid 阈值、组合权重、trimmed 比例、置信度映射的消融与敏感性分析。",
+        "- Major: seed 管理不足：仅 seed 42，无多 seed、bootstrap 或 CI；McNemar 将 16K cells 当作独立样本，但 cells 共享 trial/model family，可能违反独立性并夸大 p 值。",
+        "- Major: 泛化性过窄：仅 N=7、f=2、pH=0.65 和两种 capture strategies，未覆盖 f=3/4、pH 接近 0.5、不同 N、不同置信度分布或混合/自适应攻击，结论只能算单点案例而非稳健 falsification。",
+        "- Major: 基准公平性不清楚：未给出 4 个 model families 的逐族结果或 family×strategy×rule 交互，pooled 结果可能由某个有利 family 主导。",
+        "- Minor: 对 trimmed mean 的“单独也优于 majority”未说明其置信度处理与 trust_mean 是否公平可比，也没有报告两种组件在不同 strategy 下各自贡献的分解。"
+      ],
+      "Minor": [
+        "- Minor: 真实 LLM pilot 规模太小且报告不一致（400 trials 却出现 3991/4000），不能作为 real-LLM 可复现性证据，只能算 exploratory。",
+        "- Minor: 对 trimmed mean 的“单独也优于 majority”未说明其置信度处理与 trust_mean 是否公平可比，也没有报告两种组件在不同 strategy 下各自贡献的分解。"
+      ]
+    },
+    "raw": "- Critical: F5 的 adaptive-hybrid 规则在同一 128K cells 上“导出并评估”，没有独立验证集或交叉验证；“no new data”不能消除选择偏差，hybrid 的 c=0/b≈1600 不能作为强化证据。\n- Major: 对照组缺失：没有“无捕获/无攻击”或“置信度无信息”的 synthetic 条件，无法分离 trust weighting 的真实收益，也无法在 synthetic 中检验 sign-flip 是否依赖 confidence informativeness。\n- Major: 消融不完整：只报告 trust_mean、trimmed_mean 和唯一一种固定阈值 hybrid，缺少对 hybrid 阈值、组合权重、trimmed 比例、置信度映射的消融与敏感性分析。\n- Major: seed 管理不足：仅 seed 42，无多 seed、bootstrap 或 CI；McNemar 将 16K cells 当作独立样本，但 cells 共享 trial/model family，可能违反独立性并夸大 p 值。\n- Major: 泛化性过窄：仅 N=7、f=2、pH=0.65 和两种 capture strategies，未覆盖 f=3/4、pH 接近 0.5、不同 N、不同置信度分布或混合/自适应攻击，结论只能算单点案例而非稳健 falsification。\n- Major: 基准公平性不清楚：未给出 4 个 model families 的逐族结果或 family×strategy×rule 交互，pooled 结果可能由某个有利 family 主导。\n- Minor: 真实 LLM pilot 规模太小且报告不一致（400 trials 却出现 3991/4000），不能作为 real-LLM 可复现性证据，只能算 exploratory。\n- Minor: 对 trimmed mean 的“单独也优于 majority”未说明其置信度处理与 trust_mean 是否公平可比，也没有报告两种组件在不同 strategy 下各自贡献的分解。\n\n建议: 将实验改为多 seed、含无捕获/无信息置信度对照、对 hybrid 做阈值与组件消融并用独立验证集评估，同时报告 per-model-family 结果和聚类校正后的统计量。",
+    "sessionId": "session-b18c491a-716f-4f0e-a905-aa5852b10c27"
+  },
+  {
+    "role": "novelty",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 论文所攻击的“sign-flip hypothesis”没有引用任何先前文献提出过该假设，像是自行构造的靶子，因此“证伪一个未被文献支持的假设”并不是真实的研究 GAP，新颖性基础薄弱。"
+      ],
+      "Major": [
+        "- Major: 所有主要结论只来自单一合成参数点（N=7, f=2, pH=0.65），未扫描 N、f、pH、置信度生成方式或捕获强度；即使标题限定“within the studied regime”，把该单点结果表述为“falsifies the hypothesis”仍夸大了增量贡献。",
+        "- Major: 混合投票规则是在同一个 128K cells 上“derived”并“evaluated”（no new data），存在同数据选择/过拟合/双重 dipping 风险，hybrid 的 0.620/0.790 和“never losing”不能作为独立验证性的贡献。",
+        "- Major: 与现有文献的差异未充分建立；没有和已有的置信加权投票、鲁棒聚合、trimmed mean、Byzantine 容错聚合等方法及理论结果进行系统对比，trust weighting 在“诚实者占多数且置信度 informative”时优于 majority 更像是已知鲁棒加权机制的实验复现，而非新洞见。"
+      ],
+      "Minor": [
+        "- Minor: 对“为什么没有 sign flip”的解释是事后且近乎平凡：少数 captured 无法抵消多数且置信度仍 informative 的诚实投票；该解释没有提炼出新的理论条件或可检验边界。",
+        "- Minor: 补充 real-LLM pilot 数据存在内部不一致（称 400 trials 却又写 3991/4000），降低了真实 LLM 部分作为支撑材料的可信度。"
+      ]
+    },
+    "raw": "- Critical: 论文所攻击的“sign-flip hypothesis”没有引用任何先前文献提出过该假设，像是自行构造的靶子，因此“证伪一个未被文献支持的假设”并不是真实的研究 GAP，新颖性基础薄弱。\n- Major: 所有主要结论只来自单一合成参数点（N=7, f=2, pH=0.65），未扫描 N、f、pH、置信度生成方式或捕获强度；即使标题限定“within the studied regime”，把该单点结果表述为“falsifies the hypothesis”仍夸大了增量贡献。\n- Major: 混合投票规则是在同一个 128K cells 上“derived”并“evaluated”（no new data），存在同数据选择/过拟合/双重 dipping 风险，hybrid 的 0.620/0.790 和“never losing”不能作为独立验证性的贡献。\n- Major: 与现有文献的差异未充分建立；没有和已有的置信加权投票、鲁棒聚合、trimmed mean、Byzantine 容错聚合等方法及理论结果进行系统对比，trust weighting 在“诚实者占多数且置信度 informative”时优于 majority 更像是已知鲁棒加权机制的实验复现，而非新洞见。\n- Minor: 对“为什么没有 sign flip”的解释是事后且近乎平凡：少数 captured 无法抵消多数且置信度仍 informative 的诚实投票；该解释没有提炼出新的理论条件或可检验边界。\n- Minor: 补充 real-LLM pilot 数据存在内部不一致（称 400 trials 却又写 3991/4000），降低了真实 LLM 部分作为支撑材料的可信度。\n建议: 将贡献重新定位为“单一合成 regime 下的负结果/案例研究”，补充 N、f、pH 与捕获策略扫描，并与现有鲁棒聚合/置信加权方法公平对比后再讨论一般性。",
+    "sessionId": "session-4bc4e992-abba-4a14-bbf9-89d4afe1e260"
+  },
+  {
+    "role": "repro",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 证据链断链：只给出聚合后 cells.jsonl 的截断哈希，未提供原始 trial 级数据、模型族定义或从原始生成到 cells.jsonl 的转换脚本，无法对账 128,000 cells 是否由 4,000 trials × 4 families × 2 strategies 正确产生。",
+        "- Critical: 一键复现缺失：没有仓库链接、容器/依赖锁定、可执行脚本或端到端 pipeline，审稿人无法复现 trust_mean/majority/hybrid 的任何数字。"
+      ],
+      "Major": [
+        "- Critical: 一键复现缺失：没有仓库链接、容器/依赖锁定、可执行脚本或端到端 pipeline，审稿人无法复现 trust_mean/majority/hybrid 的任何数字。",
+        "- Major: seed 记录不充分：仅写 “seed 42”，未说明该 seed 如何分配给各模型族/策略/试验，也未固定 NumPy、PyTorch、Ollama 等 RNG 实现版本，跨环境难以得到同一 cells.jsonl。",
+        "- Major: 配置快照缺失：pH=0.65、两种 capture strategy、四个模型族、trimmed mean、Atv 联合规则、阈值 0.5 等缺少 JSON/YAML 配置快照，且未记录库版本与 gemma3:4b 的具体权重/量化版本。",
+        "- Major: 哈希对账不完整：SHA 仅为截断值（6c375b43、798bbc2d 约 32 位），没有完整 SHA-256、文件清单、规范哈希命令或可下载产物，无法确认数据未被修改或确实对应论文实验。",
+        "- Major: 数据许可不明：未声明 cells.jsonl、real_llm_400_v6 的许可证与再分发条款，也未说明 Gemma 输出的使用/存档合规性，阻碍复现者合法复用数据。",
+        "- Major: 证据链内部矛盾：real-LLM pilot 写 “400 trials” 却出现 “3991/4000 honest parse” 与 99.78% 的分母，样本量不一致，且未提供该 pilot 的完整数据与生成日志来澄清。"
+      ],
+      "Minor": [
+        "- Minor: 单点参数和多 seed 稳健性不足：单一 (N=7, f=2, pH=0.65) 与单一 seed 42 即使限于 “studied regime” 也缺少多 seed/敏感性快照，无法证明该 regime 内结果可稳定复现。"
+      ]
+    },
+    "raw": "- Critical: 证据链断链：只给出聚合后 cells.jsonl 的截断哈希，未提供原始 trial 级数据、模型族定义或从原始生成到 cells.jsonl 的转换脚本，无法对账 128,000 cells 是否由 4,000 trials × 4 families × 2 strategies 正确产生。\n- Critical: 一键复现缺失：没有仓库链接、容器/依赖锁定、可执行脚本或端到端 pipeline，审稿人无法复现 trust_mean/majority/hybrid 的任何数字。\n- Major: seed 记录不充分：仅写 “seed 42”，未说明该 seed 如何分配给各模型族/策略/试验，也未固定 NumPy、PyTorch、Ollama 等 RNG 实现版本，跨环境难以得到同一 cells.jsonl。\n- Major: 配置快照缺失：pH=0.65、两种 capture strategy、四个模型族、trimmed mean、Atv 联合规则、阈值 0.5 等缺少 JSON/YAML 配置快照，且未记录库版本与 gemma3:4b 的具体权重/量化版本。\n- Major: 哈希对账不完整：SHA 仅为截断值（6c375b43、798bbc2d 约 32 位），没有完整 SHA-256、文件清单、规范哈希命令或可下载产物，无法确认数据未被修改或确实对应论文实验。\n- Major: 数据许可不明：未声明 cells.jsonl、real_llm_400_v6 的许可证与再分发条款，也未说明 Gemma 输出的使用/存档合规性，阻碍复现者合法复用数据。\n- Major: 证据链内部矛盾：real-LLM pilot 写 “400 trials” 却出现 “3991/4000 honest parse” 与 99.78% 的分母，样本量不一致，且未提供该 pilot 的完整数据与生成日志来澄清。\n- Minor: 单点参数和多 seed 稳健性不足：单一 (N=7, f=2, pH=0.65) 与单一 seed 42 即使限于 “studied regime” 也缺少多 seed/敏感性快照，无法证明该 regime 内结果可稳定复现。\n建议: 公开匿名仓库，提供完整 SHA-256 manifest、固定 seed/依赖/配置快照、数据许可证，并用一条 `make reproduce` 从 raw trials 重新生成并核对所有哈希。",
+    "sessionId": "session-41756263-5b0b-4745-ba03-8b351d64e007"
+  },
+  {
+    "role": "writing",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 摘要中真实 LLM 试点样本量自相矛盾：前面写 “400 trials”，后面却写 “3991/4000 honest parse 99.78%”；若分母应为 400，则 3991 与 99.78% 均不成立，若分母为 4000，则与 “400 trials” 直接冲突。",
+        "- Critical: hybrid 的 McNemar 数字与准确率差内部不一致：在摘要给出的 16,000 per strategy–rule cell 且 c=0 的口径下，b≈1600 对应 Δ≈0.100；但 injection 的 0.620−0.435=0.185、mimicry 的 0.790−0.732=0.058 都不可能同时对应 b≈1600，且 mimicry 若 b≈928 时 p 也不可能 <10⁻⁴⁰⁰。"
+      ],
+      "Major": [
+        "- Major: 核心术语 “mimicry” 前后定义冲突：摘要称 captured verifiers “anti-correlate confidence with correctness”，引言却称 “mimic honest confidence behavior (making them indistinguishable)”，两种策略并不等价，导致 sign-flip 的论证对象不清晰。",
+        "- Major: 摘要中 F4/F5 未定义，若指图表应写 “Figure 4/5”，且正文截图中没有图表可核对；同时 “adaptive hybrid (Atv)” 缩写未解释，与后文 trust_mean、trimmed mean、hybrid 的术语不统一。",
+        "- Major: 摘要结构过载：把 SHA、cell counts、模型族数、per-cell 样本量等复现细节全部塞入摘要，却未先定义 trust_mean、trimmed mean、thresholded hybrid 等核心规则，不符合 TMLR 摘要应有的可读性。",
+        "- Minor: “trust-weighted voting never loses to majority” 与 “beats majority” 的表述强度不一致；“beats” 易被理解为严格胜出，而 c=0 只能推出不输（win or tie）。"
+      ],
+      "Minor": [
+        "- Minor: 标题中的 “No Sign Flip (within the studied regime: N=7,f=2,pH=0.65, two capture strategies) When Confidence Is Informative” 过于冗长且带参数串，再加上换行断裂，不够正式、不易读。",
+        "- Minor: “trust-weighted voting never loses to majority” 与 “beats majority” 的表述强度不一致；“beats” 易被理解为严格胜出，而 c=0 只能推出不输（win or tie）。",
+        "- Minor: “3991/4000 honest parse 99.78% is_real” 句子成分残缺、语序不通，且 “honest parse” 与 “is_real” 的含义没有解释。",
+        "- Minor: 摘要最后 “Data are shared honestly” 属于非正式口头表述，且 F4/F5 引用方式在摘要中显得突兀，建议改为规范图表引用。"
+      ]
+    },
+    "raw": "- Critical: 摘要中真实 LLM 试点样本量自相矛盾：前面写 “400 trials”，后面却写 “3991/4000 honest parse 99.78%”；若分母应为 400，则 3991 与 99.78% 均不成立，若分母为 4000，则与 “400 trials” 直接冲突。\n- Critical: hybrid 的 McNemar 数字与准确率差内部不一致：在摘要给出的 16,000 per strategy–rule cell 且 c=0 的口径下，b≈1600 对应 Δ≈0.100；但 injection 的 0.620−0.435=0.185、mimicry 的 0.790−0.732=0.058 都不可能同时对应 b≈1600，且 mimicry 若 b≈928 时 p 也不可能 <10⁻⁴⁰⁰。\n- Major: 核心术语 “mimicry” 前后定义冲突：摘要称 captured verifiers “anti-correlate confidence with correctness”，引言却称 “mimic honest confidence behavior (making them indistinguishable)”，两种策略并不等价，导致 sign-flip 的论证对象不清晰。\n- Major: 摘要中 F4/F5 未定义，若指图表应写 “Figure 4/5”，且正文截图中没有图表可核对；同时 “adaptive hybrid (Atv)” 缩写未解释，与后文 trust_mean、trimmed mean、hybrid 的术语不统一。\n- Major: 摘要结构过载：把 SHA、cell counts、模型族数、per-cell 样本量等复现细节全部塞入摘要，却未先定义 trust_mean、trimmed mean、thresholded hybrid 等核心规则，不符合 TMLR 摘要应有的可读性。\n- Minor: 标题中的 “No Sign Flip (within the studied regime: N=7,f=2,pH=0.65, two capture strategies) When Confidence Is Informative” 过于冗长且带参数串，再加上换行断裂，不够正式、不易读。\n- Minor: “trust-weighted voting never loses to majority” 与 “beats majority” 的表述强度不一致；“beats” 易被理解为严格胜出，而 c=0 只能推出不输（win or tie）。\n- Minor: “3991/4000 honest parse 99.78% is_real” 句子成分残缺、语序不通，且 “honest parse” 与 “is_real” 的含义没有解释。\n- Minor: 摘要最后 “Data are shared honestly” 属于非正式口头表述，且 F4/F5 引用方式在摘要中显得突兀，建议改为规范图表引用。\n建议: 统一所有样本量与统计量（例如 400→399/400 或 4000→3991/4000，并按实际 b 重算 Δ/p），在摘要中先定义 mimicry、trust_mean、trimmed mean、hybrid，再统一 F4/F5 与 “Figure 4/5” 的表述。",
+    "sessionId": "session-f02f6c9d-4cd6-42e9-89d1-cd50b392493c"
+  },
+  {
+    "role": "ethics",
+    "status": "ok",
+    "issues": {
+      "Critical": [],
+      "Major": [
+        "- Major: 数据许可：论文使用 gemma3:4b 并共享 / 可能共享其生成数据（real_llm_400_v6），但未说明是否遵守 Gemma 使用条款，也未给数据集与代码明确 license，存在合规与再分发风险。",
+        "- Major: 隐私/IRB：虽然主体是合成数据，但真实-LLM pilot 未说明 prompt/输入语料来源是否包含个人或受版权保护内容，也未提供“不含 PII、无需 IRB”的明确声明。",
+        "- Major: 利益冲突：未披露资助来源、机构关系或与 Gemma / 验证器聚合商业产品相关的利益冲突，缺少 TMLR 所需的 competing interests 声明。",
+        "- Major: 误用风险：尽管论文强调“within the studied regime”，仍缺少 broader impact / 预期用途声明；“never loses to majority”易被误读为可安全部署于高风险自动审核或内容决策，需要明确禁用场景和人工复核要求。"
+      ],
+      "Minor": [
+        "- Minor: 双盲：声明了匿名评审，但没有说明补充数据/代码是否通过匿名链接和无元数据渠道发布；若 artifact 名称（如 real_llm_400_v6）与作者公开仓库可对应，可能破坏双盲。"
+      ]
+    },
+    "raw": "- Major: 数据许可：论文使用 gemma3:4b 并共享 / 可能共享其生成数据（real_llm_400_v6），但未说明是否遵守 Gemma 使用条款，也未给数据集与代码明确 license，存在合规与再分发风险。\n- Major: 隐私/IRB：虽然主体是合成数据，但真实-LLM pilot 未说明 prompt/输入语料来源是否包含个人或受版权保护内容，也未提供“不含 PII、无需 IRB”的明确声明。\n- Minor: 双盲：声明了匿名评审，但没有说明补充数据/代码是否通过匿名链接和无元数据渠道发布；若 artifact 名称（如 real_llm_400_v6）与作者公开仓库可对应，可能破坏双盲。\n- Major: 利益冲突：未披露资助来源、机构关系或与 Gemma / 验证器聚合商业产品相关的利益冲突，缺少 TMLR 所需的 competing interests 声明。\n- Major: 误用风险：尽管论文强调“within the studied regime”，仍缺少 broader impact / 预期用途声明；“never loses to majority”易被误读为可安全部署于高风险自动审核或内容决策，需要明确禁用场景和人工复核要求。\n建议: 在补充材料中补齐模型与数据许可、隐私/IRB/无 PII 声明、匿名 artifact 托管方式、利益冲突披露，并增加预期用途与误用限制说明。",
+    "sessionId": "session-61e69a66-847d-4e1c-a97c-c8eab29004be"
+  }
+]

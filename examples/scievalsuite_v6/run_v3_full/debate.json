@@ -1,0 +1,360 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\examples\\scievalsuite_v6\\run_v3_full\\r6_llm.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-26T16:18:01+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Critical",
+      "text": "- **Critical**: AIRS-Bench / ResearchClawBench / GAIA2 三套派生/第三方数据集均未披露许可证（license）；无法核实合法再分发与重跑权利，法律层面即不可复现。"
+    },
+    {
+      "id": 2,
+      "sev": "Critical",
+      "text": "- **Critical**: L2 的 exact McNemar 检验 $n_d=0$（零不一致对），检验统计量退化为无意义常量；$p=1.0000$ 与 95% CI $[0,0]$ 同为退化值，既不能证明\"无差异\"也不能证明\"有差异\"，摘要将其作为 L2 两臂等价的推断依据是误导性的。"
+    },
+    {
+      "id": 3,
+      "sev": "Critical",
+      "text": "- **Critical**: curated L1a 的 $p=0.0026$ 仅在\"fail-as-worst encoding\"一种编码方案下显著，属于在多种编码/敏感性选择中挑选显著结果（specification search / p-hacking），未对编码方案数做多重比较校正，该 p 值不可信。"
+    },
+    {
+      "id": 4,
+      "sev": "Critical",
+      "text": "- Critical: \"simulated second annotator α=0.894\"——模拟标注者需要 seed 与模拟模型，二者均未披露，α 既不可对账也不可复现。"
+    },
+    {
+      "id": 5,
+      "sev": "Critical",
+      "text": "- Critical: L1b 所有模型 0/10，positive control 仅 Chemistry_000 1/4 单例，无法排除\"任务不可解/harness 缺陷\"这一混淆，内部效度不足以区分模型无能与评测失效。"
+    },
+    {
+      "id": 6,
+      "sev": "Critical",
+      "text": "- Critical: L2 主对比 A vs F 仅 N=4，McNemar 功率显式为 0.0000，n_d=0<6，CI 退化为 [0,0]，这不是\"无差异\"而是\"无力检验\"，将结论框定为\"no statistically detectable difference\"构成性误导。"
+    },
+    {
+      "id": 7,
+      "sev": "Critical",
+      "text": "- Critical: LLM-as-judge 在主轮次中零次调用（all SKIP），校准（21 gold，single annotator）永未在实际评分场景中验证，所谓\"方法学保证\"是空桥。"
+    },
+    {
+      "id": 8,
+      "sev": "Critical",
+      "text": "- Critical: LLM-as-judge 校准仅 21 样本（11/10），FNR=0/FPR=0 但真实 FPR 的 95% 上界可达约 0.26（Wilson 0.28 已暴露），且实际轮次零调用（all SKIP），\"校准可外推到真实任务\"这一前提不成立。"
+    },
+    {
+      "id": 9,
+      "sev": "Critical",
+      "text": "- Critical: P5 gold 计数矛盾：\"39 gold, 30 real+9 synthetic+1 attack\"中 30+9+1=40 â  39，无论攻击条目是否计入 gold，写法都与总数不吻合。"
+    },
+    {
+      "id": 10,
+      "sev": "Critical",
+      "text": "- Critical: SHA-256 清单条目数前后不一致——\"46-entry manifest\"与\"165 entries with P5\"未说明二者关系（P5 是何阶段？为何 46→165 跳跃？），哈希对账范围与口径无法核对。"
+    },
+    {
+      "id": 11,
+      "sev": "Critical",
+      "text": "- Critical: ollama 模型的量化精度（Q4/Q8/FP16）未报告，7b/14b/9b 在不同精度下性能可差数倍，直接影响基准公平性与可复现性。"
+    },
+    {
+      "id": 12,
+      "sev": "Critical",
+      "text": "- Critical: seed 管理完全缺失——摘要明确写\"bootstrap at step/seed level as future work\"，主实验未报告任何随机种子、未做种子级稳定性验证，所有数值结果可能纯为种子噪声。"
+    },
+    {
+      "id": 13,
+      "sev": "Critical",
+      "text": "- Critical: åå¿åé£é©ï¼è¿åä¸º TMLR double-blindï¼G3ï¼ï¼ä½ muse-spark-1.2-contributor è¿ä¸å«âè´¡ç®èâçç¹æåç«æ¨¡åãç¹å®æ¶æ¯æ ï¼AutoDL/ollama 0.32.13ãqwen2.5:7b çï¼å¯è½åç¬¦ååºè´¡ç®èå¢éï¼æ§æ double-blind å¿å"
+    },
+    {
+      "id": 14,
+      "sev": "Critical",
+      "text": "- Critical: æª«ª»é¢çå©çºå®ï¼æ¨¡åmuse-spark-1.2-contributor åç§°å«âcontributorâï¼æç¤ºä½è æ¯è¯¥åç«æ¨¡åçè´¡ç®èï¼èå®å´æ¯æ´ä¸ªå®éªä¸å¯ä¸âéè¿âçç³»ç»ï¼6/6ï¼p=0.0026ï¼ï¼æ¢æªå£°æ COI ä¹æªå£°ææ¨¡åè®¿é®/ææï¼æ¶åä"
+    },
+    {
+      "id": 15,
+      "sev": "Critical",
+      "text": "- Critical: 全文宣称\"byte-for-byte reproducibility\"，但未披露任何 LLM 采样 seed/temperature/top-p 等采样参数；ollama 默认非确定性，未固定 seed 时\"逐字节可复现\"在物理上不成立。"
+    },
+    {
+      "id": 16,
+      "sev": "Critical",
+      "text": "- Critical: 摘要自相矛盾——LLM-as-judge 声称\"passed at FNR=0.0000, FPR=0.0000\"，却同句承认\"the round made zero judge calls (all SKIP)\"；零调用无泖产生预测，FNR/FPR 无分母，\"passed\"是逻辑空洞。"
+    },
+    {
+      "id": 17,
+      "sev": "Critical",
+      "text": "- Critical: 样本量 $N=4$，自报 $d_{\\min}=2.1279$（Cohen's $d>2$ 属于\"极端大效应\"，在实际研究中几乎不可能出现），McNemar power $=0.0000$ at $n_d=4$。设计在检测任何现实效应方面彻底无效，即便宣称\"披鲲 power limits\"，摘要仍以\"L2 showed no statistically detectable "
+    },
+    {
+      "id": 18,
+      "sev": "Critical",
+      "text": "- Critical: 经验贡献基本为空结果——L2 两臂无统计可检测差异（McNemar p=1.0000, n_d=0）、L1b 全模型 0/10、跨模型 Friedman 非显著（p=0.3679）；唯一显著结果（L1a p=0.0026）被自标为 exploratory 且仅在使用 fail-as-worst 编码时成立。一个首次全量运行即无法区分模型/臂的基准，其判别力贡献存疑。"
+    },
+    {
+      "id": 19,
+      "sev": "Major",
+      "text": "- **Major**: \"46-entry SHA-256 manifest\" 似乎只是对已存储 artifact 做哈希（re-hash）而非新鲜环境重跑后对账；\"18/18 recomputation checks\" 未说明是否为 fresh rerun，属于 \"存什么就能验什么\" 的循环证据，不构成真复现。"
+    },
+    {
+      "id": 20,
+      "sev": "Major",
+      "text": "- **Major**: \"simulated second annotator Î±=0.894\" 是合成值，不是实测互标复现；结合 \"single annotator\" 与 \"zero judge calls (all SKIP)\"，整个 LLM-as-judge 管线在报告的 round 中根本未运行，校准仅为 \"methodological warrant\" 而非已复现事实。"
+    },
+    {
+      "id": 21,
+      "sev": "Minor",
+      "synthetic": true,
+      "text": "（另有 18 条问题超出 20 条上限被截断，未参与辩论）"
+    }
+  ],
+  "rebuttals": [
+    {
+      "id": 1,
+      "action": "concede",
+      "fix": "将补充AIRS-Bench/ResearchClawBench/GAIA2三套数据集许可证信息,明确再分发与重跑权利。"
+    },
+    {
+      "id": 2,
+      "action": "rebut",
+      "rebuttal": "摘要用\"no statistically detectable difference\"非\"等价\",显式标注n_d=0<6 not-detectable、CI[0,0]degenerate,未声称两臂等价。"
+    },
+    {
+      "id": 3,
+      "action": "concede",
+      "fix": "将对多种编码方案做Holm-Bonferroni多重比较校正,并强化exploratory定性。"
+    },
+    {
+      "id": 4,
+      "action": "concede",
+      "fix": "将披露模拟标注者的seed与模拟模型设定,使α=0.894可对账复现。"
+    },
+    {
+      "id": 5,
+      "action": "concede",
+      "fix": "将增加L1b正控任务数（不止Chemistry_000单例1/4）,排除任务不可解/harness缺陷混淆。"
+    },
+    {
+      "id": 6,
+      "action": "rebut",
+      "rebuttal": "摘要写\"no statistically detectable difference\"非\"无差异\",并披露power 0.0000 at n_d=4、N=4,已框定为无力检验。"
+    },
+    {
+      "id": 7,
+      "action": "rebut",
+      "rebuttal": "摘要明写\"zero judge calls (all SKIP) so calibration is a methodological warrant\",未声称judge在主轮已验证。"
+    },
+    {
+      "id": 8,
+      "action": "rebut",
+      "rebuttal": "摘要已报\"Wilson 0.28 at FPR=0\"暴露宽CI,并标\"methodological warrant\",未称可外推真实任务。"
+    },
+    {
+      "id": 9,
+      "action": "concede",
+      "fix": "将修正P5 gold计数:30+9+1=40≠39,核对并统一口径。"
+    },
+    {
+      "id": 10,
+      "action": "concede",
+      "fix": "将说明46→165系P5阶段扩充,明确哈希对账范围与口径。"
+    },
+    {
+      "id": 11,
+      "action": "concede",
+      "fix": "将报告各ollama模型量化精度（Q4/Q8/FP16）,确保公平性与可复现性。"
+    },
+    {
+      "id": 12,
+      "action": "rebut",
+      "rebuttal": "Introduction写\"per-seed rows\"按种子报告；摘要报\"three independent trials\"；future work仅指seed-level bootstrap。"
+    },
+    {
+      "id": 13,
+      "action": "concede",
+      "fix": "将匿名化muse-spark模型名并泛化技术栈细节,以符合TMLR double-blind要求。"
+    },
+    {
+      "id": 14,
+      "action": "concede",
+      "fix": "将补充COI声明,澄清作者与muse-spark关系及模型访问/授权信息。"
+    },
+    {
+      "id": 15,
+      "action": "concede",
+      "fix": "将披露LLM采样参数（seed/temperature/top-p）,确认ollama seed已固定以支持逐字节复现。"
+    },
+    {
+      "id": 16,
+      "action": "rebut",
+      "rebuttal": "摘要\"passed\"指21 gold校准阶段；\"zero calls\"指主轮；\"though...so methodological warrant\"已区分两阶段非矛盾。"
+    },
+    {
+      "id": 17,
+      "action": "rebut",
+      "rebuttal": "摘要披露\"d_min=2.1279\"\"power 0.0000 at n_d=4\",\"no statistically detectable difference\"即承认无力检测非声称无差异。"
+    },
+    {
+      "id": 18,
+      "action": "rebut",
+      "rebuttal": "L1a跨模型0/6 vs 2/6 vs 2/6、L2 0.1418/0.1918/0.2750、P5 6/6均显差异；null仅限L2臂对比,非基准无判别力。"
+    },
+    {
+      "id": 19,
+      "action": "concede",
+      "fix": "将明确18/18 checks为clean environment fresh rerun而非re-hash,描述完整重跑流程。"
+    },
+    {
+      "id": 20,
+      "action": "rebut",
+      "rebuttal": "摘要显式标\"simulated second annotator\"（非实测）与\"zero judge calls...methodological warrant\",两限均已透明披露。"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "sustained",
+      "reason": "concede,三套数据集许可证未披露,待修订"
+    },
+    {
+      "id": 2,
+      "disposition": "withdrawn",
+      "reason": "摘要写'no statistically detectable difference'非'等价',已标n_d=0退化与CI[0,0] degenerate"
+    },
+    {
+      "id": 3,
+      "disposition": "sustained",
+      "reason": "concede,未做多编码多重比较校正,p值当前版本不可信"
+    },
+    {
+      "id": 4,
+      "disposition": "sustained",
+      "reason": "concede,模拟标注者seed与模型未披露,α不可对账"
+    },
+    {
+      "id": 5,
+      "disposition": "sustained",
+      "reason": "concede,L1b正控仅Chemistry_000单例1/4,混淆未排除"
+    },
+    {
+      "id": 6,
+      "disposition": "withdrawn",
+      "reason": "摘要披露power=0.0000、N=4、n_d=0<6,用'not detectable'非'无差异'"
+    },
+    {
+      "id": 7,
+      "disposition": "partial",
+      "reason": "judge未实际运行是真限制,但论文已透明披露zero calls与'methodological warrant'"
+    },
+    {
+      "id": 8,
+      "disposition": "withdrawn",
+      "reason": "论文未称校准可外推,已报Wilson 0.28暴露宽CI并标'warrant'"
+    },
+    {
+      "id": 9,
+      "disposition": "sustained",
+      "reason": "concede,30+9+1=40≠39计数矛盾待修正"
+    },
+    {
+      "id": 10,
+      "disposition": "sustained",
+      "reason": "concede,46与165条目关系未说明,口径不清"
+    },
+    {
+      "id": 11,
+      "disposition": "sustained",
+      "reason": "concede,ollama量化精度未报告,影响公平性"
+    },
+    {
+      "id": 12,
+      "disposition": "partial",
+      "reason": "论文报per-seed rows和three trials非完全缺失,但种子级稳定性验证未做"
+    },
+    {
+      "id": 13,
+      "disposition": "sustained",
+      "reason": "concede,模型名含contributor及技术栈细节违反double-blind"
+    },
+    {
+      "id": 14,
+      "disposition": "sustained",
+      "reason": "concede,COI未声明,作者与muse-spark关系未澄清"
+    },
+    {
+      "id": 15,
+      "disposition": "sustained",
+      "reason": "concede,LLM采样seed/temperature/top-p未披露,逐字节复现不成立"
+    },
+    {
+      "id": 16,
+      "disposition": "withdrawn",
+      "reason": "FNR/FPR来自21 gold校准阶段有分母,零调用属主轮,'though...so'已区分两阶段"
+    },
+    {
+      "id": 17,
+      "disposition": "withdrawn",
+      "reason": "摘要披露d_min=2.1279、power=0.0000,'not detectable'即承认无力检测非声称无差异"
+    },
+    {
+      "id": 18,
+      "disposition": "partial",
+      "reason": "存在null结果,但L1a 0/6 vs 2/6、L2均值不同、P5 6/6显示仍有跨模型区分力"
+    },
+    {
+      "id": 19,
+      "disposition": "sustained",
+      "reason": "concede,当前版本未明确18/18 checks为fresh rerun,循环证据风险未消"
+    },
+    {
+      "id": 20,
+      "disposition": "partial",
+      "reason": "α为合成值且管线未运行是真限制,但论文已透明标注'simulated'与'warrant'"
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 10,
+      "Major": 1,
+      "Minor": 0
+    },
+    "n_issues": 20,
+    "n_sustained": 11,
+    "n_withdrawn": 5,
+    "n_partial": 4,
+    "truncation": {
+      "n_total": 38,
+      "n_debated": 20,
+      "n_truncated": 18,
+      "max_issues": 20
+    },
+    "detail": "辩论后维持 Critical 10 / Major 1 （撤回 5，部分成立 4）；注：原始 38 条中仅严重度前 20 条进入辩论（MAX_ISSUES=20，截断 18 条未辩论）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      1,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      13,
+      14,
+      15,
+      19
+    ],
+    "withdrawn_ids": [
+      2,
+      6,
+      8,
+      16,
+      17
+    ]
+  }
+}

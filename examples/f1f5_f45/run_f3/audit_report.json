@@ -1,0 +1,431 @@
+{
+  "meta": {
+    "zip": "F:\\Research\\_inbox\\F1-F5_F45_2026-08-26\\TMLR_4p5_Tier123_FINAL_20260827.zip",
+    "tex": "F:\\Research\\F3_Single_10page\\paper\\main.tex",
+    "entries": 12,
+    "timestamp": "2026-08-28T09:49:04+00:00"
+  },
+  "referenced_paths": [
+    {
+      "raw": "results/F3\\_Tier2\\_results.json",
+      "path": "results/F3_Tier2_results.json",
+      "line": 118,
+      "status": "basename",
+      "matched": [
+        "supplementary/F3_Tier2_results.json"
+      ]
+    },
+    {
+      "raw": "results/power\\_analysis.json",
+      "path": "results/power_analysis.json",
+      "line": 121,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/F3\\_Tier2\\_results.json",
+      "path": "results/F3_Tier2_results.json",
+      "line": 158,
+      "status": "basename",
+      "matched": [
+        "supplementary/F3_Tier2_results.json"
+      ]
+    },
+    {
+      "raw": "cloud\\_experiment\\_design.md",
+      "path": "cloud_experiment_design.md",
+      "line": 180,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/F3\\_Tier2\\_results.json",
+      "path": "results/F3_Tier2_results.json",
+      "line": 203,
+      "status": "basename",
+      "matched": [
+        "supplementary/F3_Tier2_results.json"
+      ]
+    },
+    {
+      "raw": "figures\\_f3/gen\\_figures.py",
+      "path": "figures_f3/gen_figures.py",
+      "line": 219,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/analysis.json",
+      "path": "results/analysis.json",
+      "line": 219,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/cells.jsonl",
+      "path": "results/cells.jsonl",
+      "line": 288,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/analysis.json",
+      "path": "results/analysis.json",
+      "line": 288,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/power\\_analysis.json",
+      "path": "results/power_analysis.json",
+      "line": 288,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/F3\\_Tier2\\_results.json",
+      "path": "results/F3_Tier2_results.json",
+      "line": 288,
+      "status": "basename",
+      "matched": [
+        "supplementary/F3_Tier2_results.json"
+      ]
+    },
+    {
+      "raw": "results/F3\\_fixed\\_correctness\\_results.json",
+      "path": "results/F3_fixed_correctness_results.json",
+      "line": 288,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "scripts/F3\\_Tier2\\_hierarchical\\_token\\_ablation.py",
+      "path": "scripts/F3_Tier2_hierarchical_token_ablation.py",
+      "line": 288,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "scripts/F3\\_fixed\\_correctness\\_recompute.py",
+      "path": "scripts/F3_fixed_correctness_recompute.py",
+      "line": 288,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "paper/figures\\_f3/",
+      "path": "paper/figures_f3/",
+      "line": 288,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "gen\\_figures.py",
+      "path": "gen_figures.py",
+      "line": 288,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "scripts/F3\\_fixed\\_correctness\\_recompute.py",
+      "path": "scripts/F3_fixed_correctness_recompute.py",
+      "line": 308,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/cells.jsonl",
+      "path": "results/cells.jsonl",
+      "line": 308,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "F3\\_ERRATUM.md",
+      "path": "F3_ERRATUM.md",
+      "line": 308,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/F3\\_Tier2\\_results.json",
+      "path": "results/F3_Tier2_results.json",
+      "line": 309,
+      "status": "basename",
+      "matched": [
+        "supplementary/F3_Tier2_results.json"
+      ]
+    },
+    {
+      "raw": "results/power\\_analysis.json",
+      "path": "results/power_analysis.json",
+      "line": 310,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "power\\_analysis.json",
+      "path": "power_analysis.json",
+      "line": 311,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/cells.jsonl",
+      "path": "results/cells.jsonl",
+      "line": 326,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/F3\\_Tier2\\_results.json",
+      "path": "results/F3_Tier2_results.json",
+      "line": 326,
+      "status": "basename",
+      "matched": [
+        "supplementary/F3_Tier2_results.json"
+      ]
+    },
+    {
+      "raw": "results/F3\\_fixed\\_correctness\\_results.json",
+      "path": "results/F3_fixed_correctness_results.json",
+      "line": 326,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "scripts/F3\\_fixed\\_correctness\\_recompute.py",
+      "path": "scripts/F3_fixed_correctness_recompute.py",
+      "line": 326,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "paper/figures\\_f3/gen\\_figures.py",
+      "path": "paper/figures_f3/gen_figures.py",
+      "line": 326,
+      "status": "MISSING",
+      "matched": []
+    }
+  ],
+  "missing_refs": [
+    {
+      "raw": "results/power\\_analysis.json",
+      "path": "results/power_analysis.json",
+      "line": 121,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "cloud\\_experiment\\_design.md",
+      "path": "cloud_experiment_design.md",
+      "line": 180,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "figures\\_f3/gen\\_figures.py",
+      "path": "figures_f3/gen_figures.py",
+      "line": 219,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/analysis.json",
+      "path": "results/analysis.json",
+      "line": 219,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/cells.jsonl",
+      "path": "results/cells.jsonl",
+      "line": 288,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/analysis.json",
+      "path": "results/analysis.json",
+      "line": 288,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/power\\_analysis.json",
+      "path": "results/power_analysis.json",
+      "line": 288,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/F3\\_fixed\\_correctness\\_results.json",
+      "path": "results/F3_fixed_correctness_results.json",
+      "line": 288,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "scripts/F3\\_Tier2\\_hierarchical\\_token\\_ablation.py",
+      "path": "scripts/F3_Tier2_hierarchical_token_ablation.py",
+      "line": 288,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "scripts/F3\\_fixed\\_correctness\\_recompute.py",
+      "path": "scripts/F3_fixed_correctness_recompute.py",
+      "line": 288,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "paper/figures\\_f3/",
+      "path": "paper/figures_f3/",
+      "line": 288,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "gen\\_figures.py",
+      "path": "gen_figures.py",
+      "line": 288,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "scripts/F3\\_fixed\\_correctness\\_recompute.py",
+      "path": "scripts/F3_fixed_correctness_recompute.py",
+      "line": 308,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/cells.jsonl",
+      "path": "results/cells.jsonl",
+      "line": 308,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "F3\\_ERRATUM.md",
+      "path": "F3_ERRATUM.md",
+      "line": 308,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/power\\_analysis.json",
+      "path": "results/power_analysis.json",
+      "line": 310,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "power\\_analysis.json",
+      "path": "power_analysis.json",
+      "line": 311,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/cells.jsonl",
+      "path": "results/cells.jsonl",
+      "line": 326,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/F3\\_fixed\\_correctness\\_results.json",
+      "path": "results/F3_fixed_correctness_results.json",
+      "line": 326,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "scripts/F3\\_fixed\\_correctness\\_recompute.py",
+      "path": "scripts/F3_fixed_correctness_recompute.py",
+      "line": 326,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "paper/figures\\_f3/gen\\_figures.py",
+      "path": "paper/figures_f3/gen_figures.py",
+      "line": 326,
+      "status": "MISSING",
+      "matched": []
+    }
+  ],
+  "local_path_leaks": [
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F3_Single_10page",
+      "context": "data.cells_path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F1_Single_10page",
+      "context": "data.cross_study_checks.F1_cells.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F1_Single_10page",
+      "context": "data.cross_study_checks.F1_phrasing_500.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F4_Single_10page",
+      "context": "data.cross_study_checks.F45_cells.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F4_Single_10page",
+      "context": "data.cross_study_checks.F45_real_llm_400_v6.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F2_Single_10page",
+      "context": "data.cross_study_checks.F2_cells.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F2_Single_10page",
+      "context": "data.cross_study_checks.F2_analysis.path"
+    },
+    {
+      "file": "supplementary/tier2_phrasing_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F1_Single_10page",
+      "context": "meta.cells"
+    },
+    {
+      "file": "supplementary/tier2_phrasing_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F1_Single_10page",
+      "context": "meta.phrasing_cells"
+    }
+  ],
+  "count_claims": [],
+  "inpackage_tex": {
+    "entry": null,
+    "desync_with_disk": false,
+    "count_claims": []
+  },
+  "summary": {
+    "refs_total": 27,
+    "refs_missing": 21,
+    "leaks": 9,
+    "count_claims": 0,
+    "count_claims_mismatched": 0,
+    "tex_desync": false,
+    "verdict": "CRITICAL"
+  }
+}

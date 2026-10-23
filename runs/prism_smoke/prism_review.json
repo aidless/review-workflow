@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-25T18:31:18+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "dimensions": {
+    "P": {
+      "status": "ok",
+      "score": 6,
+      "justification": "问题真实（科学智能体评估碎片化）且TMLR接受benchmark类工作,但贡献本质是将现有benchmark（AIRS-Bench/ResearchClawBench/GAIA2）打包到一个contract下,创新性偏工程整合而非新评估方法论。结果几乎全为null（McNemar p=1.0,L1b全0分）,小模型（7b-14b）单GPU实验规模过小,难以证明suite的区分能力。与已发表工作的关系列举了组件来源但缺乏系统性对比分析。",
+      "top_weakness": "核心结果均为null且模型规模极小（7b-14b）,无法证明该suite具有区分不同方法的能力,削弱了benchmark存在的科学价值。",
+      "evidence": "evaluation remains fragmented: prediction benchmarks test single-step code execution, workflow benchmarks test report synthesis, and environment benchmarks test multi-step tool use, each under differe",
+      "parse": "json"
+    },
+    "R": {
+      "status": "ok",
+      "score": 5,
+      "justification": "统计检验选择基本正确（配对McNemar、Friedman+Nemenyi+CD、Wilson区间）,且透明披露功效局限。但核心L2实验N=4且零不一致对,检验完全无区分力；唯一显著结果（p=0.0026）来自事后精选子集+特定编码方式,存在花园小径多重比较风险；L1b judge校准后实际零调用,校准沦为形式担保。实验设计功效严重不足,显著结论的可信度存疑。",
+      "top_weakness": "L2核心对比N=4、n_d=0使McNemar完全无功效；唯一显著的p=0.0026来自事后精选子集与特定编码,存在选择性报告风险。",
+      "evidence": "exact McNemar p=1.0000, n_d=0<6 not-detectable, paired difference 0.0000, 95% CI [0,0] degenerate, N=4; McNemar power 0.0000 at n_d=4",
+      "parse": "json"
+    },
+    "I": {
+      "status": "ok",
+      "score": 5,
+      "justification": "论文将三个已有基准(AIRS-Bench、GAIA2、ResearchClawBench)整合到统一可复现框架下,作为测量工具有一定实用价值。但实证结果几乎全为null或近零(L1b全0/10,L2臂间无差异),统计功效极低(N=4, power=0.0000),未创建新任务,也未产出有意义的科学洞察,增量有限。",
+      "top_weakness": "实证结果以null为主且功效为零(N=4, McNemar power 0.0000),基准产出科学洞察的能力未被证明。",
+      "evidence": "L1b scored 0/10 for all models; McNemar p=1.0000, n_d=0<6; McNemar power 0.0000 at n_d=4",
+      "parse": "json"
+    },
+    "S": {
+      "status": "ok",
+      "score": 9,
+      "justification": "论文在断言-证据对齐上表现克制:明确披露统计功效不足（N=4, McNemar power 0.0000）、L2无显著差异、judge零调用、simulated第二标注者、结果对编码方式敏感等局限。复现承诺具体可信（SHA-256 manifest、独立重算脚本、硬件/软件版本号、预算上限）。结果差也不回避（L1b全0/10）。",
+      "top_weakness": "calibrated LLM-as-judge实际零调用（all SKIP）,calibration仅为方法论担保而非实证验证,与abstract中'calibrated before its judge is trusted'的措辞存在张力。",
+      "evidence": "the round made zero judge calls (all SKIP) so calibration is a methodological warrant",
+      "parse": "json"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "scores": {
+      "P": 6,
+      "R": 5,
+      "I": 5,
+      "S": 9
+    },
+    "overall": 5,
+    "weakest": "R(严谨性)",
+    "detail": "最弱维度 R(严谨性) = 5 分（<= 6）→ 文本层 WARN；证据层门禁不受影响"
+  }
+}

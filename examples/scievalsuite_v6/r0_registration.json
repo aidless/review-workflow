@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "timestamp": "2026-08-25T17:43:23+00:00",
+    "stage": "R0"
+  },
+  "inputs": {
+    "name": "scievalsuite_v6",
+    "tex": {
+      "path": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+      "size": 38894,
+      "sha256": "84cb15397e7dcbcdfe38143e2d620c66d8b87eec845d62ad76296703142d39da"
+    },
+    "zip": {
+      "path": "F:\\deepseek\\papers\\scievalsuite\\submission\\submission_scievalsuite_final_v6.zip",
+      "size": 759453
+    },
+    "evidence_dirs": [
+      {
+        "path": "F:\\deepseek\\papers\\scievalsuite\\results",
+        "exists": true
+      },
+      {
+        "path": "F:\\deepseek\\scievalsuite\\out_p5",
+        "exists": true
+      }
+    ]
+  },
+  "cross_source_risk": [
+    "F:\\deepseek\\scievalsuite\\out_p5"
+  ],
+  "problems": [],
+  "summary": {
+    "problems": 0,
+    "cross_source_risk": 1,
+    "verdict": "MAJOR"
+  }
+}

@@ -1,0 +1,361 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\examples\\scievalsuite_v6\\run_v8_final\\r6_llm.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-27T10:31:50+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Critical",
+      "text": "- Critical: Friedman 检验包含 16 个任务中 10 个 all-zero（floor）任务，违反了 Friedman 检验对任务需具备区分度的隐含假设；floor 任务不贡献排名信息却放大了有效 N，使检验被\"稀释\"到无法解释，而非仅仅是\"non-significant\"。"
+    },
+    {
+      "id": 2,
+      "sev": "Critical",
+      "text": "- Critical: L1b 全部模型 0/10 属于 floor effect，测量工具在该任务层失效，无区分力；在此条件下仍执行并报告 Friedman p=0.37，等于对一个不产生信息量的退化数据做推断，方法论上自相矛盾。"
+    },
+    {
+      "id": 3,
+      "sev": "Critical",
+      "text": "- Critical: L2 对照组（A=ReAct vs CG=completion-guided）N=4 且 n_d=0 discordant pairs，两 arm 在所有样本上结果完全相同（mean goal completion 在两 arm 中逐模型一致），McNemar 结构性失效，该对照组无法支持任何关于 CG harness 价值的结论，等效于无对照。"
+    },
+    {
+      "id": 4,
+      "sev": "Critical",
+      "text": "- Critical: L2 比较宣称 \"in both arms\" 分数相同，构成等效性声明，但在 N=4、McNemar n_d=0 的情况下既无等效性检验（TOST）也无等效性界值，\"无差异\"结论在功效为零时不可做。"
+    },
+    {
+      "id": 5,
+      "sev": "Critical",
+      "text": "- Critical: LLM-as-judge 校准 21 gold、单一标注者、FNR=FPR=0.00，rule-of-three 上界 ≈14% 计算有误——FNR 分母为 gold 正例数 k、FPR 分母为 gold 负例数 21−k，3/21≈14% 同时适用于两者在数学上不可能（需 k=21 且 21−k=21）；未报告正/负例拆分，若拆分不均各率真实上界可远超 14%（如 11/"
+    },
+    {
+      "id": 6,
+      "sev": "Critical",
+      "text": "- Critical: Model-F 仅以\"opencode.ai alias\"出现，无模型版本钉死、无权重哈希、无 API 快照；alias 会随时间重路由到不同后端，掺入该不可复现的 frontier 参考会污染整个 suite 的复现契约。"
+    },
+    {
+      "id": 7,
+      "sev": "Critical",
+      "text": "- Critical: SHA-256 seal 仅覆盖 125 个\"committed files\"且明言\"not live LLM outputs\"——被评分的随机性 LLM 输出本身未哈希封存，所谓 byte-level reproducibility 只对输入成立；重跑必发散且无输出侧哈希对账机制。"
+    },
+    {
+      "id": 8,
+      "sev": "Critical",
+      "text": "- Critical: 三个子基准（AIRS-Bench rad、ResearchClawBench、GAIA2 p3dev）均为既有 benchmark，本文的\"统一\"实际上是把三个现成 benchmark 打包进一个 run.json 契约 + SHA-256 清单，核心 GAP（\"evaluation remains fragmented\"）虽然真实但解决方案几乎是工程封裌，增量贡献被\"un"
+    },
+    {
+      "id": 9,
+      "sev": "Critical",
+      "text": "- Critical: 全文未声明任何数据集许可——AIRS-Bench、ResearchClawBench、GAIA2 p3dev 三套基准及 125 个提交文件的许可证、再分发权、第三方数据来源均未披露，存在侵权与不可复现的法律风险。"
+    },
+    {
+      "id": 10,
+      "sev": "Critical",
+      "text": "- Critical: 全文未给出所用 seed 取值与数量；\"per-seed rows\" 仅声明存在，seed 如何注入 LLM 采样、温度是否锁 0 均未说明，且自承 \"bootstrap at step/seed level as future work\"，seed 级复现缺失却以 \"reproducible\" 自居。"
+    },
+    {
+      "id": 11,
+      "sev": "Critical",
+      "text": "- Critical: 全部点估计（goal completion 0.14/0.19/0.28、TextSimilarity ITT 0.355、各层得分比例）均未报告SD/SE/CI/任何离散度指标；N=4下点估计极不稳定，读者无法评估不确定性区间。"
+    },
+    {
+      "id": 12,
+      "sev": "Critical",
+      "text": "- Critical: 对照模型 Model-F 以 API 方式服务，而三个被测模型以本地 GPU 方式服务，服务通道本身（量化、延迟、稳定性）是未控制的混淆变量，6/6 无法归因于模型能力。"
+    },
+    {
+      "id": 13,
+      "sev": "Critical",
+      "text": "- Critical: 报告 d_min=2.1279（80% power），即只能检测 Cohen's d>2 的极端效应；对于合理效应量完全没有功效，这意味着整套实验设计在当前 N 下结构性地无法回答\"模型间是否存在差异\"这一核心问题。"
+    },
+    {
+      "id": 14,
+      "sev": "Critical",
+      "text": "- Critical: 摘要声明\"18/18 independent recomputation checks passing\"，而引言声明\"every leaderboard number recomputed\"，72 行结果（24+18+30）仅 18 项校验相矛盾，重算覆盖范围被严重夸大。"
+    },
+    {
+      "id": 15,
+      "sev": "Critical",
+      "text": "- Critical: 无数据许可披露 â 重用的 AIRS-Bench、ResearchClawBench、GAIA2 三套基准，12l项 SHA-256 密封提交文件，以及开放权重模型（Qwen2.5、Gemma2）均未声明许可证条款；在无许可声明的情况下宣称可重现/释放属合规风险。"
+    },
+    {
+      "id": 16,
+      "sev": "Critical",
+      "text": "- Critical: 模型身份未钉死：qwen2.5:7b/14b、gemma2:9b 是可变的 registry tag（无 weights commit/digest/量化版本）；\"Model-F (opencode.ai alias)\" 是未披露的路由后端，可静默更换——主模型与 6/6 参考模型均不可复现。"
+    },
+    {
+      "id": 17,
+      "sev": "Critical",
+      "text": "- Critical: 缺少伦理审查/IRB 声明——\"21 gold, single annotator\" 涉及人工标注与人工评判，未说明标注者是否知情同意、是否经伦理委员会批准、标注者身份与隐私保护。"
+    },
+    {
+      "id": 18,
+      "sev": "Critical",
+      "text": "- Critical: 采样配置（temperature/top_p/max_tokens/seed）全文缺失；\"one success needed re-trials\" 隐含随机采样却无服务端 seed 钉死，调用级复现在结构上不可能。"
+    },
+    {
+      "id": 19,
+      "sev": "Major",
+      "text": "- **Major**: \"TextSimilarity intention-to-treat mean 0.355\" 在摘覄中首次出现，无定义、无单位、无引用，突光嵌在 L1a 的括号长句内，属未定义术语突然引入。"
+    },
+    {
+      "id": 20,
+      "sev": "Major",
+      "text": "- Major: \"denominator discipline\"、\"answer-fitting audit\"、\"positive control\"均为标准评测卫生手段，未与现有 robustness/contamination 审查文献（如 SWE-bench 的解决验证、Data Contamination 检测）做对比，未证明越过它们的增量。"
+    },
+    {
+      "id": 21,
+      "sev": "Minor",
+      "synthetic": true,
+      "text": "（另有 16 条问题超出 20 条上限被截断，未参与辩论）"
+    }
+  ],
+  "rebuttals": [
+    {
+      "id": 1,
+      "action": "concede",
+      "fix": "将剔除10个all-zero L1b floor任务,以6个可区分任务为主Friedman分析,16-task版本降为附录sensitivity并加假设检验声明。"
+    },
+    {
+      "id": 2,
+      "action": "concede",
+      "fix": "将L1b从Friedman主分析移除,重定位为pipeline压力测试（failure taxonomy+answer-fitting audit）,不作模型区分工具。"
+    },
+    {
+      "id": 3,
+      "action": "rebut",
+      "rebuttal": "论文已声明'L2 was statistically uninformative',n_d=0不报p值,两arm均值相同仅为描述性披露,未作CG harness价值结论。"
+    },
+    {
+      "id": 4,
+      "action": "rebut",
+      "rebuttal": "论文称L2'statistically uninformative','in both arms'为均值相同的描述性陈述非等效性声明,未做'无差异'推断故无需TOST。"
+    },
+    {
+      "id": 5,
+      "action": "concede",
+      "fix": "将报告gold正/负例拆分(k与21−k),分别计算FNR上界3/k与FPR上界3/(21−k),修正≈14%统一上界。"
+    },
+    {
+      "id": 6,
+      "action": "concede",
+      "fix": "将钉死Model-F后端模型版本与API快照日期,明确排除于SHA-256复现契约范围,标注为不可复现探索性参考。"
+    },
+    {
+      "id": 7,
+      "action": "concede",
+      "fix": "将'byte-level reproducibility'改述为'input-contract byte-level reproducibility',并对评分LLM输出加SHA-256 manifest供对账。"
+    },
+    {
+      "id": 8,
+      "action": "rebut",
+      "rebuttal": "论文明确列出新增贡献:answer-fitting audit、calibrated heterogeneous judge、oracle-free goal-completion metric、denominator discipline及三层统计协议,非仅打包。"
+    },
+    {
+      "id": 9,
+      "action": "concede",
+      "fix": "将增设Data Availability & Licensing章节,披露AIRS-Bench/ResearchClawBench/GAIA2及125文件与开源模型许可证。"
+    },
+    {
+      "id": 10,
+      "action": "concede",
+      "fix": "将披露seed取值与数量、temperature/top_p设定及seed注入方式,并承认服务端seed未钉死时call级复现受限。"
+    },
+    {
+      "id": 11,
+      "action": "concede",
+      "fix": "将为主要点估计添加Wilson精确二项CI及SD/SE,N=4时明确标注宽区间并补充不确定性披露。"
+    },
+    {
+      "id": 12,
+      "action": "concede",
+      "fix": "将显式披露API与本地GPU服务通道混淆变量,将Model-F 6/6重定位为非比较性图示不归因模型能力。"
+    },
+    {
+      "id": 13,
+      "action": "rebut",
+      "rebuttal": "论文已披露'd_min=2.1279 at 80% power'与'McNemar power structurally 0',全文结果标注'exploratory'与'non-confirmatory',功率限制已透明声明。"
+    },
+    {
+      "id": 14,
+      "action": "concede",
+      "fix": "将明确18项重算检查与72行结果的映射关系,统一摘要'18/18 checks'与引言'every leaderboard number recomputed'表述。"
+    },
+    {
+      "id": 15,
+      "action": "concede",
+      "fix": "将增设许可声明章节,披露三套基准、125个SHA-256密封文件及Qwen2.5/Gemma2/llama3.1开源权重许可证条款。"
+    },
+    {
+      "id": 16,
+      "action": "concede",
+      "fix": "将为qwen2.5:7b/14b、gemma2:9b、llama3.1:8b钉死权重SHA-256 digest、Ollama registry commit与量化版本；Model-F记录后端版本。"
+    },
+    {
+      "id": 17,
+      "action": "concede",
+      "fix": "将增设Ethics Statement,披露标注者知情同意、IRB审批或豁免依据及标注者隐私保护措施。"
+    },
+    {
+      "id": 18,
+      "action": "concede",
+      "fix": "将全文披露temperature/top_p/max_tokens/seed采样配置,承认无服务端seed钉死时call级复现结构上不可行。"
+    },
+    {
+      "id": 19,
+      "action": "concede",
+      "fix": "将在摘要中定义TextSimilarity度量或将该指标值移至正文,避免未定义术语在摘要突兀出现。"
+    },
+    {
+      "id": 20,
+      "action": "concede",
+      "fix": "将增设相关工作对比,将denominator discipline/answer-fitting audit/positive control与SWE-bench验证、数据污染检测等方法对比定位增量。"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "sustained",
+      "reason": "concede；当前版本仍含被稀释的16-task Friedä¸»åæï¼å¾ 修订"
+    },
+    {
+      "id": 2,
+      "disposition": "sustained",
+      "reason": "concede；当前版本L1b floorä»å ¥Friedman主分析"
+    },
+    {
+      "id": 3,
+      "disposition": "partial",
+      "reason": "rebut部分成立:已称uninformative未作CG结论；但L2ç»ææ§æ ç¨ä½ä¸ºå¥ä»¶ç»ä»¶çå­ä»å¾ 说明"
+    },
+    {
+      "id": 4,
+      "disposition": "withdrawn",
+      "reason": "rebut成立:论文明称uninformative,'in both arms'为描述性陈述非等效性声明,属误报"
+    },
+    {
+      "id": 5,
+      "disposition": "sustained",
+      "reason": "concede；3/21â14%同用于FNR与FPR分母数学不可能,当前版本有误"
+    },
+    {
+      "id": 6,
+      "disposition": "sustained",
+      "reason": "concede；当前版本Model-F alias无版本钉死/快照"
+    },
+    {
+      "id": 7,
+      "disposition": "sustained",
+      "reason": "concede；当前版本称byte-level reproducibility却排除LLM输出,自相矛盾"
+    },
+    {
+      "id": 8,
+      "disposition": "partial",
+      "reason": "rebut列出新增元素部分成立；但超越工程打包的novelty/显著性仍存疑"
+    },
+    {
+      "id": 9,
+      "disposition": "sustained",
+      "reason": "concede；当前版本无数据集许可声明"
+    },
+    {
+      "id": 10,
+      "disposition": "sustained",
+      "reason": "concede；当前版本未披露seed取值与注入方式"
+    },
+    {
+      "id": 11,
+      "disposition": "sustained",
+      "reason": "concede；当前版本点估计无CI/SD/SE离散度指标"
+    },
+    {
+      "id": 12,
+      "disposition": "sustained",
+      "reason": "concede；当前版本未披露API与本地GPU服务通道混淆变量"
+    },
+    {
+      "id": 13,
+      "disposition": "partial",
+      "reason": "rebut成立:功率限制已透明披露并标exploratory；但结构性功效缺失仍为真实局限"
+    },
+    {
+      "id": 14,
+      "disposition": "sustained",
+      "reason": "concede；18/18 checks与72行结果矛盾在当前版本存在"
+    },
+    {
+      "id": 15,
+      "disposition": "sustained",
+      "reason": "concede；当前版本无许可声明（同#9）"
+    },
+    {
+      "id": 16,
+      "disposition": "sustained",
+      "reason": "concede；当前版本模型registry tag无digest/量化版本钉死"
+    },
+    {
+      "id": 17,
+      "disposition": "sustained",
+      "reason": "concede；当前版本无IRB/伦理审查声明"
+    },
+    {
+      "id": 18,
+      "disposition": "sustained",
+      "reason": "concede；当前版本未披露temperature/top_p/seed等采样配置"
+    },
+    {
+      "id": 19,
+      "disposition": "sustained",
+      "reason": "concede；TextSimilarity在摘要未定义,当前版本存在"
+    },
+    {
+      "id": 20,
+      "disposition": "sustained",
+      "reason": "concede；当前版本未与SWE-bench等robustness/contamination文献对比"
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 14,
+      "Major": 2,
+      "Minor": 0
+    },
+    "n_issues": 20,
+    "n_sustained": 16,
+    "n_withdrawn": 1,
+    "n_partial": 3,
+    "truncation": {
+      "n_total": 36,
+      "n_debated": 20,
+      "n_truncated": 16,
+      "max_issues": 20
+    },
+    "detail": "辩论后维持 Critical 14 / Major 2 （撤回 1，部分成立 3）；注：原始 36 条中仅严重度前 20 条进入辩论（MAX_ISSUES=20，截断 16 条未辩论）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "withdrawn_ids": [
+      4
+    ]
+  }
+}

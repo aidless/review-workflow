@@ -1,0 +1,331 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\selfevolve-agent\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\deepseek\\papers\\selfevolve-agent\\results",
+      "F:\\deepseek\\papers\\selfevolve-agent\\evidence"
+    ],
+    "timestamp": "2026-08-26T04:39:45+00:00"
+  },
+  "hint_hits": [
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\results\\run_records\\20260818-210405-67220b4c.json",
+      "where": "exit_status",
+      "hint": "pending",
+      "text": "sealed_pending",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "2.5",
+        "2.6",
+        "10.0",
+        "3.12"
+      ],
+      "all_numbers": [
+        "2.5",
+        "2.6",
+        "10.0",
+        "3.12"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\results\\runs\\20260818-210405-67220b4c\\run_record.json",
+      "where": "exit_status",
+      "hint": "pending",
+      "text": "sealed_pending",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "2.5",
+        "2.6",
+        "10.0",
+        "3.12"
+      ],
+      "all_numbers": [
+        "2.5",
+        "2.6",
+        "10.0",
+        "3.12"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\results\\verified\\bundle-20260818-selfevolve\\run_record.json",
+      "where": "exit_status",
+      "hint": "pending",
+      "text": "sealed_pending",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [
+        "2.5",
+        "2.6",
+        "10.0",
+        "3.12"
+      ],
+      "all_numbers": [
+        "2.5",
+        "2.6",
+        "10.0",
+        "3.12"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\cloud\\cloud_skills_library.json",
+      "where": "constraints",
+      "hint": "pending",
+      "text": "When buffer is full, drop oldest item before appending; return False if item was dropped, True if added; handle capacity=0 edge case",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\cloud\\estimate_core_k5.py",
+      "where": "L57",
+      "hint": "simulated",
+      "text": "# Simulate k=5 majority vs k=3: bootstrap resample reps",
+      "numbers": [],
+      "concepts": [
+        "bootstrap"
+      ],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\cloud\\estimate_core_k5.py",
+      "where": "L65",
+      "hint": "simulated",
+      "text": "# Simulate k=5 by sampling with replacement from empirical per-task Bernoulli(p)",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\cloud\\estimate_core_k5.py",
+      "where": "L81",
+      "hint": "simulated",
+      "text": "print(f\"k={k} simulated majority resolved: mean {sum(sim)/len(sim):.1f} sd { (sum((x - sum(sim)/len(sim))**2 for x in sim)/len(sim))**0.5 :.2f}  range {min(sim)}-{max(sim)}\")",
+      "numbers": [
+        "0.5"
+      ],
+      "concepts": [],
+      "all_numbers": [
+        "0.5"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\cloud\\full_T1.4_PREPARATION.md",
+      "where": "L52",
+      "hint": "simulated",
+      "text": "2. Report **local bootstrap estimate for core k=5** (see §5) as a tighter CI illustration: resampling the 3 healthy reps to simulate k=5 majority shows CI width shrinks only ~0.2pp (majority voting va",
+      "numbers": [
+        "0.2"
+      ],
+      "concepts": [
+        "bootstrap"
+      ],
+      "all_numbers": [
+        "0.2"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\cloud\\full_T1.4_PREPARATION.md",
+      "where": "L53",
+      "hint": "pending",
+      "text": "3. Mark full as **pending** in Limitations with quantitative tightening forecast (see §6 paragraph suggestion). This satisfies reviewers that the harness is ready and the run is queued, not omitted.",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\cloud\\full_T1.4_PREPARATION.md",
+      "where": "L113",
+      "hint": "pending",
+      "text": "> **Full probe pending (T1.4).** The 100-task core probe reported here used majority vote over k=3 repeats. The harness for the full 417-task probe (Tier=full, arms base/skills/resample, k=3, stochast",
+      "numbers": [
+        "1.4",
+        "0.7",
+        "1.1",
+        "3.9",
+        "1.9",
+        "0.05"
+      ],
+      "concepts": [],
+      "all_numbers": [
+        "1.4",
+        "0.7",
+        "1.1",
+        "3.9",
+        "1.9",
+        "0.05"
+      ]
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\cloud\\full_T1.4_PREPARATION.md",
+      "where": "L126",
+      "hint": "pending",
+      "text": "- [ ] If cloud remains unavailable before deadline: keep core as primary, add the pending sentence above, and include this preparation doc as supplementary evidence of readiness (reviewers asked for \"",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\frozen\\skills_library.json",
+      "where": "constraints",
+      "hint": "pending",
+      "text": "When buffer is full, drop oldest item before appending; return False if item was dropped, True if added; handle capacity=0 edge case",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\harness\\agent\\ledger.py",
+      "where": "L32",
+      "hint": "pending",
+      "text": "# Re-read the last hash from disk before appending so concurrent",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\harness\\agent\\skills.py",
+      "where": "L45",
+      "hint": "placeholder",
+      "text": "# Amendment G: placeholder-insertion actions conflict with \"skip failed items\"",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\harness\\agent\\skills.py",
+      "where": "L46",
+      "hint": "placeholder",
+      "text": "# semantics (tool_04 harm: skills pushed the model to append None / placeholders).",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\harness\\agent\\skills.py",
+      "where": "L47",
+      "hint": "placeholder",
+      "text": "PLACEHOLDER_ACTION_PATTERNS = (",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\harness\\agent\\skills.py",
+      "where": "L49",
+      "hint": "placeholder",
+      "text": "\"append a placeholder\",",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\harness\\agent\\skills.py",
+      "where": "L51",
+      "hint": "placeholder",
+      "text": "\"insert a placeholder\",",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\harness\\agent\\skills.py",
+      "where": "L52",
+      "hint": "placeholder",
+      "text": "\"add a placeholder\",",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\harness\\agent\\skills.py",
+      "where": "L166",
+      "hint": "placeholder",
+      "text": "for pattern in PLACEHOLDER_ACTION_PATTERNS:",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\harness\\agent\\skills.py",
+      "where": "L170",
+      "hint": "placeholder",
+      "text": "f\"placeholder-insertion pattern conflicts with skip semantics (amendment G): {pattern}\",",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\preregistration\\PREREGISTRATION_V1_AMENDMENT_G.md",
+      "where": "L7",
+      "hint": "placeholder",
+      "text": "- 新增 `PLACEHOLDER_ACTION_PATTERNS`（append none / placeholder / default 占位等 8 条）；",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\preregistration\\PREREGISTRATION_V1_AMENDMENT_G.md",
+      "where": "L9",
+      "hint": "placeholder",
+      "text": "\"placeholder-insertion pattern conflicts with skip semantics (amendment G)\"；",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\protocol.md",
+      "where": "L39",
+      "hint": "pending",
+      "text": "- 全文统一口径：base=77/100（云端 post-fix）、skills 与 resample 待 core 重跑确认（C10/C11 PENDING-EVIDENCE）。",
+      "numbers": [],
+      "concepts": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\raw_ledgers\\state_round5\\ledger.jsonl",
+      "where": "L39:event.payload.round5",
+      "hint": "placeholder",
+      "text": "None placeholder on exception (graceful-degradation skills over-applied), 1/3",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\raw_ledgers\\state_round5\\ledger.jsonl",
+      "where": "L42:event.type",
+      "hint": "placeholder",
+      "text": "curator_placeholder_rule_applied",
+      "numbers": [],
+      "concepts": [],
+      "context_numbers": [],
+      "all_numbers": []
+    },
+    {
+      "file": "F:\\deepseek\\papers\\selfevolve-agent\\evidence\\REVIEW.md",
+      "where": "L238",
+      "hint": "mock",
+      "text": "- **本地验证**（mock 端到端，无 LLM）：臂调度 9 次调用正确、3 个随机客户端 t=0.7/种子 1000-1002、主客户端 t=0/seed=42、噪声底与 McNemar 数值全对、账本与指纹含参数 ✅",
+      "numbers": [
+        "0.7"
+      ],
+      "concepts": [],
+      "all_numbers": [
+        "0.7"
+      ]
+    }
+  ],
+  "suspicious": [],
+  "disclosed_hits": [],
+  "summary": {
+    "hint_hits": 27,
+    "suspicious": 0,
+    "disclosed": 0,
+    "verdict": "MAJOR",
+    "note": "suspicious = 人工定性入口：逐条判定论文表述是否如实披露（Critical）或措辞需补披露（Major）"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\main.tex",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-28T04:38:52+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "adjudications": [
+    {
+      "token": "0.207",
+      "contexts": [
+        "across seeds ($0.207$/$0.196$, $0.409$/$0.402$, $0.474$/$0.460$ for",
+        "Qwen2.5-3B & 0.207 / 0.196 & 0.70 & 0.53 \\\\"
+      ],
+      "mechanical": null,
+      "verdict": "supported",
+      "confidence": "high",
+      "justification": "0.207 是 Qwen2.5-3B 温度0.2 seed1 ECE 实质指标；表注声明证据 evidence/multi_model_r6/r6_analysis.json；该 JSON ece_per_seed['1']=0.2067,四舍五入即 0.207（差0.0003<5e-4）。",
+      "evidence": "Qwen2.5-3B | 0.207 / 0.196 | 0.70 | 0.53 |",
+      "suggested_action": "无需修补；可保留,或让机械层接受 0.2067 的 3 位舍入匹配。",
+      "parse": "json",
+      "layer": "llm"
+    },
+    {
+      "token": "0.275",
+      "contexts": [
+        "DeepSeek-R1-7B & 9.8 & 0.241 & 0.121 & 0.275 & 0.228 & 0.606 \\\\"
+      ],
+      "mechanical": null,
+      "layer": "llm",
+      "verdict": "未裁决",
+      "llm_status": "timeout"
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "mechanical": 0,
+    "llm": 1,
+    "llm_failed": 1,
+    "noise": 0,
+    "supported": 1,
+    "critical": 0,
+    "verdict": "MAJOR",
+    "detail": "1 个未裁决（LLM 失败 1）→ 维持 recompute 原判 Major；noise 0 / supported 1"
+  }
+}

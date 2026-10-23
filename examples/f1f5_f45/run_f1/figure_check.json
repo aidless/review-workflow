@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "tex": "F:\\Research\\F1_Single_10page\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\Research\\_inbox\\F1-F5_F45_2026-08-26\\supplementary"
+    ],
+    "timestamp": "2026-08-28T09:49:01+00:00"
+  },
+  "figures": [
+    {
+      "path": "figures_f1/length_control.pdf",
+      "line": 140,
+      "resolved": true,
+      "abs": "F:\\Research\\F1_Single_10page\\paper\\figures_f1\\length_control.pdf",
+      "kind": "pdf",
+      "text_chars": 324,
+      "fig_decimals": 9,
+      "fig_numbers_sample": [
+        "0.02",
+        "0.00",
+        "0.02",
+        "0.04",
+        "0.06",
+        "0.08",
+        "0.10",
+        "1.6",
+        "0.62"
+      ],
+      "caption_decimals": [
+        {
+          "token": "0.017",
+          "support": "evidence"
+        }
+      ],
+      "caption": "Length control: 2 cache conditions (benign vs confidence-priming) with supplementary fixed-string length controls. Mean $\\Delta$MAE $\\pm$ bootstrap 95\\% CI. Only confidence-priming produces a signific"
+    },
+    {
+      "path": "figures_f1/reliability.pdf",
+      "line": 150,
+      "resolved": true,
+      "abs": "F:\\Research\\F1_Single_10page\\paper\\figures_f1\\reliability.pdf",
+      "kind": "pdf",
+      "text_chars": 292,
+      "fig_decimals": 12,
+      "fig_numbers_sample": [
+        "0.0",
+        "0.2",
+        "0.4",
+        "0.6",
+        "0.8",
+        "1.0",
+        "0.0",
+        "0.2",
+        "0.4",
+        "0.6",
+        "0.8",
+        "1.0"
+      ],
+      "caption_decimals": [],
+      "caption": "Reliability diagram: benign vs.\\ confidence-primed (Qwen3:4b, MMLU 500, 10 equal-width bins). The primed curve (blue) deviates further from the diagonal, indicating overconfidence. Shaded region = boo"
+    },
+    {
+      "path": "figures_f1/forest.pdf",
+      "line": 159,
+      "resolved": true,
+      "abs": "F:\\Research\\F1_Single_10page\\paper\\figures_f1\\forest.pdf",
+      "kind": "pdf",
+      "text_chars": 350,
+      "fig_decimals": 17,
+      "fig_numbers_sample": [
+        "0.075",
+        "0.050",
+        "0.025",
+        "0.000",
+        "0.025",
+        "0.050",
+        "0.075",
+        "0.100",
+        "0.125",
+        "2.5",
+        "0.047",
+        "0.035",
+        "0.012",
+        "0.067",
+        "0.029",
+        "0.017",
+        "0.017"
+      ],
+      "caption_decimals": [
+        {
+          "token": "0.017",
+          "support": "figtext"
+        }
+      ],
+      "caption": "Forest plot: per-model per-channel $\\Delta$MAE with 95\\% BCa CI. $^*$ denotes Bonferroni-significant ($\\alpha'{=}0.017$). Blue = significant, gray = n.s."
+    }
+  ],
+  "missing_files": [],
+  "caption_pending_review": [],
+  "figure_only_numbers": [
+    {
+      "figure": "figures_f1/forest.pdf",
+      "token": "0.075",
+      "value": 0.075
+    },
+    {
+      "figure": "figures_f1/forest.pdf",
+      "token": "0.075",
+      "value": 0.075
+    }
+  ],
+  "summary": {
+    "verdict": "PASS",
+    "figures_referenced": 3,
+    "text_extracted": 3,
+    "raster_skipped": 0,
+    "missing": 0,
+    "caption_decimals": 2,
+    "unsupported": 0,
+    "figure_only": 2,
+    "note": "caption_pending_review = 图注小数在图文本/证据/正文中均无支撑；figure_only = 仅出现在图内的高精度数（数据标签属正常，人工扫一眼即可）"
+  }
+}

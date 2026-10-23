@@ -1,0 +1,198 @@
+[R0] gate=PASS 缺失输入 0，跨源风险目录 0
+[R1] gate=PASS 章节 8/8，无占位符，摘要 294 词
+[R1b] gate=PASS PASS：条目 23，幽灵引用 0，结构 Major 0（offline 结构检查）
+[R1c] gate=SKIP 未启用联网检索（config 设 novelty_online=true 开启 arXiv 先行工作对照）
+[R1d] gate=PASS PASS：行内算术 5 处（不符 0，含括号百分数 0）；悬空公式引用 0；符号推导/量纲不在机械覆盖内
+[R2] gate=SKIP 未配置 zip（仅磁盘审查）
+[R2b] gate=SKIP 未配置 zip
+[R2c] gate=PASS PASS：图 3 幅（矢量文本 3，位图跳过 0，缺失 0）；图注小数 2 个，无支撑 0；figure_only 0
+[R2d] gate=PASS PASS：表 6 个（numeric cell 5），无支撑 0，\input 缺失 0，混精度列 0（INFO）
+  [R3] 载入断点 32 条已裁决
+  [R3] 断点续跑：复用已裁决 29/32
+  [R3] 裁决 19/32：'58.75'（LLM 第 1 次）
+  [R3] 裁决 26/32：'0.77'（LLM 第 2 次）
+  [R3] 裁决 27/32：'0.3'（LLM 第 3 次）
+[R3] gate=FAIL MAJOR：待复核 67，机械噪音 1，已裁决 0（critical 0）；裁决 CRITICAL（mech 8 / llm 23 / noise 12 / supported 4 / critical 15 / llm_failed 1）
+[R4] gate=PASS PASS：统计记录 12 条（MATCH 12，MISMATCH 0，NOT_IN_PAPER 0）——McNemar/Friedman/Wilson 复算
+[R5] gate=WARN MAJOR：hint 命中 28，可疑 0（一票否决），已披露 0
+  [R6] round 1/1 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 1/1: Critical=0 Major=0 Minor=0
+[R6] gate=PASS 文本层：Critical 0 / Major 0 / Minor 0（1 轮，RPC HTTP 501（服务在监听））
+[PRISM] P Pertinence 评审中…
+[PRISM] R Rigor 评审中…
+[PRISM] I Impact 评审中…
+[PRISM] S Sincerity 评审中…
+[R6b] gate=WARN MAJOR：四维 {'P': 7, 'R': 8, 'I': 5, 'S': 9}（min=5，短板 I(贡献量)）——最弱维度 I(贡献量) = 5 分（<= 6）→ 文本层 WARN；证据层门禁不受影响
+[R6c] gate=SKIP 问题清单为空：r6_llm.json
+[R7] overall=FAIL -> papers/selfevolve-agent/reviews/pipeline_S5/run_summary.md
+round 2 登记：score=4 overall=FAIL criticals=0
+五轮线：轮数 2/5 ..；末轮≥8 ..；0 Critical OK
+[R0] gate=PASS 缺失输入 0，跨源风险目录 0
+[R1] gate=PASS 章节 8/8，无占位符，摘要 294 词
+[R1b] gate=PASS PASS：条目 23，幽灵引用 0，结构 Major 0（offline 结构检查）
+[R1c] gate=SKIP 未启用联网检索（config 设 novelty_online=true 开启 arXiv 先行工作对照）
+[R1d] gate=PASS PASS：行内算术 5 处（不符 0，含括号百分数 0）；悬空公式引用 0；符号推导/量纲不在机械覆盖内
+[R2] gate=SKIP 未配置 zip（仅磁盘审查）
+[R2b] gate=SKIP 未配置 zip
+[R2c] gate=PASS PASS：图 3 幅（矢量文本 3，位图跳过 0，缺失 0）；图注小数 2 个，无支撑 0；figure_only 0
+[R2d] gate=PASS PASS：表 6 个（numeric cell 5），无支撑 0，\input 缺失 0，混精度列 0（INFO）
+[R3] gate=PASS PASS：待复核 0，机械噪音 0，已裁决 68（critical 0）
+[R4] gate=PASS PASS：统计记录 12 条（MATCH 12，MISMATCH 0，NOT_IN_PAPER 0）——McNemar/Friedman/Wilson 复算
+[R5] gate=WARN MAJOR：hint 命中 28，可疑 0（一票否决），已披露 0
+  [R6] round 1/1 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 1/1: 命中缓存，跳过重跑
+  [R6] round 1/1: Critical=0 Major=0 Minor=0
+[R6] gate=PASS 文本层：Critical 0 / Major 0 / Minor 0（1 轮，RPC HTTP 501（服务在监听））
+[PRISM] P Pertinence 评审中…
+    [prism-p] watchdog: 240s 零输出，判挂起
+    [prism-p] 自愈：文本截短至 3241 字符重试
+[PRISM] R Rigor 评审中…
+[PRISM] I Impact 评审中…
+[PRISM] S Sincerity 评审中…
+[R6b] gate=WARN MAJOR：四维 {'R': 7, 'I': 6, 'S': 9}（min=6，短板 I(贡献量)）——最弱维度 I(贡献量) = 6 分（<= 6）→ 文本层 WARN；证据层门禁不受影响
+[R6c] gate=SKIP 问题清单为空：r6_llm.json
+[R7] overall=WARN -> papers/selfevolve-agent/reviews/pipeline_S5/run_summary.md
+round 3 登记：score=6 overall=WARN criticals=0
+五轮线：轮数 3/5 ..；末轮≥8 ..；0 Critical OK
+[R0] gate=PASS 缺失输入 0，跨源风险目录 0
+[R1] gate=PASS 章节 8/8，无占位符，摘要 294 词
+[R1b] gate=WARN MAJOR：条目 23，幽灵引用 0，结构 Major 0，ID 不存在 0，标题不符 1（联网核验 23 条）
+[R1c] gate=SKIP 断言 2 句（强 1）；arXiv 检索降级：arXiv API 不可达，降级 offline（不误报）
+[R1d] gate=PASS PASS：行内算术 5 处（不符 0，含括号百分数 0）；悬空公式引用 0；符号推导/量纲不在机械覆盖内
+[R2] gate=SKIP 未配置 zip（仅磁盘审查）
+[R2b] gate=SKIP 未配置 zip
+[R2c] gate=PASS PASS：图 3 幅（矢量文本 3，位图跳过 0，缺失 0）；图注小数 2 个，无支撑 0；figure_only 0
+[R2d] gate=PASS PASS：表 6 个（numeric cell 5），无支撑 0，\input 缺失 0，混精度列 0（INFO）
+[R3] gate=PASS PASS：待复核 0，机械噪音 0，已裁决 68（critical 0）
+[R4] gate=PASS PASS：统计记录 12 条（MATCH 12，MISMATCH 0，NOT_IN_PAPER 0）——McNemar/Friedman/Wilson 复算
+[R5] gate=WARN MAJOR：hint 命中 28（有效 1），可疑 0（一票否决），已披露 27（含人工 allowlist 27）
+  [R6] round 1/1 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 1/1: 命中缓存，跳过重跑
+  [R6] round 1/1: Critical=0 Major=0 Minor=0
+[R6] gate=PASS 文本层：Critical 0 / Major 0 / Minor 0（1 轮，RPC HTTP 200）
+[PRISM] P Pertinence 评审中…
+[PRISM] R Rigor 评审中…
+[PRISM] I Impact 评审中…
+[PRISM] S Sincerity 评审中…
+[R6b] gate=WARN MAJOR：四维 {'P': 7, 'R': 7, 'I': 6, 'S': 9}（min=6，短板 I(贡献量)）——最弱维度 I(贡献量) = 6 分（<= 6）→ 文本层 WARN；证据层门禁不受影响
+[R6c] gate=PASS 无可辩论问题（r6_llm.json 清单为空）= 文本层无异议
+[R7] overall=WARN -> papers/selfevolve-agent/reviews/pipeline_S5/run_summary.md
+round 4 登记：score=6 overall=WARN criticals=0
+五轮线：轮数 4/5 ..；末轮≥8 ..；0 Critical OK
+[R0] gate=PASS 缺失输入 0，跨源风险目录 0
+[R1] gate=PASS 章节 8/8，无占位符，摘要 294 词
+[R1b] gate=WARN MAJOR：条目 23，幽灵引用 0，结构 Major 0，ID 不存在 0，标题不符 2（联网核验 23 条）
+[R1c] gate=PASS PASS：断言 2 句（强 1）；检索 15 条，近重复 0（未引用 0）
+[R1d] gate=PASS PASS：行内算术 5 处（不符 0，含括号百分数 0）；悬空公式引用 0；符号推导/量纲不在机械覆盖内
+[R2] gate=SKIP 未配置 zip（仅磁盘审查）
+[R2b] gate=SKIP 未配置 zip
+[R2c] gate=PASS PASS：图 3 幅（矢量文本 3，位图跳过 0，缺失 0）；图注小数 2 个，无支撑 0；figure_only 0
+[R2d] gate=PASS PASS：表 6 个（numeric cell 5），无支撑 0，\input 缺失 0，混精度列 0（INFO）
+[R3] gate=PASS PASS：待复核 0，机械噪音 0，已裁决 68（critical 0）
+[R4] gate=PASS PASS：统计记录 12 条（MATCH 12，MISMATCH 0，NOT_IN_PAPER 0）——McNemar/Friedman/Wilson 复算
+[R5] gate=WARN MAJOR：hint 命中 28（有效 1），可疑 0（一票否决），已披露 27（含人工 allowlist 27）
+  [R6] round 1/3 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 1/3: 命中缓存，跳过重跑
+  [R6] round 1/3: Critical=0 Major=0 Minor=0
+  [R6] round 2/3 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 2/3: Critical=0 Major=0 Minor=0
+  [R6] round 3/3 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 3/3: Critical=0 Major=0 Minor=0
+[R6] gate=PASS 文本层：Critical 0 / Major 0 / Minor 0（3 轮，RPC HTTP 200）；轮间不稳定（噪声候选，不计门禁）：Critical 0 / Major 0
+[PRISM] P Pertinence 评审中…
+[PRISM] R Rigor 评审中…
+[PRISM] I Impact 评审中…
+[PRISM] S Sincerity 评审中…
+[R6b] gate=WARN MAJOR：四维 {'P': 7, 'R': 8, 'I': 6, 'S': 7}（min=6，短板 I(贡献量)）——最弱维度 I(贡献量) = 6 分（<= 6）→ 文本层 WARN；证据层门禁不受影响
+[R6c] gate=PASS 无可辩论问题（r6_llm.json 清单为空）= 文本层无异议
+[R7] overall=WARN -> papers/selfevolve-agent/reviews/pipeline_S5/run_summary.md
+round 5 登记：score=6 overall=WARN criticals=0
+五轮线：轮数 5/5 OK；末轮≥8 ..；0 Critical OK
+[R0] gate=PASS 缺失输入 0，跨源风险目录 0
+[R1] gate=WARN 摘要 340 词（>300）
+[R1b] gate=WARN MAJOR：条目 23，幽灵引用 0，结构 Major 0，ID 不存在 0，标题不符 2（联网核验 23 条）
+[R1c] gate=PASS PASS：断言 2 句（强 1）；检索 15 条，近重复 0（未引用 0）
+[R1d] gate=PASS PASS：行内算术 5 处（不符 0，含括号百分数 0）；悬空公式引用 0；符号推导/量纲不在机械覆盖内
+[R2] gate=SKIP 未配置 zip（仅磁盘审查）
+[R2b] gate=SKIP 未配置 zip
+[R2c] gate=PASS PASS：图 3 幅（矢量文本 3，位图跳过 0，缺失 0）；图注小数 2 个，无支撑 0；figure_only 0
+[R2d] gate=PASS PASS：表 6 个（numeric cell 5），无支撑 0，\input 缺失 0，混精度列 0（INFO）
+[R3] gate=PASS PASS：待复核 0，机械噪音 0，已裁决 68（critical 0）
+[R4] gate=PASS PASS：统计记录 17 条（MATCH 17，MISMATCH 0，NOT_IN_PAPER 0）——McNemar/Friedman/Wilson 复算
+[R5] gate=WARN MAJOR：hint 命中 28（有效 1），可疑 0（一票否决），已披露 27（含人工 allowlist 27）
+  [R6] round 1/3 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 1/3: Critical=0 Major=0 Minor=0
+  [R6] round 2/3 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 2/3: Critical=0 Major=0 Minor=0
+  [R6] round 3/3 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 3/3: Critical=0 Major=0 Minor=0
+[R6] gate=PASS 文本层：Critical 0 / Major 0 / Minor 0（3 轮，RPC HTTP 200）；轮间不稳定（噪声候选，不计门禁）：Critical 0 / Major 0
+[PRISM] P Pertinence 评审中…
+[PRISM] R Rigor 评审中…
+[PRISM] I Impact 评审中…
+[PRISM] S Sincerity 评审中…
+[R6b] gate=WARN MAJOR：四维 {'P': 8, 'R': 7, 'I': 6, 'S': 8}（min=6，短板 I(贡献量)）——最弱维度 I(贡献量) = 6 分（<= 6）→ 文本层 WARN；证据层门禁不受影响
+[R6c] gate=PASS 无可辩论问题（r6_llm.json 清单为空）= 文本层无异议
+[R7] overall=WARN -> papers/selfevolve-agent/reviews/pipeline_S5/run_summary.md
+round 6 登记：score=6 overall=WARN criticals=0
+五轮线：轮数 6/5 OK；末轮≥8 ..；0 Critical OK
+[R0] gate=PASS 缺失输入 0，跨源风险目录 0
+[R1] gate=PASS 章节 8/8，无占位符，摘要 299 词
+[R1b] gate=PASS PASS：条目 23，幽灵引用 0，结构 Major 0，ID 不存在 0，标题不符 0（联网核验 23 条）
+[R1c] gate=SKIP 断言 2 句（强 1）；arXiv 检索降级：arXiv API 不可达，降级 offline（不误报）
+[R1d] gate=PASS PASS：行内算术 5 处（不符 0，含括号百分数 0）；悬空公式引用 0；符号推导/量纲不在机械覆盖内
+[R2] gate=PASS PASS：缺引用 0/10，路径泄漏 0，声明不符 0，tex desync False
+[R2b] gate=PASS PASS：清单 251 条，OK 251，哈希不符 0，缺失 0
+[R2c] gate=PASS PASS：图 3 幅（矢量文本 3，位图跳过 0，缺失 0）；图注小数 2 个，无支撑 0；figure_only 0
+[R2d] gate=PASS PASS：表 6 个（numeric cell 5），无支撑 0，\input 缺失 0，混精度列 0（INFO）
+  [R3] 载入断点 32 条已裁决
+  [R3] 断点续跑：复用已裁决 31/2
+[R3] gate=PASS MAJOR：待复核 6，机械噪音 0，已裁决 54（critical 0）；裁决 PASS（mech 2 / llm 0 / noise 0 / supported 2 / critical 0 / llm_failed 0）
+[R4] gate=PASS PASS：统计记录 17 条（MATCH 17，MISMATCH 0，NOT_IN_PAPER 0）——McNemar/Friedman/Wilson 复算
+[R5] gate=PASS PASS：hint 命中 28（有效 0），可疑 0（一票否决），已披露 28（含人工 allowlist 28）
+  [R6] round 1/3 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 1/3: Critical=0 Major=0 Minor=0
+  [R6] round 2/3 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 2/3: Critical=0 Major=0 Minor=0
+  [R6] round 3/3 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 3/3: Critical=0 Major=0 Minor=0
+[R6] gate=PASS 文本层：Critical 0 / Major 0 / Minor 0（3 轮，RPC HTTP 200）；轮间不稳定（噪声候选，不计门禁）：Critical 0 / Major 0
+[PRISM] P Pertinence 评审中…
+[PRISM] R Rigor 评审中…
+[PRISM] I Impact 评审中…
+[PRISM] S Sincerity 评审中…
+[R6b] gate=WARN MAJOR：四维 {'P': 8, 'R': 7, 'I': 6, 'S': 9}（min=6，短板 I(贡献量)）——最弱维度 I(贡献量) = 6 分（<= 6）→ 文本层 WARN；证据层门禁不受影响
+[R6c] gate=PASS 无可辩论问题（r6_llm.json 清单为空）= 文本层无异议
+[R7] overall=WARN -> papers/selfevolve-agent/reviews/pipeline_S5/run_summary.md
+round 7 登记：score=6 overall=WARN criticals=0
+五轮线：轮数 7/5 OK；末轮≥8 ..；0 Critical OK
+[R0] gate=PASS 缺失输入 0，跨源风险目录 0
+[R1] gate=PASS 章节 8/8，无占位符，摘要 299 词
+[R1b] gate=PASS PASS：条目 23，幽灵引用 0，结构 Major 0，ID 不存在 0，标题不符 0（联网核验 23 条）
+[R1c] gate=SKIP 断言 2 句（强 1）；arXiv 检索降级：arXiv API 不可达，降级 offline（不误报）
+[R1d] gate=PASS PASS：行内算术 5 处（不符 0，含括号百分数 0）；悬空公式引用 0；符号推导/量纲不在机械覆盖内
+[R2] gate=PASS PASS：缺引用 0/11，路径泄漏 0，声明不符 0，tex desync False
+[R2b] gate=PASS PASS：清单 253 条，OK 253，哈希不符 0，缺失 0
+[R2c] gate=PASS PASS：图 3 幅（矢量文本 3，位图跳过 0，缺失 0）；图注小数 2 个，无支撑 0；figure_only 0
+[R2d] gate=PASS PASS：表 6 个（numeric cell 5），无支撑 0，\input 缺失 0，混精度列 0（INFO）
+  [R3] 载入断点 2 条已裁决
+  [R3] 断点续跑：复用已裁决 2/4
+[R3] gate=PASS MAJOR：待复核 8，机械噪音 0，已裁决 54（critical 0）；裁决 PASS（mech 4 / llm 0 / noise 0 / supported 4 / critical 0 / llm_failed 0）
+[R4] gate=PASS PASS：统计记录 17 条（MATCH 17，MISMATCH 0，NOT_IN_PAPER 0）——McNemar/Friedman/Wilson 复算
+[R5] gate=PASS PASS：hint 命中 28（有效 0），可疑 0（一票否决），已披露 28（含人工 allowlist 28）
+  [R6] round 1/3 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 1/3: Critical=0 Major=0 Minor=0
+  [R6] round 2/3 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 2/3: Critical=0 Major=0 Minor=0
+  [R6] round 3/3 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 3/3: Critical=0 Major=0 Minor=0
+[R6] gate=PASS 文本层：Critical 0 / Major 0 / Minor 0（3 轮，RPC HTTP 200）；轮间不稳定（噪声候选，不计门禁）：Critical 0 / Major 0
+[PRISM] P Pertinence 评审中…
+[PRISM] R Rigor 评审中…
+[PRISM] I Impact 评审中…
+[PRISM] S Sincerity 评审中…
+[R6b] gate=PASS PASS：四维 {'P': 7, 'R': 7, 'I': 7, 'S': 8}（min=7，短板 P(契合度)）——四维均 > 6（min=7，短板纪律不平均）
+[R6c] gate=PASS 无可辩论问题（r6_llm.json 清单为空）= 文本层无异议
+[R7] overall=PASS -> papers/selfevolve-agent/reviews/pipeline_S5/run_summary.md
+round 8 登记：score=6 overall=PASS criticals=0
+五轮线：轮数 8/5 OK；末轮≥8 ..；0 Critical OK

@@ -1,0 +1,21 @@
+{
+ "adjudications": "papers/kg-retrieval/reviews/pipeline_S5/adjudications.json",
+ "evidence_dirs": [
+  "papers/kg-retrieval/results",
+  "papers/kg-retrieval/evidence"
+ ],
+ "llm": {
+  "enabled": true,
+  "rpc": "http://127.0.0.1:3081",
+  "roles": "method,stat,experiment,novelty,repro,devil",
+  "script": "research-kit/adversarial_review.py"
+ },
+ "manifest": null,
+ "name": "kg-retrieval",
+ "out": "papers/kg-retrieval/reviews/pipeline_S5",
+ "tex": "papers/kg-retrieval/paper/main.tex",
+ "zip": "papers/kg-retrieval/submission/submission_s5_20260907.zip",
+ "citation_online": true,
+ "novelty_online": true,
+ "converge": 3
+}

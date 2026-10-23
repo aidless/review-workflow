@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_Nm7dTogzfa\\extracted_text.txt",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-26T06:59:48+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "dimensions": {
+    "P": {
+      "status": "ok",
+      "score": 7,
+      "justification": "论文聚焦异步分布式优化加速,问题真实:AA在分布式优化中鲜有应用是明确gap。venue契合度好——TMLR涵盖优化方法与分布式学习,且论文明确将问题(1)与分布式学习训练场景关联。相关工作综述详尽,与已发表工作的关系清晰。但研究本质是将已有技术(AA)迁移到新场景(异步分布式),属常规组合创新而非重大新问题。",
+      "top_weakness": "核心贡献为将已有AA技术移植到异步分布式场景,问题本身属组合创新而非重大未解难题。",
+      "evidence": "existing works only focus on centralized optimization, and the application of AA to distributed optimization remains unexplored.",
+      "parse": "json"
+    },
+    "R": {
+      "status": "ok",
+      "score": 6,
+      "justification": "{\"score\": 6, \"justification\": \"理论部分展现了方法学正确性：将异步梯度法转化为不动点迭代后引入AA，并提出reference-path安全保护方案保证全局收敛，证明了与延迟无关的固定步长收敛性，理论框架自洽。但实验描述过于模糊，仅以\"most test examples\"和\"comparable performance in remaining cases\"概括结果，",
+      "top_weakness": "",
+      "evidence": "",
+      "parse": "regex"
+    },
+    "I": {
+      "status": "ok",
+      "score": 7,
+      "justification": "首个将Anderson加速应用于异步分布式优化的工作,填补了明确空白；提出reference-path-based safeguard保证全局收敛,且证明延迟无关定步长收敛,相对已有delay-dependent步长有实用价值。属扎实增量贡献,但实验仅限凸分类任务且增益中等,未达社区级影响。",
+      "top_weakness": "实验仅限凸分类任务,且仅在多数测试中优于基线、其余仅持平,增量收益的广度与说服力不足。",
+      "evidence": "existing works only focus on centralized optimization, and the application of AA to distributed optimization remains unexplored.",
+      "parse": "json"
+    },
+    "S": {
+      "status": "ok",
+      "score": 7,
+      "justification": "摘要用词整体克制,如\"in most test examples\"\"comparable performance in the remaining cases\"\"often leads to faster convergence\"均有保留,未宣称全面优于基线。但\"the application of AA to distributed optimization remains unexplored\"属绝对化新颖性断言,存在轻微夸大风险。片段中未见显式局限讨论或复现承诺（代码/数据链接）,但因截断无法确认全文情况,故不因缺失而大幅扣分。",
+      "top_weakness": "\"remains unexplored\"为绝对化新颖性声明,未加限定,存在轻微夸大且难以完全验证。",
+      "evidence": "the application of AA to distributed optimization remains unexplored; ADGM-AA improves both iteration-count and wall-clock-time convergence over the baselines in most test examples, while achieving co",
+      "parse": "json"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "scores": {
+      "P": 7,
+      "R": 6,
+      "I": 7,
+      "S": 7
+    },
+    "overall": 6,
+    "weakest": "R(严谨性)",
+    "detail": "最弱维度 R(严谨性) = 6 分（<= 6）→ 文本层 WARN；证据层门禁不受影响"
+  }
+}

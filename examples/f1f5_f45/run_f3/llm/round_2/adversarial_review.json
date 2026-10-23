@@ -1,0 +1,165 @@
+[
+  {
+    "role": "method",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: “记忆架构”并非唯一被操纵的变量：append-only、summarization、RAG 在 token 数、内容条数、顺序、摘要质量、检索命中数/阈值上同时不同，观测到的 ΔMAE/Γ 差异无法与这些混淆变量分离，不能支持“架构→置信误差”的因果结论。",
+        "- Critical: 记忆内容是内生的：注入的记忆由模型输出、摘要或检索生成，模型正确性/生成质量会同时影响记忆内容和置信误差，存在反向因果与选择偏差，内部效度不足。"
+      ],
+      "Major": [
+        "- Major: 统计检验疑似把 cell 当作独立样本，忽略 MMLU 题目、模型、seed 的聚类结构，p<.001 可能来自伪重复；应按题目/模型做聚类 bootstrap 或混合模型。",
+        "- Major: 数据规模与配对结构自相矛盾（摘要称 18,000 paired，贡献却称 9,000 paired），使自由度、功效分析和实际比较数量无法对应。",
+        "- Major: post-hoc calibrators 若在同一 500 题上拟合再评估，属于测试集泄漏；需独立校准集或嵌套交叉拟合。",
+        "- Major: RAG θ=0.1 可能产生空检索或过滤后记忆，而论文自己的反例表明 filtered retrieval 会破坏 |ΔMAE|≤Γ；未报告检索率与非退化条件，Γ 的解释不成立。",
+        "- Major: 补充实验自己承认 verbalized confidence “uninformative”，说明主实验的 ci 可能退化或信息量极低；未先验证置信度判别力，MAE/Γ 差异可能只是格式或噪声产物。",
+        "- Major: Γ=W1 的分布对象和量纲未明确，Γ=12.3 相对 ΔMAE=-0.034 的显著结果可能由极端值或分布形状驱动，而非系统性记忆效应；应报告效应量、分布图与稳健性。",
+        "- Major: 主结果只报告各架构与零的 p 值，未对三种架构两两比较做多重校正，也未报告 4 个模型间的异质性/交互。"
+      ],
+      "Minor": [
+        "- Minor: 仅用 42/43/44 三个非随机且相邻的 seed，pooled SD 只是当前样本描述，不能支持对生成器总体的推断，与“power-justified”的推广语气不一致。",
+        "- Minor: MMLU 500 题的抽样/分层方式、token 长度、authority-marker 长度等预先应控制的变量未报告；r=0.45 只是相关，不足以排除这些混淆。"
+      ]
+    },
+    "raw": "- Critical: “记忆架构”并非唯一被操纵的变量：append-only、summarization、RAG 在 token 数、内容条数、顺序、摘要质量、检索命中数/阈值上同时不同，观测到的 ΔMAE/Γ 差异无法与这些混淆变量分离，不能支持“架构→置信误差”的因果结论。\n- Critical: 记忆内容是内生的：注入的记忆由模型输出、摘要或检索生成，模型正确性/生成质量会同时影响记忆内容和置信误差，存在反向因果与选择偏差，内部效度不足。\n- Major: 统计检验疑似把 cell 当作独立样本，忽略 MMLU 题目、模型、seed 的聚类结构，p<.001 可能来自伪重复；应按题目/模型做聚类 bootstrap 或混合模型。\n- Major: 数据规模与配对结构自相矛盾（摘要称 18,000 paired，贡献却称 9,000 paired），使自由度、功效分析和实际比较数量无法对应。\n- Major: post-hoc calibrators 若在同一 500 题上拟合再评估，属于测试集泄漏；需独立校准集或嵌套交叉拟合。\n- Major: RAG θ=0.1 可能产生空检索或过滤后记忆，而论文自己的反例表明 filtered retrieval 会破坏 |ΔMAE|≤Γ；未报告检索率与非退化条件，Γ 的解释不成立。\n- Major: 补充实验自己承认 verbalized confidence “uninformative”，说明主实验的 ci 可能退化或信息量极低；未先验证置信度判别力，MAE/Γ 差异可能只是格式或噪声产物。\n- Major: Γ=W1 的分布对象和量纲未明确，Γ=12.3 相对 ΔMAE=-0.034 的显著结果可能由极端值或分布形状驱动，而非系统性记忆效应；应报告效应量、分布图与稳健性。\n- Major: 主结果只报告各架构与零的 p 值，未对三种架构两两比较做多重校正，也未报告 4 个模型间的异质性/交互。\n- Minor: 仅用 42/43/44 三个非随机且相邻的 seed，pooled SD 只是当前样本描述，不能支持对生成器总体的推断，与“power-justified”的推广语气不一致。\n- Minor: MMLU 500 题的抽样/分层方式、token 长度、authority-marker 长度等预先应控制的变量未报告；r=0.45 只是相关，不足以排除这些混淆。\n建议: 在固定记忆内容与长度、报告检索命中率和置信度非退化性、采用聚类鲁棒推断和独立校准集之后，再作“记忆架构差异导致置信误差变化”的因果归因。",
+    "sessionId": "session-920b5a70-6ef8-46b6-8cc5-037192fd2775"
+  },
+  {
+    "role": "stat",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 样本量与配对关系矛盾且基线被复用：摘要称 18,000 paired，贡献节又称 9,000 paired，且 18,000 memory 对 6,000 no-memory 意味着同一 no-memory 被三种架构重复配对，违背独立性和有效样本量计算。",
+        "- Critical: p 值误用/检验选择错位：显著结果来自 Γ=W1 的分布位移检验，但研究结论指向 MAE；∆MAE 仅 -0.034/+0.008 且无 CI，不能把 Γ 的 p<.001 解读为“记忆架构显著影响校准误差”。"
+      ],
+      "Major": [
+        "- Major: 多重比较未校正：三种架构、四种后验校准器、θ 扫描和 6 组消融均涉及多次检验，除提到的 Holm 外主比较未见校正，报告的两个 p 值存在选择性报告风险。",
+        "- Major: 功效分析错配：n=67 是 d=0.35、power=0.8 的配对 t 检验功效，而主检验是 Γ/置换检验；且 n=500 按题数计，未考虑 model、seed、架构内相关，真实独立单元远小于此。",
+        "- Major: 效应量与不确定性报告不足：Γ=12.3 vs 1.2 没有 SE/CI、尺度解释或标准化效应量；∆MAE 没有 Cohen's d、基线 MAE 或配对差 CI，无法判断实际意义。",
+        "- Major: 方差报告不足且 seed 处理不当：仅 3 个 seeds（42/43/44）的 seed-pooled SD=0.026 不能估计 seed 方差，也未按 question/model/seed 聚类报告方差分量或 bootstrap CI。"
+      ],
+      "Minor": [
+        "- Minor: θ sweep 缺少多重比较和趋势检验，且“conf 0.99”提示 verbalized confidence 退化，使 Γ 单调性 8.1→0.9 的解释不可靠；每个 θ 的 500 cells 构成也未说明。",
+        "- Minor: 检验细节不可复核：p<.001/p=.42 未给出确切 p 值、检验统计量、置换次数或是否 clustering，Wilson CI 片段与主分析关系不明。"
+      ]
+    },
+    "raw": "- Critical: 样本量与配对关系矛盾且基线被复用：摘要称 18,000 paired，贡献节又称 9,000 paired，且 18,000 memory 对 6,000 no-memory 意味着同一 no-memory 被三种架构重复配对，违背独立性和有效样本量计算。\n- Critical: p 值误用/检验选择错位：显著结果来自 Γ=W1 的分布位移检验，但研究结论指向 MAE；∆MAE 仅 -0.034/+0.008 且无 CI，不能把 Γ 的 p<.001 解读为“记忆架构显著影响校准误差”。\n- Major: 多重比较未校正：三种架构、四种后验校准器、θ 扫描和 6 组消融均涉及多次检验，除提到的 Holm 外主比较未见校正，报告的两个 p 值存在选择性报告风险。\n- Major: 功效分析错配：n=67 是 d=0.35、power=0.8 的配对 t 检验功效，而主检验是 Γ/置换检验；且 n=500 按题数计，未考虑 model、seed、架构内相关，真实独立单元远小于此。\n- Major: 效应量与不确定性报告不足：Γ=12.3 vs 1.2 没有 SE/CI、尺度解释或标准化效应量；∆MAE 没有 Cohen's d、基线 MAE 或配对差 CI，无法判断实际意义。\n- Major: 方差报告不足且 seed 处理不当：仅 3 个 seeds（42/43/44）的 seed-pooled SD=0.026 不能估计 seed 方差，也未按 question/model/seed 聚类报告方差分量或 bootstrap CI。\n- Minor: θ sweep 缺少多重比较和趋势检验，且“conf 0.99”提示 verbalized confidence 退化，使 Γ 单调性 8.1→0.9 的解释不可靠；每个 θ 的 500 cells 构成也未说明。\n- Minor: 检验细节不可复核：p<.001/p=.42 未给出确切 p 值、检验统计量、置换次数或是否 clustering，Wilson CI 片段与主分析关系不明。\n建议: 以 question×model×seed 为聚类单元，预先指定 MAE 为主要结局并做 Holm/Bonferroni 校正，报告 Γ 与 ∆MAE 的 bootstrap 聚类 CI、效应量及 3-seed 方差分量。",
+    "sessionId": "session-95efbe1f-0c3b-4ef6-b8c8-6795144e1122"
+  },
+  {
+    "role": "experiment",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 统计检验单位定义不清：18,000 个 paired cells 来自 500 题 × 4 模型 × 3 种子 × 3 架构，同一题目在不同模型/种子/架构间高度相关，直接以 cell 为样本会严重膨胀显著性与功效；若按题目聚合则与报告的 18,000 paired 矛盾。"
+      ],
+      "Major": [
+        "- Major: 摘要与贡献章节数据自相矛盾：摘要写 24,000 cells / 18,000 paired，贡献写 18,000 cells / 9,000 paired，关键样本量无法复核。",
+        "- Major: 对照组不足：仅有 no-memory 作为基线，缺少“等量 token 的无关记忆”“同长度随机文本”“不检索但拼接相同内容”等控制，无法把 Γ/∆MAE 差异归因于记忆架构而非上下文长度或信息量。",
+        "- Major: 基准公平性不足：append-only、summarization、RAG 的 token 数、内容新鲜度、注入位置天然不同，未报告是否匹配上下文预算、prompt 模板、解码参数与最大生成长度，架构效应可能与长度效应混淆。",
+        "- Major: 超参数选择存在 outcome-driven 风险：RAG θ=0.1 是主结果，而补充 sweep 显示 θ 越大 Γ 越小但与“uninformative confidence”耦合，未说明 θ 是否用独立验证集预先选定，也未报告 summarization 的摘要长度/更新策略/生成模型等超参数。",
+        "- Major: 消融不完整：所谓 6-group ablation 未给出分组定义；至少应消融检索阈值、top-k、摘要长度、记忆条数、顺序、是否含 authority marker，才能把效应定位到“架构”而非某个组件。",
+        "- Major: seed 管理薄弱：仅 3 个 seed，且看起来是同一批 500 题在每模型每架构上重复，未说明 seed 是否改变题目子集、题目顺序或总结采样；没有 per-seed 方差、区间或 seed×架构交互报告，3 个 seed 不足以支撑稳定的 Γ 与 p 值。",
+        "- Major: 泛化性局限：只在 MMLU 多项选择题、4 个本地模型、合成/附加的“先前交互”记忆上测试，未覆盖多轮对话、长 horizon、开放式生成、不同检索语料或不同领域；结论不能推广到真实 agent 记忆。",
+        "- Major: 校准器评估公平性：四个 post-hoc calibrator 未说明是否在独立验证集上拟合、在测试集上评估；若在同一批 500 题上 in-sample 拟合，MAE 下降会被高估。"
+      ],
+      "Minor": [
+        "- Minor: 主结果未做多重比较校正：多个架构、多个模型、多个 calibrator 同时检验，只有“6-group ablation”提到 Holm；三个种子和 θ sweep 的多次比较也未统一控制。",
+        "- Minor: 效应量过小且未给出置信区间：append-only ∆MAE −0.034、RAG +0.008 的实际意义不明，也没有 per-model/per-seed 分布，难以判断是否可部署相关。"
+      ]
+    },
+    "raw": "- Critical: 统计检验单位定义不清：18,000 个 paired cells 来自 500 题 × 4 模型 × 3 种子 × 3 架构，同一题目在不同模型/种子/架构间高度相关，直接以 cell 为样本会严重膨胀显著性与功效；若按题目聚合则与报告的 18,000 paired 矛盾。\n- Major: 摘要与贡献章节数据自相矛盾：摘要写 24,000 cells / 18,000 paired，贡献写 18,000 cells / 9,000 paired，关键样本量无法复核。\n- Major: 对照组不足：仅有 no-memory 作为基线，缺少“等量 token 的无关记忆”“同长度随机文本”“不检索但拼接相同内容”等控制，无法把 Γ/∆MAE 差异归因于记忆架构而非上下文长度或信息量。\n- Major: 基准公平性不足：append-only、summarization、RAG 的 token 数、内容新鲜度、注入位置天然不同，未报告是否匹配上下文预算、prompt 模板、解码参数与最大生成长度，架构效应可能与长度效应混淆。\n- Major: 超参数选择存在 outcome-driven 风险：RAG θ=0.1 是主结果，而补充 sweep 显示 θ 越大 Γ 越小但与“uninformative confidence”耦合，未说明 θ 是否用独立验证集预先选定，也未报告 summarization 的摘要长度/更新策略/生成模型等超参数。\n- Major: 消融不完整：所谓 6-group ablation 未给出分组定义；至少应消融检索阈值、top-k、摘要长度、记忆条数、顺序、是否含 authority marker，才能把效应定位到“架构”而非某个组件。\n- Major: seed 管理薄弱：仅 3 个 seed，且看起来是同一批 500 题在每模型每架构上重复，未说明 seed 是否改变题目子集、题目顺序或总结采样；没有 per-seed 方差、区间或 seed×架构交互报告，3 个 seed 不足以支撑稳定的 Γ 与 p 值。\n- Major: 泛化性局限：只在 MMLU 多项选择题、4 个本地模型、合成/附加的“先前交互”记忆上测试，未覆盖多轮对话、长 horizon、开放式生成、不同检索语料或不同领域；结论不能推广到真实 agent 记忆。\n- Major: 校准器评估公平性：四个 post-hoc calibrator 未说明是否在独立验证集上拟合、在测试集上评估；若在同一批 500 题上 in-sample 拟合，MAE 下降会被高估。\n- Minor: 主结果未做多重比较校正：多个架构、多个模型、多个 calibrator 同时检验，只有“6-group ablation”提到 Holm；三个种子和 θ sweep 的多次比较也未统一控制。\n- Minor: 效应量过小且未给出置信区间：append-only ∆MAE −0.034、RAG +0.008 的实际意义不明，也没有 per-model/per-seed 分布，难以判断是否可部署相关。\n建议: 将分析单位明确为题目/题目×模型的混合效应模型，并用独立验证集选择 RAG θ 和校准器超参数后，再报告统一的样本量、校正后的置信区间与 per-seed 结果。",
+    "sessionId": "session-03a9394a-1015-4e00-a292-7da2d54f29cf"
+  },
+  {
+    "role": "novelty",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 论文声称填补“agent memory architecture 对 verbalized confidence”的空白，但实验是在静态 MMLU 提示中做一次性的“synthetic memory injection”，并不是真实 agent 的会话记忆累积、摘要更新、跨轮检索生命周期；因此它测试的更接近 prompt/context 配置，而不是所宣称的 memory architecture，GAP 被显著夸大。"
+      ],
+      "Major": [
+        "- Major: 与已有文献的差异被低估：RAG 校准研究（如 RALMs 是否 know when they don’t know、RAG 中 noise-aware verbal confidence calibration）已经系统操纵检索上下文并报告置信度/ECE 变化，agentic confidence calibration 也把轨迹与记忆过程纳入校准因素；论文需要证明三路 memory-condition 配对协议不是一个已有 context-sensitivity 现象的特例，而不是仅说“尚未被测试”。",
+        "- Major: 核心比较结论缺少架构间的统计推断：报告的是 append-only 与 RAG 各自相对 no-memory 的 Γ 和 p 值，没有给出 Γ(RAG) vs Γ(append-only) 或 ΔMAE 差异的检验/置信区间，因此“append-only 比 RAG 产生更大 shift”这一标题性发现未被直接支持。",
+        "- Major: 补充 θ sweep 自曝 RAG 的低 Γ 伴随 “uninformative verbalized conf”，说明 RAG 的 Γ=1.2 可能来自置信度退化/退化分布而非更优校准；non-degeneracy condition 只是承认该比较可能空洞，不能作为 RAG 更稳的证据。",
+        "- Major: 理论贡献被夸大：|ΔMAE| ≤ LΓ 本质是 Wasserstein 距离对 Lipschitz 型期望差的上界，外加一个说明退化/过滤检索时 bound 失效的反例；这更像一个简单不等式和前提条件，而非“characterizing” memory architecture 与置信误差关系的新定理。"
+      ],
+      "Minor": [
+        "- Minor: 把“paired protocol + power analysis”列为主要贡献属于方法常规操作，真正的增量只是 500 道 MMLU 上的一次描述性比较，且在合成注入协议下作者自己也限定为 sample-descriptive，增量贡献有限。",
+        "- Minor: 摘要里的 24,000 cells / 18,000 paired 与贡献清单里的 18,000 cells / 9,000 paired 数字不一致，影响对“power-justified、受控配对”主张的可核查性。"
+      ]
+    },
+    "raw": "\n\n\nThere's a LinkedIn result \"AI Agents Lose Calibration by Turn 22, Memory Tasks ...\" maybe relevant. Need perhaps scrape that? LinkedIn might not accessible. Search title. Also \"From Knowing to Doing: A Memory-Controlled Benchmark for ...\" maybe relevant. Let's search for exact.\n\n\n\n\n\n- Critical: 论文声称填补“agent memory architecture 对 verbalized confidence”的空白，但实验是在静态 MMLU 提示中做一次性的“synthetic memory injection”，并不是真实 agent 的会话记忆累积、摘要更新、跨轮检索生命周期；因此它测试的更接近 prompt/context 配置，而不是所宣称的 memory architecture，GAP 被显著夸大。\n- Major: 与已有文献的差异被低估：RAG 校准研究（如 RALMs 是否 know when they don’t know、RAG 中 noise-aware verbal confidence calibration）已经系统操纵检索上下文并报告置信度/ECE 变化，agentic confidence calibration 也把轨迹与记忆过程纳入校准因素；论文需要证明三路 memory-condition 配对协议不是一个已有 context-sensitivity 现象的特例，而不是仅说“尚未被测试”。\n- Major: 核心比较结论缺少架构间的统计推断：报告的是 append-only 与 RAG 各自相对 no-memory 的 Γ 和 p 值，没有给出 Γ(RAG) vs Γ(append-only) 或 ΔMAE 差异的检验/置信区间，因此“append-only 比 RAG 产生更大 shift”这一标题性发现未被直接支持。\n- Major: 补充 θ sweep 自曝 RAG 的低 Γ 伴随 “uninformative verbalized conf”，说明 RAG 的 Γ=1.2 可能来自置信度退化/退化分布而非更优校准；non-degeneracy condition 只是承认该比较可能空洞，不能作为 RAG 更稳的证据。\n- Major: 理论贡献被夸大：|ΔMAE| ≤ LΓ 本质是 Wasserstein 距离对 Lipschitz 型期望差的上界，外加一个说明退化/过滤检索时 bound 失效的反例；这更像一个简单不等式和前提条件，而非“characterizing” memory architecture 与置信误差关系的新定理。\n- Minor: 把“paired protocol + power analysis”列为主要贡献属于方法常规操作，真正的增量只是 500 道 MMLU 上的一次描述性比较，且在合成注入协议下作者自己也限定为 sample-descriptive，增量贡献有限。\n- Minor: 摘要里的 24,000 cells / 18,000 paired 与贡献清单里的 18,000 cells / 9,000 paired 数字不一致，影响对“power-justified、受控配对”主张的可核查性。\n建议: 将论文重新定位为“静态上下文/记忆注入方式对 verbalized-confidence 的探索性比较”，补做架构间统计推断与真实多轮 agent 记忆实验，并删除或降级理论贡献与“memory architecture”标题级 claim。",
+    "sessionId": "session-3bfd5466-060c-4e81-9861-98eb47ccdf33"
+  },
+  {
+    "role": "repro",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 全文未提供任何一键复现入口（无匿名仓库、脚本、容器或 `reproduce.sh`），仅有 `results/analysis.json` 等内部路径，无法从原始提示、模型输出和配置重新生成 24,000 或 18,000 个数据格。",
+        "- Critical: 证据链中的细胞数自相矛盾：摘要称 “24,000 cells: 18,000 memory + 6,000 no-memory; 18,000 paired”，贡献节却称 “18,000 cells (9,000 paired)”，且三架构×500题×4模型×3种子无法自然推出这些数字，评审者无法对账。",
+        "- Critical: 500 条 MMLU 问题的取样过程未给出：没有具体题号/索引、MMLU 版本、split、采样 seed 或筛选条件，任何后续复现都可能得到不同子集。"
+      ],
+      "Major": [
+        "- Major: 四个本地模型未被明确标识：缺少模型名/版本/权重来源、量化方式、dtype、分词器版本和运行后端，无法确认“四模型”这一分层是否可复现。",
+        "- Major: seed 42/43/44 的语义不清晰：未说明 seed 作用于采样、数据洗牌、检索、摘要还是全部；也未报告 temperature、top-p、max tokens、随机数生成器/确定性模式，导致生成结果不可复现。",
+        "- Major: 记忆架构的工程细节不足：append-only 的截断/格式、summarization 的摘要提示与更新策略、TF-IDF 的 tokenizer/ngram/top-k/θ 阈值语义及检索注入方式均未给出可执行规格。",
+        "- Major: 缺少哈希对账：原始日志、MMLU 子集、中间字符串、分析结果和最终表格之间没有 SHA-256 或等价内容寻址，无法验证“86 PASS claim ledger”与附录日志确实来自所述管线。",
+        "- Major: 数据和模型许可未说明：MMLU 的版本与再分发条款、四个模型的许可证、以及补充数据/日志是否允许随论文发布均未交代。"
+      ],
+      "Minor": [
+        "- Minor: 配置快照不完整且不可独立使用：只有“results/analysis.json 和 gates_config.json L10–L28”的文本引用，未给出 schema、依赖版本（Python/sklearn/transformers 等）或从快照重建每个数值的命令。",
+        "- Minor: “Gamma precursor strings (24K→12K)”“Panorama six-figure synthesis”“color-coded split ledger”等证据链术语没有机器可读定义或校验脚本，人工颜色标注无法作为可复现证据。"
+      ]
+    },
+    "raw": "- Critical: 全文未提供任何一键复现入口（无匿名仓库、脚本、容器或 `reproduce.sh`），仅有 `results/analysis.json` 等内部路径，无法从原始提示、模型输出和配置重新生成 24,000 或 18,000 个数据格。\n- Critical: 证据链中的细胞数自相矛盾：摘要称 “24,000 cells: 18,000 memory + 6,000 no-memory; 18,000 paired”，贡献节却称 “18,000 cells (9,000 paired)”，且三架构×500题×4模型×3种子无法自然推出这些数字，评审者无法对账。\n- Critical: 500 条 MMLU 问题的取样过程未给出：没有具体题号/索引、MMLU 版本、split、采样 seed 或筛选条件，任何后续复现都可能得到不同子集。\n- Major: 四个本地模型未被明确标识：缺少模型名/版本/权重来源、量化方式、dtype、分词器版本和运行后端，无法确认“四模型”这一分层是否可复现。\n- Major: seed 42/43/44 的语义不清晰：未说明 seed 作用于采样、数据洗牌、检索、摘要还是全部；也未报告 temperature、top-p、max tokens、随机数生成器/确定性模式，导致生成结果不可复现。\n- Major: 记忆架构的工程细节不足：append-only 的截断/格式、summarization 的摘要提示与更新策略、TF-IDF 的 tokenizer/ngram/top-k/θ 阈值语义及检索注入方式均未给出可执行规格。\n- Major: 缺少哈希对账：原始日志、MMLU 子集、中间字符串、分析结果和最终表格之间没有 SHA-256 或等价内容寻址，无法验证“86 PASS claim ledger”与附录日志确实来自所述管线。\n- Major: 数据和模型许可未说明：MMLU 的版本与再分发条款、四个模型的许可证、以及补充数据/日志是否允许随论文发布均未交代。\n- Minor: 配置快照不完整且不可独立使用：只有“results/analysis.json 和 gates_config.json L10–L28”的文本引用，未给出 schema、依赖版本（Python/sklearn/transformers 等）或从快照重建每个数值的命令。\n- Minor: “Gamma precursor strings (24K→12K)”“Panorama six-figure synthesis”“color-coded split ledger”等证据链术语没有机器可读定义或校验脚本，人工颜色标注无法作为可复现证据。\n建议: 随论文或匿名补充材料提供固定依赖的容器化一键复现包（含 500 题精确抽取脚本、模型与采样配置、内存实现规格、原始输出哈希、统一的 24K/18K/9K 细胞数对账表），以 `reproduce.sh` 从零生成摘要中的全部主要数字。",
+    "sessionId": "session-1e28981f-56f5-45f0-8e9d-1a554543a1b8"
+  },
+  {
+    "role": "writing",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 摘要与 Contributions 数字自相矛盾：摘要称 24,000 cells（18,000 memory + 6,000 no-memory）且 18,000 paired，而 Contribution 1 称 18,000 cells（9,000 paired），同一协议的样本量无法同时成立。",
+        "- Critical: 正文混入内部审计/元数据文本（“Panorama six-figure synthesis…”“Claim ledger 86 PASS…”“Gamma precursor strings (24K→12K)…”“protocol.md L42–L58”），这些不属于 TMLR 论文内容，严重破坏结构并可能违反双盲评审要求。"
+      ],
+      "Major": [
+        "- Major: “We provide a descriptive upper bound |∆MAE| ≤LΓ”与 Contribution 2 的“a theorem characterizing |∆MAE| ≤Γ”不一致，L 是否应有、常数位置和定理形式前后矛盾。",
+        "- Major: 同一组方法被称为“four post-hoc calibrators”（摘要/引言）和“four post-hoc baselines”（Contribution 3），术语不统一，读者无法判断是校准器还是基线对照。",
+        "- Major: 摘要中出现无前因的统计句“95% Wilson CI [0.52, 0.84]% for the 0.68% share versus survey Wilson [0, 0.21] for 0/15”，0.68% share 和 0/15 均未在摘要中定义，属于不可读的压缩信息。",
+        "- Major: “Gates 9/9 map to gates_config.json L10–L28”中的“Gates”从未定义，且把 JSON 行号写进摘要，既术语不明又违反摘要应概括贡献的文体要求。",
+        "- Major: “All findings are sample-descriptive within the synthetic memory-injection protocol”是奇怪的审计式措辞，“sample-descriptive”不是标准统计/论文术语，放在摘要区让人误以为是审稿注释而非科学结论。"
+      ],
+      "Minor": [
+        "- Minor: 公式“MAE = i |ci −yi|”明显丢失了求和/均值结构，至少应写为 MAE = (1/N)Σ|ci−yi|；当前形式无法独立理解。",
+        "- Minor: “Γ monotonic 8.1→0.9”没有说明是递增还是递减，也未列出 θ=0.05/0.1/0.3 分别对应的 Γ；同时“conf 0.99”未定义。",
+        "- Minor: “Seed-pooled SD 0.026（seeds 42/43/44）”没有说明 SD 的对象（是 ∆MAE、Γ 还是别的指标），一致性论证无法验证。",
+        "- Minor: 版面重复“Under review as submission to TMLR”两次（标题页后再次出现），属于结构编辑错误。",
+        "- Minor: 图表角度无实质支撑：文中提到“six-figure synthesis”“color-coded split ledger”但论文中没有对应图/表编号；关键结果（三架构 Γ、∆MAE、Wilson CI）也未见表格或图集呈现。",
+        "- Minor: “Authority-marker length … r=0.45”作为 Contribution 3 的卖点但摘要完全未提及，且没有置信区间或显著性，读者无法判断该相关性是否稳健。"
+      ]
+    },
+    "raw": "- Critical: 摘要与 Contributions 数字自相矛盾：摘要称 24,000 cells（18,000 memory + 6,000 no-memory）且 18,000 paired，而 Contribution 1 称 18,000 cells（9,000 paired），同一协议的样本量无法同时成立。\n- Critical: 正文混入内部审计/元数据文本（“Panorama six-figure synthesis…”“Claim ledger 86 PASS…”“Gamma precursor strings (24K→12K)…”“protocol.md L42–L58”），这些不属于 TMLR 论文内容，严重破坏结构并可能违反双盲评审要求。\n- Major: “We provide a descriptive upper bound |∆MAE| ≤LΓ”与 Contribution 2 的“a theorem characterizing |∆MAE| ≤Γ”不一致，L 是否应有、常数位置和定理形式前后矛盾。\n- Major: 同一组方法被称为“four post-hoc calibrators”（摘要/引言）和“four post-hoc baselines”（Contribution 3），术语不统一，读者无法判断是校准器还是基线对照。\n- Major: 摘要中出现无前因的统计句“95% Wilson CI [0.52, 0.84]% for the 0.68% share versus survey Wilson [0, 0.21] for 0/15”，0.68% share 和 0/15 均未在摘要中定义，属于不可读的压缩信息。\n- Major: “Gates 9/9 map to gates_config.json L10–L28”中的“Gates”从未定义，且把 JSON 行号写进摘要，既术语不明又违反摘要应概括贡献的文体要求。\n- Major: “All findings are sample-descriptive within the synthetic memory-injection protocol”是奇怪的审计式措辞，“sample-descriptive”不是标准统计/论文术语，放在摘要区让人误以为是审稿注释而非科学结论。\n- Minor: 公式“MAE = i |ci −yi|”明显丢失了求和/均值结构，至少应写为 MAE = (1/N)Σ|ci−yi|；当前形式无法独立理解。\n- Minor: “Γ monotonic 8.1→0.9”没有说明是递增还是递减，也未列出 θ=0.05/0.1/0.3 分别对应的 Γ；同时“conf 0.99”未定义。\n- Minor: “Seed-pooled SD 0.026（seeds 42/43/44）”没有说明 SD 的对象（是 ∆MAE、Γ 还是别的指标），一致性论证无法验证。\n- Minor: 版面重复“Under review as submission to TMLR”两次（标题页后再次出现），属于结构编辑错误。\n- Minor: 图表角度无实质支撑：文中提到“six-figure synthesis”“color-coded split ledger”但论文中没有对应图/表编号；关键结果（三架构 Γ、∆MAE、Wilson CI）也未见表格或图集呈现。\n- Minor: “Authority-marker length … r=0.45”作为 Contribution 3 的卖点但摘要完全未提及，且没有置信区间或显著性，读者无法判断该相关性是否稳健。\n- 建议: 删除全部内部审计/元数据语句，统一配对样本数（18,000 vs 9,000）、统一“calibrators/baselines”与上下界写法（≤Γ 或 ≤LΓ），并把 CI、Gates、SD、θ-sweep 等细节移到附录且先在正文定义。",
+    "sessionId": "session-9fc7b9e8-cd6f-4768-81f6-c054af4febf8"
+  },
+  {
+    "role": "ethics",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 双盲合规风险：正文出现 `gates_config.json L10–L28`、`protocol.md L42–L58`、`results/analysis.json` 及附录行号等内部仓库痕迹，可能让审稿人定位到作者基础设施/代码库，违反 TMLR 双盲匿名要求。"
+      ],
+      "Major": [
+        "- Major: 数据许可：使用 MMLU 子集及文中提到的 survey 数据时未声明数据集许可证、归属与使用条款；MMLU 等基准有再分发/商用限制，若补充材料包含原题或日志需先完成许可合规审查。",
+        "- Major: 利益冲突：全文缺少资助、隶属和竞争利益声明，且“Gates 9/9”等表述可能间接指向资助方/关联机构，未按 TMLR 要求披露 COI。",
+        "- Major: 误用风险：结果展示了记忆架构如何系统移动 verbalized confidence 以及哪些校准器失效，却未给出部署限制或滥用警示，可能被用于高置信度错误代理设计或不当设置安全放弃阈值。"
+      ],
+      "Minor": [
+        "- Minor: 隐私：虽然公开基准和本地模型不涉及个人数据，但论文未说明发布日志中是否包含可复现的受版权文本或可识别内容，也未承诺对原始 memory 输出做脱敏/不公开处理。"
+      ]
+    },
+    "raw": "- Critical: 双盲合规风险：正文出现 `gates_config.json L10–L28`、`protocol.md L42–L58`、`results/analysis.json` 及附录行号等内部仓库痕迹，可能让审稿人定位到作者基础设施/代码库，违反 TMLR 双盲匿名要求。\n- Major: 数据许可：使用 MMLU 子集及文中提到的 survey 数据时未声明数据集许可证、归属与使用条款；MMLU 等基准有再分发/商用限制，若补充材料包含原题或日志需先完成许可合规审查。\n- Minor: 隐私：虽然公开基准和本地模型不涉及个人数据，但论文未说明发布日志中是否包含可复现的受版权文本或可识别内容，也未承诺对原始 memory 输出做脱敏/不公开处理。\n- Major: 利益冲突：全文缺少资助、隶属和竞争利益声明，且“Gates 9/9”等表述可能间接指向资助方/关联机构，未按 TMLR 要求披露 COI。\n- Major: 误用风险：结果展示了记忆架构如何系统移动 verbalized confidence 以及哪些校准器失效，却未给出部署限制或滥用警示，可能被用于高置信度错误代理设计或不当设置安全放弃阈值。\n建议: 提交前删除/匿名化所有内部文件路径，补充数据许可与隐私说明、完整 COI 声明，并加入“结果不可直接用于高风险部署/放弃决策”的误用风险段落。",
+    "sessionId": "session-1c817db3-8b19-4803-9631-e2b36038f797"
+  }
+]

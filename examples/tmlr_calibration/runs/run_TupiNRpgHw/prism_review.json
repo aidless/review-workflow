@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_TupiNRpgHw\\extracted_text.txt",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-26T07:08:37+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "dimensions": {
+    "P": {
+      "status": "ok",
+      "score": 8,
+      "justification": "跨域离线RL中动力学不匹配是真实且重要的问题,TMLR作为ML研究期刊契合度极高。论文清晰梳理了现有filtering/reward modification方法的局限,并定位到有限目标域数据的实际场景,与已发表工作关系明确。问题重要但属于该方向常规推进。",
+      "top_weakness": "cross-domain offline RL已有较多相关工作,本文correction思路与现有filtering/reward方法属同类改进,问题新颖性有限。",
+      "evidence": "Existing approaches typically mitigate this issue through source domain transition filtering or reward modification, which, however, may lead to insufficient exploitation of the valuable source domain",
+      "parse": "json"
+    },
+    "R": {
+      "status": "ok",
+      "score": 5,
+      "justification": "方法学存在明显可质疑处:用有限目标域数据训练三个模型(前向动力学、逆策略、奖励模型)本身误差会累积,再用同样有限数据训练的前向模型做样本筛选存在选择偏倚与循环论证风险；片段中未见统计检验、seed管理或消融设计细节,仅声称superior performance,无法判断基线公平性。",
+      "top_weakness": "用有限目标数据训练的前向动力学模型筛选样本,存在选择偏倚与循环验证风险,且多模型误差累积未讨论。",
+      "evidence": "Since limited data may result in inaccurate model training, we further employ a forward dynamics model to retain corrected samples that better match the target dynamics than the original transitions.",
+      "parse": "json"
+    },
+    "I": {
+      "status": "ok",
+      "score": 6,
+      "justification": "STC提出用逆策略模型和奖励模型将源域transition校正为目标域数据而非过滤/降权,思路较新且有实用价值,但核心组件（inverse policy model、reward model、forward dynamics model）均为已知技术组合,对有限目标数据这一设定下相对OTDF等已有方法的增量有限,实验主要为常规基线对比,缺乏新基准或深层洞察。",
+      "top_weakness": "核心方法为已有模型技术的组合应用,相对已有过滤/降权方法的增量性能提升幅度未被充分论证,缺乏对社区的新能力或新基准贡献。",
+      "evidence": "we propose to modify the source domain data into the target domain data. To that end, we leverage an inverse policy model and a reward model to correct the actions and rewards of source transitions",
+      "parse": "json"
+    },
+    "S": {
+      "status": "ok",
+      "score": 7,
+      "justification": "摘要与引言总体表述克制,承认现有方法在特定设置下的合理性与自身方法动机。但'achieves superior performance'与'enables reliable usage'等断言未加限定语,且所给片段中未见局限性坦诚披露或复现承诺（数据/代码）的相关说明,诚实性有轻微缺口。",
+      "top_weakness": "摘要中'superior performance against existing baselines'为未加限定的优越性断言,片段中亦无局限性或复现承诺披露。",
+      "evidence": "Experiments on various environments with dynamics shifts demonstrate that STC achieves superior performance against existing baselines.",
+      "parse": "json"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "scores": {
+      "P": 8,
+      "R": 5,
+      "I": 6,
+      "S": 7
+    },
+    "overall": 5,
+    "weakest": "R(严谨性)",
+    "detail": "最弱维度 R(严谨性) = 5 分（<= 6）→ 文本层 WARN；证据层门禁不受影响"
+  }
+}

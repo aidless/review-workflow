@@ -1,0 +1,426 @@
+{
+  "meta": {
+    "zip": "F:\\deepseek\\papers\\calibration-self-improvement\\submission_clean_20260827_v4.zip",
+    "tex": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\main.tex",
+    "entries": 278,
+    "timestamp": "2026-08-28T04:06:20+00:00"
+  },
+  "referenced_paths": [
+    {
+      "raw": "label\\_adjudication.json",
+      "path": "label_adjudication.json",
+      "line": 358,
+      "status": "exact",
+      "matched": [
+        "evidence/label_adjudication.json"
+      ]
+    },
+    {
+      "raw": "dual\\_judge\\_adjudication.json",
+      "path": "dual_judge_adjudication.json",
+      "line": 366,
+      "status": "exact",
+      "matched": [
+        "evidence/dual_judge_adjudication.json"
+      ]
+    },
+    {
+      "raw": "theory/",
+      "path": "theory/",
+      "line": 695,
+      "status": "prefix-dir",
+      "matched": [
+        "theory/estimator_design.md",
+        "theory/msi.py",
+        "theory/p2_interface.md"
+      ]
+    },
+    {
+      "raw": "multi\\_model/matcher\\_vs\\_judge.json",
+      "path": "multi_model/matcher_vs_judge.json",
+      "line": 780,
+      "status": "exact",
+      "matched": [
+        "evidence/multi_model/matcher_vs_judge.json"
+      ]
+    },
+    {
+      "raw": "multi\\_model/per\\_source\\_judge\\_agreement.json",
+      "path": "multi_model/per_source_judge_agreement.json",
+      "line": 812,
+      "status": "exact",
+      "matched": [
+        "evidence/multi_model/per_source_judge_agreement.json"
+      ]
+    },
+    {
+      "raw": "multi\\_model/three\\_judge\\_analysis.json",
+      "path": "multi_model/three_judge_analysis.json",
+      "line": 852,
+      "status": "exact",
+      "matched": [
+        "evidence/multi_model/three_judge_analysis.json"
+      ]
+    },
+    {
+      "raw": "multi\\_model/flip\\_audit\\_list.json",
+      "path": "multi_model/flip_audit_list.json",
+      "line": 865,
+      "status": "exact",
+      "matched": [
+        "evidence/multi_model/flip_audit_list.json"
+      ]
+    },
+    {
+      "raw": "multi\\_model/flip\\_audit\\_results.json",
+      "path": "multi_model/flip_audit_results.json",
+      "line": 866,
+      "status": "exact",
+      "matched": [
+        "evidence/multi_model/flip_audit_results.json"
+      ]
+    },
+    {
+      "raw": "multi\\_model/consensus\\_ece\\_result.json",
+      "path": "multi_model/consensus_ece_result.json",
+      "line": 896,
+      "status": "exact",
+      "matched": [
+        "evidence/multi_model/consensus_ece_result.json"
+      ]
+    },
+    {
+      "raw": "flip\\_audit\\_list.json",
+      "path": "flip_audit_list.json",
+      "line": 897,
+      "status": "exact",
+      "matched": [
+        "evidence/multi_model/flip_audit_list.json"
+      ]
+    },
+    {
+      "raw": "multi\\_model/consensus\\_ece\\_result.json",
+      "path": "multi_model/consensus_ece_result.json",
+      "line": 913,
+      "status": "exact",
+      "matched": [
+        "evidence/multi_model/consensus_ece_result.json"
+      ]
+    },
+    {
+      "raw": "evidence/census\\_sig600/",
+      "path": "evidence/census_sig600/",
+      "line": 1224,
+      "status": "prefix-dir",
+      "matched": [
+        "evidence/census_sig600/census600_tasks.json",
+        "evidence/census_sig600/for_judge.jsonl",
+        "evidence/census_sig600/gemma2-9b.jsonl"
+      ]
+    },
+    {
+      "raw": "evidence/confidence.jsonl",
+      "path": "evidence/confidence.jsonl",
+      "line": 1827,
+      "status": "exact",
+      "matched": [
+        "evidence/confidence.jsonl"
+      ]
+    },
+    {
+      "raw": "recompute\\_analysis.py",
+      "path": "recompute_analysis.py",
+      "line": 1833,
+      "status": "exact",
+      "matched": [
+        "scripts/recompute_analysis.py"
+      ]
+    },
+    {
+      "raw": "confidence\\_pilot.jsonl",
+      "path": "confidence_pilot.jsonl",
+      "line": 1833,
+      "status": "exact",
+      "matched": [
+        "evidence/confidence_pilot.jsonl"
+      ]
+    },
+    {
+      "raw": "evidence/confidence\\_pilot.jsonl",
+      "path": "evidence/confidence_pilot.jsonl",
+      "line": 1834,
+      "status": "exact",
+      "matched": [
+        "evidence/confidence_pilot.jsonl"
+      ]
+    },
+    {
+      "raw": "evidence/label\\_adjudication.json",
+      "path": "evidence/label_adjudication.json",
+      "line": 1836,
+      "status": "exact",
+      "matched": [
+        "evidence/label_adjudication.json"
+      ]
+    },
+    {
+      "raw": "evidence/analysis\\_summary.json",
+      "path": "evidence/analysis_summary.json",
+      "line": 1838,
+      "status": "exact",
+      "matched": [
+        "evidence/analysis_summary.json"
+      ]
+    },
+    {
+      "raw": "evidence/three\\_arm\\_result.json",
+      "path": "evidence/three_arm_result.json",
+      "line": 1841,
+      "status": "exact",
+      "matched": [
+        "evidence/three_arm_result.json"
+      ]
+    },
+    {
+      "raw": "scripts/collect\\_pilot\\_data.py",
+      "path": "scripts/collect_pilot_data.py",
+      "line": 1844,
+      "status": "exact",
+      "matched": [
+        "scripts/collect_pilot_data.py"
+      ]
+    },
+    {
+      "raw": "scripts/label\\_match.py",
+      "path": "scripts/label_match.py",
+      "line": 1845,
+      "status": "exact",
+      "matched": [
+        "scripts/label_match.py"
+      ]
+    },
+    {
+      "raw": "scripts/adjudicate\\_labels.py",
+      "path": "scripts/adjudicate_labels.py",
+      "line": 1846,
+      "status": "exact",
+      "matched": [
+        "scripts/adjudicate_labels.py"
+      ]
+    },
+    {
+      "raw": "scripts/verify\\_labels.py",
+      "path": "scripts/verify_labels.py",
+      "line": 1846,
+      "status": "exact",
+      "matched": [
+        "scripts/verify_labels.py"
+      ]
+    },
+    {
+      "raw": "scripts/recompute\\_analysis.py",
+      "path": "scripts/recompute_analysis.py",
+      "line": 1848,
+      "status": "exact",
+      "matched": [
+        "scripts/recompute_analysis.py"
+      ]
+    },
+    {
+      "raw": "scripts/run\\_three\\_arm.py",
+      "path": "scripts/run_three_arm.py",
+      "line": 1850,
+      "status": "exact",
+      "matched": [
+        "scripts/run_three_arm.py"
+      ]
+    },
+    {
+      "raw": "evidence/bootstrap\\_ci.json",
+      "path": "evidence/bootstrap_ci.json",
+      "line": 1852,
+      "status": "exact",
+      "matched": [
+        "evidence/bootstrap_ci.json"
+      ]
+    },
+    {
+      "raw": "scripts/bootstrap\\_ci.py",
+      "path": "scripts/bootstrap_ci.py",
+      "line": 1854,
+      "status": "exact",
+      "matched": [
+        "scripts/bootstrap_ci.py"
+      ]
+    },
+    {
+      "raw": "evidence/dual\\_judge\\_adjudication.json",
+      "path": "evidence/dual_judge_adjudication.json",
+      "line": 1855,
+      "status": "exact",
+      "matched": [
+        "evidence/dual_judge_adjudication.json"
+      ]
+    },
+    {
+      "raw": "theory/",
+      "path": "theory/",
+      "line": 1856,
+      "status": "prefix-dir",
+      "matched": [
+        "theory/estimator_design.md",
+        "theory/msi.py",
+        "theory/p2_interface.md"
+      ]
+    },
+    {
+      "raw": "sim\\_matcher\\_bias.py",
+      "path": "sim_matcher_bias.py",
+      "line": 1858,
+      "status": "exact",
+      "matched": [
+        "theory/sim_matcher_bias.py"
+      ]
+    },
+    {
+      "raw": "sim\\_sem\\_ece.py",
+      "path": "sim_sem_ece.py",
+      "line": 1859,
+      "status": "exact",
+      "matched": [
+        "theory/sim_sem_ece.py"
+      ]
+    },
+    {
+      "raw": "evidence/multi\\_model/",
+      "path": "evidence/multi_model/",
+      "line": 1861,
+      "status": "prefix-dir",
+      "matched": [
+        "evidence/multi_model/consensus_ece_result.json",
+        "evidence/multi_model/consensus_result.json",
+        "evidence/multi_model/deepseek-r1-7b.jsonl"
+      ]
+    },
+    {
+      "raw": "collect\\_multi\\_model.py",
+      "path": "collect_multi_model.py",
+      "line": 1862,
+      "status": "exact",
+      "matched": [
+        "scripts/collect_multi_model.py"
+      ]
+    },
+    {
+      "raw": "multi\\_model\\_analysis.py",
+      "path": "multi_model_analysis.py",
+      "line": 1862,
+      "status": "exact",
+      "matched": [
+        "scripts/multi_model_analysis.py"
+      ]
+    },
+    {
+      "raw": "evidence/census\\_sig600/",
+      "path": "evidence/census_sig600/",
+      "line": 1864,
+      "status": "prefix-dir",
+      "matched": [
+        "evidence/census_sig600/census600_tasks.json",
+        "evidence/census_sig600/for_judge.jsonl",
+        "evidence/census_sig600/gemma2-9b.jsonl"
+      ]
+    },
+    {
+      "raw": "pull\\_crossfamily.py",
+      "path": "pull_crossfamily.py",
+      "line": 1866,
+      "status": "exact",
+      "matched": [
+        "scripts/pull_crossfamily.py"
+      ]
+    },
+    {
+      "raw": "merge\\_judged.py",
+      "path": "merge_judged.py",
+      "line": 1867,
+      "status": "exact",
+      "matched": [
+        "scripts/merge_judged.py"
+      ]
+    },
+    {
+      "raw": "compute\\_significance\\_analysis.py",
+      "path": "compute_significance_analysis.py",
+      "line": 1867,
+      "status": "exact",
+      "matched": [
+        "scripts/compute_significance_analysis.py"
+      ]
+    },
+    {
+      "raw": "compute\\_judge\\_calibration.py",
+      "path": "compute_judge_calibration.py",
+      "line": 1869,
+      "status": "exact",
+      "matched": [
+        "scripts/compute_judge_calibration.py"
+      ]
+    },
+    {
+      "raw": "judge\\_calibration\\_9model.json",
+      "path": "judge_calibration_9model.json",
+      "line": 1870,
+      "status": "exact",
+      "matched": [
+        "evidence/census_sig600/judge_calibration_9model.json"
+      ]
+    },
+    {
+      "raw": "evidence/frontier/",
+      "path": "evidence/frontier/",
+      "line": 1872,
+      "status": "prefix-dir",
+      "matched": [
+        "evidence/frontier/collect.log",
+        "evidence/frontier/DeepSeek-V4-Flash-0731.jsonl",
+        "evidence/frontier/frontier_analysis.json"
+      ]
+    },
+    {
+      "raw": "evidence\\_manifest.json",
+      "path": "evidence_manifest.json",
+      "line": 1874,
+      "status": "exact",
+      "matched": [
+        "evidence_manifest.json"
+      ]
+    },
+    {
+      "raw": "evidence\\_manifest.json",
+      "path": "evidence_manifest.json",
+      "line": 1875,
+      "status": "exact",
+      "matched": [
+        "evidence_manifest.json"
+      ]
+    }
+  ],
+  "missing_refs": [],
+  "local_path_leaks": [],
+  "count_claims": [],
+  "inpackage_tex": {
+    "entry": "paper/main.tex",
+    "desync_with_disk": false,
+    "count_claims": []
+  },
+  "summary": {
+    "refs_total": 43,
+    "refs_missing": 0,
+    "leaks": 0,
+    "count_claims": 0,
+    "count_claims_mismatched": 0,
+    "tex_desync": false,
+    "verdict": "PASS"
+  }
+}

@@ -1,0 +1,2164 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_cjU3YbcRr8\\extracted_text.txt",
+    "evidence_dirs": [],
+    "timestamp": "2026-08-26T07:20:27+00:00"
+  },
+  "direction_A_evidence_to_paper": {
+    "checked": 0,
+    "found_in_paper": 0,
+    "hit_rate": null,
+    "key_matches": []
+  },
+  "direction_B_paper_to_evidence": {
+    "paper_decimals": 271,
+    "supported": 0,
+    "unsupported": 271,
+    "support_rate": 0.0,
+    "noise_filtered": [
+      {
+        "token": "1.1",
+        "value": 1.1,
+        "line": 381,
+        "context": "1.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "1.2",
+        "value": 1.2,
+        "line": 399,
+        "context": "1.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "1.3",
+        "value": 1.3,
+        "line": 421,
+        "context": "1.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.1",
+        "value": 2.1,
+        "line": 441,
+        "context": "2.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.2",
+        "value": 2.2,
+        "line": 460,
+        "context": "2.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.3",
+        "value": 2.3,
+        "line": 476,
+        "context": "2.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.4",
+        "value": 2.4,
+        "line": 485,
+        "context": "2.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 493,
+        "context": "2.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2.6",
+        "value": 2.6,
+        "line": 504,
+        "context": "2.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.1",
+        "value": 3.1,
+        "line": 529,
+        "context": "3.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.2",
+        "value": 3.2,
+        "line": 572,
+        "context": "3.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.3",
+        "value": 3.3,
+        "line": 632,
+        "context": "3.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "3.4",
+        "value": 3.4,
+        "line": 685,
+        "context": "3.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.1",
+        "value": 5.1,
+        "line": 764,
+        "context": "5.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.2",
+        "value": 5.2,
+        "line": 784,
+        "context": "5.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.3",
+        "value": 5.3,
+        "line": 807,
+        "context": "5.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "6.1",
+        "value": 6.1,
+        "line": 1013,
+        "context": "6.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "6.2",
+        "value": 6.2,
+        "line": 1021,
+        "context": "6.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "6.3",
+        "value": 6.3,
+        "line": 1285,
+        "context": "6.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "6.4",
+        "value": 6.4,
+        "line": 1291,
+        "context": "6.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "7.1",
+        "value": 7.1,
+        "line": 1318,
+        "context": "7.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "7.2",
+        "value": 7.2,
+        "line": 1368,
+        "context": "7.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "7.3",
+        "value": 7.3,
+        "line": 1466,
+        "context": "7.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "7.4",
+        "value": 7.4,
+        "line": 1491,
+        "context": "7.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "7.5",
+        "value": 7.5,
+        "line": 1665,
+        "context": "7.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "8.1",
+        "value": 8.1,
+        "line": 1680,
+        "context": "8.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "8.2",
+        "value": 8.2,
+        "line": 1923,
+        "context": "8.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "8.3",
+        "value": 8.3,
+        "line": 1948,
+        "context": "8.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "8.4",
+        "value": 8.4,
+        "line": 1958,
+        "context": "8.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "9.1",
+        "value": 9.1,
+        "line": 1986,
+        "context": "9.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "9.2",
+        "value": 9.2,
+        "line": 2017,
+        "context": "9.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "9.3",
+        "value": 9.3,
+        "line": 2156,
+        "context": "9.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "9.4",
+        "value": 9.4,
+        "line": 2198,
+        "context": "9.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "9.5",
+        "value": 9.5,
+        "line": 2213,
+        "context": "9.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "9.6",
+        "value": 9.6,
+        "line": 2231,
+        "context": "9.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "9.7",
+        "value": 9.7,
+        "line": 2256,
+        "context": "9.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "9.8",
+        "value": 9.8,
+        "line": 2277,
+        "context": "9.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "10.1",
+        "value": 10.1,
+        "line": 2295,
+        "context": "10.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "10.2",
+        "value": 10.2,
+        "line": 2470,
+        "context": "10.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "10.3",
+        "value": 10.3,
+        "line": 2487,
+        "context": "10.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "10.4",
+        "value": 10.4,
+        "line": 2507,
+        "context": "10.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "11.1",
+        "value": 11.1,
+        "line": 2532,
+        "context": "11.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "0.800",
+        "value": 0.8,
+        "line": 2671,
+        "context": "0.800",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "11.2",
+        "value": 11.2,
+        "line": 2812,
+        "context": "11.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "11.3",
+        "value": 11.3,
+        "line": 2816,
+        "context": "11.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "12.1",
+        "value": 12.1,
+        "line": 2837,
+        "context": "12.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "12.2",
+        "value": 12.2,
+        "line": 2843,
+        "context": "12.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "12.3",
+        "value": 12.3,
+        "line": 2850,
+        "context": "12.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "12.4",
+        "value": 12.4,
+        "line": 2965,
+        "context": "12.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "12.5",
+        "value": 12.5,
+        "line": 2972,
+        "context": "12.5",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "12.6",
+        "value": 12.6,
+        "line": 2982,
+        "context": "12.6",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "12.7",
+        "value": 12.7,
+        "line": 2990,
+        "context": "12.7",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "12.8",
+        "value": 12.8,
+        "line": 3001,
+        "context": "12.8",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "2602.21320",
+        "value": 2602.2132,
+        "line": 3120,
+        "context": "Self-Evolving LLM Agents for Tool-Learning from Zero Data. arXiv:2602.21320, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.24639",
+        "value": 2603.24639,
+        "line": 3122,
+        "context": "for Self-Improving LLM Agents. arXiv:2603.24639, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.02766",
+        "value": 2603.02766,
+        "line": 3124,
+        "context": "Skill Discovery for Multi-Agent Systems. arXiv:2603.02766, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.11808",
+        "value": 2603.11808,
+        "line": 3131,
+        "context": "work for Multi-Agent Procedural Knowledge Extraction. arXiv:2603.11808, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2602.10085",
+        "value": 2602.10085,
+        "line": 3133,
+        "context": "Discovery and Evolution of Skills as Hierarchical Reward Programs. arXiv:2602.10085, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2305.17126",
+        "value": 2305.17126,
+        "line": 3135,
+        "context": "Makers. arXiv:2305.17126, 2023.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2508.19005",
+        "value": 2508.19005,
+        "line": 3139,
+        "context": "arXiv:2508.19005, 2025.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.03088",
+        "value": 2604.03088,
+        "line": 3141,
+        "context": "erogenous LLMs and Harnesses. arXiv:2604.03088, 2026a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.14872",
+        "value": 2604.14872,
+        "line": 3143,
+        "context": "arXiv:2604.14872, 2026b.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.00718",
+        "value": 2603.00718,
+        "line": 3146,
+        "context": "Yee Whye Teh. SkillCraft: Can LLM Agents Learn to Use Tools Skillfully? arXiv:2603.00718, 2026c.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2601.21123",
+        "value": 2601.21123,
+        "line": 3149,
+        "context": "Koishida. CUA-Skill: Develop Skills for Computer Using Agent. arXiv:2601.21123, 2026d.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.18620",
+        "value": 2603.1862,
+        "line": 3151,
+        "context": "arXiv:2603.18620, 2026e.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.03070",
+        "value": 2604.0307,
+        "line": 3155,
+        "context": "arXiv:2604.03070, 2026f.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.04989",
+        "value": 2604.04989,
+        "line": 3158,
+        "context": "arXiv:2604.04989, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.05860",
+        "value": 2603.0586,
+        "line": 3164,
+        "context": "Medical Imaging Agents via Experience-driven Self-skill Discovery. arXiv:2603.05860, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2508.07407",
+        "value": 2508.07407,
+        "line": 3168,
+        "context": "Systems. arXiv:2508.07407, 2025.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.09297",
+        "value": 2604.09297,
+        "line": 3175,
+        "context": "Engineering. arXiv:2604.09297, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.15401",
+        "value": 2603.15401,
+        "line": 3179,
+        "context": "arXiv:2603.15401,",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.16572",
+        "value": 2603.16572,
+        "line": 3182,
+        "context": "licious Or Not: Adding Repository Context to Agent Skill Classification. arXiv:2603.16572, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.06550",
+        "value": 2604.0655,
+        "line": 3184,
+        "context": "Agent Skills. arXiv:2604.06550, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.20441",
+        "value": 2604.20441,
+        "line": 3187,
+        "context": "Audit Framework for Medical Research Agent Skills. arXiv:2604.20441, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.15709",
+        "value": 2604.15709,
+        "line": 3189,
+        "context": "Skills via Monte Carlo Tree Search. arXiv:2604.15709, 2026a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2512.23760",
+        "value": 2512.2376,
+        "line": 3191,
+        "context": "wards, Experience Synthesis, and Continual Memory. arXiv:2512.23760, 2025.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2512.23880",
+        "value": 2512.2388,
+        "line": 3193,
+        "context": "Cumulative Agentic Skill Creation through Autonomous Development and Evolution. arXiv:2512.23880,",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.01480",
+        "value": 2604.0148,
+        "line": 3196,
+        "context": "Zhang. A Self-Evolving Agentic Framework for Metasurface Inverse Design. arXiv:2604.01480, 2026b.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2605.23899",
+        "value": 2605.23899,
+        "line": 3200,
+        "context": "arXiv:2605.23899, 2026c.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2602.14211",
+        "value": 2602.14211,
+        "line": 3203,
+        "context": "Loop Refinement. arXiv:2602.14211, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.12056",
+        "value": 2603.12056,
+        "line": 3205,
+        "context": "Skills in Multimodal Agents. arXiv:2603.12056, 2026a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2602.20867",
+        "value": 2602.20867,
+        "line": 3207,
+        "context": "Skills – Beyond Tool Use in LLM Agents. arXiv:2602.20867, 2026b.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.15415",
+        "value": 2604.15415,
+        "line": 3211,
+        "context": "Harmful Skills Weaponize Your Agents? arXiv:2604.15415, 2026c.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2602.03279",
+        "value": 2602.03279,
+        "line": 3215,
+        "context": "arXiv:2602.03279, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2605.10332",
+        "value": 2605.10332,
+        "line": 3218,
+        "context": "Reflection for Self-Evolving Embodied Agents. arXiv:2605.10332, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2511.22254",
+        "value": 2511.22254,
+        "line": 3220,
+        "context": "Yang. Co-Evolving Agents: Learning from Failures as Hard Negatives. arXiv:2511.22254, 2025.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2504.06188",
+        "value": 2504.06188,
+        "line": 3225,
+        "context": "Retrieval System. arXiv:2504.06188, 2025.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.05910",
+        "value": 2603.0591,
+        "line": 3228,
+        "context": "Stay Still: Programmable Evolution for Agent Benchmarks. arXiv:2603.05910, 2026a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.02176",
+        "value": 2603.02176,
+        "line": 3230,
+        "context": "Organizing, Orchestrating, and Benchmarking Agent Skills at Ecosystem Scale. arXiv:2603.02176, 2026b",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2602.12670",
+        "value": 2602.1267,
+        "line": 3232,
+        "context": "Skills Work Across Diverse Tasks. arXiv:2602.12670, 2026c.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2601.04748",
+        "value": 2601.04748,
+        "line": 3235,
+        "context": "arXiv:2601.04748, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2605.29794",
+        "value": 2605.29794,
+        "line": 3237,
+        "context": "jector: Dynamic Skill Context Construction for LLM Agents. arXiv:2605.29794, 2026d.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.16060",
+        "value": 2603.1606,
+        "line": 3239,
+        "context": "Hierarchical Reinforcement Learning. arXiv:2603.16060, 2026e.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.02837",
+        "value": 2604.02837,
+        "line": 3241,
+        "context": "tecture, Threat Taxonomy, and Security Analysis. arXiv:2604.02837, 2026f.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.24026",
+        "value": 2604.24026,
+        "line": 3243,
+        "context": "Structural-Logical Representation for Agent Skills. arXiv:2604.24026, 2026a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.04448",
+        "value": 2603.04448,
+        "line": 3250,
+        "context": "Huajun Chen. SkillNet: Create, Evaluate, and Connect AI Skills. arXiv:2603.04448, 2026b.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2605.27366",
+        "value": 2605.27366,
+        "line": 3252,
+        "context": "Skill Creation, Memory, Management, and Evaluation. arXiv:2605.27366, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2602.08004",
+        "value": 2602.08004,
+        "line": 3254,
+        "context": "for Extending Large Language Model Functionality. arXiv:2602.08004, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.05333",
+        "value": 2604.05333,
+        "line": 3258,
+        "context": "of Skills: Dependency-Aware Structural Retrieval for Massive Agent Skills. arXiv:2604.05333, 2026a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2605.17734",
+        "value": 2605.17734,
+        "line": 3261,
+        "context": "arXiv:2605.17734, 2026b.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2605.18401",
+        "value": 2605.18401,
+        "line": 3263,
+        "context": "of Agent Skills from Collection, Recommendation to Evolution. arXiv:2605.18401, 2026c.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2601.02553",
+        "value": 2601.02553,
+        "line": 3265,
+        "context": "SimpleMem: Efficient Lifelong Memory for LLM Agents. arXiv:2601.02553, 2026d.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.08618",
+        "value": 2604.08618,
+        "line": 3267,
+        "context": "Domain-Specific, Self-Evolving Agent Skills in Cloud Technical Support. arXiv:2604.08618, 2026e.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2602.06547",
+        "value": 2602.06547,
+        "line": 3269,
+        "context": "Malicious Agent Skills in the Wild: A Large-Scale Security Empirical Study. arXiv:2602.06547, 2026f.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2601.10338",
+        "value": 2601.10338,
+        "line": 3271,
+        "context": "Agent Skills in the Wild: An Empirical Study of Security Vulnerabilities at Scale. arXiv:2601.10338,",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.04323",
+        "value": 2604.04323,
+        "line": 3274,
+        "context": "Work in the Wild: Benchmarking LLM Skill Usage in Realistic Settings. arXiv:2604.04323, 2026h.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.02268",
+        "value": 2604.02268,
+        "line": 3278,
+        "context": "Internalization. arXiv:2604.02268, 2026a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.20340",
+        "value": 2603.2034,
+        "line": 3280,
+        "context": "Contract-Based Skills for Multimodal Web Agents. arXiv:2603.20340, 2026b.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2605.10999",
+        "value": 2605.10999,
+        "line": 3282,
+        "context": "and Stefan Feuerriegel. SkillGen: Verified Inference-Time Agent Skill Synthesis. arXiv:2605.10999, 2",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.08377",
+        "value": 2604.08377,
+        "line": 3284,
+        "context": "iang Chu. SkillClaw: Let Skills Evolve Collectively with Agentic Evolver. arXiv:2604.08377, 2026b.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.25158",
+        "value": 2603.25158,
+        "line": 3289,
+        "context": "Skills. arXiv:2603.25158, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.17503",
+        "value": 2604.17503,
+        "line": 3291,
+        "context": "Multi-Agent Collaboration with Multimodal Graph Topology. arXiv:2604.17503, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2601.22758",
+        "value": 2601.22758,
+        "line": 3296,
+        "context": "arXiv:2601.22758, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.03081",
+        "value": 2604.03081,
+        "line": 3298,
+        "context": "Chain Poisoning Attacks Against LLM Coding Agent Skill Ecosystems. arXiv:2604.03081, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.16911",
+        "value": 2604.16911,
+        "line": 3300,
+        "context": "with Hierarchical Scope-Based Distribution. arXiv:2604.16911, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2605.11418",
+        "value": 2605.11418,
+        "line": 3302,
+        "context": "Attacks on AI Agent Skill Registry. arXiv:2605.11418, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2510.26328",
+        "value": 2510.26328,
+        "line": 3306,
+        "context": "and Trivially Simple Prompt Injections. arXiv:2510.26328, 2025.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2602.20156",
+        "value": 2602.20156,
+        "line": 3308,
+        "context": "suring Agent Vulnerability to Skill File Attacks. arXiv:2602.20156, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.03964",
+        "value": 2604.03964,
+        "line": 3312,
+        "context": "arXiv:2604.03964, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2601.03509",
+        "value": 2601.03509,
+        "line": 3313,
+        "context": "Haochen Shi, Xingdi Yuan, and Bang Liu. Evolving Programmatic Skill Networks. arXiv:2601.03509, 2026",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.22791",
+        "value": 2603.22791,
+        "line": 3315,
+        "context": "Iterative Refinement and Topology Optimization. arXiv:2603.22791, 2026a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2605.13716",
+        "value": 2605.13716,
+        "line": 3319,
+        "context": "Maintaining Software Ecosystems. arXiv:2605.13716, 2026b.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.24594",
+        "value": 2604.24594,
+        "line": 3321,
+        "context": "Retrieval Augmentation for Agentic AI. arXiv:2604.24594, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.14572",
+        "value": 2604.14572,
+        "line": 3323,
+        "context": "into Navigable Agent Skills for QA and RAG. arXiv:2604.14572, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.14972",
+        "value": 2604.14972,
+        "line": 3330,
+        "context": "arXiv:2604.14972, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.09378",
+        "value": 2604.09378,
+        "line": 3332,
+        "context": "in-Skill Poisoning. arXiv:2604.09378, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.04804",
+        "value": 2604.04804,
+        "line": 3335,
+        "context": "Bases for Agents. arXiv:2604.04804, 2026a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2305.16291",
+        "value": 2305.16291,
+        "line": 3337,
+        "context": "Anandkumar. Voyager: An Open-Ended Embodied Agent with Large Language Models. arXiv:2305.16291,",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2605.27760",
+        "value": 2605.2776,
+        "line": 3340,
+        "context": "Gradient Descent. arXiv:2605.27760, 2026b.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2602.19672",
+        "value": 2602.19672,
+        "line": 3343,
+        "context": "Learning to Route Agents via Skill Transfer. arXiv:2602.19672, 2026c.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2605.16986",
+        "value": 2605.16986,
+        "line": 3345,
+        "context": "on the Fly: Test-Time Adaptive Skill Synthesis for LLM Agents. arXiv:2605.16986, 2026d.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2512.17102",
+        "value": 2512.17102,
+        "line": 3348,
+        "context": "Library. arXiv:2512.17102, 2025a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.09716",
+        "value": 2603.09716,
+        "line": 3350,
+        "context": "Elastic Memory Orchestration for Adaptive Agents. arXiv:2603.09716, 2026e.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.05160",
+        "value": 2603.0516,
+        "line": 3352,
+        "context": "Lifelong Language-Conditioned Robotic Manipulation Learning. arXiv:2603.05160, 2026f.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.13318",
+        "value": 2604.13318,
+        "line": 3357,
+        "context": "and Huaxiu Yao. WebXSkill: Skill Learning for Autonomous Web Agents. arXiv:2604.13318, 2026g.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.21829",
+        "value": 2604.21829,
+        "line": 3359,
+        "context": "Stealing Attack from Proprietary LLM Agents: An Empirical Study. arXiv:2604.21829, 2026h.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.27850",
+        "value": 2603.2785,
+        "line": 3361,
+        "context": "Agent Skill Based Automated Code Efficiency Optimization. arXiv:2603.27850, 2026i.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2504.06821",
+        "value": 2504.06821,
+        "line": 3363,
+        "context": "Agentic Tasks. arXiv:2504.06821, 2025b.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.01438",
+        "value": 2604.01438,
+        "line": 3365,
+        "context": "ClawSafety: \"Safe\" LLMs, Unsafe Agents. arXiv:2604.01438, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2605.19362",
+        "value": 2605.19362,
+        "line": 3378,
+        "context": "arXiv:2605.19362, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2602.04837",
+        "value": 2602.04837,
+        "line": 3380,
+        "context": "Evolving Agents: Open-Ended Self-Improvement via Experience Sharing. arXiv:2602.04837, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2510.16079",
+        "value": 2510.16079,
+        "line": 3383,
+        "context": "Experience-Driven Lifecycle. arXiv:2510.16079, 2025.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.20987",
+        "value": 2604.20987,
+        "line": 3386,
+        "context": "arXiv:2604.20987, 2026a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.00676",
+        "value": 2603.00676,
+        "line": 3389,
+        "context": "Control. arXiv:2603.00676, 2026b.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2511.13646",
+        "value": 2511.13646,
+        "line": 3391,
+        "context": "Software Engineering Agents Self-Evolve on the Fly? arXiv:2511.13646, 2025a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2511.16043",
+        "value": 2511.16043,
+        "line": 3393,
+        "context": "Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning. arXiv:2511.16043, 2025",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2602.08234",
+        "value": 2602.08234,
+        "line": 3396,
+        "context": "Skill-Augmented Reinforcement Learning. arXiv:2602.08234, 2026a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.17187",
+        "value": 2603.17187,
+        "line": 3400,
+        "context": "Meta-Learns and Evolves in the Wild. arXiv:2603.17187, 2026b.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.17870",
+        "value": 2604.1787,
+        "line": 3402,
+        "context": "Graph-Structured Skill Compositions for LLM Agents. arXiv:2604.17870, 2026c.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.02623",
+        "value": 2603.02623,
+        "line": 3404,
+        "context": "tory for Generalizable Robotic Manipulation. arXiv:2603.02623, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2605.15215",
+        "value": 2605.15215,
+        "line": 3406,
+        "context": "Compiling Agent Skills into Boundary-Guided Runtime Interfaces. arXiv:2605.15215, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2602.12430",
+        "value": 2602.1243,
+        "line": 3408,
+        "context": "the Path Forward. arXiv:2602.12430, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2510.08002",
+        "value": 2510.08002,
+        "line": 3413,
+        "context": "Self-Evolving Agent for Long-Horizon Tasks. arXiv:2510.08002, 2025a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2605.08693",
+        "value": 2605.08693,
+        "line": 3415,
+        "context": "Toward Autonomous Skill Mastery in LLM Agents. arXiv:2605.08693, 2026a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2605.23904",
+        "value": 2605.23904,
+        "line": 3418,
+        "context": "Strategy for Self-Evolving Agent Skills. arXiv:2605.23904, 2026b.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2506.04287",
+        "value": 2506.04287,
+        "line": 3420,
+        "context": "Discovery for Language Agents through Exploration and Iterative Feedback. arXiv:2506.04287, 2025b.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.01145",
+        "value": 2603.01145,
+        "line": 3423,
+        "context": "arXiv:2603.01145, 2026c.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.09036",
+        "value": 2603.09036,
+        "line": 3426,
+        "context": "ing. arXiv:2603.09036, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2511.10395",
+        "value": 2511.10395,
+        "line": 3430,
+        "context": "Self-Evolving Agent System. arXiv:2511.10395, 2025.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.20133",
+        "value": 2604.20133,
+        "line": 3432,
+        "context": "Agent Framework with Skill Learning and Multi-Agent Delegation. arXiv:2604.20133, 2026a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2602.21158",
+        "value": 2602.21158,
+        "line": 3443,
+        "context": "LLM Agent via Uncertainty-aware Rewards. arXiv:2602.21158, 2026b.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2601.04620",
+        "value": 2601.0462,
+        "line": 3444,
+        "context": "Di Zhang. AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering. arXiv:2601.04620,",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.10286",
+        "value": 2604.10286,
+        "line": 3447,
+        "context": "Invocation Safety in Agent Systems. arXiv:2604.10286, 2026c.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.01687",
+        "value": 2604.01687,
+        "line": 3450,
+        "context": "Evolving Agent Skills via Co-Evolutionary Verification. arXiv:2604.01687, 2026d.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2602.02474",
+        "value": 2602.02474,
+        "line": 3452,
+        "context": "MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents. arXiv:2602.02474, 2026e.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2605.14089",
+        "value": 2605.14089,
+        "line": 3454,
+        "context": "SkillFlow: Flow-Driven Recursive Skill Evolution for Agentic Orchestration. arXiv:2605.14089, 2026f.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.08561",
+        "value": 2603.08561,
+        "line": 3456,
+        "context": "via Retrospective Dual Intrinsic Feedback. arXiv:2603.08561, 2026g.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.15877",
+        "value": 2604.15877,
+        "line": 3458,
+        "context": "Compression Spectrum: Unifying Memory, Skills, and Rules in LLM Agents. arXiv:2604.15877, 2026h.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.18000",
+        "value": 2603.18,
+        "line": 3462,
+        "context": "Through Executable Subagent Accumulation and Reuse. arXiv:2603.18000, 2026i.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.17308",
+        "value": 2604.17308,
+        "line": 3465,
+        "context": "Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents. arXiv:2604.17308, 2026j.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2504.07079",
+        "value": 2504.07079,
+        "line": 3468,
+        "context": "by Discovering and Honing Skills. arXiv:2504.07079, 2025a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2505.11942",
+        "value": 2505.11942,
+        "line": 3470,
+        "context": "LifelongAgentBench: Evaluating LLM Agents as Lifelong Learners. arXiv:2505.11942, 2025b.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2501.07278",
+        "value": 2501.07278,
+        "line": 3472,
+        "context": "Lifelong Learning of Large Language Model based Agents: A Roadmap. arXiv:2501.07278, 2025c.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.22455",
+        "value": 2603.22455,
+        "line": 3475,
+        "context": "arXiv:2603.22455, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2604.20087",
+        "value": 2604.20087,
+        "line": 3478,
+        "context": "ods for Agent Skill Generation on Real-World Tasks. arXiv:2604.20087, 2026.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2603.18743",
+        "value": 2603.18743,
+        "line": 3481,
+        "context": "and Jun Wang. Memento-Skills: Let Agents Design Agents. arXiv:2603.18743, 2026a.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "2605.07358",
+        "value": 2605.07358,
+        "line": 3483,
+        "context": "Survey on Agent Skills: Taxonomy, Techniques, and Applications. arXiv:2605.07358, 2026b. Version 1, ",
+        "noise_kind": "arxiv-id"
+      }
+    ],
+    "adjudicated": [],
+    "manual_review_list": [
+      {
+        "token": "10.3",
+        "value": 10.3,
+        "line": 402,
+        "context": "ture matured enough that libraries must be curated, routed, and governed as collections (§10.3). Sec"
+      },
+      {
+        "token": "3.3",
+        "value": 3.3,
+        "line": 612,
+        "context": "ut (chosen from the operator vocabulary introduced below in §3.3). In deterministic systems, φt : St"
+      },
+      {
+        "token": "7.2",
+        "value": 7.2,
+        "line": 1455,
+        "context": "why execution-verified methods cap their operator repertoire at {Add, Refine, Prune} (§7.2)."
+      },
+      {
+        "token": "7.4",
+        "value": 7.4,
+        "line": 1645,
+        "context": "a Decoupling mode (§7.4): SA = shared-artifact (fast and slow loops edit and distill the same textua"
+      },
+      {
+        "token": "4.6",
+        "value": 4.6,
+        "line": 1702,
+        "context": "utility: Claude Opus 4.6 improves from 62.65% to 71.08%, while Kimi K2.5 gains only +0.60 points des"
+      },
+      {
+        "token": "62.65",
+        "value": 62.65,
+        "line": 1702,
+        "context": "utility: Claude Opus 4.6 improves from 62.65% to 71.08%, while Kimi K2.5 gains only +0.60 points des"
+      },
+      {
+        "token": "71.08",
+        "value": 71.08,
+        "line": 1702,
+        "context": "utility: Claude Opus 4.6 improves from 62.65% to 71.08%, while Kimi K2.5 gains only +0.60 points des"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 1702,
+        "context": "utility: Claude Opus 4.6 improves from 62.65% to 71.08%, while Kimi K2.5 gains only +0.60 points des"
+      },
+      {
+        "token": "0.60",
+        "value": 0.6,
+        "line": 1702,
+        "context": "utility: Claude Opus 4.6 improves from 62.65% to 71.08%, while Kimi K2.5 gains only +0.60 points des"
+      },
+      {
+        "token": "66.87",
+        "value": 66.87,
+        "line": 1703,
+        "context": "66.87% skill use and GPT 5.3 Codex regresses by 6.02 points."
+      },
+      {
+        "token": "5.3",
+        "value": 5.3,
+        "line": 1703,
+        "context": "66.87% skill use and GPT 5.3 Codex regresses by 6.02 points."
+      },
+      {
+        "token": "6.02",
+        "value": 6.02,
+        "line": 1703,
+        "context": "66.87% skill use and GPT 5.3 Codex regresses by 6.02 points."
+      },
+      {
+        "token": "1.2",
+        "value": 1.2,
+        "line": 1711,
+        "context": "for supplied skills: across 49 public SWE skills and about 565 tasks, average pass-rate gain is only"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 1977,
+        "context": "Table 7 summarizes the evidence for the section and assigns each pattern the evidence grade defined "
+      },
+      {
+        "token": "7.3",
+        "value": 7.3,
+        "line": 1992,
+        "context": "accumulation seen under greedy acceptance and yields +7.3 absolute points on OfficeQA (Table 1 / Fig"
+      },
+      {
+        "token": "12.1",
+        "value": 12.1,
+        "line": 1993,
+        "context": "and +12.1 points on SealQA; CoEvoSkills (Zhang et al., 2026d) provides the cleanest verifier ablatio"
+      },
+      {
+        "token": "71.1",
+        "value": 71.1,
+        "line": 1994,
+        "context": "corpus, with Table B1 showing that removal of the surrogate verifier drops SkillsBench pass rate fro"
+      },
+      {
+        "token": "41.1",
+        "value": 41.1,
+        "line": 1995,
+        "context": "to 41.1%; SkillWeaver (Zheng et al., 2025a) reports that removing the “practice + verify” phases of "
+      },
+      {
+        "token": "24.30",
+        "value": 24.3,
+        "line": 2022,
+        "context": "SHARP improves success from 24.30% to 41.02% through refinement mutations under a learned gate;"
+      },
+      {
+        "token": "41.02",
+        "value": 41.02,
+        "line": 2022,
+        "context": "SHARP improves success from 24.30% to 41.02% through refinement mutations under a learned gate;"
+      },
+      {
+        "token": "68.7",
+        "value": 68.7,
+        "line": 2023,
+        "context": "Agentic-Proposing’s verifier ensemble plus dynamic pruning improves problem validity from 68.7% to"
+      },
+      {
+        "token": "82.3",
+        "value": 82.3,
+        "line": 2024,
+        "context": "82.3%; Co-Evolving (Jung et al., 2025) attributes substantial gain to hard-negative construction; an"
+      },
+      {
+        "token": "35.6",
+        "value": 35.6,
+        "line": 2108,
+        "context": "35.6→31.1, 4.5× repository"
+      },
+      {
+        "token": "31.1",
+        "value": 31.1,
+        "line": 2108,
+        "context": "35.6→31.1, 4.5× repository"
+      },
+      {
+        "token": "4.5",
+        "value": 4.5,
+        "line": 2108,
+        "context": "35.6→31.1, 4.5× repository"
+      },
+      {
+        "token": "0.71",
+        "value": 0.71,
+        "line": 2109,
+        "context": "growth, 0.71→0.08 utilization),"
+      },
+      {
+        "token": "0.08",
+        "value": 0.08,
+        "line": 2109,
+        "context": "growth, 0.71→0.08 utilization),"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 2140,
+        "context": "summarizes an observed pattern (§9), an evidence grade using the convention in §2.5, the methods tha"
+      },
+      {
+        "token": "1.2",
+        "value": 1.2,
+        "line": 2222,
+        "context": "only +1.2% average gain across public SWE skills with many zero-utility or negative cases, and Skill"
+      },
+      {
+        "token": "35.6",
+        "value": 35.6,
+        "line": 2236,
+        "context": "ablation: removing periodic pruning and merging lowers final pass rate from 35.6% to 31.1%, grows th"
+      },
+      {
+        "token": "31.1",
+        "value": 31.1,
+        "line": 2236,
+        "context": "ablation: removing periodic pruning and merging lowers final pass rate from 35.6% to 31.1%, grows th"
+      },
+      {
+        "token": "4.5",
+        "value": 4.5,
+        "line": 2237,
+        "context": "repository by 4.5×, and reduces utilization from 0.71 to 0.08 (its Figures 2–3). SkillOps (Song et a"
+      },
+      {
+        "token": "0.71",
+        "value": 0.71,
+        "line": 2237,
+        "context": "repository by 4.5×, and reduces utilization from 0.71 to 0.08 (its Figures 2–3). SkillOps (Song et a"
+      },
+      {
+        "token": "0.08",
+        "value": 0.08,
+        "line": 2237,
+        "context": "repository by 4.5×, and reduces utilization from 0.71 to 0.08 (its Figures 2–3). SkillOps (Song et a"
+      },
+      {
+        "token": "71.9",
+        "value": 71.9,
+        "line": 2239,
+        "context": "success to 71.9%, while the full system reports 79.5% and plug-in gains of +0.68–+2.90 points for re"
+      },
+      {
+        "token": "79.5",
+        "value": 79.5,
+        "line": 2239,
+        "context": "success to 71.9%, while the full system reports 79.5% and plug-in gains of +0.68–+2.90 points for re"
+      },
+      {
+        "token": "0.68",
+        "value": 0.68,
+        "line": 2239,
+        "context": "success to 71.9%, while the full system reports 79.5% and plug-in gains of +0.68–+2.90 points for re"
+      },
+      {
+        "token": "2.90",
+        "value": 2.9,
+        "line": 2239,
+        "context": "success to 71.9%, while the full system reports 79.5% and plug-in gains of +0.68–+2.90 points for re"
+      },
+      {
+        "token": "43.24",
+        "value": 43.24,
+        "line": 2262,
+        "context": "compression drops LoCoMo average F1 from 43.24 to 31.29."
+      },
+      {
+        "token": "31.29",
+        "value": 31.29,
+        "line": 2262,
+        "context": "compression drops LoCoMo average F1 from 43.24 to 31.29."
+      },
+      {
+        "token": "4.09",
+        "value": 4.09,
+        "line": 2265,
+        "context": "VisualToolBench Average@4 by 4.09 points and removing the Skill Manager drops it by 3.62, while read"
+      },
+      {
+        "token": "3.62",
+        "value": 3.62,
+        "line": 2265,
+        "context": "VisualToolBench Average@4 by 4.09 points and removing the Skill Manager drops it by 3.62, while read"
+      },
+      {
+        "token": "7.1",
+        "value": 7.1,
+        "line": 2434,
+        "context": "a “Fast” / “costly” are relative within a class: listed entries are drawn from the ten-operator voca"
+      },
+      {
+        "token": "7.1",
+        "value": 7.1,
+        "line": 2509,
+        "context": "Each operator in §7.1 must be implemented as an edit to a concrete artifact. Three pipeline architec"
+      },
+      {
+        "token": "69.4",
+        "value": 69.4,
+        "line": 2543,
+        "context": "personal-agent benchmark, averaging 69.4% ASR across backbones. Skill-Inject (Schmotz et al., 2026)"
+      },
+      {
+        "token": "95.1",
+        "value": 95.1,
+        "line": 2546,
+        "context": "the skill artifact itself, reporting 95.1% average ASR after trace-driven closed-loop refinement ver"
+      },
+      {
+        "token": "10.9",
+        "value": 10.9,
+        "line": 2546,
+        "context": "the skill artifact itself, reporting 95.1% average ASR after trace-driven closed-loop refinement ver"
+      },
+      {
+        "token": "26.1",
+        "value": 26.1,
+        "line": 2553,
+        "context": "in public registries, analyzing 31,132 skills and reporting that 26.1% contain at least one vulnerab"
+      },
+      {
+        "token": "2.12",
+        "value": 2.12,
+        "line": 2554,
+        "context": "tern; executable-script skills are 2.12× more likely to contain vulnerabilities than instruction-onl"
+      },
+      {
+        "token": "93.6",
+        "value": 93.6,
+        "line": 2557,
+        "context": "93.6% removal after responsible disclosure. Supply-Chain-Poisoning (Qu et al., 2026) constructs DDIP"
+      },
+      {
+        "token": "69.4",
+        "value": 69.4,
+        "line": 2579,
+        "context": "ASR vector (69.4% avg.); Skill-"
+      },
+      {
+        "token": "95.1",
+        "value": 95.1,
+        "line": 2582,
+        "context": "SkillJect: 95.1% automated ASR"
+      },
+      {
+        "token": "26.1",
+        "value": 26.1,
+        "line": 2595,
+        "context": "26.1%"
+      },
+      {
+        "token": "93.6",
+        "value": 93.6,
+        "line": 2601,
+        "context": "93.6%"
+      },
+      {
+        "token": "11.6",
+        "value": 11.6,
+        "line": 2607,
+        "context": "11.6–33.5%"
+      },
+      {
+        "token": "33.5",
+        "value": 33.5,
+        "line": 2607,
+        "context": "11.6–33.5%"
+      },
+      {
+        "token": "97.5",
+        "value": 97.5,
+        "line": 2614,
+        "context": "97.5–"
+      },
+      {
+        "token": "99.5",
+        "value": 99.5,
+        "line": 2615,
+        "context": "99.5% ASR"
+      },
+      {
+        "token": "76.3",
+        "value": 76.3,
+        "line": 2645,
+        "context": "76.3%"
+      },
+      {
+        "token": "73.5",
+        "value": 73.5,
+        "line": 2649,
+        "context": "73.5% debug-log vector"
+      },
+      {
+        "token": "86.7",
+        "value": 86.7,
+        "line": 2664,
+        "context": "86.7%"
+      },
+      {
+        "token": "82.5",
+        "value": 82.5,
+        "line": 2667,
+        "context": "82.5%"
+      },
+      {
+        "token": "0.52",
+        "value": 0.52,
+        "line": 2680,
+        "context": "0.52%"
+      },
+      {
+        "token": "57.3",
+        "value": 57.3,
+        "line": 2732,
+        "context": "57.3%"
+      },
+      {
+        "token": "0.449",
+        "value": 0.449,
+        "line": 2737,
+        "context": "ICC 0.449 on 75 medical skills"
+      },
+      {
+        "token": "11.6",
+        "value": 11.6,
+        "line": 2760,
+        "context": "11.6% to 33.5% depending on defense configuration, with 2.5% evading both static and alignment filte"
+      },
+      {
+        "token": "33.5",
+        "value": 33.5,
+        "line": 2760,
+        "context": "11.6% to 33.5% depending on defense configuration, with 2.5% evading both static and alignment filte"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 2760,
+        "context": "11.6% to 33.5% depending on defense configuration, with 2.5% evading both static and alignment filte"
+      },
+      {
+        "token": "97.5",
+        "value": 97.5,
+        "line": 2764,
+        "context": "malicious behavior is hidden in learned parameters, reaching 97.5–99.5% ASR while largely preserving"
+      },
+      {
+        "token": "99.5",
+        "value": 99.5,
+        "line": 2764,
+        "context": "malicious behavior is hidden in learned parameters, reaching 97.5–99.5% ASR while largely preserving"
+      },
+      {
+        "token": "76.3",
+        "value": 76.3,
+        "line": 2775,
+        "context": "identifies 520 affected skills and 1,708 issues, and reports that 76.3% of cases require joint NL+co"
+      },
+      {
+        "token": "73.5",
+        "value": 73.5,
+        "line": 2776,
+        "context": "Debug logging accounts for 73.5% of vulnerability issues because stdout is often fed back to the LLM"
+      },
+      {
+        "token": "86.7",
+        "value": 86.7,
+        "line": 2780,
+        "context": "AgentSkills-Wild reports a broad SkillScan detector with 86.7% precision and 82.5% recall, while"
+      },
+      {
+        "token": "82.5",
+        "value": 82.5,
+        "line": 2780,
+        "context": "AgentSkills-Wild reports a broad SkillScan detector with 86.7% precision and 82.5% recall, while"
+      },
+      {
+        "token": "0.800",
+        "value": 0.8,
+        "line": 2782,
+        "context": "of skills at zero API cost and reporting 0.800 F1 at about $0.006 per skill. Malicious-or-Not (Holzb"
+      },
+      {
+        "token": "0.006",
+        "value": 0.006,
+        "line": 2782,
+        "context": "of skills at zero API cost and reporting 0.800 F1 at about $0.006 per skill. Malicious-or-Not (Holzb"
+      },
+      {
+        "token": "0.52",
+        "value": 0.52,
+        "line": 2784,
+        "context": "repository context reduces 2,887 scanner-flagged skill-repository combinations to 0.52% remaining in"
+      },
+      {
+        "token": "57.3",
+        "value": 57.3,
+        "line": 2800,
+        "context": "ness. MedSkillAudit (Hou et al., 2026) evaluates 75 medical research skills, finds that 57.3% fall b"
+      },
+      {
+        "token": "0.449",
+        "value": 0.449,
+        "line": 2801,
+        "context": "the Limited Release threshold, and reports automated-audit ICC(2,1)=0.449 against expert consensus. "
+      },
+      {
+        "token": "2.3",
+        "value": 2.3,
+        "line": 3019,
+        "context": "at the May 31, 2026 cutoff in §2.3; later work may change the evidence for individual patterns, espe"
+      },
+      {
+        "token": "10.1609",
+        "value": 10.1609,
+        "line": 3128,
+        "context": "Conference on Artificial Intelligence, volume 31, pp. 1726–1734, 2017. doi: 10.1609/aaai.v31i1.10916"
+      },
+      {
+        "token": "1.10916",
+        "value": 1.10916,
+        "line": 3128,
+        "context": "Conference on Artificial Intelligence, volume 31, pp. 1726–1734, 2017. doi: 10.1609/aaai.v31i1.10916"
+      },
+      {
+        "token": "10.1016",
+        "value": 10.1016,
+        "line": 3326,
+        "context": "10.1016/S0004-3702(99)00052-1."
+      },
+      {
+        "token": "3.3",
+        "value": 3.3,
+        "line": 3542,
+        "context": "3.3×"
+      },
+      {
+        "token": "15.3",
+        "value": 15.3,
+        "line": 3544,
+        "context": "15.3× tech-tree"
+      },
+      {
+        "token": "91.6",
+        "value": 91.6,
+        "line": 3619,
+        "context": "91.6%"
+      },
+      {
+        "token": "23.5",
+        "value": 23.5,
+        "line": 3774,
+        "context": "WebArena +23.5"
+      },
+      {
+        "token": "28.1",
+        "value": 28.1,
+        "line": 3792,
+        "context": "VWA GLM 28.1"
+      },
+      {
+        "token": "9.4",
+        "value": 9.4,
+        "line": 3793,
+        "context": "vs 9.4 self skill"
+      },
+      {
+        "token": "85.3",
+        "value": 85.3,
+        "line": 3801,
+        "context": "85.3%, 49% fewer"
+      },
+      {
+        "token": "1.2",
+        "value": 1.2,
+        "line": 4307,
+        "context": "+1.2 avg. gain"
+      },
+      {
+        "token": "5.4",
+        "value": 5.4,
+        "line": 4315,
+        "context": "5.4K"
+      },
+      {
+        "token": "26.1",
+        "value": 26.1,
+        "line": 4589,
+        "context": "31K skills; 26.1%"
+      },
+      {
+        "token": "95.1",
+        "value": 95.1,
+        "line": 4617,
+        "context": "95.1%"
+      }
+    ]
+  },
+  "adjudications_state": {
+    "10.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "ture matured enough that libraries must be curated, routed, and governed as collections (§10.3). Second,"
+    },
+    "3.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "ut (chosen from the operator vocabulary introduced below in §3.3). In deterministic systems, φt : St × ut →"
+    },
+    "7.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "why execution-verified methods cap their operator repertoire at {Add, Refine, Prune} (§7.2)."
+    },
+    "7.4": {
+      "verdict": "pending",
+      "note": "",
+      "context": "a Decoupling mode (§7.4): SA = shared-artifact (fast and slow loops edit and distill the same textual skill); SS = share"
+    },
+    "4.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "utility: Claude Opus 4.6 improves from 62.65% to 71.08%, while Kimi K2.5 gains only +0.60 points despite"
+    },
+    "62.65": {
+      "verdict": "pending",
+      "note": "",
+      "context": "utility: Claude Opus 4.6 improves from 62.65% to 71.08%, while Kimi K2.5 gains only +0.60 points despite"
+    },
+    "71.08": {
+      "verdict": "pending",
+      "note": "",
+      "context": "utility: Claude Opus 4.6 improves from 62.65% to 71.08%, while Kimi K2.5 gains only +0.60 points despite"
+    },
+    "2.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "utility: Claude Opus 4.6 improves from 62.65% to 71.08%, while Kimi K2.5 gains only +0.60 points despite"
+    },
+    "0.60": {
+      "verdict": "pending",
+      "note": "",
+      "context": "utility: Claude Opus 4.6 improves from 62.65% to 71.08%, while Kimi K2.5 gains only +0.60 points despite"
+    },
+    "66.87": {
+      "verdict": "pending",
+      "note": "",
+      "context": "66.87% skill use and GPT 5.3 Codex regresses by 6.02 points."
+    },
+    "5.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "66.87% skill use and GPT 5.3 Codex regresses by 6.02 points."
+    },
+    "6.02": {
+      "verdict": "pending",
+      "note": "",
+      "context": "66.87% skill use and GPT 5.3 Codex regresses by 6.02 points."
+    },
+    "1.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "for supplied skills: across 49 public SWE skills and about 565 tasks, average pass-rate gain is only +1.2%,"
+    },
+    "7.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "accumulation seen under greedy acceptance and yields +7.3 absolute points on OfficeQA (Table 1 / Figure 2)"
+    },
+    "12.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "and +12.1 points on SealQA; CoEvoSkills (Zhang et al., 2026d) provides the cleanest verifier ablation in the"
+    },
+    "71.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "corpus, with Table B1 showing that removal of the surrogate verifier drops SkillsBench pass rate from 71.1%"
+    },
+    "41.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "to 41.1%; SkillWeaver (Zheng et al., 2025a) reports that removing the “practice + verify” phases of PPVH"
+    },
+    "24.30": {
+      "verdict": "pending",
+      "note": "",
+      "context": "SHARP improves success from 24.30% to 41.02% through refinement mutations under a learned gate;"
+    },
+    "41.02": {
+      "verdict": "pending",
+      "note": "",
+      "context": "SHARP improves success from 24.30% to 41.02% through refinement mutations under a learned gate;"
+    },
+    "68.7": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Agentic-Proposing’s verifier ensemble plus dynamic pruning improves problem validity from 68.7% to"
+    },
+    "82.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "82.3%; Co-Evolving (Jung et al., 2025) attributes substantial gain to hard-negative construction; and"
+    },
+    "35.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "35.6→31.1, 4.5× repository"
+    },
+    "31.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "35.6→31.1, 4.5× repository"
+    },
+    "4.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "35.6→31.1, 4.5× repository"
+    },
+    "0.71": {
+      "verdict": "pending",
+      "note": "",
+      "context": "growth, 0.71→0.08 utilization),"
+    },
+    "0.08": {
+      "verdict": "pending",
+      "note": "",
+      "context": "growth, 0.71→0.08 utilization),"
+    },
+    "71.9": {
+      "verdict": "pending",
+      "note": "",
+      "context": "success to 71.9%, while the full system reports 79.5% and plug-in gains of +0.68–+2.90 points for retrieval-"
+    },
+    "79.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "success to 71.9%, while the full system reports 79.5% and plug-in gains of +0.68–+2.90 points for retrieval-"
+    },
+    "0.68": {
+      "verdict": "pending",
+      "note": "",
+      "context": "success to 71.9%, while the full system reports 79.5% and plug-in gains of +0.68–+2.90 points for retrieval-"
+    },
+    "2.90": {
+      "verdict": "pending",
+      "note": "",
+      "context": "success to 71.9%, while the full system reports 79.5% and plug-in gains of +0.68–+2.90 points for retrieval-"
+    },
+    "43.24": {
+      "verdict": "pending",
+      "note": "",
+      "context": "compression drops LoCoMo average F1 from 43.24 to 31.29."
+    },
+    "31.29": {
+      "verdict": "pending",
+      "note": "",
+      "context": "compression drops LoCoMo average F1 from 43.24 to 31.29."
+    },
+    "4.09": {
+      "verdict": "pending",
+      "note": "",
+      "context": "VisualToolBench Average@4 by 4.09 points and removing the Skill Manager drops it by 3.62, while read-"
+    },
+    "3.62": {
+      "verdict": "pending",
+      "note": "",
+      "context": "VisualToolBench Average@4 by 4.09 points and removing the Skill Manager drops it by 3.62, while read-"
+    },
+    "7.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "a “Fast” / “costly” are relative within a class: listed entries are drawn from the ten-operator vocabulary (§7.1) and"
+    },
+    "69.4": {
+      "verdict": "pending",
+      "note": "",
+      "context": "personal-agent benchmark, averaging 69.4% ASR across backbones. Skill-Inject (Schmotz et al., 2026)"
+    },
+    "95.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "the skill artifact itself, reporting 95.1% average ASR after trace-driven closed-loop refinement versus 10.9%"
+    },
+    "10.9": {
+      "verdict": "pending",
+      "note": "",
+      "context": "the skill artifact itself, reporting 95.1% average ASR after trace-driven closed-loop refinement versus 10.9%"
+    },
+    "26.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "in public registries, analyzing 31,132 skills and reporting that 26.1% contain at least one vulnerability pat-"
+    },
+    "2.12": {
+      "verdict": "pending",
+      "note": "",
+      "context": "tern; executable-script skills are 2.12× more likely to contain vulnerabilities than instruction-only skills."
+    },
+    "93.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "93.6% removal after responsible disclosure. Supply-Chain-Poisoning (Qu et al., 2026) constructs DDIPE"
+    },
+    "11.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "11.6–33.5%"
+    },
+    "33.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "11.6–33.5%"
+    },
+    "97.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "97.5–"
+    },
+    "99.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "99.5% ASR"
+    },
+    "76.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "76.3%"
+    },
+    "73.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "73.5% debug-log vector"
+    },
+    "86.7": {
+      "verdict": "pending",
+      "note": "",
+      "context": "86.7%"
+    },
+    "82.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "82.5%"
+    },
+    "0.52": {
+      "verdict": "pending",
+      "note": "",
+      "context": "0.52%"
+    },
+    "57.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "57.3%"
+    },
+    "0.449": {
+      "verdict": "pending",
+      "note": "",
+      "context": "ICC 0.449 on 75 medical skills"
+    },
+    "0.800": {
+      "verdict": "pending",
+      "note": "",
+      "context": "of skills at zero API cost and reporting 0.800 F1 at about $0.006 per skill. Malicious-or-Not (Holzbauer"
+    },
+    "0.006": {
+      "verdict": "pending",
+      "note": "",
+      "context": "of skills at zero API cost and reporting 0.800 F1 at about $0.006 per skill. Malicious-or-Not (Holzbauer"
+    },
+    "2.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "at the May 31, 2026 cutoff in §2.3; later work may change the evidence for individual patterns, especially in"
+    },
+    "10.1609": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Conference on Artificial Intelligence, volume 31, pp. 1726–1734, 2017. doi: 10.1609/aaai.v31i1.10916."
+    },
+    "1.10916": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Conference on Artificial Intelligence, volume 31, pp. 1726–1734, 2017. doi: 10.1609/aaai.v31i1.10916."
+    },
+    "10.1016": {
+      "verdict": "pending",
+      "note": "",
+      "context": "10.1016/S0004-3702(99)00052-1."
+    },
+    "15.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "15.3× tech-tree"
+    },
+    "91.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "91.6%"
+    },
+    "23.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "WebArena +23.5"
+    },
+    "28.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "VWA GLM 28.1"
+    },
+    "9.4": {
+      "verdict": "pending",
+      "note": "",
+      "context": "vs 9.4 self skill"
+    },
+    "85.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "85.3%, 49% fewer"
+    },
+    "5.4": {
+      "verdict": "pending",
+      "note": "",
+      "context": "5.4K"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "critical_adjudicated": 0,
+    "pending_review": 94,
+    "noise_filtered": 177,
+    "adjudicated": 0,
+    "paper_decimals": 271,
+    "evidence_absent": true,
+    "note": "manual_review_list = 未裁决且非机械噪音；裁决文件填 verdict(noise|supported|critical) 后重跑即收敛"
+  }
+}

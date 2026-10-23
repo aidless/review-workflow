@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\main.tex",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-28T12:40:59+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "dimensions": {
+    "P": {
+      "status": "ok",
+      "score": 7,
+      "justification": "校准是 TMLR 读者关心的重要真实问题,与已有 overconfidence/ECE 文献关系清楚；但论文明确以 pilot、illustrative、cautionary findings 定位,契合但偏初步。",
+      "top_weakness": "核心证据是 N=30 pilot/in-sample 标签,论文自称 cautionary findings,尚属初步探索而非完整研究,削弱与 TMLR 的契合度。",
+      "evidence": "A reproducible measurement pipeline (illustrative N=30 pilot).",
+      "parse": "json"
+    },
+    "R": {
+      "status": "ok",
+      "score": 5,
+      "justification": "论文主要标定观察来自N=30样本内演示,且经单判定者裁定匹配器后得到100%准确率,存在循环风险；OOD门控亦仅探索性N=30。但作者有形式化命题、4999对跨域数据并采用Holm校正,未完全崩溃。",
+      "top_weakness": "核心标定结论依赖逐行裁定后扩展的匹配器,在30行样本内取得100%准确率,存在标签裁定循环/样本内偏差。",
+      "evidence": "in-sample, single judge, near-empty favorable reading; not evidence of calibration",
+      "parse": "json"
+    },
+    "I": {
+      "status": "ok",
+      "score": 5,
+      "justification": "提出匹配器依赖的形式化、语义软标签/MSI与跨域MMLU数据,对校准测量有警示和参考价值；但核心实证多为N=30示例或探索性分析,中心论点证据强度有限,属于有用但增量有限的贡献。",
+      "top_weakness": "核心实证仅基于N=30 illustrative/in-sample数据,中心主张的证据强度不足以支撑更高社区级影响。",
+      "evidence": "A reproducible measurement pipeline (illustrative N=30 pilot).",
+      "parse": "json"
+    },
+    "S": {
+      "status": "ok",
+      "score": 9,
+      "justification": "全文大量使用illustrative、exploratory、in-sample、not evidence等限定,坦承单judge与近空有利解读,并如实报告跨域仅极端配对显著；复现承诺含evidence package与合规附录,整体克制可信。",
+      "top_weakness": "证据包与裁定细节未在片段内展示,语义软标签的主观性使独立复现难以完全核实。",
+      "evidence": "single judge, near-empty favorable reading; not evidence of calibration",
+      "parse": "json"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "scores": {
+      "P": 7,
+      "R": 5,
+      "I": 5,
+      "S": 9
+    },
+    "overall": 5,
+    "weakest": "R(严谨性)",
+    "detail": "最弱维度 R(严谨性) = 5 分（<= 6）→ 文本层 WARN；证据层门禁不受影响"
+  }
+}

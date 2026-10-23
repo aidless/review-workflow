@@ -1,0 +1,12 @@
+{
+  "status": "OK",
+  "source": "F:\\deepseek\\research-kit\\review-workflow\\examples\\openreview_dump_example.json",
+  "notes": 3,
+  "decision_counts": {
+    "Accept (Oral)": 1,
+    "Reject": 1,
+    "Accept (poster)": 1
+  },
+  "total_labeled": 3,
+  "accept_rate": 0.667
+}

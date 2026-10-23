@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\kg-retrieval\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\deepseek\\papers\\kg-retrieval\\results",
+      "F:\\deepseek\\papers\\kg-retrieval\\evidence"
+    ],
+    "timestamp": "2026-08-26T04:39:42+00:00"
+  },
+  "direction_A_evidence_to_paper": {
+    "checked": 23,
+    "found_in_paper": 5,
+    "hit_rate": 0.2174,
+    "key_matches": [
+      {
+        "json_path": "w/o cross-encoder.p_mcnemar",
+        "value": 0.25000000000000006,
+        "paper_token": "0.25",
+        "source": "F:\\deepseek\\papers\\kg-retrieval\\results\\ablation_stats.json"
+      },
+      {
+        "json_path": "w/o Graph.p_mcnemar",
+        "value": 0.0004882812500000003,
+        "paper_token": "0.00048",
+        "source": "F:\\deepseek\\papers\\kg-retrieval\\results\\ablation_stats.json"
+      },
+      {
+        "json_path": "w/o Graph",
+        "value": 1.0,
+        "paper_token": "1.0",
+        "source": "F:\\deepseek\\papers\\kg-retrieval\\results\\true_ablation_v8.json"
+      },
+      {
+        "json_path": "w/o Graph.p_wilcoxon",
+        "value": 0.0005320055051392492,
+        "paper_token": "0.00048",
+        "source": "F:\\deepseek\\papers\\kg-retrieval\\results\\ablation_stats.json"
+      },
+      {
+        "json_path": "w/o RRF.p_wilcoxon",
+        "value": 0.00010751117672950055,
+        "paper_token": "0.00048",
+        "source": "F:\\deepseek\\papers\\kg-retrieval\\results\\ablation_stats.json"
+      }
+    ]
+  },
+  "direction_B_paper_to_evidence": {
+    "paper_decimals": 42,
+    "supported": 9,
+    "unsupported": 33,
+    "support_rate": 0.2143,
+    "noise_filtered": [
+      {
+        "token": "1.2",
+        "value": 1.2,
+        "line": 22,
+        "context": "We build on Microsoft GraphRAG (community), LightRAG v1.2.5, HippoRAG2, and Agent Memory (MemoraX 58",
+        "noise_kind": "version-fragment"
+      },
+      {
+        "token": "3.12",
+        "value": 3.12,
+        "line": 29,
+        "context": "v8 170 tasks (I10 II12 III148), TopK=5 strict Hit@5 + NDCG, 5 seeds, Holm $m=5$, Python 3.12.7, seed",
+        "noise_kind": "version-fragment"
+      }
+    ],
+    "adjudicated": [],
+    "manual_review_list": [
+      {
+        "token": "20.6",
+        "value": 20.6,
+        "line": 13,
+        "context": "We present a self-evolving knowledge graph retrieval system that unifies document ingestion, entity-"
+      },
+      {
+        "token": "0.007",
+        "value": 0.007,
+        "line": 13,
+        "context": "We present a self-evolving knowledge graph retrieval system that unifies document ingestion, entity-"
+      },
+      {
+        "token": "1.5",
+        "value": 1.5,
+        "line": 13,
+        "context": "We present a self-evolving knowledge graph retrieval system that unifies document ingestion, entity-"
+      },
+      {
+        "token": "0.12",
+        "value": 0.12,
+        "line": 13,
+        "context": "We present a self-evolving knowledge graph retrieval system that unifies document ingestion, entity-"
+      },
+      {
+        "token": "0.05",
+        "value": 0.05,
+        "line": 13,
+        "context": "We present a self-evolving knowledge graph retrieval system that unifies document ingestion, entity-"
+      },
+      {
+        "token": "58.02",
+        "value": 58.02,
+        "line": 22,
+        "context": "We build on Microsoft GraphRAG (community), LightRAG v1.2.5, HippoRAG2, and Agent Memory (MemoraX 58"
+      },
+      {
+        "token": "0.88",
+        "value": 0.88,
+        "line": 25,
+        "context": "\\textbf{KG construction}: Rule/LLM extractor, NetworkX, linker threshold 0.88. \\textbf{Embedding}: B"
+      },
+      {
+        "token": "0.5",
+        "value": 0.5,
+        "line": 25,
+        "context": "\\textbf{KG construction}: Rule/LLM extractor, NetworkX, linker threshold 0.88. \\textbf{Embedding}: B"
+      },
+      {
+        "token": "0.3",
+        "value": 0.3,
+        "line": 25,
+        "context": "\\textbf{KG construction}: Rule/LLM extractor, NetworkX, linker threshold 0.88. \\textbf{Embedding}: B"
+      },
+      {
+        "token": "0.2",
+        "value": 0.2,
+        "line": 25,
+        "context": "\\textbf{KG construction}: Rule/LLM extractor, NetworkX, linker threshold 0.88. \\textbf{Embedding}: B"
+      },
+      {
+        "token": "34.2",
+        "value": 34.2,
+        "line": 42,
+        "context": "Full Hybrid & 34.2\\textpm1.0 & --- & --- \\\\"
+      },
+      {
+        "token": "23.6",
+        "value": 23.6,
+        "line": 43,
+        "context": "w/o Graph & 23.6\\textpm1.5 & +10.6 & 0.00048* \\\\"
+      },
+      {
+        "token": "1.5",
+        "value": 1.5,
+        "line": 43,
+        "context": "w/o Graph & 23.6\\textpm1.5 & +10.6 & 0.00048* \\\\"
+      },
+      {
+        "token": "10.6",
+        "value": 10.6,
+        "line": 43,
+        "context": "w/o Graph & 23.6\\textpm1.5 & +10.6 & 0.00048* \\\\"
+      },
+      {
+        "token": "0.6",
+        "value": 0.6,
+        "line": 44,
+        "context": "w/o RRF & 20.0\\textpm0.6 & +14.2 & 0.00006* \\\\"
+      },
+      {
+        "token": "14.2",
+        "value": 14.2,
+        "line": 44,
+        "context": "w/o RRF & 20.0\\textpm0.6 & +14.2 & 0.00006* \\\\"
+      },
+      {
+        "token": "25.8",
+        "value": 25.8,
+        "line": 45,
+        "context": "w/o BM25 & 25.8\\textpm1.6 & +8.4 & 0.007* \\\\"
+      },
+      {
+        "token": "1.6",
+        "value": 1.6,
+        "line": 45,
+        "context": "w/o BM25 & 25.8\\textpm1.6 & +8.4 & 0.007* \\\\"
+      },
+      {
+        "token": "8.4",
+        "value": 8.4,
+        "line": 45,
+        "context": "w/o BM25 & 25.8\\textpm1.6 & +8.4 & 0.007* \\\\"
+      },
+      {
+        "token": "0.007",
+        "value": 0.007,
+        "line": 45,
+        "context": "w/o BM25 & 25.8\\textpm1.6 & +8.4 & 0.007* \\\\"
+      },
+      {
+        "token": "1.4",
+        "value": 1.4,
+        "line": 46,
+        "context": "w/o Community & 27.0\\textpm1.4 & +7.2 & 0.007* \\\\"
+      },
+      {
+        "token": "7.2",
+        "value": 7.2,
+        "line": 46,
+        "context": "w/o Community & 27.0\\textpm1.4 & +7.2 & 0.007* \\\\"
+      },
+      {
+        "token": "0.007",
+        "value": 0.007,
+        "line": 46,
+        "context": "w/o Community & 27.0\\textpm1.4 & +7.2 & 0.007* \\\\"
+      },
+      {
+        "token": "32.6",
+        "value": 32.6,
+        "line": 47,
+        "context": "w/o cross-encoder & 32.6\\textpm1.0 & +1.6 & 0.25 \\\\"
+      },
+      {
+        "token": "1.6",
+        "value": 1.6,
+        "line": 47,
+        "context": "w/o cross-encoder & 32.6\\textpm1.0 & +1.6 & 0.25 \\\\"
+      },
+      {
+        "token": "0.8",
+        "value": 0.8,
+        "line": 54,
+        "context": "\\includegraphics[width=0.8\\linewidth]{fig_ece.png}"
+      },
+      {
+        "token": "0.12",
+        "value": 0.12,
+        "line": 55,
+        "context": "\\caption{ECE 0.12$\\to$0.05 over G091-G1334 (1261 points).}"
+      },
+      {
+        "token": "0.05",
+        "value": 0.05,
+        "line": 55,
+        "context": "\\caption{ECE 0.12$\\to$0.05 over G091-G1334 (1261 points).}"
+      },
+      {
+        "token": "0.60",
+        "value": 0.6,
+        "line": 59,
+        "context": "Community and cross-encoder are discussed as NDCG gains ($0.60\\to0.67$, $p=4e-10$, Fig.~\\ref{fig:ece"
+      },
+      {
+        "token": "0.67",
+        "value": 0.67,
+        "line": 59,
+        "context": "Community and cross-encoder are discussed as NDCG gains ($0.60\\to0.67$, $p=4e-10$, Fig.~\\ref{fig:ece"
+      },
+      {
+        "token": "0.05",
+        "value": 0.05,
+        "line": 68,
+        "context": "Hybrid + community + self-evolution (Ornith 1-file-6-fix, $p<0.05$) yields discriminative 5-60\\% evo"
+      }
+    ]
+  },
+  "adjudications_state": {
+    "20.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "We present a self-evolving knowledge graph retrieval system that unifies document ingestion, entity-relation extraction,"
+    },
+    "0.007": {
+      "verdict": "pending",
+      "note": "",
+      "context": "We present a self-evolving knowledge graph retrieval system that unifies document ingestion, entity-relation extraction,"
+    },
+    "1.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "We present a self-evolving knowledge graph retrieval system that unifies document ingestion, entity-relation extraction,"
+    },
+    "0.12": {
+      "verdict": "pending",
+      "note": "",
+      "context": "We present a self-evolving knowledge graph retrieval system that unifies document ingestion, entity-relation extraction,"
+    },
+    "0.05": {
+      "verdict": "pending",
+      "note": "",
+      "context": "We present a self-evolving knowledge graph retrieval system that unifies document ingestion, entity-relation extraction,"
+    },
+    "58.02": {
+      "verdict": "pending",
+      "note": "",
+      "context": "We build on Microsoft GraphRAG (community), LightRAG v1.2.5, HippoRAG2, and Agent Memory (MemoraX 58.02). Our method fam"
+    },
+    "0.88": {
+      "verdict": "pending",
+      "note": "",
+      "context": "\\textbf{KG construction}: Rule/LLM extractor, NetworkX, linker threshold 0.88. \\textbf{Embedding}: BGE-small-zh 512-dim,"
+    },
+    "0.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "\\textbf{KG construction}: Rule/LLM extractor, NetworkX, linker threshold 0.88. \\textbf{Embedding}: BGE-small-zh 512-dim,"
+    },
+    "0.3": {
+      "verdict": "pending",
+      "note": "",
+      "context": "\\textbf{KG construction}: Rule/LLM extractor, NetworkX, linker threshold 0.88. \\textbf{Embedding}: BGE-small-zh 512-dim,"
+    },
+    "0.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "\\textbf{KG construction}: Rule/LLM extractor, NetworkX, linker threshold 0.88. \\textbf{Embedding}: BGE-small-zh 512-dim,"
+    },
+    "34.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Full Hybrid & 34.2\\textpm1.0 & --- & --- \\\\"
+    },
+    "23.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "w/o Graph & 23.6\\textpm1.5 & +10.6 & 0.00048* \\\\"
+    },
+    "10.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "w/o Graph & 23.6\\textpm1.5 & +10.6 & 0.00048* \\\\"
+    },
+    "0.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "w/o RRF & 20.0\\textpm0.6 & +14.2 & 0.00006* \\\\"
+    },
+    "14.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "w/o RRF & 20.0\\textpm0.6 & +14.2 & 0.00006* \\\\"
+    },
+    "25.8": {
+      "verdict": "pending",
+      "note": "",
+      "context": "w/o BM25 & 25.8\\textpm1.6 & +8.4 & 0.007* \\\\"
+    },
+    "1.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "w/o BM25 & 25.8\\textpm1.6 & +8.4 & 0.007* \\\\"
+    },
+    "8.4": {
+      "verdict": "pending",
+      "note": "",
+      "context": "w/o BM25 & 25.8\\textpm1.6 & +8.4 & 0.007* \\\\"
+    },
+    "1.4": {
+      "verdict": "pending",
+      "note": "",
+      "context": "w/o Community & 27.0\\textpm1.4 & +7.2 & 0.007* \\\\"
+    },
+    "7.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "w/o Community & 27.0\\textpm1.4 & +7.2 & 0.007* \\\\"
+    },
+    "32.6": {
+      "verdict": "pending",
+      "note": "",
+      "context": "w/o cross-encoder & 32.6\\textpm1.0 & +1.6 & 0.25 \\\\"
+    },
+    "0.8": {
+      "verdict": "pending",
+      "note": "",
+      "context": "\\includegraphics[width=0.8\\linewidth]{fig_ece.png}"
+    },
+    "0.60": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Community and cross-encoder are discussed as NDCG gains ($0.60\\to0.67$, $p=4e-10$, Fig.~\\ref{fig:ece})."
+    },
+    "0.67": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Community and cross-encoder are discussed as NDCG gains ($0.60\\to0.67$, $p=4e-10$, Fig.~\\ref{fig:ece})."
+    }
+  },
+  "summary": {
+    "verdict": "CRITICAL",
+    "critical_adjudicated": 0,
+    "pending_review": 31,
+    "noise_filtered": 2,
+    "adjudicated": 0,
+    "note": "manual_review_list = 未裁决且非机械噪音；裁决文件填 verdict(noise|supported|critical) 后重跑即收敛"
+  }
+}

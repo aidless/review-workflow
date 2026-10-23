@@ -1,0 +1,21 @@
+{
+ "adjudications": "papers/just-agent-60/reviews/pipeline_S5/adjudications.json",
+ "evidence_dirs": [
+  "papers/just-agent-60/results",
+  "papers/just-agent-60/evidence"
+ ],
+ "llm": {
+  "enabled": true,
+  "rpc": "http://127.0.0.1:3081",
+  "roles": "method,stat,experiment,novelty,repro,devil",
+  "script": "research-kit/adversarial_review.py"
+ },
+ "manifest": null,
+ "name": "just-agent-60",
+ "out": "papers/just-agent-60/reviews/pipeline_S5",
+ "tex": "papers/just-agent-60/paper/main.tex",
+ "zip": "papers/just-agent-60/submission/submission_s5_20260906.zip",
+ "citation_online": true,
+ "novelty_online": true,
+ "converge": 3
+}

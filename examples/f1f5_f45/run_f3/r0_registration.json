@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "timestamp": "2026-08-28T09:49:04+00:00",
+    "stage": "R0",
+    "source_mode": "tex 源码模式"
+  },
+  "inputs": {
+    "name": "f1f5_f3_memory",
+    "tex": {
+      "path": "F:\\Research\\F3_Single_10page\\paper\\main.tex",
+      "size": 35062,
+      "sha256": "cf337e138d2a8343a690714837763383784aacfb7abf3174029b6893dcde1188"
+    },
+    "pdf": {
+      "path": "F:\\Research\\_inbox\\F1-F5_F45_2026-08-26\\final_pdf\\F3_9db3cba9.pdf",
+      "size": 502662,
+      "sha256": "9db3cba91f3d1f96a4aa78e7af916cebad9f6c713f8ae8f2f195ea9bed84ea24"
+    },
+    "zip": {
+      "path": "F:\\Research\\_inbox\\F1-F5_F45_2026-08-26\\TMLR_4p5_Tier123_FINAL_20260827.zip",
+      "size": 1471425,
+      "sha256": "b3ca47f5fed06e1c0c895d5ad8351453f02ec61498fa7cd3dd5a73140e6f1d79"
+    },
+    "evidence_dirs": [
+      {
+        "path": "F:\\Research\\_inbox\\F1-F5_F45_2026-08-26\\supplementary",
+        "exists": true
+      }
+    ]
+  },
+  "cross_source_risk": [
+    "F:\\Research\\_inbox\\F1-F5_F45_2026-08-26\\supplementary"
+  ],
+  "problems": [],
+  "summary": {
+    "problems": 0,
+    "cross_source_risk": 1,
+    "verdict": "MAJOR"
+  }
+}

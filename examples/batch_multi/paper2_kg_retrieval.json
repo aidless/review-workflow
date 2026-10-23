@@ -1,0 +1,16 @@
+{
+  "name": "kg_retrieval",
+  "tex": "F:/deepseek/papers/kg-retrieval/paper/main.tex",
+  "zip": "F:/deepseek/papers/kg-retrieval/submission/submission_kg-retrieval.zip",
+  "evidence_dirs": [
+    "F:/deepseek/papers/kg-retrieval/results",
+    "F:/deepseek/papers/kg-retrieval/evidence"
+  ],
+  "llm": {
+    "enabled": true,
+    "script": "F:/deepseek/research-kit/adversarial_review.py",
+    "rpc": "http://127.0.0.1:3080",
+    "roles": "all"
+  },
+  "out": "F:/deepseek/research-kit/review-workflow/examples/batch_multi/run_kg_retrieval"
+}

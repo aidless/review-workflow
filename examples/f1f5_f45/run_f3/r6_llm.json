@@ -1,0 +1,1047 @@
+{
+  "meta": {
+    "stage": "R6",
+    "timestamp": "2026-08-27T19:40:55+00:00",
+    "rpc": "http://127.0.0.1:3080",
+    "rounds": 3
+  },
+  "rpc_health": {
+    "ok": true,
+    "detail": "HTTP 200"
+  },
+  "rounds": [
+    {
+      "Critical": 16,
+      "Major": 29,
+      "Minor": 15
+    },
+    {
+      "Critical": 12,
+      "Major": 36,
+      "Minor": 17
+    },
+    {
+      "Critical": 15,
+      "Major": 39,
+      "Minor": 13
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts": {
+      "Critical": 7,
+      "Major": 14,
+      "Minor": 0
+    },
+    "unstable_counts": {
+      "Critical": 21,
+      "Major": 68
+    },
+    "stability_rule": "≥2 轮出现才计入门禁"
+  },
+  "stable_issues": [
+    {
+      "sev": "Critical",
+      "text": "- Critical: 双盲合规风险：正文出现 `gates_config.json L10–L28`、`protocol.md L42–L58`、`results/analysis.json` 及附录行号等内部仓库痕迹，可能让审稿人定位到作者基础设施/代码库，违反 TMLR 双盲匿名要求。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 对照组不匹配：no-memory 与 memory 条件未控制上下文长度/注入内容量，append-only 天然比 RAG 前缀更长，Γ 与 ΔMAE 可能反映 token 预算或 prefix length 而非记忆架构本身。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 样本量报告自相矛盾：摘要写 24,000 单元、18,000 paired，贡献节却写 18,000 单元、9,000 paired；无法确认配对定义和有效独立样本量，power analysis 的 n=500 与这些单元数之间的关系也不清楚。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 核心推断把 18,000/24,000 个“单元格”或 500 题当作独立样本，但同一 500 题被 4 模型×3 种子×3 架构反复复用；未按题目、模型、种子做聚类/混合效应建模，p 值和置信区间会严重低估不确定性。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 正文在贡献列表后混入内部工作流内容（“Claim ledger 86 PASS”“protocol.md L42–L58”“gates_config.json”“Gamma precursor strings (24K→12K)”），这些不是论文写作语言，严重破坏 TMLR 稿件结构和可读性。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 证据链核心数字对不上——摘要称 24,000 cells（18,000 memory + 6,000 no-memory；18,000 paired），贡献节却写 18,000 cells（9,000 paired），且 18,000 memory 与 6,000 no-memory 如何形成 18,000 个配对未解释，无法对账实验规模。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 配对结构重复使用同一批 no-memory 样本（6,000 cells）与 3 个记忆条件配对成 18,000 对，造成跨条件非独立比较；若不按题目/模型/seed/no-memory cell 建模相关性，检验的样本量和 p 值会被系统性高估。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: Γ=W1 的分布对象和量纲未明确，Γ=12.3 相对 ΔMAE=-0.034 的显著结果可能由极端值或分布形状驱动，而非系统性记忆效应；应报告效应量、分布图与稳健性。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: “post-hoc calibrators reduced but did not eliminate”未说明校准器是否在独立训练/验证集上拟合；若在同一批数据上拟合再评估，会低估校准后的误差，不能支持“无法消除 shift”的结论。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 仅 3 个低编号 seed，且“seed-pooled”是在 seed 42 之后补充 43/44 的做法，存在事后分析/选择痕迹；应预先注册 seed 与聚合规则，并报告每个 model×seed 的完整分布而非只给 pooled SD。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 图表层面混乱：正文出现“Panorama six-figure synthesis”，但全文没有规范的 Figure/Table 编号、标题或正文引用；“six-figure”含义不明，违反论文图表写作规范。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 多重比较控制不足：3 架构、4 模型、3 种子、4 个 post-hoc calibrator、6-group ablation、θ sweep 均涉及多次检验，全文只在 ablation 处提到 Holm，主结果未说明是否控制多重比较。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要中“0.68% share”和“survey Wilson [0, 0.21] for 0/15”完全没有前置语境，读者不知道这是在描述什么结果，也看不出与主要结论的关系。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要中的 MAE 公式书写错误且术语不完整：“MAE = i |ci −yi|”缺少求和号、下标范围及 ci/yi 的定义，作为核心指标定义不可读。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 数据许可与版本缺失——未指明 MMLU 的版本/来源/许可证、500 题的具体 ID 或抽样方式，也未说明衍生日志和分析文件的再分发许可，复现与合规均存障碍。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 方差报告不充分：仅报告 seed-pooled SD=0.026 和某些百分比的 Wilson CI，未报告各架构/模型的 paired ∆MAE 方差、题目间相关、W1 的抽样方差或主效应的置信区间。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 校准器评估公平性：四个 post-hoc calibrator 未说明是否在独立验证集上拟合、在测试集上评估；若在同一批 500 题上 in-sample 拟合，MAE 下降会被高估。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 理论贡献 |ΔMAE| ≤ LΓ 是 |c−y| 作为 1-Lipschitz 函数下 Wasserstein 上界的直接推论，属于已知 Lipschitz/Wasserstein 性质的平凡应用；文中还给出反例与退化条件，进一步说明该 bound 不足以支撑“定理”级别的贡献。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 结构重复且越界：“Under review as submission to TMLR” 在摘要前后重复出现；贡献列表后直接插入流程说明，摘要、贡献、引言边界不清。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 补充 θ sweep 与主结果未对齐：主文 θ=0.1 的 Γ=1.2，sweep 只给 8.1→0.9，且 “conf 0.99” 含义不明；需报告 θ=0.1 在 sweep 中的 Γ 并解释差异。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 补充实验自己承认 verbalized confidence “uninformative”，说明主实验的 ci 可能退化或信息量极低；未先验证置信度判别力，MAE/Γ 差异可能只是格式或噪声产物。",
+      "rounds": [
+        1,
+        2
+      ]
+    }
+  ],
+  "unstable_issues": [
+    {
+      "sev": "Critical",
+      "text": "- Critical: 500 条 MMLU 问题的取样过程未给出：没有具体题号/索引、MMLU 版本、split、采样 seed 或筛选条件，任何后续复现都可能得到不同子集。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: RAG 的 θ=0.1 不是先验固定，且补充 sweep 中低 θ 对应“无信息 verbalized confidence”；低 Γ 可能来自退化的恒定置信度而非更好校准，主结论可能只是伪影。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: p 值误用/检验选择错位：显著结果来自 Γ=W1 的分布位移检验，但研究结论指向 MAE；∆MAE 仅 -0.034/+0.008 且无 CI，不能把 Γ 的 p<.001 解读为“记忆架构显著影响校准误差”。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: “agent memory architecture”名不副实：实验只是 MMLU 单题上注入 synthetic memory/retrieval 上下文，没有真实 agent 轨迹、写入/压缩/检索循环或多轮交互，与已有 agentic memory/calibration 工作的差异被显著夸大。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 一键复现未提供——没有公开代码仓库、commit hash、Dockerfile/requirements.lock、可执行脚本或 notebook，仅称“archived in results/analysis.json”不足以在任何新环境复现。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 上界符号不一致：摘要为 `|ΔMAE| ≤ LΓ`，贡献第 2 条却写 `|ΔMAE| ≤ Γ`，且 `L` 未定义，读者无法判断定理内容。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 全文未提供任何一键复现入口（无匿名仓库、脚本、容器或 `reproduce.sh`），仅有 `results/analysis.json` 等内部路径，无法从原始提示、模型输出和配置重新生成 24,000 或 18,000 个数据格。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 前提/内部效度：三种记忆条件并不只改变“记忆架构”，还同时改变了注入内容长度、信息量、提示位置、检索阈值、摘要生成过程等；append-only 与 RAG 的差异可完全由上下文长度或信息泄露解释，不能归因于架构本身。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 哈希对账完全缺失——未提供 results/analysis.json、原始日志、MMLU 500 题子集、gates_config.json、claim ledger 的 SHA-256/commit hash，任何“Gates 9/9”“86 PASS”都无法独立校验。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 因果推断不恰当：虽然标题用“associated”，但“controlled comparison”“we observed”及对 p 值的解释仍把观测关联表述为记忆架构的效应；在未控制记忆内容是否泄露答案、上下文长度、模板差异和检索语料构建方式时，无法排除混淆变量。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 声称“memory design 与 confidence error 的关系从未在受控配对协议下检验”不成立：RAG 噪声/检索对 verbalized confidence 的影响已被 NOVA、Do RALMs Know When They Don't Know、REHEARSE、Agentic Confidence Calibration 等研究覆盖，本文只替换了“",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 声称比较三种架构，但给出的摘要结果只报告 append-only 与 RAG，未报告 summarization 臂；若该臂结果被省略，则存在选择性报告，三路“controlled comparison”不成立。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 宣称的 GAP 被夸大/并不真实：已有工作已研究 RAG 噪声/检索上下文对 verbalized confidence 的影响（如 NOVA、CalibRAG）、多轮对话中置信度随上下文累积的动态（arXiv:2601.02179），以及 tool-use agent 中工具/记忆上下文导致的校准差异（arXiv:2601.07264）；“not tested under",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 摘要混入非科研流程/日志内容（“Panorama six-figure synthesis”“Claim ledger 86 PASS”“gates_config.json L10–L28”“results/analysis.json”），既违反双盲规范，也破坏摘要自洽性。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 无哈希对账：数据集、模型权重、配置、日志、`analysis.json`/`gates_config.json` 都没有 SHA-256 或 manifest，无法证明复现时使用的是同一份未篡改产物。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 未说明数据许可与来源版本：MMLU 的 exact shard/版本、下载源、再分发许可以及四个 local model 的 checkpoint/license 均缺失，无法合法且确定地复现同一数据集。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 检验单位非独立：同一 no-memory 基线被三个 memory 架构重复配对，且数据嵌套在 question × model × seed 中；若按 cell/pair 计算 p 值或 Γ 检验，有效样本量被严重高估，需用混合模型或按 question/model 聚类/bootstrap。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 理论贡献表述不一致：贡献 2 称定理为 |ΔMAE| ≤ Γ，摘要却写成 |ΔMAE| ≤ LΓ，且 L 未定义；这不仅是用词不一致，而是数学声明不一致。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 若摘要中的“survey ... 0/15”涉及人类受试者评估，论文未报告 IRB/伦理审批、知情同意、匿名化与数据保留条款，可能直接违反涉及人类参与研究的合规要求。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 记忆内容是内生的：注入的记忆由模型输出、摘要或检索生成，模型正确性/生成质量会同时影响记忆内容和置信误差，存在反向因果与选择偏差，内部效度不足。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 论文声称填补“agent memory architecture 对 verbalized confidence”的空白，但实验是在静态 MMLU 提示中做一次性的“synthetic memory injection”，并不是真实 agent 的会话记忆累积、摘要更新、跨轮检索生命周期；因此它测试的更接近 prompt/context 配置，而不是所宣称的 memory ",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 500 道 MMLU 题的选取标准、学科分层、模型版本与解码参数、记忆注入语料的构造方式均未交代；这既影响外部效度，也可能因子集选择造成内部效度问题。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: GAP 的相对增量很小：在 500 条 MMLU 单轮题上人为构造记忆上下文，既不是自然 agent-memory 评测，也未与控制上下文长度/相关性/压缩损失的现有 prompt/context calibration 工作（如 contextual calibration）做差异隔离，因此很难证明这是 agent memory 架构的独立新问题。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: MAE=平均|c_i−y_i|（y_i 为二元正确性）不是标准校准度量，也不是 proper scoring rule；它同时受准确率和置信度水平影响，所谓“confidence error”变化可能只是准确率或置信度基线的混合效应。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: RAG θ=0.1 可能产生空检索或过滤后记忆，而论文自己的反例表明 filtered retrieval 会破坏 |ΔMAE|≤Γ；未报告检索率与非退化条件，Γ 的解释不成立。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: Seed 信息不完整——只列了 42/43/44，却出现“single-generator (seed 42)”这一未展开概念；MMLU 子采样、记忆内容生成、检索、解码、后处理的 seed 映射均未逐环节记录，无法重建同一生成轨迹。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: seed 42/43/44 的语义不清晰：未说明 seed 作用于采样、数据洗牌、检索、摘要还是全部；也未报告 temperature、top-p、max tokens、随机数生成器/确定性模式，导致生成结果不可复现。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: seed 信息不完整：只在配置快照中提到 42/43/44，未给出每个 condition/cell 的 RNG 隔离、问题采样顺序、以及 memory/no-memory 是否共享同一问题序列。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: seed 管理薄弱：仅 3 个 seed，且看起来是同一批 500 题在每模型每架构上重复，未说明 seed 是否改变题目子集、题目顺序或总结采样；没有 per-seed 方差、区间或 seed×架构交互报告，3 个 seed 不足以支撑稳定的 Γ 与 p 值。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: Γ 的 p 值是分别对 append-only 和 RAG 检验 Γ=0，没有报告或检验两架构之间 Γ 差异（或架构×配对交互），不能由“一个显著、一个不显著”推出两架构效应不同。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: Γ 的 p 值未说明零分布和检验方式；W1>0 在有限样本下几乎必然，简单的渐近/正态检验不恰当，应采用 paired permutation 或显式零假设。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: Γ 的检验方法未说明，且 p=.42 被当作“无差异”证据：未给出零分布、permutation/ootstrap 细节，也没有等价性检验或 CI；不能因 p>.05 断言 RAG 无 shift。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: θ sweep 的“Γ 单调 8.1→0.9”存在混淆：当 verbalized confidence 变得 uninformative 时 Wasserstein 距离变小是测量退化，不是架构优势；需同时报告置信度分布、方差和信息量。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: θ=0.1 是主分析阈值，而补充 θ sweep 显示 Γ 随 θ 单调变化；若 θ 是事后挑选的“有利”值，则主结论有 cherry-picking 风险，需预先固定或对 θ 做联合敏感性检验而非单独报告。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: “All findings are sample-descriptive within the synthetic memory-injection protocol”是奇怪的审计式措辞，“sample-descriptive”不是标准统计/论文术语，放在摘要区让人误以为是审稿注释而非科学结论。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: “Gates 9/9 map to gates_config.json L10–L28”中的“Gates”从未定义，且把 JSON 行号写进摘要，既术语不明又违反摘要应概括贡献的文体要求。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: “We provide a descriptive upper bound |∆MAE| ≤LΓ”与 Contribution 2 的“a theorem characterizing |∆MAE| ≤Γ”不一致，L 是否应有、常数位置和定理形式前后矛盾。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 与已有文献的差异被低估：RAG 校准研究（如 RALMs 是否 know when they don’t know、RAG 中 noise-aware verbal confidence calibration）已经系统操纵检索上下文并报告置信度/ECE 变化，agentic confidence calibration 也把轨迹与记忆过程纳入校准因素；论文需要证明三路 memo",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 主效应缺少效应量和置信区间：Γ=12.3、∆MAE=−0.034 只给 p 值，未报告标准化效应量、95% CI、per-condition SD；p<.001 可能只是大样本下的微小不可见效应。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 主结果只报告各架构与零的 p 值，未对三种架构两两比较做多重校正，也未报告 4 个模型间的异质性/交互。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 从分布移位 Γ=W1 到 |∆MAE|≤LΓ 的上界依赖强假设（配对耦合、非退化、无 filtered retrieval）；主分析未验证这些条件，而 θ sweep 中 conf=0.99 的“uninformative verbalized confidence”恰好违反非退化条件，却仍被用作证据，理论-经验连接不成立。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 利益冲突：全文缺少资助、隶属和竞争利益声明，且“Gates 9/9”等表述可能间接指向资助方/关联机构，未按 TMLR 要求披露 COI。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 功效分析与实际效应不匹配：按 d=0.35、n=67 设计，但观测 ∆MAE≈0.034 远小得多；未报告观测 d 或敏感性分析，不能宣称 n=500 对 Γ 和小效应有足够功效。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 功效分析错配：n=67 是 d=0.35、power=0.8 的配对 t 检验功效，而主检验是 Γ/置换检验；且 n=500 按题数计，未考虑 model、seed、架构内相关，真实独立单元远小于此。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 同一组方法被称为“four post-hoc calibrators”（摘要/引言）和“four post-hoc baselines”（Contribution 3），术语不统一，读者无法判断是校准器还是基线对照。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 四个本地模型未被明确标识：缺少模型名/版本/权重来源、量化方式、dtype、分词器版本和运行后端，无法确认“四模型”这一分层是否可复现。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 多重比较未校正：三种架构、四种后验校准器、θ 扫描和 6 组消融均涉及多次检验，除提到的 Holm 外主比较未见校正，报告的两个 p 值存在选择性报告风险。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 定理 |∆MAE|≤LΓ 依赖 Lipschitz 常数、non-degeneracy 和配对耦合等假设，但文中未验证这些条件；θ sweep 中“uninformative verbalized confidence”可能正说明存在退化分布，使 Γ 与上界失效。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 实证增量很弱：append-only Γ 显著但 ΔMAE 仅 −0.034，RAG Γ 不显著，且 θ sweep 自述 verbalized confidence “uninformative”，因此结果主要说明置信分布移动，而非记忆架构系统性改变校准误差，“较大 shift”的贡献被包装。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 对照组不足：仅有 no-memory 作为基线，缺少“等量 token 的无关记忆”“同长度随机文本”“不检索但拼接相同内容”等控制，无法把 Γ/∆MAE 差异归因于记忆架构而非上下文长度或信息量。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要塞入了不应出现在摘要的实现细节与无上下文统计：Gates 9/9、Wilson CI [0.52, 0.84]% / [0, 0.21]、results/analysis.json、gates_config.json L10–L28，结构上严重失衡。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要式记忆基本未在结果中报告，且摘要更新频率、长度、压缩策略未知；三架构也不是因子消融，append-only 与 RAG 同时改变了检索/压缩/上下文长度，无法分离组件贡献。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要末尾的 “Seed-pooled SD ... Wilson CI ... 0/15 survey ... Gates 9/9” 没有前因后果，与记忆架构和置信误差的关系完全未交代，读者无法解读。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 效应量与不确定性报告不足：Γ=12.3 vs 1.2 没有 SE/CI、尺度解释或标准化效应量；∆MAE 没有 Cohen's d、基线 MAE 或配对差 CI，无法判断实际意义。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 效应量报告不完整：只给出原始 Γ 和 ∆MAE，没有标准化效应量（如 Cohen’s d、η²）和主效应 ∆MAE/Γ 的 95% CI；Γ 非负且随样本规模变化，原始数值不能直接解释效应大小。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 数据和模型许可未说明：MMLU 的版本与再分发条款、四个模型的许可证、以及补充数据/日志是否允许随论文发布均未交代。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 数据许可：使用 MMLU 子集及文中提到的 survey 数据时未声明数据集许可证、归属与使用条款；MMLU 等基准有再分发/商用限制，若补充材料包含原题或日志需先完成许可合规审查。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 无记忆对照组未匹配“额外增加文本”这一基本因素；缺少长度匹配的无关文本/干扰记忆对照，无法排除“仅仅多了一段内容”而非“记忆结构”造成的影响。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 有效样本量远低于表面数字：500 题、4 模型、3 seeds 是分层/聚类数据，不能把 24,000 cells 当独立样本；缺少 mixed-effects 或 cluster-robust 推断，主结论的显著性可能被严重夸大。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 未交代 MMLU 及其底层第三方考试题目、四个 local model 权重的许可证与再分发条款；发布 500 题子集、全量日志或配置快照可能涉及原始题目版权和模型权重许可合规问题。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 未披露 MMLU 数据集及四个本地模型权重的许可证/使用条款，也未说明发布模型输出是否合规；需补充数据来源、版本和许可证声明。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 术语不统一：“models”与正文“local families”混用，摘要的 “θ sweep”与正文 “θ=0.1” 的阈值关系也未显式衔接。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 术语漂移：摘要称 “post-hoc calibrators”，贡献称 “post-hoc baselines”；“verbalized conf” 与 “confidence” 混用。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 标题与结论使用“associated”但摘要又声称“controlled comparison”和架构“shift”效应；若 memory 条件未随机分配并控制信息等价性，则不应隐含因果解释。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 核心实证贡献名不副实：显著结果主要在 Γ（置信度分布移位）上，而真正对应 “confidence error” 的配对 ∆MAE 只有 −0.034/+0.008 量级；这更像“记忆改变置信度表达”而非“记忆改变校准误差”，却把结论包装成 memory architecture 与 verbalized-confidence error 的关联。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 模型可复现性不足：仅写 “four local families”，缺少确切 Hugging Face ID/checkpoint、版本、精度/量化方式、tokenizer、推理框架和依赖版本。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 正文混入 survey Wilson、Gates 9/9、claim ledger、protocol.md 等未定义元流程内容，说明结果可能来自带 gate 的自动生成管线而非单一透明分析，严重损害复现性和内部效度。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 泛化性局限：只在 MMLU 多项选择题、4 个本地模型、合成/附加的“先前交互”记忆上测试，未覆盖多轮对话、长 horizon、开放式生成、不同检索语料或不同领域；结论不能推广到真实 agent 记忆。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 泛化证据有限：所有结论来自 synthetic memory-injection 且仅 MMLU 500 题、4 个本地模型，无真实 agent 轨迹、无其他任务/领域/OOD 验证；“sample-descriptive”免责声明不能替代外部效度检验。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 消融不完整：所谓 6-group ablation 未交代分组内容，缺少检索阈值、摘要长度、记忆容量、记忆顺序、注入轮数、matched-length append-only 等组件级消融，无法把效应归因到“架构”而非某个实现细节。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 消融不完整：所谓 6-group ablation 未给出分组定义；至少应消融检索阈值、top-k、摘要长度、记忆条数、顺序、是否含 authority marker，才能把效应定位到“架构”而非某个组件。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 理论贡献被高估：|∆MAE| ≤ LΓ 被自己称为 “descriptive upper bound”，本质是 Lipschitz/Wasserstein 型标准不等式；用非退化条件和反例限定其适用域，不足以支撑“two lemmas and a theorem”的贡献声明。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 生成与记忆超参未完整快照：temperature/top-p/max tokens、verbalized-confidence 指令、答案抽取规则、TF-IDF 实现/top-k/stop words/θ 阈值语义、summarization 的 prompt/预算/截断策略、context window 等均未给出。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 研究发现记忆架构可在准确率变化有限的情况下显著改变 verbalized confidence 分布，存在被滥用为“制造虚假信心/操纵人机监督”的双用途风险；需在 Limitations/Discussion 中讨论该风险及缓解措施。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 统计定义与代码不可复现——Γ=W1、MAE 公式（缺少 1/n 或离差写法）、paired ∆MAE、四类 post-hoc calibrator、θ sweep 的 conf=0.99、Wilson CI 样本来源等没有精确公式、超参和可执行代码，p 值无法重算。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 统计检验不可复现：Γ=12.3/1.2 和 p 值未说明检验类型、置换/自助次数、依赖结构处理、多重比较校正细节，无法重算置信声明。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 统计检验疑似把 cell 当作独立样本，忽略 MMLU 题目、模型、seed 的聚类结构，p<.001 可能来自伪重复；应按题目/模型做聚类 bootstrap 或混合模型。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 缺少 broader-impact/misuse 声明；记忆架构对 verbalized confidence 的影响可被用于操纵模型自信度或在不安全场景中过度信任 agent，“sample-descriptive”这一限定不足以防止结果被误用或过度外推。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 缺少哈希对账：原始日志、MMLU 子集、中间字符串、分析结果和最终表格之间没有 SHA-256 或等价内容寻址，无法验证“86 PASS claim ledger”与附录日志确实来自所述管线。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 缺少资助来源、竞争利益和伦理合规披露（例如模型厂商、基准作者或评估工具链相关利益），未满足 TMLR 的透明度要求。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 补充 θ sweep 自曝 RAG 的低 Γ 伴随 “uninformative verbalized conf”，说明 RAG 的 Γ=1.2 可能来自置信度退化/退化分布而非更优校准；non-degeneracy condition 只是承认该比较可能空洞，不能作为 RAG 更稳的证据。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 记忆架构的工程细节不足：append-only 的截断/格式、summarization 的摘要提示与更新策略、TF-IDF 的 tokenizer/ngram/top-k/θ 阈值语义及检索注入方式均未给出可执行规格。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 证据链不完整：“claim ledger 86 PASS”“full logs in Appendix B L210–L235”是内部簿记而非可追溯证据；缺少原始 per-cell 输出、运行日志、失败/跳过记录和版本化 provenance ID。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 误用风险：结果展示了记忆架构如何系统移动 verbalized confidence 以及哪些校准器失效，却未给出部署限制或滥用警示，可能被用于高置信度错误代理设计或不当设置安全放弃阈值。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 超参数与生成细节缺失：RAG 的 top-k、检索池、分块、排序，以及温度/top-p、max tokens、confidence prompt/scale 未报告，无法复现或判断各条件是否公平。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 超参数公平性不足：RAG 仅用 TF-IDF θ=0.1，未做主实验超参搜索；summarization 的摘要模型、压缩率、更新策略、检索 top-k/chunk 大小均未报告，也没有保证三个架构的 token 预算或计算量可比。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 超参数选择存在 outcome-driven 风险：RAG θ=0.1 是主结果，而补充 sweep 显示 θ 越大 Γ 越小但与“uninformative confidence”耦合，未说明 θ 是否用独立验证集预先选定，也未报告 summarization 的摘要长度/更新策略/生成模型等超参数。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 配对设计未说明 memory/no-memory 的顺序或位置是否平衡；若同一题上以固定顺序执行，练习、疲劳或 carryover 效应会成为内部效度混淆。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 配置快照不足以固定实验——模型具体名称/量化/权重版本、prompt 与 memory 注入模板、summarization 方法、TF-IDF 的 tokenizer/stopwords/θ 语义、采样 temperature/top-p 等关键配置未随快照给出。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: MAE 与 Γ 的单位和定义不清晰（ci 是 0-1 概率还是百分数、Γ=12.3 是 0.123 还是 12.3%、W1 是在什么配对/前缀对象上计算），影响结果解释与可复现性。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: MMLU 500 题的抽样/分层方式、token 长度、authority-marker 长度等预先应控制的变量未报告；r=0.45 只是相关，不足以排除这些混淆。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: Related Work 未正面处理最接近的工作，只以“没有测 paired ∆MAE”来区分；这类“换指标即新 GAP”的论证会让人怀疑增量贡献主要来自评测协议而非新认识。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: Related work 以“没有人测过 paired ΔMAE”作为 GAP 是 strawman；已有 prompt/context/retrieval 扰动下的校准研究（Zhao et al., 2021; Ovadia et al., 2019; RAG calibration）已覆盖同类现象，本文缺乏对这些工作的机制或因果区分。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: power analysis 声称 n=67 required、n=500 delivered，但未提供计算脚本、效应量来源或分布假设，无法验证功效论证。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: Γ=W1 的构造、“prefix-length”定义、配对方式和退化条件在可见文本中未完整交代，使 |∆MAE|≤LΓ 的上界在无信息置信度下可能 vacuous。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: θ sweep 缺少多重比较和趋势检验，且“conf 0.99”提示 verbalized confidence 退化，使 Γ 单调性 8.1→0.9 的解释不可靠；每个 θ 的 500 cells 构成也未说明。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: θ sweep 证据薄弱：0.05/0.1/0.3 各 500 cells 可能仅单 seed，且报告“uninformative verbalized conf”意味着该 sweep 的 Γ 单调趋势未必能支持主结论。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “All Seed-pooled...” 前孤立的 “All”（或断行）疑似编辑残留，说明摘要文本尚未清理。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “Authority-marker length … r=0.45”作为 Contribution 3 的卖点但摘要完全未提及，且没有置信区间或显著性，读者无法判断该相关性是否稳健。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “Gamma precursor strings (24K→12K)”“Panorama six-figure synthesis”“color-coded split ledger”等证据链术语没有机器可读定义或校验脚本，人工颜色标注无法作为可复现证据。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “not binned ECE” 是口语化且多余的说明，应直接给出 MAE 的标准定义。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “sample-descriptive”声明不能替代复现材料——未提供数据字典、缺失值说明、逐 cell 输入输出样例和失败日志，读者无法判断哪些 cell 被排除或重跑后应得到什么。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 四种 local models 的 verbalized confidence 格式/量纲（0-1、0-100、自然语言短语）未说明解析与标准化方式，跨模型合并 MAE/Γ 可能存在尺度混淆。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 图表角度无实质支撑：文中提到“six-figure synthesis”“color-coded split ledger”但论文中没有对应图/表编号；关键结果（三架构 Γ、∆MAE、Wilson CI）也未见表格或图集呈现。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 多重比较与功效：主比较 3 个记忆臂未明确做多重比较校正，power 分析使用任意 d=0.35，且共享基线使有效 N 低于表面 18,000，需重新说明功效。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 实验虽基于公共题库和本地模型，但未明确声明不含 PII、无需 IRB，也未说明公开 memory/log 时的去标识化与保留策略。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 把“paired protocol + power analysis”列为主要贡献属于方法常规操作，真正的增量只是 500 道 MMLU 上的一次描述性比较，且在合成注入协议下作者自己也限定为 sample-descriptive，增量贡献有限。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 摘要直接使用 `W1` 和 `Γ`，但未解释前缀长度 Wasserstein 距离，术语对读者是黑箱。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 效应量过小且未给出置信区间：append-only ∆MAE −0.034、RAG +0.008 的实际意义不明，也没有 per-model/per-seed 分布，难以判断是否可部署相关。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 未披露利益冲突、资助来源或机构关系；匿名稿件中仍可提供不含作者身份的通用 COI/伦理声明。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 未给出 summarization 的 Γ/∆MAE、置信区间和效应量；power 分析基于题目数，但统计推断单位不明确，3 seeds 不足以支撑架构间差异的稳健结论。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 检验细节不可复核：p<.001/p=.42 未给出确切 p 值、检验统计量、置换次数或是否 clustering，Wilson CI 片段与主分析关系不明。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 范围过窄（500 MMLU、4 个本地模型、单一 TF-IDF θ、synthetic memory），且共享 no-memory baseline 可能被重复计入 paired cells，贡献 1 中的配对规模被夸大。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 补充 θ sweep 只写“each 500 cells, conf 0.99”，未给出模型/种子组合、各阈值的 CIs 与完整配置，无法独立复现单调性结论。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 语法/表达瑕疵：“their effect ... remain unstudied”主谓不一致；“hedges”过于口语化，不适合正式学术写作。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 配置快照不完整且不可独立使用：只有“results/analysis.json 和 gates_config.json L10–L28”的文本引用，未给出 schema、依赖版本（Python/sklearn/transformers 等）或从快照重建每个数值的命令。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 隐私边界不清晰：未说明 synthetic memory 是否模拟或包含个人数据、发布日志是否可能泄露提示词、模型记忆化文本或敏感信息，以及是否做了 redaction。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 隐私：虽然公开基准和本地模型不涉及个人数据，但论文未说明发布日志中是否包含可复现的受版权文本或可识别内容，也未承诺对原始 memory 输出做脱敏/不公开处理。",
+      "rounds": [
+        2
+      ]
+    }
+  ]
+}

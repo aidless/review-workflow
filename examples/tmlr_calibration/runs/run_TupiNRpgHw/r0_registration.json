@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "timestamp": "2026-08-26T07:03:53+00:00",
+    "stage": "R0",
+    "source_mode": "PDF 模式：TupiNRpgHw.pdf → 伪 tex（99099 字符，1497 个小数）；R2/R2b/R1b 降级 SKIP"
+  },
+  "inputs": {
+    "name": "tmlr_TupiNRpgHw",
+    "tex": null,
+    "pdf": {
+      "path": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\pdfs\\TupiNRpgHw.pdf",
+      "size": 5630319,
+      "sha256": "ea41dea9ee4fb32dd58997eec3d84c0821c15f02a80ef07c04749c1a70be20f2"
+    },
+    "zip": null,
+    "evidence_dirs": []
+  },
+  "cross_source_risk": [],
+  "problems": [],
+  "summary": {
+    "problems": 0,
+    "cross_source_risk": 0,
+    "verdict": "PASS"
+  }
+}

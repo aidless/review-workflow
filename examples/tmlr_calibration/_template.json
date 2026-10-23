@@ -1,0 +1,24 @@
+{
+  "name": "paper_v1",
+  "tex": "F:/path/to/paper/main.tex",
+  "pdf": null,
+  "zip": "F:/path/to/submission.zip",
+  "evidence_dirs": [
+    "F:/path/to/results"
+  ],
+  "manifest": null,
+  "adjudications": null,
+  "bib": null,
+  "citation_online": false,
+  "novelty_online": false,
+  "prism": true,
+  "debate": true,
+  "converge": 1,
+  "llm": {
+    "enabled": true,
+    "script": "F:\\deepseek\\research-kit\\adversarial_review.py",
+    "rpc": "http://127.0.0.1:3080",
+    "roles": "all"
+  },
+  "out": "F:/path/to/runs/paper_v1"
+}

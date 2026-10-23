@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\deepseek\\papers\\calibration-self-improvement\\evidence"
+    ],
+    "json_scanned": 128,
+    "timestamp": "2026-08-28T04:47:47+00:00"
+  },
+  "checks": [],
+  "summary": {
+    "records": 0,
+    "match": 0,
+    "mismatch": 0,
+    "not_in_paper": 0,
+    "verdict": "PASS",
+    "note": "MISMATCH=Critical（产物统计值与复算不符）；NOT_IN_PAPER=Major（重算值未出现在论文）；口径换算机械层已并入 \\input 表格正文；MISMATCH/NOT_IN_PAPER 的定性由 adjudicate_qualitative 自动裁决"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "timestamp": "2026-09-02T04:31:29+00:00",
+    "stage": "R0",
+    "source_mode": "tex 源码模式"
+  },
+  "inputs": {
+    "name": "calibration_selfimprovement_v7_tablefix",
+    "tex": {
+      "path": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\main.tex",
+      "size": 125277,
+      "sha256": "fca6b64486f340fb22beaa7b43b15e3a77fb0d914e952719b88108cb5d9c2ed3"
+    },
+    "pdf": null,
+    "zip": {
+      "path": "F:\\deepseek\\papers\\calibration-self-improvement\\submission_clean_20260827_v7.zip",
+      "size": 7456845,
+      "sha256": "9d74d0fb512cc3312093c5a82945ebf757eb2fe825c4fb09073921125d89c4b1"
+    },
+    "evidence_dirs": [
+      {
+        "path": "F:\\deepseek\\papers\\calibration-self-improvement\\evidence",
+        "exists": true
+      }
+    ]
+  },
+  "cross_source_risk": [],
+  "problems": [],
+  "summary": {
+    "problems": 0,
+    "cross_source_risk": 0,
+    "verdict": "PASS"
+  }
+}

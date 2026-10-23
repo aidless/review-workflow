@@ -1,0 +1,163 @@
+[
+  {
+    "role": "method",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: The \"matcher determines calibration\" causal claim is near-tautologicalâthe matcher is the measurement instrument, so changing it changes the measurement by definition; there is no counterfactual (no \"true\" calibration held fixed), so the framing as a discovery rather than a measurement",
+        "- Critical: In-sample per-row adjudication that extends the matcher until accuracy reaches 100% is circular (researcher degrees of freedom / confirmation bias): labels were modified based on observed residuals, so ECE=0.0037 is constructed, not estimated; the claim that overconfidence \"vanishes once",
+        "- Critical: The OOD-gating conclusion (\"confidence is uselessâeven harmful; consistency retains discriminative power\") rests on n=30 and selects on a post-treatment variable (models whose confidence and consistency are negatively correlated), conflating selection effect with gating efficacyâthis",
+        "- Critical: The MSI cross-protocol comparison (1.000 on Chinese free-form vs. 0.334 on MMLU multiple-choice) varies language, domain, answer format, and model simultaneously; attributing the difference to \"protocol\" is an uncontrolled confound with no identification strategy."
+      ],
+      "Major": [
+        "- Major: The paper admits binning-based ECE is unreliable under degeneracy (27/30 = 1.0) yet still reports and interprets point ECE values (0.363, 0.1297, 0.0037) as meaningful summaries; if the distribution is degenerate, the ECE estimates themselves (not only the binning variant) are uninformative",
+        "- Major: Cross-domain \"domain-specific\" calibration is supported by point-estimate ratios (4Ã, 17Ã) while the authors themselves note 95% CIs are wide and overlapping and Holm-corrected p-values show \"only the most extreme pairs are significant\"; drawing a broad domain-specificity conclusion from ",
+        "- Major: Self-consistency is measured from only three resamples, yielding high sampling variance; treating three-sample agreement as a reliable discriminative signal relative to confidence is an unverified assumption that directly affects Proposition 8â² and the gating recommendation.",
+        "- Major: Propositions 1â3 bound measurement bias by matcher flip rate and an asymmetry term, but no analysis of bound tightness or vacuity is given; a loose bound provides no actionable guarantee and the propositions' empirical relevance is unestablished.",
+        "- Major: The 4999 dual-judged pairs are presented without inter-rater agreement / Cohen's Îº; label validity is the precondition for all downstream calibration claims, and its omission is a threat to internal validity.",
+        "- Major: Proposition 8â² (\"confidence-threshold gate carries no information about correctness\") is conditioned on confidence degeneracy, but the paper does not establish that degeneracy is the general deployment condition; generalizing a degenerate-condition result to a broad gating caution is an u"
+      ],
+      "Minor": [
+        "- Minor: The premise that practitioners treat self-reported confidence \"as a calibrated probability\" for deferral / memory-gating is asserted without citation or evidence of prevalence, weakening the motivation's external grounding.",
+        "- Minor: The title-level \"caution on binning-based ECE\" generalizes from a single degenerate distribution specific to this setup; whether degeneracy is common across agents/tasks is not established, limiting the caution's scope."
+      ]
+    },
+    "raw": "- Critical: The \"matcher determines calibration\" causal claim is near-tautologicalâthe matcher is the measurement instrument, so changing it changes the measurement by definition; there is no counterfactual (no \"true\" calibration held fixed), so the framing as a discovery rather than a measurement-artifact truism is a causal-inference error.\n- Critical: In-sample per-row adjudication that extends the matcher until accuracy reaches 100% is circular (researcher degrees of freedom / confirmation bias): labels were modified based on observed residuals, so ECE=0.0037 is constructed, not estimated; the claim that overconfidence \"vanishes once semantically-correct answers are recognized\" is true by construction, not by evidence.\n- Critical: The OOD-gating conclusion (\"confidence is uselessâeven harmful; consistency retains discriminative power\") rests on n=30 and selects on a post-treatment variable (models whose confidence and consistency are negatively correlated), conflating selection effect with gating efficacyâthis is not a valid causal comparison.\n- Critical: The MSI cross-protocol comparison (1.000 on Chinese free-form vs. 0.334 on MMLU multiple-choice) varies language, domain, answer format, and model simultaneously; attributing the difference to \"protocol\" is an uncontrolled confound with no identification strategy.\n- Major: The paper admits binning-based ECE is unreliable under degeneracy (27/30 = 1.0) yet still reports and interprets point ECE values (0.363, 0.1297, 0.0037) as meaningful summaries; if the distribution is degenerate, the ECE estimates themselves (not only the binning variant) are uninformative, undermining the very numbers used to support the central narrative.\n- Major: Cross-domain \"domain-specific\" calibration is supported by point-estimate ratios (4Ã, 17Ã) while the authors themselves note 95% CIs are wide and overlapping and Holm-corrected p-values show \"only the most extreme pairs are significant\"; drawing a broad domain-specificity conclusion from non-significant majority of pairs is an internal-validity overreach.\n- Major: Self-consistency is measured from only three resamples, yielding high sampling variance; treating three-sample agreement as a reliable discriminative signal relative to confidence is an unverified assumption that directly affects Proposition 8â² and the gating recommendation.\n- Major: Propositions 1â3 bound measurement bias by matcher flip rate and an asymmetry term, but no analysis of bound tightness or vacuity is given; a loose bound provides no actionable guarantee and the propositions' empirical relevance is unestablished.\n- Major: The 4999 dual-judged pairs are presented without inter-rater agreement / Cohen's Îº; label validity is the precondition for all downstream calibration claims, and its omission is a threat to internal validity.\n- Major: Proposition 8â² (\"confidence-threshold gate carries no information about correctness\") is conditioned on confidence degeneracy, but the paper does not establish that degeneracy is the general deployment condition; generalizing a degenerate-condition result to a broad gating caution is an unwarranted scope extrapolation.\n- Minor: The premise that practitioners treat self-reported confidence \"as a calibrated probability\" for deferral / memory-gating is asserted without citation or evidence of prevalence, weakening the motivation's external grounding.\n- Minor: The title-level \"caution on binning-based ECE\" generalizes from a single degenerate distribution specific to this setup; whether degeneracy is common across agents/tasks is not established, limiting the caution's scope.\n\n建议: 将 matcher 依赖性重框为测量偏差而非因果发现，采用预注册的 matcher 与独立外部标注（报告 κ）消除循环与混淆，并对 OOD-gating 与 MSI 跨协议比较进行预注册、控制混淆变量的验证性实验，而非 n=30 探索性分析。",
+    "sessionId": "session-323cc89f-0493-4816-8c9e-c0432dd830f9"
+  },
+  {
+    "role": "stat",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- **Critical**: N=30 上报告 ECE 精确到 4 位小数（0.0037、0.1297），且无任何不确定性区间。30 个样本下 ECE 的标准误约 0.05â0.10 量级，4 位小数是虚假精度，0.0037 与 0 在统计上无法区分。",
+        "- **Critical**: 退化分布（27/30=1.0）下有效样本量远小于 30；ECE 由 â¤3 个非退化点 + 退化 bin 内的错误率决定，实际支撑点 < 10，却仍将 ECE 作为可解释点估计报告并据此得出结论。",
+        "- **Critical**: 以点估计比值（4×、17×）作为 headline finding，但自述 95% CI 极宽（Qwen2.5-7B ECE [0.001, 0.08] 上下界比 80×）；0.028/0.479 的比值 CI 必跨越 1，17Ã 是无效应量报告。"
+      ],
+      "Major": [
+        "- **Major**: 9 个模型 Ã 多个 domain pair 的 ECE 跨域比较未说明所用检验（ECE 无标准参数检验；bootstrap? permutation? ）；Holm 校正存在但基础检验统计量不明，无法判断 p 值合理性。",
+        "- **Major**: 相关性结论（\"confidence 与 consistency 负相关\"，n=30）未报告 r 值、p 值或 CI，以 \"indicative\" 一词规避显著性判定；多模型间的相关检验未做多重比较校正。",
+        "- **Major**: \"40â50% of high-confidence OOD answers are wrong\" 未报告分母（30-item probe 中 high-confidence OOD 子集可能仅 10â20 个），百分比的标准误极大，40â50% 的 10pp 区间在小 n 下几乎无信息量。",
+        "- **Major**: 三个 matcher 的 ECE（0.363、0.1297、0.0037）是对同一组 30 个样本的配对重标签结果，未作配对不确定性传播（如 bootstrap over items），直接比较点值忽略了 label-flip 的相关性。",
+        "- **Major**: N=30 pilot 的 ECE 点估计（0.363、0.1297、0.0037）无 CI，而 600-item census 部分有 CI，不确定性报告不一致，读者无法判断 pilot 结果的统计可靠性。"
+      ],
+      "Minor": [
+        "- **Minor**: MSI 值（1.000、0.334）报告为确切点值无不确定性区间，且 1.000 暗示上界截断而非真值。",
+        "- **Minor**: \"4999 dual-judged pairs\" 将判决对数与独立样本量混淆；用于校准估计的分析单像应是 600 items Ã 9 models ，4999 pairs 是判决层统计，不应作为样本量引用。"
+      ]
+    },
+    "raw": "# 学统计」对抗审查员的统计正确性攻击\n\n逐条列出问题：\n\n- **Critical**: N=30 上报告 ECE 精确到 4 位小数（0.0037、0.1297），且无任何不确定性区间。30 个样本下 ECE 的标准误约 0.05â0.10 量级，4 位小数是虚假精度，0.0037 与 0 在统计上无法区分。\n- **Critical**: 退化分布（27/30=1.0）下有效样本量远小于 30；ECE 由 â¤3 个非退化点 + 退化 bin 内的错误率决定，实际支撑点 < 10，却仍将 ECE 作为可解释点估计报告并据此得出结论。\n- **Critical**: 以点估计比值（4×、17×）作为 headline finding，但自述 95% CI 极宽（Qwen2.5-7B ECE [0.001, 0.08] 上下界比 80×）；0.028/0.479 的比值 CI 必跨越 1，17Ã 是无效应量报告。\n- **Major**: 9 个模型 Ã 多个 domain pair 的 ECE 跨域比较未说明所用检验（ECE 无标准参数检验；bootstrap? permutation? ）；Holm 校正存在但基础检验统计量不明，无法判断 p 值合理性。\n- **Major**: 相关性结论（\"confidence 与 consistency 负相关\"，n=30）未报告 r 值、p 值或 CI，以 \"indicative\" 一词规避显著性判定；多模型间的相关检验未做多重比较校正。\n- **Major**: \"40â50% of high-confidence OOD answers are wrong\" 未报告分母（30-item probe 中 high-confidence OOD 子集可能仅 10â20 个），百分比的标准误极大，40â50% 的 10pp 区间在小 n 下几乎无信息量。\n- **Major**: 三个 matcher 的 ECE（0.363、0.1297、0.0037）是对同一组 30 个样本的配对重标签结果，未作配对不确定性传播（如 bootstrap over items），直接比较点值忽略了 label-flip 的相关性。\n- **Major**: N=30 pilot 的 ECE 点估计（0.363、0.1297、0.0037）无 CI，而 600-item census 部分有 CI，不确定性报告不一致，读者无法判断 pilot 结果的统计可靠性。\n- **Minor**: MSI 值（1.000、0.334）报告为确切点值无不确定性区间，且 1.000 暗示上界截断而非真值。\n- **Minor**: \"4999 dual-judged pairs\" 将判决对数与独立样本量混淆；用于校准估计的分析单像应是 600 items Ã 9 models ，4999 pairs 是判决层统计，不应作为样本量引用。\n\n**建议**: 将所有 ECE/MSI/相关系数点估计降级为 2 位有效数字并附 bootstrap 95% CI；明确跨域 ECE 比辉检验法（推荐 paired bootstrap/permutation）并对 9模型×domain-pair 全局 Holm 校正；相关性结论补报 r、p、CI 并做多模型校正；\"40â50%\" 补报分母与 Wilson CI。",
+    "sessionId": "session-b97ca587-8574-49d3-885a-4f09c76dfda5"
+  },
+  {
+    "role": "experiment",
+    "status": "ok",
+    "issues": {
+      "Critical": [],
+      "Major": [],
+      "Minor": [
+        "\n\nLet me examine the full paper to understand the experimental setup.\nLet me find the actual paper file with content.\n\n\n让我更仔细地查看实验部分、三臂研究、跨模型研究以及 OOD 实验。\n\n\n\n让我检查一下 OOS 重校准部分和 three-arm 附录细节。\n\n现在我已经有足够的信息来生成对抗审查报告了。让我来整理一下我的发现。\n\n- 严重：三臂实验无有效对照组：各臂使用不同 seed（20260815/16/17）且各自独立进化轨迹，进化基本惰性（A/B 未提升任何候选）"
+      ]
+    },
+    "raw": "\n\nLet me examine the full paper to understand the experimental setup.\nLet me find the actual paper file with content.\n\n\n让我更仔细地查看实验部分、三臂研究、跨模型研究以及 OOD 实验。\n\n\n\n让我检查一下 OOS 重校准部分和 three-arm 附录细节。\n\n现在我已经有足够的信息来生成对抗审查报告了。让我来整理一下我的发现。\n\n- 严重：三臂实验无有效对照组：各臂使用不同 seed（20260815/16/17）且各自独立进化轨迹，进化基本惰性（A/B 未提升任何候选），Arm C 的 $T_0$ 甚至在 Arm A 的数据上拟合（流水线缺陷），三者不可比，论文自己也承认\"非受控比较\"，但仍在正文 Table 4 中并列报告 ECE 排序，读者极易误读为因果结论。\n- 严重：OOD gating 无随机基线/无门控基线：Stage A/B 仅比较 confidence-gate vs consistency-gate，缺少 (a) 随机门控、(b) 不门控（全保留/全拒绝）两个必要对照，无法判断 consistency-gate 的\"改善\"是来自信号质量还是单纯通过率变化；AURC 比较同样缺少随机分类器基线。\n- 严重：语义容错 matcher 在 pilot 30 行上设计、又在同样 30 行上评估（Table 1/2/3），构成训练—测试泄漏；跨模型 450 对上的 holdout 验证虽然做了，但 pilot 核心结论（MSI=0.98、overconfidence 消失）仍来自自设计自评估的同一数据集。\n- 严重：DeepSeek-R1-7B 因\"无法遵循 JSON 格式\"从 MMLU census 中被剔除，构成按因变量相关标准的样本筛选偏差——格式失败模型被系统性排除，使\"calibration domain-specific\"结论仅适用于格式合规模型子集。\n- 重大：温度缩放消融仅在 first-tolerant reading（4 个错误）上进行，adjudicated reading（0 错误）使拟合退化、无法消融，因此\"Brier/ECE 反转\"这一核心警示仅建立在单一标签读取的 4 行噪声上，消融不完整。\n- 重大：真实数据上的三估计器比较（Figure 4）明确标注\"CIs not reported, descriptive\"，而模拟上的同一比较却有 100 次重复+CI；真实数据上 smECE 优势仅在 N=599 单模型上展示，无 bootstrap CI、无跨模型重复，消融结果在真实场景下统计上不可验证。\n- 重大：一致性门控的关键超参数未消融：resample 数 $R=3$、采样温度 $T=0.3$、一致性阈值 $\\geq2/3$ 均无敏感性分析；论文核心建议\"用 consistency gate 替代 confidence gate\"依赖这些未经消融的固定值。\n- 重大：bandwidth 消融在模拟上扫 $h\\in\\{0.02,0.05,0.1,0.2\\}$，但在真实数据上仅扫 $\\{0.02,0.05,0.1\\}$（缺 0.2），且 5-fold CV 选 $h=0.05$ 仅在单一数据集上完成，未在 census/frontier 上复验。\n- 重大：temperature scaling grid search 范围 $\\log T\\in[-3,3]$ 与实际拟合到的 $T=6.71$（$\\log T\\approx1.90$）勉强覆盖，但 $T=2.74$ 时的 relabeled 读取未报告是否仍在同一 grid 内稳定；grid 边界效应未检查。\n- 重大：基准不公平：frontier 模型仅 48 items（4 领域×12），本地模型 600 items，样本量差 12.5×，且 frontier 结果\"CIs not reported, qualitative only\"，却与本地模型并列入 Table 6 给出 ECE 数值比较。\n- 重大：census 双 judge（Qwen2.5-7B、Qwen2.5-3B）对 4 个 source 中的 2 个是 same-source judge（judge 即被测模型自身），虽披露但 same-source 行的 ECE/judge-soft ECE 未做 leave-one-out 稳健性消融（仅 cross-model 450 对上做了 LOFO）。\n- 重大：本地模型全部 Q4 量化、frontier 为全精度 API，两者精度/量化路径不同，\"degeneracy 跨模型复现\"结论混叠了量化效应，无法区分退化来自模型本身还是 Q4 压缩。\n- 重大：seed 管理近乎全面缺失：pilot、cross-model、census、census_sig600、frontier 均为 single-seed（temperature-0 采集）；temperature-0.2 稳健性检查仅 2 个 seed，论文自承\"spread is indicative only\"；bootstrap CI（B=1000, fixed seed）仅覆盖行级重采样变异，不覆盖 seed/model/judge 变异——所有主要结论的统计不确定性被严重低估。\n- 重大：三臂实验用不同 seed 本身就使各臂不可比：不同 seed → 不同 generation-0 起点候选 → 不同进化轨迹，再叠加 inert evolution，Arm A 的\"ECE 最低\"可能纯粹是 seed 运气（93.3% accuracy vs 83.3%/86.7%），而非 calibration schedule 效果。\n- 重大：泛化失败被披露但仍写入建议：frontier 模型上 confidence–consistency 相关系数为正（+0.32~+0.45），与一致性门控所需负相关相反，论文却仍在 Broader Impact 中给出\"若 $\\rho<0$ 则用 consistency gate\"的部署清单——核心 gating 建议在最先进的模型上失效。\n- 重大：domain-specificity 的统计证据薄弱：Holm 校正后\"仅最极端 domain-pair 显著\"，且 95% CI 极宽（Qwen2.5-7B: 0.028 [0.001,0.08] vs 0.479 [0.30,0.60]），中间 domain-pair 的 CI 大量重叠，\"$17\\times$ 跨域比\"为点估计比值，非统计显著结论。\n- 次要：Chinese free-form（MSI=1.000）vs English multiple-choice（MSI=0.334）的 MSI 比较同时混淆了语言、答案格式、任务集三个因素，无法归因到\"protocol-dependent\"单一原因。\n- 次要：三 judge consensus 中 Qwen3-8B 对 53 个分歧对投\"correct\"占 87%、与 Qwen2.5-7B judge 的 $\\kappa\\approx0.01$，意味着 consensus 实际由单一宽松 judge 决定，但 Table 5 仍以\"3-judge consensus\"名义报告，标签质量被高估。\n- 次要：Llama-3.2-1B 仅 259/300、Phi3.5 仅 260/600（timeout 缺失），缺失模式可能与题目难度相关（难题更易 timeout），引入非随机缺失偏差，但未做缺失敏感性分析。\n- 次要：OOD gating Stage B 仅 30 个不可答 items、4 个模型，correlation 值（−0.20/−0.18）无显著性检验，论文标\"indicative\"但 Broader Impact 部署清单将其作为 actionable 建议。\n\n建议: 将全部主要实验（pilot/census/gating）升级为 $\\geq5$ seed × $\\geq3$ 模型的重复测量设计，补齐随机门控/无门控对照组与 resample 数/采样温度/一致性阈值的完整消融，对 same-source judge 行做 leave-one-out，并对 all-quantization 统一精度后再跨模型比较。",
+    "sessionId": "session-b38d5501-9625-42a9-80b1-889d6f7a2a99"
+  },
+  {
+    "role": "novelty",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: \"中心发现\"——matcher 决定 measured calibration——本质上是评测领域早已熟知的常识：评分方式（exact match vs semantic match）影响准确率，准确率影响 ECE。NLP 评测文献中长期讨论 exact-match 对 BLEU/accuracy 的扭曲效应。将此包装为\"Propositions 1–3 + flip rate bound\"的形式化贡献，是对简单观察的数学化妆，增量贡献被严重夸大。",
+        "- Critical: GAP 的真实性存疑。论文声称\"agent 自报 confidence 的 calibration 在部署前很少被验证\"，但这一 gap 未被文献综述支撑（正文截断，无法确认，但摘要未引用任何表明\"前人忽略此验证\"的工作）。calibration validation 本身是标准部署流程的一部分；\"前人没做\"这一前提是否成立直接关系到全文动机是否成立。"
+      ],
+      "Major": [
+        "- Major: \"置信度分布退化（大量值为 1.0）\"在 LLM 文献中是广为人知的现象，多个前人工作已报告 instruction-tuned 模型的极端 overconfidence（摘要自身引用了 beyond2025）。将该现象作为\"发现\"提出，新颖性不足，未与已有 overconfidence 文献做差异声明。",
+        "- Major: \"binning-based ECE 在退化分布上不可靠\"是 calibration 领域公认的已知限制（Nixon et al. 2019 等已系统讨论 binning 敏感性）。论文未与该文献做显式差异对比，且未说明提出的 smECE_sem 相对于已有 binning-free 校准指标（如 soft-ECE、log-loss-based metrics）的增量贡献具体在哪里。",
+        "- Major: OOD-aware gating 部分的核心主张——\"自一致性信号优于 confidence 用于 OOD gating\"——直接落在 self-consistency 文献（Wang et al. 2022, Chen et al. 2023 等）的既定结论范围内。\"confidence 在 OOD 上有害\"这一点是否构成超越前人的新发现，未做文献差异声明。",
+        "- Major: 贡献数量与证据体量不匹配。N=30 的 pilot 被冠以\"methodology study\"之名，摘要却在同一 N 上叠加至少五项独立声明（matcher dependence、degeneracy、ECE 不可靠、gating 无信息、consistency 有效）。即使补充了 600-item census，核心命题（degeneracy、gating 无信息）的验证仍仅依赖 N=30，贡献声称被系统性膨胀。",
+        "- Major: 摘要声称\"domain-specific calibration: ECE 跨域变化 4×–17×\"——跨域/跨任务难度差异导致 calibration 差异是已知现象，且该结论的统计支撑薄弱（95% CI 极宽，Holm 校正后仅极端对显著）。将一个统计上几乎不显著的观察作为\"reproduce\"的贡献声明，新颖性与稳健性双重不足。"
+      ],
+      "Minor": [
+        "- Minor: MSI（matcher sensitivity index）作为新指标提出，但其定义与现有 inter-rater agreement / label noise 文献中的 sensitivity metrics 的差异未在摘要中体现，读者无法判断其是否真正新颖。",
+        "- Minor: \"semantic soft-label calibration estimator\"这一技术贡献在摘要中仅一笔带过，无法判断其相对于已有 soft-label / semantic matching 校准方法的增量是否被夸大。"
+      ]
+    },
+    "raw": "# 新颖性对抗审查报告（贡献攻击角度）\n\n- Critical: \"中心发现\"——matcher 决定 measured calibration——本质上是评测领域早已熟知的常识：评分方式（exact match vs semantic match）影响准确率，准确率影响 ECE。NLP 评测文献中长期讨论 exact-match 对 BLEU/accuracy 的扭曲效应。将此包装为\"Propositions 1–3 + flip rate bound\"的形式化贡献，是对简单观察的数学化妆，增量贡献被严重夸大。\n- Critical: GAP 的真实性存疑。论文声称\"agent 自报 confidence 的 calibration 在部署前很少被验证\"，但这一 gap 未被文献综述支撑（正文截断，无法确认，但摘要未引用任何表明\"前人忽略此验证\"的工作）。calibration validation 本身是标准部署流程的一部分；\"前人没做\"这一前提是否成立直接关系到全文动机是否成立。\n- Major: \"置信度分布退化（大量值为 1.0）\"在 LLM 文献中是广为人知的现象，多个前人工作已报告 instruction-tuned 模型的极端 overconfidence（摘要自身引用了 beyond2025）。将该现象作为\"发现\"提出，新颖性不足，未与已有 overconfidence 文献做差异声明。\n- Major: \"binning-based ECE 在退化分布上不可靠\"是 calibration 领域公认的已知限制（Nixon et al. 2019 等已系统讨论 binning 敏感性）。论文未与该文献做显式差异对比，且未说明提出的 smECE_sem 相对于已有 binning-free 校准指标（如 soft-ECE、log-loss-based metrics）的增量贡献具体在哪里。\n- Major: OOD-aware gating 部分的核心主张——\"自一致性信号优于 confidence 用于 OOD gating\"——直接落在 self-consistency 文献（Wang et al. 2022, Chen et al. 2023 等）的既定结论范围内。\"confidence 在 OOD 上有害\"这一点是否构成超越前人的新发现，未做文献差异声明。\n- Major: 贡献数量与证据体量不匹配。N=30 的 pilot 被冠以\"methodology study\"之名，摘要却在同一 N 上叠加至少五项独立声明（matcher dependence、degeneracy、ECE 不可靠、gating 无信息、consistency 有效）。即使补充了 600-item census，核心命题（degeneracy、gating 无信息）的验证仍仅依赖 N=30，贡献声称被系统性膨胀。\n- Major: 摘要声称\"domain-specific calibration: ECE 跨域变化 4×–17×\"——跨域/跨任务难度差异导致 calibration 差异是已知现象，且该结论的统计支撑薄弱（95% CI 极宽，Holm 校正后仅极端对显著）。将一个统计上几乎不显著的观察作为\"reproduce\"的贡献声明，新颖性与稳健性双重不足。\n- Minor: MSI（matcher sensitivity index）作为新指标提出，但其定义与现有 inter-rater agreement / label noise 文献中的 sensitivity metrics 的差异未在摘要中体现，读者无法判断其是否真正新颖。\n- Minor: \"semantic soft-label calibration estimator\"这一技术贡献在摘要中仅一笔带过，无法判断其相对于已有 soft-label / semantic matching 校准方法的增量是否被夸大。\n\n建议: 在引言中增设显式\"与已有文献的差异\"小节，逐条声明每项贡献相对于 exact-match bias 文献、self-consistency 文献、binning-ECE 批评文献的具体增量，并将 N=30 上的声明严格降格为\"观察性 hypothesis\"而非\"finding\"。",
+    "sessionId": "session-d4cd4403-76cf-42b9-8ef1-6f6bbee6bf44"
+  },
+  {
+    "role": "repro",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- **Critical**: 通篇未声明代码/数据/adjudication log 的开源 release（TMLR 强制要求 Reproducibility Checklist），中心结论“matcher determines calibration”无法被独立复现。",
+        "- **Critical**: 核心的 self-consistency 信号基于“agreement of three resamples”，但未给出 sampling seed、temperature、top-p；resample 生成不可复现，直接影响 Proposition 8' 与 OOD gating 结论。",
+        "- **Critical**: âper-row adjudication of residual errors”属主观判定，未公布裁决者身份、标注指引(guidelines)、交叉标注一致率(IAA)；同一批样本可被不同裁决者翻转，100% accuracy 与 ECE 0.0037 无对账基准。",
+        "- **Critical**: 模型检查点未 pin：“nine models spanning five families”与 Qwen2.5-7B 等均未给 commit/权重哈希；若含 API 模型（隐式 drift），跨时间复现必然失败。"
+      ],
+      "Major": [
+        "- **Major**: 对偶计数对不上账：600Ã9=5400 但报 4999 dual-judged pairs（缺 401）；300Ã4=1200 但报 1159（缺 41），未说明缺失原因，哈希对账无法成立。",
+        "- **Major**: MMLU 版本/commit 未 pin；“Chinese free-form setâ(MSI 1.000)无来源、无 license、无划分协议，数据许可链断裂。",
+        "- **Major**: decoding 配置快照缺失：temperature、max tokens、few-shot 格式、system prompt 模板全未出现；“degenerate(27/30=1.0)”是否 greedy 产物无法判定，影响 degeneracy 结论的可复现性。",
+        "- **Major**: 95% CI（如 Qwen2.5-7B 0.028[0.001,0.08]）与 Holm-corrected p-values 未指明 bootstrap 迭代次数/seed 或检验类型，CI ä¸显著性ç»è®ºä¸å¯å¤ç°ã",
+        "- **Major**: OOD 定义缺失：“40â50% of high-confidence OOD answers are wrong”未给 OOD 划分阈值/条件，该 gating 结论无法重跑。"
+      ],
+      "Minor": [
+        "- **Minor**: ânine models / five families”未在摘要枚举，家族与模型清单必须在附录 pin；当前仅可见 Qwen2.5-7B，对账子集不明。",
+        "- **Minor**: N=30 pilot 未声明是否固定 item 集及其哈希；“in-sample illustrative, not a validated bound”虽已 hedge，但原始 30 行样本不发布则无法核验 63.3/86.7/100 三个 matcher 数字。"
+      ]
+    },
+    "raw": "# 『可复现』对抗审查员 â 审查结果\n\n- **Critical**: 通篇未声明代码/数据/adjudication log 的开源 release（TMLR 强制要求 Reproducibility Checklist），中心结论“matcher determines calibration”无法被独立复现。\n- **Critical**: 核心的 self-consistency 信号基于“agreement of three resamples”，但未给出 sampling seed、temperature、top-p；resample 生成不可复现，直接影响 Proposition 8' 与 OOD gating 结论。\n- **Critical**: âper-row adjudication of residual errors”属主观判定，未公布裁决者身份、标注指引(guidelines)、交叉标注一致率(IAA)；同一批样本可被不同裁决者翻转，100% accuracy 与 ECE 0.0037 无对账基准。\n- **Critical**: 模型检查点未 pin：“nine models spanning five families”与 Qwen2.5-7B 等均未给 commit/权重哈希；若含 API 模型（隐式 drift），跨时间复现必然失败。\n- **Major**: 对偶计数对不上账：600Ã9=5400 但报 4999 dual-judged pairs（缺 401）；300Ã4=1200 但报 1159（缺 41），未说明缺失原因，哈希对账无法成立。\n- **Major**: MMLU 版本/commit 未 pin；“Chinese free-form setâ(MSI 1.000)无来源、无 license、无划分协议，数据许可链断裂。\n- **Major**: decoding 配置快照缺失：temperature、max tokens、few-shot 格式、system prompt 模板全未出现；“degenerate(27/30=1.0)”是否 greedy 产物无法判定，影响 degeneracy 结论的可复现性。\n- **Major**: 95% CI（如 Qwen2.5-7B 0.028[0.001,0.08]）与 Holm-corrected p-values 未指明 bootstrap 迭代次数/seed 或检验类型，CI ä¸显著性ç»è®ºä¸å¯å¤ç°ã\n- **Major**: OOD 定义缺失：“40â50% of high-confidence OOD answers are wrong”未给 OOD 划分阈值/条件，该 gating 结论无法重跑。\n- **Minor**: ânine models / five families”未在摘要枚举，家族与模型清单必须在附录 pin；当前仅可见 Qwen2.5-7B，对账子集不明。\n- **Minor**: N=30 pilot 未声明是否固定 item 集及其哈希；“in-sample illustrative, not a validated bound”虽已 hedge，但原始 30 行样本不发布则无法核验 63.3/86.7/100 三个 matcher 数字。\n\n建议: 在复现性章节 pin 模型 commit 文件 + seed/temperature 快縧 + 数据/adjudication-log 与模型输出的 SHA256、并提供一键重跑脚本与 license 声明，同时对 4999/1159 pair 缺失给出对账表。",
+    "sessionId": "session-90558cc0-3606-48a9-bbab-20727bfc8782"
+  },
+  {
+    "role": "writing",
+    "status": "timeout",
+    "issues": {
+      "Critical": [
+        "- Critical: 标题写\"a Caution on Binning-Based ECE\"、摘要又断言该退化分布上分箱ECE\"unreliable\"，但摘要三组头条校准数值（0.363 / 0.1297 / 0.0037）正是分箱ECE、且报至3–4位有效数字——核心证据用的是论文自己否定的指标。"
+      ],
+      "Major": [
+        "- Major: 外部有效性标签自相矛盾——同一collection既是\"proof-of-concept pilot N=30 as external-validity demonstration\"，又括注为\"external validity from 600-item × 9-model census\"；标题亦称\"Pilot\"。N=30概念验证无法确立外部有效性，且有效性被挂到两个不一致的样本量上。",
+        "- Major: 至少两处（可能四处）\"N=30\"样本混用——主pilot（中文free-form）、MMLU概念验证、\"our 30-item probe\"（OOD）、\"indicative, n=30\"（自一致性）——未说明哪些是同一样本，读者无法追踪样本身份。",
+        "- Major: 正文标语行主张\"smECE_sem+MSI\"为诊断工具，但摘要证据全用普通ECE呈现；且\"smECE_sem\"在摘要中从未定义（只写\"semantic soft-label calibration estimator\"），被推荐的指标既未定义、又未用于所报结果。",
+        "- Major: 摘要为单段约400词，糅合五条独立发现（matcher依赖、退化、形式化命题、跨域census、OOD gating），无主次，远超摘要承载。",
+        "- Major: 命题引用为\"1–3\"后跳至\"8′\"——4–7缺省且撇号变体无解释；其间引入的MSI/soft-label估计器未对应任何命题编号，形式化结果地图不连贯。",
+        "- Major: \"subjects（3个）\"与\"domains（6个）\"在4×/17×主张中并列，未说明二者是子集关系还是不同分类轴；且4×主张无示例支撑（仅给出17×的Qwen2.5-7B对比）。",
+        "- Major: 头条\"4×/17×\"为点估计、95% CI很宽且\"only the most extreme pairs are significant\"，却放在census总结开头，框定强度超出统计支撑。"
+      ],
+      "Minor": [
+        "- Minor: N=30下的伪精度——ECE报至4位有效数字（0.1297、0.0037）、均值置信度0.9963报4位，而单项粒度≈0.033；且精度不一致（0.363 vs 0.1297 vs 0.0037）。",
+        "- Minor: 主pilot语言/领域（中文free-form）延迟到摘要末尾MSI句才出现，前文读者全程不知数据集为何。",
+        "- Minor: 关键词（calibration, self-improvement, confidence, MMLU, ECE）遗漏matcher/degeneracy/gating/OOD/self-consistency，却收入边缘的self-improvement；中文数据集未命名。",
+        "- Minor: \"40–50% of high-confidence OOD answers are wrong in our 30-item probe\"——小计数上的区间含糊，分母\"high-confidence OOD answers\"数量未给出。",
+        "- Minor: \"dual-judged pairs\"语义模糊（model–item判定数 vs 每题判官对）；1159(对4×300=1200)与4999(对9×600=5400)的缺失未说明；\"MSI 1.000\"报为恰好1.0亦可疑。",
+        "- Minor: 摘要含>15项数值声称却无任何Table/Figure引用，可见正文亦无\\begin{table}/\\begin{figure}；需核对正文表格是否与摘要数值逐一一致（如0.1297、4999、0.479[0.30,0.60]）。",
+        "- Minor: 摘要后单独成段的\"Our central finding…\"是重复摘要结论的标语式句子，像宣传语；且\"temperature scaling is not robust to relabeling\"作为强论断在摘要中无支撑、无引用地抛出。"
+      ]
+    },
+    "raw": "- Critical: 标题写\"a Caution on Binning-Based ECE\"、摘要又断言该退化分布上分箱ECE\"unreliable\"，但摘要三组头条校准数值（0.363 / 0.1297 / 0.0037）正是分箱ECE、且报至3–4位有效数字——核心证据用的是论文自己否定的指标。\n- Major: 外部有效性标签自相矛盾——同一collection既是\"proof-of-concept pilot N=30 as external-validity demonstration\"，又括注为\"external validity from 600-item × 9-model census\"；标题亦称\"Pilot\"。N=30概念验证无法确立外部有效性，且有效性被挂到两个不一致的样本量上。\n- Major: 至少两处（可能四处）\"N=30\"样本混用——主pilot（中文free-form）、MMLU概念验证、\"our 30-item probe\"（OOD）、\"indicative, n=30\"（自一致性）——未说明哪些是同一样本，读者无法追踪样本身份。\n- Major: 正文标语行主张\"smECE_sem+MSI\"为诊断工具，但摘要证据全用普通ECE呈现；且\"smECE_sem\"在摘要中从未定义（只写\"semantic soft-label calibration estimator\"），被推荐的指标既未定义、又未用于所报结果。\n- Major: 摘要为单段约400词，糅合五条独立发现（matcher依赖、退化、形式化命题、跨域census、OOD gating），无主次，远超摘要承载。\n- Major: 命题引用为\"1–3\"后跳至\"8′\"——4–7缺省且撇号变体无解释；其间引入的MSI/soft-label估计器未对应任何命题编号，形式化结果地图不连贯。\n- Major: \"subjects（3个）\"与\"domains（6个）\"在4×/17×主张中并列，未说明二者是子集关系还是不同分类轴；且4×主张无示例支撑（仅给出17×的Qwen2.5-7B对比）。\n- Major: 头条\"4×/17×\"为点估计、95% CI很宽且\"only the most extreme pairs are significant\"，却放在census总结开头，框定强度超出统计支撑。\n- Minor: N=30下的伪精度——ECE报至4位有效数字（0.1297、0.0037）、均值置信度0.9963报4位，而单项粒度≈0.033；且精度不一致（0.363 vs 0.1297 vs 0.0037）。\n- Minor: 主pilot语言/领域（中文free-form）延迟到摘要末尾MSI句才出现，前文读者全程不知数据集为何。\n- Minor: 关键词（calibration, self-improvement, confidence, MMLU, ECE）遗漏matcher/degeneracy/gating/OOD/self-consistency，却收入边缘的self-improvement；中文数据集未命名。\n- Minor: \"40–50% of high-confidence OOD answers are wrong in our 30-item probe\"——小计数上的区间含糊，分母\"high-confidence OOD answers\"数量未给出。\n- Minor: \"dual-judged pairs\"语义模糊（model–item判定数 vs 每题判官对）；1159(对4×300=1200)与4999(对9×600=5400)的缺失未说明；\"MSI 1.000\"报为恰好1.0亦可疑。\n- Minor: 摘要含>15项数值声称却无任何Table/Figure引用，可见正文亦无\\begin{table}/\\begin{figure}；需核对正文表格是否与摘要数值逐一一致（如0.1297、4999、0.479[0.30,0.60]）。\n- Minor: 摘要后单独成段的\"Our central finding…\"是重复摘要结论的标语式句子，像宣传语；且\"temperature scaling is not robust to relabeling\"作为强论断在摘要中无支撑、无引用地抛出。\n建议: 重写摘要至≤200词、聚焦单一主结论（matcher决定标定），将头条数值由分箱ECE改为\"accuracy 63→87→100%\"并以smECE_sem为主指标，统一小数位（≤2位），在正文首次出现处定义smECE_sem/MSI及subjects↔domains关系，明确区分各\"30\"样本并删除N=30 pilot的\"external-validity\"措辞。",
+    "sessionId": "session-c53ed360-a78c-42b3-936e-9992f8019cbd"
+  },
+  {
+    "role": "ethics",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 全文未声明任何数据集许可协议——MMLU（MIT）未注明，\"Chinese free-form set\"来源与授权状态完全不明，存在版权侵权与不可复现的合规风险。",
+        "- Critical: 通过\"per-row adjudication\"将 matcher 逐行调至 100% 准确率（ECE 0.0037）的过程本质是对评测口径的数据拟合，该方法可被滥用于伪造有利校准结论（matcher 造假/p-hacking），论文未设预注册或防滥用护栏。"
+      ],
+      "Major": [
+        "- Major: 涉及 Qwen2.5-7B 等\"五个家族九个模型\"，若作者与任一模型供应商存在雇佣/资助关系须声明，但全文未见利益冲突（COI）与资助来源披露。",
+        "- Major: 提及\"4999 dual-judged pairs\"与逐行 adjudication 暗示大量人工标注，却无 IRB/伦理审查、标注者招募条件、隐私保护与数据留存说明，违反人类被试/标注伦理规范。",
+        "- Major: 双盲合规存疑——正文 `\\citep{beyond2025}` 若为作者既往工作须以第三人称匿名化引用，且 `math_commands.tex` 等附属文件可能残留身份痕迹，均未声明已完成去标识。",
+        "- Major: 以 N=30 得出\"40–50% 高置信 OOD 答案错误\"并据之提出部署 gating 建议，样本过小却用于安全相关结论，过度泛化可能误导下游误用，警示不足。"
+      ],
+      "Minor": [
+        "- Minor: `corresponding@example.com` 占位符本身合规，但 camera-ready/preprint 去匿名指令行仍保留在匿名提交稿中，需确认不致身份泄露。"
+      ]
+    },
+    "raw": "- Critical: 全文未声明任何数据集许可协议——MMLU（MIT）未注明，\"Chinese free-form set\"来源与授权状态完全不明，存在版权侵权与不可复现的合规风险。\n- Critical: 通过\"per-row adjudication\"将 matcher 逐行调至 100% 准确率（ECE 0.0037）的过程本质是对评测口径的数据拟合，该方法可被滥用于伪造有利校准结论（matcher 造假/p-hacking），论文未设预注册或防滥用护栏。\n- Major: 涉及 Qwen2.5-7B 等\"五个家族九个模型\"，若作者与任一模型供应商存在雇佣/资助关系须声明，但全文未见利益冲突（COI）与资助来源披露。\n- Major: 提及\"4999 dual-judged pairs\"与逐行 adjudication 暗示大量人工标注，却无 IRB/伦理审查、标注者招募条件、隐私保护与数据留存说明，违反人类被试/标注伦理规范。\n- Major: 双盲合规存疑——正文 `\\citep{beyond2025}` 若为作者既往工作须以第三人称匿名化引用，且 `math_commands.tex` 等附属文件可能残留身份痕迹，均未声明已完成去标识。\n- Major: 以 N=30 得出\"40–50% 高置信 OOD 答案错误\"并据之提出部署 gating 建议，样本过小却用于安全相关结论，过度泛化可能误导下游误用，警示不足。\n- Minor: `corresponding@example.com` 占位符本身合规，但 camera-ready/preprint 去匿名指令行仍保留在匿名提交稿中，需确认不致身份泄露。\n\n建议: 补全数据与模型许可声明、人工标注 IRB/隐私与留存说明、利益冲突与资助披露，并对 matcher 口径预注册以防结果拟合滥用。",
+    "sessionId": "session-2840b580-8424-459f-8c40-be8e1324e132"
+  }
+]

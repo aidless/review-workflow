@@ -1,0 +1,180 @@
+[
+  {
+    "role": "method",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: L2 中 McNemar 检验 n_d=0 不一致对、N=4、功效=0.0000，p=1.0 是\"检验无信息\"而非\"无差异的证据\"；将\"no statistically detectable difference\"表述为等价性结论犯了\"absence of evidence â evidence of absence\"错误，对 arm A vs F 的因果推断完全无效。",
+        "- Critical: LLM-as-judge 在 21 gold 上校准通过（FNR=0/FPR=0），但实际评估轮次零 judge 调用（全 SKIP），校准集与部署集完全脱节；gold 上完美不蕴含真实数据上可靠，\"methodological warrant\"无法替代实证验证，内部效度归零。"
+      ],
+      "Major": [
+        "- Major: 全 16 任务 Friedman 非显著（p=0.3679）后，另取 curated 6 任务子集得 p=0.0026，属 garden-of-forking-paths 式事后子集选择；Holm 仅对\"两个非退化编码\"校正，未覆盖子集选择与多次探索性分析，多重比较校正严重不足。",
+        "- Major: 三模型 L1b 全部 0/10，结果方差为零，无法做任何比较性推断；\"stable failure taxonomy\"无法排除是 harness/judge/任务难度系统性伪迹而非模型能力差异，内部效度混淆未排除。",
+        "- Major: L1a 跨模型比较受任务难度混淆：7b 全 0、14b 在 TextClassification/Zinc 上得分、gemma 在 Sentiment/TextSimilarity 上得分，各模型成功的任务不同，聚合后的 0/6 vs 2/6 vs 2/6 不构成有效配对比较。",
+        "- Major: intention-to-treat 均值 0.355 将执行失败计 0 与能力得分（0.2000、0.5330）混合平均，混淆了 harness/执行失败与模型能力，违反构念效度。",
+        "- Major: P5 frontier Model-F（6/6, p=0.0026）系跨阶段（P3âP5）事后追加的强模型，与弱模型不在同一批次/同一合同下评估，存在时序混淆，破坏内部效度。",
+        "- Major: L2 每模型 N=4、d_min=2.1279（80% 功效），仅能检出 absurd 大效应量；在此基础上任何\"无差异\"叙事均缺乏统计支撑，功效不足已自认但结论未据此收敛。"
+      ],
+      "Minor": [
+        "- Minor: LLM-as-judge 单标注者，未测量 inter-annotator agreement，第二标注者留作 future work，评分可靠性未建立。",
+        "- Minor: SHA-256 对 125 文件的字节级封存仅证明文件可复现，不证明 LLM 输出结果可复现（非确定性生成未排除），\"byte-for-byte reproducibility\"措辞对结果层面构成误导。",
+        "- Minor: L2\"oracle-free goal completion\"未说明无 oracle 时目标完成如何验证，测量效度前提不透明。"
+      ]
+    },
+    "raw": "\n基于对摘要部分的方法论严谨性审查（前提、内部效度、混淆变量、假设成立性、因果推断），以下是逐条攻击意见：\n\n- Critical: L2 中 McNemar 检验 n_d=0 不一致对、N=4、功效=0.0000，p=1.0 是\"检验无信息\"而非\"无差异的证据\"；将\"no statistically detectable difference\"表述为等价性结论犯了\"absence of evidence â evidence of absence\"错误，对 arm A vs F 的因果推断完全无效。\n- Critical: LLM-as-judge 在 21 gold 上校准通过（FNR=0/FPR=0），但实际评估轮次零 judge 调用（全 SKIP），校准集与部署集完全脱节；gold 上完美不蕴含真实数据上可靠，\"methodological warrant\"无法替代实证验证，内部效度归零。\n- Major: 全 16 任务 Friedman 非显著（p=0.3679）后，另取 curated 6 任务子集得 p=0.0026，属 garden-of-forking-paths 式事后子集选择；Holm 仅对\"两个非退化编码\"校正，未覆盖子集选择与多次探索性分析，多重比较校正严重不足。\n- Major: 三模型 L1b 全部 0/10，结果方差为零，无法做任何比较性推断；\"stable failure taxonomy\"无法排除是 harness/judge/任务难度系统性伪迹而非模型能力差异，内部效度混淆未排除。\n- Major: L1a 跨模型比较受任务难度混淆：7b 全 0、14b 在 TextClassification/Zinc 上得分、gemma 在 Sentiment/TextSimilarity 上得分，各模型成功的任务不同，聚合后的 0/6 vs 2/6 vs 2/6 不构成有效配对比较。\n- Major: intention-to-treat 均值 0.355 将执行失败计 0 与能力得分（0.2000、0.5330）混合平均，混淆了 harness/执行失败与模型能力，违反构念效度。\n- Major: P5 frontier Model-F（6/6, p=0.0026）系跨阶段（P3âP5）事后追加的强模型，与弱模型不在同一批次/同一合同下评估，存在时序混淆，破坏内部效度。\n- Major: L2 每模型 N=4、d_min=2.1279（80% 功效），仅能检出 absurd 大效应量；在此基础上任何\"无差异\"叙事均缺乏统计支撑，功效不足已自认但结论未据此收敛。\n- Minor: LLM-as-judge 单标注者，未测量 inter-annotator agreement，第二标注者留作 future work，评分可靠性未建立。\n- Minor: SHA-256 对 125 文件的字节级封存仅证明文件可复现，不证明 LLM 输出结果可复现（非确定性生成未排除），\"byte-for-byte reproducibility\"措辞对结果层面构成误导。\n- Minor: L2\"oracle-free goal completion\"未说明无 oracle 时目标完成如何验证，测量效度前提不透明。\n\n建议: 删除所有由零功效/零方差检验支持的等价性或稳定性结论，将事后子集分析与跨阶段模型合并全部降级为探索性并预注册，校准后的 judge 必须在真实评估轮次中实际调用并报告一致性，否则相应 L1b 结论不予上调。",
+    "sessionId": "session-06d1624c-6eb4-41ce-97ea-f01b081cd20c"
+  },
+  {
+    "role": "stat",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: McNemar 检验在 $n_d=0$（零不一致对）时是退化/未定义的，报告 $p=1.0000$ 作为\"无差异\"的有效证据具有误导性——该检验在此条件下不提供任何信息量，等价于\"无数据\"而非\"证实无差异\"。",
+        "- Critical: L2 的 $N=4$ 严重欠功效（自报 $d_{\\min}=2.1279$、McNemar power $=0.0000$），却在摘要中将\"no statistically detectable difference\"作为实质性负面结论呈现；这混淆了\"无差异\"与\"无能力检测差异\"。",
+        "- Critical: 95% CI $[0,0]$ 退化为单点，不是有效置信区间，却以\"paired difference $0.0000$, 95% CI $[0,0]$\"形式报告，暗示极高精度估计，实际反映的是数据缺失。",
+        "- Critical: \"curated L1a\"从 16 个任务中事后挑选 6 个子集再做 Friedman 检验属于选择偏差/p-hacking；同时 Holm 校正仅覆盖\"两个非退化编码\"，刻意缩小校正族，忽略了全篇同时进行的 McNemar、16 任务 Friedman、P5 探索性检验、LLM-judge 校准等大量检验，构成多重比较的系统性低估。",
+        "- Critical: 在 16 任务 Friedman 非显著（$p=0.3679$）的情况下仍报告 Nemenyi CD$=0.8284$；omnibus 检验非显著时不应进行事后两两比较，CD 在此无统计意义。",
+        "- Critical: LLM-as-judge 声称\"calibrated\"（FNR$=0$, FPR$=0$），但该轮实际零次 judge 调用（all SKIP），校准从未在真实评测中验证，\"methodological warrant\"的措辞掩盖了校准与实际使用之间的断裂。"
+      ],
+      "Major": [
+        "- Major: FNR$=0.0000$/FPR$=0.0000$ 在 $n=21$（P5 $n=39$）上报告为\"passed\"，但 Wilson 上界达 $0.28$（P5 $0.143$），即真实错误率可能高达 28% 却未在结论中强调区间宽度，点估计被过度解读。",
+        "- Major: 全篇所有均值（$0.1418$、$0.1918$、$0.2750$ 等）均未报告标准差、标准误或非退化置信区间；方差信息的系统性缺失使所有点估计无法评估精度。",
+        "- Major: 未报告任何比较的效应量（Cohen's $d$、Hedges' $g$ 等）；$d_{\\min}$ 是功效参数、CD 是 Nemenyi 阈值，均非观测效应量，不能替代。",
+        "- Major: \"intention-to-treat mean $0.355$\"误用临床试验术语，且从所列分数（$0.2\\times3$、$0.533\\times2$、$0$）无法复现该值（$(0.6+1.066)/6\\approx0.278$），计算过程不透明。",
+        "- Major: P5 Model-F 的 $p=0.0026$ 标注\"exploratory\"但未说明检验类型、零假设与对比对象，且未纳入任何多重比较校正；\"exploratory\"标签不能免除校正义务。",
+        "- Major: $532+36$ extra trials 暗示自适应/可选停止采样，若未进行 alpha-spending 或预设停止规则，会膨胀 I 类错误率。",
+        "- Major: LLM-judge 校准集将 26 real + 13 synthetic gold 混合，两种分布混淆会污染校准有效性，且未单独报告各自错误率。",
+        "- Major: LLM-judge 为 single annotator，无 inter-annotator agreement（IAA），无法区分标注一致性与标注正确性。"
+      ],
+      "Minor": [
+        "- Minor: \"$N=8$ supplement still $p=1.0000$\"——翻倍样本后仍无不一致对，不增强零假设证据，仅重复退化状态。",
+        "- Minor: \"$n_d=0<6$ not-detectable\"中阈值 6 缺乏出处或推导依据，疑似任意设定。",
+        "- Minor: CD$=0.8284$、$d_{\\min}=2.1279$ 等报告至 4 位小数，在小样本下制造虚假精度。"
+      ]
+    },
+    "raw": "\n- Critical: McNemar 检验在 $n_d=0$（零不一致对）时是退化/未定义的，报告 $p=1.0000$ 作为\"无差异\"的有效证据具有误导性——该检验在此条件下不提供任何信息量，等价于\"无数据\"而非\"证实无差异\"。\n- Critical: L2 的 $N=4$ 严重欠功效（自报 $d_{\\min}=2.1279$、McNemar power $=0.0000$），却在摘要中将\"no statistically detectable difference\"作为实质性负面结论呈现；这混淆了\"无差异\"与\"无能力检测差异\"。\n- Critical: 95% CI $[0,0]$ 退化为单点，不是有效置信区间，却以\"paired difference $0.0000$, 95% CI $[0,0]$\"形式报告，暗示极高精度估计，实际反映的是数据缺失。\n- Critical: \"curated L1a\"从 16 个任务中事后挑选 6 个子集再做 Friedman 检验属于选择偏差/p-hacking；同时 Holm 校正仅覆盖\"两个非退化编码\"，刻意缩小校正族，忽略了全篇同时进行的 McNemar、16 任务 Friedman、P5 探索性检验、LLM-judge 校准等大量检验，构成多重比较的系统性低估。\n- Critical: 在 16 任务 Friedman 非显著（$p=0.3679$）的情况下仍报告 Nemenyi CD$=0.8284$；omnibus 检验非显著时不应进行事后两两比较，CD 在此无统计意义。\n- Critical: LLM-as-judge 声称\"calibrated\"（FNR$=0$, FPR$=0$），但该轮实际零次 judge 调用（all SKIP），校准从未在真实评测中验证，\"methodological warrant\"的措辞掩盖了校准与实际使用之间的断裂。\n- Major: FNR$=0.0000$/FPR$=0.0000$ 在 $n=21$（P5 $n=39$）上报告为\"passed\"，但 Wilson 上界达 $0.28$（P5 $0.143$），即真实错误率可能高达 28% 却未在结论中强调区间宽度，点估计被过度解读。\n- Major: 全篇所有均值（$0.1418$、$0.1918$、$0.2750$ 等）均未报告标准差、标准误或非退化置信区间；方差信息的系统性缺失使所有点估计无法评估精度。\n- Major: 未报告任何比较的效应量（Cohen's $d$、Hedges' $g$ 等）；$d_{\\min}$ 是功效参数、CD 是 Nemenyi 阈值，均非观测效应量，不能替代。\n- Major: \"intention-to-treat mean $0.355$\"误用临床试验术语，且从所列分数（$0.2\\times3$、$0.533\\times2$、$0$）无法复现该值（$(0.6+1.066)/6\\approx0.278$），计算过程不透明。\n- Major: P5 Model-F 的 $p=0.0026$ 标注\"exploratory\"但未说明检验类型、零假设与对比对象，且未纳入任何多重比较校正；\"exploratory\"标签不能免除校正义务。\n- Major: $532+36$ extra trials 暗示自适应/可选停止采样，若未进行 alpha-spending 或预设停止规则，会膨胀 I 类错误率。\n- Major: LLM-judge 校准集将 26 real + 13 synthetic gold 混合，两种分布混淆会污染校准有效性，且未单独报告各自错误率。\n- Major: LLM-judge 为 single annotator，无 inter-annotator agreement（IAA），无法区分标注一致性与标注正确性。\n- Minor: \"$N=8$ supplement still $p=1.0000$\"——翻倍样本后仍无不一致对，不增强零假设证据，仅重复退化状态。\n- Minor: \"$n_d=0<6$ not-detectable\"中阈值 6 缺乏出处或推导依据，疑似任意设定。\n- Minor: CD$=0.8284$、$d_{\\min}=2.1279$ 等报告至 4 位小数，在小样本下制造虚假精度。\n\n建议: 对所有退化检验（McNemar $n_d=0$、CI $[0,0]$）明确标注\"不可推断\"而非报告 $p$ 值；将 Holm/Bonferroni 校正扩展到全篇所有同时进行的假设检验构成统一族；对所有均值补充 SD/SE 及非退化 CI；报告观测效应量；取消非显著 Friedman 后的 Nemenyi CD；在 LLM-judge 实际零调用的情况下停止使用\"calibrated\"措辞并改为\"未经验证的校准预案\"。",
+    "sessionId": "session-541fb2f6-d4b9-4b26-b02e-20e56c389840"
+  },
+  {
+    "role": "experiment",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: L2 对照实验样本量 N=4（仅 3 模型×2 臂×4 场景），McNemar n_d=0、power=0.0000、CI[0,0] 退化，\"两臂无差异\"这一核心结论在统计上不可检验，实验按自身声明即无法检出任何效应，等同未做对照。",
+        "- Critical: seed 管理缺失——仅对 gemma 做\"3 次独立试验\"，bootstrap at step/seed level 被列为 future work，无固定 seed 协议、无跨 seed 方差报告，所谓\"可复现\"缺少随机性控制证据。",
+        "- Critical: 缺乏真正的对照组/参考基线——L1b 三个模型全部 0/10，仅靠 Chemistry_000 单任务 1/4 的\"阳性对照\"证明 pipeline 可解，未建立 floor/ceiling，无法判断 0/10 是模型无能还是基准不可解。"
+      ],
+      "Major": [
+        "- Major: 消融不完整——仅 L2 有 A vs F 两臂对比，无 completion-guided harness 的组件级消融、无 L047 audit 的开/关消融（audit 拦截 3/3 模型却未报告关闭后效果）、无 judge pipeline 消融；L1a/L1b 完全无消融。",
+        "- Major: 超参数未报告——除 ollama 0.32.13 版本号外，未给出 temperature、top-p、max_tokens、ReAct 步数上限、重试预算等，run.json 合约不完整，无法复现解码行为。",
+        "- Major: P5 frontier Model-F（6/6, p=0.0026）为后验加入并自标\"exploratory\"，在看到小模型全失败后再用其论证基准可解性，属于对因变量的选择偏差，应预注册。",
+        "- Major: 泛化过窄——主实验仅 3 个小开源模型（7b/9b/14b）、单一硬件/区域（AutoDL RTX3090），无闭源或中等规模模型，cross-model Friedman k=3 检验功效极低且结论脆弱。",
+        "- Major: LLM-as-judge 校准从未被实际调用（\"zero judge calls, all SKIP\"），FNR=0/FPR=0 的校准保证不可证伪，对真实 L1b 输出的判分有效性零证据。",
+        "- Major: L1a 失败处理协议不一致——gemma 用\"3 次试验取 2/6 + 意向治疗均值 0.355（失败记 0）\"，7b/14b 用单次评分，混合协议使跨模型 Friedman/L1a 比较存在系统性偏差。"
+      ],
+      "Minor": [
+        "- Minor: McNemar CI[0,0]\"退化\"与 Friedman CD=0.8284（k=3）在报告时未明确标注\"在该样本量下检验本身不具信息量\"，易误导读者认为阴性结果即无效应证据。",
+        "- Minor: \"36 extra trials\"未说明分配到哪个 arm/task/model，预算内重试的透明性与可能的选择性重试风险未交代。"
+      ]
+    },
+    "raw": "\n- Critical: L2 对照实验样本量 N=4（仅 3 模型×2 臂×4 场景），McNemar n_d=0、power=0.0000、CI[0,0] 退化，\"两臂无差异\"这一核心结论在统计上不可检验，实验按自身声明即无法检出任何效应，等同未做对照。\n- Critical: seed 管理缺失——仅对 gemma 做\"3 次独立试验\"，bootstrap at step/seed level 被列为 future work，无固定 seed 协议、无跨 seed 方差报告，所谓\"可复现\"缺少随机性控制证据。\n- Critical: 缺乏真正的对照组/参考基线——L1b 三个模型全部 0/10，仅靠 Chemistry_000 单任务 1/4 的\"阳性对照\"证明 pipeline 可解，未建立 floor/ceiling，无法判断 0/10 是模型无能还是基准不可解。\n- Major: 消融不完整——仅 L2 有 A vs F 两臂对比，无 completion-guided harness 的组件级消融、无 L047 audit 的开/关消融（audit 拦截 3/3 模型却未报告关闭后效果）、无 judge pipeline 消融；L1a/L1b 完全无消融。\n- Major: 超参数未报告——除 ollama 0.32.13 版本号外，未给出 temperature、top-p、max_tokens、ReAct 步数上限、重试预算等，run.json 合约不完整，无法复现解码行为。\n- Major: P5 frontier Model-F（6/6, p=0.0026）为后验加入并自标\"exploratory\"，在看到小模型全失败后再用其论证基准可解性，属于对因变量的选择偏差，应预注册。\n- Major: 泛化过窄——主实验仅 3 个小开源模型（7b/9b/14b）、单一硬件/区域（AutoDL RTX3090），无闭源或中等规模模型，cross-model Friedman k=3 检验功效极低且结论脆弱。\n- Major: LLM-as-judge 校准从未被实际调用（\"zero judge calls, all SKIP\"），FNR=0/FPR=0 的校准保证不可证伪，对真实 L1b 输出的判分有效性零证据。\n- Major: L1a 失败处理协议不一致——gemma 用\"3 次试验取 2/6 + 意向治疗均值 0.355（失败记 0）\"，7b/14b 用单次评分，混合协议使跨模型 Friedman/L1a 比较存在系统性偏差。\n- Minor: McNemar CI[0,0]\"退化\"与 Friedman CD=0.8284（k=3）在报告时未明确标注\"在该样本量下检验本身不具信息量\"，易误导读者认为阴性结果即无效应证据。\n- Minor: \"36 extra trials\"未说明分配到哪个 arm/task/model，预算内重试的透明性与可能的选择性重试风险未交代。\n\n建议: 固定 seed 并报告跨 seed 方差（每格 ≥10 次）、为 L1a/L1b 每任务增加可解阳性对照与 L047/harness/judge 组件消融、预注册 frontier 对比、披露全部解码超参数，并将 L2 功效提升至 N≥30 场景后再下\"无差异\"结论。",
+    "sessionId": "session-934a433e-502b-458e-8b5c-0e08b3166325"
+  },
+  {
+    "role": "novelty",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: claimed GAP（\"evaluation remains fragmented\"）是公认问题，但统一多能力 agent benchmark 已有先例（AgentBench、OpenCompass、HELM、GAIA 本身），论文未与这些工作正面对位，\"统一三层\"的新颖性未被论证，GAP 的\"未被解决\"部分被夸大。",
+        "- Critical: 三个子基准 AIRS-Bench、ResearchClawBench、GAIA2 均为既有外部数据集，本文实质贡献退化为\"编排外壳 + run.json 契约 + SHA-256 封印\"，属于工程封装而非方法论新颖性，但摘要将其包装为 benchmark 贡献。"
+      ],
+      "Major": [
+        "- Major: 经验结果以 null/失败为主（L2 两臂无差异 p=1.0、N=4 严重欠功效；L1a 0/6–2/6；L1b 全模型 0/10），科学发现极薄，却以\"suite 贡献\"框架呈现，增量贡献被高估。",
+        "- Major: calibrated LLM-as-judge 全程零调用（all SKIP），却被列为方法学 warrant/贡献点，实为非结果被装扮为特性。",
+        "- Major: \"P5 frontier\" Model-F 6/6（p=0.0026）显系 P5 阶段后补、仅 6 任务且自标 exploratory，疑似为注入正向结果的事后挑选，增量贡献的可信度存疑。"
+      ],
+      "Minor": [
+        "- Minor: SHA-256 封印与 18/18 重算校验属标准可复现工程实践，不构成新颖方法贡献，却被反复强调为卖点。"
+      ]
+    },
+    "raw": "- Critical: claimed GAP（\"evaluation remains fragmented\"）是公认问题，但统一多能力 agent benchmark 已有先例（AgentBench、OpenCompass、HELM、GAIA 本身），论文未与这些工作正面对位，\"统一三层\"的新颖性未被论证，GAP 的\"未被解决\"部分被夸大。\n- Critical: 三个子基准 AIRS-Bench、ResearchClawBench、GAIA2 均为既有外部数据集，本文实质贡献退化为\"编排外壳 + run.json 契约 + SHA-256 封印\"，属于工程封装而非方法论新颖性，但摘要将其包装为 benchmark 贡献。\n- Major: 经验结果以 null/失败为主（L2 两臂无差异 p=1.0、N=4 严重欠功效；L1a 0/6–2/6；L1b 全模型 0/10），科学发现极薄，却以\"suite 贡献\"框架呈现，增量贡献被高估。\n- Major: calibrated LLM-as-judge 全程零调用（all SKIP），却被列为方法学 warrant/贡献点，实为非结果被装扮为特性。\n- Major: \"P5 frontier\" Model-F 6/6（p=0.0026）显系 P5 阶段后补、仅 6 任务且自标 exploratory，疑似为注入正向结果的事后挑选，增量贡献的可信度存疑。\n- Minor: SHA-256 封印与 18/18 重算校验属标准可复现工程实践，不构成新颖方法贡献，却被反复强调为卖点。\n\n建议: 在 Introduction 显式与 AgentBench/OpenCompass/HELM/GAIA 对位，明确 SciEvalSuite 唯一可辩护的增量（如跨层统一契约+可重算封印的审计语义），并把 null/失败结果降格为诊断性发现而非 benchmark 贡献。",
+    "sessionId": "session-c80754ea-dbb5-45ea-bf7b-44ed47fcbdc7"
+  },
+  {
+    "role": "repro",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: P3 SHA-256 密封仅覆盖 125 个文件，而 P5 扩展后变为 91 entries，P5 新增数据（Model-F 6/6、39 gold 含 13 synthetic）未被 P3 密封覆盖；\"byte-for-byte reproducibility\" 的哈希对账范围与最终实验结果不对齐，密封与结果之间存在断裂。",
+        "- Critical: 未披露 LLM 采样种子（temperature / seed / top_p / max_tokens 全部缺失）；gemma 的 \"three independent trials\" 未说明种子是固定还是变化；没有种子，精确数值如 0.6252、McNemar p=1.0000、0.2000Ã3 等均无法逐位复现。",
+        "- Critical: LLM-as-judge 校准声称 \"FNR=0.0000, FPR=0.0000 通过\"，但实际轮次 \"made zero judge calls (all SKIP)\"；L1b 评分的可复现性建立在一个从未被实际调用的 judge 之上，校准仅为 \"methodological warrant\" 而非经验验证。",
+        "- Critical: P5 frontier Model-F（6/6, p=0.0026）作为探索性结果被引入，但未提供其配置快猧、托管环境、模型权重哈希或 ollama tag；它不属于三个云端本地模型，证据链对该 headline 结果完全断裂。"
+      ],
+      "Major": [
+        "- Major: 配置快猧不完整——仅给出 \"AutoDL RTX3090, ollama 0.32.13\"，缺少 CUDA/driver 版本、量化设置（ollama 默认量化未显式声明）、system prompt、temperature/top_p/max_tokens；ollama 模型 tag（如 qwen2.5:7b）未钉定到具体 digest，不同日期 pull 可能得到不同权重。",
+        "- Major: 未声明 AIRS-Bench / ResearchClawBench / GAIA2 的数据许可（license）；13 个 synthetic gold 的生成方法、prompt、种子均未披露，无法复现校准集构成，也无法判断可再分发性。",
+        "- Major: \"fully recomputable harness\" 声称无可访问工件支撑——可见文本中无仓库 URL、无 Docker/Singularity 镜像、无一键 setup 脚本、无 run.json 实际展示；\"一键复现\" 无落地路径。",
+        "- Major: \"18/18 independent recomputation checks passing\" 中 \"independent\" 未定义——是否异机、异硬件、异 pull 日期？如在同一 AutoDL 实例重跑，则非真正独立复现，仅为重现而非复现。",
+        "- Major: bootstrap \"at step/seed level as future work with dependence caveat\" 被明确延后；L2 \"no statistically detectable difference\" 的零结果在种子扰动下的稳健性未经验证，零结果本身的可复现性存疑。",
+        "- Major: run.json 被定义为 \"single reproducibility contract\"，但在可见摘要/引言中既未展示其 schema 也未给出其哈希；复现契约本身不可复现。",
+        "- Major: judge 校准为 \"single annotator, no inter-annotator agreement measured, second annotator left as future work\"；Wilson 区间的可复现性仅限单标注者，跨标注者复现性未知。"
+      ],
+      "Minor": [
+        "- Minor: \"568 calls (532 initial + 36 extra trials)\" 中 36 次 extra trial 未映射到具体 task/model，无 run.json 无法对账到行级。",
+        "- Minor: L2 仅 N=4 个 scenario，未文档化 scenario 选择标准；在不同 scenario 集上复现可能得出不同结论。"
+      ]
+    },
+    "raw": "# ‘可复现’对抗审查报告\n\n- Critical: P3 SHA-256 密封仅覆盖 125 个文件，而 P5 扩展后变为 91 entries，P5 新增数据（Model-F 6/6、39 gold 含 13 synthetic）未被 P3 密封覆盖；\"byte-for-byte reproducibility\" 的哈希对账范围与最终实验结果不对齐，密封与结果之间存在断裂。\n- Critical: 未披露 LLM 采样种子（temperature / seed / top_p / max_tokens 全部缺失）；gemma 的 \"three independent trials\" 未说明种子是固定还是变化；没有种子，精确数值如 0.6252、McNemar p=1.0000、0.2000Ã3 等均无法逐位复现。\n- Critical: LLM-as-judge 校准声称 \"FNR=0.0000, FPR=0.0000 通过\"，但实际轮次 \"made zero judge calls (all SKIP)\"；L1b 评分的可复现性建立在一个从未被实际调用的 judge 之上，校准仅为 \"methodological warrant\" 而非经验验证。\n- Critical: P5 frontier Model-F（6/6, p=0.0026）作为探索性结果被引入，但未提供其配置快猧、托管环境、模型权重哈希或 ollama tag；它不属于三个云端本地模型，证据链对该 headline 结果完全断裂。\n- Major: 配置快猧不完整——仅给出 \"AutoDL RTX3090, ollama 0.32.13\"，缺少 CUDA/driver 版本、量化设置（ollama 默认量化未显式声明）、system prompt、temperature/top_p/max_tokens；ollama 模型 tag（如 qwen2.5:7b）未钉定到具体 digest，不同日期 pull 可能得到不同权重。\n- Major: 未声明 AIRS-Bench / ResearchClawBench / GAIA2 的数据许可（license）；13 个 synthetic gold 的生成方法、prompt、种子均未披露，无法复现校准集构成，也无法判断可再分发性。\n- Major: \"fully recomputable harness\" 声称无可访问工件支撑——可见文本中无仓库 URL、无 Docker/Singularity 镜像、无一键 setup 脚本、无 run.json 实际展示；\"一键复现\" 无落地路径。\n- Major: \"18/18 independent recomputation checks passing\" 中 \"independent\" 未定义——是否异机、异硬件、异 pull 日期？如在同一 AutoDL 实例重跑，则非真正独立复现，仅为重现而非复现。\n- Major: bootstrap \"at step/seed level as future work with dependence caveat\" 被明确延后；L2 \"no statistically detectable difference\" 的零结果在种子扰动下的稳健性未经验证，零结果本身的可复现性存疑。\n- Major: run.json 被定义为 \"single reproducibility contract\"，但在可见摘要/引言中既未展示其 schema 也未给出其哈希；复现契约本身不可复现。\n- Major: judge 校准为 \"single annotator, no inter-annotator agreement measured, second annotator left as future work\"；Wilson 区间的可复现性仅限单标注者，跨标注者复现性未知。\n- Minor: \"568 calls (532 initial + 36 extra trials)\" 中 36 次 extra trial 未映射到具体 task/model，无 run.json 无法对账到行级。\n- Minor: L2 仅 N=4 个 scenario，未文档化 scenario 选择标准；在不同 scenario 集上复现可能得出不同结论。\n\n建议: 对每个实验轮次（含 P5）统一释出带固定 seed、temperature、model digest、CUDA/driver 版本、数据 license 与数据哈希的 run.json + Dockerfile + 仓库 URL，并将 SHA-256 密封范围扩展至 P5 全部文件，同时记录异机复现结果。",
+    "sessionId": "session-17e89ba5-c4b4-413d-9c9a-9e963c7ded3b"
+  },
+  {
+    "role": "writing",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 摘要称 LLM-as-judge\"passed at FNR=0.0000, FPR=0.0000\"，随后又披露\"the round made zero judge calls (all SKIP)\"——零调用不可能产生 FNR/FPR=0 的实测结果，将校准阶段的指标与部署阶段的空白混为一谈，构成摘要与正文逻辑矛盾。"
+      ],
+      "Major": [
+        "- Major: gemma 的\"intention-to-treat mean 0.355\"无法作为模型级均值复现：6 个任务中仅 2 个非零（0.2000 + 0.5330 + 0Ã4）/6 = 0.1222；该 0.355 仅在限定 TextSimilarity 单任务、(0.533Ã2+0)/3 时所吻合，但摘要将其写为模型级 ITT 均值，数字归属不明。",
+        "- Major: 同一 p=0.0026 分别用于\"P5 frontier Model-F scored 6/6\"和\"curated L1a Friedman\"ï¼æªè¯´ææ¯åä¸æ¬¡æ£éªè¢«éå¤æ¥åè¿æ¯ä¸¤æ¬¡ç¬ç«æ£éªå·§åï¼æ¶å«æ°å­å¤ç¨ã",
+        "- Major: P3、P5、ARS v3.11、L047、p3dev 等多个代号/术语在摘要中密集出现却从未定义；末尾缩写表列出了 ECE、TS、CLES，但正文中并未使用，而正文使用的缩写反而未收录。",
+        "- Major: 所谓\"arms A=baseline ReAct vs.\\ F=completion-guided\"——为何跳过 B、C、D、E 直接到 F？缺失武器命名逻辑说明，暗示有未报告的手臂或命名随意。",
+        "- Major: \"125 underlying files (91 entries after the P5 expansion)\"ââ125 个文件与 91 个条目的对应关系从未阐明，读者无法确认可复现性声明的审计边界。",
+        "- Major: \"ollama 0.32.13\"版本号不符合 ollama 已知的版本号格式（0.1.xâ0.6.x），对声称\"byte-for-byte reproducibility\"的文章构成直接威胁。",
+        "- Major: 引言称 L1b 由\"heterogeneous LLM judge\"评分，暗示多异源评官；摘要却明确仅用单一\"llama3.1:8b, single annotator\"，两处描述相矛盾。",
+        "- Major: 摘要提及\"L047 audit intercepting Material answer-fitting\"，但\"Material\"一词从未定义；引言中仅称\"answer-fitting audit\"，摘要凭空多出一个术语。",
+        "- Major: 摘要超过 450 词，密度堆叠了 30+ 个数值，性质上是结果倾泉而非概要，违反摘要应高层次概括的写作规范。"
+      ],
+      "Minor": [
+        "- Minor: 引言用 \\citep{goodfellow2016deep} 支撑\"scientific agents â¦ are advancing rapidly\"，Goodfellow 深度学习教科书未涉及科学 agent，引用不当。",
+        "- Minor: 引言称 AIRS-Bench 有\"official evaluation\"，摘要省略为\"code generation and execution (AIRS-Bench)\"，同一产物在两处描述粒度不一致。",
+        "- Minor: \"N=8 supplement still p=1.0000\"在摘要中一笔带过，N=8 补充实验的来源、设计和数据均未在可见正文中展开。",
+        "- Minor: 摘要中 CD=0.8284，按 Nemenyi 公式（k=3, n=16, q_Î±â2.343）计算应为 â0.8286，存在末位舍入偏差。"
+      ]
+    },
+    "raw": "# 寫作质量审查报告\n\n- Critical: 摘要称 LLM-as-judge\"passed at FNR=0.0000, FPR=0.0000\"，随后又披露\"the round made zero judge calls (all SKIP)\"——零调用不可能产生 FNR/FPR=0 的实测结果，将校准阶段的指标与部署阶段的空白混为一谈，构成摘要与正文逻辑矛盾。\n- Major: gemma 的\"intention-to-treat mean 0.355\"无法作为模型级均值复现：6 个任务中仅 2 个非零（0.2000 + 0.5330 + 0Ã4）/6 = 0.1222；该 0.355 仅在限定 TextSimilarity 单任务、(0.533Ã2+0)/3 时所吻合，但摘要将其写为模型级 ITT 均值，数字归属不明。\n- Major: 同一 p=0.0026 分别用于\"P5 frontier Model-F scored 6/6\"和\"curated L1a Friedman\"ï¼æªè¯´ææ¯åä¸æ¬¡æ£éªè¢«éå¤æ¥åè¿æ¯ä¸¤æ¬¡ç¬ç«æ£éªå·§åï¼æ¶å«æ°å­å¤ç¨ã\n- Major: P3、P5、ARS v3.11、L047、p3dev 等多个代号/术语在摘要中密集出现却从未定义；末尾缩写表列出了 ECE、TS、CLES，但正文中并未使用，而正文使用的缩写反而未收录。\n- Major: 所谓\"arms A=baseline ReAct vs.\\ F=completion-guided\"——为何跳过 B、C、D、E 直接到 F？缺失武器命名逻辑说明，暗示有未报告的手臂或命名随意。\n- Major: \"125 underlying files (91 entries after the P5 expansion)\"ââ125 个文件与 91 个条目的对应关系从未阐明，读者无法确认可复现性声明的审计边界。\n- Major: \"ollama 0.32.13\"版本号不符合 ollama 已知的版本号格式（0.1.xâ0.6.x），对声称\"byte-for-byte reproducibility\"的文章构成直接威胁。\n- Major: 引言称 L1b 由\"heterogeneous LLM judge\"评分，暗示多异源评官；摘要却明确仅用单一\"llama3.1:8b, single annotator\"，两处描述相矛盾。\n- Major: 摘要提及\"L047 audit intercepting Material answer-fitting\"，但\"Material\"一词从未定义；引言中仅称\"answer-fitting audit\"，摘要凭空多出一个术语。\n- Major: 摘要超过 450 词，密度堆叠了 30+ 个数值，性质上是结果倾泉而非概要，违反摘要应高层次概括的写作规范。\n- Minor: 引言用 \\citep{goodfellow2016deep} 支撑\"scientific agents â¦ are advancing rapidly\"，Goodfellow 深度学习教科书未涉及科学 agent，引用不当。\n- Minor: 引言称 AIRS-Bench 有\"official evaluation\"，摘要省略为\"code generation and execution (AIRS-Bench)\"，同一产物在两处描述粒度不一致。\n- Minor: \"N=8 supplement still p=1.0000\"在摘要中一笔带过，N=8 补充实验的来源、设计和数据均未在可见正文中展开。\n- Minor: 摘要中 CD=0.8284，按 Nemenyi 公式（k=3, n=16, q_Î±â2.343）计算应为 â0.8286，存在末位舍入偏差。\n\n建议: 将摘要缩减至 200 词以内的高层次概述，把所有细节数值移入正文表格；逐项核对每个 p 值、均值和缩写是否有定义且在摘要与正文间口径一致，并修复\"零调用却 FNR/FPR=0\"这一逻辑硬伤。",
+    "sessionId": "session-ee724c3d-1560-4ebc-931b-7ee15992a83f"
+  },
+  {
+    "role": "ethics",
+    "status": "ok",
+    "issues": {
+      "Critical": [
+        "- Critical: 双盲去标识不足——摘要明确写出云平台\"AutoDL RTX3090\"、框架版本\"ollama 0.32.13\"及大量内部代号(P3/P5/L047/ARS v3.11/ResearchClawBench)，足以反查作者身份，违反 TMLR G3 匿名要求。"
+      ],
+      "Major": [
+        "- Major: 数据许可缺失——AIRS-Bench、ResearchClawBench、GAIA2 均为第三方数据集，全文未声明各自许可条款、再分发权限与归属；\"release the suite\"若打包 125 个底层文件可能构成侵权再分发。",
+        "- Major: 隐私/PII 未处理——GAIA 任务常涉及真实网页与下载文件，\"26 real\" gold 样本来源未说明，均未提及 PII 脱敏或数据来源合规审查。",
+        "- Major: 人工标注伦理缺位——\"21 gold/39 gold single annotator\"由人工创建，未披露标注者招募、知情同意、IRB/伦理审查及报酬，存在人体研究合规风险。",
+        "- Major: 误用风险未披露——\"L047 answer-fitting audit\"\"attack-style synthetic\"\"completion-guided harness (arm F)\"既可检测作弊也可被用于规避检测/刷榜，论文未设 misuse/双重用途讨论与防护。",
+        "- Major: 利益冲突不透明——\"P5 frontier Model-F\"未披露其身份与来源；对 ollama、AutoDL 等具体厂商工具无利益关系声明。",
+        "- Major: 低功效下\"无差异\"结论易误导——N=4、n_d=0 宣称\"no statistically detectable difference\"可被误读为两臂等价，属对读者的过度概括与误导责任。"
+      ],
+      "Minor": [
+        "- Minor: 源码注释中残留\"corresponding@example.com\"占位与\"camera-ready\"字样，虽不直接泄露身份但暴露投稿阶段意图，宜清理。"
+      ]
+    },
+    "raw": "- Critical: 双盲去标识不足——摘要明确写出云平台\"AutoDL RTX3090\"、框架版本\"ollama 0.32.13\"及大量内部代号(P3/P5/L047/ARS v3.11/ResearchClawBench)，足以反查作者身份，违反 TMLR G3 匿名要求。\n- Major: 数据许可缺失——AIRS-Bench、ResearchClawBench、GAIA2 均为第三方数据集，全文未声明各自许可条款、再分发权限与归属；\"release the suite\"若打包 125 个底层文件可能构成侵权再分发。\n- Major: 隐私/PII 未处理——GAIA 任务常涉及真实网页与下载文件，\"26 real\" gold 样本来源未说明，均未提及 PII 脱敏或数据来源合规审查。\n- Major: 人工标注伦理缺位——\"21 gold/39 gold single annotator\"由人工创建，未披露标注者招募、知情同意、IRB/伦理审查及报酬，存在人体研究合规风险。\n- Major: 误用风险未披露——\"L047 answer-fitting audit\"\"attack-style synthetic\"\"completion-guided harness (arm F)\"既可检测作弊也可被用于规避检测/刷榜，论文未设 misuse/双重用途讨论与防护。\n- Major: 利益冲突不透明——\"P5 frontier Model-F\"未披露其身份与来源；对 ollama、AutoDL 等具体厂商工具无利益关系声明。\n- Major: 低功效下\"无差异\"结论易误导——N=4、n_d=0 宣称\"no statistically detectable difference\"可被误读为两臂等价，属对读者的过度概括与误导责任。\n- Minor: 源码注释中残留\"corresponding@example.com\"占位与\"camera-ready\"字样，虽不直接泄露身份但暴露投稿阶段意图，宜清理。\n\n建议: 补充第三方数据集许可证与再分发声明、人工标注 IRB/知情同意与脱敏流程，双盲去标识(移除 AutoDL/ollama 版本/内部代号)，披露 Model-F 身份与利益冲突，并新增 misuse 风险与防护章节。",
+    "sessionId": "session-0ca51f44-0163-4a7c-b275-f78933142b8b"
+  }
+]

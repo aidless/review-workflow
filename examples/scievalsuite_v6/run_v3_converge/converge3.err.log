@@ -1,0 +1,4 @@
+F:\deepseek\research-kit\review-workflow\scripts\verify_manifest.py:2: SyntaxWarning: invalid escape sequence '\p'
+  """Manifest 哈希核验（verify_manifest）— 审稿工作流 R2b。
+F:\deepseek\research-kit\review-workflow\scripts\citation_check.py:2: SyntaxWarning: invalid escape sequence '\c'
+  """引用核验（citation_check）— 审稿工作流 v1.2。

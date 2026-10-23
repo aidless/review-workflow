@@ -1,0 +1,20 @@
+{
+  "adjudications": "papers/calibration-self-improvement/reviews/pipeline_S5/r3_adjudications_human.json",
+  "evidence_dirs": [
+    "papers/calibration-self-improvement/results",
+    "papers/calibration-self-improvement/evidence"
+  ],
+  "llm": {
+    "enabled": true,
+    "rpc": "http://127.0.0.1:3081",
+    "roles": "method,stat,experiment,novelty,repro,devil",
+    "script": "research-kit/adversarial_review.py"
+  },
+  "name": "calibration-self-improvement",
+  "out": "papers/calibration-self-improvement/reviews/pipeline_S5",
+  "tex": "papers/calibration-self-improvement/paper/main.tex",
+  "zip": "papers/calibration-self-improvement/submission/submission_s5_20260907b.zip",
+  "citation_online": true,
+  "novelty_online": true,
+  "converge": 3
+}

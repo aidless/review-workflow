@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\kg-retrieval\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\deepseek\\papers\\kg-retrieval\\results",
+      "F:\\deepseek\\papers\\kg-retrieval\\evidence"
+    ],
+    "timestamp": "2026-08-26T04:39:42+00:00"
+  },
+  "tables": [
+    {
+      "line": 34,
+      "has_tabular": true,
+      "caption": "Ablation on v8 170 (Hit@5). $p$ exact McNemar, Holm $m=5$.",
+      "caption_decimals": [],
+      "cells": [
+        {
+          "row": "w/o cross-encoder",
+          "col": "p / --- / 0.00048* / 0.00006* / 0.007*",
+          "text": "0.25",
+          "value": 0.25,
+          "support": "evidence"
+        }
+      ]
+    }
+  ],
+  "missing_inputs": [],
+  "pending_review": [],
+  "precision_anomalies": [],
+  "summary": {
+    "verdict": "PASS",
+    "tables": 1,
+    "numeric_cells": 1,
+    "unsupported": 0,
+    "missing_inputs": 0,
+    "precision_anomalies": 0,
+    "note": "pending_review = 表格 cell/图注数字在证据与表格外正文中均无支撑；precision_anomalies = 列内混精度（INFO，人工扫一眼）"
+  }
+}

@@ -1,0 +1,1330 @@
+{
+  "meta": {
+    "zip": "F:\\deepseek\\papers\\scievalsuite\\submission\\submission_scievalsuite_final_v6.zip",
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "timestamp": "2026-08-26T04:08:34+00:00"
+  },
+  "manifest": {
+    "source": "zip:evidence_manifest.json",
+    "declared_root": "F:\\deepseek\\papers\\scievalsuite"
+  },
+  "entries_checked": [
+    {
+      "path": "CLAIM_LEDGER.md",
+      "status": "OK",
+      "expected_sha": "28b2da775dffc26d",
+      "actual_sha": "28b2da775dffc26d",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/ASSET_MANIFEST.json",
+      "status": "OK",
+      "expected_sha": "2dcb97e088edabba",
+      "actual_sha": "2dcb97e088edabba",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/G8_form_checklist.md",
+      "status": "OK",
+      "expected_sha": "8cb60c5b9ccca60b",
+      "actual_sha": "8cb60c5b9ccca60b",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/MISSION.md",
+      "status": "OK",
+      "expected_sha": "8a6c0226fdc133b6",
+      "actual_sha": "8a6c0226fdc133b6",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/P0_STATUS_REPORT.md",
+      "status": "OK",
+      "expected_sha": "363f923bdc1ee4a7",
+      "actual_sha": "363f923bdc1ee4a7",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/P4_EVIDENCE_PACKAGE.md",
+      "status": "OK",
+      "expected_sha": "f5e9cffd659d2c38",
+      "actual_sha": "f5e9cffd659d2c38",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/P4_FINAL_ASSESSMENT.md",
+      "status": "OK",
+      "expected_sha": "aaa6032f089fcdc0",
+      "actual_sha": "aaa6032f089fcdc0",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/P4_L1B_FAILURE_TAXONOMY.md",
+      "status": "OK",
+      "expected_sha": "f6455e0dfa6e51d4",
+      "actual_sha": "f6455e0dfa6e51d4",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/P5_COMPLIANCE_REPORT.md",
+      "status": "OK",
+      "expected_sha": "7cb48518231695f6",
+      "actual_sha": "7cb48518231695f6",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/PHASE_LOG.md",
+      "status": "OK",
+      "expected_sha": "9dbc972c97cae123",
+      "actual_sha": "9dbc972c97cae123",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/protocol.md",
+      "status": "OK",
+      "expected_sha": "307725073a0ed99f",
+      "actual_sha": "307725073a0ed99f",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "evidence/SCIEVALSUITE_README.md",
+      "status": "OK",
+      "expected_sha": "3dafdd53665c74cb",
+      "actual_sha": "3dafdd53665c74cb",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "EXPERIENCE_DIGEST.md",
+      "status": "OK",
+      "expected_sha": "5d8e53d961e84907",
+      "actual_sha": "5d8e53d961e84907",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "gates_config.json",
+      "status": "OK",
+      "expected_sha": "75712e24f4264c3d",
+      "actual_sha": "75712e24f4264c3d",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "LITERATURE_REVIEW.md",
+      "status": "OK",
+      "expected_sha": "489ac085deb60943",
+      "actual_sha": "489ac085deb60943",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/citation_report.json",
+      "status": "OK",
+      "expected_sha": "30844397a939275e",
+      "actual_sha": "30844397a939275e",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/citation_report.md",
+      "status": "OK",
+      "expected_sha": "52c215c5804e4f8b",
+      "actual_sha": "52c215c5804e4f8b",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/Dockerfile",
+      "status": "OK",
+      "expected_sha": "653e57593dfb5fae",
+      "actual_sha": "653e57593dfb5fae",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/evidence_manifest.json",
+      "status": "OK",
+      "expected_sha": "b601e8203666d8cb",
+      "actual_sha": "b601e8203666d8cb",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/fancyhdr.sty",
+      "status": "OK",
+      "expected_sha": "2bfd910b99e0b0d4",
+      "actual_sha": "2bfd910b99e0b0d4",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/fig_overview.pdf",
+      "status": "OK",
+      "expected_sha": "85292b5d7a68c958",
+      "actual_sha": "85292b5d7a68c958",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/fig_overview.png",
+      "status": "OK",
+      "expected_sha": "71a856ccd2129c32",
+      "actual_sha": "71a856ccd2129c32",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.aux",
+      "status": "OK",
+      "expected_sha": "aa152283dbbd0d0c",
+      "actual_sha": "aa152283dbbd0d0c",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.bbl",
+      "status": "OK",
+      "expected_sha": "6727cc448c01c7a9",
+      "actual_sha": "6727cc448c01c7a9",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.bib",
+      "status": "OK",
+      "expected_sha": "c36db7b161dc2659",
+      "actual_sha": "c36db7b161dc2659",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.blg",
+      "status": "OK",
+      "expected_sha": "a76659b01563e0e9",
+      "actual_sha": "a76659b01563e0e9",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.log",
+      "status": "OK",
+      "expected_sha": "446369f977b59656",
+      "actual_sha": "446369f977b59656",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.out",
+      "status": "OK",
+      "expected_sha": "9908a99548da637e",
+      "actual_sha": "9908a99548da637e",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.pdf",
+      "status": "OK",
+      "expected_sha": "82dc213cf14b3010",
+      "actual_sha": "82dc213cf14b3010",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.tex",
+      "status": "OK",
+      "expected_sha": "bb95e8f03fdc44cf",
+      "actual_sha": "bb95e8f03fdc44cf",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/main.tex.bak_batch",
+      "status": "OK",
+      "expected_sha": "d4c7ff71da9cb68b",
+      "actual_sha": "d4c7ff71da9cb68b",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/math_commands.tex",
+      "status": "OK",
+      "expected_sha": "0983e802ae604694",
+      "actual_sha": "0983e802ae604694",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/requirements.txt",
+      "status": "OK",
+      "expected_sha": "70ae4d776186f9ab",
+      "actual_sha": "70ae4d776186f9ab",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/tmlr.bst",
+      "status": "OK",
+      "expected_sha": "ded3dbf610d9db32",
+      "actual_sha": "ded3dbf610d9db32",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/tmlr.sty",
+      "status": "OK",
+      "expected_sha": "a067e8286a3cf8e3",
+      "actual_sha": "a067e8286a3cf8e3",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/tmlr_check.py",
+      "status": "OK",
+      "expected_sha": "de64776615bace15",
+      "actual_sha": "de64776615bace15",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "paper/tmlr_check_report.json",
+      "status": "OK",
+      "expected_sha": "648b0dd9136dbc09",
+      "actual_sha": "648b0dd9136dbc09",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "qa_out_final/citation_report.json",
+      "status": "OK",
+      "expected_sha": "573ae8a5fba2d251",
+      "actual_sha": "573ae8a5fba2d251",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "qa_out_final/citation_report.md",
+      "status": "OK",
+      "expected_sha": "1d88aa6f7467bc9e",
+      "actual_sha": "1d88aa6f7467bc9e",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "qa_out_final/report.json",
+      "status": "OK",
+      "expected_sha": "a47af99acec79a2a",
+      "actual_sha": "a47af99acec79a2a",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "qa_out_final/report.md",
+      "status": "OK",
+      "expected_sha": "c45d79368f899363",
+      "actual_sha": "c45d79368f899363",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "qa_out_final/tmlr_compliance.md",
+      "status": "OK",
+      "expected_sha": "1cbf32b5a178ba69",
+      "actual_sha": "1cbf32b5a178ba69",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "requirements.txt",
+      "status": "OK",
+      "expected_sha": "40b8c2a8b083734c",
+      "actual_sha": "40b8c2a8b083734c",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/_reports_dump.txt",
+      "status": "OK",
+      "expected_sha": "dd7c6ddf81151b56",
+      "actual_sha": "dd7c6ddf81151b56",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/A1_l1a_gemma2_9b_t3_console.log",
+      "status": "OK",
+      "expected_sha": "694fe5dda39e14e5",
+      "actual_sha": "694fe5dda39e14e5",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/A1_l1a_gemma2_9b_t3b_console.log",
+      "status": "OK",
+      "expected_sha": "4667882074f0e193",
+      "actual_sha": "4667882074f0e193",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/A1_l1a_qwen25_14b_t3_console.log",
+      "status": "OK",
+      "expected_sha": "23ac86146e08445e",
+      "actual_sha": "23ac86146e08445e",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/A1_l1a_qwen25_14b_t3_fix_console.log",
+      "status": "OK",
+      "expected_sha": "a0f0681a6032bb0f",
+      "actual_sha": "a0f0681a6032bb0f",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/A1_l1a_qwen25_14b_t3b_console.log",
+      "status": "OK",
+      "expected_sha": "e29401225a434023",
+      "actual_sha": "e29401225a434023",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/A1_l1a_qwen25_7b_t3_console.log",
+      "status": "OK",
+      "expected_sha": "a7fe8a51774d1bd4",
+      "actual_sha": "a7fe8a51774d1bd4",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/A1_l1a_qwen25_7b_t3b_console.log",
+      "status": "OK",
+      "expected_sha": "77be4727829cbeee",
+      "actual_sha": "77be4727829cbeee",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/calib_l1b.json",
+      "status": "OK",
+      "expected_sha": "7ce2c17fd7ccdc7e",
+      "actual_sha": "7ce2c17fd7ccdc7e",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/calib_l1b_60_report.json",
+      "status": "OK",
+      "expected_sha": "fdb643d663820f7a",
+      "actual_sha": "fdb643d663820f7a",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/calib_l1b_v2-numeric-mismatch.json",
+      "status": "OK",
+      "expected_sha": "037457ad48ca9626",
+      "actual_sha": "037457ad48ca9626",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/gold_l1b_60.jsonl",
+      "status": "OK",
+      "expected_sha": "0262241ec0835fb1",
+      "actual_sha": "0262241ec0835fb1",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/gold_l1b_text.jsonl",
+      "status": "OK",
+      "expected_sha": "a465d396cacd1ed8",
+      "actual_sha": "a465d396cacd1ed8",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/gold_l1b_text_candidates.json",
+      "status": "OK",
+      "expected_sha": "1d945778addd5120",
+      "actual_sha": "1d945778addd5120",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/judge_calibration_gate.md",
+      "status": "OK",
+      "expected_sha": "9af8c65ae517ef78",
+      "actual_sha": "9af8c65ae517ef78",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/judge_robustness_report.json",
+      "status": "OK",
+      "expected_sha": "8ca2cae9cc0358a2",
+      "actual_sha": "8ca2cae9cc0358a2",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L1a_flash_console.log",
+      "status": "OK",
+      "expected_sha": "feb84701c592b201",
+      "actual_sha": "feb84701c592b201",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L1a_gemma2_9b_console.log",
+      "status": "OK",
+      "expected_sha": "b1ad1c957e590678",
+      "actual_sha": "b1ad1c957e590678",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L1a_qwen25_14b_console.log",
+      "status": "OK",
+      "expected_sha": "db61d7cd33bc26a7",
+      "actual_sha": "db61d7cd33bc26a7",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L1a_qwen25_7b_console.log",
+      "status": "OK",
+      "expected_sha": "c145347287c89f3a",
+      "actual_sha": "c145347287c89f3a",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L1b_flash_console.log",
+      "status": "OK",
+      "expected_sha": "5ad52cd47205c938",
+      "actual_sha": "5ad52cd47205c938",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L1b_gemma2_9b_run_console.log",
+      "status": "OK",
+      "expected_sha": "20c76cb3f346630c",
+      "actual_sha": "20c76cb3f346630c",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L1b_gemma2_9b_score_console.log",
+      "status": "OK",
+      "expected_sha": "f7ba4dfaea8b76b6",
+      "actual_sha": "f7ba4dfaea8b76b6",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L1b_qwen25_14b_run_console.log",
+      "status": "OK",
+      "expected_sha": "b923ad5f7047757e",
+      "actual_sha": "b923ad5f7047757e",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L1b_qwen25_14b_score_console.log",
+      "status": "OK",
+      "expected_sha": "cc20359258416a50",
+      "actual_sha": "cc20359258416a50",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L1b_qwen25_7b_run_console.log",
+      "status": "OK",
+      "expected_sha": "203904cd7ccc804c",
+      "actual_sha": "203904cd7ccc804c",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L1b_qwen25_7b_score_console.log",
+      "status": "OK",
+      "expected_sha": "4d0947729e1691ae",
+      "actual_sha": "4d0947729e1691ae",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L2_deepseek-v4-flash.json",
+      "status": "OK",
+      "expected_sha": "a47190238a2305bb",
+      "actual_sha": "a47190238a2305bb",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L2_deepseek-v4-pro_control4000.json",
+      "status": "OK",
+      "expected_sha": "d693ef6a62890af7",
+      "actual_sha": "d693ef6a62890af7",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L2_flash_console.log",
+      "status": "OK",
+      "expected_sha": "c0e85624b68c5898",
+      "actual_sha": "c0e85624b68c5898",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L2_gemma2_9b.json",
+      "status": "OK",
+      "expected_sha": "40a2356a31be5d37",
+      "actual_sha": "40a2356a31be5d37",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L2_gemma2_9b_console.log",
+      "status": "OK",
+      "expected_sha": "afb61a91528bed20",
+      "actual_sha": "afb61a91528bed20",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L2_pro_console.log",
+      "status": "OK",
+      "expected_sha": "196ed8b71551cfe5",
+      "actual_sha": "196ed8b71551cfe5",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L2_qwen2.5_14b.json",
+      "status": "OK",
+      "expected_sha": "cd520f1f49f37453",
+      "actual_sha": "cd520f1f49f37453",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L2_qwen2.5_7b.json",
+      "status": "OK",
+      "expected_sha": "76b4152615e02023",
+      "actual_sha": "76b4152615e02023",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L2_qwen25_14b_console.log",
+      "status": "OK",
+      "expected_sha": "c42aad9e3da4280a",
+      "actual_sha": "c42aad9e3da4280a",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/L2_qwen25_7b_console.log",
+      "status": "OK",
+      "expected_sha": "d9b2d386b13c0312",
+      "actual_sha": "d9b2d386b13c0312",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/leaderboard.md",
+      "status": "OK",
+      "expected_sha": "ffb1d5587fa93bb8",
+      "actual_sha": "ffb1d5587fa93bb8",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_aggregate.py",
+      "status": "OK",
+      "expected_sha": "335a4e601f903794",
+      "actual_sha": "335a4e601f903794",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_bootstrap.json",
+      "status": "OK",
+      "expected_sha": "09f447838683a9aa",
+      "actual_sha": "09f447838683a9aa",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_cost.json",
+      "status": "OK",
+      "expected_sha": "267d6274161262b8",
+      "actual_sha": "267d6274161262b8",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_cost.py",
+      "status": "OK",
+      "expected_sha": "367961e15e0ef9ff",
+      "actual_sha": "367961e15e0ef9ff",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_diag_cloud_e2e.py",
+      "status": "OK",
+      "expected_sha": "dc1bf77002926ebd",
+      "actual_sha": "dc1bf77002926ebd",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_diag_pro_call.py",
+      "status": "OK",
+      "expected_sha": "25ebe865f2e50dd6",
+      "actual_sha": "25ebe865f2e50dd6",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_diag_pro_late_step.py",
+      "status": "OK",
+      "expected_sha": "df99799438a6dc13",
+      "actual_sha": "df99799438a6dc13",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_effects.json",
+      "status": "OK",
+      "expected_sha": "a357f56c2774c4ce",
+      "actual_sha": "a357f56c2774c4ce",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_effects.py",
+      "status": "OK",
+      "expected_sha": "478a142bbbaa7ad1",
+      "actual_sha": "478a142bbbaa7ad1",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_probe.py",
+      "status": "OK",
+      "expected_sha": "1fd6c78adee7d130",
+      "actual_sha": "1fd6c78adee7d130",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_probe_cloud.py",
+      "status": "OK",
+      "expected_sha": "6861ada4575fdd90",
+      "actual_sha": "6861ada4575fdd90",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_probe_model_pool.py",
+      "status": "OK",
+      "expected_sha": "155b3bf1e60fb7cb",
+      "actual_sha": "155b3bf1e60fb7cb",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_recompute.py",
+      "status": "OK",
+      "expected_sha": "6381d865616a8767",
+      "actual_sha": "6381d865616a8767",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_recompute_checks.json",
+      "status": "OK",
+      "expected_sha": "62a6f5747c1b0796",
+      "actual_sha": "62a6f5747c1b0796",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_rescue_pro_control.py",
+      "status": "OK",
+      "expected_sha": "a5e68d266a110a34",
+      "actual_sha": "a5e68d266a110a34",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_run_l1a.py",
+      "status": "OK",
+      "expected_sha": "ab8b618536ae79ae",
+      "actual_sha": "ab8b618536ae79ae",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_run_l1b.py",
+      "status": "OK",
+      "expected_sha": "a31e265dab5b9b3e",
+      "actual_sha": "a31e265dab5b9b3e",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_run_l2.py",
+      "status": "OK",
+      "expected_sha": "c23dc00fadd9c84d",
+      "actual_sha": "c23dc00fadd9c84d",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_seed_l1a.py",
+      "status": "OK",
+      "expected_sha": "3329cbd707ca4f53",
+      "actual_sha": "3329cbd707ca4f53",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_stats.json",
+      "status": "OK",
+      "expected_sha": "667e8e1a2af3f405",
+      "actual_sha": "667e8e1a2af3f405",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/p3_stats_normalized.json",
+      "status": "OK",
+      "expected_sha": "5a79ac2428b98ba7",
+      "actual_sha": "5a79ac2428b98ba7",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/power_analysis.json",
+      "status": "OK",
+      "expected_sha": "23597066d48038bf",
+      "actual_sha": "23597066d48038bf",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/probe_calls.jsonl",
+      "status": "OK",
+      "expected_sha": "0d84c3db031a880e",
+      "actual_sha": "0d84c3db031a880e",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/probe_cloud.jsonl",
+      "status": "OK",
+      "expected_sha": "8cccccb27e55c045",
+      "actual_sha": "8cccccb27e55c045",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/probe_health.jsonl",
+      "status": "OK",
+      "expected_sha": "305a8b27e0e21b6e",
+      "actual_sha": "305a8b27e0e21b6e",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/probe_r5.jsonl",
+      "status": "OK",
+      "expected_sha": "b765ee5e2c78573f",
+      "actual_sha": "b765ee5e2c78573f",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/probe_r6.jsonl",
+      "status": "OK",
+      "expected_sha": "f60dc15b16c33cf5",
+      "actual_sha": "f60dc15b16c33cf5",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/probe_r7.jsonl",
+      "status": "OK",
+      "expected_sha": "33a1500497fc94b2",
+      "actual_sha": "33a1500497fc94b2",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/probe_results.json",
+      "status": "OK",
+      "expected_sha": "b4e9069a38c88f2f",
+      "actual_sha": "b4e9069a38c88f2f",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/usage_L2_gemma2_9b.jsonl",
+      "status": "OK",
+      "expected_sha": "aefd0d616a9a776a",
+      "actual_sha": "aefd0d616a9a776a",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/usage_L2_qwen2.5_14b.jsonl",
+      "status": "OK",
+      "expected_sha": "7b3e11917fdcf631",
+      "actual_sha": "7b3e11917fdcf631",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "results/usage_L2_qwen2.5_7b.jsonl",
+      "status": "OK",
+      "expected_sha": "4856e579c702edc2",
+      "actual_sha": "4856e579c702edc2",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "reviews/paperreview_ai_20260820.md",
+      "status": "OK",
+      "expected_sha": "b491d231e458443d",
+      "actual_sha": "b491d231e458443d",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "ROUND_R0.md",
+      "status": "MISSING",
+      "expected_sha": "8f4085ef3d1e17bf"
+    },
+    {
+      "path": "ROUND_R1.md",
+      "status": "MISSING",
+      "expected_sha": "c2833a34522064ee"
+    },
+    {
+      "path": "ROUND_R2_paperreview.md",
+      "status": "MISSING",
+      "expected_sha": "b9f424eb9adfbdf0"
+    },
+    {
+      "path": "scripts/bootstrap_l2.py",
+      "status": "OK",
+      "expected_sha": "7bb8c563e2afabda",
+      "actual_sha": "7bb8c563e2afabda",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/build_evidence_manifest.py",
+      "status": "OK",
+      "expected_sha": "4df531c6b8c76fbf",
+      "actual_sha": "4df531c6b8c76fbf",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_judge_calibration.py",
+      "status": "OK",
+      "expected_sha": "f801b991dcf66751",
+      "actual_sha": "f801b991dcf66751",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_literature_freshness.py",
+      "status": "OK",
+      "expected_sha": "53a2dd475bf4a128",
+      "actual_sha": "53a2dd475bf4a128",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_submission_package.py",
+      "status": "OK",
+      "expected_sha": "88804cfcb98258cb",
+      "actual_sha": "88804cfcb98258cb",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_submit_ready.py",
+      "status": "OK",
+      "expected_sha": "aebbea9faac17518",
+      "actual_sha": "aebbea9faac17518",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_tmlr_compliance.py",
+      "status": "OK",
+      "expected_sha": "e1386e4164e59b01",
+      "actual_sha": "e1386e4164e59b01",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/check_writing_style.py",
+      "status": "OK",
+      "expected_sha": "a5971967cd347db3",
+      "actual_sha": "a5971967cd347db3",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/compile_gate.py",
+      "status": "OK",
+      "expected_sha": "c2c438b824bda7d4",
+      "actual_sha": "c2c438b824bda7d4",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/draft_rebuttal.py",
+      "status": "OK",
+      "expected_sha": "01695879e866316c",
+      "actual_sha": "01695879e866316c",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/gate_citations.py",
+      "status": "OK",
+      "expected_sha": "eb28f658fada5722",
+      "actual_sha": "eb28f658fada5722",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/log_writing_session.py",
+      "status": "OK",
+      "expected_sha": "b7c5efa313f2f125",
+      "actual_sha": "b7c5efa313f2f125",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/make_camera_ready.py",
+      "status": "OK",
+      "expected_sha": "43abbd33bd71f0ce",
+      "actual_sha": "43abbd33bd71f0ce",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/make_fig_taxonomy.py",
+      "status": "OK",
+      "expected_sha": "347829e71069613a",
+      "actual_sha": "347829e71069613a",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/make_run_record.py",
+      "status": "OK",
+      "expected_sha": "6661f41f82a011d6",
+      "actual_sha": "6661f41f82a011d6",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/power_analysis.py",
+      "status": "OK",
+      "expected_sha": "1ef9f2944d11728c",
+      "actual_sha": "1ef9f2944d11728c",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/prepare_submission.py",
+      "status": "OK",
+      "expected_sha": "2f13827a872d615f",
+      "actual_sha": "2f13827a872d615f",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/release.py",
+      "status": "OK",
+      "expected_sha": "e78666a27b2c3595",
+      "actual_sha": "e78666a27b2c3595",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/run_acceptance_gates.py",
+      "status": "OK",
+      "expected_sha": "49db466cfbd26416",
+      "actual_sha": "49db466cfbd26416",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/run_experiment_plan.py",
+      "status": "OK",
+      "expected_sha": "ef750770273e058a",
+      "actual_sha": "ef750770273e058a",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/scan_figure_claims.py",
+      "status": "OK",
+      "expected_sha": "d082a0548d1bfad5",
+      "actual_sha": "d082a0548d1bfad5",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/scan_hallucination.py",
+      "status": "OK",
+      "expected_sha": "bef3790555f0f836",
+      "actual_sha": "bef3790555f0f836",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/scan_number_consistency.py",
+      "status": "OK",
+      "expected_sha": "9e7878b18fc97b9c",
+      "actual_sha": "9e7878b18fc97b9c",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/scan_stats_consistency.py",
+      "status": "OK",
+      "expected_sha": "a77acb97d6b7968a",
+      "actual_sha": "a77acb97d6b7968a",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/scanner_regression.py",
+      "status": "OK",
+      "expected_sha": "8a8b43cc423c60af",
+      "actual_sha": "8a8b43cc423c60af",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/seal_run.py",
+      "status": "OK",
+      "expected_sha": "8190882ec3e73e75",
+      "actual_sha": "8190882ec3e73e75",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/stats.py",
+      "status": "OK",
+      "expected_sha": "909f174aa46bdf6e",
+      "actual_sha": "909f174aa46bdf6e",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/suggest_experiments.py",
+      "status": "OK",
+      "expected_sha": "cc7c13cd760d0e80",
+      "actual_sha": "cc7c13cd760d0e80",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/switch_project.py",
+      "status": "OK",
+      "expected_sha": "5620a54363004cb2",
+      "actual_sha": "5620a54363004cb2",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/test_evidence_protection.py",
+      "status": "OK",
+      "expected_sha": "fe8a166406978cb0",
+      "actual_sha": "fe8a166406978cb0",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/test_pyramid.py",
+      "status": "OK",
+      "expected_sha": "0d779fa5724ced62",
+      "actual_sha": "0d779fa5724ced62",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/validate_judge_output.py",
+      "status": "OK",
+      "expected_sha": "10a40efe3f5bb4e1",
+      "actual_sha": "10a40efe3f5bb4e1",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "scripts/verify_claim_ledger.py",
+      "status": "MISSING",
+      "expected_sha": "94244862521b86c9"
+    },
+    {
+      "path": "scripts/verify_labels.py",
+      "status": "MISSING",
+      "expected_sha": "ea643cff3383121f"
+    },
+    {
+      "path": "scripts/verify_taint.py",
+      "status": "MISSING",
+      "expected_sha": "d6e063f72358299f"
+    },
+    {
+      "path": "scripts/verify_tree_diff.py",
+      "status": "MISSING",
+      "expected_sha": "ae8335e62951c054"
+    },
+    {
+      "path": "SELF_ASSESSMENT.md",
+      "status": "MISSING",
+      "expected_sha": "1fc17733df4ec8dc"
+    },
+    {
+      "path": "STATE_SNAPSHOT.md",
+      "status": "OK",
+      "expected_sha": "e7caaf757c74ce2a",
+      "actual_sha": "e7caaf757c74ce2a",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "submission/anonym_check.md",
+      "status": "MISSING",
+      "expected_sha": "0f0b674fe4691ce1"
+    },
+    {
+      "path": "submission/openreview_checklist.md",
+      "status": "MISSING",
+      "expected_sha": "386589d7e2cfd87c"
+    },
+    {
+      "path": "submission/submission_scievalsuite.zip",
+      "status": "MISSING",
+      "expected_sha": "f693b06877cd9694"
+    },
+    {
+      "path": "submission/submission_scievalsuite_final.zip",
+      "status": "MISSING",
+      "expected_sha": "f1133a9daf83fcbc"
+    },
+    {
+      "path": "submission/submission_scievalsuite_final_v3.zip",
+      "status": "MISSING",
+      "expected_sha": "6be924ea075a19aa"
+    },
+    {
+      "path": "submission/submission_scievalsuite_final_v4.zip",
+      "status": "MISSING",
+      "expected_sha": "f38c0cb7572d9a1f"
+    },
+    {
+      "path": "submission/submission_scievalsuite_final_v5.zip",
+      "status": "MISSING",
+      "expected_sha": "a96cc43370ba22bc"
+    },
+    {
+      "path": "submission/submission_scievalsuite_v2.zip",
+      "status": "MISSING",
+      "expected_sha": "36924a4c47c7fbcd"
+    },
+    {
+      "path": "WORKING_NOTES.md",
+      "status": "OK",
+      "expected_sha": "29063d24e579f8d4",
+      "actual_sha": "29063d24e579f8d4",
+      "ok_sha": true,
+      "ok_size": true
+    },
+    {
+      "path": "writing_session.jsonl",
+      "status": "OK",
+      "expected_sha": "c1124c9360700b51",
+      "actual_sha": "c1124c9360700b51",
+      "ok_sha": true,
+      "ok_size": true
+    }
+  ],
+  "tex_claims": [
+    {
+      "claim": "46-entry",
+      "declared": 46,
+      "kind": "manifest_entries",
+      "matches_manifest": false
+    },
+    {
+      "claim": "46-entry",
+      "declared": 46,
+      "kind": "manifest_entries",
+      "matches_manifest": false
+    },
+    {
+      "claim": "165-entry",
+      "declared": 165,
+      "kind": "manifest_entries",
+      "matches_manifest": true
+    },
+    {
+      "claim": "46-entry",
+      "declared": 46,
+      "kind": "manifest_entries",
+      "matches_manifest": false
+    },
+    {
+      "claim": "46 SHA-256 hashes",
+      "declared": 46,
+      "kind": "manifest_hashes",
+      "matches_manifest": false
+    },
+    {
+      "claim": "46 hashes",
+      "declared": 46,
+      "kind": "manifest_hashes",
+      "matches_manifest": false
+    }
+  ],
+  "summary": {
+    "manifest_entries": 165,
+    "ok": 149,
+    "hash_mismatch": 0,
+    "missing": 16,
+    "verdict": "CRITICAL"
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "tex": "F:\\Research\\F2_Single_10page\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\Research\\_inbox\\F1-F5_F45_2026-08-26\\supplementary"
+    ],
+    "timestamp": "2026-08-28T09:49:03+00:00"
+  },
+  "figures": [
+    {
+      "path": "figures_f2/tau_sensitivity.pdf",
+      "line": 204,
+      "resolved": true,
+      "abs": "F:\\Research\\F2_Single_10page\\paper\\figures_f2\\tau_sensitivity.pdf",
+      "kind": "pdf",
+      "text_chars": 255,
+      "fig_decimals": 23,
+      "fig_numbers_sample": [
+        "0.14",
+        "0.16",
+        "0.18",
+        "0.20",
+        "0.22",
+        "0.24",
+        "0.26",
+        "0.5",
+        "1.0",
+        "2.0",
+        "0.5",
+        "1.0",
+        "1.5",
+        "2.0",
+        "0.2",
+        "0.3",
+        "0.4",
+        "0.5",
+        "0.6",
+        "0.7",
+        "0.8",
+        "0.9",
+        "0.003"
+      ],
+      "caption_decimals": [],
+      "caption": "Ablation: mean product $P$ vs.\\ construction $B$ (dashed) as $K$ and $\\gamma$ vary. Error bars are bootstrap 95\\% CIs over 10 seeds ($B{=}5000$). Patterns are sample-descriptive for the tested grid."
+    },
+    {
+      "path": "figures_f2/per_model_comparison.pdf",
+      "line": 213,
+      "resolved": true,
+      "abs": "F:\\Research\\F2_Single_10page\\paper\\figures_f2\\per_model_comparison.pdf",
+      "kind": "pdf",
+      "text_chars": 298,
+      "fig_decimals": 8,
+      "fig_numbers_sample": [
+        "2.5",
+        "0.00",
+        "0.05",
+        "0.10",
+        "0.15",
+        "0.20",
+        "0.25",
+        "0.30"
+      ],
+      "caption_decimals": [
+        {
+          "token": "1.52",
+          "support": "body"
+        },
+        {
+          "token": "0.002",
+          "support": "evidence"
+        }
+      ],
+      "caption": "Critical difference diagram: mean ranks of the four models over the 9 $(K,\\gamma)$ cells, CD $= 1.52$ (Nemenyi, $p{=}0.002$). Overlapping intervals indicate no significant overall dominance in our sam"
+    },
+    {
+      "path": "figures_f2/pb_tightness_fisher.pdf",
+      "line": 222,
+      "resolved": true,
+      "abs": "F:\\Research\\F2_Single_10page\\paper\\figures_f2\\pb_tightness_fisher.pdf",
+      "kind": "pdf",
+      "text_chars": 369,
+      "fig_decimals": 29,
+      "fig_numbers_sample": [
+        "0.0",
+        "0.1",
+        "0.2",
+        "0.3",
+        "0.00",
+        "0.05",
+        "0.10",
+        "0.15",
+        "0.20",
+        "0.25",
+        "0.30",
+        "0.5",
+        "1.0",
+        "2.0",
+        "0.5",
+        "1.0",
+        "2.0",
+        "0.5",
+        "1.0",
+        "2.0",
+        "0.5",
+        "0.6",
+        "0.7",
+        "0.8",
+        "0.9",
+        "1.0",
+        "1.1",
+        "1.2",
+        "1.3"
+      ],
+      "caption_decimals": [
+        {
+          "token": "1.0",
+          "support": "figtext"
+        }
+      ],
+      "caption": "Selective calibration curves: agreement-conditioned correctness for $K{=}4, \\gamma{=}1.0$ (Qwen3:4b, 30 episodes, $B{=}5000$). Error bars are 95\\% CIs."
+    }
+  ],
+  "missing_files": [],
+  "caption_pending_review": [],
+  "figure_only_numbers": [],
+  "summary": {
+    "verdict": "PASS",
+    "figures_referenced": 3,
+    "text_extracted": 3,
+    "raster_skipped": 0,
+    "missing": 0,
+    "caption_decimals": 3,
+    "unsupported": 0,
+    "figure_only": 0,
+    "note": "caption_pending_review = 图注小数在图文本/证据/正文中均无支撑；figure_only = 仅出现在图内的高精度数（数据标签属正常，人工扫一眼即可）"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "stage": "R1b",
+    "timestamp": "2026-08-26T06:07:07+00:00",
+    "pdf_mode": true
+  },
+  "summary": {
+    "verdict": null,
+    "reason": "pdf_mode"
+  }
+}

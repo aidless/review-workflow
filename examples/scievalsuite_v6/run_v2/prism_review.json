@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-25T19:11:35+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "dimensions": {
+    "P": {
+      "status": "ok",
+      "score": 6,
+      "justification": "TMLR 接受评测方法论工作,论文强调可复现性与统计协议,venue 契合度尚可。但核心贡献是将 AIRS-Bench、ResearchClawBench、GAIA2 三个已有基准组合到一个统一契约下,新颖性属于组合式而非方法创新；实验仅用 7b-14b 小模型且多数结果为零或统计不显著,科学发现有限。问题真实但偏工程整合。",
+      "top_weakness": "核心贡献是组合已有基准而非提出新评测方法或新研究发现,且与各组件基准的差异在可见文本中未充分区分。",
+      "evidence": "To our knowledge, no prior benchmark jointly reports all three layers under one contract with byte-level reproducible manifests and pre-registered calibrated judges; we state this as a falsifiable gap",
+      "parse": "json"
+    },
+    "R": {
+      "status": "ok",
+      "score": 5,
+      "justification": "统计检验选择得当（exact McNemar、Friedman、Wilcoxon+CLES）,功效限制已诚实披露。但N=4导致L2核心比较功效为0、CI退化[0,0],结果无信息量；L1b校准过的judge零调用（全SKIP）且所有模型0/10无区分力；多个探索性子分析缺乏多重比较校正。透明度值得肯定,但实验设计实质性不足以支撑结论。",
+      "top_weakness": "N=4使L2核心比较McNemar功效为0.0000、CI退化[0,0],null结果无信息量却被当结论呈现。",
+      "evidence": "$N=4$, $d_{\\min}=2.1279$ at 80\\% power; McNemar power $0.0000$ at $n_d=4$",
+      "parse": "json"
+    },
+    "I": {
+      "status": "ok",
+      "score": 5,
+      "justification": "主要贡献是测量工具而非新模型或新任务:将AIRS-Bench、ResearchClawBench、GAIA2三个已有基准统一到一个可复现契约下。复现工程扎实（SHA-256 manifest、重算脚本）,但实证发现多为null/欠功效（L2 N=4, McNemar p=1.0; L1b全0/10; judge零调用）,新洞察有限。统一框架对社区有用但增量有限。",
+      "top_weakness": "三个子基准均为已有工作重新封装,实验严重欠功效且结果多为null,未产生可迁移的科学洞察。",
+      "evidence": "L2 showed no statistically detectable difference between arms (exact McNemar p=1.0000, n_d=0<6...N=4); L1b scored 0/10 for all models...the round made zero judge calls (all SKIP)",
+      "parse": "json"
+    },
+    "S": {
+      "status": "ok",
+      "score": 9,
+      "justification": "论文罕见地坦诚:主动报告零结果（L2无统计显著差异,McNemar p=1.0）、完全失败（L1b 0/10全模型）、零效用组件（judge零调用全SKIP）。明确披露功效极限（N=4, McNemar power=0.0000）,将显著结果标注为exploratory并说明依赖编码选择。复现承诺含SHA-256清单、独立重算脚本、18/18通过,可信度高。唯一减分点是'simulated second annotator'措辞虽已披露但仍略增校准可信度。",
+      "top_weakness": "'simulated second annotator α=0.894'将模拟标注者混入校准证据,虽已声明但仍有夸大校准稳健性之嫌。",
+      "evidence": "the round made zero judge calls (all SKIP) so calibration is a methodological warrant",
+      "parse": "json"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "scores": {
+      "P": 6,
+      "R": 5,
+      "I": 5,
+      "S": 9
+    },
+    "overall": 5,
+    "weakest": "R(严谨性)",
+    "detail": "最弱维度 R(严谨性) = 5 分（<= 6）→ 文本层 WARN；证据层门禁不受影响"
+  }
+}

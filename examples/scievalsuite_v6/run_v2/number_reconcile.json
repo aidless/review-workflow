@@ -1,0 +1,1132 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\deepseek\\papers\\scievalsuite\\results",
+      "F:\\deepseek\\scievalsuite\\out_p5"
+    ],
+    "timestamp": "2026-08-25T19:03:02+00:00"
+  },
+  "direction_A_evidence_to_paper": {
+    "checked": 512,
+    "found_in_paper": 185,
+    "hit_rate": 0.3613,
+    "key_matches": [
+      {
+        "json_path": "alpha",
+        "value": 0.05,
+        "paper_token": "0.05",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\power_analysis.json"
+      },
+      {
+        "json_path": "alpha_interim",
+        "value": 1.0,
+        "paper_token": "1.0000",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_REPORT.json"
+      },
+      {
+        "json_path": "cohens_kappa",
+        "value": 0.8940217391304347,
+        "paper_token": "0.894",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_DOUBLE_REPORT.json"
+      },
+      {
+        "json_path": "cross_model.friedman.chi2",
+        "value": 2.0,
+        "paper_token": "2.0000",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "friedman_curated.chi2",
+        "value": 6.0,
+        "paper_token": "6.0",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_FINAL_FRONTIER_CURATED.json"
+      },
+      {
+        "json_path": "friedman_full_P3.chi2",
+        "value": 2.0,
+        "paper_token": "2.0000",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_FINAL_FRONTIER_CURATED.json"
+      },
+      {
+        "json_path": "friedman_full_P3_k3_N16.chi2",
+        "value": 2.0,
+        "paper_token": "2.0000",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_MUSE_FINAL.json"
+      },
+      {
+        "json_path": "friedman_L1a_6tasks_k4.chi2",
+        "value": 14.25,
+        "paper_token": "14.25",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_MUSE_FINAL.json"
+      },
+      {
+        "json_path": "krippendorff_alpha",
+        "value": 0.8940217391304347,
+        "paper_token": "0.894",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\JUDGE_40_DOUBLE_REPORT.json"
+      },
+      {
+        "json_path": "l2_arm_stats.gemma2_9b.mcnemar_p",
+        "value": 1.0,
+        "paper_token": "1.0000",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "l2_arm_stats.qwen2.5_14b.mcnemar_p",
+        "value": 1.0,
+        "paper_token": "1.0000",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "l2_arm_stats.qwen2.5_7b.mcnemar_p",
+        "value": 1.0,
+        "paper_token": "1.0000",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "arms.A.goal_rate",
+        "value": 0.1418,
+        "paper_token": "0.1418",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\FARM_ABLATION.json"
+      },
+      {
+        "json_path": "arms.F-guards.goal_rate",
+        "value": 0.1418,
+        "paper_token": "0.1418",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\FARM_ABLATION.json"
+      },
+      {
+        "json_path": "arms.F-nudges.goal_rate",
+        "value": 0.1418,
+        "paper_token": "0.1418",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\FARM_ABLATION.json"
+      },
+      {
+        "json_path": "arms.F.goal_rate",
+        "value": 0.1418,
+        "paper_token": "0.1418",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\FARM_ABLATION.json"
+      },
+      {
+        "json_path": "cross_model.friedman.mean_ranks[0]",
+        "value": 2.0625,
+        "paper_token": "2.0625",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "cross_model.friedman.mean_ranks[1]",
+        "value": 2.0625,
+        "paper_token": "2.0625",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "cross_model.friedman.mean_ranks[2]",
+        "value": 1.875,
+        "paper_token": "1.8750",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "cross_model_gradient.qwen2.5:14b→gemma2:9b.A_goal_diff",
+        "value": 0.0832,
+        "paper_token": "0.0832",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_effects.json"
+      },
+      {
+        "json_path": "cross_model_gradient.qwen2.5:7b→gemma2:9b.A_goal_diff",
+        "value": 0.1332,
+        "paper_token": "0.1332",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_effects.json"
+      },
+      {
+        "json_path": "cross_model_gradient.qwen2.5:7b→qwen2.5:14b.A_goal_diff",
+        "value": 0.05,
+        "paper_token": "0.05",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_effects.json"
+      },
+      {
+        "json_path": "friedman_curated.N",
+        "value": 6.0,
+        "paper_token": "6.0",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_FINAL_FRONTIER_CURATED.json"
+      },
+      {
+        "json_path": "friedman_curated.p",
+        "value": 0.04978706836786395,
+        "paper_token": "0.05",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_FINAL_FRONTIER_CURATED.json"
+      },
+      {
+        "json_path": "friedman_L1a_6tasks_k4.mean_ranks[0]",
+        "value": 3.3333333333333335,
+        "paper_token": "3.3333",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_MUSE_FINAL.json"
+      },
+      {
+        "json_path": "friedman_L1a_6tasks_k4.mean_ranks[1]",
+        "value": 2.8333333333333335,
+        "paper_token": "2.8333",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_MUSE_FINAL.json"
+      },
+      {
+        "json_path": "friedman_L1a_6tasks_k4.mean_ranks[2]",
+        "value": 2.8333333333333335,
+        "paper_token": "2.8333",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_MUSE_FINAL.json"
+      },
+      {
+        "json_path": "friedman_L1a_6tasks_k4.mean_ranks[3]",
+        "value": 1.0,
+        "paper_token": "1.0000",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_MUSE_FINAL.json"
+      },
+      {
+        "json_path": "l2_arm_stats.gemma2_9b.mean_goal_A",
+        "value": 0.275,
+        "paper_token": "0.2750",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "l2_arm_stats.gemma2_9b.mean_goal_F",
+        "value": 0.275,
+        "paper_token": "0.2750",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "l2_arm_stats.gemma2_9b.wilcoxon_goalF_minus_A.cles",
+        "value": 0.5,
+        "paper_token": "0.5",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "l2_arm_stats.gemma2_9b.wilcoxon_goalF_minus_A.p",
+        "value": 1.0,
+        "paper_token": "1.0000",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "l2_arm_stats.qwen2.5_14b.mean_goal_A",
+        "value": 0.1918,
+        "paper_token": "0.1918",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "l2_arm_stats.qwen2.5_14b.mean_goal_F",
+        "value": 0.1918,
+        "paper_token": "0.1918",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "l2_arm_stats.qwen2.5_14b.wilcoxon_goalF_minus_A.cles",
+        "value": 0.5,
+        "paper_token": "0.5",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "l2_arm_stats.qwen2.5_14b.wilcoxon_goalF_minus_A.p",
+        "value": 1.0,
+        "paper_token": "1.0000",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "l2_arm_stats.qwen2.5_7b.mean_goal_A",
+        "value": 0.1418,
+        "paper_token": "0.1418",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "l2_arm_stats.qwen2.5_7b.mean_goal_F",
+        "value": 0.1418,
+        "paper_token": "0.1418",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "l2_arm_stats.qwen2.5_7b.wilcoxon_goalF_minus_A.cles",
+        "value": 0.5,
+        "paper_token": "0.5",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "l2_arm_stats.qwen2.5_7b.wilcoxon_goalF_minus_A.p",
+        "value": 1.0,
+        "paper_token": "1.0000",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json"
+      },
+      {
+        "json_path": "L2_arms.gemma2_9b.A_goal_mean",
+        "value": 0.275,
+        "paper_token": "0.2750",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_effects.json"
+      },
+      {
+        "json_path": "L2_arms.gemma2_9b.F_goal_mean",
+        "value": 0.275,
+        "paper_token": "0.2750",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_effects.json"
+      },
+      {
+        "json_path": "L2_arms.qwen2.5_14b.A_goal_mean",
+        "value": 0.1918,
+        "paper_token": "0.1918",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_effects.json"
+      },
+      {
+        "json_path": "L2_arms.qwen2.5_14b.F_goal_mean",
+        "value": 0.1918,
+        "paper_token": "0.1918",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_effects.json"
+      },
+      {
+        "json_path": "L2_arms.qwen2.5_7b.A_goal_mean",
+        "value": 0.1418,
+        "paper_token": "0.1418",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_effects.json"
+      },
+      {
+        "json_path": "L2_arms.qwen2.5_7b.F_goal_mean",
+        "value": 0.1418,
+        "paper_token": "0.1418",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_effects.json"
+      },
+      {
+        "json_path": "rows[0].repeat_rate",
+        "value": 1.0,
+        "paper_token": "1.0000",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\L2_deepseek-v4-flash.json"
+      },
+      {
+        "json_path": "rows[0].repeat_rate",
+        "value": 0.5,
+        "paper_token": "0.5",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\L2_gemma2_9b.json"
+      },
+      {
+        "json_path": "rows[0].repeat_rate",
+        "value": 0.5,
+        "paper_token": "0.5",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\L2_qwen2.5_7b.json"
+      },
+      {
+        "json_path": "rows[10].goal_rate",
+        "value": 0.5,
+        "paper_token": "0.5",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_L2_8SCENARIOS.json"
+      },
+      {
+        "json_path": "rows[11].goal_rate",
+        "value": 0.5,
+        "paper_token": "0.5",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_L2_8SCENARIOS.json"
+      },
+      {
+        "json_path": "rows[12].repeat_rate",
+        "value": 0.333,
+        "paper_token": "0.3333",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_L2_8SCENARIOS.json"
+      },
+      {
+        "json_path": "rows[13].repeat_rate",
+        "value": 0.333,
+        "paper_token": "0.3333",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_L2_8SCENARIOS.json"
+      },
+      {
+        "json_path": "rows[14].goal_rate",
+        "value": 0.5,
+        "paper_token": "0.5",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_L2_8SCENARIOS.json"
+      },
+      {
+        "json_path": "rows[15].goal_rate",
+        "value": 0.5,
+        "paper_token": "0.5",
+        "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_L2_8SCENARIOS.json"
+      },
+      {
+        "json_path": "rows[1].goal_rate",
+        "value": 0.5,
+        "paper_token": "0.5",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\L2_deepseek-v4-pro_control4000.json"
+      },
+      {
+        "json_path": "rows[1].repeat_rate",
+        "value": 0.333,
+        "paper_token": "0.3333",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\L2_deepseek-v4-flash.json"
+      },
+      {
+        "json_path": "rows[1].repeat_rate",
+        "value": 0.5,
+        "paper_token": "0.5",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\L2_gemma2_9b.json"
+      },
+      {
+        "json_path": "rows[2].exact_rate",
+        "value": 0.333,
+        "paper_token": "0.3333",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\L2_gemma2_9b.json"
+      },
+      {
+        "json_path": "rows[2].goal_rate",
+        "value": 0.8,
+        "paper_token": "0.80",
+        "source": "F:\\deepseek\\papers\\scievalsuite\\results\\L2_deepseek-v4-pro_control4000.json"
+      }
+    ]
+  },
+  "direction_B_paper_to_evidence": {
+    "paper_decimals": 219,
+    "supported": 120,
+    "unsupported": 99,
+    "support_rate": 0.5479,
+    "noise_filtered": [
+      {
+        "token": "0.32",
+        "value": 0.32,
+        "line": 20,
+        "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three ",
+        "noise_kind": "version-fragment"
+      },
+      {
+        "token": "0.32",
+        "value": 0.32,
+        "line": 31,
+        "context": "We instantiate the suite on three small-to-medium local models hosted on AutoDL (RTX3090 48GB, ollam",
+        "noise_kind": "version-fragment"
+      },
+      {
+        "token": "0.32",
+        "value": 0.32,
+        "line": 85,
+        "context": "\\paragraph{Models.} Evaluated: qwen2.5:7b, qwen2.5:14b, gemma2:9b (SUTs); judge: llama3.1:8b. Refere",
+        "noise_kind": "version-fragment"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 117,
+        "context": "qwen2.5:14b & A & 0.1918 & 1/4 & 0 & 0 & 1.0000 \\\\",
+        "noise_kind": "date-adjacent"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 118,
+        "context": "qwen2.5:14b & F & 0.1918 & 1/4 & 0 & 0 & 1.0000 \\\\",
+        "noise_kind": "date-adjacent"
+      }
+    ],
+    "adjudicated": [],
+    "manual_review_list": [
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 20,
+        "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three "
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 20,
+        "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three "
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 20,
+        "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three "
+      },
+      {
+        "token": "0.355",
+        "value": 0.355,
+        "line": 20,
+        "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three "
+      },
+      {
+        "token": "1.2",
+        "value": 1.2,
+        "line": 20,
+        "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three "
+      },
+      {
+        "token": "3.1",
+        "value": 3.1,
+        "line": 20,
+        "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three "
+      },
+      {
+        "token": "0.28",
+        "value": 0.28,
+        "line": 20,
+        "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three "
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 20,
+        "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three "
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 20,
+        "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three "
+      },
+      {
+        "token": "3.11",
+        "value": 3.11,
+        "line": 20,
+        "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three "
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 20,
+        "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three "
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 31,
+        "context": "We instantiate the suite on three small-to-medium local models hosted on AutoDL (RTX3090 48GB, ollam"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 31,
+        "context": "We instantiate the suite on three small-to-medium local models hosted on AutoDL (RTX3090 48GB, ollam"
+      },
+      {
+        "token": "3.1",
+        "value": 3.1,
+        "line": 31,
+        "context": "We instantiate the suite on three small-to-medium local models hosted on AutoDL (RTX3090 48GB, ollam"
+      },
+      {
+        "token": "2.4",
+        "value": 2.4,
+        "line": 43,
+        "context": "\\begin{tabular}{p{2.4cm}p{2.8cm}p{2.4cm}p{4.2cm}}"
+      },
+      {
+        "token": "2.8",
+        "value": 2.8,
+        "line": 43,
+        "context": "\\begin{tabular}{p{2.4cm}p{2.8cm}p{2.4cm}p{4.2cm}}"
+      },
+      {
+        "token": "2.4",
+        "value": 2.4,
+        "line": 43,
+        "context": "\\begin{tabular}{p{2.4cm}p{2.8cm}p{2.4cm}p{4.2cm}}"
+      },
+      {
+        "token": "4.2",
+        "value": 4.2,
+        "line": 43,
+        "context": "\\begin{tabular}{p{2.4cm}p{2.8cm}p{2.4cm}p{4.2cm}}"
+      },
+      {
+        "token": "0.007",
+        "value": 0.007,
+        "line": 62,
+        "context": "ResearchClawBench (RCB) is the closest to L1b, providing checklist-based report scoring, but it cove"
+      },
+      {
+        "token": "3.1",
+        "value": 3.1,
+        "line": 79,
+        "context": "L1b text-judge was llama3.1:8b (cloud). Before use it had to pass a calibration gate on a gold set o"
+      },
+      {
+        "token": "3.11",
+        "value": 3.11,
+        "line": 79,
+        "context": "L1b text-judge was llama3.1:8b (cloud). Before use it had to pass a calibration gate on a gold set o"
+      },
+      {
+        "token": "0.10",
+        "value": 0.1,
+        "line": 79,
+        "context": "L1b text-judge was llama3.1:8b (cloud). Before use it had to pass a calibration gate on a gold set o"
+      },
+      {
+        "token": "0.28",
+        "value": 0.28,
+        "line": 79,
+        "context": "L1b text-judge was llama3.1:8b (cloud). Before use it had to pass a calibration gate on a gold set o"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 85,
+        "context": "\\paragraph{Models.} Evaluated: qwen2.5:7b, qwen2.5:14b, gemma2:9b (SUTs); judge: llama3.1:8b. Refere"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 85,
+        "context": "\\paragraph{Models.} Evaluated: qwen2.5:7b, qwen2.5:14b, gemma2:9b (SUTs); judge: llama3.1:8b. Refere"
+      },
+      {
+        "token": "3.1",
+        "value": 3.1,
+        "line": 85,
+        "context": "\\paragraph{Models.} Evaluated: qwen2.5:7b, qwen2.5:14b, gemma2:9b (SUTs); judge: llama3.1:8b. Refere"
+      },
+      {
+        "token": "1.87",
+        "value": 1.87,
+        "line": 85,
+        "context": "\\paragraph{Models.} Evaluated: qwen2.5:7b, qwen2.5:14b, gemma2:9b (SUTs); judge: llama3.1:8b. Refere"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 85,
+        "context": "\\paragraph{Models.} Evaluated: qwen2.5:7b, qwen2.5:14b, gemma2:9b (SUTs); judge: llama3.1:8b. Refere"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 89,
+        "context": "\\paragraph{Power.} Sample size is fixed by benchmark design, so we report achieved power / minimum d"
+      },
+      {
+        "token": "0.4600",
+        "value": 0.46,
+        "line": 89,
+        "context": "\\paragraph{Power.} Sample size is fixed by benchmark design, so we report achieved power / minimum d"
+      },
+      {
+        "token": "3.12",
+        "value": 3.12,
+        "line": 91,
+        "context": "\\paragraph{Implementation.} \\texttt{scievalsuite/p3\\_run\\_l\\{1a,1b,2\\}.py} launchers (provider flag:"
+      },
+      {
+        "token": "3.12",
+        "value": 3.12,
+        "line": 91,
+        "context": "\\paragraph{Implementation.} \\texttt{scievalsuite/p3\\_run\\_l\\{1a,1b,2\\}.py} launchers (provider flag:"
+      },
+      {
+        "token": "0.98",
+        "value": 0.98,
+        "line": 99,
+        "context": "\\includegraphics[width=0.98\\linewidth]{fig_overview.pdf}"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 108,
+        "context": "\\caption{L2 GAIA2 p3dev: goal completion (primary, mean rate) and pass\\_01 (share with goal$\\ge$0.5)"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 115,
+        "context": "qwen2.5:7b & A & 0.1418 & 0/4 & 0 & 0 & 1.0000 \\\\"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 116,
+        "context": "qwen2.5:7b & F & 0.1418 & 0/4 & 0 & 0 & 1.0000 \\\\"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 126,
+        "context": "All three models showed \\emph{identical} paired outcomes: win\\_F=0, loss\\_F=0, ties=4, exact McNemar"
+      },
+      {
+        "token": "0.42",
+        "value": 0.42,
+        "line": 126,
+        "context": "All three models showed \\emph{identical} paired outcomes: win\\_F=0, loss\\_F=0, ties=4, exact McNemar"
+      },
+      {
+        "token": "0.69",
+        "value": 0.69,
+        "line": 126,
+        "context": "All three models showed \\emph{identical} paired outcomes: win\\_F=0, loss\\_F=0, ties=4, exact McNemar"
+      },
+      {
+        "token": "0.355",
+        "value": 0.355,
+        "line": 129,
+        "context": "Table~\\ref{tab:l1a} reports official metrics. Failures are counted as zero and remain in the denomin"
+      },
+      {
+        "token": "1.2",
+        "value": 1.2,
+        "line": 132,
+        "context": "\\caption{L1a AIRS-Bench (official metric; Acc/Spearman higher better, MAE lower better). $\\dagger$0 "
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 137,
+        "context": "Task & qwen2.5:7b & qwen2.5:14b & gemma2:9b & muse-spark \\\\"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 137,
+        "context": "Task & qwen2.5:7b & qwen2.5:14b & gemma2:9b & muse-spark \\\\"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 139,
+        "context": "Sentiment (Acc) & 0.0000$^\\dagger$ & 0.0000$^\\dagger$ & 0.2000 $\\times3$ & 0.5607 \\\\"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 139,
+        "context": "Sentiment (Acc) & 0.0000$^\\dagger$ & 0.0000$^\\dagger$ & 0.2000 $\\times3$ & 0.5607 \\\\"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 140,
+        "context": "TextSimilarity (Spearman) & 0.0000$^\\dagger$ & 0.0000$^\\dagger$ & 0.5330 $\\times2$ & 0.6552 \\\\"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 140,
+        "context": "TextSimilarity (Spearman) & 0.0000$^\\dagger$ & 0.0000$^\\dagger$ & 0.5330 $\\times2$ & 0.6552 \\\\"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 141,
+        "context": "TextClassification (Acc) & 0.0000$^\\dagger$ & 0.6252 $\\times1$ & 0.0000$^\\dagger$ & 0.7960 \\\\"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 141,
+        "context": "TextClassification (Acc) & 0.0000$^\\dagger$ & 0.6252 $\\times1$ & 0.0000$^\\dagger$ & 0.7960 \\\\"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 142,
+        "context": "GraphRegression (MAE$\\downarrow$) & 0.0000$^\\dagger$ & 1.5422 $\\times1$ & 0.0000$^\\dagger$ & 0.5327 "
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 142,
+        "context": "GraphRegression (MAE$\\downarrow$) & 0.0000$^\\dagger$ & 1.5422 $\\times1$ & 0.0000$^\\dagger$ & 0.5327 "
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 143,
+        "context": "MathQA (Acc) & 0.0000$^\\dagger$ & 0.0000$^\\dagger$ & 0.0000$^\\dagger$ & 0.3333 \\\\"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 143,
+        "context": "MathQA (Acc) & 0.0000$^\\dagger$ & 0.0000$^\\dagger$ & 0.0000$^\\dagger$ & 0.3333 \\\\"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 143,
+        "context": "MathQA (Acc) & 0.0000$^\\dagger$ & 0.0000$^\\dagger$ & 0.0000$^\\dagger$ & 0.3333 \\\\"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 144,
+        "context": "FinQA (Acc) & 0.0000$^\\dagger$ & 0.0000$^\\dagger$ & 0.0000$^\\dagger$ & 0.0105 \\\\"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 144,
+        "context": "FinQA (Acc) & 0.0000$^\\dagger$ & 0.0000$^\\dagger$ & 0.0000$^\\dagger$ & 0.0105 \\\\"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 144,
+        "context": "FinQA (Acc) & 0.0000$^\\dagger$ & 0.0000$^\\dagger$ & 0.0000$^\\dagger$ & 0.0105 \\\\"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 152,
+        "context": "qwen2.5:7b scored 0/6 (all exec-fail across 3 trials, stable). qwen2.5:14b scored 2/6 (TextClassific"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 152,
+        "context": "qwen2.5:7b scored 0/6 (all exec-fail across 3 trials, stable). qwen2.5:14b scored 2/6 (TextClassific"
+      },
+      {
+        "token": "0.355",
+        "value": 0.355,
+        "line": 152,
+        "context": "qwen2.5:7b scored 0/6 (all exec-fail across 3 trials, stable). qwen2.5:14b scored 2/6 (TextClassific"
+      },
+      {
+        "token": "1.2",
+        "value": 1.2,
+        "line": 152,
+        "context": "qwen2.5:7b scored 0/6 (all exec-fail across 3 trials, stable). qwen2.5:14b scored 2/6 (TextClassific"
+      },
+      {
+        "token": "1.2",
+        "value": 1.2,
+        "line": 155,
+        "context": "All three models scored 0/10 (no report passed the checklist; score stage fully SKIP). The 30 worksp"
+      },
+      {
+        "token": "2.3333",
+        "value": 2.3333,
+        "line": 158,
+        "context": "Friedman over 16 paired tasks (L1a+L1b, lower-is-better after sign-flipping accuracy/correlation whe"
+      },
+      {
+        "token": "3.1",
+        "value": 3.1,
+        "line": 161,
+        "context": "The 21-item gold set (15 real workspace reports plus 6 synthetic boundary cases, 11 positive / 10 ne"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 161,
+        "context": "The 21-item gold set (15 real workspace reports plus 6 synthetic boundary cases, 11 positive / 10 ne"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 161,
+        "context": "The 21-item gold set (15 real workspace reports plus 6 synthetic boundary cases, 11 positive / 10 ne"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 161,
+        "context": "The 21-item gold set (15 real workspace reports plus 6 synthetic boundary cases, 11 positive / 10 ne"
+      },
+      {
+        "token": "3.11",
+        "value": 3.11,
+        "line": 161,
+        "context": "The 21-item gold set (15 real workspace reports plus 6 synthetic boundary cases, 11 positive / 10 ne"
+      },
+      {
+        "token": "0.10",
+        "value": 0.1,
+        "line": 161,
+        "context": "The 21-item gold set (15 real workspace reports plus 6 synthetic boundary cases, 11 positive / 10 ne"
+      },
+      {
+        "token": "0.28",
+        "value": 0.28,
+        "line": 161,
+        "context": "The 21-item gold set (15 real workspace reports plus 6 synthetic boundary cases, 11 positive / 10 ne"
+      },
+      {
+        "token": "2.5",
+        "value": 2.5,
+        "line": 164,
+        "context": "Total calls 568 $<1000$ (L2 480 usage-logged, L1a 54 (18 initial + 36 extra trials), L1b gen 34, jud"
+      },
+      {
+        "token": "1.87",
+        "value": 1.87,
+        "line": 164,
+        "context": "Total calls 568 $<1000$ (L2 480 usage-logged, L1a 54 (18 initial + 36 extra trials), L1b gen 34, jud"
+      },
+      {
+        "token": "0.64",
+        "value": 0.64,
+        "line": 164,
+        "context": "Total calls 568 $<1000$ (L2 480 usage-logged, L1a 54 (18 initial + 36 extra trials), L1b gen 34, jud"
+      },
+      {
+        "token": "1.87",
+        "value": 1.87,
+        "line": 164,
+        "context": "Total calls 568 $<1000$ (L2 480 usage-logged, L1a 54 (18 initial + 36 extra trials), L1b gen 34, jud"
+      },
+      {
+        "token": "0.007",
+        "value": 0.007,
+        "line": 164,
+        "context": "Total calls 568 $<1000$ (L2 480 usage-logged, L1a 54 (18 initial + 36 extra trials), L1b gen 34, jud"
+      },
+      {
+        "token": "0.04",
+        "value": 0.04,
+        "line": 164,
+        "context": "Total calls 568 $<1000$ (L2 480 usage-logged, L1a 54 (18 initial + 36 extra trials), L1b gen 34, jud"
+      },
+      {
+        "token": "1.2",
+        "value": 1.2,
+        "line": 169,
+        "context": "\\textbf{(Q1) L1b/L2 Positive Control:} \\texttt{muse-spark-1.2-contributor} (opencode, 4096 tokens) s"
+      },
+      {
+        "token": "0.074",
+        "value": 0.074,
+        "line": 171,
+        "context": "\\textbf{(Q2) Larger N:} L2 N=8 (vs 4) and curated L1a N=6 k=4 (muse 6/6) give \\textbf{p=0.0026 explo"
+      },
+      {
+        "token": "0.28",
+        "value": 0.28,
+        "line": 173,
+        "context": "\\textbf{(Q4) Judge:} Gold 21$\\rightarrow$39 (30 real+9 synthetic+1 attack, 1 empty filtered) in \\tex"
+      },
+      {
+        "token": "0.10",
+        "value": 0.1,
+        "line": 175,
+        "context": "\\textbf{(Q5) F-arm Ablation:} 2$\\times$2 (nudges$\\times$guards) on 4 scenarios: all arms goal 0.1418"
+      },
+      {
+        "token": "0.14",
+        "value": 0.14,
+        "line": 175,
+        "context": "\\textbf{(Q5) F-arm Ablation:} 2$\\times$2 (nudges$\\times$guards) on 4 scenarios: all arms goal 0.1418"
+      },
+      {
+        "token": "0.27",
+        "value": 0.27,
+        "line": 175,
+        "context": "\\textbf{(Q5) F-arm Ablation:} 2$\\times$2 (nudges$\\times$guards) on 4 scenarios: all arms goal 0.1418"
+      },
+      {
+        "token": "0.87",
+        "value": 0.87,
+        "line": 175,
+        "context": "\\textbf{(Q5) F-arm Ablation:} 2$\\times$2 (nudges$\\times$guards) on 4 scenarios: all arms goal 0.1418"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 182,
+        "context": "The central empirical pattern was a consistently not-detectable difference between arms: three indep"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 182,
+        "context": "The central empirical pattern was a consistently not-detectable difference between arms: three indep"
+      },
+      {
+        "token": "0.2400",
+        "value": 0.24,
+        "line": 182,
+        "context": "The central empirical pattern was a consistently not-detectable difference between arms: three indep"
+      },
+      {
+        "token": "0.0000",
+        "value": 0.0,
+        "line": 191,
+        "context": "Sample sizes are small by construction ($N=4$ L2 scenarios, $N=16$ tasks for Friedman, trials=1 for "
+      },
+      {
+        "token": "0.28",
+        "value": 0.28,
+        "line": 191,
+        "context": "Sample sizes are small by construction ($N=4$ L2 scenarios, $N=16$ tasks for Friedman, trials=1 for "
+      },
+      {
+        "token": "0.10",
+        "value": 0.1,
+        "line": 191,
+        "context": "Sample sizes are small by construction ($N=4$ L2 scenarios, $N=16$ tasks for Friedman, trials=1 for "
+      },
+      {
+        "token": "0.007",
+        "value": 0.007,
+        "line": 194,
+        "context": "SciEvalSuite provides a unified, budget-controlled, independently recomputable harness that jointly "
+      },
+      {
+        "token": "3.12",
+        "value": 3.12,
+        "line": 221,
+        "context": "Code, manifests and per-seed rows are sealed with SHA-256; all numbers recomputed from raw rows; env"
+      },
+      {
+        "token": "0.28",
+        "value": 0.28,
+        "line": 224,
+        "context": "46-entry, 46-hash G11 verification PASS (125 underlying files), \\texttt{evidence\\_manifest.json} at "
+      },
+      {
+        "token": "5.2",
+        "value": 5.2,
+        "line": 227,
+        "context": "Fail MAE as worst is post-hoc. Sensitivity on curated 6-task k=3 Friedman: fail=-10 $\\rightarrow$ ch"
+      },
+      {
+        "token": "0.074",
+        "value": 0.074,
+        "line": 227,
+        "context": "Fail MAE as worst is post-hoc. Sensitivity on curated 6-task k=3 Friedman: fail=-10 $\\rightarrow$ ch"
+      }
+    ]
+  },
+  "adjudications_state": {
+    "2.5": {
+      "verdict": "pending",
+      "note": "",
+      "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three capabilities under o"
+    },
+    "0.0000": {
+      "verdict": "pending",
+      "note": "",
+      "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three capabilities under o"
+    },
+    "0.355": {
+      "verdict": "pending",
+      "note": "",
+      "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three capabilities under o"
+    },
+    "1.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three capabilities under o"
+    },
+    "3.1": {
+      "verdict": "pending",
+      "note": "",
+      "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three capabilities under o"
+    },
+    "0.28": {
+      "verdict": "pending",
+      "note": "",
+      "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three capabilities under o"
+    },
+    "3.11": {
+      "verdict": "pending",
+      "note": "",
+      "context": "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three capabilities under o"
+    },
+    "2.4": {
+      "verdict": "pending",
+      "note": "",
+      "context": "\\begin{tabular}{p{2.4cm}p{2.8cm}p{2.4cm}p{4.2cm}}"
+    },
+    "2.8": {
+      "verdict": "pending",
+      "note": "",
+      "context": "\\begin{tabular}{p{2.4cm}p{2.8cm}p{2.4cm}p{4.2cm}}"
+    },
+    "4.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "\\begin{tabular}{p{2.4cm}p{2.8cm}p{2.4cm}p{4.2cm}}"
+    },
+    "0.007": {
+      "verdict": "pending",
+      "note": "",
+      "context": "ResearchClawBench (RCB) is the closest to L1b, providing checklist-based report scoring, but it covers only the workflow"
+    },
+    "0.10": {
+      "verdict": "pending",
+      "note": "",
+      "context": "L1b text-judge was llama3.1:8b (cloud). Before use it had to pass a calibration gate on a gold set of $\\ge$20 items (ARS"
+    },
+    "1.87": {
+      "verdict": "pending",
+      "note": "",
+      "context": "\\paragraph{Models.} Evaluated: qwen2.5:7b, qwen2.5:14b, gemma2:9b (SUTs); judge: llama3.1:8b. Reference API model deepse"
+    },
+    "0.4600": {
+      "verdict": "pending",
+      "note": "",
+      "context": "\\paragraph{Power.} Sample size is fixed by benchmark design, so we report achieved power / minimum detectable effect at "
+    },
+    "3.12": {
+      "verdict": "pending",
+      "note": "",
+      "context": "\\paragraph{Implementation.} \\texttt{scievalsuite/p3\\_run\\_l\\{1a,1b,2\\}.py} launchers (provider flag: \\texttt{cloud} vs \\"
+    },
+    "0.98": {
+      "verdict": "pending",
+      "note": "",
+      "context": "\\includegraphics[width=0.98\\linewidth]{fig_overview.pdf}"
+    },
+    "0.42": {
+      "verdict": "pending",
+      "note": "",
+      "context": "All three models showed \\emph{identical} paired outcomes: win\\_F=0, loss\\_F=0, ties=4, exact McNemar $p=1.0000$ (not-det"
+    },
+    "0.69": {
+      "verdict": "pending",
+      "note": "",
+      "context": "All three models showed \\emph{identical} paired outcomes: win\\_F=0, loss\\_F=0, ties=4, exact McNemar $p=1.0000$ (not-det"
+    },
+    "2.3333": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Friedman over 16 paired tasks (L1a+L1b, lower-is-better after sign-flipping accuracy/correlation where needed and tie-co"
+    },
+    "0.64": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Total calls 568 $<1000$ (L2 480 usage-logged, L1a 54 (18 initial + 36 extra trials), L1b gen 34, judge 0 for this round;"
+    },
+    "0.04": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Total calls 568 $<1000$ (L2 480 usage-logged, L1a 54 (18 initial + 36 extra trials), L1b gen 34, judge 0 for this round;"
+    },
+    "0.074": {
+      "verdict": "pending",
+      "note": "",
+      "context": "\\textbf{(Q2) Larger N:} L2 N=8 (vs 4) and curated L1a N=6 k=4 (muse 6/6) give \\textbf{p=0.0026 exploratory} overall, vs "
+    },
+    "0.14": {
+      "verdict": "pending",
+      "note": "",
+      "context": "\\textbf{(Q5) F-arm Ablation:} 2$\\times$2 (nudges$\\times$guards) on 4 scenarios: all arms goal 0.1418 ($p=1.0000$) but F/"
+    },
+    "0.27": {
+      "verdict": "pending",
+      "note": "",
+      "context": "\\textbf{(Q5) F-arm Ablation:} 2$\\times$2 (nudges$\\times$guards) on 4 scenarios: all arms goal 0.1418 ($p=1.0000$) but F/"
+    },
+    "0.87": {
+      "verdict": "pending",
+      "note": "",
+      "context": "\\textbf{(Q5) F-arm Ablation:} 2$\\times$2 (nudges$\\times$guards) on 4 scenarios: all arms goal 0.1418 ($p=1.0000$) but F/"
+    },
+    "0.2400": {
+      "verdict": "pending",
+      "note": "",
+      "context": "The central empirical pattern was a consistently not-detectable difference between arms: three independent models, four "
+    },
+    "5.2": {
+      "verdict": "pending",
+      "note": "",
+      "context": "Fail MAE as worst is post-hoc. Sensitivity on curated 6-task k=3 Friedman: fail=-10 $\\rightarrow$ chi2=6.0 p=0.0498; fai"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "critical_adjudicated": 0,
+    "pending_review": 94,
+    "noise_filtered": 5,
+    "adjudicated": 0,
+    "note": "manual_review_list = 未裁决且非机械噪音；裁决文件填 verdict(noise|supported|critical) 后重跑即收敛"
+  }
+}

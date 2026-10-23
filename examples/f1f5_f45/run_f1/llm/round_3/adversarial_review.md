@@ -1,0 +1,108 @@
+# 对抗审查报告
+
+- 时间: 2026-08-27T19:14:05.004471+00:00
+- 源: F:\deepseek\research-kit\review-workflow\examples\f1f5_f45\run_f1\extracted_text.txt
+- 角色: method, stat, experiment, novelty, repro, writing, ethics
+
+## 方法论（method）— ok
+### Critical（2）
+- - Critical: 主要结局 MAE 将置信度与正确率混在一起；若 priming 同时改变模型答案分布，∆MAE 可仅由 accuracy 变化驱动，而文中未证明 benign/priming 两条件下正确率不变，因此不能把效应归因于 verbalized-confidence shift。
+- - Critical: 统计独立性/聚类假设不明：500 题×4 模型×3 通道×2 条件可产生同一题目在模型、通道、种子间的重复测量；若把 12,000 cells 当作独立样本做 Wilcoxon 或 BCa bootstrap，p 值和 CI 会严重低估不确定性，需按题目/模型/种子聚类或明确独立单元。
+### Major（4）
+- - Major: 多重比较与选择性报告：4 模型×3 通道（以及 3 seeds）产生大量检验，摘要只突出 Qwen3:4b 的显著结果，未提供完整检验表和多重性校正，不能排除该 p 值来自多重比较。
+- - Major: 长度对照只匹配“75 字符”并未控制句法框架、语义极性、指令位置/格式等表面特征，且控制条件只在子集上检验；因此“语义而非长度”的归因受单一对照刺激和子集功效限制。
+- - Major: Wilcoxon signed-rank 检验的是配对差的中位数/伪中位数，不是报告中的平均 ∆MAE；p=1.6×10⁻⁵ 不能直接支持“平均 MAE 增加 0.047”这一均值推断，需说明 BCa 是否专门针对均值并作为主推断。
+- - Major: 配对设计未说明条件顺序是否交叉平衡，也未说明 3 个 seed 在 benign/priming 生成中的使用方式；固定顺序或不同 seed 都会引入顺序/随机数混淆，削弱内部效度。
+### Minor（4）
+- - Minor: 仅使用单一 priming 措辞，补充 pilot 也只报告 0.645/0.646/0.649 的点估计而无推断统计，存在 language-as-fixed-effect，不能把结论推广到“置信度启动类 cache entries”这一类别。
+- - Minor: MMLU 题目可能已进入训练数据，且 500 题抽样未说明是否按学科分层或难度平衡；题目熟悉度、学科先验可能与 priming 指令交互，构成混淆。
+- - Minor: “3 channels”未定义；若它们是同一批题目上的三种输出或采样通道，则并非独立复制而是重复测量，必须在误差结构和多重比较中体现。
+- - Minor: 引言将“retrieved entries 通常被视为惰性上下文”作为前提，但未提供证据；若该前提不成立，研究对部署 RAG 场景的外部效度会进一步受限。
+
+## 统计（stat）— ok
+### Critical（2）
+- - Critical: 样本量与伪重复：实际存在 500 题×4 模型×3 通道=6000 个配对差，且还有 3 个 seed；报告“n=500”并只针对 Qwen3:4b 做主检验，未说明如何处理模型、通道和种子带来的聚类/重复测量，独立样本量可能被严重高估。
+- - Critical: 数值不自洽：若 n=500 且 dz=0.42，配对 t≈9.39，p 应约为 10^-18，而非 1.6×10^-5；Wilcoxon W=12480 与 n=500 下的标准符号秩统计量也不一致，需报告确切检验定义、有效 n 和完整统计量。
+### Major（4）
+- - Major: 多重比较：4 个模型族×3 个通道（外加对照和基线）会形成大量检验，只挑出一个显著 p=1.6×10^-5 且未做任何校正，无法排除从多组比较中选取最强结果。
+- - Major: 长度对照结论过强：对照仅在子集上得到 p=0.62，不能因此推断“语义而非长度驱动”；未报告子集 n、效应量/置信区间、等价检验或针对该子集的功效，低功效阴性结果没有证据价值。
+- - Major: 检验与效应量错配：Wilcoxon 符号秩检验的是配对差的中位数/伪中位数，而 ∆MAE 是均值差；用 Wilcoxon p 来支持均值 ∆MAE 的显著性，检验选择与所报效应量不一致。
+- - Major: 方差报告不足：只给 W、p、dz，缺少配对差 SD/IQR、BCa 置信区间以及按模型、通道、种子分解的方差信息，无法判断 +0.047 的稳定性。
+### Minor（2）
+- - Minor: 功效分析针对配对 t 的 MDE dz=0.18，但实际使用 Wilcoxon 且未计入多重比较，应按实际检验与多重性重新计算功效。
+- - Minor: MAE 作为校准指标需要辩护：二值正确率下 |conf−acc| 不同于 ECE/Brier，应说明其与标准校准度量的关系及可解释性。
+
+## 实验（experiment）— ok
+### Critical（2）
+- - Critical: 没有真正的“无前缀/空 cache”对照，唯一的 benign control 是 75-char neutral prefix 且只在 subset 上检验，无法把 +0.047 归因于 confidence-priming 的语义内容，而非任意前缀或子集选择带来的伪影。
+- - Critical: 统计检验的独立单元不明确：如果是合并 6,000 对做 Wilcoxon/BCa，则 question/model/channel 的嵌套结构导致假重复和 p 值膨胀；如果是单格 n=500，则面对 4 models×3 channels 的多重比较未作任何校正。
+### Major（7）
+- - Major: 长度控制只用了单一长度、单一中性文本，缺少多长度梯度、多种中性内容、以及“同长度但非置信语义”的对照，无法支持“语义而非长度”这一核心结论。
+- - Major: 3 个 seed (42/43/44) 只被提及，未报告 seed-level ∆MAE、seed 间方差或 seed 作为随机效应的结果；也未说明 seed 是控制问题抽样、解码采样还是 bootstrap，3 个 seed 不足以量化解码/采样随机性。
+- - Major: 解码和推理超参未报告：temperature、top-p、max tokens、量化精度、prompt template 都影响 verbalized confidence；也未明确 paired 两条件是否使用相同 seed/解码设置。
+- - Major: MMLU 500 题的选择标准未说明（随机抽样、按类别分层、难度/主题覆盖、污染过滤），benchmark 公平性和代表性无法评估。
+- - Major: 主实验只有单一 priming 措辞；补充 pilot 仅给出 0.645/0.646/0.649 的平均 confidence，没有报告 ∆MAE、CI 或统计功效，不能算作完整的措辞消融。
+- - Major: 四个 post-hoc baselines 的拟合超参、验证集划分、每模型/每 channel 的表现均未报告；对 verbalized confidence 直接做温度缩放/isotonic/ensemble/LLM-judge 的公平性和可比较性存疑。
+- - Major: 泛化性极窄：仅 MMLU、4 个小规模本地模型、confidence range 0.52–0.76，没有跨数据集、跨模型规模、开放生成、真实 RAG 管线或不同 prompt 位置的验证。
+### Minor（1）
+- - Minor: “3 channels”在摘要中未定义，也未说明它们是不同 prompt 模板还是重复测量；若同一问题在多个 channel 上重复计入，会进一步引入假重复和多重比较问题。
+
+## 新颖性（novelty）— ok
+### Critical（2）
+- - Critical: 论文声称的 GAP 是“没有人在 MMLU 上、用长度匹配对照、测量缓存条目造成的配对置信度误差变化”，这是实验协议层面的窄缺口；已有大量工作表明提示措辞、指令、few-shot 示例和检索内容都会显著改变 LLM 的言语化置信度（如 verbalized confidence、prompt-based calibration、间接 prompt injection 等），因此“缓存条目”只是普通上下文指令的另一种包装，核心科学缺口并不真实。
+- - Critical: “检索缓存条目”与普通系统/用户提示在模型计算上并无本质区别，论文没有给出缓存特有的机制、状态依赖或检索结构带来的新形式化解释；把一个已知的“指令/上下文影响置信度”现象重新命名为 retrieval-side channel，增量贡献被明显夸大。
+### Major（4）
+- - Major: 主要证据集中于 Qwen3:4b 的单一通道（ΔMAE +0.047, dz=0.42），但在 4 个模型族 × 3 个通道 × 3 个种子的多重比较下只报告一个显著 p 值，未提供全局多重检验校正或完整效应表，容易构成选择性报告并夸大“置信度偏移”的普遍性。
+- - Major: 长度匹配对照只在子集上运行（Abstract 自述），且 benign 对照 +0.005/p=0.62 只能说明该子集缺乏长度效应，不能排除其他格式、位置、语义或内容混淆；因此“效应来自语义而非长度”的归因强度超过实际证据。
+- - Major: 论文自称 hypothesis-generating，但贡献和引言使用“poses deployment risk”“shift persists”等较强表述；探索性小样本研究不足以支持部署风险级别的结论，贡献 3 的“persists”也缺少对残余偏移的置信区间或显著性检验。
+- - Major: 四个 post-hoc baselines 并不能自动成为“稳健性”证据：在 held-out benign 数据上拟合、再用于 confidence-priming 条件，本质是分布不匹配下的校准迁移；若未报告校正后残余 ΔMAE 的统计不确定性，就断言“reduce but do not eliminate”属于过度解读。
+### Minor（3）
+- - Minor: Wasserstein upper bound |ΔMAE|≤LΓ 被列为贡献，但论文自己称其为 descriptive sanity check；若该界只是 Lipschitz/三角不等式直接推出的平凡不等式，它不构成理论贡献，也不增加与现有文献的差异。
+- - Minor: MMLU 并非原生置信度评测基准，论文未论证 MMLU 上 verbalized confidence 的生态效度或 4 个本地模型的选择依据，使该增量结论的外部有效性有限。
+- - Minor: “To our knowledge, no prior work …” 这种无先例断言没有给出可复核的检索/综述范围；应该明确与“verbalized confidence”“prompt-based calibration”“retrieval poisoning”等邻近文献的系统对比，否则 GAP 不可检验。
+
+## 可复现（repro）— ok
+### Critical（3）
+- - Critical: 未提供代码/数据 artifact 或一键复现入口（匿名仓库、Docker、命令、README），论文中所有数字无法独立复现。
+- - Critical: “4 local model families”未给出具体 checkpoint/revision/量化方式/权重哈希；`Qwen3:4b` 不足以唯一定位模型，采样输出不可复现。
+- - Critical: 核心实验条件缺少完整快照：精确的 confidence-priming 文案、75-character benign 控制串、3 channels 定义、prompt template、system prompt 与 chat template 均未给出。
+### Major（6）
+- - Major: MMLU 未给出版本、科目组成、500 题子集的抽样/筛选规则、题目 ID 或哈希；仅有 seeds 42/43/44 无法对账题目集合。
+- - Major: seed 语义未定义：42/43/44 用于题目抽样、推理采样、顺序随机、baseline 划分还是 bootstrap？未提供 seed→流程映射和种子化实现。
+- - Major: 解码配置缺失：temperature、top_p、max_tokens、sampler、推理后端（llama.cpp/vLLM/Transformers 等）及版本均未说明，verbalized-confidence 的解析/抽取规则也未给出。
+- - Major: 统计复现链不完整：BCa bootstrap 的 seed/实现、Wilcoxon 精确/近似算法、dz 计算方式、后验 baselines 的 held-out split 与超参数均未记录。
+- - Major: 数据许可与来源缺失：未声明 MMLU 的具体许可证和版本，也未提供数据文件、模型文件、代码的 SHA-256 哈希供对账。
+- - Major: 无环境/依赖快照：无 Python/CUDA/库版本 lockfile、容器镜像或硬件记录，无法在另一台机器上复现同一结果。
+### Minor（3）
+- - Minor: 补充 pilot 只给出 0.645/0.646/0.649 三个均值，未提供 exact phrasings、顺序、seed 与原始数据，无法核实“方向一致”。
+- - Minor: 图表与数值表缺少 data availability：无生成脚本、置信区间/效应量原始表格，无法对 Fig. 1 等做独立校验。
+- - Minor: 未说明 artifact 许可证及 MMLU/权重来源的合规分发条件，阻碍他人合法复现与再分发。
+
+## 写作（writing）— ok
+### Major（7）
+- - Major: 摘要的核心设计出现未定义的“3 channels”，而后面只列出“2 cache conditions (benign vs confidence-priming)”，导致 500×4×3×2=12,000 与 6,000 paired differences 的构造无法审计。
+- - Major: 样本量口径混乱：power analysis 写 n=500、MDE dz=0.18，但又报告 12,000 cells / 6,000 paired differences 和 3 seeds，未说明 n 指题目数还是配对样本数，也未说明 seeds 是否应乘入 cell/paired 计数。
+- - Major: 摘要把 +0.047 标成 Qwen3:4b 的单模型结果，却用“The instruction channel is associated with…”作整体表述；没有提供 4 个 model families 的汇总或逐模型结果，和“×4 local model families”的摘要声明不一致。
+- - Major: “verbalized-confidence shifts”和“verbalized-confidence error / ΔMAE / ECE”在标题、摘要、引言中被混用；前者是置信度本身的变化，后者是置信度误差的变化，不能等价互换。
+- - Major: Contribution 2 的“descriptive Wasserstein upper bound |ΔMAE|≤LΓ”在摘要和引言中完全未出现，LΓ 也未定义，属于结构突兀且术语未解释。
+- - Major: Related Work 称 “Naeini et al. (2015) derive the Brier score and reliability diagrams” 存在术语/归属错误；Brier score 并非该文提出，reliability diagrams 的归属也需修正。
+- - Major: 摘要说 four post-hoc baselines “reduce but do not eliminate the shift (p<.02)”，但未报告校正后的 ΔMAE、置信区间或对应表/图，无法核对“reduce”和正文“persists”的数量关系。
+### Minor（4）
+- - Minor: BCa、dz 首次出现时未写全称/定义（bias-corrected and accelerated；Cohen’s dz），且与 Wilcoxon/bootstrap 的检验框架衔接不清。
+- - Minor: “75-char neutral prefix”未说明被匹配的 confidence-priming instruction 长度，读者无法验证 length-matched 是否成立。
+- - Minor: 校准定义在 Abstract 和 Introduction 开头几乎逐字重复，结构冗余。
+- - Minor: 图表现弱：摘要引用 Fig. 1，但当前文本没有对应图内容；baselines 结果只有 p<.02 区间，缺少表/图引用和单独效应量。
+
+## 伦理（ethics）— ok
+### Major（1）
+- - Major: 误用风险未加充分约束：该文等于给出了“在检索缓存条目中注入置信度指令即可改变模型口头置信度”的可复现方法，但可见文本没有负责任使用说明、威胁模型或缓解措施（如缓存来源认证、置信度异常监控、高利害场景禁用未认证缓存），且以医疗 RAG 举例会放大实际部署中的误导风险。
+### Minor（4）
+- - Minor: 数据许可与出处披露不足：正文仅写“MMLU”，未标注数据集版本、许可证（MMLU 仓库为 MIT）和归属；若补充材料转录原题或使用 auxiliary_train 等子集，需逐项确认上游题目/数据集的条款与署名要求。
+- - Minor: 隐私边界未明确：实验看似仅使用公共 MMLU 和本地模型，但医疗 RAG 示例未声明不涉及患者/个人数据、无需 IRB；若“LLM-as-judge”基线调用外部 API，也未说明题目和模型输出被发送给第三方的数据处理与同意情况。
+- - Minor: 利益冲突缺失：可见部分未披露资助来源或与 Qwen 等被点名模型厂商的雇佣/资助/股权关系；双盲阶段可隐藏作者身份，但录用/元数据层仍应补齐 COI 声明。
+- - Minor: 无（双盲方面：TMLR 官方确为双盲，稿件使用“Anonymous authors / double-blind review”与要求一致，未发现违规）。
+
+## 汇总
+
+- **Critical: 11 | Major: 33 | Minor: 21**
+- ⚠ 有 Critical：产出需修复后重审（收敛门：一轮无新 Critical/Major）

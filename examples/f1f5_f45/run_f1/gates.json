@@ -1,0 +1,115 @@
+{
+  "name": "f1f5_f1_cachemem",
+  "timestamp": "2026-08-28T09:49:01+00:00",
+  "overall": "FAIL",
+  "stages": {
+    "R0": {
+      "gate": "WARN",
+      "metric": "缺失输入 0，跨源风险目录 1（F:\\Research\\_inbox\\F1-F5_F45_2026-08-26\\supplementary 不在 F:\\Research\\F1_Single_10page 下 → 打包遗漏高风险）"
+    },
+    "R1": {
+      "gate": "WARN",
+      "metric": "章节缺失 ['limitations', 'conclusion']"
+    },
+    "R1b": {
+      "gate": "PASS",
+      "metric": "PASS：条目 10，幽灵引用 0，结构 Major 0（offline 结构检查）"
+    },
+    "R1c": {
+      "gate": "SKIP",
+      "metric": "未启用联网检索（config 设 novelty_online=true 开启 arXiv 先行工作对照）"
+    },
+    "R1d": {
+      "gate": "PASS",
+      "metric": "PASS：行内算术 0 处（不符 0，含括号百分数 0）；悬空公式引用 0；符号推导/量纲不在机械覆盖内"
+    },
+    "R2": {
+      "gate": "FAIL",
+      "metric": "CRITICAL：缺引用 16/16，路径泄漏 9，声明不符 1，tex desync False"
+    },
+    "R2b": {
+      "gate": "WARN",
+      "metric": "清单核验跳过：manifest not found in zip (searched: evidence_manifest.json, ASSET_MANIFEST.json)"
+    },
+    "R2c": {
+      "gate": "PASS",
+      "metric": "PASS：图 3 幅（矢量文本 3，位图跳过 0，缺失 0）；图注小数 2 个，无支撑 0；figure_only 2"
+    },
+    "R2d": {
+      "gate": "WARN",
+      "metric": "MAJOR：表 4 个（numeric cell 34），无支撑 10，\\input 缺失 0，混精度列 0（INFO）"
+    },
+    "R3": {
+      "gate": "FAIL",
+      "metric": "MAJOR：待复核 64，机械噪音 21，已裁决 0（critical 0）；裁决 CRITICAL（mech 7 / llm 22 / noise 7 / supported 7 / critical 15 / llm_failed 0）（上一轮，未重跑）"
+    },
+    "R4": {
+      "gate": "PASS",
+      "metric": "PASS：统计记录 0 条（MATCH 0，MISMATCH 0，NOT_IN_PAPER 0）——McNemar/Friedman/Wilson 复算（上一轮，未重跑）"
+    },
+    "R5": {
+      "gate": "WARN",
+      "metric": "MAJOR：hint 命中 1600，可疑 0（一票否决），已披露 0（上一轮，未重跑）"
+    },
+    "R6": {
+      "gate": "WARN",
+      "metric": "文本层：Critical 8 / Major 11 / Minor 5（3 轮，RPC HTTP 200）；轮间不稳定（噪声候选，不计门禁）：Critical 23 / Major 61（上一轮，未重跑）"
+    },
+    "R6b": {
+      "gate": "WARN",
+      "metric": "MAJOR：四维 {'P': 7, 'R': 6, 'I': 5, 'S': 8}（min=5，短板 I(贡献量)）——最弱维度 I(贡献量) = 5 分（<= 6）→ 文本层 WARN；证据层门禁不受影响（上一轮，未重跑）"
+    },
+    "R6c": {
+      "gate": "WARN",
+      "metric": "MAJOR：辩论后维持 Critical 6 / Major 10（撤回 3，部分成立 0）；注：原始 24 条中仅严重度前 20 条进入辩论（MAX_ISSUES=20，截断 4 条未辩论）（上一轮，未重跑）"
+    }
+  },
+  "suggested_score": 4,
+  "score_dimensions": {
+    "structure": 6,
+    "evidence": 4,
+    "text": 6
+  },
+  "score_note": "structure 维度 WARN；evidence 维度 FAIL（R2, R3）→ cap 4；text 维度 WARN；min 维度纪律（不平均）。人工阶段未完成（R3 裁决收敛 / R5 定性 / 终审）前为临时值",
+  "calibrated_score": 4.0,
+  "calibration": {
+    "source": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\cal_results",
+    "n": 6,
+    "bias": 1.67,
+    "suggested": 4,
+    "calibrated_score": 4.0,
+    "offset_applied": false,
+    "profile": "fail-present",
+    "rule": "证据层 FAIL：校准样本（n=6 全 accept，无 FAIL 论文）不含 FAIL 区间——偏移不外推，cap 4 纪律不变",
+    "issue_counts_this_run": {
+      "stable_C": 8,
+      "stable_M": 11
+    },
+    "rank_signals": {
+      "prism_R_vs_yesrate": {
+        "spearman": 0.89,
+        "p": 0.0175,
+        "note": "唯一显著维度（严谨性 ↔ claims 投票）"
+      },
+      "issue_counts_vs_yesrate": {
+        "stable_C": -0.03,
+        "stable_M": 0.094,
+        "sust_C": -0.029,
+        "sust_M": 0.0
+      },
+      "issue_counts_null": "问题密度与评审投票 ρ≈0（n=6）：文本维不因问题数调幅"
+    },
+    "disclosure": [
+      "accept 侧单侧校准：TMLR 拒稿不公开，FAIL↔reject 方向无标定",
+      "n=6 小样本：偏移量本身有不确定性，calibrated_score 是排序参考而非绝对分",
+      "决议两级（7/8）映射，绝对分校准天然粗糙",
+      "claims 投票针对投稿版，与终版 PDF 有版本差"
+    ]
+  },
+  "prism_scores": {
+    "P": 7,
+    "R": 6,
+    "I": 5,
+    "S": 8
+  }
+}

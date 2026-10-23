@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\selfevolve-agent\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\deepseek\\papers\\selfevolve-agent\\results",
+      "F:\\deepseek\\papers\\selfevolve-agent\\evidence"
+    ],
+    "timestamp": "2026-08-26T04:39:42+00:00"
+  },
+  "figures": [
+    {
+      "path": "figures/fig1_rounds.pdf",
+      "line": 318,
+      "resolved": true,
+      "abs": "F:\\deepseek\\papers\\selfevolve-agent\\paper\\figures\\fig1_rounds.pdf",
+      "kind": "pdf",
+      "text_chars": 270,
+      "fig_decimals": 7,
+      "fig_numbers_sample": [
+        "0.2",
+        "0.1",
+        "0.0",
+        "0.1",
+        "0.2",
+        "0.25",
+        "0.25"
+      ],
+      "caption_decimals": [
+        {
+          "token": "0.25",
+          "support": "figtext"
+        }
+      ],
+      "caption": "Formal rounds 1--17: promotion decisions (top) and validation deltas (bottom). The two +0.25 single-round gains were never reproduced."
+    },
+    {
+      "path": "figures/fig3_delta.pdf",
+      "line": 326,
+      "resolved": true,
+      "abs": "F:\\deepseek\\papers\\selfevolve-agent\\paper\\figures\\fig3_delta.pdf",
+      "kind": "pdf",
+      "text_chars": 163,
+      "fig_decimals": 7,
+      "fig_numbers_sample": [
+        "0.3",
+        "0.2",
+        "0.1",
+        "0.0",
+        "0.1",
+        "0.2",
+        "0.3"
+      ],
+      "caption_decimals": [],
+      "caption": "Distribution of per-round validation deltas; no confirmed positive delta across 17 rounds."
+    },
+    {
+      "path": "figures/fig2_extprobe.pdf",
+      "line": 368,
+      "resolved": true,
+      "abs": "F:\\deepseek\\papers\\selfevolve-agent\\paper\\figures\\fig2_extprobe.pdf",
+      "kind": "pdf",
+      "text_chars": 322,
+      "fig_decimals": 2,
+      "fig_numbers_sample": [
+        "0.7",
+        "1.0"
+      ],
+      "caption_decimals": [
+        {
+          "token": "1.0",
+          "support": "figtext"
+        }
+      ],
+      "caption": "EXTPROBE composition (left) and cloud core-100 arm results (right). Skills equals base (majority 77/100; McNemar $p=1.0$); the resample arm gives a sampling noise floor of 75--78 per repeat."
+    }
+  ],
+  "missing_files": [],
+  "caption_pending_review": [],
+  "figure_only_numbers": [],
+  "summary": {
+    "verdict": "PASS",
+    "figures_referenced": 3,
+    "text_extracted": 3,
+    "raster_skipped": 0,
+    "missing": 0,
+    "caption_decimals": 2,
+    "unsupported": 0,
+    "figure_only": 0,
+    "note": "caption_pending_review = 图注小数在图文本/证据/正文中均无支撑；figure_only = 仅出现在图内的高精度数（数据标签属正常，人工扫一眼即可）"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\main.tex",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-27T13:37:54+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "dimensions": {
+    "P": {
+      "status": "ok",
+      "score": 7,
+      "justification": "研究问题真实且重要:LLM agent 自报置信度被广泛用于 deferral/memory-gating,但校准 rarely validated,且 label matcher 影响测量结果这一方法论问题有实际意义。与已发表工作（ECE、temperature scaling、self-improvement 过自信文献）关系清晰。TMLR 作为 ML 方法论 venue 契合度高。但核心研究以 N=30 pilot 为 illustrative example,问题虽真实但常规方法论警示性质,缺乏突破性发现。",
+      "top_weakness": "核心研究以 N=30 pilot 为主,作为 TMLR 完整研究的方法论说服力偏弱,即便有 600-item 扩展仍以 pilot 定性。",
+      "evidence": "with an N=30 pilot as an illustrative example...calibration of self-reported confidence is rarely validated on the agent's own task distribution before use in deferral or memory-gating decisions",
+      "parse": "json"
+    },
+    "R": {
+      "status": "ok",
+      "score": 6,
+      "justification": "方法学框架有合理之处:使用Holm校正多重比较、报告95%CI、形式化命题给出测量偏差界、双judge标注。但核心结论依赖N=30且分布退化（27/30=1.0）,统计功效严重不足；4×/17×ECE变异为点估计比且CI极宽,仅最极端对显著；OOD门控结论亦仅n=30。作者透明承认多数局限,但部分定量主张仍超出证据强度。",
+      "top_weakness": "N=30且置信度退化（27/30=1.0）使核心校准测量统计功效极低,点估计比与OOD结论均缺乏稳健支撑。",
+      "evidence": "27 of 30 values are exactly 1.0…binning-based ECE is unreliable; point-estimate ratio; 95% CI wide…Holm-corrected…only the most extreme pairs are significant; indicative, n=30",
+      "parse": "json"
+    },
+    "I": {
+      "status": "ok",
+      "score": 6,
+      "justification": "贡献包含matcher依赖性的形式化（命题1-3）、smECE_sem+MSI估计器、退化分布下分箱不可靠的警示、以及600项×9模型跨域普查。这些对社区有方法论和警示价值。但核心证据基于N=30试点,多项发现被作者自述为'illustrative''indicative''proof-of-concept',证据强度与断言的广泛部署指导之间存在落差。",
+      "top_weakness": "几乎所有关键结论建立在N=30试点上且反复自述为'indicative/proof-of-concept',不足以支撑论文声称的部署级指导影响力。",
+      "evidence": "We report a measurement methodology study—with an N=30 pilot as an illustrative example…in-sample illustrative, not a validated bound…a pattern worth further study…indicative, n=30",
+      "parse": "json"
+    },
+    "S": {
+      "status": "ok",
+      "score": 9,
+      "justification": "论文全程克制标注局限:pilot、N=30、in-sample illustrative、not a validated bound、indicative 等限定词密集出现；明确声明不解决编排问题、scope 限于 single-turn；提供 95% CI 与 Holm 校正 p 值,即使结果削弱断言仍如实报告；标题本身即告诫性。复现承诺有 reproducible measurement pipeline 与具体数据规模。断言与证据高度对齐。",
+      "top_weakness": "\"self-reported confidence appears useless—even harmful\"措辞偏强,虽以 n=30 与 suggests 对冲,仍略超出证据强度。",
+      "evidence": "in-sample illustrative, not a validated bound;…indicative, n=30…We do not claim to resolve the orchestration question",
+      "parse": "json"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "scores": {
+      "P": 7,
+      "R": 6,
+      "I": 6,
+      "S": 9
+    },
+    "overall": 6,
+    "weakest": "R(严谨性)",
+    "detail": "最弱维度 R(严谨性) = 6 分（<= 6）→ 文本层 WARN；证据层门禁不受影响"
+  }
+}

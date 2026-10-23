@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\deepseek\\papers\\scievalsuite\\results",
+      "F:\\deepseek\\scievalsuite\\out_p5"
+    ],
+    "json_scanned": 25,
+    "timestamp": "2026-08-26T04:08:46+00:00"
+  },
+  "checks": [
+    {
+      "kind": "friedman_p",
+      "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json",
+      "json_path": "cross_model.friedman",
+      "chi2": 2.0,
+      "df": 2,
+      "claimed_p": 0.36787944117144245,
+      "recomputed_p": 0.367879,
+      "claimed_vs_recomputed": "OK",
+      "in_paper": "0.3679",
+      "status": "MATCH"
+    },
+    {
+      "kind": "friedman_p",
+      "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_FINAL_FRONTIER_CURATED.json",
+      "json_path": "friedman_curated",
+      "chi2": 6.0,
+      "df": 2,
+      "claimed_p": 0.04978706836786395,
+      "recomputed_p": 0.049787,
+      "claimed_vs_recomputed": "OK",
+      "in_paper": "0.05",
+      "status": "MATCH"
+    },
+    {
+      "kind": "friedman_p",
+      "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_FINAL_FRONTIER_CURATED.json",
+      "json_path": "friedman_full_P3",
+      "chi2": 2.0,
+      "df": 2,
+      "claimed_p": 0.3679,
+      "recomputed_p": 0.367879,
+      "claimed_vs_recomputed": "OK",
+      "in_paper": "0.3679",
+      "status": "MATCH"
+    },
+    {
+      "kind": "friedman_p",
+      "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_FINAL_FRONTIER_CURATED.json",
+      "json_path": "simulated_k4_N12",
+      "chi2": 8.2,
+      "df": 3,
+      "claimed_p": 0.042,
+      "recomputed_p": 0.042054,
+      "claimed_vs_recomputed": "OK",
+      "in_paper": null,
+      "status": "NOT_IN_PAPER"
+    },
+    {
+      "kind": "friedman_p",
+      "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_MUSE_FINAL.json",
+      "json_path": "friedman_L1a_6tasks_k4",
+      "chi2": 14.25,
+      "df": 3,
+      "claimed_p": 0.002584,
+      "recomputed_p": 0.002584,
+      "claimed_vs_recomputed": "OK",
+      "in_paper": "0.0026",
+      "status": "MATCH"
+    },
+    {
+      "kind": "friedman_p",
+      "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_MUSE_FINAL.json",
+      "json_path": "friedman_full_P3_k3_N16",
+      "chi2": 2.0,
+      "df": null,
+      "claimed_p": 0.3679,
+      "status": "SKIP_NO_DF"
+    }
+  ],
+  "summary": {
+    "records": 6,
+    "match": 4,
+    "mismatch": 0,
+    "not_in_paper": 1,
+    "verdict": "MAJOR",
+    "note": "MISMATCH=Critical（产物统计值与复算不符）；NOT_IN_PAPER=Major（重算值未出现在论文）；R4 其余清单项仍需人工"
+  }
+}

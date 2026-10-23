@@ -1,0 +1,794 @@
+{
+  "meta": {
+    "stage": "R6",
+    "timestamp": "2026-08-27T17:52:22+00:00",
+    "rpc": "http://127.0.0.1:3080",
+    "rounds": 3
+  },
+  "rpc_health": {
+    "ok": true,
+    "detail": "HTTP 200"
+  },
+  "rounds": [
+    {
+      "Critical": 9,
+      "Major": 33,
+      "Minor": 16
+    },
+    {
+      "Critical": 12,
+      "Major": 30,
+      "Minor": 17
+    },
+    {
+      "Critical": 11,
+      "Major": 33,
+      "Minor": 13
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts": {
+      "Critical": 9,
+      "Major": 9,
+      "Minor": 2
+    },
+    "unstable_counts": {
+      "Critical": 13,
+      "Major": 49
+    },
+    "stability_rule": "≥2 轮出现才计入门禁"
+  },
+  "stable_issues": [
+    {
+      "sev": "Critical",
+      "text": "- Critical: hybrid 的 McNemar 数字与准确率差内部不一致：在摘要给出的 16,000 per strategy–rule cell 且 c=0 的口径下，b≈1600 对应 Δ≈0.100；但 injection 的 0.620−0.435=0.185、mimicry 的 0.790−0.732=0.058 都不可能同时对应 b≈1600，且 mimicry 若 b≈92",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 一键复现缺失：没有仓库链接、容器/依赖锁定、可执行脚本或端到端 pipeline，审稿人无法复现 trust_mean/majority/hybrid 的任何数字。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 仅用单一参数点（N=7, f=2, pH=0.65）和两种 capture 策略就宣称“falsify sign flip”，因果自变量只有一个二值对比，无法排除中间策略、其他 f/pH 或置信度分布下出现 sign flip；“studied regime”是事后划定的边界。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 从 16,000 个样本观察到 c=0 只能说明“该样本中未出现输给 majority 的 trial”，不能推出“在该 regime 内 never loses”；除非给出解析证明，否则这是有限样本结果被过度一般化。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 全文没有给出代码/数据仓库地址、artifact DOI 或补充材料链接；`cells.jsonl` 和 `real_llm_400_v6` 只有名字，读者无法获取原始数据，证据链断裂，谈不上“data are shared honestly”。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 摘要中真实 LLM 试点样本量自相矛盾：前面写 “400 trials”，后面却写 “3991/4000 honest parse 99.78%”；若分母应为 400，则 3991 与 99.78% 均不成立，若分母为 4000，则与 “400 trials” 直接冲突。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 摘要只给出截断 SHA（`6c375b43`、`798bbc2d`），既无完整 SHA-256，也无规范化说明（JSON 键序、行序、浮点格式、哈希对象），无法执行“重跑→重算哈希→对账”这一可复现性核心步骤。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 摘要自相矛盾：先报告 “Supplementary real-LLM pilot（gemma3:4b）”，随后又说 “All results are synthetic / no real LLM deployment is tested”；应明确限定为 “All main results are synthetic; the LLM pilot is explorator",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 混合规则是在同一 128K 数据上“derived/阈值选择”后又在同一批数据上报告 McNemar p 值的，属于 data-adaptive 后检验；hybrid 的 p 值存在乐观偏倚，不能作为确认性证据。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: F4/F5 是无定义标签，摘要既未说明它们是图、表还是 finding，也没有对应图表或正文解释，导致结构引用悬空。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 基准公平性不清楚：未给出 4 个 model families 的逐族结果或 family×strategy×rule 交互，pooled 结果可能由某个有利 family 主导。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 对照组缺失：没有“无捕获/无攻击”或“置信度无信息”的 synthetic 条件，无法分离 trust weighting 的真实收益，也无法在 synthetic 中检验 sign-flip 是否依赖 confidence informativeness。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 所有主要结论只来自单一合成参数点（N=7, f=2, pH=0.65），未扫描 N、f、pH、置信度生成方式或捕获强度；即使标题限定“within the studied regime”，把该单点结果表述为“falsifies the hypothesis”仍夸大了增量贡献。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要中 F4/F5 未定义，若指图表应写 “Figure 4/5”，且正文截图中没有图表可核对；同时 “adaptive hybrid (Atv)” 缩写未解释，与后文 trust_mean、trimmed mean、hybrid 的术语不统一。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 有效样本量可能被高估：若 4 个 model families 共享同一批 4,000 trials，则每策略-规则只有 4,000 个独立问题（而非 16,000 cells），McNemar 的独立配对假设和 p 值会被高估。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 核心术语 “mimicry” 前后定义冲突：摘要称 captured verifiers “anti-correlate confidence with correctness”，引言却称 “mimic honest confidence behavior (making them indistinguishable)”，两种策略并不等价，导致 sign-flip 的论证对象不清",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 真实 LLM pilot 报告不一致（摘要写 400 trials，但出现 “3991/4000” 和 99.78%）；若 verbalized confidence 几乎恒定（0.985 vs 0.985），trust weighting 近似退化为 majority，c=0 是平凡结果，不能作为主结论的独立佐证。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 隐私/IRB：虽然主体是合成数据，但真实-LLM pilot 未说明 prompt/输入语料来源是否包含个人或受版权保护内容，也未提供“不含 PII、无需 IRB”的明确声明。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “verbalized conf 0.985 vs 0.985 uninformative” 未说明 0.985 是什么指标（正确/错误平均置信度？AUC？），也未解释两个相等值如何推出 “uninformative”。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 报告 p<10^-100 / p<10^-400 不如报告精确 McNemar/binomial p 值、b/c 计数及效应量；极小的 p 值容易掩盖实际差异大小。",
+      "rounds": [
+        1,
+        3
+      ]
+    }
+  ],
+  "unstable_issues": [
+    {
+      "sev": "Critical",
+      "text": "- Critical: F5 的 adaptive-hybrid 规则在同一 128K cells 上“导出并评估”，没有独立验证集或交叉验证；“no new data”不能消除选择偏差，hybrid 的 c=0/b≈1600 不能作为强化证据。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: “sign-flip hypothesis” 不是从文献中确立的公开主张，更像论文自造的 strawman；没有证据表明先前工作断言“injection 下 trust weighting 必好、mimicry 下必坏”，因此用一个单点合成实验“falsify”它并非对既有科学争论的实质贡献。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 全部合成数据仅用 seed 42 生成，c=0、Δ、McNemar p 都是单一种子下的结果，缺乏 multiple seeds 或 bootstrap CI，无法排除种子依赖和偶然性。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 所声称的 GAP 不真实：现有鲁棒聚合文献（如 Guo & Kong 2024, arXiv:2403.08222 对 adversarial experts 的最优 truncated mean 分析；Bai et al. 2022 对 weighted majority voting 的 trust 不稳定性分析）已覆盖“固定被俘获/对抗专家数量、任意报告策略、是否需要",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 核心 GAP 不真实：论文没有引用任何已有文献或理论真的预测“trust-weighted voting 在 mimicry 下会输给 majority”，而置信度加权多数（CWMV/WMV）在置信度可反映可靠性的条件下已被现有工作（如 Meyen et al., 2020；Bai et al., 2022；Li & Yu, 2014）视为最优或优于等权多数，因此“5/7 ",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 没有公开代码仓库、容器镜像或一键复现脚本，也没有环境/依赖锁文件；仅凭 truncated SHA 无法让审稿人重新生成 cells.jsonl 或验证统计结果。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 没有配置快照：4 个 model families、2 种 capture strategies 的具体生成算法、置信度分布、trim 方式、“thresholded at 0.5”的作用对象与阈值选择过程均未完整定义，第三方无法唯一复现 0.548/0.435 等数字。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 混合投票的 McNemar 数字与所报准确率不自洽：注入下 0.620 vs 0.435 若 c=0，则 b≈2960，不是 b≈1600；模仿下 0.790 vs 0.732 若 c=0，则 b≈928，且其精确 p≈10^-279，不可能小于 10^-400。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 混合规则在同一个 128K cells 上既被用于定义/选择（threshold 0.5）又被用于评估，没有 held-out 或交叉验证，属于同数据双重 dipping，hybrid 的增益不能作为有效泛化证据。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 混合规则是在同一个 128K cells 上“derived”并“evaluated”的，没有独立验证集或交叉验证；阈值 0.5 和 hybrid 定义可能从事后数据中选择，F5 不能被视为对假设的验证性检验。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 混合规则（adaptive hybrid）在同样的 128K cell 上“derive”后又在同一批数据上评估，缺少独立验证集/交叉验证，任何阈值或规则选择都属于 in-sample selection，F5 的“reinforces”结论不能作为有效证据。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 论文所攻击的“sign-flip hypothesis”没有引用任何先前文献提出过该假设，像是自行构造的靶子，因此“证伪一个未被文献支持的假设”并不是真实的研究 GAP，新颖性基础薄弱。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 证据链断链：只给出聚合后 cells.jsonl 的截断哈希，未提供原始 trial 级数据、模型族定义或从原始生成到 cells.jsonl 的转换脚本，无法对账 128,000 cells 是否由 4,000 trials × 4 families × 2 strategies 正确产生。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 4 个 model families 被合并为 16,000 per strategy–rule cell，但 model family 本身可能是重要调节变量；未报告各 family 单独结果，可能掩盖 Simpson’s paradox，甚至个别 family 内存在 sign flip。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: c=0（trust 从未输给 majority）在所有 trial 上零反例过于理想，可能由模拟假设（captured confidence 极端、honest confidence 完全单调）在构造上必然导致，而不是稳健的经验发现；缺少对置信度生成机制的敏感性分析。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: honest confidence 的“信息性”是合成数据生成时写入的属性，而非被操纵的自变量；real-LLM pilot 又显示 verbalized confidence 无信息（0.985 vs 0.985），因此主结论对真实 verifier 的前提不成立，也未做置信度随机化/去信息化的反事实对照。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: real-LLM pilot 只有 400 trials、单一模型 gemma3:4b、且置信度被报告为无信息，没有功效分析、CI 或与合成条件的正式对比，不能作为现实泛化或 sign-flip 检验依据。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: seed 管理不足：仅 seed 42，无多 seed、bootstrap 或 CI；McNemar 将 16K cells 当作独立样本，但 cells 共享 trial/model family，可能违反独立性并夸大 p 值。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: seed 记录不充分：仅写 “seed 42”，未说明该 seed 如何分配给各模型族/策略/试验，也未固定 NumPy、PyTorch、Ollama 等 RNG 实现版本，跨环境难以得到同一 cells.jsonl。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: “4 model families”的独立性未说明；若它们共享 trial/ground truth 或只是同一批数据的不同变换，则 16,000 per cell 并非独立样本，McNemar 的样本量和 p 值会被虚增。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: “mimicry”被操作化为 captured verifiers anti-correlate confidence with correctness，这本身仍使其可区分，与“模仿诚实、不可区分”的构念不一致；因此 mimicry 条件下的结果未必检验了原假设所说的伤害机制。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: “seed 42” 只是单一全局种子，未给出 PRNG 类型/版本、生成顺序、各模型家族与 capture strategy 的随机流划分，无法确定能否复现同一份 128K cells。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 两个 capture strategy 未必覆盖能使符号翻转出现的条件；若 mimicry 构造仍让 5/7 诚实多数携带充分信息量，那么加权投票必然占优，c=0 是设定使然而非经验发现；缺少一个理论上应出现负优势的对照条件作为阳性对照。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 中间产物链缺失：只有最终 cells.jsonl 的 hash，没有 raw LLM outputs → parse → confidence extraction → cells.jsonl → McNemar table 的逐级 artifact 与转换脚本，解析或 tie-breaking 错误无法被审计。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 全部结论基于 seed 42 的单次模拟实现，没有跨多个随机种子或 bootstrap 的变异性报告；单一 regime 内的“falsify”缺乏对模拟噪声的稳健性证据。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 利益冲突：未披露资助来源、机构关系或与 Gemma / 验证器聚合商业产品相关的利益冲突，缺少 TMLR 所需的 competing interests 声明。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 只使用 seed 42 生成全部合成数据，没有多 seed 重复、seed 间置信区间或最坏情况报告；McNemar p 值再小也只证明这一份固定数据上的差异，无法排除单一种子下的偶然性。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 只报告 `seed 42`，但未报告各 trial/model family/strategy 的 RNG 实例、numpy/torch/random 版本、采样参数、批处理顺序；单一种子也不足以说明结论对随机种子的稳健性。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 只报告点估计和原始百分比差值，没有置信区间、标准差/标准误、Cohen’s h 或风险差别的精确 CI；效应量未量化，且 c=0 导致 OR 无穷时不作解释。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 只报告点估计和极值 p 值，未提供配对差值的置信区间、标准化效应量（如 Cohen's h/OR）或任何方差/SE，无法评估效应量的精度与稳定性。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 只报告点准确率和配对差值，没有 95% CI、SE 或标准化效应量，也未报告 trial/model-family 层面的变异，无法评估效应稳定性。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 增量贡献很薄：trust-weighted mean 和 trimmed mean 都是已知聚合器，hybrid 只是两者在 0.5 阈值处的简单平均，且是在同一 128K cells 上事后选取和评估的（“derived on the same 128K cells, no new data”），没有独立验证、理论刻画或搜索如何选择该混合权重，无法支撑其作为新方法的贡献。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 多个规则、两个策略、primary/secondary/trimmed/real-LLM 分析均未做多重比较控制；即使 c=0 较强，仍需明确区分预先指定与探索性分析，并报告校正后结果。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要结构失衡：假设、实验设计、多组结果、机制解释、real-LLM pilot 和限制全部挤在一个超长段落中，并混入 trust_mean 等代码式标识符，可读性和可扫读性差。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要结构过载：把 SHA、cell counts、模型族数、per-cell 样本量等复现细节全部塞入摘要，却未先定义 trust_mean、trimmed mean、thresholded hybrid 等核心规则，不符合 TMLR 摘要应有的可读性。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 数据许可不明确：未声明 `cells.jsonl` 和 LLM 输出的 license，也未说明 gemma3:4b 的具体权重版本、quantization、prompt 模板与 Ollama 配置，涉及再分发和衍生复现的合法性/可复现性。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 数据许可缺失：仅提供 SHA 哈希和“Data are shared honestly”，未给出数据集/代码仓库、明确许可证（如 CC/MIT）及 Gemma3:4b 输出的再分发条款，无法确认这些共享数据可合法复用。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 未对“sign flip”进行正式的交互检验或对 Δ_injection 与 Δ_mimicry 的差异给置信区间；两个方向都显著的 McNemar 检验不能等价于“效应方向翻转”的统计推断。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 未披露 AI 辅助/agent 参与写作；若该稿件确由 agent 生成，当前仅写“Anonymous authors”而无 AI 使用/作者责任声明，不符合透明性要求。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 机制解释（“trust weighting downweights wrong honest low-confidence votes”）没有通过消融或中介分析验证；诚实置信度信息量与被捕获者行为同时变化，存在混淆变量；真实 LLM pilot 又显示置信度无信息量，因此因果归因不成立，主要结果依赖未经验证的有利假设。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 机制解释（正确 honest 高权重、错误 honest 低权重等）是事后叙述，未通过消融、中介或反事实分析证明该机制是优势来源，而不是由投票计数、置信度分布参数或 capture 模型共同决定的伪影。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 没有 unweighted mean / soft-vote / median 等连续分数基线；trust_mean 相对 majority 的收益可能仅仅来自“使用连续置信度而非离散投票”，而不是“trust weighting”，消融不完整。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 没有预先注册假设和分析流程，“sign-flip hypothesis”可能是看到 c=0 后才形成的；用同一数据做探索性发现并称“falsify”，存在 HARKing 风险。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 泛化性过窄：仅 N=7、f=2、pH=0.65 和两种 capture strategies，未覆盖 f=3/4、pH 接近 0.5、不同 N、不同置信度分布或混合/自适应攻击，结论只能算单点案例而非稳健 falsification。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 泛化证据不足：仅单一合成二元任务、单一 (N,f,pH) 和两种 capture 策略，没有变化 f/N、pH、置信度信息强度、任务难度、verifier 相关性或更多对抗策略，所谓“regime”实际只是一个点。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 混合投票规则是在同一个 128K cells 上“derived”并“evaluated”（no new data），存在同数据选择/过拟合/双重 dipping 风险，hybrid 的 0.620/0.790 和“never losing”不能作为独立验证性的贡献。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 混合规则的增量贡献不可独立验证：hybrid 是在同一 128K cells 上事后构造并评估的（no new data），存在 in-sample/hindsight selection 风险，其增益可能被高估，不能支持“hybrid extension”作为稳健贡献。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 真实 LLM pilot 报告不一致（“400 trials” vs “3991/4000”），且只有 gemma3:4b、400/4000 样本、未在真实 LLM 上操纵 injection/mimicry capture，既不能验证合成 capture 设定，也不具备检验 c=0 的统计效力。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 研究诚信/F5 同源数据问题：hybrid 分析是在同一 128K cells 上“推导并评估”，属于无独立验证的探索性后验分析，却以 “never loses” 的强结论呈现，可能高估可信度；需明确标注 exploratory 或提供 pre-registration/holdout。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 结构问题：摘要把实验配置、哈希、主/副结果、real-LLM pilot、F4/F5 全部塞进一个超长段落，主结论被密集数字淹没，结构上不利于读者快速抓取贡献。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 给出的机制解释只是直觉性重述假设，未刻画 sign flip 的条件边界（如 f≥3、pH≤0.5、置信度去校准、不同捕获比例等），因此论文并未真正回答“答案是否依赖捕获方式”这一声称的研究空白。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 统计对账信息不完整：McNemar 只给 `b`、`c` 和数量级 p 值，未提供完整列联表、精确 p 值计算脚本及数据行级核对方法；且 `3991/4000` 与 `99.78%` 的对应关系表述含糊，难以独立核验。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 缺少与现有对抗/鲁棒聚合方法的差异对比：未比较 Dawid-Skene、IWMV、trimmed/median/robust aggregation、adversarial-labeler/crowdsourcing 方法等已有基线，只与 simple majority 对比，因此“trust_weighted/hybrid 优于 majority”并非相对领域 SOTA 的贡献",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 缺少关键对照组：没有 f=0 无捕获、置信度无信息/反相关、以及随机权重或不使用权重的对照，无法把优势归因于“置信度信息性”或 trust weighting 本身。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 误用风险：尽管论文强调“within the studied regime”，仍缺少 broader impact / 预期用途声明；“never loses to majority”易被误读为可安全部署于高风险自动审核或内容决策，需要明确禁用场景和人工复核要求。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 误用风险：摘要与结论反复强调 “trust-weighted voting never loses to majority / no sign flip”，但实验仅覆盖 N=7、f=2、pH=0.65 和两种 capture 策略，且 real-LLM pilot 已显示真实置信度并不 informative；这种强表述极易被安全关键场景过度泛化、用于部署决策。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 配置快照缺失：pH=0.65、两种 capture strategy、四个模型族、trimmed mean、Atv 联合规则、阈值 0.5 等缺少 JSON/YAML 配置快照，且未记录库版本与 gemma3:4b 的具体权重/量化版本。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 配置快照缺失：未给出 trust-weighted 投票的确切公式、trimmed mean 的 trim 参数、0.5 阈值判定与 tie-breaking 规则、injection/mimicry 的参数化定义、温度/模板/采样参数等关键配置。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: McNemar 报告 c=0 和极显著 p 值，但没有报告 tie 比例、效应量分布或加权得分分布；应检查 c=0 是否来自构造上的单调支配，而不是稳健优势。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: SHA 哈希只证明数据未被篡改，不等于分析计划预先固定；不能作为“诚实报告”或防止 data dredging 的方法论保障。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Minor: pH=0.65、f=2 且 captured 可稳定拖垮 majority 的参数选择使 majority 基线被人为压低，任何利用置信度信息的规则都更容易胜出；该 regime 不代表现实 verifier pipelines。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “Data are shared honestly” 是价值判断而非可验证陈述，且 “honestly” 不适合作为数据声明；建议改为 “Data and reproduction scripts are available at ...”。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Minor: “trust-weighted voting never loses to majority” 与 “beats majority” 的表述强度不一致；“beats” 易被理解为严格胜出，而 c=0 只能推出不输（win or tie）。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “因为 honest 是多数且置信度 informative 所以加权有效”的机制解释是事后叙事，未通过消融（如打乱置信度、移除 captured 再比较）或中介分析验证。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 仅使用 seed 42 单一种子、未报告跨种子变异或置信区间，难以判断结果对随机数生成和模拟参数扰动的稳定性。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 以“no new data”作为 hybrid 分析的辩护反而暴露数据重用；阈值和组合方式应预先注册或在独立 validation fold 上选择。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 依赖单个 seed、单个 pH 和 McNemar 极端 p 值，未给出多种子 Monte Carlo 区间或按 model family 分层效应量，统计显著性被过度强调。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 利益冲突与资助未披露：未说明资助方、竞争利益或与 Google/Gemma 等模型提供方的关联，缺少可匿名化的 COI 声明。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 利益冲突：正文未见资助来源、算力来源、机构关系或 COI 声明，需在投稿系统/补充材料中披露。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 双盲合规未验证：补充数据与代码没有匿名化核验说明，哈希文件名、仓库元数据或提交链接仍可能泄露作者身份。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 双盲：表面匿名合规，但需确保补充数据、代码仓库和日志元数据不含作者身份信息（如文件名、路径、ORCID、机构水印），避免审稿期间破盲。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 多个规则、策略和次要终点都报告极值 p 值，未做多重比较校正或预先声明主/次分析层级；虽然 p 很小可能不改变结论，但报告方式存在多重比较风险。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 对“sign flip”的证伪仅依赖两个方向的单独配对检验，未报告策略×投票规则的交互项或 difference-in-differences 的置信区间；应明确给出 Δ 差异的不确定性。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 对“为什么没有 sign flip”的解释是事后且近乎平凡：少数 captured 无法抵消多数且置信度仍 informative 的诚实投票；该解释没有提炼出新的理论条件或可检验边界。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Minor: 对比基准过弱，只有 majority；未包括 median、robust aggregation、Dawid-Skene 等更强/更公平的 aggregation baseline，削弱“trust/hybrid 优于现有方法”的基准公平性。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 摘要最后 “Data are shared honestly” 属于非正式口头表述，且 F4/F5 引用方式在摘要中显得突兀，建议改为规范图表引用。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 数据许可与溯源：真实 LLM pilot 使用 gemma3:4b，未说明 Gemma 模型许可、模型出处或任何第三方基准/提示数据集的许可情况；补充材料若含模型输出或提示数据需附许可与归属。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 没有一键复现入口：无 Dockerfile/requirements.txt/Makefile/单条命令，也没有说明 gemma3:4b 的获取方式、解析脚本和运行时长，无法一键重现实验。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 论文给出的解释（诚实者占多数且置信度有信息量，所以加权只会更好）本质上是 Condorcet/加权多数最优性的直接推论，没有提供超越已知理论的非显然机制，作为“novel finding”的增量很小。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 误用风险未讨论：论文详细构造 injection/mimicry 两种捕获策略，但未提供 broader impact/dual-use 讨论或滥用缓解说明。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 除 F4/F5 外，正文未见任何图/表编号或说明，读者无法核对 b≈1600、c=0 等关键结果所对应的图表证据。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Minor: 除 seed 和数据哈希外未提供完整生成代码/配置；且“c=0 从不输给 majority”这个极端结果没有给出理论解释或逐 family/逐 seed 分布，读者无法判断是否由构造恒成立。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 隐私：合成实验本身不涉隐私，但未声明实验提示和任务不包含任何个人数据；若使用任何真实文本、日志或公开基准，应补充去标识化与隐私合规说明。",
+      "rounds": [
+        2
+      ]
+    }
+  ]
+}

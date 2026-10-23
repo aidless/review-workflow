@@ -1,0 +1,718 @@
+{
+  "meta": {
+    "zip": "F:\\deepseek\\papers\\calibration-self-improvement\\submission_clean_20260827.zip",
+    "tex": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\main.tex",
+    "entries": 362,
+    "timestamp": "2026-08-27T13:14:50+00:00"
+  },
+  "referenced_paths": [
+    {
+      "raw": "label\\_adjudication.json",
+      "path": "label_adjudication.json",
+      "line": 363,
+      "status": "exact",
+      "matched": [
+        "evidence/label_adjudication.json"
+      ]
+    },
+    {
+      "raw": "dual\\_judge\\_adjudication.json",
+      "path": "dual_judge_adjudication.json",
+      "line": 371,
+      "status": "exact",
+      "matched": [
+        "evidence/dual_judge_adjudication.json"
+      ]
+    },
+    {
+      "raw": "theory/",
+      "path": "theory/",
+      "line": 700,
+      "status": "prefix-dir",
+      "matched": [
+        "theory/estimator_design.md",
+        "theory/msi.py",
+        "theory/p2_interface.md"
+      ]
+    },
+    {
+      "raw": "multi\\_model/matcher\\_vs\\_judge.json",
+      "path": "multi_model/matcher_vs_judge.json",
+      "line": 785,
+      "status": "exact",
+      "matched": [
+        "evidence/multi_model/matcher_vs_judge.json"
+      ]
+    },
+    {
+      "raw": "multi\\_model/per\\_source\\_judge\\_agreement.json",
+      "path": "multi_model/per_source_judge_agreement.json",
+      "line": 817,
+      "status": "exact",
+      "matched": [
+        "evidence/multi_model/per_source_judge_agreement.json"
+      ]
+    },
+    {
+      "raw": "multi\\_model/three\\_judge\\_analysis.json",
+      "path": "multi_model/three_judge_analysis.json",
+      "line": 857,
+      "status": "exact",
+      "matched": [
+        "evidence/multi_model/three_judge_analysis.json"
+      ]
+    },
+    {
+      "raw": "multi\\_model/flip\\_audit\\_list.json",
+      "path": "multi_model/flip_audit_list.json",
+      "line": 870,
+      "status": "exact",
+      "matched": [
+        "evidence/multi_model/flip_audit_list.json"
+      ]
+    },
+    {
+      "raw": "multi\\_model/flip\\_audit\\_results.json",
+      "path": "multi_model/flip_audit_results.json",
+      "line": 871,
+      "status": "exact",
+      "matched": [
+        "evidence/multi_model/flip_audit_results.json"
+      ]
+    },
+    {
+      "raw": "multi\\_model/consensus\\_ece\\_result.json",
+      "path": "multi_model/consensus_ece_result.json",
+      "line": 901,
+      "status": "exact",
+      "matched": [
+        "evidence/multi_model/consensus_ece_result.json"
+      ]
+    },
+    {
+      "raw": "flip\\_audit\\_list.json",
+      "path": "flip_audit_list.json",
+      "line": 902,
+      "status": "exact",
+      "matched": [
+        "evidence/multi_model/flip_audit_list.json"
+      ]
+    },
+    {
+      "raw": "multi\\_model/consensus\\_ece\\_result.json",
+      "path": "multi_model/consensus_ece_result.json",
+      "line": 918,
+      "status": "exact",
+      "matched": [
+        "evidence/multi_model/consensus_ece_result.json"
+      ]
+    },
+    {
+      "raw": "census\\_sig600/",
+      "path": "census_sig600/",
+      "line": 1229,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "evidence/confidence.jsonl",
+      "path": "evidence/confidence.jsonl",
+      "line": 1807,
+      "status": "exact",
+      "matched": [
+        "evidence/confidence.jsonl"
+      ]
+    },
+    {
+      "raw": "recompute\\_analysis.py",
+      "path": "recompute_analysis.py",
+      "line": 1813,
+      "status": "exact",
+      "matched": [
+        "scripts/recompute_analysis.py"
+      ]
+    },
+    {
+      "raw": "confidence\\_pilot.jsonl",
+      "path": "confidence_pilot.jsonl",
+      "line": 1813,
+      "status": "exact",
+      "matched": [
+        "evidence/confidence_pilot.jsonl"
+      ]
+    },
+    {
+      "raw": "evidence/confidence\\_pilot.jsonl",
+      "path": "evidence/confidence_pilot.jsonl",
+      "line": 1814,
+      "status": "exact",
+      "matched": [
+        "evidence/confidence_pilot.jsonl"
+      ]
+    },
+    {
+      "raw": "evidence/label\\_adjudication.json",
+      "path": "evidence/label_adjudication.json",
+      "line": 1816,
+      "status": "exact",
+      "matched": [
+        "evidence/label_adjudication.json"
+      ]
+    },
+    {
+      "raw": "evidence/analysis\\_summary.json",
+      "path": "evidence/analysis_summary.json",
+      "line": 1818,
+      "status": "exact",
+      "matched": [
+        "evidence/analysis_summary.json"
+      ]
+    },
+    {
+      "raw": "evidence/three\\_arm\\_result.json",
+      "path": "evidence/three_arm_result.json",
+      "line": 1821,
+      "status": "exact",
+      "matched": [
+        "evidence/three_arm_result.json"
+      ]
+    },
+    {
+      "raw": "scripts/collect\\_pilot\\_data.py",
+      "path": "scripts/collect_pilot_data.py",
+      "line": 1824,
+      "status": "exact",
+      "matched": [
+        "scripts/collect_pilot_data.py"
+      ]
+    },
+    {
+      "raw": "scripts/label\\_match.py",
+      "path": "scripts/label_match.py",
+      "line": 1825,
+      "status": "exact",
+      "matched": [
+        "scripts/label_match.py"
+      ]
+    },
+    {
+      "raw": "scripts/adjudicate\\_labels.py",
+      "path": "scripts/adjudicate_labels.py",
+      "line": 1826,
+      "status": "exact",
+      "matched": [
+        "scripts/adjudicate_labels.py"
+      ]
+    },
+    {
+      "raw": "scripts/verify\\_labels.py",
+      "path": "scripts/verify_labels.py",
+      "line": 1826,
+      "status": "exact",
+      "matched": [
+        "scripts/verify_labels.py"
+      ]
+    },
+    {
+      "raw": "scripts/recompute\\_analysis.py",
+      "path": "scripts/recompute_analysis.py",
+      "line": 1828,
+      "status": "exact",
+      "matched": [
+        "scripts/recompute_analysis.py"
+      ]
+    },
+    {
+      "raw": "scripts/run\\_three\\_arm.py",
+      "path": "scripts/run_three_arm.py",
+      "line": 1830,
+      "status": "exact",
+      "matched": [
+        "scripts/run_three_arm.py"
+      ]
+    },
+    {
+      "raw": "evidence/bootstrap\\_ci.json",
+      "path": "evidence/bootstrap_ci.json",
+      "line": 1832,
+      "status": "exact",
+      "matched": [
+        "evidence/bootstrap_ci.json"
+      ]
+    },
+    {
+      "raw": "scripts/bootstrap\\_ci.py",
+      "path": "scripts/bootstrap_ci.py",
+      "line": 1834,
+      "status": "exact",
+      "matched": [
+        "scripts/bootstrap_ci.py"
+      ]
+    },
+    {
+      "raw": "evidence/dual\\_judge\\_adjudication.json",
+      "path": "evidence/dual_judge_adjudication.json",
+      "line": 1835,
+      "status": "exact",
+      "matched": [
+        "evidence/dual_judge_adjudication.json"
+      ]
+    },
+    {
+      "raw": "theory/",
+      "path": "theory/",
+      "line": 1836,
+      "status": "prefix-dir",
+      "matched": [
+        "theory/estimator_design.md",
+        "theory/msi.py",
+        "theory/p2_interface.md"
+      ]
+    },
+    {
+      "raw": "sim\\_matcher\\_bias.py",
+      "path": "sim_matcher_bias.py",
+      "line": 1838,
+      "status": "exact",
+      "matched": [
+        "theory/sim_matcher_bias.py"
+      ]
+    },
+    {
+      "raw": "sim\\_sem\\_ece.py",
+      "path": "sim_sem_ece.py",
+      "line": 1839,
+      "status": "exact",
+      "matched": [
+        "theory/sim_sem_ece.py"
+      ]
+    },
+    {
+      "raw": "evidence/multi\\_model/",
+      "path": "evidence/multi_model/",
+      "line": 1841,
+      "status": "prefix-dir",
+      "matched": [
+        "evidence/multi_model/consensus_ece_result.json",
+        "evidence/multi_model/consensus_result.json",
+        "evidence/multi_model/deepseek-r1-7b.jsonl"
+      ]
+    },
+    {
+      "raw": "collect\\_multi\\_model.py",
+      "path": "collect_multi_model.py",
+      "line": 1842,
+      "status": "exact",
+      "matched": [
+        "scripts/collect_multi_model.py"
+      ]
+    },
+    {
+      "raw": "multi\\_model\\_analysis.py",
+      "path": "multi_model_analysis.py",
+      "line": 1842,
+      "status": "exact",
+      "matched": [
+        "scripts/multi_model_analysis.py"
+      ]
+    },
+    {
+      "raw": "evidence/census\\_sig600/",
+      "path": "evidence/census_sig600/",
+      "line": 1844,
+      "status": "prefix-dir",
+      "matched": [
+        "evidence/census_sig600/census600_tasks.json",
+        "evidence/census_sig600/for_judge.jsonl",
+        "evidence/census_sig600/gemma2-9b.jsonl"
+      ]
+    },
+    {
+      "raw": "pull\\_crossfamily.py",
+      "path": "pull_crossfamily.py",
+      "line": 1846,
+      "status": "exact",
+      "matched": [
+        "scripts/pull_crossfamily.py"
+      ]
+    },
+    {
+      "raw": "merge\\_judged.py",
+      "path": "merge_judged.py",
+      "line": 1847,
+      "status": "exact",
+      "matched": [
+        "scripts/merge_judged.py"
+      ]
+    },
+    {
+      "raw": "compute\\_significance\\_analysis.py",
+      "path": "compute_significance_analysis.py",
+      "line": 1847,
+      "status": "exact",
+      "matched": [
+        "scripts/compute_significance_analysis.py"
+      ]
+    },
+    {
+      "raw": "compute\\_judge\\_calibration.py",
+      "path": "compute_judge_calibration.py",
+      "line": 1849,
+      "status": "exact",
+      "matched": [
+        "scripts/compute_judge_calibration.py"
+      ]
+    },
+    {
+      "raw": "judge\\_calibration\\_9model.json",
+      "path": "judge_calibration_9model.json",
+      "line": 1850,
+      "status": "exact",
+      "matched": [
+        "evidence/census_sig600/judge_calibration_9model.json"
+      ]
+    },
+    {
+      "raw": "evidence/frontier/",
+      "path": "evidence/frontier/",
+      "line": 1852,
+      "status": "prefix-dir",
+      "matched": [
+        "evidence/frontier/collect.log",
+        "evidence/frontier/DeepSeek-V4-Flash-0731.jsonl",
+        "evidence/frontier/frontier_analysis.json"
+      ]
+    },
+    {
+      "raw": "evidence\\_manifest.json",
+      "path": "evidence_manifest.json",
+      "line": 1854,
+      "status": "exact",
+      "matched": [
+        "evidence_manifest.json"
+      ]
+    },
+    {
+      "raw": "results/verified/",
+      "path": "results/verified/",
+      "line": 1855,
+      "status": "MISSING",
+      "matched": []
+    }
+  ],
+  "missing_refs": [
+    {
+      "raw": "census\\_sig600/",
+      "path": "census_sig600/",
+      "line": 1229,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/verified/",
+      "path": "results/verified/",
+      "line": 1855,
+      "status": "MISSING",
+      "matched": []
+    }
+  ],
+  "local_path_leaks": [
+    {
+      "file": "paper/main.tex",
+      "line": 207,
+      "leak": "i:\\hat{y",
+      "context": "matcher's judgment; let $F=\\{i:\\hat{y}_i\\neq y^*_i\\}$"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 252,
+      "leak": "i:\\hat{y",
+      "context": "set $D=\\{i:\\hat{y}^1_i\\neq\\hat{y}^2_i\\}$, $k_{\\"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 441,
+      "leak": "i:\\hat{y",
+      "context": "where $k_{\\mathrm{diff}}=|\\{i:\\hat{y}^1_i\\neq\\hat{y}^2_i\\}|$; by"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 1611,
+      "leak": "F:\\hat{y",
+      "context": "hat{a}-\\bar{y}^*| = |\\#\\{i\\in F:\\hat{y}_i=1\\}-\\#\\{i\\in F:\\hat{y}_i=0"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 1611,
+      "leak": "F:\\hat{y",
+      "context": "i\\in F:\\hat{y}_i=1\\}-\\#\\{i\\in F:\\hat{y}_i=0\\}|/n \\le k/n$."
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 1615,
+      "leak": "i:\\hat{y",
+      "context": "$c_i\\in[0,1]$ fixed and $F=\\{i:\\hat{y}_i\\neq y^*_i\\}$, $|F|=k$."
+    },
+    {
+      "file": "paper/fancyhdr.sty",
+      "line": 284,
+      "leak": "e:\\MessageBreak",
+      "context": "at least \\the\\ht0, for example:\\MessageBreak"
+    },
+    {
+      "file": "paper/fancyhdr.sty",
+      "line": 291,
+      "leak": "e:\\MessageBreak",
+      "context": "topmargin smaller to compensate:\\MessageBreak"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 207,
+      "leak": "i:\\hat{y",
+      "context": "matcher's judgment; let $F=\\{i:\\hat{y}_i\\neq y^*_i\\}$"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 252,
+      "leak": "i:\\hat{y",
+      "context": "set $D=\\{i:\\hat{y}^1_i\\neq\\hat{y}^2_i\\}$, $k_{\\"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 441,
+      "leak": "i:\\hat{y",
+      "context": "where $k_{\\mathrm{diff}}=|\\{i:\\hat{y}^1_i\\neq\\hat{y}^2_i\\}|$; by"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 1611,
+      "leak": "F:\\hat{y",
+      "context": "hat{a}-\\bar{y}^*| = |\\#\\{i\\in F:\\hat{y}_i=1\\}-\\#\\{i\\in F:\\hat{y}_i=0"
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 1611,
+      "leak": "F:\\hat{y",
+      "context": "i\\in F:\\hat{y}_i=1\\}-\\#\\{i\\in F:\\hat{y}_i=0\\}|/n \\le k/n$."
+    },
+    {
+      "file": "paper/main.tex",
+      "line": 1615,
+      "leak": "i:\\hat{y",
+      "context": "$c_i\\in[0,1]$ fixed and $F=\\{i:\\hat{y}_i\\neq y^*_i\\}$, $|F|=k$."
+    },
+    {
+      "file": "scripts/check_tmlr_compliance.py",
+      "line": 26,
+      "leak": "\\\\usepackage\\s*(?:\\[[^\\",
+      "context": "TMLR_PKG_RE = re.compile(r\"\\\\usepackage\\s*(?:\\[[^\\]]*\\])?\\s*\\{tmlr\\}\")"
+    },
+    {
+      "file": "scripts/check_tmlr_compliance.py",
+      "line": 27,
+      "leak": "\\\\documentclass\\s*(?:\\[[^\\",
+      "context": "JMLR_CLASS_RE = re.compile(r\"\\\\documentclass\\s*(?:\\[[^\\]]*\\])?\\s*\\{[^}]*jmlr[^}]*\\}\")"
+    },
+    {
+      "file": "scripts/check_tmlr_compliance.py",
+      "line": 34,
+      "leak": "\\\\bibliographystyle\\s*\\{[^",
+      "context": "BIBSTYLE_RE = re.compile(r\"\\\\bibliographystyle\\s*\\{[^}]*tmlr[^}]*\\}\")"
+    },
+    {
+      "file": "scripts/check_tmlr_compliance.py",
+      "line": 35,
+      "leak": "\\\\bibliography\\s*\\{",
+      "context": "BIB_RE = re.compile(r\"\\\\bibliography\\s*\\{\")"
+    },
+    {
+      "file": "scripts/collect_census.py",
+      "line": 24,
+      "leak": "y:\\n",
+      "context": "le-choice question. Output only:\\n\""
+    },
+    {
+      "file": "scripts/collect_frontier.py",
+      "line": 41,
+      "leak": "y:\\n",
+      "context": "le-choice question. Output only:\\n\""
+    },
+    {
+      "file": "scripts/collect_frontier.py",
+      "line": 46,
+      "leak": "y:\\n",
+      "context": "nswer the question. Output only:\\n\""
+    },
+    {
+      "file": "scripts/collect_ood.py",
+      "line": 26,
+      "leak": "y:\\n",
+      "context": "nswer the question. Output only:\\n\""
+    },
+    {
+      "file": "scripts/compile_gate.py",
+      "line": 40,
+      "leak": "\\\\label\\{([^",
+      "context": "LABEL_CMD = re.compile(r\"\\\\label\\{([^}]*)\\}\")"
+    },
+    {
+      "file": "scripts/dual_assessment.py",
+      "line": 57,
+      "leak": "\\\\begin\\{abstract\\",
+      "context": "m = re.search(r\"\\\\begin\\{abstract\\}(.*?)\\\\end\\{abstract\\}\", t, r"
+    },
+    {
+      "file": "scripts/dual_assessment.py",
+      "line": 57,
+      "leak": "\\\\end\\{abstract\\",
+      "context": "rch(r\"\\\\begin\\{abstract\\}(.*?)\\\\end\\{abstract\\}\", t, re.S)"
+    },
+    {
+      "file": "scripts/dual_model_final_eval.py",
+      "line": 20,
+      "leak": "\\\\begin\\{abstract\\",
+      "context": "m = re.search(r\"\\\\begin\\{abstract\\}(.*?)\\\\end\\{abstract\\}\", tex,"
+    },
+    {
+      "file": "scripts/dual_model_final_eval.py",
+      "line": 20,
+      "leak": "\\\\end\\{abstract\\",
+      "context": "rch(r\"\\\\begin\\{abstract\\}(.*?)\\\\end\\{abstract\\}\", tex, re.S)"
+    },
+    {
+      "file": "scripts/dual_model_final_eval.py",
+      "line": 46,
+      "leak": "T:\\n",
+      "context": "\"ABSTRACT:\\n\" + abstract + \"\\n\\n\""
+    },
+    {
+      "file": "scripts/dual_model_final_eval.py",
+      "line": 47,
+      "leak": "S:\\n",
+      "context": "\"KEY VERIFIED FINDINGS:\\n\" + FACTS + \"\\n\\n\""
+    },
+    {
+      "file": "scripts/dual_model_final_eval.py",
+      "line": 48,
+      "leak": "s:\\n",
+      "context": "JSON object with integer scores:\\n\""
+    },
+    {
+      "file": "scripts/judge_census.py",
+      "line": 22,
+      "leak": "y:\\n",
+      "context": "ong option letter). Output only:\\n\""
+    },
+    {
+      "file": "scripts/judge_hetero.py",
+      "line": 26,
+      "leak": "y:\\n",
+      "context": "ong option letter). Output only:\\n\""
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 39,
+      "leak": "s:\\s*(\\d+",
+      "context": "\"stale\": r\"## Stale markers:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 40,
+      "leak": "s:\\s*(\\d+",
+      "context": "# Inverted confidence intervals:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 41,
+      "leak": "t:\\s*(\\d+",
+      "context": "evidence JSON but never in text:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 78,
+      "leak": "s:\\s*(\\d+",
+      "context": "ssible or out-of-range p-values:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 79,
+      "leak": "s:\\s*(\\d+",
+      "context": "r\"## Out-of-range effect sizes:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 80,
+      "leak": "f:\\s*(\\d+",
+      "context": "Negative statistics or zero df:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 83,
+      "leak": "t:\\s*(\\d+",
+      "context": "t\": r\"## Same-line n/N conflict:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 86,
+      "leak": "k:\\s*(\\d+",
+      "context": ": r\"## Multiple-comparison risk:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 101,
+      "leak": "s:\\s*(\\d+",
+      "context": "refs\": r\"## Missing_figure_refs:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 102,
+      "leak": "s:\\s*(\\d+",
+      "context": "r\"## Undefined_includegraphics:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scanner_regression.py",
+      "line": 103,
+      "leak": "d:\\s*(\\d+",
+      "context": "entioned\": r\"## Never_mentioned:\\s*(\\d+)\","
+    },
+    {
+      "file": "scripts/scan_figure_claims.py",
+      "line": 64,
+      "leak": "\\\\label\\{(fig:[^",
+      "context": "LABEL_RE = re.compile(r\"\\\\label\\{(fig:[^}]*)\\}\")"
+    },
+    {
+      "file": "scripts/verify_taint.py",
+      "line": 93,
+      "leak": "C:\\\\...",
+      "context": "s and Windows drive letters (\"C:\\\\...\")."
+    },
+    {
+      "file": "CLAIM_LEDGER.md",
+      "line": 42,
+      "leak": "E:\\AGI-KIT\\logs\\cloud_smoke_{baseline",
+      "context": "璺戝彲澶嶇幇锛堥渶 DEEP_API_KEY锛夛紱婧愭棩蹇?E:\\AGI-KIT\\logs\\cloud_smoke_{baseline,guard4}.json | verified |"
+    },
+    {
+      "file": "evidence_manifest.json",
+      "line": null,
+      "leak": "F:\\deepseek\\_stage_calib_20260827",
+      "context": "root"
+    }
+  ],
+  "count_claims": [],
+  "inpackage_tex": {
+    "entry": "paper/main.tex",
+    "desync_with_disk": false,
+    "count_claims": []
+  },
+  "summary": {
+    "refs_total": 43,
+    "refs_missing": 2,
+    "leaks": 47,
+    "count_claims": 0,
+    "count_claims_mismatched": 0,
+    "tex_desync": false,
+    "verdict": "CRITICAL"
+  }
+}

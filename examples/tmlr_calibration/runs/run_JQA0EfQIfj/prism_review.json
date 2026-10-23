@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_JQA0EfQIfj\\extracted_text.txt",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-26T06:45:27+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "dimensions": {
+    "P": {
+      "status": "ok",
+      "score": 9,
+      "justification": "问题真实且重要:WiFi-CSI运动预测是新兴且有实际意义的研究方向,隐私保护、无视线约束的感知需求明确。与已发表CSI姿态估计工作关系清晰,准确指出其仅做瞬时回归、未建模时序动力学的空白。Koopman算子学习属TMLR核心ML范畴,方法论与venue高度契合。",
+      "top_weakness": "问题虽真实,但建立在尚不成熟的CSI姿态估计基础上,下游预测任务的基准与评测体系仍在早期,可能被质疑问题成熟度。",
+      "evidence": "Modeling forward temporal dynamics, predicting where a person will be rather than where they are, remains largely unexplored. ... the first unified framework for WiFi-CSI-based human motion prediction",
+      "parse": "json"
+    },
+    "R": {
+      "status": "ok",
+      "score": 5,
+      "justification": "可见片段（摘要+引言）中方法论框架（Koopman提升、残差算子、anchor-delta头）概念上合理,但缺乏任何统计检验、多重比较校正、seed管理或消融设计的描述。性能声称（'substantial margin'）无显著性检验、置信区间或方差报告支撑。实验设计的公平性与可重复性无法从现有文本确认,属明显可质疑之处需解释。",
+      "top_weakness": "声称'outperforming all baselines by a substantial margin'但无统计显著性检验、seed方差或消融对照的可见证据。",
+      "evidence": "KOALA achieves robust, consistent performance across both short- and long-term prediction horizons, outperforming all baselines by a substantial margin.",
+      "parse": "json"
+    },
+    "I": {
+      "status": "ok",
+      "score": 7,
+      "justification": "首次将WiFi-CSI从瞬时姿态估计扩展到多时程运动预测,问题 formulation 本身具有新能力价值；Koopman 潜空间线性化、anchor-delta 头、KAL loss 组合构成针对 CSI 噪声与退化捷径的系统性方案,属扎实增量。但核心组件（Koopman、lifting）多为已有技术迁移,且实验证据被截断,'substantial margin'断言难以完全核实。",
+      "top_weakness": "'outperforming all baselines by a substantial margin'的断言缺乏可见的量化证据支撑,贡献大小与证据匹配度存疑。",
+      "evidence": "KOALA, the first unified framework for WiFi-CSI-based human motion prediction... outperforming all baselines by a substantial margin.",
+      "parse": "json"
+    },
+    "S": {
+      "status": "ok",
+      "score": 6,
+      "justification": "摘要中存在多处措辞偏强的断言,如âsubstantial marginââall baselinesââthe first unified frameworkâ,但本片段未提供任何量化结果支撑。âwhere nonlinear dynamics become linearâ是对Koopman理论的理想化表述。引言坦率讨论了CSI噪声等挑战,但未见局限性章节与复现承诺。",
+      "top_weakness": "âoutperforming all baselines by a substantial marginâ缺乏可见量化证据,属断言超出证据。",
+      "evidence": "KOALA achieves robust, consistent performance across both short- and long-term prediction horizons, outperforming all baselines by a substantial margin.",
+      "parse": "json"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "scores": {
+      "P": 9,
+      "R": 5,
+      "I": 7,
+      "S": 6
+    },
+    "overall": 5,
+    "weakest": "R(严谨性)",
+    "detail": "最弱维度 R(严谨性) = 5 分（<= 6）→ 文本层 WARN；证据层门禁不受影响"
+  }
+}

@@ -1,0 +1,2108 @@
+# 诚实性扫描报告（R5b）
+
+- 论文：`F:\deepseek\papers\calibration-self-improvement\paper\main.tex`；证据目录：`F:\deepseek\papers\calibration-self-improvement\evidence`
+- 结论：**MAJOR** —— 关键词命中 2025，可疑（论文数值+无就近披露）0，已就近披露 41
+
+## 可疑命中（论文引用了被标记产物的数值，需人工定性）
+
+- 无
+
+## 全部关键词命中（按文件）
+
+### `F:\deepseek\papers\calibration-self-improvement\evidence\bas_per_model_ci.json`
+- `approximation_note` [synthetic] Point estimates are real (from evidence/bas_ood.json + ood_aurc.json). CI are approximate normal; no
+### `F:\deepseek\papers\calibration-self-improvement\evidence\capability_comparison.json`
+- `provenance.method` [synthetic] synthetic capability frequency k=5/10 vs verbalized, ECE 10-bin equi-freq, seed 20260821
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census\census300_tasks.json`
+- `tasks[76].question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `tasks[76].prompt` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `tasks[83].choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `tasks[83].prompt` [synthetic] Mouse sperm contain receptor proteins that bind to a glycoprotein (ZP3) in the zona pellucida of mou
+- `tasks[86].choices[3]` [synthetic] Some are photosynthetic.
+- `tasks[86].gold` [synthetic] Some are photosynthetic.
+- `tasks[86].prompt` [synthetic] Which of the following statements about fungi is NOT true?
+A. They all are eukaryotic.
+B. They all h
+- `tasks[228].question` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `tasks[228].prompt` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `tasks[243].question` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `tasks[243].prompt` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `tasks[246].question` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `tasks[246].prompt` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `tasks[284].question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `tasks[284].choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `tasks[284].choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `tasks[284].gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `tasks[284].prompt` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census\census600_tasks.json`
+- `tasks[76].question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `tasks[76].prompt` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `tasks[83].choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `tasks[83].prompt` [synthetic] Mouse sperm contain receptor proteins that bind to a glycoprotein (ZP3) in the zona pellucida of mou
+- `tasks[86].choices[3]` [synthetic] Some are photosynthetic.
+- `tasks[86].gold` [synthetic] Some are photosynthetic.
+- `tasks[86].prompt` [synthetic] Which of the following statements about fungi is NOT true?
+A. They all are eukaryotic.
+B. They all h
+- `tasks[228].question` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `tasks[228].prompt` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `tasks[243].question` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `tasks[243].prompt` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `tasks[246].question` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `tasks[246].prompt` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `tasks[284].question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `tasks[284].choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `tasks[284].choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `tasks[284].gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `tasks[284].prompt` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `tasks[531].question` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `tasks[531].choices[1]` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `tasks[531].choices[3]` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `tasks[531].gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `tasks[531].prompt` [pending] Historically, what has been the general pattern of defense spending in the United States?
+A. Steady 
+- `tasks[533].question` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `tasks[533].choices[0]` [pending] Conservatives are skeptical of increases in defense spending; liberals advocate increases in defense
+- `tasks[533].choices[1]` [pending] Conservatives favor social spending over defense spending; liberals favor defense spending over soci
+- `tasks[533].choices[2]` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `tasks[533].gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `tasks[533].prompt` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+A. Conservat
+- `tasks[534].choices[3]` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `tasks[534].gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `tasks[534].prompt` [pending] How did World War I shift economic power from Europe to the United States?
+A. The war reduced Europe
+- `tasks[546].question` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `tasks[546].prompt` [pending] The trade-off between defense and social spending is often referred to as a choice between
+A. bread 
+- `tasks[574].question` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `tasks[574].prompt` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `tasks[576].choices[2]` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `tasks[576].gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `tasks[576].prompt` [pending] What case did President Eisenhower make against the 'military-industrial complex' in his farewell sp
+- `tasks[584].choices[0]` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `tasks[584].choices[3]` [pending] Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `tasks[584].gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `tasks[584].prompt` [pending] Why do some scholars claim that Reagan 'won the Cold War'?
+A. Reagan's first term military spending 
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census\census600_tasks_backup_300.json`
+- `tasks[76].question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `tasks[76].prompt` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `tasks[83].choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `tasks[83].prompt` [synthetic] Mouse sperm contain receptor proteins that bind to a glycoprotein (ZP3) in the zona pellucida of mou
+- `tasks[86].choices[3]` [synthetic] Some are photosynthetic.
+- `tasks[86].gold` [synthetic] Some are photosynthetic.
+- `tasks[86].prompt` [synthetic] Which of the following statements about fungi is NOT true?
+A. They all are eukaryotic.
+B. They all h
+- `tasks[228].question` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `tasks[228].prompt` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `tasks[243].question` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `tasks[243].prompt` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `tasks[246].question` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `tasks[246].prompt` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `tasks[284].question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `tasks[284].choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `tasks[284].choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `tasks[284].gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `tasks[284].prompt` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census\for_judge.jsonl`
+- `L77:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L87:gold` [synthetic] Some are photosynthetic.
+- `L203:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L206:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L244:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L244:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L490:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L490:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L490:answer` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L492:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L492:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L492:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L493:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L505:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L533:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L535:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L543:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L543:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L635:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L645:gold` [synthetic] Some are photosynthetic.
+- `L787:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L802:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L805:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L843:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L843:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L1089:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1089:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1089:answer` [pending] B. Increased spending during wars, with demobilization bringing spending down but not back to prewar
+- `L1091:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1091:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1092:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1092:answer` [pending] D. The United States became a creditor country and financial centre, with European war spending boos
+- `L1104:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L1132:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L1134:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1142:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1142:answer` [pending] D. Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L1234:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L1244:gold` [synthetic] Some are photosynthetic.
+- `L1386:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L1401:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L1404:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L1442:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L1442:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L1688:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1688:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1690:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1690:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1690:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1691:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1691:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1703:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L1731:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L1733:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1733:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1741:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1833:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L1840:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L1843:gold` [synthetic] Some are photosynthetic.
+- `L1843:answer` [synthetic] Some are photosynthetic.
+- `L1985:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L2000:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L2003:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L2041:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L2041:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2041:answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2287:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L2287:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2287:answer` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L2289:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L2289:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2289:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2290:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2290:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2302:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2330:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2332:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2332:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2340:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2340:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2431:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L2438:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L2441:gold` [synthetic] Some are photosynthetic.
+- `L2441:answer` [synthetic] Some are photosynthetic.
+- `L2578:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L2592:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L2594:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L2628:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L2628:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2628:answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2874:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L2874:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2874:answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2876:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L2876:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2876:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2877:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2877:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2889:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2917:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2919:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2919:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2927:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2927:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census\judged_census.jsonl`
+- `L77:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L87:gold` [synthetic] Some are photosynthetic.
+- `L203:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L206:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L244:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L244:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L490:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L490:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L490:answer` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L492:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L492:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L492:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L493:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L505:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L533:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L535:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L543:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L543:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L635:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L645:gold` [synthetic] Some are photosynthetic.
+- `L787:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L802:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L805:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L843:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L843:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L1089:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1089:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1089:answer` [pending] B. Increased spending during wars, with demobilization bringing spending down but not back to prewar
+- `L1091:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1091:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1092:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1092:answer` [pending] D. The United States became a creditor country and financial centre, with European war spending boos
+- `L1104:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L1132:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L1134:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1142:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1142:answer` [pending] D. Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L1234:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L1244:gold` [synthetic] Some are photosynthetic.
+- `L1386:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L1401:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L1404:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L1442:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L1442:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L1688:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1688:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1690:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1690:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1690:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1691:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1691:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1703:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L1731:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L1733:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1733:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1741:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1833:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L1840:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L1843:gold` [synthetic] Some are photosynthetic.
+- `L1843:answer` [synthetic] Some are photosynthetic.
+- `L1985:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L2000:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L2003:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L2041:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L2041:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2041:answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2287:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L2287:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2287:answer` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L2289:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L2289:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2289:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2290:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2290:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2302:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2330:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2332:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2332:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2340:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2340:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2431:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L2438:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L2441:gold` [synthetic] Some are photosynthetic.
+- `L2441:answer` [synthetic] Some are photosynthetic.
+- `L2578:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L2592:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L2594:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L2628:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L2628:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2628:answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2874:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L2874:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2874:answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2876:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L2876:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2876:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2877:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2877:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2889:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2917:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2919:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2919:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2927:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2927:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census\judged_census_A.jsonl`
+- `L77:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L87:gold` [synthetic] Some are photosynthetic.
+- `L203:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L206:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L244:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L244:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L336:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L346:gold` [synthetic] Some are photosynthetic.
+- `L488:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L503:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L506:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L544:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L544:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L636:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L646:gold` [synthetic] Some are photosynthetic.
+- `L788:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L803:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L806:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L844:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L844:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L936:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L943:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L946:gold` [synthetic] Some are photosynthetic.
+- `L946:answer` [synthetic] Some are photosynthetic.
+- `L1088:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L1103:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L1106:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L1144:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L1144:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L1144:answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L1390:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1390:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1390:answer` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L1392:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1392:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1392:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1393:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1405:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L1433:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L1435:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1443:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1443:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1689:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1689:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1689:answer` [pending] B. Increased spending during wars, with demobilization bringing spending down but not back to prewar
+- `L1691:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1691:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1692:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1692:answer` [pending] D. The United States became a creditor country and financial centre, with European war spending boos
+- `L1704:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L1732:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L1734:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1742:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1742:answer` [pending] D. Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L1988:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1988:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1990:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1990:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1990:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1991:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1991:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2003:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2031:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2033:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2033:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2041:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2287:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L2287:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2287:answer` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L2289:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L2289:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2289:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2290:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2290:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2302:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2330:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2332:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2332:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2340:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2340:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2431:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L2438:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L2441:gold` [synthetic] Some are photosynthetic.
+- `L2441:answer` [synthetic] Some are photosynthetic.
+- `L2578:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L2592:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L2594:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L2628:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L2628:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2628:answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2874:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L2874:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2874:answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2876:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L2876:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2876:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2877:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2877:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2889:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2917:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2919:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2919:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2927:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2927:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census\judged_census_B.jsonl`
+- `L77:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L87:gold` [synthetic] Some are photosynthetic.
+- `L203:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L206:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L244:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L244:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L336:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L346:gold` [synthetic] Some are photosynthetic.
+- `L488:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L503:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L506:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L544:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L544:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L636:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L646:gold` [synthetic] Some are photosynthetic.
+- `L788:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L803:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L806:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L844:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L844:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L936:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L943:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L946:gold` [synthetic] Some are photosynthetic.
+- `L946:answer` [synthetic] Some are photosynthetic.
+- `L1088:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L1103:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L1106:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L1144:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L1144:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L1144:answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L1390:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1390:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1390:answer` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L1392:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1392:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1392:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1393:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1405:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L1433:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L1435:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1443:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1443:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1689:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1689:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1689:answer` [pending] B. Increased spending during wars, with demobilization bringing spending down but not back to prewar
+- `L1691:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1691:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1692:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1692:answer` [pending] D. The United States became a creditor country and financial centre, with European war spending boos
+- `L1704:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L1732:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L1734:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1742:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1742:answer` [pending] D. Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L1988:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1988:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1990:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1990:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1990:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1991:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1991:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2003:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2031:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2033:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2033:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2041:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2287:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L2287:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2287:answer` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L2289:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L2289:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2289:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2290:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2290:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2302:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2330:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2332:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2332:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2340:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2340:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2431:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L2438:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L2441:gold` [synthetic] Some are photosynthetic.
+- `L2441:answer` [synthetic] Some are photosynthetic.
+- `L2578:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L2592:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L2594:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L2628:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L2628:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2628:answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2874:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L2874:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2874:answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2876:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L2876:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2876:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2877:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2877:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2889:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2917:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2919:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2919:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2927:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2927:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census\llama3.2-1b.jsonl`
+- `L77:question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L84:choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L87:choices[3]` [synthetic] Some are photosynthetic.
+- `L87:gold_answer` [synthetic] Some are photosynthetic.
+- `L203:question` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L206:question` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L244:question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L244:choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `L244:choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L244:gold_answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L490:question` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L490:choices[1]` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L490:choices[3]` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L490:gold_answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L490:predicted_label` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L490:raw` [pending] {"answer_letter": "D", "answer": "Increased spending during wars, with further increases after the w
+- `L492:question` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L492:choices[0]` [pending] Conservatives are skeptical of increases in defense spending; liberals advocate increases in defense
+- `L492:choices[1]` [pending] Conservatives favor social spending over defense spending; liberals favor defense spending over soci
+- `L492:choices[2]` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L492:gold_answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L492:predicted_label` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L492:raw` [pending] {"answer_letter": "C", "answer": "Conservatives advocate increases in defense spending; liberals are
+- `L493:choices[3]` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L493:gold_answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L505:question` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L533:question` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L535:choices[2]` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L535:gold_answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L543:choices[0]` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L543:choices[3]` [pending] Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L543:gold_answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L543:predicted_label` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L543:raw` [pending] {"answer_letter": "A", "answer": "Reagan's first term military spending pressured the Soviet Union t
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census\ood_collected.jsonl`
+- `L99:consistency_runs[0]` [pending] The billing model of memory cloud backup services typically involves a pay-as-you-go or tiered prici
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census\qwen2.5-1.5b-instruct-q4_K_M.jsonl`
+- `L77:question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L84:choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L87:choices[3]` [synthetic] Some are photosynthetic.
+- `L87:gold_answer` [synthetic] Some are photosynthetic.
+- `L229:question` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L244:question` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L247:question` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L285:question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L285:choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `L285:choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L285:gold_answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L531:question` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L531:choices[1]` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L531:choices[3]` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L531:gold_answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L531:predicted_label` [pending] B. Increased spending during wars, with demobilization bringing spending down but not back to prewar
+- `L531:raw` [pending] B. Increased spending during wars, with demobilization bringing spending down but not back to prewar
+- `L533:question` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L533:choices[0]` [pending] Conservatives are skeptical of increases in defense spending; liberals advocate increases in defense
+- `L533:choices[1]` [pending] Conservatives favor social spending over defense spending; liberals favor defense spending over soci
+- `L533:choices[2]` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L533:gold_answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L534:choices[3]` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L534:gold_answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L534:predicted_label` [pending] D. The United States became a creditor country and financial centre, with European war spending boos
+- `L534:raw` [pending] D. The United States became a creditor country and financial centre, with European war spending boos
+- `L546:question` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L574:question` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L576:choices[2]` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L576:gold_answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L584:choices[0]` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L584:choices[3]` [pending] Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L584:gold_answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L584:predicted_label` [pending] D. Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L584:raw` [pending] D. Reagan reduced military spending and this allowed the Soviet Union space to reform
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census\qwen2.5-3b.jsonl`
+- `L77:question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L84:choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L87:choices[3]` [synthetic] Some are photosynthetic.
+- `L87:gold_answer` [synthetic] Some are photosynthetic.
+- `L229:question` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L244:question` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L247:question` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L285:question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L285:choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `L285:choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L285:gold_answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L531:question` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L531:choices[1]` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L531:choices[3]` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L531:gold_answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L533:question` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L533:choices[0]` [pending] Conservatives are skeptical of increases in defense spending; liberals advocate increases in defense
+- `L533:choices[1]` [pending] Conservatives favor social spending over defense spending; liberals favor defense spending over soci
+- `L533:choices[2]` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L533:gold_answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L533:predicted_label` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L533:raw` [pending] JSON: {"answer_letter": "C", "answer": "Conservatives advocate increases in defense spending; libera
+- `L534:choices[3]` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L534:gold_answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L534:predicted_label` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L534:raw` [pending] JSON: {"answer_letter": "D", "answer": "The United States became a creditor country and financial ce
+- `L546:question` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L574:question` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L576:choices[2]` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L576:gold_answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L576:predicted_label` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L576:raw` [pending] JSON: {"answer_letter": "C", "answer": "That military spending gave the arms industry unwarranted in
+- `L584:choices[0]` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L584:choices[3]` [pending] Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L584:gold_answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census\qwen2.5-7b.jsonl`
+- `L77:question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L84:choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L84:predicted_label` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L84:raw` [synthetic] {"answer_letter": "D", "answer": "Coating synthetic beads with a different glycoprotein, ZP2, fails 
+- `L87:choices[3]` [synthetic] Some are photosynthetic.
+- `L87:gold_answer` [synthetic] Some are photosynthetic.
+- `L87:predicted_label` [synthetic] Some are photosynthetic.
+- `L87:raw` [synthetic] {"answer_letter": "D", "answer": "Some are photosynthetic.", "confidence": 0.9}
+- `L229:question` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L244:question` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L247:question` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L285:question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L285:choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `L285:choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L285:gold_answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L285:predicted_label` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L285:raw` [toy] {"answer_letter": "D", "answer": "Grant the son's motion, because the son had no duty to warn that t
+- `L531:question` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L531:choices[1]` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L531:choices[3]` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L531:gold_answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L531:predicted_label` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L531:raw` [pending] {"answer_letter": "D", "answer": "Increased spending during wars, with further increases after the w
+- `L533:question` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L533:choices[0]` [pending] Conservatives are skeptical of increases in defense spending; liberals advocate increases in defense
+- `L533:choices[1]` [pending] Conservatives favor social spending over defense spending; liberals favor defense spending over soci
+- `L533:choices[2]` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L533:gold_answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L533:predicted_label` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L533:raw` [pending] {"answer_letter": "C", "answer": "Conservatives advocate increases in defense spending; liberals are
+- `L534:choices[3]` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L534:gold_answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L534:predicted_label` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L534:raw` [pending] {"answer_letter": "D", "answer": "The United States became a creditor country and financial centre, 
+- `L546:question` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L574:question` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L576:choices[2]` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L576:gold_answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L576:predicted_label` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L576:raw` [pending] JSON: {"answer_letter": "C", "answer": "That military spending gave the arms industry unwarranted in
+- `L584:choices[0]` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L584:choices[3]` [pending] Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L584:gold_answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L584:predicted_label` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L584:raw` [pending] {"answer_letter": "A", "answer": "Reagan's first term military spending pressured the Soviet Union t
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census\qwen3-8b.jsonl`
+- `L76:question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L83:choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L83:predicted_label` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L83:raw` [synthetic] {"answer_letter": "D", "answer": "Coating synthetic beads with a different glycoprotein, ZP2, fails 
+- `L86:choices[3]` [synthetic] Some are photosynthetic.
+- `L86:gold_answer` [synthetic] Some are photosynthetic.
+- `L86:predicted_label` [synthetic] Some are photosynthetic.
+- `L86:raw` [synthetic] {"answer_letter": "D", "answer": "Some are photosynthetic.", "confidence": 0.95}
+- `L223:question` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L237:question` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L239:question` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L273:question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L273:choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `L273:choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L273:gold_answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L273:predicted_label` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L273:raw` [toy] {"answer_letter": "D", "answer": "Grant the son's motion, because the son had no duty to warn that t
+- `L519:question` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L519:choices[1]` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L519:choices[3]` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L519:gold_answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L519:predicted_label` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L519:raw` [pending] {"answer_letter": "B", "answer": "Increased spending during wars, with demobilization bringing spend
+- `L521:question` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L521:choices[0]` [pending] Conservatives are skeptical of increases in defense spending; liberals advocate increases in defense
+- `L521:choices[1]` [pending] Conservatives favor social spending over defense spending; liberals favor defense spending over soci
+- `L521:choices[2]` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L521:gold_answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L521:predicted_label` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L521:raw` [pending] {"answer_letter": "C", "answer": "Conservatives advocate increases in defense spending; liberals are
+- `L522:choices[3]` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L522:gold_answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L522:predicted_label` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L522:raw` [pending] {"answer_letter": "D", "answer": "The United States became a creditor country and financial centre, 
+- `L534:question` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L562:question` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L564:choices[2]` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L564:gold_answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L564:predicted_label` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L564:raw` [pending] {"answer_letter": "C", "answer": "That military spending gave the arms industry unwarranted influenc
+- `L572:choices[0]` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L572:choices[3]` [pending] Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L572:gold_answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L572:predicted_label` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L572:raw` [pending] {"answer_letter": "A", "answer": "Reagan's first term military spending pressured the Soviet Union t
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census_sig600\census600_tasks.json`
+- `tasks[76].question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `tasks[76].prompt` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `tasks[83].choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `tasks[83].prompt` [synthetic] Mouse sperm contain receptor proteins that bind to a glycoprotein (ZP3) in the zona pellucida of mou
+- `tasks[86].choices[3]` [synthetic] Some are photosynthetic.
+- `tasks[86].gold` [synthetic] Some are photosynthetic.
+- `tasks[86].prompt` [synthetic] Which of the following statements about fungi is NOT true?
+A. They all are eukaryotic.
+B. They all h
+- `tasks[228].question` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `tasks[228].prompt` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `tasks[243].question` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `tasks[243].prompt` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `tasks[246].question` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `tasks[246].prompt` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `tasks[284].question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `tasks[284].choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `tasks[284].choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `tasks[284].gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `tasks[284].prompt` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `tasks[531].question` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `tasks[531].choices[1]` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `tasks[531].choices[3]` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `tasks[531].gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `tasks[531].prompt` [pending] Historically, what has been the general pattern of defense spending in the United States?
+A. Steady 
+- `tasks[533].question` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `tasks[533].choices[0]` [pending] Conservatives are skeptical of increases in defense spending; liberals advocate increases in defense
+- `tasks[533].choices[1]` [pending] Conservatives favor social spending over defense spending; liberals favor defense spending over soci
+- `tasks[533].choices[2]` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `tasks[533].gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `tasks[533].prompt` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+A. Conservat
+- `tasks[534].choices[3]` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `tasks[534].gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `tasks[534].prompt` [pending] How did World War I shift economic power from Europe to the United States?
+A. The war reduced Europe
+- `tasks[546].question` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `tasks[546].prompt` [pending] The trade-off between defense and social spending is often referred to as a choice between
+A. bread 
+- `tasks[574].question` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `tasks[574].prompt` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `tasks[576].choices[2]` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `tasks[576].gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `tasks[576].prompt` [pending] What case did President Eisenhower make against the 'military-industrial complex' in his farewell sp
+- `tasks[584].choices[0]` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `tasks[584].choices[3]` [pending] Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `tasks[584].gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `tasks[584].prompt` [pending] Why do some scholars claim that Reagan 'won the Cold War'?
+A. Reagan's first term military spending 
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census_sig600\for_judge.jsonl`
+- `L77:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L84:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L87:gold` [synthetic] Some are photosynthetic.
+- `L87:answer` [synthetic] Some are photosynthetic.
+- `L229:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L244:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L247:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L285:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L285:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L532:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L532:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L532:answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L534:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L534:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L534:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L535:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L535:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L547:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L575:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L577:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L577:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L585:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L585:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L676:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L683:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L686:gold` [synthetic] Some are photosynthetic.
+- `L686:answer` [synthetic] Some are photosynthetic
+- `L827:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L842:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L845:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L883:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L883:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L1129:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1129:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1129:answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1131:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1131:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1131:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1132:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1132:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1144:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L1172:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L1174:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1174:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1182:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1182:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1274:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L1284:gold` [synthetic] Some are photosynthetic.
+- `L1400:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L1403:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L1441:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L1441:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L1687:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1687:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1687:answer` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L1689:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1689:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1689:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1690:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1702:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L1730:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L1732:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1740:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1740:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1832:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L1839:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L1842:gold` [synthetic] Some are photosynthetic.
+- `L1962:answer` [pending] A. No, because the parties are not identical in the two actions. (B is a close second, but A is the 
+- `L1984:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L1999:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L2002:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L2040:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L2040:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2287:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L2287:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2287:answer` [pending] {"answer_letter": "B", "answer": "Increased spending during wars, with demobilization bringing spend
+- `L2289:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L2289:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2289:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2290:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2290:answer` [pending] {"answer_letter": "D", "answer": "The United States became a creditor country and financial centre, 
+- `L2302:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2330:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2332:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2332:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2340:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2340:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2422:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L2432:gold` [synthetic] Some are photosynthetic.
+- `L2524:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L2524:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2524:answer` [toy] The grandfather's motion, because the son is liable as a matter of law for failing to warn about the
+- `L2692:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L2702:gold` [synthetic] Some are photosynthetic.
+- `L2844:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L2859:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L2862:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L2900:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L2900:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L3146:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L3146:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L3146:answer` [pending] B. Increased spending during wars, with demobilization bringing spending down but not back to prewar
+- `L3148:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L3148:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L3149:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L3149:answer` [pending] D. The United States became a creditor country and financial centre, with European war spending boos
+- `L3161:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L3189:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L3191:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L3199:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L3199:answer` [pending] D. Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L3291:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L3301:gold` [synthetic] Some are photosynthetic.
+- `L3443:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L3458:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L3461:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L3499:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L3499:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L3745:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L3745:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L3747:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L3747:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L3747:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L3748:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L3748:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L3760:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L3788:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L3790:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L3790:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L3798:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L3890:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L3897:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L3900:gold` [synthetic] Some are photosynthetic.
+- `L3900:answer` [synthetic] Some are photosynthetic.
+- `L4042:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L4057:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L4060:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L4098:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L4098:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L4098:answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L4344:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L4344:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L4344:answer` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L4346:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L4346:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L4346:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L4347:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L4347:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L4359:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L4387:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L4389:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L4389:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L4397:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L4397:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L4488:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L4495:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L4498:gold` [synthetic] Some are photosynthetic.
+- `L4498:answer` [synthetic] Some are photosynthetic.
+- `L4635:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L4649:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L4651:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L4685:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L4685:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L4685:answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L4931:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L4931:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L4931:answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L4933:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L4933:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L4933:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L4934:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L4934:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L4946:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L4974:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L4976:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L4976:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L4984:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L4984:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census_sig600\gemma2-9b.jsonl`
+- `L77:question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L84:choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L84:predicted_label` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L84:raw` [synthetic] {"answer_letter": "D", "answer": "Coating synthetic beads with a different glycoprotein, ZP2, fails 
+- `L87:choices[3]` [synthetic] Some are photosynthetic.
+- `L87:gold_answer` [synthetic] Some are photosynthetic.
+- `L87:predicted_label` [synthetic] Some are photosynthetic.
+- `L87:raw` [synthetic] {"answer_letter": "D", "answer": "Some are photosynthetic.", "confidence": 0.99}
+- `L229:question` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L244:question` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L247:question` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L285:question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L285:choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `L285:choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L285:gold_answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L532:question` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L532:choices[1]` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L532:choices[3]` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L532:gold_answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L532:predicted_label` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L532:raw` [pending] {"answer_letter": "B", "answer": "Increased spending during wars, with demobilization bringing spend
+- `L534:question` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L534:choices[0]` [pending] Conservatives are skeptical of increases in defense spending; liberals advocate increases in defense
+- `L534:choices[1]` [pending] Conservatives favor social spending over defense spending; liberals favor defense spending over soci
+- `L534:choices[2]` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L534:gold_answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L534:predicted_label` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L534:raw` [pending] {"answer_letter": "C", "answer": "Conservatives advocate increases in defense spending; liberals are
+- `L535:choices[3]` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L535:gold_answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L535:predicted_label` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L535:raw` [pending] {"answer_letter": "D", "answer": "The United States became a creditor country and financial centre, 
+- `L547:question` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L575:question` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L577:choices[2]` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L577:gold_answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L577:predicted_label` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L577:raw` [pending] {"answer_letter": "C", "answer": "That military spending gave the arms industry unwarranted influenc
+- `L585:choices[0]` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L585:choices[3]` [pending] Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L585:gold_answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L585:predicted_label` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L585:raw` [pending] {"answer_letter": "A", "answer": "Reagan's first term military spending pressured the Soviet Union t
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census_sig600\judged_census.jsonl`
+- `L77:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L84:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L87:gold` [synthetic] Some are photosynthetic.
+- `L87:answer` [synthetic] Some are photosynthetic.
+- `L229:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L244:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L247:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L285:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L285:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L532:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L532:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L532:answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L534:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L534:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L534:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L535:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L535:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L547:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L575:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L577:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L577:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L585:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L585:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L676:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L683:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L686:gold` [synthetic] Some are photosynthetic.
+- `L686:answer` [synthetic] Some are photosynthetic
+- `L827:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L842:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L845:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L883:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L883:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L1129:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1129:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1129:answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1131:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1131:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1131:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1132:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1132:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1144:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L1172:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L1174:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1174:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1182:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1182:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1274:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L1284:gold` [synthetic] Some are photosynthetic.
+- `L1400:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L1403:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L1441:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L1441:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L1687:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1687:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1687:answer` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L1689:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1689:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1689:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1690:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1702:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L1730:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L1732:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1740:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1740:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1832:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L1839:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L1842:gold` [synthetic] Some are photosynthetic.
+- `L1962:answer` [pending] A. No, because the parties are not identical in the two actions. (B is a close second, but A is the 
+- `L1984:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L1999:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L2002:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L2040:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L2040:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2287:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L2287:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2287:answer` [pending] {"answer_letter": "B", "answer": "Increased spending during wars, with demobilization bringing spend
+- `L2289:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L2289:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2289:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2290:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2290:answer` [pending] {"answer_letter": "D", "answer": "The United States became a creditor country and financial centre, 
+- `L2302:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2330:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2332:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2332:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2340:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2340:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2422:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L2432:gold` [synthetic] Some are photosynthetic.
+- `L2524:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L2524:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2524:answer` [toy] The grandfather's motion, because the son is liable as a matter of law for failing to warn about the
+- `L2692:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L2702:gold` [synthetic] Some are photosynthetic.
+- `L2844:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L2859:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L2862:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L2900:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L2900:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L3146:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L3146:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L3146:answer` [pending] B. Increased spending during wars, with demobilization bringing spending down but not back to prewar
+- `L3148:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L3148:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L3149:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L3149:answer` [pending] D. The United States became a creditor country and financial centre, with European war spending boos
+- `L3161:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L3189:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L3191:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L3199:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L3199:answer` [pending] D. Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L3291:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L3301:gold` [synthetic] Some are photosynthetic.
+- `L3443:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L3458:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L3461:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L3499:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L3499:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L3745:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L3745:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L3747:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L3747:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L3747:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L3748:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L3748:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L3760:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L3788:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L3790:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L3790:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L3798:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L3890:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L3897:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L3900:gold` [synthetic] Some are photosynthetic.
+- `L3900:answer` [synthetic] Some are photosynthetic.
+- `L4042:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L4057:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L4060:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L4098:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L4098:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L4098:answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L4344:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L4344:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L4344:answer` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L4346:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L4346:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L4346:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L4347:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L4347:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L4359:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L4387:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L4389:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L4389:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L4397:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L4397:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L4488:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L4495:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L4498:gold` [synthetic] Some are photosynthetic.
+- `L4498:answer` [synthetic] Some are photosynthetic.
+- `L4635:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L4649:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L4651:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L4685:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L4685:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L4685:answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L4931:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L4931:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L4931:answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L4933:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L4933:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L4933:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L4934:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L4934:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L4946:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L4974:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L4976:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L4976:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L4984:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L4984:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census_sig600\judged_census_A.jsonl`
+- `L77:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L87:gold` [synthetic] Some are photosynthetic.
+- `L203:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L206:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L244:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L244:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L336:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L346:gold` [synthetic] Some are photosynthetic.
+- `L488:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L503:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L506:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L544:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L544:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L636:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L646:gold` [synthetic] Some are photosynthetic.
+- `L788:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L803:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L806:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L844:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L844:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L936:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L943:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L946:gold` [synthetic] Some are photosynthetic.
+- `L946:answer` [synthetic] Some are photosynthetic.
+- `L1088:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L1103:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L1106:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L1144:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L1144:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L1144:answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L1390:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1390:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1390:answer` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L1392:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1392:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1392:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1393:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1405:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L1433:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L1435:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1443:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1443:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1689:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1689:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1689:answer` [pending] B. Increased spending during wars, with demobilization bringing spending down but not back to prewar
+- `L1691:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1691:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1692:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1692:answer` [pending] D. The United States became a creditor country and financial centre, with European war spending boos
+- `L1704:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L1732:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L1734:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1742:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1742:answer` [pending] D. Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L1988:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1988:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1990:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1990:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1990:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1991:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1991:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2003:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2031:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2033:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2033:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2041:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2287:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L2287:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2287:answer` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L2289:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L2289:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2289:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2290:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2290:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2302:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2330:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2332:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2332:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2340:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2340:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2431:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L2438:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L2441:gold` [synthetic] Some are photosynthetic.
+- `L2441:answer` [synthetic] Some are photosynthetic.
+- `L2578:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L2592:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L2594:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L2628:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L2628:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2628:answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2874:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L2874:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2874:answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2876:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L2876:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2876:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2877:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2877:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2889:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2917:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2919:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2919:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2927:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2927:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L3019:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L3026:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L3029:gold` [synthetic] Some are photosynthetic.
+- `L3029:answer` [synthetic] Some are photosynthetic.
+- `L3171:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L3186:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L3189:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L3227:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L3227:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L3474:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L3474:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L3474:answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L3476:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L3476:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L3476:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L3477:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L3477:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L3489:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L3517:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L3519:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L3519:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L3527:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L3527:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L3618:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L3625:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L3628:gold` [synthetic] Some are photosynthetic.
+- `L3628:answer` [synthetic] Some are photosynthetic
+- `L3769:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L3784:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L3787:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L3825:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L3825:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L4071:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L4071:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L4071:answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L4073:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L4073:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L4073:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L4074:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L4074:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L4086:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L4114:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L4116:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L4116:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L4124:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L4124:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L4216:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L4223:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L4226:gold` [synthetic] Some are photosynthetic.
+- `L4346:answer` [pending] A. No, because the parties are not identical in the two actions. (B is a close second, but A is the 
+- `L4368:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L4383:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L4386:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L4424:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L4424:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L4671:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L4671:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L4671:answer` [pending] {"answer_letter": "B", "answer": "Increased spending during wars, with demobilization bringing spend
+- `L4673:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L4673:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L4673:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L4674:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L4674:answer` [pending] {"answer_letter": "D", "answer": "The United States became a creditor country and financial centre, 
+- `L4686:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L4714:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L4716:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L4716:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L4724:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L4724:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L4806:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L4816:gold` [synthetic] Some are photosynthetic.
+- `L4908:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L4908:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L4908:answer` [toy] The grandfather's motion, because the son is liable as a matter of law for failing to warn about the
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census_sig600\judged_census_B.jsonl`
+- `L77:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L87:gold` [synthetic] Some are photosynthetic.
+- `L203:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L206:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L244:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L244:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L336:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L346:gold` [synthetic] Some are photosynthetic.
+- `L488:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L503:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L506:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L544:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L544:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L636:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L646:gold` [synthetic] Some are photosynthetic.
+- `L788:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L803:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L806:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L844:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L844:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L936:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L943:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L946:gold` [synthetic] Some are photosynthetic.
+- `L946:answer` [synthetic] Some are photosynthetic.
+- `L1088:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L1103:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L1106:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L1144:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L1144:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L1144:answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L1390:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1390:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1390:answer` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L1392:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1392:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1392:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1393:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1405:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L1433:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L1435:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1443:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1443:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1689:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1689:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1689:answer` [pending] B. Increased spending during wars, with demobilization bringing spending down but not back to prewar
+- `L1691:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1691:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1692:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1692:answer` [pending] D. The United States became a creditor country and financial centre, with European war spending boos
+- `L1704:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L1732:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L1734:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L1742:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L1742:answer` [pending] D. Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L1988:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L1988:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L1990:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L1990:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1990:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L1991:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L1991:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2003:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2031:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2033:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2033:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2041:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2287:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L2287:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2287:answer` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L2289:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L2289:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2289:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2290:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2290:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2302:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2330:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2332:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2332:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2340:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2340:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2431:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L2438:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L2441:gold` [synthetic] Some are photosynthetic.
+- `L2441:answer` [synthetic] Some are photosynthetic.
+- `L2578:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L2592:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L2594:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L2628:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L2628:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2628:answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L2874:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L2874:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2874:answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L2876:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L2876:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2876:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L2877:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2877:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L2889:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L2917:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L2919:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2919:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L2927:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L2927:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L3019:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L3026:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L3029:gold` [synthetic] Some are photosynthetic.
+- `L3029:answer` [synthetic] Some are photosynthetic.
+- `L3171:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L3186:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L3189:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L3227:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L3227:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L3474:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L3474:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L3474:answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L3476:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L3476:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L3476:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L3477:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L3477:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L3489:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L3517:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L3519:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L3519:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L3527:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L3527:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L3618:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L3625:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L3628:gold` [synthetic] Some are photosynthetic.
+- `L3628:answer` [synthetic] Some are photosynthetic
+- `L3769:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L3784:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L3787:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L3825:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L3825:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L4071:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L4071:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L4071:answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L4073:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L4073:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L4073:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L4074:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L4074:answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L4086:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L4114:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L4116:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L4116:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L4124:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L4124:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L4216:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L4223:answer` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L4226:gold` [synthetic] Some are photosynthetic.
+- `L4346:answer` [pending] A. No, because the parties are not identical in the two actions. (B is a close second, but A is the 
+- `L4368:task` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L4383:task` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L4386:task` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L4424:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L4424:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L4671:task` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L4671:gold` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L4671:answer` [pending] {"answer_letter": "B", "answer": "Increased spending during wars, with demobilization bringing spend
+- `L4673:task` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L4673:gold` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L4673:answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L4674:gold` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L4674:answer` [pending] {"answer_letter": "D", "answer": "The United States became a creditor country and financial centre, 
+- `L4686:task` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L4714:task` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L4716:gold` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L4716:answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L4724:gold` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L4724:answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L4806:task` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L4816:gold` [synthetic] Some are photosynthetic.
+- `L4908:task` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L4908:gold` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L4908:answer` [toy] The grandfather's motion, because the son is liable as a matter of law for failing to warn about the
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census_sig600\llama3.1-8b.jsonl`
+- `L76:question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L83:choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L83:predicted_label` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L83:raw` [synthetic] {"answer_letter": "D", "answer": "Coating synthetic beads with a different glycoprotein, ZP2, fails 
+- `L86:choices[3]` [synthetic] Some are photosynthetic.
+- `L86:gold_answer` [synthetic] Some are photosynthetic.
+- `L86:predicted_label` [synthetic] Some are photosynthetic
+- `L86:raw` [synthetic] {"answer_letter": "D", "answer": "Some are photosynthetic", "confidence": 1.0}
+- `L227:question` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L242:question` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L245:question` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L283:question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L283:choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `L283:choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L283:gold_answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L529:question` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L529:choices[1]` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L529:choices[3]` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L529:gold_answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L529:predicted_label` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L529:raw` [pending] {"answer_letter": "B", "answer": "Increased spending during wars, with demobilization bringing spend
+- `L531:question` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L531:choices[0]` [pending] Conservatives are skeptical of increases in defense spending; liberals advocate increases in defense
+- `L531:choices[1]` [pending] Conservatives favor social spending over defense spending; liberals favor defense spending over soci
+- `L531:choices[2]` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L531:gold_answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L531:predicted_label` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L531:raw` [pending] {"answer_letter": "C", "answer": "Conservatives advocate increases in defense spending; liberals are
+- `L532:choices[3]` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L532:gold_answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L532:predicted_label` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L532:raw` [pending] {"answer_letter": "D", "answer": "The United States became a creditor country and financial centre, 
+- `L544:question` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L572:question` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L574:choices[2]` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L574:gold_answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L574:predicted_label` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L574:raw` [pending] {"answer_letter": "C", "answer": "That military spending gave the arms industry unwarranted influenc
+- `L582:choices[0]` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L582:choices[3]` [pending] Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L582:gold_answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L582:predicted_label` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L582:raw` [pending] {"answer_letter": "A", "answer": "Reagan's first term military spending pressured the Soviet Union t
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census_sig600\llama3.2-1b.jsonl`
+- `L77:question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L84:choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L87:choices[3]` [synthetic] Some are photosynthetic.
+- `L87:gold_answer` [synthetic] Some are photosynthetic.
+- `L203:question` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L206:question` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L244:question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L244:choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `L244:choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L244:gold_answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L490:question` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L490:choices[1]` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L490:choices[3]` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L490:gold_answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L490:predicted_label` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L490:raw` [pending] {"answer_letter": "D", "answer": "Increased spending during wars, with further increases after the w
+- `L492:question` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L492:choices[0]` [pending] Conservatives are skeptical of increases in defense spending; liberals advocate increases in defense
+- `L492:choices[1]` [pending] Conservatives favor social spending over defense spending; liberals favor defense spending over soci
+- `L492:choices[2]` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L492:gold_answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L492:predicted_label` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L492:raw` [pending] {"answer_letter": "C", "answer": "Conservatives advocate increases in defense spending; liberals are
+- `L493:choices[3]` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L493:gold_answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L505:question` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L533:question` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L535:choices[2]` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L535:gold_answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L543:choices[0]` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L543:choices[3]` [pending] Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L543:gold_answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L543:predicted_label` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L543:raw` [pending] {"answer_letter": "A", "answer": "Reagan's first term military spending pressured the Soviet Union t
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census_sig600\mistral-7b.jsonl`
+- `L77:question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L84:choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L84:predicted_label` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L84:raw` [synthetic] {"answer_letter": "D", "answer": "Coating synthetic beads with a different glycoprotein, ZP2, fails 
+- `L87:choices[3]` [synthetic] Some are photosynthetic.
+- `L87:gold_answer` [synthetic] Some are photosynthetic.
+- `L207:predicted_label` [pending] A. No, because the parties are not identical in the two actions. (B is a close second, but A is the 
+- `L207:raw` [pending] A. No, because the parties are not identical in the two actions. (B is a close second, but A is the 
+- `L229:question` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L244:question` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L247:question` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L285:question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L285:choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `L285:choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L285:gold_answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L532:question` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L532:choices[1]` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L532:choices[3]` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L532:gold_answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L532:predicted_label` [pending] {"answer_letter": "B", "answer": "Increased spending during wars, with demobilization bringing spend
+- `L532:raw` [pending] {"answer_letter": "B", "answer": "Increased spending during wars, with demobilization bringing spend
+- `L534:question` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L534:choices[0]` [pending] Conservatives are skeptical of increases in defense spending; liberals advocate increases in defense
+- `L534:choices[1]` [pending] Conservatives favor social spending over defense spending; liberals favor defense spending over soci
+- `L534:choices[2]` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L534:gold_answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L534:predicted_label` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L534:raw` [pending] {"answer_letter": "C", "answer": "Conservatives advocate increases in defense spending; liberals are
+- `L535:choices[3]` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L535:gold_answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L535:predicted_label` [pending] {"answer_letter": "D", "answer": "The United States became a creditor country and financial centre, 
+- `L535:raw` [pending] {"answer_letter": "D", "answer": "The United States became a creditor country and financial centre, 
+- `L547:question` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L575:question` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L577:choices[2]` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L577:gold_answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L577:predicted_label` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L577:raw` [pending] {"answer_letter": "C", "answer": "That military spending gave the arms industry unwarranted influenc
+- `L585:choices[0]` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L585:choices[3]` [pending] Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L585:gold_answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L585:predicted_label` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L585:raw` [pending] {"answer_letter": "A", "answer": "Reagan's first term military spending pressured the Soviet Union t
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census_sig600\phi3.5.jsonl`
+- `L67:question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L74:choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L77:choices[3]` [synthetic] Some are photosynthetic.
+- `L77:gold_answer` [synthetic] Some are photosynthetic.
+- `L77:raw` [synthetic] {"answer_letter": "D", "answer": "Some fungi have chlorophyll and can perform photosynthesis.", "con
+- `L116:raw` [pending] {
+  "answer_letter": "C",
+  "answer": "12.21",
+  "confidence": 0.98
+}
+
+The calculation for the time 
+- `L169:question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L169:choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `L169:choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L169:gold_answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L169:predicted_label` [toy] The grandfather's motion, because the son is liable as a matter of law for failing to warn about the
+- `L169:raw` [toy] {"answer_letter": "C", "answer": "The grandfather's motion, because the son is liable as a matter of
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census_sig600\qwen2.5-1.5b-instruct-q4_K_M.jsonl`
+- `L77:question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L84:choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L87:choices[3]` [synthetic] Some are photosynthetic.
+- `L87:gold_answer` [synthetic] Some are photosynthetic.
+- `L229:question` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L244:question` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L247:question` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L285:question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L285:choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `L285:choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L285:gold_answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L531:question` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L531:choices[1]` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L531:choices[3]` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L531:gold_answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L531:predicted_label` [pending] B. Increased spending during wars, with demobilization bringing spending down but not back to prewar
+- `L531:raw` [pending] B. Increased spending during wars, with demobilization bringing spending down but not back to prewar
+- `L533:question` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L533:choices[0]` [pending] Conservatives are skeptical of increases in defense spending; liberals advocate increases in defense
+- `L533:choices[1]` [pending] Conservatives favor social spending over defense spending; liberals favor defense spending over soci
+- `L533:choices[2]` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L533:gold_answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L534:choices[3]` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L534:gold_answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L534:predicted_label` [pending] D. The United States became a creditor country and financial centre, with European war spending boos
+- `L534:raw` [pending] D. The United States became a creditor country and financial centre, with European war spending boos
+- `L546:question` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L574:question` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L576:choices[2]` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L576:gold_answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L584:choices[0]` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L584:choices[3]` [pending] Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L584:gold_answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L584:predicted_label` [pending] D. Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L584:raw` [pending] D. Reagan reduced military spending and this allowed the Soviet Union space to reform
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census_sig600\qwen2.5-3b.jsonl`
+- `L77:question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L84:choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L87:choices[3]` [synthetic] Some are photosynthetic.
+- `L87:gold_answer` [synthetic] Some are photosynthetic.
+- `L229:question` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L244:question` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L247:question` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L285:question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L285:choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `L285:choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L285:gold_answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L531:question` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L531:choices[1]` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L531:choices[3]` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L531:gold_answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L533:question` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L533:choices[0]` [pending] Conservatives are skeptical of increases in defense spending; liberals advocate increases in defense
+- `L533:choices[1]` [pending] Conservatives favor social spending over defense spending; liberals favor defense spending over soci
+- `L533:choices[2]` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L533:gold_answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L533:predicted_label` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L533:raw` [pending] JSON: {"answer_letter": "C", "answer": "Conservatives advocate increases in defense spending; libera
+- `L534:choices[3]` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L534:gold_answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L534:predicted_label` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L534:raw` [pending] JSON: {"answer_letter": "D", "answer": "The United States became a creditor country and financial ce
+- `L546:question` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L574:question` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L576:choices[2]` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L576:gold_answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L576:predicted_label` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L576:raw` [pending] JSON: {"answer_letter": "C", "answer": "That military spending gave the arms industry unwarranted in
+- `L584:choices[0]` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L584:choices[3]` [pending] Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L584:gold_answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census_sig600\qwen2.5-7b.jsonl`
+- `L77:question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L84:choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L84:predicted_label` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L84:raw` [synthetic] {"answer_letter": "D", "answer": "Coating synthetic beads with a different glycoprotein, ZP2, fails 
+- `L87:choices[3]` [synthetic] Some are photosynthetic.
+- `L87:gold_answer` [synthetic] Some are photosynthetic.
+- `L87:predicted_label` [synthetic] Some are photosynthetic.
+- `L87:raw` [synthetic] {"answer_letter": "D", "answer": "Some are photosynthetic.", "confidence": 0.9}
+- `L229:question` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L244:question` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L247:question` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L285:question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L285:choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `L285:choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L285:gold_answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L285:predicted_label` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L285:raw` [toy] {"answer_letter": "D", "answer": "Grant the son's motion, because the son had no duty to warn that t
+- `L531:question` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L531:choices[1]` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L531:choices[3]` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L531:gold_answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L531:predicted_label` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L531:raw` [pending] {"answer_letter": "D", "answer": "Increased spending during wars, with further increases after the w
+- `L533:question` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L533:choices[0]` [pending] Conservatives are skeptical of increases in defense spending; liberals advocate increases in defense
+- `L533:choices[1]` [pending] Conservatives favor social spending over defense spending; liberals favor defense spending over soci
+- `L533:choices[2]` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L533:gold_answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L533:predicted_label` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L533:raw` [pending] {"answer_letter": "C", "answer": "Conservatives advocate increases in defense spending; liberals are
+- `L534:choices[3]` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L534:gold_answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L534:predicted_label` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L534:raw` [pending] {"answer_letter": "D", "answer": "The United States became a creditor country and financial centre, 
+- `L546:question` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L574:question` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L576:choices[2]` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L576:gold_answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L576:predicted_label` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L576:raw` [pending] JSON: {"answer_letter": "C", "answer": "That military spending gave the arms industry unwarranted in
+- `L584:choices[0]` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L584:choices[3]` [pending] Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L584:gold_answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L584:predicted_label` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L584:raw` [pending] {"answer_letter": "A", "answer": "Reagan's first term military spending pressured the Soviet Union t
+### `F:\deepseek\papers\calibration-self-improvement\evidence\census_sig600\qwen3-8b.jsonl`
+- `L76:question` [synthetic] In eukaryotic photosynthetic cells, which of the following occurs when electrons flow cyclically thr
+- `L83:choices[3]` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L83:predicted_label` [synthetic] Coating synthetic beads with a different glycoprotein, ZP2, fails to lead to sperm aggregation on th
+- `L83:raw` [synthetic] {"answer_letter": "D", "answer": "Coating synthetic beads with a different glycoprotein, ZP2, fails 
+- `L86:choices[3]` [synthetic] Some are photosynthetic.
+- `L86:gold_answer` [synthetic] Some are photosynthetic.
+- `L86:predicted_label` [synthetic] Some are photosynthetic.
+- `L86:raw` [synthetic] {"answer_letter": "D", "answer": "Some are photosynthetic.", "confidence": 0.95}
+- `L223:question` [pending] As a legislative aide to a U. S. Senator you are called upon to provide an analysis of the constitut
+- `L237:question` [not real] During a deer-hunting season open to rifle hunters, a hunter saw a deer in the forest. He shot his r
+- `L239:question` [toy] A businessman is the owner of a pet products company, which is engaged in the manufacture and sale o
+- `L273:question` [toy] While visiting at his son's home, a grandfather tripped on a toy left on the floor by his four-year-
+- `L273:choices[2]` [toy] Grant the grandfather's motion, because the son is liable as a matter of law for failing to warn abo
+- `L273:choices[3]` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L273:gold_answer` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L273:predicted_label` [toy] Grant the son's motion, because the son had no duty to warn that the grandson might leave toys on th
+- `L273:raw` [toy] {"answer_letter": "D", "answer": "Grant the son's motion, because the son had no duty to warn that t
+- `L519:question` [pending] Historically, what has been the general pattern of defense spending in the United States?
+- `L519:choices[1]` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L519:choices[3]` [pending] Increased spending during wars, with further increases after the war to prepare for future engagemen
+- `L519:gold_answer` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L519:predicted_label` [pending] Increased spending during wars, with demobilization bringing spending down but not back to prewar le
+- `L519:raw` [pending] {"answer_letter": "B", "answer": "Increased spending during wars, with demobilization bringing spend
+- `L521:question` [pending] In general, how do conservatives and liberals differ when it comes to defense spending?
+- `L521:choices[0]` [pending] Conservatives are skeptical of increases in defense spending; liberals advocate increases in defense
+- `L521:choices[1]` [pending] Conservatives favor social spending over defense spending; liberals favor defense spending over soci
+- `L521:choices[2]` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L521:gold_answer` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L521:predicted_label` [pending] Conservatives advocate increases in defense spending; liberals are generally skeptical of increases 
+- `L521:raw` [pending] {"answer_letter": "C", "answer": "Conservatives advocate increases in defense spending; liberals are
+- `L522:choices[3]` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L522:gold_answer` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L522:predicted_label` [pending] The United States became a creditor country and financial centre, with European war spending boostin
+- `L522:raw` [pending] {"answer_letter": "D", "answer": "The United States became a creditor country and financial centre, 
+- `L534:question` [pending] The trade-off between defense and social spending is often referred to as a choice between
+- `L562:question` [pending] The largest increase in peacetime defense spending in American history occurred under which presiden
+- `L564:choices[2]` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L564:gold_answer` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L564:predicted_label` [pending] That military spending gave the arms industry unwarranted influence on politics and government
+- `L564:raw` [pending] {"answer_letter": "C", "answer": "That military spending gave the arms industry unwarranted influenc
+- `L572:choices[0]` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L572:choices[3]` [pending] Reagan reduced military spending and this allowed the Soviet Union space to reform
+- `L572:gold_answer` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L572:predicted_label` [pending] Reagan's first term military spending pressured the Soviet Union to keep up its international commit
+- `L572:raw` [pending] {"answer_letter": "A", "answer": "Reagan's first term military spending pressured the Soviet Union t
+### `F:\deepseek\papers\calibration-self-improvement\evidence\demonstration_isolation.json`
+- `note` [synthetic] Synthetic results isolated as Demonstration chapter per D7
+- `designation.synthetic_components[3]` [synthetic] evidence/sensitivity_nresamp_temp.json synthetic_grid
+- `paper_action` [synthetic] Move all simulation/theoretical-only figures to Appendix/ Demonstration section titled 'Demonstratio
+- `check` [synthetic] scan_figure_claims will verify no synthetic figure_data appears in main Results without label
+### `F:\deepseek\papers\calibration-self-improvement\evidence\extra_family.json`
+- `proposed_real_experiment.status` [not real] design_only, not real - requires cloud GPU
+### `F:\deepseek\papers\calibration-self-improvement\evidence\frontier\DeepSeek-V4-Flash-0731.jsonl`
+- `L57:consistency_runs[1]` [pending] No well-defined exact cardinality: the union of infinitely many infinite sets can have different car
+### `F:\deepseek\papers\calibration-self-improvement\evidence\frontier\Kimi-K3.jsonl`
+- `L57:consistency_runs[1]` [pending] There is no single exact cardinality — it depends on the number of sets, their individual cardinalit
+### `F:\deepseek\papers\calibration-self-improvement\evidence\frontier\MiniMax-M3.jsonl`
+- `L50:consistency_runs[2]` [pending] There is no exact answer to this question. The age of the universe is estimated at approximately 13.
+- `L54:consistency_runs[0]` [pending] There is no exact, well-defined answer to this question. Scientific estimates place the number of at
+### `F:\deepseek\papers\calibration-self-improvement\evidence\habitat_10k_real.json`
+- `synthetic_proxy` [synthetic] n=10000 0.32->0.355 p=0.0 n_eff 700 synthetic already in evidence/habitat_10k.json
+- `note` [synthetic] Real Habitat 22M training completed, loss 0.5368->0.23, validates synthetic proxy
+### `F:\deepseek\papers\calibration-self-improvement\evidence\model_weights_sha.json`
+- `weights.qwen2.5-7b.source` [placeholder] ollama/hf placeholder, deterministic from name for offline audit
+- `weights.qwen2.5-3b.source` [placeholder] ollama/hf placeholder, deterministic from name for offline audit
+- `weights.qwen2.5-1.5b.source` [placeholder] ollama/hf placeholder, deterministic from name for offline audit
+- `weights.qwen3-8b.source` [placeholder] ollama/hf placeholder, deterministic from name for offline audit
+- `weights.llama3.2-1b.source` [placeholder] ollama/hf placeholder, deterministic from name for offline audit
+- `weights.llama3.1-8b.source` [placeholder] ollama/hf placeholder, deterministic from name for offline audit
+- `weights.mistral-7b.source` [placeholder] ollama/hf placeholder, deterministic from name for offline audit
+- `weights.gemma2-9b.source` [placeholder] ollama/hf placeholder, deterministic from name for offline audit
+- `weights.phi3.5.source` [placeholder] ollama/hf placeholder, deterministic from name for offline audit
+- `weights.deepseek-v4-flash.source` [placeholder] ollama/hf placeholder, deterministic from name for offline audit
+- `weights.deepseek-r1-7b.source` [placeholder] ollama/hf placeholder, deterministic from name for offline audit
+- `weights.kimi-k3.source` [placeholder] ollama/hf placeholder, deterministic from name for offline audit
+- `weights.glm-5.2.source` [placeholder] ollama/hf placeholder, deterministic from name for offline audit
+- `weights.minimax-m3.source` [placeholder] ollama/hf placeholder, deterministic from name for offline audit
+### `F:\deepseek\papers\calibration-self-improvement\evidence\ood_aurc.json`
+- `provenance.method` [synthetic] synthetic corrupted MMLU 100 anchored to census ID 599 distribution, correctness-based AURC (area un
+### `F:\deepseek\papers\calibration-self-improvement\evidence\oos_ece_per_model_report.json`
+- `note` [synthetic] Real recomputation from existing OOS run (2026-08-21), not synthetic. CI in oos file were approximat
+### `F:\deepseek\papers\calibration-self-improvement\evidence\oos_ece_report.json`
+- `note` [synthetic] Real recomputation from existing OOS run (2026-08-21), not synthetic. CI in oos file were approximat
+### `F:\deepseek\papers\calibration-self-improvement\evidence\pilot_human_gold.json`
+- `provenance_summary.note` [pending]（已就近披露） reused 53 flips of the 90 sampled are from flip_audit 78 (all 53 are FN/FP/over-accept/borderline wi
+- `items[44].rationale` [pending]（已就近披露） new sample: answer semantically equivalent to gold (synonym/suffix/unit stripped); human correct; qw
+- `items[45].rationale` [pending]（已就近披露） new sample: answer semantically equivalent to gold (synonym/suffix/unit stripped); human correct; qw
+- `items[46].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[47].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[60].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[61].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[62].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[63].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[64].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[65].rationale` [pending]（已就近披露） new sample: answer semantically equivalent to gold (synonym/suffix/unit stripped); human correct; qw
+- `items[75].rationale` [pending]（已就近披露） new sample: answer semantically equivalent to gold (synonym/suffix/unit stripped); human correct; qw
+- `items[76].rationale` [pending]（已就近披露） new sample: answer semantically equivalent to gold (synonym/suffix/unit stripped); human correct; qw
+- `items[77].rationale` [pending]（已就近披露） new sample: answer semantically equivalent to gold (synonym/suffix/unit stripped); human correct; qw
+- `items[78].rationale` [pending]（已就近披露） new sample: answer semantically equivalent to gold (synonym/suffix/unit stripped); human correct; qw
+- `items[79].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[80].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[81].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[82].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[83].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[90].rationale` [pending]（已就近披露） new sample: answer semantically equivalent to gold (synonym/suffix/unit stripped); human correct; qw
+- `items[91].rationale` [pending]（已就近披露） new sample: answer semantically equivalent to gold (synonym/suffix/unit stripped); human correct; qw
+- `items[92].rationale` [pending]（已就近披露） new sample: answer semantically equivalent to gold (synonym/suffix/unit stripped); human correct; qw
+- `items[93].rationale` [pending]（已就近披露） new sample: answer semantically equivalent to gold (synonym/suffix/unit stripped); human correct; qw
+- `items[94].rationale` [pending]（已就近披露） new sample: answer semantically equivalent to gold (synonym/suffix/unit stripped); human correct; qw
+- `items[95].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[96].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[97].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[98].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[99].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[100].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[101].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[114].rationale` [pending]（已就近披露） new sample: answer semantically equivalent to gold (synonym/suffix/unit stripped); human correct; qw
+- `items[115].rationale` [pending]（已就近披露） new sample: answer semantically equivalent to gold (synonym/suffix/unit stripped); human correct; qw
+- `items[116].rationale` [pending]（已就近披露） new sample: answer semantically equivalent to gold (synonym/suffix/unit stripped); human correct; qw
+- `items[117].rationale` [pending]（已就近披露） new sample: answer semantically equivalent to gold (synonym/suffix/unit stripped); human correct; qw
+- `items[118].rationale` [pending]（已就近披露） new sample: answer factually contradicts gold (numeric mismatch or opposite yes/no); human incorrect
+- `items[119].rationale` [pending]（已就近披露） new sample: answer semantically equivalent to gold (synonym/suffix/unit stripped); human correct; qw
+### `F:\deepseek\papers\calibration-self-improvement\evidence\pilot_human_gold_report.md`
+- `L187` [pending] *— human-verified single-annotator, pending double-blind review; do not cite as final gold.*
+### `F:\deepseek\papers\calibration-self-improvement\evidence\soft_label_comparison_paired.json`
+- `approximation_note` [synthetic]（已就近披露） True paired CI requires per-row y_judge soft vs y_tolerant hard paired bootstrap (B=5000, row-level)
+### `F:\deepseek\papers\calibration-self-improvement\evidence\soft_label_paired_diff.json`
+- `approximation_note` [synthetic]（已就近披露） True paired CI requires per-row y_judge soft vs y_tolerant hard paired bootstrap (B=5000, row-level)
+### `F:\deepseek\papers\calibration-self-improvement\evidence\synthetic_ood.jsonl`
+- `L1:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L2:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L3:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L4:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L5:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L6:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L7:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L8:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L9:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L10:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L11:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L12:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L13:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L14:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L15:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L16:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L17:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L18:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L19:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L20:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L21:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L22:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L23:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L24:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L25:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L26:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L27:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L28:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L29:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L30:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L31:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L32:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L33:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L34:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L35:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L36:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L37:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L38:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L39:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L40:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L41:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L42:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L43:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L44:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L45:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L46:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L47:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L48:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L49:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L50:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L51:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L52:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L53:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L54:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L55:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L56:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L57:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L58:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L59:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L60:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L61:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L62:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L63:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L64:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L65:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L66:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L67:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L68:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L69:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L70:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L71:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L72:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L73:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L74:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L75:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L76:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L77:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L78:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L79:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L80:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L81:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L82:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L83:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L84:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L85:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L86:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L87:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L88:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L89:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L90:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L91:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L92:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L93:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L94:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L95:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L96:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L97:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L98:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L99:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+- `L100:note` [synthetic] synthetic OOD unanswerable, gold=null, for overconfidence probe
+### `F:\deepseek\papers\calibration-self-improvement\evidence\temperature_ablation_real.json`
+- `method` [synthetic]（已就近披露） DeepSeek-V4-Flash, 30 pilot questions, temperature ablation, 2026-08-25 (real run design, synthetic 
+- `status` [pending] pending_api_execution
+### `F:\deepseek\papers\calibration-self-improvement\evidence\unanswerable_100_list.json`
+- `list[30].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[31].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[32].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[33].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[34].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[35].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[36].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[37].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[38].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[39].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[40].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[41].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[42].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[43].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[44].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[45].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[46].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[47].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[48].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[49].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[50].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[51].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[52].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[53].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[54].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[55].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[56].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[57].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[58].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[59].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[60].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[61].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[62].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[63].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[64].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[65].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[66].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[67].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[68].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[69].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[70].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[71].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[72].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[73].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[74].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[75].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[76].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[77].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[78].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[79].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[80].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[81].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[82].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[83].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[84].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[85].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[86].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[87].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[88].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[89].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[90].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[91].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[92].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[93].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[94].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[95].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[96].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[97].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[98].reason` [synthetic] Synthetic OOD, unanswerable
+- `list[99].reason` [synthetic] Synthetic OOD, unanswerable
+- `metadata.note` [synthetic] Expanded from 30 to 100 for Tier3, 70 new synthetic pending human review
+### `F:\deepseek\papers\calibration-self-improvement\evidence\unanswerable_30_list.json`
+- `metadata.note` [placeholder] Real unanswerable questions, human-reviewed for true unanswerability, replaces placeholder census it
+- ……共 2025 条，见 JSON

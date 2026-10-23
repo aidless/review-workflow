@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-27T05:00:15+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "adjudications": [
+    {
+      "token": "12.1",
+      "contexts": [
+        "\\paragraph{Models.} Evaluated: qwen2.5:7b, qwen2.5:14b, gemma2:9b (SUTs); judge: llama3.1:8b. Refere"
+      ],
+      "mechanical": null,
+      "layer": "llm",
+      "verdict": "未裁决",
+      "llm_status": "timeout"
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "mechanical": 0,
+    "llm": 0,
+    "llm_failed": 1,
+    "noise": 0,
+    "supported": 0,
+    "critical": 0,
+    "verdict": "MAJOR",
+    "detail": "1 个未裁决（LLM 失败 1）→ 维持 recompute 原判 Major；noise 0 / supported 0"
+  }
+}

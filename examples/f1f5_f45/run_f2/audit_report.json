@@ -1,0 +1,306 @@
+{
+  "meta": {
+    "zip": "F:\\Research\\_inbox\\F1-F5_F45_2026-08-26\\TMLR_4p5_Tier123_FINAL_20260827.zip",
+    "tex": "F:\\Research\\F2_Single_10page\\paper\\main.tex",
+    "entries": 12,
+    "timestamp": "2026-08-28T09:49:02+00:00"
+  },
+  "referenced_paths": [
+    {
+      "raw": "verify\\_length\\_control.py",
+      "path": "verify_length_control.py",
+      "line": 99,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "scripts/fisher\\_real\\_likelihood.py",
+      "path": "scripts/fisher_real_likelihood.py",
+      "line": 126,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/tier2\\_refit.json",
+      "path": "results/tier2_refit.json",
+      "line": 140,
+      "status": "basename",
+      "matched": [
+        "supplementary/tier2_refit.json"
+      ]
+    },
+    {
+      "raw": "scripts/tier2\\_refit\\_c0\\_K3\\_holdout.py",
+      "path": "scripts/tier2_refit_c0_K3_holdout.py",
+      "line": 140,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/cells.jsonl",
+      "path": "results/cells.jsonl",
+      "line": 267,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/analysis.json",
+      "path": "results/analysis.json",
+      "line": 267,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/tier2\\_refit.json",
+      "path": "results/tier2_refit.json",
+      "line": 267,
+      "status": "basename",
+      "matched": [
+        "supplementary/tier2_refit.json"
+      ]
+    },
+    {
+      "raw": "scripts/tier2\\_refit\\_c0\\_K3\\_holdout.py",
+      "path": "scripts/tier2_refit_c0_K3_holdout.py",
+      "line": 267,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/power\\_analysis.json",
+      "path": "results/power_analysis.json",
+      "line": 267,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "figures\\_f2/tau\\_sensitivity.pdf",
+      "path": "figures_f2/tau_sensitivity.pdf",
+      "line": 267,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "figures\\_f2/per\\_model\\_comparison.pdf",
+      "path": "figures_f2/per_model_comparison.pdf",
+      "line": 267,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "figures\\_f2/pb\\_tightness\\_fisher.pdf",
+      "path": "figures_f2/pb_tightness_fisher.pdf",
+      "line": 267,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/analysis.json",
+      "path": "results/analysis.json",
+      "line": 289,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "power\\_analysis.json",
+      "path": "power_analysis.json",
+      "line": 343,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "*.pdf",
+      "path": "*.pdf",
+      "line": 343,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/",
+      "path": "results/",
+      "line": 343,
+      "status": "MISSING",
+      "matched": []
+    }
+  ],
+  "missing_refs": [
+    {
+      "raw": "verify\\_length\\_control.py",
+      "path": "verify_length_control.py",
+      "line": 99,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "scripts/fisher\\_real\\_likelihood.py",
+      "path": "scripts/fisher_real_likelihood.py",
+      "line": 126,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "scripts/tier2\\_refit\\_c0\\_K3\\_holdout.py",
+      "path": "scripts/tier2_refit_c0_K3_holdout.py",
+      "line": 140,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/cells.jsonl",
+      "path": "results/cells.jsonl",
+      "line": 267,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/analysis.json",
+      "path": "results/analysis.json",
+      "line": 267,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "scripts/tier2\\_refit\\_c0\\_K3\\_holdout.py",
+      "path": "scripts/tier2_refit_c0_K3_holdout.py",
+      "line": 267,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/power\\_analysis.json",
+      "path": "results/power_analysis.json",
+      "line": 267,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "figures\\_f2/tau\\_sensitivity.pdf",
+      "path": "figures_f2/tau_sensitivity.pdf",
+      "line": 267,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "figures\\_f2/per\\_model\\_comparison.pdf",
+      "path": "figures_f2/per_model_comparison.pdf",
+      "line": 267,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "figures\\_f2/pb\\_tightness\\_fisher.pdf",
+      "path": "figures_f2/pb_tightness_fisher.pdf",
+      "line": 267,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/analysis.json",
+      "path": "results/analysis.json",
+      "line": 289,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "power\\_analysis.json",
+      "path": "power_analysis.json",
+      "line": 343,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "*.pdf",
+      "path": "*.pdf",
+      "line": 343,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/",
+      "path": "results/",
+      "line": 343,
+      "status": "MISSING",
+      "matched": []
+    }
+  ],
+  "local_path_leaks": [
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F3_Single_10page",
+      "context": "data.cells_path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F1_Single_10page",
+      "context": "data.cross_study_checks.F1_cells.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F1_Single_10page",
+      "context": "data.cross_study_checks.F1_phrasing_500.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F4_Single_10page",
+      "context": "data.cross_study_checks.F45_cells.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F4_Single_10page",
+      "context": "data.cross_study_checks.F45_real_llm_400_v6.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F2_Single_10page",
+      "context": "data.cross_study_checks.F2_cells.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F2_Single_10page",
+      "context": "data.cross_study_checks.F2_analysis.path"
+    },
+    {
+      "file": "supplementary/tier2_phrasing_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F1_Single_10page",
+      "context": "meta.cells"
+    },
+    {
+      "file": "supplementary/tier2_phrasing_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F1_Single_10page",
+      "context": "meta.phrasing_cells"
+    }
+  ],
+  "count_claims": [
+    {
+      "claim": "7-entry",
+      "declared": 7,
+      "kind": "manifest_entries",
+      "line": 233,
+      "actual_entries": 12,
+      "matches_actual": null
+    }
+  ],
+  "inpackage_tex": {
+    "entry": null,
+    "desync_with_disk": false,
+    "count_claims": []
+  },
+  "summary": {
+    "refs_total": 16,
+    "refs_missing": 14,
+    "leaks": 9,
+    "count_claims": 1,
+    "count_claims_mismatched": 0,
+    "tex_desync": false,
+    "verdict": "CRITICAL"
+  }
+}

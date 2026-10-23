@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "bib": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.bib",
+    "online": true,
+    "timestamp": "2026-08-27T03:27:43+00:00"
+  },
+  "title": "SciEvalSuite: A Unified, Reproducible Benchmark for Scientific Agents Across Prediction, Workflow, and Execution",
+  "claims": [
+    {
+      "kinds": [
+        "propose"
+      ],
+      "strong": false,
+      "text": "SciEvalSuite: A Unified, Reproducible Benchmark for Scientific Agents Across Prediction, Workflow, and Execution We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three capabilities under one reproducible contract: (L1a) scientific prediction via code gene"
+    }
+  ],
+  "related": [],
+  "summary": {
+    "verdict": "PASS",
+    "claims_total": 1,
+    "claims_strong": 0,
+    "related_found": 0,
+    "related_uncited": 0,
+    "online_results": 15,
+    "detail": "检索 15 条无近重复（标题/摘要相似度低于阈值）"
+  },
+  "query": "scievalsuite unified reproducible benchmark scientific agents across prediction"
+}

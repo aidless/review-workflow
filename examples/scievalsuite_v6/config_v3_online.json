@@ -1,0 +1,21 @@
+{
+ "name": "scievalsuite_v6_online",
+ "tex": "F:/deepseek/papers/scievalsuite/paper/main.tex",
+ "zip": "F:/deepseek/papers/scievalsuite/submission/submission_scievalsuite_final_v6.zip",
+ "evidence_dirs": [
+  "F:/deepseek/papers/scievalsuite/results",
+  "F:/deepseek/scievalsuite/out_p5"
+ ],
+ "manifest": null,
+ "adjudications": "F:/deepseek/research-kit/review-workflow/examples/scievalsuite_v6/adjudications_v3.json",
+ "converge": 3,
+ "citation_online": true,
+ "novelty_online": true,
+ "llm": {
+  "enabled": true,
+  "script": "F:/deepseek/research-kit/adversarial_review.py",
+  "rpc": "http://127.0.0.1:3080",
+  "roles": "all"
+ },
+ "out": "F:/deepseek/research-kit/review-workflow/examples/scievalsuite_v6/run_v3_online"
+}

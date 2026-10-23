@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-27T06:24:47+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "adjudications": [
+    {
+      "kind": "friedman_p",
+      "json_path": "cross_model.friedman",
+      "source": "F:\\deepseek\\papers\\scievalsuite\\results\\p3_stats.json",
+      "status": "NOT_IN_PAPER",
+      "mechanical_hits": [
+        "粗精度舍入 0.37",
+        "n.s./not significant 标记",
+        "显著性星号标记"
+      ],
+      "layer": "llm",
+      "verdict": "口径换算",
+      "confidence": "high",
+      "justification": "论文摘要明确报告Cross-model Friedman p=0.37,即0.36787944...的两位小数舍入。df=2对应3模型(k-1=2),16 paired tasks与论文一致,且标注non-significant,与n.s.候选吻合。另一p=0.003是6任务post-hoc子集,属不同检验,非冲突。",
+      "evidence": "Cross-model Friedman on 16 paired tasks ... was non-significant ($p=0.37$; exploratory, floor-limited)",
+      "suggested_action": "在表格或脚注补全精确值p=0.3679及chi2=2.0,df=2,便于产物溯源。",
+      "parse": "json"
+    },
+    {
+      "kind": "friedman_p",
+      "json_path": "friedman_full_P3",
+      "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_FINAL_FRONTIER_CURATED.json",
+      "status": "NOT_IN_PAPER",
+      "mechanical_hits": [
+        "粗精度舍入 0.37",
+        "n.s./not significant 标记",
+        "显著性星号标记"
+      ],
+      "layer": "llm",
+      "verdict": "口径换算",
+      "confidence": "high",
+      "justification": "复算值p=0.367879(chi2=2.0,df=2)与论文Friedman检验完全对应:3模型→df=2,16配对任务,chi2=2.0。论文以粗精度0.37呈现,属可接受舍入。非'n.s.'标记或星号单独替代,而是同时给出数值。产物存储0.3679亦与复算一致。",
+      "evidence": "Cross-model Friedman on 16 paired tasks (with 10 all-zero L1b tasks) was non-significant ($p=0.37$; exploratory, floor-limited)",
+      "suggested_action": "无需修正；0.37为0.3679的两位小数舍入,精度口径一致,建议可选补注chi2=2.0,df=2。",
+      "parse": "json"
+    },
+    {
+      "kind": "friedman_p",
+      "json_path": "simulated_k4_N12",
+      "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_FINAL_FRONTIER_CURATED.json",
+      "status": "NOT_IN_PAPER",
+      "mechanical_hits": [
+        "阈值形式 p<0.05",
+        "粗精度舍入 0.04",
+        "显著性星号标记"
+      ],
+      "layer": "llm",
+      "verdict": "噪音",
+      "confidence": "high",
+      "justification": "JSON路径显式标注\"simulated\",属模拟/内部中间量。参数k=4、N=12、df=3与论文实际Friedman检验不符（论文用3个模型、16或6个任务）。值0.042在论文中任何形式均未出现,机械层候选系误匹,对应的是论文中p=0.003等其他检验。",
+      "evidence": "Cross-model Friedman on 16 paired tasks ... was non-significant (p=0.37 ... ); a post-hoc curated L1a subset (6 tasks) gives p=0.003 (exploratory, not confirmatory).",
+      "suggested_action": "无需补报；simulated_k4_N12为内部模拟中间量,非论文报告统计量。",
+      "parse": "json"
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "resolved": 3,
+    "sustained": 0,
+    "llm_failed": 0,
+    "verdict": "PASS",
+    "detail": "NOT_IN_PAPER 3 条全部定性为口径换算/噪音 → 已解释"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-27T07:16:04+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "adjudications": [
+    {
+      "token": "0.37",
+      "contexts": [
+        "We present SciEvalSuite, a unified evaluation suite for scientific agents that jointly covers three ",
+        "Friedman over 16 paired tasks (L1a+L1b, lower-is-better after sign-flipping accuracy/correlation whe",
+        "\\textbf{(Q2) Larger N:} L2 N=8 (vs 4) and curated L1a N=6 k=4 (Model-F 6/6) give \\textbf{p=0.003 exp",
+        "Fail MAE as worst is post-hoc. Sensitivity on curated 6-task Friedman via the canonical \\texttt{out\\"
+      ],
+      "mechanical": "证据 2 位舍入 0.367=0.367→0.37",
+      "layer": "mechanical",
+      "verdict": "supported",
+      "confidence": "high",
+      "justification": "证据 2 位舍入 0.367=0.367→0.37",
+      "evidence": "We present SciEvalSuite, a unified evaluation suite for scientific agents that j",
+      "suggested_action": ""
+    },
+    {
+      "token": "12.1",
+      "contexts": [
+        "\\paragraph{Models.} Evaluated: qwen2.5:7b, qwen2.5:14b, gemma2:9b (SUTs); judge: llama3.1:8b. Refere"
+      ],
+      "mechanical": null,
+      "layer": "llm",
+      "verdict": "未裁决",
+      "llm_status": "timeout"
+    },
+    {
+      "token": "0.46",
+      "contexts": [
+        "\\paragraph{Power.} Sample size is fixed by benchmark design, so we report achieved power / minimum d"
+      ],
+      "mechanical": null,
+      "layer": "llm",
+      "verdict": "未裁决",
+      "llm_status": "timeout"
+    },
+    {
+      "token": "0.3553",
+      "contexts": [
+        "Table~\\ref{tab:l1a} reports official metrics. Failures are counted as zero and remain in the denomin",
+        "qwen2.5:7b scored 0/6 (all exec-fail across 3 trials, stable). qwen2.5:14b scored 2/6 (TextClassific"
+      ],
+      "mechanical": null,
+      "layer": "llm",
+      "verdict": "未裁决",
+      "llm_status": "timeout"
+    },
+    {
+      "token": "7.7",
+      "contexts": [
+        "The 21-item gold set (15 real workspace reports plus 6 synthetic boundary cases, 11 positive / 10 ne"
+      ],
+      "mechanical": null,
+      "layer": "llm",
+      "verdict": "未裁决",
+      "llm_status": "timeout"
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "mechanical": 1,
+    "llm": 0,
+    "llm_failed": 4,
+    "noise": 0,
+    "supported": 1,
+    "critical": 0,
+    "verdict": "MAJOR",
+    "detail": "4 个未裁决（LLM 失败 4）→ 维持 recompute 原判 Major；noise 0 / supported 1"
+  }
+}

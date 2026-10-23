@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\kg-retrieval\\paper\\main.tex",
+    "evidence_dirs": [
+      "F:\\deepseek\\papers\\kg-retrieval\\results",
+      "F:\\deepseek\\papers\\kg-retrieval\\evidence"
+    ],
+    "timestamp": "2026-08-26T04:39:42+00:00"
+  },
+  "figures": [
+    {
+      "path": "fig_ece.png",
+      "line": 52,
+      "resolved": true,
+      "abs": "F:\\deepseek\\papers\\kg-retrieval\\paper\\fig_ece.png",
+      "kind": "raster",
+      "text_chars": 0,
+      "fig_decimals": 0,
+      "fig_numbers_sample": [],
+      "caption_decimals": [
+        {
+          "token": "0.12",
+          "support": "body"
+        },
+        {
+          "token": "0.05",
+          "support": "body"
+        }
+      ],
+      "caption": "ECE 0.12$\\to$0.05 over G091-G1334 (1261 points)."
+    }
+  ],
+  "missing_files": [],
+  "caption_pending_review": [],
+  "figure_only_numbers": [],
+  "summary": {
+    "verdict": "PASS",
+    "figures_referenced": 1,
+    "text_extracted": 0,
+    "raster_skipped": 1,
+    "missing": 0,
+    "caption_decimals": 2,
+    "unsupported": 0,
+    "figure_only": 0,
+    "note": "caption_pending_review = 图注小数在图文本/证据/正文中均无支撑；figure_only = 仅出现在图内的高精度数（数据标签属正常，人工扫一眼即可）"
+  }
+}

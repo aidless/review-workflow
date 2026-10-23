@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\runs\\prism_smoke\\prism_review.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-25T18:39:08+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Major",
+      "text": "[PRISM P] 核心结果均为null且模型规模极小（7b-14b）,无法证明该suite具有区分不同方法的能力,削弱了benchmark存在的科学价值。"
+    },
+    {
+      "id": 2,
+      "sev": "Major",
+      "text": "[PRISM R] L2核心对比N=4、n_d=0使McNemar完全无功效；唯一显著的p=0.0026来自事后精选子集与特定编码,存在选择性报告风险。"
+    },
+    {
+      "id": 3,
+      "sev": "Major",
+      "text": "[PRISM I] 实证结果以null为主且功效为零(N=4, McNemar power 0.0000),基准产出科学洞察的能力未被证明。"
+    },
+    {
+      "id": 4,
+      "sev": "Major",
+      "text": "[PRISM S] calibrated LLM-as-judge实际零调用（all SKIP）,calibration仅为方法论担保而非实证验证,与abstract中'calibrated before its judge is trusted'的措辞存在张力。"
+    }
+  ],
+  "rebuttals": [
+    {
+      "id": 1,
+      "action": "rebut",
+      "rebuttal": "L1a区分:7b=0/6,14b=2/6,gemma=1/6→2/6;P5 6/6(p=0.0026);L1b L047审计拦截3/3模型答案拟合"
+    },
+    {
+      "id": 2,
+      "action": "concede",
+      "fix": "p=0.0026移附录exploratory,正文删除;补pre-registration;附完整sensitivity表"
+    },
+    {
+      "id": 3,
+      "action": "rebut",
+      "rebuttal": "论文已产出洞察:L1b L047审计拦截3/3模型答案拟合;L1a区分7b/14b/gemma;稳定失败分类法;P5 6/6 vs本地0-2/6"
+    },
+    {
+      "id": 4,
+      "action": "concede",
+      "fix": "修改abstract措辞,将trusted改为gated,明示calibration已通过但judge本轮未调用"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "partial",
+      "reason": "作者引用L1a区分(0/2/1→2)和L047审计3/3拦截,确实非全null；但L2核心对比仍null且模型规模小的批评成立。"
+    },
+    {
+      "id": 2,
+      "disposition": "partial",
+      "reason": "作者让步:p=0.0026移附录、补pre-registration与sensitivity表,选择性报告风险已处理；但L2 McNemar零功效(N=4,n_d=0)仅披露未解决。"
+    },
+    {
+      "id": 3,
+      "disposition": "partial",
+      "reason": "作者援引L047审计、L1a区分、失败分类法等具体产出,部分反驳'无洞察'；但L2零功效null未解,基准价值论证仍不完整。"
+    },
+    {
+      "id": 4,
+      "disposition": "partial",
+      "reason": "作者让步改措辞trusted→gated并已披露零调用；但calibration始终未被实证调用验证,方法担保与实证验证的差距仍在。"
+    }
+  ],
+  "summary": {
+    "verdict": "PASS",
+    "counts_sustained": {
+      "Critical": 0,
+      "Major": 0,
+      "Minor": 0
+    },
+    "n_issues": 4,
+    "n_sustained": 0,
+    "n_withdrawn": 0,
+    "n_partial": 4,
+    "detail": "辩论后维持 Critical 0 / Major 0 （撤回 0，部分成立 4）；文本层 WARN 纪律不变",
+    "sustained_ids": [],
+    "withdrawn_ids": []
+  }
+}

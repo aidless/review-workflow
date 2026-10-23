@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-26T09:23:53+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "adjudications": [
+    {
+      "kind": "friedman_p",
+      "json_path": "simulated_k4_N12",
+      "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_FINAL_FRONTIER_CURATED.json",
+      "status": "NOT_IN_PAPER",
+      "mechanical_hits": [
+        "阈值形式 p<0.05",
+        "粗精度舍入 0.04",
+        "显著性星号标记"
+      ],
+      "layer": "llm",
+      "verdict": "噪音",
+      "confidence": "high",
+      "justification": "JSON路径simulated_k4_N12与note'out_p5_frontier_sim'明确标注为模拟值。论文实际Friedman为k=4 N=6 chi2=14.25 p=0.0026、k=3 N=6/16 chi2=6.0/2.0,均与chi2=8.2 p=0.042 N=12不符。三个机械候选均错配:p<0.05对应0.0498（k=3 N=6）、0.04是美僃成本、无星号标记。属模拟内部中间量,无需报告。",
+      "evidence": "P5 curated L1a (6 tasks, k=4): chi2=14.25, p=0.0026, CD=1.9148",
+      "suggested_action": "无需行动,模拟内部一致性检查值,非论文声称。",
+      "parse": "json"
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "resolved": 1,
+    "sustained": 0,
+    "llm_failed": 0,
+    "verdict": "PASS",
+    "detail": "NOT_IN_PAPER 1 条全部定性为口径换算/噪音 → 已解释"
+  }
+}

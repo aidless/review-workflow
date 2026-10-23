@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\f1f5_f45\\run_f2\\extracted_text.txt",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\examples\\f1f5_f45\\run_f2\\r6_llm.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-27T19:36:19+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Critical",
+      "text": "- Critical: c0=0.05 是在 K=3 pilot 上拟合的，却用“all cells”包括 K=3 来验证 B(P) 并报告 100% exceed，存在样本内泄漏；P/B 的 5–10× 与 median 10.88× 不能作为样本外下界紧度证据。"
+    },
+    {
+      "id": 2,
+      "sev": "Critical",
+      "text": "- Critical: seed 协议不可复现：正文称每 cell 用 10 seeds，却只明确写出 42 与 42–44，未给出 10 个 seed 的完整列表、各模型/任务/采样阶段的 seed 映射，也未解释 n=10 与 n=3 的矛盾。"
+    },
+    {
+      "id": 3,
+      "sev": "Critical",
+      "text": "- Critical: 下界 B 的 c0 在 K=3 的 pilot 数据上拟合，却又在包含同一 K=3 数据的所有 cell 上验证“P>B”，属于样本内循环验证；即使 K=4/5 是扩展集，也没有说明是否在拟合后再冻结 c0，因此“B 在所有 cell 成立”不能支持任何样本外或泛化结论。"
+    },
+    {
+      "id": 4,
+      "sev": "Critical",
+      "text": "- Critical: 将 270 episodes × 10 seeds 当作 2,700 个独立“cells”，忽略同一 episode 在多个 seeds/settings 间的相关性，有效样本量被严重高估。"
+    },
+    {
+      "id": 5,
+      "sev": "Critical",
+      "text": "- Critical: 引理“Cmin(K) 在 exchangeability 且 ρ<1 下单调非降”并非由这些前提必然推出；若平均投票正确率低于阈值，或 γ 对应绝对票数而非相对多数，coverage 完全可能随 K 下降，文中没有给出充分条件或证明，形式化前提不成立。"
+    },
+    {
+      "id": 6,
+      "sev": "Critical",
+      "text": "- Critical: 报告“0.68% improvement”的 95% Wilson CI [0.62,0.74] 并明确说“为避免与 0/15 矛盾”，属于为规避不利结果而选择统计方法；且 Wilson 区间用于比例而非组间改善差异，且未预先注册主结局与推断方法，结论的因果/统计推断不恰当。"
+    },
+    {
+      "id": 7,
+      "sev": "Critical",
+      "text": "- Critical: 摘要与引言混入大量审稿回复/复现检查式内容（“P0 26-block F1 24K→12K”、“Panorama 6-figure set was weakened”、“Ledger 86 PASS entries”、“Gates 9/9 checklist”、“single-generator seed 42”），破坏论文科学结构，且这些术语均未定义。"
+    },
+    {
+      "id": 8,
+      "sev": "Critical",
+      "text": "- Critical: 摘要中 “P/B 5–10× for γ∈{0.5,1.0}” 与 “median 10.88× across the 9 cells” 直接冲突；即使 γ=2 的细胞点更高，9 个点里至少 6 个落在 5–10，中位数不可能超过 10。"
+    },
+    {
+      "id": 9,
+      "sev": "Critical",
+      "text": "- Critical: 摘要和贡献列表写 “inverse variance decreases (Fisher-like) I(K) ... (Fisher-like information increases)”，方差下降时逆方差/信息量应上升，同一句内术语自相矛盾。"
+    },
+    {
+      "id": 10,
+      "sev": "Critical",
+      "text": "- Critical: 未提供任何可下载仓库、容器/依赖锁文件或一键复现命令；只声称“Gates 9/9 锚定到 L401–L409”，但附录内容并未随产出提供，行号无法独立验证。"
+    },
+    {
+      "id": 11,
+      "sev": "Critical",
+      "text": "- Critical: 核心理论贡献只是“相关随机变量均值方差公式”和“多数/一致覆盖随 K 变化”的改写；把 `1/[σ²(ρ+(1−ρ)/K)]` 命名为 Fisher-like information 并不等于 Fisher information，且“纠正平均会丢失信息”的靶子是稻草人，增量理论贡献接近零。"
+    },
+    {
+      "id": 12,
+      "sev": "Critical",
+      "text": "- Critical: 核心验证存在循环风险：B 的 c0 是在 K=3 pilot 上拟合的，随后又在包含 K=3 的主样本 2,700 cells 中宣称“P>B 在所有 cell 成立”；若 pilot/主样本未严格切分，该下界只是在拟合数据上自证，不能作为经验刻画的外部证据。"
+    },
+    {
+      "id": 13,
+      "sev": "Critical",
+      "text": "- Critical: 正文残留 “P0 26-block F1 24K→12K”“Ledger 86 PASS”“Gamma string” 等疑似内部项目/审计痕迹，可能通过公开仓库或内部文档反查作者身份，直接破坏双盲审查承诺。"
+    },
+    {
+      "id": 14,
+      "sev": "Major",
+      "text": "- Major: P = Rsel·Cmin 把风险与覆盖率相乘，K 或 γ 改变时会通过覆盖率产生机械性变化；没有报告 risk-coverage 曲线或 coverage-conditional 风险，P 的缩放不能归因于选择性风险的改善。"
+    },
+    {
+      "id": 15,
+      "sev": "Major",
+      "text": "- Major: 引言末尾突然插入 “P0 26-block F1 24K→12K”“Panorama 6-figure set”“Ledger 86 PASS”“Gates 9/9 L401–L409” 等未定义内容，与 K-verifier ensemble 和 selective prediction 完全脱节，疑似串稿并严重破坏结构。"
+    },
+    {
+      "id": 16,
+      "sev": "Major",
+      "text": "- Major: 摘要先说 P 随 K 从 K=1 到 K≥3 增大，又说 “K-Verifier ensemble improvement 0.68%”，但未定义 improvement 是哪个指标、P 是越低越好还是越高越好，导致结论方向矛盾。"
+    },
+    {
+      "id": 17,
+      "sev": "Major",
+      "text": "- Major: 正文/摘要没有规范的图、表编号和正文引用；“Panorama 6-figure set”和 “Ledger table”以未编号描述出现，读者无法定位支撑 P/B 或 86 PASS 的图表证据。"
+    },
+    {
+      "id": 18,
+      "sev": "Major",
+      "text": "- Major: 隐私与人类受试者合规缺失：文中出现 “survey 0/15 zero-success case”，若该 survey 涉及人类参与者，则缺少 IRB 审批、知情同意、数据去标识化与存储说明；若来自用户数据，也未说明隐私合规机制。"
+    },
+    {
+      "id": 19,
+      "sev": "Minor",
+      "text": "- Minor: 0/15 的 Wilson 区间并非退化区间；若用“CI degenerate”作为不报告或调整结果的依据，统计理由错误。"
+    },
+    {
+      "id": 20,
+      "sev": "Minor",
+      "text": "- Minor: “sample-descriptive”在摘要中反复出现并与“lower bound”连用，造成术语冗余和文体拖沓。"
+    },
+    {
+      "id": 21,
+      "sev": "Minor",
+      "synthetic": true,
+      "text": "（另有 1 条问题超出 20 条上限被截断，未参与辩论）"
+    }
+  ],
+  "rebuttals": [],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "sustained",
+      "reason": "作者未回应,未提供反驳或引用；按规则维持该问题,待修订。"
+    },
+    {
+      "id": 2,
+      "disposition": "sustained",
+      "reason": "作者未回应,未说明 seed 协议；无可核验的 rebut,维持。"
+    },
+    {
+      "id": 3,
+      "disposition": "sustained",
+      "reason": "作者未回应,样本内验证问题无反驳证据,维持。"
+    },
+    {
+      "id": 4,
+      "disposition": "sustained",
+      "reason": "作者未回应,相关性高估样本量问题未被反驳,维持。"
+    },
+    {
+      "id": 5,
+      "disposition": "sustained",
+      "reason": "作者未回应,未给出引理充分条件或证明,维持。"
+    },
+    {
+      "id": 6,
+      "disposition": "sustained",
+      "reason": "作者未回应,统计方法选择与预注册问题未解释,维持。"
+    },
+    {
+      "id": 7,
+      "disposition": "sustained",
+      "reason": "作者未回应,摘要混入审稿痕迹问题未处理,维持。"
+    },
+    {
+      "id": 8,
+      "disposition": "sustained",
+      "reason": "作者未回应,数字冲突无解释,维持。"
+    },
+    {
+      "id": 9,
+      "disposition": "sustained",
+      "reason": "作者未回应,术语自相矛盾未澄清,维持。"
+    },
+    {
+      "id": 10,
+      "disposition": "sustained",
+      "reason": "作者未回应,可复现性与行号验证问题未解决,维持。"
+    },
+    {
+      "id": 11,
+      "disposition": "sustained",
+      "reason": "作者未回应,理论贡献质疑无反驳,维持。"
+    },
+    {
+      "id": 12,
+      "disposition": "sustained",
+      "reason": "作者未回应,循环验证风险未说明数据切分,维持。"
+    },
+    {
+      "id": 13,
+      "disposition": "sustained",
+      "reason": "作者未回应,匿名性/串稿风险未澄清,维持。"
+    },
+    {
+      "id": 14,
+      "disposition": "sustained",
+      "reason": "作者未回应,P 的机械性缩放问题未回应,维持。"
+    },
+    {
+      "id": 15,
+      "disposition": "sustained",
+      "reason": "作者未回应,引言未定义内容破坏结构问题未处理,维持。"
+    },
+    {
+      "id": 16,
+      "disposition": "sustained",
+      "reason": "作者未回应,improvement 定义与方向矛盾未解释,维持。"
+    },
+    {
+      "id": 17,
+      "disposition": "sustained",
+      "reason": "作者未回应,图表编号与定位缺失未解决,维持。"
+    },
+    {
+      "id": 18,
+      "disposition": "sustained",
+      "reason": "作者未回应,隐私与合规问题无说明,维持。"
+    },
+    {
+      "id": 19,
+      "disposition": "sustained",
+      "reason": "作者未回应,Wilson 区间退化问题未反驳,维持。"
+    },
+    {
+      "id": 20,
+      "disposition": "sustained",
+      "reason": "作者未回应,术语冗余文体问题无修订说明,维持。"
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 13,
+      "Major": 5,
+      "Minor": 2
+    },
+    "n_issues": 20,
+    "n_sustained": 20,
+    "n_withdrawn": 0,
+    "n_partial": 0,
+    "truncation": {
+      "n_total": 21,
+      "n_debated": 20,
+      "n_truncated": 1,
+      "max_issues": 20
+    },
+    "detail": "辩论后维持 Critical 13 / Major 5 （撤回 0，部分成立 0）；注：原始 21 条中仅严重度前 20 条进入辩论（MAX_ISSUES=20，截断 1 条未辩论）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "withdrawn_ids": []
+  }
+}

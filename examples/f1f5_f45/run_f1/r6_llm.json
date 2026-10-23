@@ -1,0 +1,1073 @@
+{
+  "meta": {
+    "stage": "R6",
+    "timestamp": "2026-08-27T18:55:43+00:00",
+    "rpc": "http://127.0.0.1:3080",
+    "rounds": 3
+  },
+  "rpc_health": {
+    "ok": true,
+    "detail": "HTTP 200"
+  },
+  "rounds": [
+    {
+      "Critical": 12,
+      "Major": 32,
+      "Minor": 21
+    },
+    {
+      "Critical": 16,
+      "Major": 29,
+      "Minor": 17
+    },
+    {
+      "Critical": 11,
+      "Major": 33,
+      "Minor": 21
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts": {
+      "Critical": 8,
+      "Major": 11,
+      "Minor": 5
+    },
+    "unstable_counts": {
+      "Critical": 23,
+      "Major": 61
+    },
+    "stability_rule": "≥2 轮出现才计入门禁"
+  },
+  "stable_issues": [
+    {
+      "sev": "Critical",
+      "text": "- Critical: 主要因果结论的统计单元混乱：报告的是 Qwen3:4b 单模型/单通道的 Wilcoxon 结果，却把 4 模型×3 通道×500 题=6000 对称为总体证据；若把全部 cells 当作独立样本，则同一题目跨模型、同一模型跨通道的重复测量会造成伪重复，Wilcoxon 的独立同分布假设不成立。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 存在未校正的多重比较与选择性报告风险：从 4 个模型和 3 个通道中挑出最显著的 Qwen3:4b 结果作为主发现，未报告全部 12 组检验或进行多重比较校正，p=1.6×10⁻⁵ 不能单独支持“instruction channel”的总体效应。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 摘要称 12,000 cells/6,000 paired differences，却又说 power 为 MDE dz=0.18 at n=500；文中未说明 n 是问题数、配对差数还是模型内样本量，导致 Wilcoxon、dz 和 bootstrap 的统计单位无法核对。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 未给出完整实验材料：confidence-priming 与 benign cache entry 的逐字模板、75-char neutral prefix 原文、题面/选项注入方式、“verbalized confidence”的解析规则，语义处理无法复现。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 模型配置快照缺失：仅写 “4 local model families / Qwen3:4b”，没有精确 checkpoint/模型 ID、量化方式、推理框架、温度、采样策略、max tokens、dtype、确定性开关等，无法复现同一模型输出。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 混淆变量未排除，语义归因不成立：confidence-priming 与 length-matched neutral 的差异不只有“置信提示”，还可能有指令语气、肯定性/情感效价、行为要求、句法主题等；单一对照无法把效应归因于“confidence priming 的语义内容”，需要用多类安慰剂条件（如无置信指令的积极内容、不同措辞的相同指令）分离。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 证据链断裂：MMLU 的确切版本、科目子集、500 题采样方式、缓存条目构造位置均未说明，也没有从原始数据→预处理→推理→评估→bootstrap 的中间产物清单。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 长度匹配良性对照只在子集上测试，未覆盖主效应所在的全量 500×4×3 配对数据，因此“语义而非长度”的核心结论不能由主实验直接支持。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: power analysis 与检验方法不匹配：MDE dz=0.18 基于配对参数检验思路，但推断使用 Wilcoxon；非参数功效、所需样本量和效应量解释不同，且未说明实际分析单元是 500 题还是 6000 对。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: seed 管理不透明：只列出 42/43/44，未说明主统计量是否跨 seed 聚合、是否用 seed 作为随机效应、是否报告 seed-level 方差或最差 seed 结果。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: “3 channels”在摘要/引言中从未定义，结果中又出现“instruction channel”；channel 的含义（置信度呈现通道、缓存通道还是注入通道）不明确，破坏结构可读性。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: “descriptive Wasserstein upper bound (|∆MAE| ≤ LΓ)”中的 LΓ 和 Γ 未定义，读者无法判断这是 Lipschitz 常数、分布距离上界还是经验量，公式缺乏上下文。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 主实验只有单一 priming 措辞；补充 pilot 仅给出 0.645/0.646/0.649 的平均 confidence，没有报告 ∆MAE、CI 或统计功效，不能算作完整的措辞消融。",
+      "rounds": [
+        1,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 四个 post-hoc baselines 不可复现：held-out benign split 的划分方式、拟合实现、库版本、超参数和拟合代码均未给出，且未报告 baseline 后的置信区间。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 效应量报告不完整：仅给出 dz=0.42 和点估计 ΔMAE=+0.047，未报告 dz 的置信区间；从多个组合中挑出的效应量还会因选择偏差而被高估。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 未说明 MMLU 数据及所用模型/补充数据的许可证与归属；MMLU 为 MIT 许可，若随文发布 500 题子集或缓存提示样例，需保留版权和许可声明，当前提交中未见该合规说明。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 术语/引文错误：Related Work 称 Naeini et al. (2015) “derive the Brier score and reliability diagrams”，Brier score 并非该文提出，reliability diagrams 也更早，这类事实性表述会损害可信度。",
+      "rounds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 术语混用：摘要主结果使用 ∆MAE（verbalized-confidence error），引言却写“shift self-reported confidence and ECE”，标题又是“Confidence Shifts”；三者不是同一个量，正文未统一“结果变量到底是置信度本身还是校准误差”。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 泛化证据薄弱：只有 4 个小规模本地模型、单一 MMLU 子集、单一 phrasing、单一 cache 注入形式，且 verbalized confidence 只在 0.52–0.76 窄区间，无法支持对检索缓存场景的较广结论。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 全文唯一图引用是摘要中的 “see Fig. 1”，但正文与贡献未给出对应图注或结果表；图表现无法支撑摘要中的数字。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 四个 post-hoc baselines 只给 p<.02 的聚合界，未逐一报告效应量、方向和检验，且把 temperature scaling 等校准方法称为 baselines，术语不准确。",
+      "rounds": [
+        1,
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 未明确声明数据来源是否包含真实用户缓存/日志；若使用在线 API（如 LLM-as-judge）或真实 RAG 缓存数据，应说明去标识化、同意机制与数据流向。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 统计报告不一致：Wilcoxon W、Cohen’s dz、BCa bootstrap的关系未交代，也未报告bootstrap CI；对离散且有界的置信分数，dz与bootstrap的适用性需要说明。",
+      "rounds": [
+        2,
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 补充 500×3 phrasings pilot 只列平均置信度 0.645/0.646/0.649，未给出差异检验、效应量或 seed 信息，证据强度不足以作为“方向一致”支撑。",
+      "rounds": [
+        1,
+        3
+      ]
+    }
+  ],
+  "unstable_issues": [
+    {
+      "sev": "Critical",
+      "text": "- Critical: 3 个 seed 不是独立样本；若把 seed 当作额外样本量（6,000/12,000/36,000），有效样本被高估；Wilcoxon/bootstrap 也未采用按 question/model 分层的聚类方法，p 值可能虚假偏小。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: GAP 不真实：既有工作已直接证明显式“confident/cautious”式指令可方向性改变 LLM 的 verbalized confidence（如 SteerConf, arXiv:2503.02863），且输入中 trigger/perturbation/jailbreak 可操纵不确定性或 confidence（Uncertainty is Fragile, ",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: “检索侧/缓存上下文被当作惰性内容”这一前提在文献中已不成立：间接 prompt injection、RAG 知识投毒、以及 NOVA (arXiv:2601.11004) 等 RAG 校准工作都证明检索内容可以携带可执行指令或噪声并影响答案/口头置信度；本文的 confidence-priming cache entry 是这些已知威胁的一个特例。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: “检索缓存条目”与普通系统/用户提示在模型计算上并无本质区别，论文没有给出缓存特有的机制、状态依赖或检索结构带来的新形式化解释；把一个已知的“指令/上下文影响置信度”现象重新命名为 retrieval-side channel，增量贡献被明显夸大。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: “语义作用而非长度作用”的结论基于“ priming 显著、control 不显著”两个 p 值比较，这在统计上不成立；必须直接检验 priming 与 length-control 的 ΔMAE 之差（difference-in-differences）或其交互项。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 主效应仅报告 Qwen3:4b 的单一指令信道结果，而完整设计包含 4 models×3 channels×2 conditions，至少 12 个可比检验；未做多重比较校正，存在选择性报告/假阳性风险。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 主要结局 MAE 将置信度与正确率混在一起；若 priming 同时改变模型答案分布，∆MAE 可仅由 accuracy 变化驱动，而文中未证明 benign/priming 两条件下正确率不变，因此不能把效应归因于 verbalized-confidence shift。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 从4模型×3通道（可能还含3 seeds）中单独报告Qwen3:4b的p=1.6×10⁻⁵而未做多重比较校正；按n=500、MDE dz=0.18的效力计算只适用于单一预设检验，不能为事后挑选的最大效应背书。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 全文未提供代码仓库、数据仓库或任何复现入口，12,000 cells 的完整实验无法从匿名材料独立重跑。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 全文未提供任何代码仓库、数据工件或复现链接，12,000 个 cell、6,000 个配对差值、Fig.1 与补充实验均无法从外部对账，属于证据链断裂。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 将“置信度启动”作为单一处理归因，但仅比较一个特定信心提示文本与一个中性前缀，二者在祈使语气、情绪效价、任务难度断言、是否出现“confidence/correct”等多个语义维度上同时不同，长度匹配只能排除长度，不能排除其他语义混淆，也不能支持“语义而非长度”的因果结论。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 将长度匹配良性对照的 p=0.62 解读为“无长度效应”属于 p 值误用：非显著不等于效应为零，且该对照只在子集上检验；应报告等效性检验或置信区间来判断长度是否可排除。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 数值不自洽：若 n=500 且 dz=0.42，配对 t≈9.39，p 应约为 10^-18，而非 1.6×10^-5；Wilcoxon W=12480 与 n=500 下的标准符号秩统计量也不一致，需报告确切检验定义、有效 n 和完整统计量。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 未指定 MMLU 的具体版本/子集/抽样过程（original 还是 auxiliary、500 题如何抽取、是否固定题目顺序），问题子集不可唯一重建。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 未提供代码/数据 artifact 或一键复现入口（匿名仓库、Docker、命令、README），论文中所有数字无法独立复现。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 核心 GAP 不成立：已有工作已系统研究“用提示/指令把 LLM 的 verbalized confidence 向乐观或保守方向引导”，例如 SteerConf (arXiv:2503.02863) 明确用 steering prompts 改变置信度并评估校准，FaR (arXiv:2402.17124) 也发现提示策略会诱发过度自信；把 cache entry 中的 ",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 核心实验条件缺少完整快照：精确的 confidence-priming 文案、75-character benign 控制串、3 channels 定义、prompt template、system prompt 与 chat template 均未给出。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 结果变量ΔMAE是置信度与正确率的联合函数；若信心提示同时改变答案选择或正确率，MAE变化可能来自准确率变化而非校准偏移，摘要中“不改变准确率”的假设未在方法/结果中验证。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 统计检验的独立单元不明确：如果是合并 6,000 对做 Wilcoxon/BCa，则 question/model/channel 的嵌套结构导致假重复和 p 值膨胀；如果是单格 n=500，则面对 4 models×3 channels 的多重比较未作任何校正。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 统计独立性/聚类假设不明：500 题×4 模型×3 通道×2 条件可产生同一题目在模型、通道、种子间的重复测量；若把 12,000 cells 当作独立样本做 Wilcoxon 或 BCa bootstrap，p 值和 CI 会严重低估不确定性，需按题目/模型/种子聚类或明确独立单元。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 论文声称的 GAP 是“没有人在 MMLU 上、用长度匹配对照、测量缓存条目造成的配对置信度误差变化”，这是实验协议层面的窄缺口；已有大量工作表明提示措辞、指令、few-shot 示例和检索内容都会显著改变 LLM 的言语化置信度（如 verbalized confidence、prompt-based calibration、间接 prompt injection 等），",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 论文直接给出可复制的“缓存条目置信度提升”提示（含医疗 RAG 示例）并展示其可系统性制造高置信错误输出，却未见 TMLR 要求的 Broader Impact Statement，也未讨论缓存投毒、医疗/金融等高风险场景的误用与缓解措施。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Critical",
+      "text": "- Critical: 长度匹配良性对照只在子集上测试，主效应和对照不是同一题目/模型/信道集合；p=0.62 不能证明“长度无影响”，也可能只是子集功效不足，长度对照结论不成立。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 3 channels 与 2 cache conditions 的完整模板未给出；benign control 的 75-char 前缀具体文本、插入位置、分隔符和角色（system/user）均缺失。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 500 道 MMLU 题的选择方式未说明；未报告是否按学科分层或随机抽样，子集可能偏向某类任务，影响基准公平性和结论代表性。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 500道MMLU题的选择、分层和主题分布未说明；MMLU各主题内题目高度相关，按题目简单配对可能高估独立样本量，需报告抽样方式并使用聚类稳健推断。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: Contribution 2 把 “descriptive Wasserstein upper bound” 列为贡献，但文中自述是 “sanity check, not explanatory theory”，这属于对贡献的夸大描述。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: Related Work 未引用最接近的 SteerConf、FaR、NOVA 等工作就直接断言 “no prior work measures…”，使 GAP 判断建立在缺失文献上；与这些工作对齐后，剩余增量主要是场景包装而非概念突破。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: Wilcoxon signed-rank 检验的是配对差的中位数/伪中位数，不是报告中的平均 ∆MAE；p=1.6×10⁻⁵ 不能直接支持“平均 MAE 增加 0.047”这一均值推断，需说明 BCa 是否专门针对均值并作为主推断。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: “语义 vs 长度”是错误二分法；语义内容包含多个可分离成分，需设置正交控制条件（如非信心的祈使句、负向信心句、去除“几乎总是正确”等）才能定位机制。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 与更近的 agent-memory / RAG-calibration 文献差异未做实：memory consolidation 可制造 agent 自信断言（Manufactured Confidence, arXiv:2606.29279），RAG 噪声上下文会加剧 overconfidence（NOVA, arXiv:2601.11004），memory poisoning",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 事后 baselines “reduce but do not eliminate”没有伴随推断统计量（CI、置换检验或效应量），无法判断“仍存在”是否只是噪声。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 关键术语缩略语不一致：摘要直接用 ∆MAE 而不展开 Mean Absolute Error，引言使用 ECE 但未定义，且 verbalized-confidence error/MAE/ECE 混用。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 功率分析基于 n=500，但实际 6,000 个配对差值来自同一批问题跨模型/通道复用，未处理问题内相关性，有效样本量与检验功效可能被高估。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 后验基线检验逻辑不当：baseline 只在 held-out benign 数据上拟合，再检验 priming 条件是否仍偏移，只能说明“benign 拟合的校准器不迁移”，不能说明“校准无法消除条件效应”；四个基线还缺少多重比较校正和完整选择标准。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 四个 post-hoc baselines 的拟合超参、验证集划分、每模型/每 channel 的表现均未报告；对 verbalized confidence 直接做温度缩放/isotonic/ensemble/LLM-judge 的公平性和可比较性存疑。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 四个事后 baseline 均报告 p<.02，但未进行多重校正，且“reduce but not eliminate”只用显著性检验，无法支持“仍存在残余偏移”的结论；应改用非劣效/等价检验并报告校正后置信区间。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 四种 post-hoc baseline 的超参数（temperature、isotonic 分箱、ensemble 规模、judge prompt/temperature）未交代，也未做敏感性分析；此外“held-out benign data”是否按题目与测试题完全分离未说明，可能存在题目级泄漏。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 基准公平性不足：未进行 MMLU 数据污染/记忆化检查，未使用时间切分或排除训练重叠题，单基准 MMLU 也限制了公平性评估。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 增量贡献被夸大：将已有“prompt 指令影响置信度”的现象重新包装为“retrieved cache entries”并不能构成机制或理论贡献；第 1、2 条贡献主要是实验协议细节（paired ΔMAE、length control、Wasserstein sanity check），而第 2 条明确承认是 sanity check 而非 explanatory theory",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 声称“首次用 paired ΔMAE + length control 在 MMLU 上测量”只是把已有 benchmark、配对统计量和长度控制组合起来，是实验配置的增量，而非有意义的文献空白；calibration-prompt 对照实验（如 Xiong et al. 2023、Influences on LLM Calibration 等）已大量存在。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 多重比较：4 个模型族×3 个通道（外加对照和基线）会形成大量检验，只挑出一个显著 p=1.6×10^-5 且未做任何校正，无法排除从多组比较中选取最强结果。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要 headline 只点名 Qwen3:4b 的 ∆MAE=+0.047，但设计声明覆盖 4 local model families ×12,000 cells；未说明该结果是单模型报告还是跨模型汇总，读者无法判断摘要是否过度概括。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要与正文矛盾：摘要明确说长度匹配对照“control tested on a subset, see Limitations”，引言/贡献却称“paired protocol (n=500…) including a length-matched benign control”，未说明子集与 n=500 的关系。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要把“benign vs confidence-priming”列为 2 cache conditions，再单独引入“length-matched benign control”并注明 tested on a subset；Contributions 却把该控制写成主协议的一部分，未保留 subset 限定，摘要与正文矛盾。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要的核心设计出现未定义的“3 channels”，而后面只列出“2 cache conditions (benign vs confidence-priming)”，导致 500×4×3×2=12,000 与 6,000 paired differences 的构造无法审计。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 摘要说 four post-hoc baselines “reduce but do not eliminate the shift (p<.02)”，但未报告校正后的 ΔMAE、置信区间或对应表/图，无法核对“reduce”和正文“persists”的数量关系。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 数据许可与来源缺失：未声明 MMLU 的具体许可证和版本，也未提供数据文件、模型文件、代码的 SHA-256 哈希供对账。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 数据许可未声明：MMLU 的许可条款、数据集版本/镜像、以及缓存条目和中间输出再分发许可均未交代。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 方差与不确定性报告不足：摘要声称使用 B=5000 BCa bootstrap，但未报告 ΔMAE 的 bootstrap 置信区间、配对差分的 SD/分布或 Wilcoxon 检验的效应量 CI，读者无法判断估计精度。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 方差报告不足：只给 W、p、dz，缺少配对差 SD/IQR、BCa 置信区间以及按模型、通道、种子分解的方差信息，无法判断 +0.047 的稳定性。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 方差报告不足：只给 ΔMAE=+0.047 和 dz=0.42，未报告配对差分的 SD、95% CI、BCa 区间或置信区间宽度；B=5000 BCa 的存在但没有 CI 不可检验。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 无一键复现配置：缺少 Dockerfile、environment.yml、pip/conda lock、CLI/Makefile、GPU/内存需求说明，无法做到 one-click reproduce。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 无哈希对账：数据集、模型权重、prompt 模板、生成输出与中间统计量均无 checksum/SHA，无法核验“下载到的东西就是论文用的东西”。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 无哈希对账：缺少 MMLU 数据、prompt 模板、代码、原始模型输出和聚合结果文件的 SHA-256 或等价校验和，无法核对 0.047、p=1.6×10⁻⁵、dz=0.42 等关键数字。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 无数据与模型许可说明：MMLU 及 Qwen 等模型的 license、再分发/研究使用条款、生成输出的许可均未声明，复现时存在许可不确定性。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 无环境/依赖快照：无 Python/CUDA/库版本 lockfile、容器镜像或硬件记录，无法在另一台机器上复现同一结果。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 无配置快照：4 个本地模型族未完整列出，未给模型确切 checkpoint/量化/temperature/top_p/max_tokens/设备与依赖版本，Qwen3:4b 之外的模型结果也无对应表格。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 检验与效应量错配：Wilcoxon 符号秩检验的是配对差的中位数/伪中位数，而 ∆MAE 是均值差；用 Wilcoxon p 来支持均值 ∆MAE 的显著性，检验选择与所报效应量不一致。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 检验选择与模型结构不匹配：同一 500 题被多个模型/通道重复使用，各单元格的 Wilcoxon 假设 500 个独立差分解，忽略题目与模型的聚类相关，应使用混合效应模型或 cluster bootstrap。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 模型/题目抽样前提不透明：500 道 MMLU 题如何从全集选出、是否随机/分层未说明；4 个“small local models”的选择标准也未给出，限制了内部可比性和外部推广。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 没有对 priming 文本做成分消融（“容易”“几乎全对”“请给高置信”单独/组合），无法判断是哪个语义成分驱动置信度偏移。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 泛化性严重受限：4 个小型本地模型、置信度范围仅 0.52–0.76、单一任务和单一 priming 表述，缺乏真实 RAG/缓存注入场景，无法支撑广泛部署结论。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 泛化性极窄：仅 MMLU、4 个小规模本地模型、confidence range 0.52–0.76，没有跨数据集、跨模型规模、开放生成、真实 RAG 管线或不同 prompt 位置的验证。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 消融不完整：仅一个 priming 措辞、一个 75 字符中性前缀，未做语义内容×长度×位置的因子消融，也未明确“3 个通道”的操作化定义与各通道独立消融。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 种子数 3 且作用不明：若 3 seeds 只是打乱顺序，没有覆盖模型解码或题目抽样的随机变异；未报告嵌套/混合效应模型，无法区分题目、模型、通道与条件效应。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 结果变量 MAE 不是校准/ECE：对二元正确性取 |confidence−correctness| 是线性分数，混合了校准、锐度与基础正确率；因此“calibration shift”这一前提性结论未被该指标直接支持。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 统计复现链不完整：BCa bootstrap 的 seed/实现、Wilcoxon 精确/近似算法、dz 计算方式、后验 baselines 的 held-out split 与超参数均未记录。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 统计流水线不可一键复现：B=5000 BCa bootstrap 未给原始 paired-difference 表、RNG 流与脚本；Wilcoxon W/p 的计算方式（exact/approx、有无 continuity correction）未说明；power/MDE 也无脚本。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 解码和推理超参未报告：temperature、top-p、max tokens、量化精度、prompt template 都影响 verbalized confidence；也未明确 paired 两条件是否使用相同 seed/解码设置。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 解码超参数（temperature、top-p、max tokens、提示模板、答案抽取规则）和四个事后基线超参数未报告，也未说明是否在 benign held-out 上反复调参导致信息泄漏。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 解码配置缺失：temperature、top_p、max_tokens、sampler、推理后端（llama.cpp/vLLM/Transformers 等）及版本均未说明，verbalized-confidence 的解析/抽取规则也未给出。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 论文自称 hypothesis-generating，但贡献和引言使用“poses deployment risk”“shift persists”等较强表述；探索性小样本研究不足以支持部署风险级别的结论，贡献 3 的“persists”也缺少对残余偏移的置信区间或显著性检验。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 误用风险未加充分约束：该文等于给出了“在检索缓存条目中注入置信度指令即可改变模型口头置信度”的可复现方法，但可见文本没有负责任使用说明、威胁模型或缓解措施（如缓存来源认证、置信度异常监控、高利害场景禁用未认证缓存），且以医疗 RAG 举例会放大实际部署中的误导风险。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 误用风险：论文演示了通过缓存条目操纵模型口头置信度并以医疗 RAG 为动机示例，但可见文本未讨论该发现的 dual-use 风险、缓存投毒/提示注入攻击场景或缓解措施；该结果可能被用于让高风险输出显得过度可信。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 配对设计未说明条件顺序是否交叉平衡，也未说明 3 个 seed 在 benign/priming 生成中的使用方式；固定顺序或不同 seed 都会引入顺序/随机数混淆，削弱内部效度。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 配对设计缺少随机化/顺序平衡报告：若每个模型先看 benign 再看 priming，或固定通道顺序，则顺序效应、疲劳、跨条件污染都可能混入差异；未报告条件顺序是否 counterbalance。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 长度匹配对照只在子集上运行（Abstract 自述），且 benign 对照 +0.005/p=0.62 只能说明该子集缺乏长度效应，不能排除其他格式、位置、语义或内容混淆；因此“效应来自语义而非长度”的归因强度超过实际证据。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 长度匹配的benign control只在子集上测试，p=0.62不能作为“无长度效应”的证据；需要同一子集上的置信区间/等价性检验，否则无法与全样本主结果比较。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 长度对照只匹配“75 字符”并未控制句法框架、语义极性、指令位置/格式等表面特征，且控制条件只在子集上检验；因此“语义而非长度”的归因受单一对照刺激和子集功效限制。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 长度对照只在一个子集上检验，主效应和对照效应不可直接比较：主效应来自全样本，control 来自子集；∆MAE 差异可能来自子集抽样差异而非“长度 vs 语义”。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 长度对照结论过强：对照仅在子集上得到 p=0.62，不能因此推断“语义而非长度驱动”；未报告子集 n、效应量/置信区间、等价检验或针对该子集的功效，低功效阴性结果没有证据价值。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 长度控制不是长度×语义的完整因子设计：只有一个 75 字符良性前缀和一个 priming 短语，缺少多种长度、低置信/反向语义对照，不能严格分离语义与长度效应。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Major",
+      "text": "- Major: 长度控制只用了单一长度、单一中性文本，缺少多长度梯度、多种中性内容、以及“同长度但非置信语义”的对照，无法支持“语义而非长度”这一核心结论。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: BCa bootstrap 统计细节不足：未说明使用 Python/R 具体函数、bias-correction 实现、B=5000 的随机数流如何由三个 seed 控制，以及 Wilcoxon 的 ties/近似处理方式。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: MAE 作为校准指标需要辩护：二值正确率下 |conf−acc| 不同于 ECE/Brier，应说明其与标准校准度量的关系及可解释性。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: MMLU 是固定题库而非随机抽样，对模型总体的统计推断需更明确地限定为“该题库/该批问题”的 superpopulation 假设。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “3 channels”始终未定义或未按 channel 分别报告结果；若指 system/prefix/user 等注入渠道，效应可能只在特定渠道成立，当前表述混淆。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “3 channels”未定义；若它们是同一批题目上的三种输出或采样通道，则并非独立复制而是重复测量，必须在误差结构和多重比较中体现。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “To our knowledge, no prior work …” 这种无先例断言没有给出可复核的检索/综述范围；应该明确与“verbalized confidence”“prompt-based calibration”“retrieval poisoning”等邻近文献的系统对比，否则 GAP 不可检验。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “Under review as submission to TMLR” 在标题区和 Contributions 后重复出现，疑似页眉/排版残留。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: “hypothesis-generating”与“power-justified”、p值推断的定位矛盾；探索性研究的p值应明确标记为未校正/描述性，或采用预设与探索两阶段报告。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 仅使用单一 priming 措辞，补充 pilot 也只报告 0.645/0.646/0.649 的点估计而无推断统计，存在 language-as-fixed-effect，不能把结论推广到“置信度启动类 cache entries”这一类别。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 利益冲突缺失：可见部分未披露资助来源或与 Qwen 等被点名模型厂商的雇佣/资助/股权关系；双盲阶段可隐藏作者身份，但录用/元数据层仍应补齐 COI 声明。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 利益冲突：未披露资助、模型供应商或基准数据集相关利益；若作者与 Qwen/阿里等模型提供方存在雇佣、资助或合作关联，应按 TMLR 要求申报。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 前提与现实任务不对齐：真实 RAG/cache entry 很少是显式“answer with high confidence”的指令，多为检索文本、demo 或工具输出；实验操纵的生态效度不足。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 双盲方面未见明显作者信息，但未声明补充材料/代码/数据已完成匿名化且未链接可识别作者身份的预印本；需同时清理 PDF/ZIP 元数据。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 双盲：当前标题与作者匿名形式合规，未发现明显违规；但需确认补充材料、URL、模型仓库或日志中不含可识别作者/机构的元数据（如私有 wandb、Hugging Face 或机构链接）。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 四条 post-hoc baselines“减少但不消除 shift”对应的是校准方法无法消除输入级操纵这一已知现象，作为贡献 3 说服力有限；若不能展示 cache-specific 的差异化后果或防御基线，其增量仍停在“提示词可以影响置信度”的老结论上。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 图表与数值表缺少 data availability：无生成脚本、置信区间/效应量原始表格，无法对 Fig. 1 等做独立校验。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 图表现弱：摘要引用 Fig. 1，但当前文本没有对应图内容；baselines 结果只有 p<.02 区间，缺少表/图引用和单独效应量。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 引言将“retrieved entries 通常被视为惰性上下文”作为前提，但未提供证据；若该前提不成立，研究对部署 RAG 场景的外部效度会进一步受限。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 摘要中 “0.645/0.646/0.649 conf” 使用非正式缩写 conf，未说明是 confidence 还是 confidence score，与正式摘要文体不符。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 摘要写 “4 local model families”，Limitations 写 “4 small local models”，family 与 model 混用。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 数据许可与出处披露不足：正文仅写“MMLU”，未标注数据集版本、许可证（MMLU 仓库为 MIT）和归属；若补充材料转录原题或使用 auxiliary_train 等子集，需逐项确认上游题目/数据集的条款与署名要求。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 文档自身不完整/含截断与乱码（如“…(截断)”、Fig.1 和附录未提供），无法确认 500×3 phrasings pilot 与四个 baseline 的完整数据表。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 无（双盲方面：TMLR 官方确为双盲，稿件使用“Anonymous authors / double-blind review”与要求一致，未发现违规）。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 未在可见文本中披露与 Qwen3 等模型厂商的资助或隶属关系；尽管 TMLR 通过 OpenReview 收集 COI，仍应确认不存在未披露的利益冲突。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 未说明 artifact 许可证及 MMLU/权重来源的合规分发条件，阻碍他人合法复现与再分发。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 校准定义在 Abstract 和 Introduction 开头几乎逐字重复，结构冗余。",
+      "rounds": [
+        3
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 细胞数表述不一致：12,000 cells 是否已包含 3 seeds 未说明；若 12,000 为单 seed，则总评估量应为 36,000，报告需澄清。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 结构/悬空参数：Abstract 罗列 B=5000 BCa bootstrap，但摘要和可见正文未报告任何 bootstrap 区间，读者无法判断该参数如何参与结论。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 结构：摘要把 Wilcoxon W、p、dz、B、图号等细节全部塞入，却未定义 3 channels、4 families、BCa，信息密度过高，可读性差。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 结果仅来自 4 个小模型、单一 priming 措辞、单一基准（MMLU）和极小效应量（ΔMAE=+0.047, 仅 Qwen3:4b 报告显著），在该范围内更像是已知 prompt sensitivity 的补充性复制，而非足以改变领域认知的增量发现。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 缺少“无前缀”或不带任何语义的纯长度基线，无法确认是 priming 语义本身而非任何额外上下文导致的偏移方向。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 配对差分是逐题绝对误差，可能有界且呈离散分布，Wilcoxon signed-rank 会受大量 ties 影响；未说明 tie 处理或连续性校正。",
+      "rounds": [
+        1
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 长度匹配对照组只在 subset 上运行，未给出该 subset 的大小、抽样规则与筛选条件，导致部分结论无法全量复现且易受子集选择影响。",
+      "rounds": [
+        2
+      ]
+    },
+    {
+      "sev": "Minor",
+      "text": "- Minor: 隐私：实验看似只使用公开 MMLU 与本地模型，但未在数据可用性部分明确声明“不涉及个人/患者数据”；医疗 RAG 示例容易让读者误以为涉及临床数据，应写明数据边界与无需 IRB 的理由。",
+      "rounds": [
+        1
+      ]
+    }
+  ]
+}

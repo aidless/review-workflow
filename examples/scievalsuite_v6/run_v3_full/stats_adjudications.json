@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-26T16:25:27+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "adjudications": [
+    {
+      "kind": "friedman_p",
+      "json_path": "simulated_k4_N12",
+      "source": "F:\\deepseek\\scievalsuite\\out_p5\\P5_FINAL_FRONTIER_CURATED.json",
+      "status": "NOT_IN_PAPER",
+      "mechanical_hits": [
+        "阈值形式 p<0.05",
+        "粗精度舍入 0.04",
+        "显著性星号标记"
+      ],
+      "layer": "llm",
+      "verdict": "噪音",
+      "confidence": "high",
+      "justification": "JSON路径simulated_k4_N12的simulated前缀表明此为模拟中间量；论文报告的Friedman为p=0.3679(16任务,χ²=2.0)和p=0.0026(6任务,k=4),均不匹配p=0.042054(N=12,χ²=8.2)；三个机械层候选在论文中无对应报告。",
+      "evidence": "Cross-model Friedman...p=0.3679; curated L1a (6 tasks, k=4) gives p=0.0026",
+      "suggested_action": "确认为模拟中间量,无需在论文中补充报告。",
+      "parse": "json"
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "resolved": 1,
+    "sustained": 0,
+    "llm_failed": 0,
+    "verdict": "PASS",
+    "detail": "NOT_IN_PAPER 1 条全部定性为口径换算/噪音 → 已解释"
+  }
+}

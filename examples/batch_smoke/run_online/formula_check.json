@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "timestamp": "2026-08-26T04:08:45+00:00"
+  },
+  "arith_checks": [
+    "15+15=30"
+  ],
+  "mismatches": [],
+  "dangling_refs": [],
+  "summary": {
+    "verdict": "PASS",
+    "arith_total": 1,
+    "arith_mismatch": 0,
+    "paren_pct_mismatch": 0,
+    "dangling_refs": 0,
+    "note": "MISMATCH = 行内算术重算与论文写出的结果不符（按结果位数舍入容差）；符号推导/量纲/隐式步骤不在机械覆盖内（R6 文本层 + 人工）"
+  }
+}

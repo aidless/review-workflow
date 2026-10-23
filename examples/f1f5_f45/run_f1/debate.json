@@ -1,0 +1,364 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\f1f5_f45\\run_f1\\extracted_text.txt",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\examples\\f1f5_f45\\run_f1\\r6_llm.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-27T19:14:59+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Critical",
+      "text": "- Critical: 主要因果结论的统计单元混乱：报告的是 Qwen3:4b 单模型/单通道的 Wilcoxon 结果，却把 4 模型×3 通道×500 题=6000 对称为总体证据；若把全部 cells 当作独立样本，则同一题目跨模型、同一模型跨通道的重复测量会造成伪重复，Wilcoxon 的独立同分布假设不成立。"
+    },
+    {
+      "id": 2,
+      "sev": "Critical",
+      "text": "- Critical: 存在未校正的多重比较与选择性报告风险：从 4 个模型和 3 个通道中挑出最显著的 Qwen3:4b 结果作为主发现，未报告全部 12 组检验或进行多重比较校正，p=1.6×10⁻⁵ 不能单独支持“instruction channel”的总体效应。"
+    },
+    {
+      "id": 3,
+      "sev": "Critical",
+      "text": "- Critical: 摘要称 12,000 cells/6,000 paired differences，却又说 power 为 MDE dz=0.18 at n=500；文中未说明 n 是问题数、配对差数还是模型内样本量，导致 Wilcoxon、dz 和 bootstrap 的统计单位无法核对。"
+    },
+    {
+      "id": 4,
+      "sev": "Critical",
+      "text": "- Critical: 未给出完整实验材料：confidence-priming 与 benign cache entry 的逐字模板、75-char neutral prefix 原文、题面/选项注入方式、“verbalized confidence”的解析规则，语义处理无法复现。"
+    },
+    {
+      "id": 5,
+      "sev": "Critical",
+      "text": "- Critical: 模型配置快照缺失：仅写 “4 local model families / Qwen3:4b”，没有精确 checkpoint/模型 ID、量化方式、推理框架、温度、采样策略、max tokens、dtype、确定性开关等，无法复现同一模型输出。"
+    },
+    {
+      "id": 6,
+      "sev": "Critical",
+      "text": "- Critical: 混淆变量未排除，语义归因不成立：confidence-priming 与 length-matched neutral 的差异不只有“置信提示”，还可能有指令语气、肯定性/情感效价、行为要求、句法主题等；单一对照无法把效应归因于“confidence priming 的语义内容”，需要用多类安慰剂条件（如无置信指令的积极内容、不同措辞的相同指令）分离。"
+    },
+    {
+      "id": 7,
+      "sev": "Critical",
+      "text": "- Critical: 证据链断裂：MMLU 的确切版本、科目子集、500 题采样方式、缓存条目构造位置均未说明，也没有从原始数据→预处理→推理→评估→bootstrap 的中间产物清单。"
+    },
+    {
+      "id": 8,
+      "sev": "Critical",
+      "text": "- Critical: 长度匹配良性对照只在子集上测试，未覆盖主效应所在的全量 500×4×3 配对数据，因此“语义而非长度”的核心结论不能由主实验直接支持。"
+    },
+    {
+      "id": 9,
+      "sev": "Major",
+      "text": "- Major: power analysis 与检验方法不匹配：MDE dz=0.18 基于配对参数检验思路，但推断使用 Wilcoxon；非参数功效、所需样本量和效应量解释不同，且未说明实际分析单元是 500 题还是 6000 对。"
+    },
+    {
+      "id": 10,
+      "sev": "Major",
+      "text": "- Major: seed 管理不透明：只列出 42/43/44，未说明主统计量是否跨 seed 聚合、是否用 seed 作为随机效应、是否报告 seed-level 方差或最差 seed 结果。"
+    },
+    {
+      "id": 11,
+      "sev": "Major",
+      "text": "- Major: “3 channels”在摘要/引言中从未定义，结果中又出现“instruction channel”；channel 的含义（置信度呈现通道、缓存通道还是注入通道）不明确，破坏结构可读性。"
+    },
+    {
+      "id": 12,
+      "sev": "Major",
+      "text": "- Major: “descriptive Wasserstein upper bound (|∆MAE| ≤ LΓ)”中的 LΓ 和 Γ 未定义，读者无法判断这是 Lipschitz 常数、分布距离上界还是经验量，公式缺乏上下文。"
+    },
+    {
+      "id": 13,
+      "sev": "Major",
+      "text": "- Major: 主实验只有单一 priming 措辞；补充 pilot 仅给出 0.645/0.646/0.649 的平均 confidence，没有报告 ∆MAE、CI 或统计功效，不能算作完整的措辞消融。"
+    },
+    {
+      "id": 14,
+      "sev": "Major",
+      "text": "- Major: 四个 post-hoc baselines 不可复现：held-out benign split 的划分方式、拟合实现、库版本、超参数和拟合代码均未给出，且未报告 baseline 后的置信区间。"
+    },
+    {
+      "id": 15,
+      "sev": "Major",
+      "text": "- Major: 效应量报告不完整：仅给出 dz=0.42 和点估计 ΔMAE=+0.047，未报告 dz 的置信区间；从多个组合中挑出的效应量还会因选择偏差而被高估。"
+    },
+    {
+      "id": 16,
+      "sev": "Major",
+      "text": "- Major: 未说明 MMLU 数据及所用模型/补充数据的许可证与归属；MMLU 为 MIT 许可，若随文发布 500 题子集或缓存提示样例，需保留版权和许可声明，当前提交中未见该合规说明。"
+    },
+    {
+      "id": 17,
+      "sev": "Major",
+      "text": "- Major: 术语/引文错误：Related Work 称 Naeini et al. (2015) “derive the Brier score and reliability diagrams”，Brier score 并非该文提出，reliability diagrams 也更早，这类事实性表述会损害可信度。"
+    },
+    {
+      "id": 18,
+      "sev": "Major",
+      "text": "- Major: 术语混用：摘要主结果使用 ∆MAE（verbalized-confidence error），引言却写“shift self-reported confidence and ECE”，标题又是“Confidence Shifts”；三者不是同一个量，正文未统一“结果变量到底是置信度本身还是校准误差”。"
+    },
+    {
+      "id": 19,
+      "sev": "Major",
+      "text": "- Major: 泛化证据薄弱：只有 4 个小规模本地模型、单一 MMLU 子集、单一 phrasing、单一 cache 注入形式，且 verbalized confidence 只在 0.52–0.76 窄区间，无法支持对检索缓存场景的较广结论。"
+    },
+    {
+      "id": 20,
+      "sev": "Minor",
+      "text": "- Minor: 全文唯一图引用是摘要中的 “see Fig. 1”，但正文与贡献未给出对应图注或结果表；图表现无法支撑摘要中的数字。"
+    },
+    {
+      "id": 21,
+      "sev": "Minor",
+      "synthetic": true,
+      "text": "（另有 4 条问题超出 20 条上限被截断，未参与辩论）"
+    }
+  ],
+  "rebuttals": [
+    {
+      "id": 1,
+      "action": "rebut",
+      "rebuttal": "摘要明确主检验为 Qwen3:4b 单模型/单通道 Wilcoxon（n=500 对）；12,000 cells/6,000 对仅表述实验规模,未作为独立样本进入检验。"
+    },
+    {
+      "id": 2,
+      "action": "concede",
+      "fix": "将报告全部 4×3=12 组检验及 BH-FDR 校正,并以校正后仍显著的结果作为主发现。"
+    },
+    {
+      "id": 3,
+      "action": "concede",
+      "fix": "将统一定义 n=500 为每模型×通道的问题配对样本量,并在功效分析与 Wilcoxon 中明确分析单位为 500 对而非 6,000 对。"
+    },
+    {
+      "id": 4,
+      "action": "concede",
+      "fix": "将在附录/补充材料给出两条件逐字模板、75-char neutral prefix、注入方式与 verbalized-confidence 解析规则。"
+    },
+    {
+      "id": 5,
+      "action": "concede",
+      "fix": "将补充全部模型精确 checkpoint/ID、量化方式、推理框架、温度、采样、max tokens、dtype 与确定性开关配置。"
+    },
+    {
+      "id": 6,
+      "action": "concede",
+      "fix": "将新增多种安慰剂条件（积极无置信指令、同指令不同措辞、句法主题匹配）,以分离语义内容与其他混淆。"
+    },
+    {
+      "id": 7,
+      "action": "concede",
+      "fix": "将补充 MMLU 版本、科目子集、500 题采样代码、缓存条目注入位置,及原始数据到评估/bootstrap 的中间产物清单。"
+    },
+    {
+      "id": 8,
+      "action": "rebut",
+      "rebuttal": "论文已披露对照仅在子集测试:摘要明确标 hypothesis-generating、control tested on a subset, see Limitations,未声称主实验直接支持全量语义结论。"
+    },
+    {
+      "id": 9,
+      "action": "concede",
+      "fix": "将补充与 Wilcoxon/置换检验匹配的功效分析,并明确 MDE dz 对应的分析单元与 n=500 对的定义。"
+    },
+    {
+      "id": 10,
+      "action": "concede",
+      "fix": "将说明 3 seeds 的跨 seed 聚合方式、是否作随机效应,并报告 seed 级方差与最差 seed 结果。"
+    },
+    {
+      "id": 11,
+      "action": "concede",
+      "fix": "将在方法开头精确定义 3 channels（缓存/注入/置信度呈现通道）,并统一全文术语与结果小节。"
+    },
+    {
+      "id": 12,
+      "action": "concede",
+      "fix": "将显式定义 Γ 为经验 Wasserstein 距离、L 为 Lipschitz 常数,并给出 |∆MAE|≤LΓ 的推导与适用假设。"
+    },
+    {
+      "id": 13,
+      "action": "concede",
+      "fix": "将补充 pilot 的 ΔMAE、95%CI、功效/样本量信息,并增加至少 3 种措辞的完整消融。"
+    },
+    {
+      "id": 14,
+      "action": "concede",
+      "fix": "将公开 held-out benign 划分方法、baseline 拟合代码、库版本、超参数及 baseline 后 ΔMAE 的置信区间。"
+    },
+    {
+      "id": 15,
+      "action": "concede",
+      "fix": "将报告 dz 与 ΔMAE 的 bootstrap CI,并给出全部 12 组检验结果以校正选择偏差。"
+    },
+    {
+      "id": 16,
+      "action": "concede",
+      "fix": "将补充 MMLU MIT 许可声明与数据归属；若发布 500 题子集或模板样例,将保留版权和许可信息。"
+    },
+    {
+      "id": 17,
+      "action": "concede",
+      "fix": "将修正引文表述:Naeini et al. 提出基于 binning 的可靠性/ECE 估计,Brier score 与 reliability diagrams 引用原始出处。"
+    },
+    {
+      "id": 18,
+      "action": "concede",
+      "fix": "将统一结果变量为 verbalized-confidence ΔMAE,并在标题、摘要与引言中改用一致表述,避免与置信度本身混淆。"
+    },
+    {
+      "id": 19,
+      "action": "rebut",
+      "rebuttal": "摘要已限定 sample-descriptive、4 small local models、单一 MMLU 子集、单一 phrasing、置信度 0.52–0.76 与 hypothesis-generating,未作更广泛化外推。"
+    },
+    {
+      "id": 20,
+      "action": "concede",
+      "fix": "将为 Fig.1 补充完整图注、坐标/误差线说明与对应结果表,并在正文和贡献中显式引用。"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "withdrawn",
+      "reason": "摘要确以Qwen3:4b单模型/单通道Wilcoxon为主检验,12,000/6,000仅为实验规模,未作为独立样本进入检验,原评存在误读。"
+    },
+    {
+      "id": 2,
+      "disposition": "sustained",
+      "reason": "作者承认将补报12组检验并做BH-FDR校正；当前版本确实存在未校正多重比较与选择性报告风险。"
+    },
+    {
+      "id": 3,
+      "disposition": "sustained",
+      "reason": "作者承认需统一定义n=500分析单元；当前功效分析、Wilcoxon与样本规模的统计单位仍无法核对。"
+    },
+    {
+      "id": 4,
+      "disposition": "sustained",
+      "reason": "作者承诺补充逐字模板、前缀、注入方式与解析规则；当前版本实验材料缺失,无法复现。"
+    },
+    {
+      "id": 5,
+      "disposition": "sustained",
+      "reason": "作者承诺补充模型checkpoint、量化、推理框架及采样配置；当前模型配置快照缺失。"
+    },
+    {
+      "id": 6,
+      "disposition": "sustained",
+      "reason": "作者承诺新增多类安慰剂条件；当前单一对照无法排除语义以外的混淆变量。"
+    },
+    {
+      "id": 7,
+      "disposition": "sustained",
+      "reason": "作者承诺补充MMLU版本、采样方式及中间产物清单；当前证据链条断裂。"
+    },
+    {
+      "id": 8,
+      "disposition": "withdrawn",
+      "reason": "摘要已明确标注hypothesis-generating及control tested on a subset, see Limitations,未声称主实验直接支持全量语义结论。"
+    },
+    {
+      "id": 9,
+      "disposition": "sustained",
+      "reason": "作者承认将补充与Wilcoxon匹配的非参数功效分析；当前MDE dz与检验方法确实不匹配。"
+    },
+    {
+      "id": 10,
+      "disposition": "sustained",
+      "reason": "作者承认需说明seed聚合方式并报告seed级方差；当前seed管理不透明。"
+    },
+    {
+      "id": 11,
+      "disposition": "sustained",
+      "reason": "作者承诺精确定义3 channels并统一术语；当前channel含义确实不明确。"
+    },
+    {
+      "id": 12,
+      "disposition": "sustained",
+      "reason": "作者承诺定义Γ、L并给出推导；当前Wasserstein上界公式缺乏上下文。"
+    },
+    {
+      "id": 13,
+      "disposition": "sustained",
+      "reason": "作者承诺补充pilot的ΔMAE、CI及完整措辞消融；当前措辞消融不完整。"
+    },
+    {
+      "id": 14,
+      "disposition": "sustained",
+      "reason": "作者承诺公开划分方式、代码、库版本与超参数；当前baseline不可复现。"
+    },
+    {
+      "id": 15,
+      "disposition": "sustained",
+      "reason": "作者承诺报告dz和ΔMAE的CI及全部12组结果；当前效应量报告不完整且存在选择偏差。"
+    },
+    {
+      "id": 16,
+      "disposition": "sustained",
+      "reason": "作者承诺补充MMLU许可与数据归属；当前版权合规说明确实缺失。"
+    },
+    {
+      "id": 17,
+      "disposition": "sustained",
+      "reason": "作者承诺修正Naeini et al.引文表述；当前事实性归因有误。"
+    },
+    {
+      "id": 18,
+      "disposition": "sustained",
+      "reason": "作者承诺统一为verbalized-confidence ΔMAE；当前标题、摘要与引言确实变量混用。"
+    },
+    {
+      "id": 19,
+      "disposition": "withdrawn",
+      "reason": "摘要已限定sample-descriptive、4小模型、单一子集/措辞/置信区间及hypothesis-generating,未作广泛外推。"
+    },
+    {
+      "id": 20,
+      "disposition": "sustained",
+      "reason": "作者承诺补充Fig.1图注、坐标与对应结果表；当前图表确实无法支撑摘要数字。"
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 6,
+      "Major": 10,
+      "Minor": 1
+    },
+    "n_issues": 20,
+    "n_sustained": 17,
+    "n_withdrawn": 3,
+    "n_partial": 0,
+    "truncation": {
+      "n_total": 24,
+      "n_debated": 20,
+      "n_truncated": 4,
+      "max_issues": 20
+    },
+    "detail": "辩论后维持 Critical 6 / Major 10 （撤回 3，部分成立 0）；注：原始 24 条中仅严重度前 20 条进入辩论（MAX_ISSUES=20，截断 4 条未辩论）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20
+    ],
+    "withdrawn_ids": [
+      1,
+      8,
+      19
+    ]
+  }
+}

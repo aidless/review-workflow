@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-27T03:53:17+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "dimensions": {
+    "P": {
+      "status": "ok",
+      "score": 7,
+      "justification": "TMLR是benchmark/评估方法论论文的合适venue。论文提出的科学agent评估碎片化问题真实存在,unified reproducible benchmark方向契合TMLR对可复现性的重视。统计协议和recomputation seal设计符合TMLR标准。但贡献主要是组合已有benchmark（AIRS-Bench、ResearchClawBench、GAIA2）于统一contract下,方法新颖性有限；测试模型均为小型本地模型,L1b全部0/10,benchmark的区分力存疑,研究问题的常规性使其未达高分。",
+      "top_weakness": "贡献本质是已有benchmark的工程性组合而非方法论创新,且仅用小模型验证,L1b全0分使benchmark区分力难以判断。",
+      "evidence": "The contribution is not a new model but a measurement instrument: a budget-controlled, end-to-end executable, independently recomputable benchmark",
+      "parse": "json"
+    },
+    "R": {
+      "status": "ok",
+      "score": 5,
+      "justification": "统计检验选择基本合理（McNemar配对、Friedman多模型）,且主动披露功效极限与退化区间。但N=4使L2的McNemar完全退化(n_d=0, CI[0,0]退化),无实质推断力；对curated L1a做事后任务筛选再检验,Holm校正仅覆盖两个非退化编码而非全部已执行检验,属选择性多重比较校正；LLM-as-judge校准后该轮零调用(all SKIP),校准沦为空头担保。这些缺陷需实质解释方可支撑结论。",
+      "top_weakness": "事后筛选任务(curated L1a)后选择性Holm校正,显著结果可能为假阳性",
+      "evidence": "curated L1a (6 tasks, k=4, exploratory) gives p=0.0026 under fail-as-worst encoding, still significant after Holm correction over the two non-degenerate encodings",
+      "parse": "json"
+    },
+    "I": {
+      "status": "ok",
+      "score": 5,
+      "justification": "SciEvalSuite将三个已有基准(AIRS-Bench/ResearchClawBench/GAIA2)统一到一个可复现契约下,并加入统计协议与SHA-256校验,作为测量工具有用。但核心结果多为零分或零差异(L1b全0/10、L2 p=1.0、Friedman非显著),N=4样本极小,新洞察有限,属增量有限但有用的范畴。",
+      "top_weakness": "结果几乎全为null(0/10、p=1.0、N=4),且基准本身是已有基准的重组,缺乏新科学洞察。",
+      "evidence": "The contribution is not a new model but a measurement instrument; L1b scored 0/10 for all models; L2 showed no statistically detectable difference between arms (exact McNemar p=1.0000).",
+      "parse": "json"
+    },
+    "S": {
+      "status": "ok",
+      "score": 9,
+      "justification": "论文在诚实性上表现突出:主动披露零结果(L2 p=1.0000)、小样本功效不足(N=4, McNemar power=0.0000)、judge实际零调用、单标注者无一致性、失败trial按0计入分母。探索性结果(P5 frontier)明确标注exploratory并施加Holm校正。复现承诺具体可信(SHA-256 seal、独立重算脚本、per-seed rows)。",
+      "top_weakness": "\"curated L1a (6 tasks, k=4, exploratory)\"子集筛选后p=0.0026存在结果选择偏差风险,虽标注exploratory并校正,但curated一词暗示事后挑选。",
+      "evidence": "the round made zero judge calls (all SKIP) so calibration is a methodological warrant…single annotator, no inter-annotator agreement measured, second annotator left as future work",
+      "parse": "json"
+    }
+  },
+  "summary": {
+    "verdict": "MAJOR",
+    "scores": {
+      "P": 7,
+      "R": 5,
+      "I": 5,
+      "S": 9
+    },
+    "overall": 5,
+    "weakest": "R(严谨性)",
+    "detail": "最弱维度 R(严谨性) = 5 分（<= 6）→ 文本层 WARN；证据层门禁不受影响"
+  }
+}

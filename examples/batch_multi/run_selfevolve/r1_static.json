@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "timestamp": "2026-08-26T04:39:42+00:00",
+    "stage": "R1",
+    "pdf_mode": false
+  },
+  "sections_found": [
+    "abstract",
+    "introduction",
+    "related",
+    "results",
+    "discussion",
+    "conclusion"
+  ],
+  "missing_sections": [
+    "method",
+    "limitations"
+  ],
+  "placeholders": [],
+  "abstract_words": 364,
+  "unbalanced_envs": [],
+  "summary": {
+    "verdict": "MAJOR",
+    "warns": [
+      "章节缺失 ['method', 'limitations']",
+      "摘要 364 词（>300）"
+    ]
+  }
+}

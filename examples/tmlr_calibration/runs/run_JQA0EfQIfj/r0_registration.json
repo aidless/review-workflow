@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "timestamp": "2026-08-26T06:40:20+00:00",
+    "stage": "R0",
+    "source_mode": "PDF 模式：JQA0EfQIfj.pdf → 伪 tex（79565 字符，1081 个小数）；R2/R2b/R1b 降级 SKIP"
+  },
+  "inputs": {
+    "name": "tmlr_JQA0EfQIfj",
+    "tex": null,
+    "pdf": {
+      "path": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\pdfs\\JQA0EfQIfj.pdf",
+      "size": 6102551,
+      "sha256": "cea9da16af5a6e11bfbccf367c483600c6c0523effd2418cd0f9b6484b7c21b8"
+    },
+    "zip": null,
+    "evidence_dirs": []
+  },
+  "cross_source_risk": [],
+  "problems": [],
+  "summary": {
+    "problems": 0,
+    "cross_source_risk": 0,
+    "verdict": "PASS"
+  }
+}

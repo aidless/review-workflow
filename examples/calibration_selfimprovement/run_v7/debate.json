@@ -1,0 +1,362 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\main.tex",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\examples\\calibration_selfimprovement\\run_v7\\r6_llm.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-09-02T04:54:03+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Critical",
+      "text": "- Critical: MMLU 的 4999 个 “pairs” 并非独立样本：同一 item 被多模型、多次采样重复使用，按 pair 数计算 ECE/CI/p 值会严重低估方差；应使用 item/model 聚类稳健标准误或混合效应模型。"
+    },
+    {
+      "id": 2,
+      "sev": "Critical",
+      "text": "- Critical: OOD-gating 因果推断不恰当：“confidence may be harmful”“consistency removes overconfident answers”基于 N=30、无 gold、无覆盖率/拒绝率匹配基线、门限事后选定且未做多重比较校正的观察相关；相关证据不能支持“有害”或“移除错误”的因果/干预断言。"
+    },
+    {
+      "id": 3,
+      "sev": "Critical",
+      "text": "- Critical: “matcher extended after per-row adjudication” 是后验修订标签，未冻结裁定协议、未公开 adjudication log，存在标签泄漏且 100% 结果不可复现。"
+    },
+    {
+      "id": 4,
+      "sev": "Critical",
+      "text": "- Critical: “语义 soft-label 估计器 + MSI”被现有文献高度预见：语义等价类定义下的校准（B-calibration，arXiv:2511.04869）和语义采样 ECE（Sem-ECE，arXiv:2605.08432）已覆盖“按语义而非字面匹配构造校准标签”的核心机制，MSI 更像是已有 matcher/protocol sensitivity 审计的再包装。"
+    },
+    {
+      "id": 5,
+      "sev": "Critical",
+      "text": "- Critical: 核心发现“校准由标签 matcher 决定”并非真实 GAP：已有工作直接证明 finite-reference + matcher 会把有效输出误标为错并反转校准排序（arXiv:2608.25654），另有工作系统展示答案/协议选择使 ECE 比较翻转（arXiv:2605.27752、arXiv:2601.08064），本文的差异性贡献仅为“又验证了一次”该现象。"
+    },
+    {
+      "id": 6,
+      "sev": "Critical",
+      "text": "- Critical: 核心校准结论建立在 N=30 的 pilot 上，且 ECE 只报点估计（0.363 / 0.1297 / ≈0），没有 bootstrap 或解析 CI；这些差异可能完全落在抽样噪声内，不能支撑“matcher 决定校准”的强结论。"
+    },
+    {
+      "id": 7,
+      "sev": "Critical",
+      "text": "- Critical: 核心证据在样本内（N=30）且标签是“逐行 adjudication 后扩展 matcher”产生的，等于用待评估模型的输出反推正确标签，存在直接循环性；100%/ECE≈0.0037 不能支持“matcher 决定校准”这一中心结论。"
+    },
+    {
+      "id": 8,
+      "sev": "Critical",
+      "text": "- Critical: 配置快照缺失：模型版本/API 调用日期、temperature、top_p、max_tokens、prompt 模板、system prompt、agent 工具集及依赖库版本均未列出，API 模型结果无法跨时间复现。"
+    },
+    {
+      "id": 9,
+      "sev": "Major",
+      "text": "- Major: 1159 pairs 和 4999 pairs 来自 300/600 items × models，pair 之间存在 item/model 聚类；若未用聚类稳健方差或多水平模型校正，标准误和 p 值会被低估，文中未见相关处理说明。"
+    },
+    {
+      "id": 10,
+      "sev": "Major",
+      "text": "- Major: MSI 的 1.000 vs 0.334 没有方差、CI 或显著性检验，且 1.000 在小样本/退化置信分布下可能只是天花板效应，不能直接解释为协议差异。"
+    },
+    {
+      "id": 11,
+      "sev": "Major",
+      "text": "- Major: MSI 的 1.000（free-form）与 0.334（MMLU）比较混淆了 protocol 与数据集/标签空间/题目难度/模型配置，不能归因于“protocol-dependent”。"
+    },
+    {
+      "id": 12,
+      "sev": "Major",
+      "text": "- Major: OOD gating 分析 N=30，只报 “40–50% high-confidence OOD answers wrong”，未给出精确分子/分母、二项 CI 或检验；例如 12/30 与 15/30 的 95% CI 高度重叠，不足以支持 “confidence may be harmful”。"
+    },
+    {
+      "id": 13,
+      "sev": "Major",
+      "text": "- Major: semantic soft-label estimator 如果由同一类或同源 LLM judge 产生软标签，可能继承与 matcher 相同的偏差；没有独立 gold 验证时，MSI 与 smECE 的“诊断”仍可能循环。"
+    },
+    {
+      "id": 14,
+      "sev": "Major",
+      "text": "- Major: “$\\mathrm{smECE}_{\\mathrm{sem}}$+MSI”在摘要后的 central finding 中首次出现，但摘要只定义了 MSI，未定义 `smECE_sem`，术语跳变。"
+    },
+    {
+      "id": 15,
+      "sev": "Major",
+      "text": "- Major: “95% CI 88.4%–100%”看起来只是 30/30 成功的精确二项单侧下界，不是双侧 CI 或 held-out bound；100% 点估计对单次翻转极不稳定，不应作为可靠上限。"
+    },
+    {
+      "id": 16,
+      "sev": "Major",
+      "text": "- Major: “domain-specific ECE”属于已知且宽泛的实证现象，且作者自述只有极端 Holm 校正对显著，因此“ECE 变化达 4×/0.45”更像不稳定点估计，不等价于新发现，无法支撑作为独立贡献。"
+    },
+    {
+      "id": 17,
+      "sev": "Major",
+      "text": "- Major: 引言末句 “We use single-turn verbalized confidence as probe, agentic multi-step left to \\S6 Discussion.” 语法破碎，缺 “is” 且 “left to” 应为 “deferred to Section 6”。"
+    },
+    {
+      "id": 18,
+      "sev": "Major",
+      "text": "- Major: 扩展数据（600 items/6 domains/9 models/4999 pairs）缺少逐域清单、去重规则、划分版本和 SHA-256 哈希，无法对账报告中各项 ECE/MSI 数字。"
+    },
+    {
+      "id": 19,
+      "sev": "Major",
+      "text": "- Major: 摘要中 “An OOD-gating analysis (exploratory, N=30) suggests (exploratory, no causal claim, no intervention)” 重复 “exploratory” 且括号嵌套混乱，是最明显的摘要写作瑕疵。"
+    },
+    {
+      "id": 20,
+      "sev": "Major",
+      "text": "- Major: 摘要以 “Compliance in appendix (Section~\\ref{sec:compliance}).” 结尾是孤立残句，且未说明 compliance 指什么，不适合放入摘要。"
+    },
+    {
+      "id": 21,
+      "sev": "Minor",
+      "synthetic": true,
+      "text": "（另有 4 条问题超出 20 条上限被截断，未参与辩论）"
+    }
+  ],
+  "rebuttals": [
+    {
+      "id": 1,
+      "action": "concede",
+      "fix": "将采用 item/model 双层聚类稳健标准误或混合效应模型重算 ECE/CI/p 值,并在附录报告聚类数量。"
+    },
+    {
+      "id": 2,
+      "action": "concede",
+      "fix": "将把 OOD-gating 改为探索性相关分析,补充 gold/拒绝率匹配基准与二项/覆盖率 CI,删除‘harmful/removes’干预措辞。"
+    },
+    {
+      "id": 3,
+      "action": "concede",
+      "fix": "将冻结裁定协议并发布逐行 adjudication log、matcher 版本、重算脚本；100% 结果明确标注为后验且不可复现。"
+    },
+    {
+      "id": 4,
+      "action": "rebut",
+      "rebuttal": "B-calibration/Sem-ECE 构造语义校准标签；本文 MSI 审计同一输出在不同 matcher 下的敏感度,并给出 flip-rate 界（Prop 1–3）,目标不同。"
+    },
+    {
+      "id": 5,
+      "action": "rebut",
+      "rebuttal": "本文不止复现翻转:Prop 1–3 给出 matcher 依赖解析界与非对称条件,smECE_sem+MSI 诊断退化分布,另有 4999-pair census 量化不稳定性。"
+    },
+    {
+      "id": 6,
+      "action": "concede",
+      "fix": "将把 pilot 结论限定为 illustrative,并补充 bootstrap/解析 CI；中心论断改由 4999-pair 聚类检验支持。"
+    },
+    {
+      "id": 7,
+      "action": "rebut",
+      "rebuttal": "文内已明示该 100% 为 in-sample、circular、not evidence of calibration；中心结论由 Prop 1–3 与 4999-pair census 支撑,非基于这 30 行。"
+    },
+    {
+      "id": 8,
+      "action": "concede",
+      "fix": "将发布完整配置快照:模型版本/调用日期、temperature/top_p/max_tokens、prompt/system prompt、工具集与依赖版本。"
+    },
+    {
+      "id": 9,
+      "action": "concede",
+      "fix": "将采用 item/model 双层聚类稳健标准误或多水平模型重算 1159/4999-pair 的 SE、CI 和 p 值,并说明去重规则。"
+    },
+    {
+      "id": 10,
+      "action": "concede",
+      "fix": "将报告 MSI 的 bootstrap CI 与显著性检验,并讨论 1.000 在退化置信分布下的天花板效应,避免直接归因。"
+    },
+    {
+      "id": 11,
+      "action": "concede",
+      "fix": "将把结论改为‘MSI 随 protocol 与数据集共同变化’,补充同数据集不同 protocol 或难度匹配对照,不再单独归因于 protocol。"
+    },
+    {
+      "id": 12,
+      "action": "concede",
+      "fix": "将给出 OOD-gating 的精确分子/分母、二项 CI 与检验,并说明 40–50% 区间重叠,仅作探索性发现。"
+    },
+    {
+      "id": 13,
+      "action": "concede",
+      "fix": "将补充独立 gold 或异源 judge 的稳健性分析；若仍用同源软标签,则明确 smECE/MSI 仅作敏感度审计而非真实校准。"
+    },
+    {
+      "id": 14,
+      "action": "concede",
+      "fix": "将在摘要和首次出现处定义 smECE_sem（semantic soft-label ECE）,并统一后续术语,消除跳变。"
+    },
+    {
+      "id": 15,
+      "action": "concede",
+      "fix": "将把 88.4%–100% 改为‘30/30 的单侧 95% 下界’,并补充双侧 CI 及 held-out 说明。"
+    },
+    {
+      "id": 16,
+      "action": "concede",
+      "fix": "将把 domain-specific ECE 降为探索性观测,强调仅极端 Holm 校正显著,并从贡献清单中移除独立新发现表述。"
+    },
+    {
+      "id": 17,
+      "action": "concede",
+      "fix": "将补全为:‘单轮口头置信用作探针；多步 agentic 指标延至第6节讨论。’"
+    },
+    {
+      "id": 18,
+      "action": "concede",
+      "fix": "将发布逐域数据清单、去重/划分规则、版本号与 SHA-256 哈希,并提供对账脚本核验 4999-pair 各项数字。"
+    },
+    {
+      "id": 19,
+      "action": "concede",
+      "fix": "将删去重复的 exploratory,并规整括号为‘N=30; no causal claim or intervention’。"
+    },
+    {
+      "id": 20,
+      "action": "concede",
+      "fix": "将删除摘要末端孤立句,并在附录开头说明 compliance 内容（数据/模型/代码/许可清单）。"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "sustained",
+      "reason": "作者承认pair非独立并承诺改用聚类稳健标准误或混合模型,当前版本确未处理,问题成立。"
+    },
+    {
+      "id": 2,
+      "disposition": "sustained",
+      "reason": "作者承认OOD-gating仅观察相关且将弱化因果措辞并补基准,当前版本因果断言不当的问题真实存在。"
+    },
+    {
+      "id": 3,
+      "disposition": "sustained",
+      "reason": "作者承认裁定协议未冻结、日志未发布,后验扩展matcher的可复现性缺陷成立。"
+    },
+    {
+      "id": 4,
+      "disposition": "partial",
+      "reason": "语义软标签估计确与B-cal/Sem-ECE重叠,但MSI及flip-rate界有区分度,故仅部分成立。"
+    },
+    {
+      "id": 5,
+      "disposition": "partial",
+      "reason": "已有工作确示matcher翻转,但本文Prop1–3、诊断工具与4999 census超出单纯复现,部分成立。"
+    },
+    {
+      "id": 6,
+      "disposition": "sustained",
+      "reason": "作者承认pilot缺CI并承诺限为illustrative、改由大样本聚类检验支持中心结论。"
+    },
+    {
+      "id": 7,
+      "disposition": "withdrawn",
+      "reason": "文内已明确100%为in-sample、circular、not evidence,且中心结论由Prop1–3与4999 census支撑,审稿误判其为核心证据。"
+    },
+    {
+      "id": 8,
+      "disposition": "sustained",
+      "reason": "作者承认配置快照缺失并承诺发布完整版本、参数、prompt与依赖信息。"
+    },
+    {
+      "id": 9,
+      "disposition": "sustained",
+      "reason": "作者承认1159/4999 pair存在item/model聚类并承诺重算SE/CI/p及去重规则。"
+    },
+    {
+      "id": 10,
+      "disposition": "sustained",
+      "reason": "作者承认MSI比较缺方差/CI/显著性检验并承诺讨论天花板效应。"
+    },
+    {
+      "id": 11,
+      "disposition": "sustained",
+      "reason": "作者承认MSI比较混淆protocol与数据集因素,承诺改为共同变化并补对照。"
+    },
+    {
+      "id": 12,
+      "disposition": "sustained",
+      "reason": "作者承认OOD gating未给精确分子分母与二项CI,承诺补检验并仅作探索性发现。"
+    },
+    {
+      "id": 13,
+      "disposition": "sustained",
+      "reason": "作者承认同源软标签可能继承matcher偏差,承诺补独立gold或异源judge稳健性。"
+    },
+    {
+      "id": 14,
+      "disposition": "sustained",
+      "reason": "作者承认smECE_sem摘要与首次出现处未定义,承诺补定义并统一术语。"
+    },
+    {
+      "id": 15,
+      "disposition": "sustained",
+      "reason": "作者承认88.4%–100%实为单侧下界,承诺补双侧CI与held-out说明。"
+    },
+    {
+      "id": 16,
+      "disposition": "sustained",
+      "reason": "作者承认domain-specific ECE显著性有限,承诺降为探索性并撤下独立新发现表述。"
+    },
+    {
+      "id": 17,
+      "disposition": "sustained",
+      "reason": "作者承认语法破碎并承诺补全为规范表达,当前版本确有写作缺陷。"
+    },
+    {
+      "id": 18,
+      "disposition": "sustained",
+      "reason": "作者承认扩展数据缺逐域清单、去重规则与哈希,承诺发布对账材料。"
+    },
+    {
+      "id": 19,
+      "disposition": "sustained",
+      "reason": "作者承认摘要重复exploratory且括号混乱,承诺规整措辞。"
+    },
+    {
+      "id": 20,
+      "disposition": "sustained",
+      "reason": "作者承认摘要残句不当并承诺删除且于附录说明compliance含义。"
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 5,
+      "Major": 12,
+      "Minor": 0
+    },
+    "n_issues": 20,
+    "n_sustained": 17,
+    "n_withdrawn": 1,
+    "n_partial": 2,
+    "truncation": {
+      "n_total": 24,
+      "n_debated": 20,
+      "n_truncated": 4,
+      "max_issues": 20
+    },
+    "detail": "辩论后维持 Critical 5 / Major 12 （撤回 1，部分成立 2）；注：原始 24 条中仅严重度前 20 条进入辩论（MAX_ISSUES=20，截断 4 条未辩论）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      1,
+      2,
+      3,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "withdrawn_ids": [
+      7
+    ]
+  }
+}

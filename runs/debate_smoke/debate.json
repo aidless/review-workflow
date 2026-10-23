@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\runs\\prism_smoke\\prism_review.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-25T18:36:31+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Major",
+      "text": "[PRISM P] 核心结果均为null且模型规模极小（7b-14b）,无法证明该suite具有区分不同方法的能力,削弱了benchmark存在的科学价值。"
+    },
+    {
+      "id": 2,
+      "sev": "Major",
+      "text": "[PRISM R] L2核心对比N=4、n_d=0使McNemar完全无功效；唯一显著的p=0.0026来自事后精选子集与特定编码,存在选择性报告风险。"
+    },
+    {
+      "id": 3,
+      "sev": "Major",
+      "text": "[PRISM I] 实证结果以null为主且功效为零(N=4, McNemar power 0.0000),基准产出科学洞察的能力未被证明。"
+    },
+    {
+      "id": 4,
+      "sev": "Major",
+      "text": "[PRISM S] calibrated LLM-as-judge实际零调用（all SKIP）,calibration仅为方法论担保而非实证验证,与abstract中'calibrated before its judge is trusted'的措辞存在张力。"
+    }
+  ],
+  "rebuttals": [
+    {
+      "id": 1,
+      "action": "rebut",
+      "rebuttal": "非全null:L1a模型间0/6ã2/6ã1/6æ¢¯åº¦åæï¼L2åå¼0.1418/0.1918/0.2750è·¨æ¨¡åéå¢ï¼P5 frontier 6/6(p=0.0026)ãnullä»éA vs Fèé´å¯¹æ¯ï¼éæ¨¡ååºååç¼ºå¤±ã"
+    },
+    {
+      "id": 2,
+      "action": "concede",
+      "fix": "å°curated p=0.0026ç§»è³éå½ï¼æ­£æå é¤è¯¥æ¾èæ§å¼ç¨ï¼æ æ³¨'åè®¾çæéªè¯'ï¼è¡¥é¢æ³¨åæ¹æ¡ã"
+    },
+    {
+      "id": 3,
+      "action": "rebut",
+      "rebuttal": "é¶åæä»éL2èé´(N=4)ãsuiteå·²äº§åºénullæ´å¯ï¼L047å®¡è®¡æ¦æª3/3æ¨¡åanswer-fittingï¼L1bç¨³å®å¤±è´¥åç±»æ³ï¼æ¨¡åè§æ¨¡æ¢¯åº¦0/6â2/6ã0.14â0.28ã"
+    },
+    {
+      "id": 4,
+      "action": "concede",
+      "fix": "ä¿®æ¹abstractï¼æç¡®'calibrationå·²å¨goldééè¿(FNR/FPR=0)ä½æ¬è½®é¶judgeè°ç¨'ï¼å é¤'calibrated before trusted'ç»å¯¹è¡¨è¿°ã"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "partial",
+      "reason": "L1a/L2确有描述性梯度(0/6→2/6, 0.14→0.28),但cross-model Friedman p=0.3679不显著,模型区分力未统计证实,仅P5显著且已移附录。"
+    },
+    {
+      "id": 2,
+      "disposition": "withdrawn",
+      "reason": "作者concede并将curated p=0.0026移至附录、删除正文显著性引用、标注探索性、补预注册方案,直接消除选择性报告风险。"
+    },
+    {
+      "id": 3,
+      "disposition": "partial",
+      "reason": "零功效确仅限L2臂间(N=4);suite产出L047审计3/3拦截、L1b失败分类法等非null洞察,但L2统计功效问题客观存在,仅部分反驳。"
+    },
+    {
+      "id": 4,
+      "disposition": "withdrawn",
+      "reason": "作者concede并删除'calibrated before trusted'绝对表述,abstract已明确标注零judge调用与methodological warrant,张力消除。"
+    }
+  ],
+  "summary": {
+    "verdict": "PASS",
+    "counts_sustained": {
+      "Critical": 0,
+      "Major": 0,
+      "Minor": 0
+    },
+    "n_issues": 4,
+    "n_sustained": 0,
+    "n_withdrawn": 2,
+    "n_partial": 2,
+    "detail": "辩论后维持 Critical 0 / Major 0 （撤回 2，部分成立 2）；文本层 WARN 纪律不变",
+    "sustained_ids": [],
+    "withdrawn_ids": [
+      2,
+      4
+    ]
+  }
+}

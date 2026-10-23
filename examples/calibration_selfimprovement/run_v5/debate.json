@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\main.tex",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\examples\\calibration_selfimprovement\\run_v5\\r6_llm.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-28T05:24:24+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Critical",
+      "text": "- Critical: OOD gating 分析仅 N=30、未预先定义 OOD 分布、未给出置信区间或功效分析，40–50% 高置信错误率和 self-consistency 优势的结论不足以支撑文末部署建议。"
+    },
+    {
+      "id": 2,
+      "sev": "Critical",
+      "text": "- Critical: “per-row adjudication 后扩展 matcher”得到的 100% accuracy/近零 ECE 是数据驱动重定义标签后的结果，等价于用同一批数据同时选标签规则并评估，存在严重的选择偏差/过拟合，不能作为无偏校准估计。"
+    },
+    {
+      "id": 3,
+      "sev": "Critical",
+      "text": "- Critical: 中心结论基于 N=30 且其中 27 个置信度恰为 1.0 的退化样本，统计功效极低；从如此小的样本推出“校准由 matcher 决定”“OOD 门控有害”等一般性结论，内部效度不足。"
+    },
+    {
+      "id": 4,
+      "sev": "Critical",
+      "text": "- Critical: 多重比较与检验选择不透明：只写“95% CIs; only extreme Holm-corrected pairs significant”，未说明检验名称、比较总数、是否对 matcher/model/domain 的全部比较做控制；事后挑选“extreme pairs”再校正会扭曲 family-wise error。"
+    },
+    {
+      "id": 5,
+      "sev": "Critical",
+      "text": "- Critical: 核心证据存在循环性：matcher 是在逐行人工裁决后才“扩展”到 100% 准确率，标签标准与模型输出并未独立，ECE≈0 很可能是测量构造而非模型校准改善，使“matcher 决定校准”沦为同义反复。"
+    },
+    {
+      "id": 6,
+      "sev": "Critical",
+      "text": "- Critical: 置信度分布严重退化（27/30 个值恰为 1.0），有效非退化样本仅 3 个，任何 ECE/校准估计的方差都会极大；但摘要仍以 0.363、0.1297、0.0037 等精确数值比较，且未报告这些估计的置信区间或有效样本量，定量结论不可靠。"
+    },
+    {
+      "id": 7,
+      "sev": "Major",
+      "text": "- Major: Keywords 之后的 “Our central finding…” 是游离于任何章节之外的段落，且其中的 `smECE_sem` 未在摘要或引言中定义/展开，读者无法解析这一核心主张。"
+    },
+    {
+      "id": 8,
+      "sev": "Major",
+      "text": "- Major: MSI 1.000 vs 0.334 只报两个点估计，没有样本量、方差/CI、或统计检验；1.000 很可能是退化分布产物，不能直接解释为协议效应。"
+    },
+    {
+      "id": 9,
+      "sev": "Major",
+      "text": "- Major: free-form 与 MMLU 的 MSI 对比（1.000 vs 0.334）同时混淆了任务格式、题目领域、模型与采样协议，不能把差异归因于“protocol”本身。"
+    },
+    {
+      "id": 10,
+      "sev": "Major",
+      "text": "- Major: seed 管理缺失：未报告采样/重采样种子，也没有用多 seed 或多独立重复估计解码随机性带来的方差；给出的 95% CI 看起来只反映样本间不确定性，不覆盖生成随机性。"
+    },
+    {
+      "id": 11,
+      "sev": "Major",
+      "text": "- Major: “ECE 最多相差 4×”是误导性效应量：小 ECE 做分母会放大比率，应结合绝对差（如 0.45）和 CI 报告，并说明基线大小。"
+    },
+    {
+      "id": 12,
+      "sev": "Major",
+      "text": "- Major: 摘要和正文反复称“initially alarming overconfidence signal (mean confidence 0.9963 vs. 86.7%)”，但“初始”的 exact-string 匹配是 63.3%，86.7% 已是第一个 tolerant matcher 后的读数；叙事与数字阶段的对应关系混乱。"
+    },
+    {
+      "id": 13,
+      "sev": "Major",
+      "text": "- Major: 跨域 ECE 比较混淆了领域、题目难度、模型、样本量及同一题目在多模型间的重复测量依赖；Holm 校正后仅极端配对显著，却得出“calibration is domain-specific”的宽泛结论，内部效度不足。"
+    },
+    {
+      "id": 14,
+      "sev": "Minor",
+      "text": "- Minor: 摘要使用“Propositions 1–3”“Proposition 8′”这类内部编号引用，既未在摘要中解释 prime 含义，也让摘要读起来像结果清单而非独立概述。"
+    }
+  ],
+  "rebuttals": [],
+  "verdicts": [],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 6,
+      "Major": 7,
+      "Minor": 1
+    },
+    "n_issues": 14,
+    "n_sustained": 14,
+    "n_withdrawn": 0,
+    "n_partial": 0,
+    "truncation": {
+      "n_total": 14,
+      "n_debated": 14,
+      "n_truncated": 0,
+      "max_issues": 20
+    },
+    "detail": "辩论后维持 Critical 6 / Major 7 （撤回 0，部分成立 0）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "withdrawn_ids": []
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "stage": "R6",
+    "timestamp": "2026-08-26T04:39:41+00:00",
+    "rpc": "http://127.0.0.1:3080",
+    "rounds": 1
+  },
+  "summary": {
+    "verdict": null,
+    "reason": "llm disabled"
+  }
+}

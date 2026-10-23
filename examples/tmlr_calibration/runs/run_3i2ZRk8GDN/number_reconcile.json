@@ -1,0 +1,146 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_3i2ZRk8GDN\\extracted_text.txt",
+    "evidence_dirs": [],
+    "timestamp": "2026-08-26T07:20:25+00:00"
+  },
+  "direction_A_evidence_to_paper": {
+    "checked": 0,
+    "found_in_paper": 0,
+    "hit_rate": null,
+    "key_matches": []
+  },
+  "direction_B_paper_to_evidence": {
+    "paper_decimals": 16,
+    "supported": 0,
+    "unsupported": 16,
+    "support_rate": 0.0,
+    "noise_filtered": [
+      {
+        "token": "4.1",
+        "value": 4.1,
+        "line": 371,
+        "context": "4.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.2",
+        "value": 4.2,
+        "line": 387,
+        "context": "4.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.3",
+        "value": 4.3,
+        "line": 397,
+        "context": "4.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "4.4",
+        "value": 4.4,
+        "line": 452,
+        "context": "4.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "0.5",
+        "value": 0.5,
+        "line": 483,
+        "context": "2017), MobileNetV2-0.5,1.0 (Sandler et al., 2018), E!cientNet-B0 (Tan and Le, 2019), and ViT-small (",
+        "noise_kind": "model-suffix"
+      },
+      {
+        "token": "1.0",
+        "value": 1.0,
+        "line": 483,
+        "context": "2017), MobileNetV2-0.5,1.0 (Sandler et al., 2018), E!cientNet-B0 (Tan and Le, 2019), and ViT-small (",
+        "noise_kind": "compact-list"
+      },
+      {
+        "token": "5.1",
+        "value": 5.1,
+        "line": 529,
+        "context": "5.1",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.3",
+        "value": 5.3,
+        "line": 547,
+        "context": "the results for the best combination strategy that yields the best combined scorer (Section 5.3), Im",
+        "noise_kind": "section-ref"
+      },
+      {
+        "token": "5.2",
+        "value": 5.2,
+        "line": 556,
+        "context": "5.2",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.3",
+        "value": 5.3,
+        "line": 576,
+        "context": "5.3",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "5.3",
+        "value": 5.3,
+        "line": 601,
+        "context": "large margin in both averaged and combined analyses. Section 5.3 provides a detailed analysis.",
+        "noise_kind": "section-ref"
+      },
+      {
+        "token": "5.4",
+        "value": 5.4,
+        "line": 615,
+        "context": "5.4",
+        "noise_kind": "section-heading"
+      },
+      {
+        "token": "01245.003479",
+        "value": 1245.003479,
+        "line": 684,
+        "context": "CNPq (316489/2023-9), and H.IAAC (01245.003479/2024-10).",
+        "noise_kind": "date-adjacent"
+      },
+      {
+        "token": "1.0",
+        "value": 1.0,
+        "line": 757,
+        "context": "Version 1.0.",
+        "noise_kind": "version-label"
+      },
+      {
+        "token": "1306.5151",
+        "value": 1306.5151,
+        "line": 791,
+        "context": "aircraft. arXiv preprint arXiv:1306.5151.",
+        "noise_kind": "arxiv-id"
+      },
+      {
+        "token": "1710.06924",
+        "value": 1710.06924,
+        "line": 814,
+        "context": "adaptation challenge. arXiv preprint arXiv:1710.06924.",
+        "noise_kind": "arxiv-id"
+      }
+    ],
+    "adjudicated": [],
+    "manual_review_list": []
+  },
+  "adjudications_state": {},
+  "summary": {
+    "verdict": "PASS",
+    "critical_adjudicated": 0,
+    "pending_review": 0,
+    "noise_filtered": 16,
+    "adjudicated": 0,
+    "paper_decimals": 16,
+    "evidence_absent": true,
+    "note": "manual_review_list = 未裁决且非机械噪音；裁决文件填 verdict(noise|supported|critical) 后重跑即收敛"
+  }
+}

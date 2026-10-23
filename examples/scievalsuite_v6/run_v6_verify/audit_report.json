@@ -1,0 +1,745 @@
+{
+  "meta": {
+    "zip": "F:\\deepseek\\papers\\scievalsuite\\submission\\submission_scievalsuite.zip",
+    "tex": "F:\\deepseek\\papers\\scievalsuite\\paper\\main.tex",
+    "entries": 92,
+    "timestamp": "2026-08-27T05:55:59+00:00"
+  },
+  "referenced_paths": [
+    {
+      "raw": "run.json",
+      "path": "run.json",
+      "line": 29,
+      "status": "exact",
+      "matched": [
+        "run.json"
+      ]
+    },
+    {
+      "raw": "run.json",
+      "path": "run.json",
+      "line": 31,
+      "status": "exact",
+      "matched": [
+        "run.json"
+      ]
+    },
+    {
+      "raw": "LITERATURE\\_REVIEW.md",
+      "path": "LITERATURE_REVIEW.md",
+      "line": 31,
+      "status": "exact",
+      "matched": [
+        "LITERATURE_REVIEW.md"
+      ]
+    },
+    {
+      "raw": "run.json",
+      "path": "run.json",
+      "line": 33,
+      "status": "exact",
+      "matched": [
+        "run.json"
+      ]
+    },
+    {
+      "raw": "run.json",
+      "path": "run.json",
+      "line": 66,
+      "status": "exact",
+      "matched": [
+        "run.json"
+      ]
+    },
+    {
+      "raw": "analysis.py",
+      "path": "analysis.py",
+      "line": 71,
+      "status": "exact",
+      "matched": [
+        "results/analysis.py"
+      ]
+    },
+    {
+      "raw": "report/report.md",
+      "path": "report/report.md",
+      "line": 71,
+      "status": "basename",
+      "matched": [
+        "workspaces/p5_modelF_l1b_Chemistry_000/report.md"
+      ]
+    },
+    {
+      "raw": "results/audit\\_generated\\_script.py",
+      "path": "results/audit_generated_script.py",
+      "line": 71,
+      "status": "exact",
+      "matched": [
+        "results/audit_generated_script.py"
+      ]
+    },
+    {
+      "raw": "results/analysis.py",
+      "path": "results/analysis.py",
+      "line": 76,
+      "status": "exact",
+      "matched": [
+        "results/analysis.py"
+      ]
+    },
+    {
+      "raw": "results/p3\\_aggregate.py",
+      "path": "results/p3_aggregate.py",
+      "line": 76,
+      "status": "exact",
+      "matched": [
+        "results/p3_aggregate.py"
+      ]
+    },
+    {
+      "raw": "results/p3\\_effects.py",
+      "path": "results/p3_effects.py",
+      "line": 76,
+      "status": "exact",
+      "matched": [
+        "results/p3_effects.py"
+      ]
+    },
+    {
+      "raw": "p3\\_recompute.py",
+      "path": "p3_recompute.py",
+      "line": 76,
+      "status": "exact",
+      "matched": [
+        "results/p3_recompute.py"
+      ]
+    },
+    {
+      "raw": "evidence\\_manifest.json",
+      "path": "evidence_manifest.json",
+      "line": 82,
+      "status": "exact",
+      "matched": [
+        "evidence_manifest.json"
+      ]
+    },
+    {
+      "raw": "\\_g11\\_hashcheck.py",
+      "path": "_g11_hashcheck.py",
+      "line": 82,
+      "status": "exact",
+      "matched": [
+        "_g11_hashcheck.py"
+      ]
+    },
+    {
+      "raw": "p3\\_cost.json",
+      "path": "p3_cost.json",
+      "line": 82,
+      "status": "exact",
+      "matched": [
+        "results/p3_cost.json"
+      ]
+    },
+    {
+      "raw": "requirements.txt",
+      "path": "requirements.txt",
+      "line": 85,
+      "status": "exact",
+      "matched": [
+        "paper/requirements.txt",
+        "requirements.txt"
+      ]
+    },
+    {
+      "raw": "results/p3\\_bootstrap.json",
+      "path": "results/p3_bootstrap.json",
+      "line": 89,
+      "status": "exact",
+      "matched": [
+        "results/p3_bootstrap.json"
+      ]
+    },
+    {
+      "raw": "results/p3\\_aggregate.py",
+      "path": "results/p3_aggregate.py",
+      "line": 91,
+      "status": "exact",
+      "matched": [
+        "results/p3_aggregate.py"
+      ]
+    },
+    {
+      "raw": "results/p3\\_recompute.py",
+      "path": "results/p3_recompute.py",
+      "line": 91,
+      "status": "exact",
+      "matched": [
+        "results/p3_recompute.py"
+      ]
+    },
+    {
+      "raw": "results/p3\\_cost.py",
+      "path": "results/p3_cost.py",
+      "line": 91,
+      "status": "exact",
+      "matched": [
+        "results/p3_cost.py"
+      ]
+    },
+    {
+      "raw": "results/p3\\_effects.py",
+      "path": "results/p3_effects.py",
+      "line": 91,
+      "status": "exact",
+      "matched": [
+        "results/p3_effects.py"
+      ]
+    },
+    {
+      "raw": "results/calib\\_run\\_l1b.py",
+      "path": "results/calib_run_l1b.py",
+      "line": 91,
+      "status": "exact",
+      "matched": [
+        "results/calib_run_l1b.py"
+      ]
+    },
+    {
+      "raw": "requirements.txt",
+      "path": "requirements.txt",
+      "line": 91,
+      "status": "exact",
+      "matched": [
+        "paper/requirements.txt",
+        "requirements.txt"
+      ]
+    },
+    {
+      "raw": "paper/requirements.txt",
+      "path": "paper/requirements.txt",
+      "line": 91,
+      "status": "exact",
+      "matched": [
+        "paper/requirements.txt"
+      ]
+    },
+    {
+      "raw": "evidence/protocol.md",
+      "path": "evidence/protocol.md",
+      "line": 91,
+      "status": "exact",
+      "matched": [
+        "evidence/protocol.md"
+      ]
+    },
+    {
+      "raw": "p3\\_effects.json",
+      "path": "p3_effects.json",
+      "line": 108,
+      "status": "exact",
+      "matched": [
+        "results/p3_effects.json"
+      ]
+    },
+    {
+      "raw": "results/L2\\_deepseek-v4-flash.json",
+      "path": "results/L2_deepseek-v4-flash.json",
+      "line": 126,
+      "status": "exact",
+      "matched": [
+        "results/L2_deepseek-v4-flash.json"
+      ]
+    },
+    {
+      "raw": "p3\\_stats\\_normalized.json",
+      "path": "p3_stats_normalized.json",
+      "line": 132,
+      "status": "exact",
+      "matched": [
+        "results/p3_stats_normalized.json"
+      ]
+    },
+    {
+      "raw": "report/report.md",
+      "path": "report/report.md",
+      "line": 155,
+      "status": "basename",
+      "matched": [
+        "workspaces/p5_modelF_l1b_Chemistry_000/report.md"
+      ]
+    },
+    {
+      "raw": "report.md",
+      "path": "report.md",
+      "line": 155,
+      "status": "exact",
+      "matched": [
+        "workspaces/p5_modelF_l1b_Chemistry_000/report.md"
+      ]
+    },
+    {
+      "raw": "workspaces/p5\\_modelF\\_l1b\\_Chemistry\\_000",
+      "path": "workspaces/p5_modelF_l1b_Chemistry_000",
+      "line": 155,
+      "status": "prefix-dir",
+      "matched": [
+        "workspaces/p5_modelF_l1b_Chemistry_000/images/fig1_dataset_overview.png",
+        "workspaces/p5_modelF_l1b_Chemistry_000/images/fig2_fourier_basis.png",
+        "workspaces/p5_modelF_l1b_Chemistry_000/images/fig3_performance_comparison.png"
+      ]
+    },
+    {
+      "raw": "p3\\_stats\\_normalized.json",
+      "path": "p3_stats_normalized.json",
+      "line": 158,
+      "status": "exact",
+      "matched": [
+        "results/p3_stats_normalized.json"
+      ]
+    },
+    {
+      "raw": "out\\_p5/P5\\_MODELF\\_FINAL.json",
+      "path": "out_p5/P5_MODELF_FINAL.json",
+      "line": 158,
+      "status": "exact",
+      "matched": [
+        "out_p5/P5_MODELF_FINAL.json"
+      ]
+    },
+    {
+      "raw": "p3\\_recompute.py",
+      "path": "p3_recompute.py",
+      "line": 164,
+      "status": "exact",
+      "matched": [
+        "results/p3_recompute.py"
+      ]
+    },
+    {
+      "raw": "results/p3\\_recompute\\_checks.json",
+      "path": "results/p3_recompute_checks.json",
+      "line": 164,
+      "status": "exact",
+      "matched": [
+        "results/p3_recompute_checks.json"
+      ]
+    },
+    {
+      "raw": "requirements.txt",
+      "path": "requirements.txt",
+      "line": 164,
+      "status": "exact",
+      "matched": [
+        "paper/requirements.txt",
+        "requirements.txt"
+      ]
+    },
+    {
+      "raw": "evidence/protocol.md",
+      "path": "evidence/protocol.md",
+      "line": 164,
+      "status": "exact",
+      "matched": [
+        "evidence/protocol.md"
+      ]
+    },
+    {
+      "raw": "evidence\\_manifest.json",
+      "path": "evidence_manifest.json",
+      "line": 164,
+      "status": "exact",
+      "matched": [
+        "evidence_manifest.json"
+      ]
+    },
+    {
+      "raw": "p3\\_recompute.py",
+      "path": "p3_recompute.py",
+      "line": 164,
+      "status": "exact",
+      "matched": [
+        "results/p3_recompute.py"
+      ]
+    },
+    {
+      "raw": "\\_g11\\_hashcheck.py",
+      "path": "_g11_hashcheck.py",
+      "line": 164,
+      "status": "exact",
+      "matched": [
+        "_g11_hashcheck.py"
+      ]
+    },
+    {
+      "raw": "out\\_p5/",
+      "path": "out_p5/",
+      "line": 167,
+      "status": "prefix-dir",
+      "matched": [
+        "out_p5/compute_curated_friedman.py",
+        "out_p5/compute_curated_v2.py",
+        "out_p5/compute_friedman_sensitivity.py"
+      ]
+    },
+    {
+      "raw": "out\\_p5/P5\\_L2\\_8SCENARIOS.json",
+      "path": "out_p5/P5_L2_8SCENARIOS.json",
+      "line": 169,
+      "status": "exact",
+      "matched": [
+        "out_p5/P5_L2_8SCENARIOS.json"
+      ]
+    },
+    {
+      "raw": "out\\_p5/JUDGE\\_40\\_GOLD.jsonl",
+      "path": "out_p5/JUDGE_40_GOLD.jsonl",
+      "line": 173,
+      "status": "exact",
+      "matched": [
+        "out_p5/JUDGE_40_GOLD.jsonl"
+      ]
+    },
+    {
+      "raw": "out\\_p5/JUDGE\\_40\\_DOUBLE\\_REPORT.json",
+      "path": "out_p5/JUDGE_40_DOUBLE_REPORT.json",
+      "line": 173,
+      "status": "exact",
+      "matched": [
+        "out_p5/JUDGE_40_DOUBLE_REPORT.json"
+      ]
+    },
+    {
+      "raw": "out\\_p5/FARM\\_ABLATION.json",
+      "path": "out_p5/FARM_ABLATION.json",
+      "line": 175,
+      "status": "exact",
+      "matched": [
+        "out_p5/FARM_ABLATION.json"
+      ]
+    },
+    {
+      "raw": "out\\_p5/CROSS\\_LAYER\\_ANALYSIS.md",
+      "path": "out_p5/CROSS_LAYER_ANALYSIS.md",
+      "line": 175,
+      "status": "exact",
+      "matched": [
+        "out_p5/CROSS_LAYER_ANALYSIS.md"
+      ]
+    },
+    {
+      "raw": "FAILURE\\_TAXONOMY\\_QUANTIFIED.md",
+      "path": "FAILURE_TAXONOMY_QUANTIFIED.md",
+      "line": 175,
+      "status": "exact",
+      "matched": [
+        "out_p5/FAILURE_TAXONOMY_QUANTIFIED.md"
+      ]
+    },
+    {
+      "raw": "out\\_p5/L047\\_GOLD\\_30.jsonl",
+      "path": "out_p5/L047_GOLD_30.jsonl",
+      "line": 177,
+      "status": "exact",
+      "matched": [
+        "out_p5/L047_GOLD_30.jsonl"
+      ]
+    },
+    {
+      "raw": "evidence/SCIEVALSUITE\\_README.md",
+      "path": "evidence/SCIEVALSUITE_README.md",
+      "line": 188,
+      "status": "exact",
+      "matched": [
+        "evidence/SCIEVALSUITE_README.md"
+      ]
+    },
+    {
+      "raw": "out\\_p5/",
+      "path": "out_p5/",
+      "line": 216,
+      "status": "prefix-dir",
+      "matched": [
+        "out_p5/compute_curated_friedman.py",
+        "out_p5/compute_curated_v2.py",
+        "out_p5/compute_friedman_sensitivity.py"
+      ]
+    },
+    {
+      "raw": "run.json",
+      "path": "run.json",
+      "line": 216,
+      "status": "exact",
+      "matched": [
+        "run.json"
+      ]
+    },
+    {
+      "raw": "run.json",
+      "path": "run.json",
+      "line": 216,
+      "status": "exact",
+      "matched": [
+        "run.json"
+      ]
+    },
+    {
+      "raw": "evidence/protocol.md",
+      "path": "evidence/protocol.md",
+      "line": 218,
+      "status": "exact",
+      "matched": [
+        "evidence/protocol.md"
+      ]
+    },
+    {
+      "raw": "requirements.txt",
+      "path": "requirements.txt",
+      "line": 223,
+      "status": "exact",
+      "matched": [
+        "paper/requirements.txt",
+        "requirements.txt"
+      ]
+    },
+    {
+      "raw": "paper/requirements.txt",
+      "path": "paper/requirements.txt",
+      "line": 223,
+      "status": "exact",
+      "matched": [
+        "paper/requirements.txt"
+      ]
+    },
+    {
+      "raw": "evidence/protocol.md",
+      "path": "evidence/protocol.md",
+      "line": 223,
+      "status": "exact",
+      "matched": [
+        "evidence/protocol.md"
+      ]
+    },
+    {
+      "raw": "evidence\\_manifest.json",
+      "path": "evidence_manifest.json",
+      "line": 223,
+      "status": "exact",
+      "matched": [
+        "evidence_manifest.json"
+      ]
+    },
+    {
+      "raw": "\\_g11\\_hashcheck.py",
+      "path": "_g11_hashcheck.py",
+      "line": 223,
+      "status": "exact",
+      "matched": [
+        "_g11_hashcheck.py"
+      ]
+    },
+    {
+      "raw": "evidence\\_manifest.json",
+      "path": "evidence_manifest.json",
+      "line": 226,
+      "status": "exact",
+      "matched": [
+        "evidence_manifest.json"
+      ]
+    },
+    {
+      "raw": "results/p3\\_stats.json",
+      "path": "results/p3_stats.json",
+      "line": 226,
+      "status": "exact",
+      "matched": [
+        "results/p3_stats.json"
+      ]
+    },
+    {
+      "raw": "results/p3\\_effects.json",
+      "path": "results/p3_effects.json",
+      "line": 226,
+      "status": "exact",
+      "matched": [
+        "results/p3_effects.json"
+      ]
+    },
+    {
+      "raw": "results/calib\\_l1b\\_v2-numeric-mismatch.json",
+      "path": "results/calib_l1b_v2-numeric-mismatch.json",
+      "line": 226,
+      "status": "exact",
+      "matched": [
+        "results/calib_l1b_v2-numeric-mismatch.json"
+      ]
+    },
+    {
+      "raw": "results/gold\\_l1b\\_text.jsonl",
+      "path": "results/gold_l1b_text.jsonl",
+      "line": 226,
+      "status": "exact",
+      "matched": [
+        "results/gold_l1b_text.jsonl"
+      ]
+    },
+    {
+      "raw": "results/p3\\_stats\\_normalized.json",
+      "path": "results/p3_stats_normalized.json",
+      "line": 226,
+      "status": "exact",
+      "matched": [
+        "results/p3_stats_normalized.json"
+      ]
+    },
+    {
+      "raw": "results/p3\\_bootstrap.json",
+      "path": "results/p3_bootstrap.json",
+      "line": 226,
+      "status": "exact",
+      "matched": [
+        "results/p3_bootstrap.json"
+      ]
+    },
+    {
+      "raw": "out\\_p5/P5\\_MODELF\\_FINAL.json",
+      "path": "out_p5/P5_MODELF_FINAL.json",
+      "line": 226,
+      "status": "exact",
+      "matched": [
+        "out_p5/P5_MODELF_FINAL.json"
+      ]
+    },
+    {
+      "raw": "out\\_p5/P5\\_CURATED\\_FRIEDMAN\\_SENSITIVITY.json",
+      "path": "out_p5/P5_CURATED_FRIEDMAN_SENSITIVITY.json",
+      "line": 226,
+      "status": "exact",
+      "matched": [
+        "out_p5/P5_CURATED_FRIEDMAN_SENSITIVITY.json"
+      ]
+    },
+    {
+      "raw": "fig\\_overview.pdf",
+      "path": "fig_overview.pdf",
+      "line": 226,
+      "status": "exact",
+      "matched": [
+        "paper/fig_overview.pdf"
+      ]
+    },
+    {
+      "raw": "out\\_p5/compute\\_friedman\\_sensitivity.py",
+      "path": "out_p5/compute_friedman_sensitivity.py",
+      "line": 229,
+      "status": "exact",
+      "matched": [
+        "out_p5/compute_friedman_sensitivity.py"
+      ]
+    },
+    {
+      "raw": "out\\_p5/P5\\_CURATED\\_FRIEDMAN\\_SENSITIVITY.json",
+      "path": "out_p5/P5_CURATED_FRIEDMAN_SENSITIVITY.json",
+      "line": 229,
+      "status": "exact",
+      "matched": [
+        "out_p5/P5_CURATED_FRIEDMAN_SENSITIVITY.json"
+      ]
+    }
+  ],
+  "missing_refs": [],
+  "local_path_leaks": [],
+  "count_claims": [
+    {
+      "claim": "125 files",
+      "declared": 125,
+      "kind": "zip_entries",
+      "line": 20,
+      "actual_entries": 92,
+      "matches_actual": false
+    },
+    {
+      "claim": "92 files",
+      "declared": 92,
+      "kind": "zip_entries",
+      "line": 216,
+      "actual_entries": 92,
+      "matches_actual": true
+    },
+    {
+      "claim": "91-entry",
+      "declared": 91,
+      "kind": "manifest_entries",
+      "line": 216,
+      "actual_entries": 92,
+      "matches_actual": null
+    },
+    {
+      "claim": "18/18 checks",
+      "declared": 18,
+      "kind": "recompute_checks",
+      "line": 82,
+      "actual_entries": 92,
+      "matches_actual": null
+    },
+    {
+      "claim": "18/18 recompute",
+      "declared": 18,
+      "kind": "recompute_checks",
+      "line": 216,
+      "actual_entries": 92,
+      "matches_actual": null
+    }
+  ],
+  "inpackage_tex": {
+    "entry": "paper/main.tex",
+    "desync_with_disk": true,
+    "count_claims": [
+      {
+        "claim": "92 files",
+        "declared": 92,
+        "kind": "zip_entries",
+        "line": 216,
+        "actual_entries": 92,
+        "matches_actual": true,
+        "in_package_tex": true
+      },
+      {
+        "claim": "91-entry",
+        "declared": 91,
+        "kind": "manifest_entries",
+        "line": 216,
+        "actual_entries": 92,
+        "matches_actual": null,
+        "in_package_tex": true
+      },
+      {
+        "claim": "18/18 checks",
+        "declared": 18,
+        "kind": "recompute_checks",
+        "line": 82,
+        "actual_entries": 92,
+        "matches_actual": null,
+        "in_package_tex": true
+      },
+      {
+        "claim": "18/18 recompute",
+        "declared": 18,
+        "kind": "recompute_checks",
+        "line": 216,
+        "actual_entries": 92,
+        "matches_actual": null,
+        "in_package_tex": true
+      }
+    ]
+  },
+  "summary": {
+    "refs_total": 70,
+    "refs_missing": 0,
+    "leaks": 0,
+    "count_claims": 5,
+    "count_claims_mismatched": 1,
+    "tex_desync": true,
+    "verdict": "MAJOR"
+  }
+}

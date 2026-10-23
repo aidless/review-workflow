@@ -1,0 +1,20 @@
+{
+ "adjudications": "papers/codeact-vs-fc/reviews/pipeline_S5/adjudications.json",
+ "evidence_dirs": [
+  "papers/codeact-vs-fc/evidence"
+ ],
+ "llm": {
+  "enabled": true,
+  "rpc": "http://127.0.0.1:3081",
+  "roles": "method,stat,experiment,novelty,repro,devil",
+  "script": "research-kit/adversarial_review.py"
+ },
+ "manifest": null,
+ "name": "codeact-vs-fc",
+ "out": "papers/codeact-vs-fc/reviews/pipeline_S5",
+ "tex": "papers/codeact-vs-fc/paper/main.tex",
+ "zip": "papers/codeact-vs-fc/submission/submission_s5_20260906.zip",
+ "citation_online": true,
+ "novelty_online": true,
+ "converge": 3
+}

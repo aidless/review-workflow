@@ -1,0 +1,31 @@
+﻿[R0] gate=WARN 缺失输入 0，跨源风险目录 1（F:\deepseek\scievalsuite\out_p5 不在 F:\deepseek\papers\scievalsuite 下 → 打包遗漏高风险）
+[R1] gate=WARN 摘要 358 词（>300）
+[R1b] gate=WARN MAJOR：条目 12，幽灵引用 0，结构 Major 0，ID 不存在 0，标题不符 2（联网核验 11 条）
+[R1c] gate=PASS PASS：断言 1 句（强 0）；检索 15 条，近重复 0（未引用 0）
+[R1d] gate=PASS PASS：行内算术 1 处（不符 0，含括号百分数 0）；悬空公式引用 0；符号推导/量纲不在机械覆盖内
+[R2] gate=FAIL CRITICAL：缺引用 24/58，路径泄漏 139，声明不符 0，tex desync True
+[R2b] gate=FAIL CRITICAL：清单 165 条，OK 149，哈希不符 0，缺失 16
+[R2c] gate=PASS PASS：图 1 幅（矢量文本 1，位图跳过 0，缺失 0）；图注小数 1 个，无支撑 0；figure_only 0
+[R2d] gate=PASS PASS：表 3 个（numeric cell 30），无支撑 0，\input 缺失 0，混精度列 0（INFO）
+[R3] gate=FAIL CRITICAL：待复核 0，机械噪音 3，已裁决 69（critical 3）
+[R4] gate=WARN MAJOR：统计记录 6 条（MATCH 4，MISMATCH 0，NOT_IN_PAPER 1）——McNemar/Friedman/Wilson 复算；定性 MAJOR（resolved 0 / sustained 0 / llm_failed 1）
+[R5] gate=WARN MAJOR：hint 命中 113，可疑 0（一票否决），已披露 9
+  [R6] round 1/3 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 1/3: 命中缓存，跳过重跑
+  [R6] round 1/3: Critical=19 Major=45 Minor=18
+  [R6] round 2/3 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 2/3: 命中缓存，跳过重跑
+  [R6] round 2/3: Critical=21 Major=42 Minor=20
+  [R6] round 3/3 开始（每轮最长 30min，已完成轮次断点续跑）
+  [R6] round 3/3: 命中缓存，跳过重跑
+  [R6] round 3/3: Critical=20 Major=38 Minor=18
+[R6] gate=WARN 文本层：Critical 18 / Major 20 / Minor 0（3 轮，RPC HTTP 200）；轮间不稳定（噪声候选，不计门禁）：Critical 21 / Major 61
+[PRISM] P Pertinence 评审中…
+[PRISM] R Rigor 评审中…
+[PRISM] I Impact 评审中…
+[PRISM] S Sincerity 评审中…
+[R6b] gate=WARN MAJOR：四维 {'P': 7, 'R': 5, 'I': 5, 'S': 9}（min=5，短板 R(严谨性)）——最弱维度 R(严谨性) = 5 分（<= 6）→ 文本层 WARN；证据层门禁不受影响
+[debate] 第 1 幕：作者回应 20 条…
+[debate] 第 2 幕：裁判终裁…
+[R6c] gate=WARN MAJOR：辩论后维持 Critical 10 / Major 1（撤回 5，部分成立 4）；注：原始 38 条中仅严重度前 20 条进入辩论（MAX_ISSUES=20，截断 18 条未辩论）
+[R7] overall=FAIL -> F:\deepseek\research-kit\review-workflow\examples\scievalsuite_v6\run_v3_full\run_summary.md

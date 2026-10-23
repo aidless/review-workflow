@@ -1,0 +1,362 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\papers\\calibration-self-improvement\\paper\\main.tex",
+    "issues_file": "F:\\deepseek\\research-kit\\review-workflow\\examples\\calibration_selfimprovement\\run_v1\\r6_llm.json",
+    "rpc": "http://127.0.0.1:3080",
+    "timestamp": "2026-08-27T12:23:53+00:00",
+    "rpc_health": "HTTP 200"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "sev": "Critical",
+      "text": "- **Critical**: Propositions 1–3 的偏差界依赖匹配器 FNR/FPR（相对真值），但\"真值\"本身由事后裁定确立——用裁定标签估计 FNR/FPR 再用其界定裁定偏差，形成估计循环；若真值不可知则该界不可估计。"
+    },
+    {
+      "id": 2,
+      "sev": "Critical",
+      "text": "- Critical: \"ECE 跨域变化达 17×\"作为摘要级头条效应量报告，但所给 95% CI（0.028 [0.001,0.08] vs 0.479 [0.30,0.60]）严重重叠，比值本身的 CI 几乎必然包含 1；以点估计比值做头条而仅以括号注\"CI 宽\"淡化为误导性效应量报告。"
+    },
+    {
+      "id": 3,
+      "sev": "Critical",
+      "text": "- Critical: GAP 声明\"self-reported confidence 的校准很少在 agent 自身任务分布上验证\"与 Kadavath et al.(2022)\"Language Models (Mostly) Know What They Know\"及后续 LLM 校准文献直接冲突，该 GAP 已被部分填补，论文未引用、未区分。"
+    },
+    {
+      "id": 4,
+      "sev": "Critical",
+      "text": "- Critical: N=30 试点中\"逐行裁定后扩展 matcher\"达到 100% 准确率，本质是把 matcher 拟合到测试样本本身（逐行 patch 直到没错），ECE=0.0037 完全 in-sample，无任何 held-out 验证，\"过度自信信号消失\"这一核心结论零外部效度。"
+    },
+    {
+      "id": 5,
+      "sev": "Critical",
+      "text": "- Critical: 主试点 N=30 的 ECE 报告至小数点后四位（0.1297、0.0037），且置信分布退化（27/30=1.0），校准估计的有效样本量实际约为 3，四位精度属伪精度。"
+    },
+    {
+      "id": 6,
+      "sev": "Critical",
+      "text": "- Critical: 主试点三个核心 ECE 值（0.363/0.1297/0.0037）均未报告任何不确定性估计（CI、SE、bootstrap 区间），却作为关键发现呈现。"
+    },
+    {
+      "id": 7,
+      "sev": "Critical",
+      "text": "- Critical: 因果/定量结论（\"40â50% high-confidence OOD 答案错误\"\"confidence 与 consistency 负相关则 gating 有效\"）基于 N=30（甚至条件子集更小），统计功效极低、置信区间未给出，内部效度不足以支撑任何因果推断。"
+    },
+    {
+      "id": 8,
+      "sev": "Critical",
+      "text": "- Critical: 大规模人工标注（4999 dual-judged pairs、逐行 adjudication、600 items 跨多判官）全程未披露 IRB/伦理审查、标注者知情同意、报酬与劳动保护，属人体/人工标注研究却无任何伦理合规说明。"
+    },
+    {
+      "id": 9,
+      "sev": "Critical",
+      "text": "- Critical: 摘要之后、Introduction 之前有一句孤立的「Our central finding is that...」悬浮句，无标题归属，且该句首次引入术语 `smECE_sem`，但摘要正文从未定义该缩写，读者无法对应\"semantic soft-label calibration estimator\"与 `smECE_sem`。"
+    },
+    {
+      "id": 10,
+      "sev": "Critical",
+      "text": "- Critical: 摘要约 450+ 词，远超常规 150â250 词限制；多层嵌套括号与分号长句交织（如 \"in-sample illustrative, not a validated bound; external validity from 600-item Ã 9-model census\" 嵌套在括号内），严重损害单独可读性，失去摘要功能。"
+    },
+    {
+      "id": 11,
+      "sev": "Critical",
+      "text": "- Critical: 无数据许可/模型 ToS 合规声明——MMLU 许可未注明；\"Chinese free-form set\" 的来源与许可证未披露；\"nine models spanning five families\" 产出的 4999 dual-judged pairs 可受提供方服务条款对研究使用/再分发的限制，文中无任何合规声明。"
+    },
+    {
+      "id": 12,
+      "sev": "Critical",
+      "text": "- Critical: 未提供任何数据许可/可用性声明；MMLU 与“Chinese free-form set”的来源、版权与再分发权利未说明，尤制n set”溯源不明，存在未经授权使用第三方数据的合规风险。"
+    },
+    {
+      "id": 13,
+      "sev": "Critical",
+      "text": "- Critical: 标注流程不可复现。\"per-row adjudication of residual errors\" 是人工逐行裁定，全文未提供标注规范文档、标注者数量、inter-annotator agreement（如 Cohen's κ）、裁定准则文本。`4999 dual-judged pairs` 的标签是复现的核心产物，但裁定协议缺失即等价于数据缺失。"
+    },
+    {
+      "id": 14,
+      "sev": "Critical",
+      "text": "- Critical: 门控分析缺少对照组——只比较 confidence-gating vs self-consistency-gating，没有随机门控 / 无门控 / oracle 上界基线，无法判断 self-consistency 是真有用还是仅胜过一个坏信号。"
+    },
+    {
+      "id": 15,
+      "sev": "Major",
+      "text": "- **Major**: MSI 比较（中文自由形式 1.000 vs MMLU 选择题 0.334）同时混淆语言×作答格式×领域×题目选择，无法将差异归因于任何单一因素。"
+    },
+    {
+      "id": 16,
+      "sev": "Major",
+      "text": "- Major: \"40–50% 高置信 OOD 答案错误\"基于 30 项探测，实际计数约 12–15 项，无置信区间，无法判定该比例的统计稳定性。"
+    },
+    {
+      "id": 17,
+      "sev": "Major",
+      "text": "- Major: \"ECE 跨域 4Ã/17Ã\"为点估计比值，且作者承认 95% CI 极宽、Holm 校正后仅最极端对显著，对重叠且接近零的 CI 取比值不构成有效推断。"
+    },
+    {
+      "id": 18,
+      "sev": "Major",
+      "text": "- Major: \"Proposition~8$'$\"（帶撇號編號）於摘要中突然出現，前文僅描述 Propositions 1--3，讀耖無法理解 4--8 以及撇號變體的存在，應統一編號體例。"
+    },
+    {
+      "id": 19,
+      "sev": "Major",
+      "text": "- Major: \"by up to $4\\times$ across three subjects and by up to $17\\times$ across six\" 表述歧義——\"three subjects\" 與 \"six\" 的關係不明（是 6 個域中的子集 3 個？還是兩個獨立實驗？），應明確 \"among 6 domains, the max pairwise ratio is 17"
+    },
+    {
+      "id": 20,
+      "sev": "Major",
+      "text": "- Major: \"自一致性信号优于置信度用于 OOD 门控\"与 Wang et al.(2022) Self-Consistency 及其后继关于 consistency-confidence 关系的工作存在大量重叠，论文未论证相对增量，且 n=30 的 OOD 门控分析在统计上无法支撑任何门控规则主张。"
+    },
+    {
+      "id": 21,
+      "sev": "Minor",
+      "synthetic": true,
+      "text": "（另有 11 条问题超出 20 条上限被截断，未参与辩论）"
+    }
+  ],
+  "rebuttals": [
+    {
+      "id": 1,
+      "action": "concede",
+      "fix": "将引入真值不可知时FNR/FPR的bootstrap不确定性传播,并以保守上界替代点估计偏差界。"
+    },
+    {
+      "id": 2,
+      "action": "concede",
+      "fix": "将取消17Ã比值头条,改报ECE差值及CI,并注明比值CI包含1。"
+    },
+    {
+      "id": 3,
+      "action": "concede",
+      "fix": "将引用Kadavath(2022),区分其P(True)校准与本文agent任务分布scalar验证。"
+    },
+    {
+      "id": 4,
+      "action": "rebut",
+      "rebuttal": "论文已显式标注ECE=0.0037为'in-sample illustrative, not a validated bound',600项census中matcher-dependence复现提供外部效度。"
+    },
+    {
+      "id": 5,
+      "action": "concede",
+      "fix": "将ECE精度降至两位小数并注明有效样本量约3。"
+    },
+    {
+      "id": 6,
+      "action": "concede",
+      "fix": "将为0.363/0.1297/0.0037è¡¥åbootstrap CI。"
+    },
+    {
+      "id": 7,
+      "action": "concede",
+      "fix": "将为N=30å®éç»è®ºè¡¥åCI并将因果措辞改为描述性。"
+    },
+    {
+      "id": 8,
+      "action": "concede",
+      "fix": "å°è¡¥åIRB审查、知情同意、报酬及劳动保护声明。"
+    },
+    {
+      "id": 9,
+      "action": "concede",
+      "fix": "将删悬浮句并在摘要首次出现处定义smECE_sem全称与缩写。"
+    },
+    {
+      "id": 10,
+      "action": "concede",
+      "fix": "将摘要压缩至250词内,消除嵌套括号。"
+    },
+    {
+      "id": 11,
+      "action": "concede",
+      "fix": "å°è¡¥åMMLU MIT许可、Chinese set来源及模型ToS研究使用合规声明。"
+    },
+    {
+      "id": 12,
+      "action": "concede",
+      "fix": "å°è¡¥åæ°æ®å¯ç¨æ§å£°æï¼æ³¨æåæ°æ®éæ¥æºãçæååååæ¡ä»¶ã"
+    },
+    {
+      "id": 13,
+      "action": "concede",
+      "fix": "å°è¡¥åæ æ³¨è§èãæ æ³¨èäººæ°ãCohen's κ及裁定准则文本。"
+    },
+    {
+      "id": 14,
+      "action": "concede",
+      "fix": "å°è¡¥åæ é¨æ§ãéæºé¨æ§åoracle上界基线。"
+    },
+    {
+      "id": 15,
+      "action": "concede",
+      "fix": "将拆解语言×格式×领域为消融或限定MSI差异为描述性。"
+    },
+    {
+      "id": 16,
+      "action": "concede",
+      "fix": "将为40-50%比例报告Clopper-Pearson CI。"
+    },
+    {
+      "id": 17,
+      "action": "concede",
+      "fix": "将以ECE差值及比值CI替代点估计比值,注明CI含1。"
+    },
+    {
+      "id": 18,
+      "action": "concede",
+      "fix": "将统一Proposition编号,删除撇号变体或先定义4-8。"
+    },
+    {
+      "id": 19,
+      "action": "concede",
+      "fix": "将改写为'among 6 domains, max pairwise ECE ratio is 17Ã'。"
+    },
+    {
+      "id": 20,
+      "action": "concede",
+      "fix": "将引用Wang(2022) Self-Consistency并论证相对增量,标注n=30为探索性。"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": 1,
+      "disposition": "sustained",
+      "reason": "concede,估计循环问题存在于当前版本,承诺bootstrap上界未落实"
+    },
+    {
+      "id": 2,
+      "disposition": "sustained",
+      "reason": "concede,当前版本仍以17×点估计比值为头条,误导性报告未消除"
+    },
+    {
+      "id": 3,
+      "disposition": "sustained",
+      "reason": "concede,GAP未引用Kadavath且未区分,当前版本问题仍在"
+    },
+    {
+      "id": 4,
+      "disposition": "partial",
+      "reason": "论文确有in-sample标注,但census仅复现degeneracy/matcher-dependence,未验证'信号消失'结论本身,外部效度部分成立"
+    },
+    {
+      "id": 5,
+      "disposition": "sustained",
+      "reason": "concede,当前版本仍报四位小数且未注有效样本量"
+    },
+    {
+      "id": 6,
+      "disposition": "sustained",
+      "reason": "concede,当前版本三个核心ECE值无任何不确定性估计"
+    },
+    {
+      "id": 7,
+      "disposition": "sustained",
+      "reason": "concede,当前版本N=30因果措辞仍在且无CI"
+    },
+    {
+      "id": 8,
+      "disposition": "sustained",
+      "reason": "concede,当前版本无任何伦理合规声明"
+    },
+    {
+      "id": 9,
+      "disposition": "sustained",
+      "reason": "concede,当前版本悬浮句与未定义缩写仍在"
+    },
+    {
+      "id": 10,
+      "disposition": "sustained",
+      "reason": "concede,当前版本摘要超长且嵌套严重"
+    },
+    {
+      "id": 11,
+      "disposition": "sustained",
+      "reason": "concede,当前版本无数据许可与ToS合规声明"
+    },
+    {
+      "id": 12,
+      "disposition": "sustained",
+      "reason": "concede,当前版本无数据可用性声明"
+    },
+    {
+      "id": 13,
+      "disposition": "sustained",
+      "reason": "concede,当前版本标注规范、κ、裁定准则均缺失"
+    },
+    {
+      "id": 14,
+      "disposition": "sustained",
+      "reason": "concede,当前版本无对照组基线"
+    },
+    {
+      "id": 15,
+      "disposition": "sustained",
+      "reason": "concede,当前版本MSI混淆多因素无法归因"
+    },
+    {
+      "id": 16,
+      "disposition": "sustained",
+      "reason": "concede,当前版本40-50%比例无CI"
+    },
+    {
+      "id": 17,
+      "disposition": "sustained",
+      "reason": "concede,当前版本仍用点估计比值且CI重叠"
+    },
+    {
+      "id": 18,
+      "disposition": "sustained",
+      "reason": "concede,当前版本Proposition 8'撇号编号未统一"
+    },
+    {
+      "id": 19,
+      "disposition": "sustained",
+      "reason": "concede,当前版本'six'与'three subjects'关系歧义"
+    },
+    {
+      "id": 20,
+      "disposition": "sustained",
+      "reason": "concede,当前版本未引用Wang(2022)且n=30门控结论无统计支撑"
+    }
+  ],
+  "summary": {
+    "verdict": "MAJOR",
+    "counts_sustained": {
+      "Critical": 13,
+      "Major": 6,
+      "Minor": 0
+    },
+    "n_issues": 20,
+    "n_sustained": 19,
+    "n_withdrawn": 0,
+    "n_partial": 1,
+    "truncation": {
+      "n_total": 31,
+      "n_debated": 20,
+      "n_truncated": 11,
+      "max_issues": 20
+    },
+    "detail": "辩论后维持 Critical 13 / Major 6 （撤回 0，部分成立 1）；注：原始 31 条中仅严重度前 20 条进入辩论（MAX_ISSUES=20，截断 11 条未辩论）；文本层 WARN 纪律不变",
+    "sustained_ids": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "withdrawn_ids": []
+  }
+}

@@ -1,0 +1,316 @@
+{
+  "meta": {
+    "zip": "F:\\Research\\_inbox\\F1-F5_F45_2026-08-26\\TMLR_4p5_Tier123_FINAL_20260827.zip",
+    "tex": "F:\\Research\\F1_Single_10page\\paper\\main.tex",
+    "entries": 12,
+    "timestamp": "2026-08-28T09:49:00+00:00"
+  },
+  "referenced_paths": [
+    {
+      "raw": "cover\\_letter\\_F4\\_F5.md",
+      "path": "cover_letter_F4_F5.md",
+      "line": 56,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "verify\\_length\\_control.py",
+      "path": "verify_length_control.py",
+      "line": 91,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "power\\_analysis.json",
+      "path": "power_analysis.json",
+      "line": 168,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "generate\\_figures.py",
+      "path": "generate_figures.py",
+      "line": 190,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/cells.jsonl",
+      "path": "results/cells.jsonl",
+      "line": 192,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/analysis.json",
+      "path": "results/analysis.json",
+      "line": 192,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/power\\_analysis.json",
+      "path": "results/power_analysis.json",
+      "line": 192,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "paper/figures\\_f1/*.pdf",
+      "path": "paper/figures_f1/*.pdf",
+      "line": 192,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "paper/figures\\_f1/generate\\_figures.py",
+      "path": "paper/figures_f1/generate_figures.py",
+      "line": 192,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "power\\_analysis.json",
+      "path": "power_analysis.json",
+      "line": 243,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "paper/figures\\_f1/*.pdf",
+      "path": "paper/figures_f1/*.pdf",
+      "line": 243,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "paper/figures\\_f1/generate\\_figures.py",
+      "path": "paper/figures_f1/generate_figures.py",
+      "line": 243,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "verify\\_length\\_control.py",
+      "path": "verify_length_control.py",
+      "line": 245,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "patch\\_policy\\_key\\_numbers.json",
+      "path": "patch_policy_key_numbers.json",
+      "line": 245,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "\\_audit\\_recompute.json",
+      "path": "_audit_recompute.json",
+      "line": 245,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "./models/all-MiniLM",
+      "path": "./models/all-MiniLM",
+      "line": 245,
+      "status": "MISSING",
+      "matched": []
+    }
+  ],
+  "missing_refs": [
+    {
+      "raw": "cover\\_letter\\_F4\\_F5.md",
+      "path": "cover_letter_F4_F5.md",
+      "line": 56,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "verify\\_length\\_control.py",
+      "path": "verify_length_control.py",
+      "line": 91,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "power\\_analysis.json",
+      "path": "power_analysis.json",
+      "line": 168,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "generate\\_figures.py",
+      "path": "generate_figures.py",
+      "line": 190,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/cells.jsonl",
+      "path": "results/cells.jsonl",
+      "line": 192,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/analysis.json",
+      "path": "results/analysis.json",
+      "line": 192,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "results/power\\_analysis.json",
+      "path": "results/power_analysis.json",
+      "line": 192,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "paper/figures\\_f1/*.pdf",
+      "path": "paper/figures_f1/*.pdf",
+      "line": 192,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "paper/figures\\_f1/generate\\_figures.py",
+      "path": "paper/figures_f1/generate_figures.py",
+      "line": 192,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "power\\_analysis.json",
+      "path": "power_analysis.json",
+      "line": 243,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "paper/figures\\_f1/*.pdf",
+      "path": "paper/figures_f1/*.pdf",
+      "line": 243,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "paper/figures\\_f1/generate\\_figures.py",
+      "path": "paper/figures_f1/generate_figures.py",
+      "line": 243,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "verify\\_length\\_control.py",
+      "path": "verify_length_control.py",
+      "line": 245,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "patch\\_policy\\_key\\_numbers.json",
+      "path": "patch_policy_key_numbers.json",
+      "line": 245,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "\\_audit\\_recompute.json",
+      "path": "_audit_recompute.json",
+      "line": 245,
+      "status": "MISSING",
+      "matched": []
+    },
+    {
+      "raw": "./models/all-MiniLM",
+      "path": "./models/all-MiniLM",
+      "line": 245,
+      "status": "MISSING",
+      "matched": []
+    }
+  ],
+  "local_path_leaks": [
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F3_Single_10page",
+      "context": "data.cells_path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F1_Single_10page",
+      "context": "data.cross_study_checks.F1_cells.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F1_Single_10page",
+      "context": "data.cross_study_checks.F1_phrasing_500.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F4_Single_10page",
+      "context": "data.cross_study_checks.F45_cells.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F4_Single_10page",
+      "context": "data.cross_study_checks.F45_real_llm_400_v6.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F2_Single_10page",
+      "context": "data.cross_study_checks.F2_cells.path"
+    },
+    {
+      "file": "supplementary/F3_Tier2_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F2_Single_10page",
+      "context": "data.cross_study_checks.F2_analysis.path"
+    },
+    {
+      "file": "supplementary/tier2_phrasing_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F1_Single_10page",
+      "context": "meta.cells"
+    },
+    {
+      "file": "supplementary/tier2_phrasing_results.json",
+      "line": null,
+      "leak": "F:\\Research\\F1_Single_10page",
+      "context": "meta.phrasing_cells"
+    }
+  ],
+  "count_claims": [
+    {
+      "claim": "396 files",
+      "declared": 396,
+      "kind": "zip_entries",
+      "line": 194,
+      "actual_entries": 12,
+      "matches_actual": false
+    }
+  ],
+  "inpackage_tex": {
+    "entry": null,
+    "desync_with_disk": false,
+    "count_claims": []
+  },
+  "summary": {
+    "refs_total": 16,
+    "refs_missing": 16,
+    "leaks": 9,
+    "count_claims": 1,
+    "count_claims_mismatched": 1,
+    "tex_desync": false,
+    "verdict": "CRITICAL"
+  }
+}

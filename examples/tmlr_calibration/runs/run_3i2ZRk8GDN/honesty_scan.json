@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "tex": "F:\\deepseek\\research-kit\\review-workflow\\examples\\tmlr_calibration\\runs\\run_3i2ZRk8GDN\\extracted_text.txt",
+    "evidence_dirs": [],
+    "timestamp": "2026-08-26T06:07:07+00:00"
+  },
+  "hint_hits": [],
+  "suspicious": [],
+  "disclosed_hits": [],
+  "summary": {
+    "hint_hits": 0,
+    "suspicious": 0,
+    "disclosed": 0,
+    "verdict": "PASS",
+    "note": "suspicious = 人工定性入口：逐条判定论文表述是否如实披露（Critical）或措辞需补披露（Major）"
+  }
+}
