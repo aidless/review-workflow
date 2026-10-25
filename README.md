@@ -26,23 +26,23 @@
 
 ```powershell
 # 0. 换机器先自检（可选依赖缺失会明示，缺失自动降级 SKIP 不阻塞）
-python scripts\run_review.py --doctor
+python scripts/run_review.py --doctor
 
 # 1. 生成配置模板并填写
-python scripts\run_review.py --init F:\path\to\config.json
+python scripts/run_review.py --init path/to/config.json
 
 # 2. 一键跑 R0-R7（16 阶段：证据层全自动 + R6/R6b/R6c LLM，RPC 探活失败自动跳过）
-python scripts\run_review.py --config F:\path\to\config.json
+python scripts/run_review.py --config path/to/config.json
 
 # 常用变体
-python scripts\run_review.py --config <config.json> --skip-llm           # 只跑机械阶段
-python scripts\run_review.py --config <config.json> --stages R2,R3       # 只跑指定阶段
-python scripts\run_review.py --config <config.json> --diff <旧run目录>    # 与上一轮对比
-python scripts\run_review.py --config <config.json> --converge 3         # R6 跑 3 轮取稳定问题
-python scripts\run_review.py --batch F:\path\to\configs_dir              # 批处理多篇
+python scripts/run_review.py --config <config.json> --skip-llm           # 只跑机械阶段
+python scripts/run_review.py --config <config.json> --stages R2,R3       # 只跑指定阶段
+python scripts/run_review.py --config <config.json> --diff <旧run目录>    # 与上一轮对比
+python scripts/run_review.py --config <config.json> --converge 3         # R6 跑 3 轮取稳定问题
+python scripts/run_review.py --batch path/to/configs_dir                 # 批处理多篇
 
 # 3. 批处理结果可视化（单文件离线 HTML + ECharts）
-python scripts\dashboard.py --runs F:\path\to\runs --out dashboard.html
+python scripts/dashboard.py --runs path/to/runs --out dashboard.html
 ```
 
 **可移植性**：核心机械阶段零第三方依赖（Python ≥3.10 标准库）；`requirements.txt` 只列可选件
@@ -54,7 +54,7 @@ review-workflow 上级目录 → 历史盘符，无硬编码路径。
 ```json
 {
   "name": "paper_x",
-  "tex": "F:/.../main.tex",             // 与 "pdf" 二选一
+  "tex": "path/to/main.tex",            // 与 "pdf" 二选一
   "pdf": null,                           // PDF-only 审稿：提供后 tex 可为 null
   "zip": "F:/.../submission.zip",
   "evidence_dirs": ["F:/.../results"],
