@@ -1,0 +1,9 @@
+# 管线运行产物（示例运行已提交在 runs/、chain_logs/，新产物勿再入库）
+runs/
+chain_logs/
+scripts/shim_log.jsonl
+
+__pycache__/
+*.pyc
+.venv/
+.env
