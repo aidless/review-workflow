@@ -29,7 +29,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 SCRIPTS_DIR = Path(__file__).resolve().parent
-KIT_DIR = SCRIPTS_DIR.parents[1]          # F:\deepseek\research-kit（adversarial_review 所在）
+KIT_DIR = SCRIPTS_DIR.parents[1]          # research-kit 根（adversarial_review 所在）
 sys.path.insert(0, str(KIT_DIR))
 
 TOL = 5e-4

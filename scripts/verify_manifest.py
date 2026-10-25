@@ -10,7 +10,7 @@
 
 用法:
     python verify_manifest.py --zip submission.zip [--tex main.tex] [--out out_dir]
-    python verify_manifest.py --manifest evidence_manifest.json --root F:\proj [--tex main.tex]
+    python verify_manifest.py --manifest evidence_manifest.json --root /path/to/proj [--tex main.tex]
     python verify_manifest.py --selftest
 """
 from __future__ import annotations
