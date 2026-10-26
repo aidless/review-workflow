@@ -66,7 +66,7 @@ review-workflow 上级目录 → 历史盘符，无硬编码路径。
   "prism": true,                         // R6b PRISM 四维自评（LLM；默认开，RPC 不可达自动 SKIP）
   "debate": true,                        // R6c 审稿人-作者辩论（LLM；默认开）
   "converge": 1,                         // R6 轮数（≥2 时启用轮间稳定性过滤）
-  "llm": {"enabled": true, "script": "F:/deepseek/research-kit/adversarial_review.py",
+  "llm": {"enabled": true, "script": "/path/to/research-kit/adversarial_review.py",
            "rpc": "http://127.0.0.1:3080", "roles": "all"},
   "out": "F:/.../runs/name"
 }
