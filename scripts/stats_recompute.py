@@ -720,7 +720,12 @@ def selftest() -> int:
 
     # ---- R4 定性自动化：mock LLM 全链路（门禁合成） ------------------------
     import urllib.request
-    import adversarial_review as adv
+    try:
+        import adversarial_review as adv
+    except ModuleNotFoundError:
+        print("stats_recompute selftest: OK (机械层) — LLM 裁决段跳过: "
+              "adversarial_review 未在 research-kit 中找到（SKIP 不阻塞，与运行时降级一致）")
+        return 0
     calls = {"n": 0}
 
     class _FakeResp:

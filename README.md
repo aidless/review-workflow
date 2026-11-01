@@ -221,6 +221,43 @@ review-workflow\
     └── batch_multi\            # 3 篇不同论文批处理实测（scievalsuite/kg-retrieval/selfevolve）+ dashboard.html
 ```
 
+## 证明什么 / 不证明什么（诚实边界）
+
+**证明（本仓库证据范围内）：**
+
+- 一套 16 阶段 R0-R7 审稿工作流可**机械地**把「包审计、清单哈希、图表数字、表格数字、公式算术、
+  数字对账、统计复算、诚实性扫描、引用结构」从**可执行脚本**变成**可复核的 gate 判定**
+  （PASS / WARN / FAIL / SKIP），且每个判定都带原始证据路径，可重算。
+- 在 TMLR 官方审稿数据集 6 篇已接收论文上，PRISM 严谨性维度与 claims 投票 yes_rate
+  **显著正相关**（Spearman ρ=0.89, p=0.018）；门禁-决策一致性 6/6=1.0（无 FAIL 误报）。
+- 在 SciEvalSuite v6 实跑上，工具能**复现**已知 Critical（缺引用、路径泄漏、清单缺失），
+  并在 3 篇不同论文批处理上给出**有区分度**的结果（零回归）。
+
+**不证明（诚实边界）：**
+
+- **不是自动化取代审稿人**。LLM 文本层（R6/R6b/R6c）默认 SKIP 且证据层门禁独立成立；
+  工具是「审稿人的可复核脚手架」，不是「自动打分器」。
+- **不证明审稿质量的因果提升**。没有随机对照实验证明「用本工作流审的稿」比「不用」在
+  录用/拒稿质量上更好；只证明了可复现、可区分、可校准。
+- **校准不泛化**。TMLR 拒稿不公开，只标定 accept 侧；n=6 小样本，bias/MAE 是样本内算术验证，
+  不是泛化估计。PRISM P/I 维度 vs yes_rate 不显著（ρ=-0.26/-0.10）。
+- **符号推导/量纲是已知边界**（R1d 明示）：公式核验只做行内算术重算，不做符号/量纲推导。
+- **不保证捕获所有缺陷**。机械层只覆盖能程序化判定的类别；LLM 层依赖本地模型质量且默认关闭。
+
+## 复算（所有报告数字从哪里来）
+
+| 数字 | 重算入口 | 命令 |
+|---|---|---|
+| 14 模块 + 编排器 selftest 通过 | 各脚本 `--selftest` | 见下方「全部脚本 selftest」，实测 14/14 |
+| PRISM ρ=0.89, p=0.018 | `examples/tmlr_calibration/` | `python scripts\run_review.py --collect` |
+| 门禁-决策一致性 6/6 | `examples/tmlr_calibration/` | 同上（`gates.json` 对照） |
+| R3 待复核 94 / R5 已披露 9（SciEvalSuite v6） | `examples/scievalsuite_v6/run_summary.md` | `python scripts\run_review.py --config examples\scievalsuite_v6\config.json` |
+| 批处理 3 篇区分度 | `examples/batch_multi/batch_summary.md` | `python scripts\run_review.py --batch ...` |
+| 校准 bias=+1.67, MAE=1.67 | `examples/tmlr_calibration/cal_results/` | `python scripts\calibrate.py` |
+
+所有数字均可在**本地**重算，不需要外部网络（R1b online / R1c / R6 等联网 LLM 阶段默认 SKIP，
+证据层结论不受影响）。
+
 ## 全部脚本 selftest
 
 ```powershell

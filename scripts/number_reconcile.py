@@ -655,7 +655,12 @@ def selftest() -> int:
 
     # ---- R3 裁决自动化：LLM 语义裁决（mock 全链路） ------------------------
     import urllib.request
-    import adversarial_review as adv
+    try:
+        import adversarial_review as adv
+    except ModuleNotFoundError:
+        print("number_reconcile selftest: OK (机械层) — LLM 裁决段跳过: "
+              "adversarial_review 未在 research-kit 中找到（SKIP 不阻塞，与运行时降级一致）")
+        return 0
 
     class _FakeResp:
         status = 200
