@@ -244,6 +244,13 @@ review-workflow\
 - **符号推导/量纲是已知边界**（R1d 明示）：公式核验只做行内算术重算，不做符号/量纲推导。
 - **不保证捕获所有缺陷**。机械层只覆盖能程序化判定的类别；LLM 层依赖本地模型质量且默认关闭。
 
+**Fail-closed 声明（真实机制，见 `scripts/run_review.py` + `scripts/verify_manifest.py`）：**
+
+- **门禁纪律**：`overall = 最差阶段（FAIL > WARN > SKIP > PASS）`；证据层任何 FAIL **直接 cap 分数到 4**，不因其他阶段 PASS 而冲高（`run_review.py:33-35`）。
+- **降级 = SKIP 而非假绿**：联网失败、RPC 不可达、可选依赖（scipy/pymupdf）缺失时，阶段**降级 SKIP 而非误报**（`citation_check.py:8` offline 模式、`run_review.py:40`），证据层结论不受影响。
+- **哈希核验 byte-for-byte**：`verify_manifest.py` 对 manifest 条目做 SHA-256 逐字节比对，哈希不符/缺文件 = FAIL(Critical)。
+- **关键点**：LLM 文本层默认 SKIP，但**证据层门禁独立成立**——即使 LLM 全关，R0-R5 的机械判定照常拦截缺陷。这是「不假装自动打分器成功」的 fail-closed 立场。
+
 ## 复算（所有报告数字从哪里来）
 
 | 数字 | 重算入口 | 命令 |
