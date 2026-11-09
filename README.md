@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/aidless/review-workflow/actions/workflows/checks.yml/badge.svg)](https://github.com/aidless/review-workflow/actions/workflows/checks.yml)
 
+> 🗂 **本仓是「论文评审」主题的主线仓**（16 阶段工作流，持续维护）。同主题：[agentic-paper-review](https://github.com/aidless/agentic-paper-review)（Web+CLI 旗舰，已归档作参考）· [reviewer-sim](https://github.com/aidless/reviewer-sim)（多角色模拟评审变体）。
+
 > 版本 v2.2 · 2026-08-26 · 落地于 research-kit
 > 源起：SciEvalSuite v6 审稿实践（2026-08-26），把人工核验流程固化为可复用工具。
 > v1.1：清单哈希核验、诚实性扫描、数字裁决闭环、一键编排器（门禁/diff/批处理/RPC 探活）。
