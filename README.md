@@ -2,19 +2,19 @@
 
 [![CI](https://github.com/aidless/review-workflow/actions/workflows/checks.yml/badge.svg)](https://github.com/aidless/review-workflow/actions/workflows/checks.yml)
 
+> **English TL;DR**: The evidence-layer review workflow that text-only LLM reviewers can't replace: package audit (cited file exists in the submission?), checklist hashes, figure-number verification, number reconciliation with a verdict loop, statistics recomputation (McNemar/Friedman/Wilson), honesty scan, citation/novelty checks, PRISM scoring, and reviewer-author debate — 16 stages R0-R7 in one command, mechanical stages stdlib-only with automatic SKIP degradation. `--selftest` runs the whole pipeline against synthetic fixtures; `--doctor` pinpoints missing optional deps. Stated boundary: LLM stages (R6/R6b/R6c) are optional and clearly marked SKIP when disabled.
+
 > 🗂 **本仓是「论文评审」主题的主线仓**（16 阶段工作流，持续维护）。同主题：[agentic-paper-review](https://github.com/aidless/agentic-paper-review)（Web+CLI 旗舰，已归档作参考）· [reviewer-sim](https://github.com/aidless/reviewer-sim)（多角色模拟评审变体）。
 
 > 版本 v2.2 · 2026-08-26 · 落地于 research-kit
 > 源起：SciEvalSuite v6 审稿实践（2026-08-26），把人工核验流程固化为可复用工具。
-> v1.1：清单哈希核验、诚实性扫描、数字裁决闭环、一键编排器（门禁/diff/批处理/RPC 探活）。
-> v2.0：引用核验（R1b）、新颖性断言对照（R1c）、图表数字核验（R2c）、统计复算（R4 全自动）、
-> PRISM 四维自评（R6b）、审稿人-作者辩论（R6c）、批处理仪表盘（dashboard）、OpenReview 校准（calibrate）、
-> PDF 输入模式；14 阶段 R0-R7 一条命令。
-> v2.1：公式与算术核验（R1d）、表格数字核验（R2d）、辩论截断明示（MAX_ISSUES=20）、
-> 评分校准人工 dump 降级路径（OpenReview 403 时）、可移植性（requirements.txt + 路径自动发现 + --doctor）、
-> --batch/--converge 3 真实论文实测；16 阶段 R0-R7 一条命令。
-> v2.2：R3 无证据目录降级 SKIP（PDF-only/第三方论文评审）+ PDF 提取噪音六类过滤；
-> 校准接入 TMLR 官方审稿数据集（85 篇浏览器桥接 dump，替代人工凑分）。
+> 能力面：清单哈希核验、诚实性扫描、数字裁决闭环、一键编排器（门禁/diff/批处理/RPC 探活）、
+> 引用核验（R1b）、新颖性断言对照（R1c）、图表/表格数字核验（R2c/R2d）、公式与算术核验（R1d）、
+> 统计复算（R4 全自动：McNemar/Friedman/Wilson）、PRISM 四维自评（R6b）、审稿人-作者辩论（R6c，
+> 截断明示 MAX_ISSUES=20）、批处理仪表盘（dashboard）、OpenReview 校准（TMLR 官方审稿数据集
+> 85 篇浏览器桥接 dump）、PDF 输入模式、可移植性（requirements.txt + 路径自动发现 + --doctor）；
+> 16 阶段 R0-R7 一条命令；R3 在无证据目录（PDF-only/第三方论文评审）降级 SKIP，
+> PDF 提取噪音六类过滤。
 
 ## 定位：与现有工具的关系
 
@@ -27,6 +27,11 @@
 核心洞察：LLM 文本审查再强，也发现不了"论文引用了 `out_p5/P5_MUSE_FINAL.json` 但投稿包里根本没有这个文件"——这类问题只能靠**文件级/数字级机械核验**。本工作流补上这一层，并编排完整审稿流水线（v2.0 起文本层也纳入：PRISM 打分 + 辩论降噪）。
 
 ## 快速开始（推荐：一键编排）
+
+> 2026-11-10 本机实录（Python 3.12.3）：`--doctor` 全模块导入 OK、LLM RPC 探活 401（服务在监听），
+> 唯一异常是外部 `adversarial_review.py` 路径未设 `REVIEW_LLM_SCRIPT`（可选，机械阶段不受影响）；
+> `--selftest` 全管线 OK——R3/R6 按设计 SKIP，R4 统计复算 PASS（0 条记录），R5 诚实性扫描 PASS，
+> R7 overall=PASS。
 
 ```powershell
 # 0. 换机器先自检（可选依赖缺失会明示，缺失自动降级 SKIP 不阻塞）
