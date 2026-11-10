@@ -7,7 +7,7 @@
 # 自检：python run_review.py --doctor
 
 # R4 统计复算（McNemar/Friedman/Wilson 精确重算）——缺失 → R4 SKIP
-scipy>=1.10
+scipy>=1.18.1
 
 # PDF 输入模式（伪 tex 提取）+ R2c 矢量图内文本提取——缺失 → pdf 模式/R2c 文本层降级
 PyMuPDF>=1.24
