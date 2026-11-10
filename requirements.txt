@@ -10,7 +10,7 @@
 scipy>=1.10
 
 # PDF 输入模式（伪 tex 提取）+ R2c 矢量图内文本提取——缺失 → pdf 模式/R2c 文本层降级
-PyMuPDF>=1.24
+PyMuPDF>=2.1
 
 # R6/R6b/R6c LLM 文本层：不需要 pip 包，但需要
 #   1) 本地 LLM RPC 服务（默认 http://127.0.0.1:3080）
