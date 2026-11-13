@@ -1,0 +1,9 @@
+# Known false positives: vendored test fixtures / evidence JSON (gitleaks generic-api-key, github-pat)
+7653d30cd0e5947b69cd9c06f32a96a9d44a3875:examples/scievalsuite_v6/run_v3_full/citation_check.json:generic-api-key:36
+7653d30cd0e5947b69cd9c06f32a96a9d44a3875:examples/scievalsuite_v6/run_v3_online/citation_check.json:generic-api-key:36
+7653d30cd0e5947b69cd9c06f32a96a9d44a3875:examples/scievalsuite_v6/run_v4_fixed/citation_check.json:generic-api-key:36
+7653d30cd0e5947b69cd9c06f32a96a9d44a3875:examples/scievalsuite_v6/run_v5_final/citation_check.json:generic-api-key:36
+7653d30cd0e5947b69cd9c06f32a96a9d44a3875:examples/scievalsuite_v6/run_v6_verify/citation_check.json:generic-api-key:36
+7653d30cd0e5947b69cd9c06f32a96a9d44a3875:examples/scievalsuite_v6/run_v7_final/citation_check.json:generic-api-key:36
+7653d30cd0e5947b69cd9c06f32a96a9d44a3875:examples/scievalsuite_v6/run_v8_evidence/citation_check.json:generic-api-key:36
+7653d30cd0e5947b69cd9c06f32a96a9d44a3875:examples/scievalsuite_v6/run_v8_final/citation_check.json:generic-api-key:36
