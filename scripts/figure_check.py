@@ -25,7 +25,6 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from number_reconcile import (
-    DEC_RE,
     collect_numbers,
     collect_tex_rows,
     classify_noise,

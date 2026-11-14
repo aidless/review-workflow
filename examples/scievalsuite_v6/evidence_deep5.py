@@ -1,4 +1,3 @@
-import re
 from pathlib import Path
 
 # 1. Check gemma L1a console logs for actual scores

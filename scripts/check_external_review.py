@@ -30,7 +30,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import sys
 from pathlib import Path
 
 # 本地模型家族名单：kind=model 时 id 命中即判"不独立"。

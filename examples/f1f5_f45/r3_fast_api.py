@@ -60,7 +60,6 @@ _VERDICT_RE = re.compile(r'"verdict"\s*:\s*"(noise|supported|critical)"')
 
 def parse_lenient(raw: str) -> dict | None:
     """宽松解析：JSON 截断/空响应时按 'verdict' 字段抽取，避免整条报废。"""
-    import re as _re
     m = _VERDICT_RE.search(raw or "")
     if m:
         return {"verdict": m.group(1), "confidence": "low",

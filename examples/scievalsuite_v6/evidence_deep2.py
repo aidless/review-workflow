@@ -1,4 +1,4 @@
-import json, os
+import json
 from pathlib import Path
 
 def load(fp):

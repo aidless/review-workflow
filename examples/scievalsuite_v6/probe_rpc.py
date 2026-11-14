@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """Probe the RPC session server with minimal prompts to isolate the debate-author stall."""
 import json
-import sys
 import time
 import urllib.request
 

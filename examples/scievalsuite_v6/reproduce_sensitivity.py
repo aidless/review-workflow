@@ -1,5 +1,4 @@
-import numpy as np
-from scipy.stats import friedmanchisquare, rankdata
+from scipy.stats import friedmanchisquare
 
 # Curated 6-task data, 3 local models (7b, 14b, gemma), per compute_curated_friedman.py
 # raw metrics: Sentiment, TextSim, TextClass, Zinc(MAE), MathQA, FinQA

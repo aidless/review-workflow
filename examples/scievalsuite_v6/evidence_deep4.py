@@ -1,4 +1,4 @@
-import json, os, re
+import json, re
 from pathlib import Path
 
 # 1. Find '3.1' in tex loosely
