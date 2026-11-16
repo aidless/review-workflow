@@ -1,0 +1,23 @@
+{
+  "arith_check": {
+    "ratio": 0.92
+  },
+  "mcnemar_pair": {
+    "b": 1,
+    "c": 9,
+    "p": 0.0215,
+    "test": "mcnemar"
+  },
+  "table_acc": {
+    "acc": 0.812
+  },
+  "wilson_gold": {
+    "ci": [
+      0.4902,
+      0.9433
+    ],
+    "k": 8,
+    "method": "wilson",
+    "n": 10
+  }
+}

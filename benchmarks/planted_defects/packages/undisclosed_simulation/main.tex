@@ -1,0 +1,36 @@
+\documentclass{article}
+\begin{document}
+\begin{abstract}
+Synthetic submission used only as a mechanical-check fixture.
+\end{abstract}
+\section{Introduction}
+The study compares two systems on a fixed split.
+\section{Related Work}
+Prior work is cited as \cite{vaswani2017}.
+\section{Method}
+Counts and intervals are stored in \texttt{results/stats.json}.
+
+\section{Results}
+Held-out accuracy is listed in the table.
+Exact McNemar $p=0.0215$ ($b=1$, $c=9$).
+Wilson CI $[0.4902, 0.9433]$.
+Inline check: 45/50 = 0.90.
+Annotator agreement alpha is 0.894.
+\begin{table}
+\caption{Held-out accuracy.}
+\label{tab:acc}
+\begin{tabular}{lc}
+\toprule
+Model & Acc \\
+\midrule
+A & 0.812 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\section{Discussion}
+The table is the only accuracy display.
+\section{Limitations}
+The sample is synthetic.
+\section{Conclusion}
+No further claim is made.
+\end{document}
