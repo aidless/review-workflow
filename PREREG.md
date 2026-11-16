@@ -1,5 +1,7 @@
 # PREREG — review-workflow 预注册与评测规格
 
+规格版本 v2.2。与 `VERSION`、`README.md`、`REVIEW_SOP.md` 一致。GitHub About 仍是旧文案，见 `FAILURE_MODES.md`。
+
 > 本文件是 review-workflow 的**预注册规格**（registered-report 风格）：声明本仓库**实际执行、可从落盘证据复算**的审稿工作流假设、评测方案、成功标准与明确边界。
 > 所有数字来自仓库内文件（`scripts/`、`examples/`、`runs/`）与本地重算，**不是虚构实验**。
 
@@ -15,8 +17,8 @@
 
 - **假设**：R0-R5 的证据层脚本能对真实论文/投稿包产出带原始证据路径的 PASS/WARN/FAIL/SKIP，且每个判定可重算。
 - **可证伪方向**：若某判定无证据路径，或重算结果与报告不一致，则 H1 不成立。
-- **评测方案**：`scripts/run_review.py --config <config.json>` 编排 R0-R7；各脚本 `--selftest`（实测 14/14 通过）。
-- **成功标准**：每个判定带证据路径；14 模块 selftest 全过。
+- **评测方案**：`benchmarks/planted_defects/`（标签在打分前提交，`make check` 离线重算矩阵）；各脚本 `--selftest`。编排器 selftest 的 R4 必须 `records > 0`。
+- **成功标准**：每个判定带证据路径；植错矩阵与冻结标签一致（漏检写入矩阵，不改标签）。这不是真实投稿上的检出率。
 
 ## 2. 假设 H2（门禁 fail-closed / 最差阶段决定）
 
@@ -30,7 +32,7 @@
 - **假设**：在 TMLR 官方审稿数据集 6 篇已接收论文上，PRISM 严谨性维度与 claims 投票 yes_rate 显著正相关。
 - **可证伪方向**：若 ρ 不显著或方向为负，则 H3 不成立（P/I 维度已如实报为不显著）。
 - **评测方案**：`scripts/calibrate.py --collect`；`examples/tmlr_calibration/`。
-- **成功标准**：PRISM ρ=0.89, p=0.018（样本内）；P/I 维度 ρ=-0.26/-0.10 不显著（如实报，不泛化）。
+- **成功标准（存档表上的算术，不是新拉取）**：报告中的 PRISM ρ=0.89, p=0.0175；`make check` 从 `calibrations.json` 重算为 ρ=0.889898, p=0.017516。suggested 全是 6，与 human 的相关不可计算。P/I 维度不显著。只覆盖 accept 侧。
 
 ## 4. 假设 H4（降级 = SKIP 而非假绿）
 
@@ -58,4 +60,4 @@
 - 所有数字从本仓重算（见 README「复算」节 + `--selftest`）。
 - `SKIP` 是「该阶段不可判」，**不计入**门禁分母（`calibrate.py:594` 明示）。
 - 校准 bias/MAE 是样本内算术验证，不是泛化估计。
-- 本 PREREG 是规格声明，不新增实验，不改变已冻结脚本与 `examples/` 基线。
+- 本 PREREG 是规格声明。植错基准是新增的、标签先冻结的机械阶段检查。`examples/tmlr_calibration/` 的存档数字没有被改写，只被重算核对。

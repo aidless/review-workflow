@@ -1014,7 +1014,8 @@ def calibrated_scoring(score: int, dim_scores: dict, results: dict, cal_dir: Pat
 
     校准实测（cal_results/calibration_report.json）：
     - bias = human − suggested = +1.67（全 WARN/SKIP 剖面测得的 accept 侧保守偏移）
-    - PRISM R 是唯一显著排序信号（vs yes_rate ρ=0.89，p=0.018）；P/I 不显著
+    - PRISM R 是唯一显著排序信号（vs yes_rate ρ=0.89，p=0.0175，见 calibration_report.json；
+      由 calibrations.json 重算为 ρ=0.889898，p=0.017516）。旧文 p=0.018 是再次四舍五入。P/I 不显著
     - 问题数 null 结果：stable/sustained 的 C/M 计数与 yes_rate ρ≈0（-0.03~+0.09）——
       accept 侧问题密度是噪声，不携带排序信号
     - 门禁-决策一致 6/6（WARN↔accept）；样本中无 FAIL 论文
@@ -1567,6 +1568,10 @@ def selftest() -> int:
     assert overall == "PASS", f"第一轮应为 PASS，实际 {gates1}"
     assert gates1["stages"]["R1b"]["gate"] == "PASS", gates1["stages"]["R1b"]
     assert gates1["stages"]["R4"]["gate"] == "PASS", gates1["stages"]["R4"]
+    # 非空 PASS：0 条记录也会得到 PASS，那是空转。第一轮夹具必须真的复算到记录。
+    r4_1 = json.loads((tmp / "run1" / "stats_recompute.json").read_text(encoding="utf-8"))
+    assert r4_1["summary"]["records"] > 0, r4_1["summary"]
+    assert r4_1["summary"]["match"] > 0 and r4_1["summary"]["mismatch"] == 0, r4_1["summary"]
     # v2.0 新阶段：无图 → R2c PASS；无表 → R2d PASS；无算术错误 → R1d PASS；
     # R1c 未开联网 → SKIP；LLM 关 → R6b/R6c SKIP
     assert gates1["stages"]["R2c"]["gate"] == "PASS", gates1["stages"]["R2c"]
@@ -1661,10 +1666,13 @@ def selftest() -> int:
     assert nr3["summary"]["pending_review"] == 0 and nr3["summary"]["verdict"] == "PASS", nr3["summary"]
     assert overall3 == "FAIL"  # R2 缺引用仍在
 
-    # PDF 模式：伪 tex 供 R1/R3/R4；R2/R2b/R1b SKIP
-    if pdf_text is not None:
+    # PDF 模式：伪 tex 供 R1/R3/R4；R2/R2b/R1b SKIP。
+    # pdf_text 模块本身不在 import 时加载 pymupdf；缺包时必须 SKIP，不能让 selftest 抛 ImportError。
+    try:
         import pymupdf
-
+    except ImportError:
+        pymupdf = None
+    if pdf_text is not None and pymupdf is not None:
         pdf = tmp / "paper.pdf"
         doc = pymupdf.open()
         page = doc.new_page()
