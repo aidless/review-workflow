@@ -1,20 +1,102 @@
-# 审稿工作流（review-workflow）
+# review-workflow（审稿工作流）
 
 [![CI](https://github.com/aidless/review-workflow/actions/workflows/checks.yml/badge.svg)](https://github.com/aidless/review-workflow/actions/workflows/checks.yml)
 
-> **English TL;DR**: The evidence-layer review workflow that text-only LLM reviewers can't replace: package audit (cited file exists in the submission?), checklist hashes, figure-number verification, number reconciliation with a verdict loop, statistics recomputation (McNemar/Friedman/Wilson), honesty scan, citation/novelty checks, PRISM scoring, and reviewer-author debate — 16 stages R0-R7 in one command, mechanical stages stdlib-only with automatic SKIP degradation. `--selftest` runs the whole pipeline against synthetic fixtures; `--doctor` pinpoints missing optional deps. Stated boundary: LLM stages (R6/R6b/R6c) are optional and clearly marked SKIP when disabled.
+<!-- version:begin -->
+v2.2
+<!-- version:end -->
 
-> 🗂 **本仓是「论文评审」主题的主线仓**（16 阶段工作流，持续维护）。同主题：[agentic-paper-review](https://github.com/aidless/agentic-paper-review)（Web+CLI 旗舰，已归档作参考）· [reviewer-sim](https://github.com/aidless/reviewer-sim)（多角色模拟评审变体）。
+Mechanical checks on a submission package: cited files, manifest hashes, table cells, inline arithmetic, McNemar / Wilson / Friedman recomputation, and an honesty-hint scan. LLM stages R6 / R6b / R6c SKIP unless a local RPC is configured. This does not assign an accept or reject decision.
 
-> 版本 v2.2 · 2026-08-26 · 落地于 research-kit
-> 源起：SciEvalSuite v6 审稿实践（2026-08-26），把人工核验流程固化为可复用工具。
-> 能力面：清单哈希核验、诚实性扫描、数字裁决闭环、一键编排器（门禁/diff/批处理/RPC 探活）、
-> 引用核验（R1b）、新颖性断言对照（R1c）、图表/表格数字核验（R2c/R2d）、公式与算术核验（R1d）、
-> 统计复算（R4 全自动：McNemar/Friedman/Wilson）、PRISM 四维自评（R6b）、审稿人-作者辩论（R6c，
-> 截断明示 MAX_ISSUES=20）、批处理仪表盘（dashboard）、OpenReview 校准（TMLR 官方审稿数据集
-> 85 篇浏览器桥接 dump）、PDF 输入模式、可移植性（requirements.txt + 路径自动发现 + --doctor）；
-> 16 阶段 R0-R7 一条命令；R3 在无证据目录（PDF-only/第三方论文评审）降级 SKIP，
-> PDF 提取噪音六类过滤。
+**Limits.** The result `make check` recomputes is the planted-defect matrix below (9 synthetic packages, mechanical stages only). TMLR numbers are a stored n=6 accept-only table, not a new calibration. Sections titled 实战验证 are archived logs.
+
+**STATUS: WORK-IN-PROGRESS — not A yet.** GitHub About still describes a multi-agent LLM review pipeline; replacement text is in `FAILURE_MODES.md`. A stored Wilson `ci` is not compared to the recomputed interval (`NOT_IN_PAPER` only). Personal `F:\deepseek` paths remain in committed run logs. The six TMLR PDFs are third-party CC BY 4.0, not covered by this repo's MIT license (`examples/tmlr_calibration/THIRD_PARTY.md`).
+
+## Problem
+
+<!-- problem:begin -->
+A text review cannot see that a manuscript cites `results/heldout.json` when that file is absent from the zip, or that a stored McNemar p does not match the raw counts.
+This repository runs those file-level and number-level checks and records PASS, WARN, FAIL, or SKIP with the evidence path.
+It does not decide acceptance. The LLM stages do not run unless a local RPC is configured.
+<!-- problem:end -->
+
+Same-topic neighbors, not this result: [agentic-paper-review](https://github.com/aidless/agentic-paper-review) (archived) and [reviewer-sim](https://github.com/aidless/reviewer-sim).
+
+## Quickstart
+
+`make check` is the offline gate (Python ≥3.10, scipy for R4). It does not use the network. PyMuPDF is optional; without it the PDF section of `--selftest` SKIPs.
+
+### Linux / macOS
+
+```bash
+python3 scripts/run_review.py --doctor
+python3 scripts/run_review.py --init /tmp/review-config.json
+python3 scripts/run_review.py --config /tmp/review-config.json --skip-llm
+make check
+```
+
+### Windows (PowerShell)
+
+```powershell
+python scripts/run_review.py --doctor
+python scripts/run_review.py --init $env:TEMP\review-config.json
+python scripts/run_review.py --config $env:TEMP\review-config.json --skip-llm
+```
+
+There is no `make` requirement on Windows for a single paper. The offline gate on Linux is `make check`, which runs `python3 scripts/make_check.py`.
+
+Round 1 of `python3 scripts/run_review.py --selftest` is an in-code fixture, not the planted benchmark. On the current code that round is R4 PASS with 3 matched records (McNemar, Friedman, Wilson). The selftest asserts `records > 0`, so a PASS with an empty record list fails. R6 / R6b / R6c SKIP when the LLM is off. R3 on that round is PASS, not SKIP, because the fixture has an evidence directory.
+
+## Planted-defect matrix
+
+Labels were committed in `60c0ed202fe693ba3310498c2e7c5c5efaef16f2` before any of these packages were scored. `labels.json` was not edited afterward. Eight planted defects were detected and the two clean controls stayed PASS on every listed stage (tp=8, fn=0, fp=0, tn=73). The Wilson row is still a gap: the record is `NOT_IN_PAPER`, not `MISMATCH`, because the checker does not compare the stored `ci` to the interval implied by `k` and `n`.
+
+<!-- planted-matrix:begin -->
+# Planted-defect matrix
+
+Recomputed by `python3 scripts/score_planted.py`. Expectations are the frozen `labels.json` values.
+tp = planted stage did not PASS. fn = planted stage PASSed (miss). fp = control or off-stage flag. tn = expected PASS.
+
+Labels commit: `60c0ed202fe693ba3310498c2e7c5c5efaef16f2`. Labels file was not edited by the scorer.
+
+| case | planted | R1b | R1d | R2 | R2b | R2c | R2d | R3 | R4 | R5 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `arithmetic_error` | inline arithmetic error | PASS ok | WARN TP | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok |
+| `clean_control_a` | clean control | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok |
+| `clean_control_b` | clean control | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok |
+| `ghost_citation` | unresolved citation | WARN TP | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok |
+| `hash_mismatch` | checklist hash mismatch | PASS ok | PASS ok | PASS ok | FAIL TP | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok |
+| `missing_cited_file` | missing cited file | PASS ok | PASS ok | FAIL TP | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok |
+| `stats_mcnemar_wilson` | wrong McNemar p and wrong Wilson interval versus raw counts | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | FAIL TP | PASS ok |
+| `table_number_mismatch` | table number disagrees with results JSON | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | WARN TP | WARN TP | PASS ok | PASS ok |
+| `undisclosed_simulation` | overclaim: undisclosed simulated annotator agreement | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | PASS ok | FAIL TP |
+
+Counts: tp=8 fn=0 fp=0 tn=73.
+
+No misses and no false positives against the frozen expectations.
+
+Observations (not relabeled):
+
+- stats_mcnemar_wilson R4 checks: {"mcnemar": [{"kind": "mcnemar", "status": "MISMATCH", "json_path": "mcnemar_pair"}], "wilson": [{"kind": "wilson", "status": "NOT_IN_PAPER", "json_path": "wilson_gold"}]}
+- Wilson stored ci was not marked MISMATCH. stats_recompute.py compares recomputed Wilson endpoints to tex decimals and does not compare the stored ci field to those endpoints. This is reported, not patched.
+<!-- planted-matrix:end -->
+
+<!-- calibration-stored:begin -->
+n: 6
+prism_R_spearman_stored: 0.89
+prism_R_p_stored: 0.0175
+prism_R_spearman_recomputed: 0.889898
+prism_R_p_recomputed: 0.017516
+bias_stored: 1.67
+mae_stored: 1.67
+bias_recomputed: 1.67
+mae_recomputed: 1.67
+suggested_unique: [6]
+accept_only: true
+scope: stored n=6 accept-side table; not a new OpenReview pull; suggested score is constant so correlation vs human is undefined
+<!-- calibration-stored:end -->
+
+The block above is the TMLR arithmetic `make check` recomputes from `examples/tmlr_calibration/cal_results/`. It is not evidence that the pipeline generalizes, and the suggested score on these six papers is the constant 6.
 
 ## 定位：与现有工具的关系
 
@@ -26,12 +108,9 @@
 
 核心洞察：LLM 文本审查再强，也发现不了"论文引用了 `out_p5/P5_MUSE_FINAL.json` 但投稿包里根本没有这个文件"——这类问题只能靠**文件级/数字级机械核验**。本工作流补上这一层，并编排完整审稿流水线（v2.0 起文本层也纳入：PRISM 打分 + 辩论降噪）。
 
-## 快速开始（推荐：一键编排）
+## 更多命令（与文首 Quickstart 同一套入口）
 
-> 2026-11-10 本机实录（Python 3.12.3）：`--doctor` 全模块导入 OK、LLM RPC 探活 401（服务在监听），
-> 唯一异常是外部 `adversarial_review.py` 路径未设 `REVIEW_LLM_SCRIPT`（可选，机械阶段不受影响）；
-> `--selftest` 全管线 OK——R3/R6 按设计 SKIP，R4 统计复算 PASS（0 条记录），R5 诚实性扫描 PASS，
-> R7 overall=PASS。
+Linux 把 `python` 换成 `python3`，路径换成 `/tmp/...`。下面是 PowerShell 形态，方便和文首对照。
 
 ```powershell
 # 0. 换机器先自检（可选依赖缺失会明示，缺失自动降级 SKIP 不阻塞）
@@ -126,6 +205,8 @@ v2.2 起支持 **TMLR 官方审稿数据集校准**（替代人工凑分）：�
 
 ## 实战验证（SciEvalSuite v6，2026-08-26 实跑）
 
+下面三节是存档日志。`make check` 不重跑这些论文，也不把里面的句子当成新的测量。TMLR 的 ρ / p 以文首 `calibration-stored` 块为准。
+
 详见 `examples/scievalsuite_v6/SMOKE_TEST.md` 与 `examples/scievalsuite_v6/run_summary.md`：
 
 - **overall=FAIL**（包确有 Critical）：R2 缺引用 24/58 + 路径泄漏 139 + desync；R2b 清单缺失 16/165；R3 待复核 94；R5 已披露 9（含 α=0.894 模拟标注者——论文已按此前审稿意见补充披露，扫描器正确放行）；R6 文本层 Critical 17 / Major 33（RPC 实跑）
@@ -147,7 +228,7 @@ v2.2 起支持 **TMLR 官方审稿数据集校准**（替代人工凑分）：�
 用 TMLR 真实已接收论文替代人工凑分，全流程 `examples/tmlr_calibration/`（dump 85 篇 → 分层抽样 6 篇 →
 PDF-only 批处理 → 增量 R3+R7 → `--collect` 校准）：
 
-- **排序一致性（核心结果，n=6）**：PRISM **R（严谨性）vs claims 投票 yes_rate：Spearman ρ=0.89（p=0.018）**；
+- **排序一致性（存档，n=6）**：PRISM **R（严谨性）vs claims 投票 yes_rate：Spearman ρ=0.89（p=0.0175，报告原值；重算 0.889898 / 0.017516）**；
   PRISM mean ρ=0.875（p=0.022）、PRISM min ρ=0.853（p=0.031）——均显著正相关。机制自洽：TMLR 评审投的是
   claims_and_evidence（论断是否有证据支撑），正对 PRISM 的 Rigor 维度
 - **绝对分校准**：bias = +1.67（human − suggested），MAE = 1.67——6 篇已接收论文全部 suggested=6/WARN，
@@ -223,6 +304,7 @@ review-workflow\
 │   ├── review_report.md        # 审稿报告模板（含评分卡）
 │   ├── strong_accept_plan.md   # Tier 化修改方案模板
 │   └── echarts.min.js           # 仪表盘离线依赖（全量内嵌）
+├── benchmarks\planted_defects\ # 冻结标签的机械阶段植错包 + results/matrix.md
 ├── runs\                       # 各模块冒烟产物（novelty/prism/debate/calibrate）
 └── examples\
     ├── scievalsuite_v6\        # 单篇实跑（config.json + config_v2.json + run_v2/ + run_v3_converge/）
@@ -238,7 +320,7 @@ review-workflow\
   数字对账、统计复算、诚实性扫描、引用结构」从**可执行脚本**变成**可复核的 gate 判定**
   （PASS / WARN / FAIL / SKIP），且每个判定都带原始证据路径，可重算。
 - 在 TMLR 官方审稿数据集 6 篇已接收论文上，PRISM 严谨性维度与 claims 投票 yes_rate
-  **显著正相关**（Spearman ρ=0.89, p=0.018）；门禁-决策一致性 6/6=1.0（无 FAIL 误报）。
+  **显著正相关**（存档报告 Spearman ρ=0.89, p=0.0175；`make check` 从 `calibrations.json` 重算为 0.889898 / 0.017516）。门禁-决策一致性 6/6=1.0 是同一张 accept-only 表，不是新实验。
 - 在 SciEvalSuite v6 实跑上，工具能**复现**已知 Critical（缺引用、路径泄漏、清单缺失），
   并在 3 篇不同论文批处理上给出**有区分度**的结果（零回归）。
 
@@ -265,7 +347,7 @@ review-workflow\
 | 数字 | 重算入口 | 命令 |
 |---|---|---|
 | 14 模块 + 编排器 selftest 通过 | 各脚本 `--selftest` | 见下方「全部脚本 selftest」，实测 14/14 |
-| PRISM ρ=0.89, p=0.018 | `examples/tmlr_calibration/` | `python scripts\run_review.py --collect` |
+| PRISM ρ=0.89, p=0.0175（重算 0.889898 / 0.017516） | `examples/tmlr_calibration/cal_results/` | `make check`（不重新拉取 OpenReview） |
 | 门禁-决策一致性 6/6 | `examples/tmlr_calibration/` | 同上（`gates.json` 对照） |
 | R3 待复核 94 / R5 已披露 9（SciEvalSuite v6） | `examples/scievalsuite_v6/run_summary.md` | `python scripts\run_review.py --config examples\scievalsuite_v6\config.json` |
 | 批处理 3 篇区分度 | `examples/batch_multi/batch_summary.md` | `python scripts\run_review.py --batch ...` |

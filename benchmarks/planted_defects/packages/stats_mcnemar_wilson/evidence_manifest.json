@@ -1,0 +1,15 @@
+{
+  "files": [
+    {
+      "path": "main.tex",
+      "sha256": "a62d3f247bc5158603fc12c14ffb9f82d3cca95c4354ea0180068851ce189759",
+      "size": 848
+    },
+    {
+      "path": "results/stats.json",
+      "sha256": "f1d7884c75e2f89d079f64ca0dbdceec466ecf8388f492d629474ba8566e0744",
+      "size": 280
+    }
+  ],
+  "root": "."
+}

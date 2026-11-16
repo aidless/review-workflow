@@ -171,7 +171,7 @@ PDF-only 批处理全跑 + 增量 R3+R7 重跑后的最终校准结果（`cal_re
 | JQA0EfQIfj | Accept w/ minor rev | 0.333 | 6 | WARN | 9/5/7/6 | 7 |
 
 - **bias = +1.67 / MAE = 1.67**：min 维度评分在 accept 侧系统性保守（6 篇全 suggested=6）
-- **PRISM R vs yes_rate：ρ=0.89（p=0.018）**；mean ρ=0.875（p=0.022）；min ρ=0.853（p=0.031）——
+- **PRISM R vs yes_rate：ρ=0.89（报告 p=0.0175；此处旧稿写成 0.018，是再次四舍五入）**；mean ρ=0.875（p=0.022）；min ρ=0.853（p=0.031）——
   均显著；P（ρ=-0.26）/I（ρ=-0.10）不显著（n=6 小样本，如实报告）
 - **门禁-决策一致性 6/6**：WARN↔accept/weak_accept，无 FAIL 误报
 - suggested_score 塌缩为常数（6 篇全 6）——PDF-only 模式已知边界，报告如实披露而非给 NaN 相关

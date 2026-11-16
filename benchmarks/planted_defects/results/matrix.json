@@ -1,0 +1,1047 @@
+{
+  "cases": {
+    "arithmetic_error": {
+      "files_sha256_ok": true,
+      "planted": "inline arithmetic error",
+      "primary_stage": "R1d",
+      "role": "defect",
+      "stages": {
+        "R1b": {
+          "class": "tn",
+          "detail": {
+            "ghost_citations": 0,
+            "structural_major": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R1d": {
+          "class": "tp",
+          "detail": {
+            "arith_mismatch": 1,
+            "arith_total": 1
+          },
+          "expect": "not-PASS",
+          "gate": "WARN",
+          "verdict": "MAJOR"
+        },
+        "R2": {
+          "class": "tn",
+          "detail": {
+            "refs_missing": 0,
+            "refs_total": 1
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2b": {
+          "class": "tn",
+          "detail": {
+            "hash_mismatch": 0,
+            "missing": 0,
+            "ok": 2
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2c": {
+          "class": "tn",
+          "detail": {
+            "figures_referenced": 0,
+            "missing": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2d": {
+          "class": "tn",
+          "detail": {
+            "missing_inputs": 0,
+            "unsupported": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R3": {
+          "class": "tn",
+          "detail": {
+            "paper_decimals": 5,
+            "pending_review": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R4": {
+          "class": "tn",
+          "detail": {
+            "checks": [
+              {
+                "json_path": "mcnemar_pair",
+                "kind": "mcnemar",
+                "status": "MATCH"
+              },
+              {
+                "json_path": "wilson_gold",
+                "kind": "wilson",
+                "status": "MATCH"
+              }
+            ],
+            "match": 2,
+            "mismatch": 0,
+            "not_in_paper": 0,
+            "records": 2
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R5": {
+          "class": "tn",
+          "detail": {
+            "hint_hits": 0,
+            "suspicious": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        }
+      }
+    },
+    "clean_control_a": {
+      "files_sha256_ok": true,
+      "planted": null,
+      "primary_stage": null,
+      "role": "control",
+      "stages": {
+        "R1b": {
+          "class": "tn",
+          "detail": {
+            "ghost_citations": 0,
+            "structural_major": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R1d": {
+          "class": "tn",
+          "detail": {
+            "arith_mismatch": 0,
+            "arith_total": 1
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2": {
+          "class": "tn",
+          "detail": {
+            "refs_missing": 0,
+            "refs_total": 1
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2b": {
+          "class": "tn",
+          "detail": {
+            "hash_mismatch": 0,
+            "missing": 0,
+            "ok": 2
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2c": {
+          "class": "tn",
+          "detail": {
+            "figures_referenced": 0,
+            "missing": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2d": {
+          "class": "tn",
+          "detail": {
+            "missing_inputs": 0,
+            "unsupported": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R3": {
+          "class": "tn",
+          "detail": {
+            "paper_decimals": 5,
+            "pending_review": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R4": {
+          "class": "tn",
+          "detail": {
+            "checks": [
+              {
+                "json_path": "mcnemar_pair",
+                "kind": "mcnemar",
+                "status": "MATCH"
+              },
+              {
+                "json_path": "wilson_gold",
+                "kind": "wilson",
+                "status": "MATCH"
+              }
+            ],
+            "match": 2,
+            "mismatch": 0,
+            "not_in_paper": 0,
+            "records": 2
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R5": {
+          "class": "tn",
+          "detail": {
+            "hint_hits": 0,
+            "suspicious": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        }
+      }
+    },
+    "clean_control_b": {
+      "files_sha256_ok": true,
+      "planted": null,
+      "primary_stage": null,
+      "role": "control",
+      "stages": {
+        "R1b": {
+          "class": "tn",
+          "detail": {
+            "ghost_citations": 0,
+            "structural_major": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R1d": {
+          "class": "tn",
+          "detail": {
+            "arith_mismatch": 0,
+            "arith_total": 1
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2": {
+          "class": "tn",
+          "detail": {
+            "refs_missing": 0,
+            "refs_total": 1
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2b": {
+          "class": "tn",
+          "detail": {
+            "hash_mismatch": 0,
+            "missing": 0,
+            "ok": 2
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2c": {
+          "class": "tn",
+          "detail": {
+            "figures_referenced": 0,
+            "missing": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2d": {
+          "class": "tn",
+          "detail": {
+            "missing_inputs": 0,
+            "unsupported": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R3": {
+          "class": "tn",
+          "detail": {
+            "paper_decimals": 5,
+            "pending_review": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R4": {
+          "class": "tn",
+          "detail": {
+            "checks": [
+              {
+                "json_path": "mcnemar_pair",
+                "kind": "mcnemar",
+                "status": "MATCH"
+              },
+              {
+                "json_path": "wilson_gold",
+                "kind": "wilson",
+                "status": "MATCH"
+              }
+            ],
+            "match": 2,
+            "mismatch": 0,
+            "not_in_paper": 0,
+            "records": 2
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R5": {
+          "class": "tn",
+          "detail": {
+            "hint_hits": 0,
+            "suspicious": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        }
+      }
+    },
+    "ghost_citation": {
+      "files_sha256_ok": true,
+      "planted": "unresolved citation",
+      "primary_stage": "R1b",
+      "role": "defect",
+      "stages": {
+        "R1b": {
+          "class": "tp",
+          "detail": {
+            "ghost_citations": 1,
+            "structural_major": 1
+          },
+          "expect": "not-PASS",
+          "gate": "WARN",
+          "verdict": "MAJOR"
+        },
+        "R1d": {
+          "class": "tn",
+          "detail": {
+            "arith_mismatch": 0,
+            "arith_total": 1
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2": {
+          "class": "tn",
+          "detail": {
+            "refs_missing": 0,
+            "refs_total": 1
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2b": {
+          "class": "tn",
+          "detail": {
+            "hash_mismatch": 0,
+            "missing": 0,
+            "ok": 2
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2c": {
+          "class": "tn",
+          "detail": {
+            "figures_referenced": 0,
+            "missing": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2d": {
+          "class": "tn",
+          "detail": {
+            "missing_inputs": 0,
+            "unsupported": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R3": {
+          "class": "tn",
+          "detail": {
+            "paper_decimals": 5,
+            "pending_review": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R4": {
+          "class": "tn",
+          "detail": {
+            "checks": [
+              {
+                "json_path": "mcnemar_pair",
+                "kind": "mcnemar",
+                "status": "MATCH"
+              },
+              {
+                "json_path": "wilson_gold",
+                "kind": "wilson",
+                "status": "MATCH"
+              }
+            ],
+            "match": 2,
+            "mismatch": 0,
+            "not_in_paper": 0,
+            "records": 2
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R5": {
+          "class": "tn",
+          "detail": {
+            "hint_hits": 0,
+            "suspicious": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        }
+      }
+    },
+    "hash_mismatch": {
+      "files_sha256_ok": true,
+      "planted": "checklist hash mismatch",
+      "primary_stage": "R2b",
+      "role": "defect",
+      "stages": {
+        "R1b": {
+          "class": "tn",
+          "detail": {
+            "ghost_citations": 0,
+            "structural_major": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R1d": {
+          "class": "tn",
+          "detail": {
+            "arith_mismatch": 0,
+            "arith_total": 1
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2": {
+          "class": "tn",
+          "detail": {
+            "refs_missing": 0,
+            "refs_total": 1
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2b": {
+          "class": "tp",
+          "detail": {
+            "hash_mismatch": 1,
+            "missing": 0,
+            "ok": 1
+          },
+          "expect": "not-PASS",
+          "gate": "FAIL",
+          "verdict": "CRITICAL"
+        },
+        "R2c": {
+          "class": "tn",
+          "detail": {
+            "figures_referenced": 0,
+            "missing": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2d": {
+          "class": "tn",
+          "detail": {
+            "missing_inputs": 0,
+            "unsupported": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R3": {
+          "class": "tn",
+          "detail": {
+            "paper_decimals": 5,
+            "pending_review": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R4": {
+          "class": "tn",
+          "detail": {
+            "checks": [
+              {
+                "json_path": "mcnemar_pair",
+                "kind": "mcnemar",
+                "status": "MATCH"
+              },
+              {
+                "json_path": "wilson_gold",
+                "kind": "wilson",
+                "status": "MATCH"
+              }
+            ],
+            "match": 2,
+            "mismatch": 0,
+            "not_in_paper": 0,
+            "records": 2
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R5": {
+          "class": "tn",
+          "detail": {
+            "hint_hits": 0,
+            "suspicious": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        }
+      }
+    },
+    "missing_cited_file": {
+      "files_sha256_ok": true,
+      "planted": "missing cited file",
+      "primary_stage": "R2",
+      "role": "defect",
+      "stages": {
+        "R1b": {
+          "class": "tn",
+          "detail": {
+            "ghost_citations": 0,
+            "structural_major": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R1d": {
+          "class": "tn",
+          "detail": {
+            "arith_mismatch": 0,
+            "arith_total": 1
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2": {
+          "class": "tp",
+          "detail": {
+            "refs_missing": 1,
+            "refs_total": 2
+          },
+          "expect": "not-PASS",
+          "gate": "FAIL",
+          "verdict": "CRITICAL"
+        },
+        "R2b": {
+          "class": "tn",
+          "detail": {
+            "hash_mismatch": 0,
+            "missing": 0,
+            "ok": 2
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2c": {
+          "class": "tn",
+          "detail": {
+            "figures_referenced": 0,
+            "missing": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2d": {
+          "class": "tn",
+          "detail": {
+            "missing_inputs": 0,
+            "unsupported": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R3": {
+          "class": "tn",
+          "detail": {
+            "paper_decimals": 5,
+            "pending_review": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R4": {
+          "class": "tn",
+          "detail": {
+            "checks": [
+              {
+                "json_path": "mcnemar_pair",
+                "kind": "mcnemar",
+                "status": "MATCH"
+              },
+              {
+                "json_path": "wilson_gold",
+                "kind": "wilson",
+                "status": "MATCH"
+              }
+            ],
+            "match": 2,
+            "mismatch": 0,
+            "not_in_paper": 0,
+            "records": 2
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R5": {
+          "class": "tn",
+          "detail": {
+            "hint_hits": 0,
+            "suspicious": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        }
+      }
+    },
+    "stats_mcnemar_wilson": {
+      "files_sha256_ok": true,
+      "planted": "wrong McNemar p and wrong Wilson interval versus raw counts",
+      "primary_stage": "R4",
+      "role": "defect",
+      "stages": {
+        "R1b": {
+          "class": "tn",
+          "detail": {
+            "ghost_citations": 0,
+            "structural_major": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R1d": {
+          "class": "tn",
+          "detail": {
+            "arith_mismatch": 0,
+            "arith_total": 1
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2": {
+          "class": "tn",
+          "detail": {
+            "refs_missing": 0,
+            "refs_total": 1
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2b": {
+          "class": "tn",
+          "detail": {
+            "hash_mismatch": 0,
+            "missing": 0,
+            "ok": 2
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2c": {
+          "class": "tn",
+          "detail": {
+            "figures_referenced": 0,
+            "missing": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2d": {
+          "class": "tn",
+          "detail": {
+            "missing_inputs": 0,
+            "unsupported": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R3": {
+          "class": "tn",
+          "detail": {
+            "paper_decimals": 5,
+            "pending_review": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R4": {
+          "class": "tp",
+          "detail": {
+            "checks": [
+              {
+                "json_path": "mcnemar_pair",
+                "kind": "mcnemar",
+                "status": "MISMATCH"
+              },
+              {
+                "json_path": "wilson_gold",
+                "kind": "wilson",
+                "status": "NOT_IN_PAPER"
+              }
+            ],
+            "match": 0,
+            "mismatch": 1,
+            "not_in_paper": 1,
+            "records": 2
+          },
+          "expect": "not-PASS",
+          "gate": "FAIL",
+          "verdict": "CRITICAL"
+        },
+        "R5": {
+          "class": "tn",
+          "detail": {
+            "hint_hits": 0,
+            "suspicious": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        }
+      }
+    },
+    "table_number_mismatch": {
+      "files_sha256_ok": true,
+      "planted": "table number disagrees with results JSON",
+      "primary_stage": "R2d",
+      "role": "defect",
+      "stages": {
+        "R1b": {
+          "class": "tn",
+          "detail": {
+            "ghost_citations": 0,
+            "structural_major": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R1d": {
+          "class": "tn",
+          "detail": {
+            "arith_mismatch": 0,
+            "arith_total": 1
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2": {
+          "class": "tn",
+          "detail": {
+            "refs_missing": 0,
+            "refs_total": 1
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2b": {
+          "class": "tn",
+          "detail": {
+            "hash_mismatch": 0,
+            "missing": 0,
+            "ok": 2
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2c": {
+          "class": "tn",
+          "detail": {
+            "figures_referenced": 0,
+            "missing": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2d": {
+          "class": "tp",
+          "detail": {
+            "missing_inputs": 0,
+            "unsupported": 1
+          },
+          "expect": "not-PASS",
+          "gate": "WARN",
+          "verdict": "MAJOR"
+        },
+        "R3": {
+          "class": "tp",
+          "detail": {
+            "paper_decimals": 5,
+            "pending_review": 1
+          },
+          "expect": "not-PASS",
+          "gate": "WARN",
+          "verdict": "MAJOR"
+        },
+        "R4": {
+          "class": "tn",
+          "detail": {
+            "checks": [
+              {
+                "json_path": "mcnemar_pair",
+                "kind": "mcnemar",
+                "status": "MATCH"
+              },
+              {
+                "json_path": "wilson_gold",
+                "kind": "wilson",
+                "status": "MATCH"
+              }
+            ],
+            "match": 2,
+            "mismatch": 0,
+            "not_in_paper": 0,
+            "records": 2
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R5": {
+          "class": "tn",
+          "detail": {
+            "hint_hits": 0,
+            "suspicious": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        }
+      }
+    },
+    "undisclosed_simulation": {
+      "files_sha256_ok": true,
+      "planted": "overclaim: undisclosed simulated annotator agreement",
+      "primary_stage": "R5",
+      "role": "defect",
+      "stages": {
+        "R1b": {
+          "class": "tn",
+          "detail": {
+            "ghost_citations": 0,
+            "structural_major": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R1d": {
+          "class": "tn",
+          "detail": {
+            "arith_mismatch": 0,
+            "arith_total": 1
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2": {
+          "class": "tn",
+          "detail": {
+            "refs_missing": 0,
+            "refs_total": 1
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2b": {
+          "class": "tn",
+          "detail": {
+            "hash_mismatch": 0,
+            "missing": 0,
+            "ok": 2
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2c": {
+          "class": "tn",
+          "detail": {
+            "figures_referenced": 0,
+            "missing": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R2d": {
+          "class": "tn",
+          "detail": {
+            "missing_inputs": 0,
+            "unsupported": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R3": {
+          "class": "tn",
+          "detail": {
+            "paper_decimals": 6,
+            "pending_review": 0
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R4": {
+          "class": "tn",
+          "detail": {
+            "checks": [
+              {
+                "json_path": "mcnemar_pair",
+                "kind": "mcnemar",
+                "status": "MATCH"
+              },
+              {
+                "json_path": "wilson_gold",
+                "kind": "wilson",
+                "status": "MATCH"
+              }
+            ],
+            "match": 2,
+            "mismatch": 0,
+            "not_in_paper": 0,
+            "records": 2
+          },
+          "expect": "PASS",
+          "gate": "PASS",
+          "verdict": "PASS"
+        },
+        "R5": {
+          "class": "tp",
+          "detail": {
+            "hint_hits": 1,
+            "suspicious": 1
+          },
+          "expect": "not-PASS",
+          "gate": "FAIL",
+          "verdict": "CRITICAL"
+        }
+      }
+    }
+  },
+  "hash_errors": [],
+  "labels_commit": "60c0ed202fe693ba3310498c2e7c5c5efaef16f2",
+  "labels_scored_flag_at_freeze": false,
+  "misses": [],
+  "observations": [
+    "stats_mcnemar_wilson R4 checks: {\"mcnemar\": [{\"kind\": \"mcnemar\", \"status\": \"MISMATCH\", \"json_path\": \"mcnemar_pair\"}], \"wilson\": [{\"kind\": \"wilson\", \"status\": \"NOT_IN_PAPER\", \"json_path\": \"wilson_gold\"}]}",
+    "Wilson stored ci was not marked MISMATCH. stats_recompute.py compares recomputed Wilson endpoints to tex decimals and does not compare the stored ci field to those endpoints. This is reported, not patched."
+  ],
+  "scipy": true,
+  "stages": [
+    "R1b",
+    "R1d",
+    "R2",
+    "R2b",
+    "R2c",
+    "R2d",
+    "R3",
+    "R4",
+    "R5"
+  ],
+  "summary": {
+    "fn": 0,
+    "fp": 0,
+    "tn": 73,
+    "tp": 8
+  }
+}
